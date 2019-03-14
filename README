@@ -12,45 +12,44 @@ El juego ha sido diseñado para ser compilado en un entorno de Linux. Para facil
 * El archivo `data.dat` contiene la información necesaria para inicializar/cargar el juego.
 * El archivo oculto `.clang_complete` puede ser ignorado, no ofrece ningún tipo de información relevante. En general todos los archivos ocultos deberían ser ignorados.
 
- ## Makefile
+## Makefile
 
- Hacer una limpieza completa y después genera todos los ejecutables:
+Hacer una limpieza completa y después genera todos los ejecutables:
 
-    $ make
+`$ make`
 
 Generar el ejecutable del juego:
 
-    $ make goose
+`$ make goose`
 
- Generar el ejecutable que testea el módulo `set`:
+Generar el ejecutable que testea el módulo `set`:
 
-	$ make set_tb
+`$ make set_tb`
 
 Hacer una limpieza completa:
 
-    $ make clean
+`$ make clean`
 
 Para generar el paquete de distribución:
 
-    $ make dist
+`$ make dist`
 
 ## Target script
 
-    $  ./target [-e <env>] [options] ...
+$ ./target [-e <env>] [options] ...
 
 
 `-e, --env` - establece el entorno con el que se va a trabajar, en este caso un entorno sería    por ejemplo [goose], si no se especifica ningún entorno, el script 		usará el primero que esté definido en el archivo de configuración. 		Si el entorno especificado no se encuentra en el archivo de configuración 		se saltarán todos las acciones solicitadas para dicho entorno y se pasará 		al siguiente (en el caso de que se hayan solicitado acciones para varios 		entornos)
 
- `-c, --comp` compila un entorno.
+`-c, --comp` compila un entorno.
 
 `-r, --run` - ejecuta el archivo ejecutable generado para dicho entorno. También acepta argumentos adicionales que serán pasados al ejecutable.
 
 `--clean` - limpia los archivos objeto y ejecutables generados en un entorno.
 
- `-m, --cmem` - hacer chequeo de memoria con valgrind.
+`-m, --cmem` - hacer chequeo de memoria con valgrind.
 
-`-d, --dist` - genera un archivo comprimido para ser distribuido.
-		Cuando se ejecuta la instrucción `-d, --dist` el script buscará un archivo llamado `CHANGELOG`, si encuentra una definición de versión dentro de éste (por ejemplo `v1.0.0`), actualizará el archivo `ASCII_VERSION` y generará un nombre con la fecha y la versión en caso de encontrarla.
+`-d, --dist` - genera un archivo comprimido para ser distribuido. Cuando se ejecuta la instrucción `-d, --dist` el script buscará un archivo llamado `CHANGELOG`, si encuentra una definición de versión dentro de éste (por ejemplo `v1.0.0`), actualizará el archivo `ASCII_VERSION` y generará un nombre con la fecha y la versión en caso de encontrarla.
 
 ### Ejemplos de uso:
 
