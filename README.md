@@ -18,7 +18,7 @@ El juego ha sido diseñado para ser compilado en un entorno de Linux. Para facil
 
 `$ make`
 
-Generar el ejecutable del juego:
+dGenerar el ejecutable del juego:
 
 `$ make goose`
 
