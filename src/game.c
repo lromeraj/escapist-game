@@ -157,9 +157,10 @@ STATUS game_create( Game *game ) {
   cmd_set( NEXT, "next", "n", (cmd_fn)game_callback_next );
   cmd_set( BACK, "back", "b", (cmd_fn)game_callback_back );
   cmd_set( EXIT, "exit", "e", (cmd_fn)game_callback_exit );
-  cmd_set( ROLL, "roll", "rl", (cmd_fn)game_callback_roll );
   cmd_set( LEFT, "left", "l", (cmd_fn)game_callback_left );
   cmd_set( RIGHT, "right", "r", (cmd_fn)game_callback_right );
+  cmd_set( ROLL, "roll", "rl", (cmd_fn)game_callback_roll );
+
 
   return OK;
 }
