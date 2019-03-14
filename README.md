@@ -98,3 +98,4 @@ Para definnir un entorno en el archivo de configuración, debe usar la siguiente
 | CFLAGS | parámetros que se deben de tener en cuenta a la hora de compilar |
 | ASCII_TITLE | archivo que contiene un título con decoración ASCII |
 | ASCII_VERSION | archivo que contiene una versión con decoración ASCII |
+| CLOG | archivo que contiene el historial de cambios |
