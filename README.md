@@ -16,27 +16,27 @@ El juego ha sido diseñado para ser compilado en un entorno de Linux. Para facil
 
  Hacer una limpieza completa y después genera todos los ejecutables:
 
-    $ make
+`$ make`
 
 Generar el ejecutable del juego:
 
-    $ make goose
+`$ make goose`
 
  Generar el ejecutable que testea el módulo `set`:
 
-	$ make set_tb
+`$ make set_tb`
 
 Hacer una limpieza completa:
 
-    $ make clean
+`$ make clean`
 
 Para generar el paquete de distribución:
 
-    $ make dist
+`$ make dist`
 
 ## Target script
 
-    $  ./target [-e <env>] [options] ...
+`$ ./target [-e <env>] [options] ...`
 
 
 `-e, --env` - establece el entorno con el que se va a trabajar, en este caso un entorno sería    por ejemplo [goose], si no se especifica ningún entorno, el script 		usará el primero que esté definido en el archivo de configuración. 		Si el entorno especificado no se encuentra en el archivo de configuración 		se saltarán todos las acciones solicitadas para dicho entorno y se pasará 		al siguiente (en el caso de que se hayan solicitado acciones para varios 		entornos)
@@ -60,27 +60,27 @@ Para compilar, por ejemplo, el entorno `[goose]`:
 
  Para ejecutarlo:
 
-	`$ ./target -e goose -r`
+`$ ./target -e goose -r`
 
  Para limpiarlo:
 
-	`$ ./target -e goose --clean`
+`$ ./target -e goose --clean`
 
  Si se desea hacer todo de una vez, (limpiar -> compilar -> ejecutar):
 
-	`$ ./target -e goose --clean -c -r`
+`$ ./target -e goose --clean -c -r`
 
  Si se desea chequear el uso de la memoria:
 
-	`$ ./target -e goose -m`
+`$ ./target -e goose -m`
 
  Si se desea pasar argumentos adicionales al ejecutar el ejecutable:
 
-	`$ ./target -e goose -r arg1 arg2 arg3 ...`
+`$ ./target -e goose -r arg1 arg2 arg3 ...`
 
  Si se desea compilar varios entornos de una vez:
 
-  `$ ./target -e goose -c -e set_tb -c ...`
+`$ ./target -e goose -c -e set_tb -c ...`
 
  ## `target.conf`
 
