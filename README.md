@@ -52,7 +52,7 @@ Para generar el paquete de distribución:
 `-d, --dist` - genera un archivo comprimido para ser distribuido.
 		Cuando se ejecuta la instrucción `-d, --dist` el script buscará un archivo llamado `CHANGELOG`, si encuentra una definición de versión dentro de éste (por ejemplo `v1.0.0`), actualizará el archivo `ASCII_VERSION` y generará un nombre con la fecha y la versión en caso de encontrarla.
 
-### Ejemplos de uso:
+### Ejemplos de uso
 
 Para compilar, por ejemplo, el entorno `[goose]`:
 
