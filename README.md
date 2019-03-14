@@ -2,7 +2,7 @@
 
 El juego ha sido diseñado para ser compilado en un entorno de Linux. Para facilitar el proceso de compilación/enlazado/ejecución del juego se ha desarrollado un script, más abajo está la guía de su uso. En caso de tener cualquier problema a la hora de compilar o cualquier otro fallo puede enviar un correo a javier.romeral@estudiante.uam.es"  o "lromerajdev@gmail.com".
 
-## Notas:
+## Notas
 
 * El archivo `target.conf` es un archivo de configuración utilizado por el script "target", es recomendable no editarlo. En caso de ser eliminado el script dará un error indicando que no se ha encontrado un archivo de configuración.
 
