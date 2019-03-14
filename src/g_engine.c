@@ -20,7 +20,7 @@ struct _G_engine {
   Ui *ui;
 };
 
-// boxes
+// box ids
 enum { _MAP, _OVERVIEW, _TITLE, _HELP, _FEED };
 
 G_engine *g_engine_create() {
@@ -79,16 +79,20 @@ void draw_space( Game *game, G_engine *ge, Space *sp, int id, int x, int y ) {
   char *pp;
   int _x, _y;
   Object *obj;
+  Object **objs;
+  Player *player;
   Id tid; // temp id
 
-  if ( !ge )
+  if ( !game || !ge )
     return;
 
   _x = x;
   _y = y;
   ui = ge->ui;
 
-  if ( space_get_id( sp ) == player_get_location( game->player ) ) {
+  player = game_get_player( game );
+
+  if ( space_get_id( sp ) == player_get_location( player ) ) {
     ui_frm( ui, 3, BG_WHITE, S_BOLD, FG_BLACK );
   }
 
@@ -99,11 +103,11 @@ void draw_space( Game *game, G_engine *ge, Space *sp, int id, int x, int y ) {
 
   tid = space_get_east( sp );
   if ( tid != NO_ID ) {
-    if ( space_get_id( sp ) == player_get_location( game->player ) ) {
+    if ( space_get_id( sp ) == player_get_location( player) ) {
       ui_frm( ui, 3, BG_WHITE, S_BOLD, FG_RED );
     }
     ui_box_put( ui, id, " >%2d", tid );
-    if ( space_get_id( sp ) == player_get_location( game->player ) ) {
+    if ( space_get_id( sp ) == player_get_location( player ) ) {
       ui_frm( ui, 3, BG_WHITE, S_BOLD, FG_BLACK );
     }
   }
@@ -116,7 +120,7 @@ void draw_space( Game *game, G_engine *ge, Space *sp, int id, int x, int y ) {
   ui_box_seek( ui, id, _x, _y++ );
   ui_box_put( ui, id, "+----------------------+" );
 
-  if ( space_get_id( sp ) == player_get_location( game->player ) ) {
+  if ( space_get_id( sp ) == player_get_location( player ) ) {
     ui_box_seek( ui, id, x+2, y+1 );
     ui_box_put( ui, id, ">8D");
   }
@@ -147,11 +151,18 @@ void draw_space( Game *game, G_engine *ge, Space *sp, int id, int x, int y ) {
   _y = y+4;
   ui_box_seek( ui, id, _x, _y );
 
-  for ( i=0; i < MAX_OBJECTS; i++ ) {
-    obj = game->objects[ i ];
-    if ( space_has_object( sp, obj_get_id( obj ) ) ) {
-      ui_box_put( ui, id, "%ld ", obj_get_id( obj ) );
+  // request game objects
+  objs = game_get_objects( game );
+
+  if ( objs ) {
+    for ( i=0; i < MAX_OBJECTS; i++ ) {
+      obj = objs[ i ];
+      if ( !obj ) continue;
+      if ( space_has_object( sp, obj_get_id( obj ) ) ) {
+        ui_box_put( ui, id, "%ld ", obj_get_id( obj ) );
+      }
     }
+
   }
 
   ui_rs( ui );
@@ -167,8 +178,9 @@ void g_engine_paint_game( G_engine *ge, Game *game ) {
       sp_south_id = NO_ID;
   Space *cu_sp = NULL;
   Object *obj;
+  Object **objs;
   char *answer;
-  Cmd *last_cmd = game->last_cmd;
+  Cmd *cmd = game_get_cmd( game );
 
   // title box
   ui_clear_box( ui, _TITLE );
@@ -206,7 +218,7 @@ void g_engine_paint_game( G_engine *ge, Game *game ) {
   ui_box_seek( ui, _MAP, x, y++ );
   ui_box_put( ui, _MAP, "+---+");
   ui_box_seek( ui, _MAP, x, y++ );
-  ui_box_put( ui, _MAP, "| %1d |", die_get_lastn( game->die ) );
+  ui_box_put( ui, _MAP, "| %1d |", die_get_lastn( game_get_die( game ) ) );
   ui_box_seek( ui, _MAP, x, y++ );
   ui_box_put( ui, _MAP, "+---+");
 
@@ -217,26 +229,33 @@ void g_engine_paint_game( G_engine *ge, Game *game ) {
   ui_box_put( ui, _OVERVIEW, "          OVERVIEW\n");
   ui_rs( ui );
 
-  // object data
-  for ( i=0; i < MAX_OBJECTS; i++ ) {
 
-    obj = game->objects[ i ];
+  objs = game_get_objects( game );
 
-    if ( !obj ) continue;
+  if ( objs ) {
 
-    sp_id = space_get_id( game_get_object_space( game, obj_get_id( obj ) ) );
+    // object data
+    for ( i=0; i < MAX_OBJECTS; i++ ) {
 
-    ui_frm( ui, 3, S_BOLD, BG_WHITE, FG_BLACK );
-    ui_box_put( ui, _OVERVIEW, " O%ld: ", obj_get_id( obj ) );
-    if ( sp_id == -1 ) {
-      ui_frm( ui, 4, S_BLINK, BG_WHITE, FG_RED, S_BOLD );
-      ui_box_put( ui, _OVERVIEW, "(taken)" );
-    } else {
-      ui_rs( ui );
-      ui_box_put( ui, _OVERVIEW, "%d", (int)sp_id );
+      obj = objs[ i ];
+
+      if ( !obj ) continue;
+
+      sp_id = space_get_id( game_get_object_space( game, obj_get_id( obj ) ) );
+
+      ui_frm( ui, 3, S_BOLD, BG_WHITE, FG_BLACK );
+      ui_box_put( ui, _OVERVIEW, " O%ld: ", obj_get_id( obj ) );
+      if ( sp_id == -1 ) {
+        ui_frm( ui, 4, S_BLINK, BG_WHITE, FG_RED, S_BOLD );
+        ui_box_put( ui, _OVERVIEW, "(taken)" );
+      } else {
+        ui_rs( ui );
+        ui_box_put( ui, _OVERVIEW, "%d", (int)sp_id );
+      }
+
+      ui_box_put( ui, _OVERVIEW, "\n" );
+
     }
-
-    ui_box_put( ui, _OVERVIEW, "\n" );
 
   }
 
@@ -263,7 +282,7 @@ void g_engine_paint_game( G_engine *ge, Game *game ) {
   ui_rs( ui );
 
   // feedback box
-  if ( last_cmd ) {
+  if ( cmd ) {
 
     ui_frm( ui, 3, S_BOLD, BG_BLACK, FG_WHITE );
     ui_box_put( ui, _FEED, " $ " );
@@ -271,17 +290,17 @@ void g_engine_paint_game( G_engine *ge, Game *game ) {
 
     ui_frm( ui, 3, FG_YELLOW, S_BOLD, BG_BLACK  );
 
-    if ( cmd_get_cid( last_cmd ) == UNKNOWN ) {
-      ui_box_put( ui, _FEED, "%s", cmd_get_argv( last_cmd, 0 ) );
+    if ( cmd_get_cid( cmd ) == UNKNOWN ) {
+      ui_box_put( ui, _FEED, "%s", cmd_get_argv( cmd, 0 ) );
     } else {
-      ui_box_put( ui, _FEED, "%s", cmd_get_bname( last_cmd ) );
+      ui_box_put( ui, _FEED, "%s", cmd_get_bname( cmd ) );
       ui_frm( ui, 2, FG_WHITE, BG_BLACK  );
     }
 
     ui_frm( ui, 2, FG_WHITE, BG_BLACK  );
 
     // draw command answer
-    answer = (char*)cmd_get_ans( last_cmd );
+    answer = (char*)cmd_get_ans( cmd );
 
     if ( strlen( answer ) ) {
       ui_box_put( ui, _FEED, " - %s", answer );

@@ -18,13 +18,7 @@
 #include "die.h"
 #include <stdio.h>
 
-typedef struct _Game {
-  Player* player;
-  Die *die;
-  Object* objects[ MAX_OBJECTS ];
-  Space* spaces[ MAX_SPACES + 1 ];
-  Cmd *last_cmd;
-} Game;
+typedef struct _Game Game;
 
 /** game_add_space adds a given space into the game.
 *
@@ -40,7 +34,7 @@ STATUS game_add_space(Game *game, Space *space);
 * @param {Game*} - game;
 * @return {STATUS} - Returns an status code (OK);
 */
-STATUS game_create(Game* game);
+Game* game_create();
 
 /** game_create_from_file presets game state with the data value included in the save file.
 *
@@ -116,12 +110,28 @@ STATUS game_set_object_location(Game* game, Id id);
 */
 Player* game_get_player(Game *game);
 
+
+/** game_get_player gets a pointer towards player.
+*
+* @param {Game*} - game;
+* @return {T_Command} - Returns a player pointer;
+*/
+Player* game_get_player(Game *game);
+
 /** game_get_object gets a pointer towards player.
 *
 * @param {Game*} - game;
 * @return {T_Command} - Returns a object pointer;
 */
 Object* game_get_object( Game *game, Id id );
+
+
+/** Returns a pointer to game objects.
+*
+* @param {Game*} - game;
+* @return {Object**} - Returns an array of object pointers;
+*/
+Object **game_get_objects( Game *game );
 
 /** game_set_player sets a new player.
 *
@@ -146,5 +156,8 @@ void game_set_die( Game *game, Die *d );
 
 Space *game_get_last_space( Game *game );
 Space *game_get_first_space( Game *game );
+
+Die *game_get_die( Game *game );
+Cmd *game_get_cmd( Game *game );
 
 #endif

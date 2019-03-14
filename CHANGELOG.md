@@ -4,6 +4,8 @@
 
 `[IMPROVEMENTS]`
 - Game structure is now private.
+- Adapted modules to the new privatization.
+- `_kill()` function now needs an argument to return an exit code.
 
 # I2
 
@@ -74,7 +76,7 @@
 - Fixed default initialization parameters.
 - Fixed an issue that caused a bad insertion of carriage returns when calling `ui_put_box()`.
 - Fixed box overflowing.
-- Minor g_engine fixes.
+- Minor `g_engine` fixes.
 [IMPROVEMENTS]
 - Improved ui_box_put() performance.
 - If you put a string inside a box using ui_box_put() and the last char is a new line `\n`.

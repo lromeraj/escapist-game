@@ -39,33 +39,34 @@ void ctrl_c();
 /** This function will free all the memory
 * @param {void}
 */
-void _kill();
+void _kill( int );
 
 /********************************/
 
 
-Game game;
+Game *game;
 G_engine *gengine;
 
-void _kill() {
+void _kill( int errc ) {
 
   log_w( "*************************\n" );
   log_w( "main loop ended\n" );
   log_w( "freeing memory ...\n" );
 
-  game_destroy( &game );
+  game_destroy( game );
   g_engine_destroy( gengine );
 
   log_w( "----------- LOG END -----------\n" );
 
   log_end();
 
+  exit( errc );
+
 }
 
 /* signal handler */
 void ctrl_c( int sign ) {
-  _kill();
-  exit(1);
+  _kill( 1 );
 }
 
 int main( int argc, char *argv[] ) {
@@ -92,34 +93,45 @@ int main( int argc, char *argv[] ) {
 
   log_w( "loading game ... " );
 
-  if ( game_create_from_file( &game, argv[1] ) == ERROR ) {
+  game = game_create();
+
+  if ( game == NULL ) {
     log_w( "ERR\n" );
-    fprintf(stderr, "error while initializing game\n");
+    fprintf(stderr, "error while creating game.\n");
     return 1;
   }
+
+  if ( game_create_from_file( game, argv[1] ) == ERROR ) {
+    log_w( "ERR\n" );
+    fprintf(stderr, "error while initializing game\n");
+    _kill( 1 );
+  }
+
   log_w( "OK\n" );
 
   log_w( "loading graphic engine ... ");
-  if ( ( gengine = g_engine_create() ) == NULL ) {
+  gengine = g_engine_create();
+  if ( gengine == NULL ) {
     log_w( "ERR\n" );
     fprintf(stderr, "error while initializing graphic engine.\n");
-    game_destroy( &game );
-    return 1;
+    _kill( 1 );
   }
+
+
   log_w( "OK\n" );
 
 
-  while ( !game_is_over( &game ) ) {
+  while ( !game_is_over( game ) ) {
 
     log_w( "\n********** L%d **********\n", loop );
 
-    g_engine_paint_game( gengine, &game );
+    g_engine_paint_game( gengine, game );
     log_w( "drawing frame ...\n" );
     log_w( "requesting cmd ...\n" );
     _cmd = cmd_req();
 
     log_w( "updating game data ...\n" );
-    game_update( &game, _cmd );
+    game_update( game, _cmd );
 
     if ( _cmd ) {
       log_w( "$ %s\n", cmd_get_bname( _cmd ) );
@@ -158,7 +170,5 @@ int main( int argc, char *argv[] ) {
     loop++;
   }
 
-  _kill();
-
-  return 0;
+  _kill( 0 );
 }

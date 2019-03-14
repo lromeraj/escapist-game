@@ -18,6 +18,14 @@
 #include <string.h>
 #include <stdarg.h>
 
+struct _Game {
+  Player* player;
+  Die *die;
+  Object* objects[ MAX_OBJECTS ];
+  Space* spaces[ MAX_SPACES + 1 ];
+  Cmd *cmd;
+};
+
 /****** PRIVATE FUNCTIONS ******/
 
 /**
@@ -119,11 +127,14 @@ Id game_get_space_id_at(Game *game, int position);
 
 /**************************************************/
 
-STATUS game_create( Game *game ) {
+Game* game_create() {
 
   int i;
   Die *die;
+  Game *game;
   Player *player;
+
+  game = (Game*)malloc(sizeof(Game));
 
   for ( i=0; i < MAX_SPACES; i++ ) {
     game->spaces[ i ] = NULL;
@@ -133,7 +144,7 @@ STATUS game_create( Game *game ) {
     game->objects[ i ] = NULL;
   }
 
-  game->last_cmd = NULL;
+  game->cmd = NULL;
   game->player = NULL;
   game->die = NULL;
 
@@ -157,18 +168,14 @@ STATUS game_create( Game *game ) {
   cmd_set( NEXT, "next", "n", (cmd_fn)game_callback_next );
   cmd_set( BACK, "back", "b", (cmd_fn)game_callback_back );
   cmd_set( EXIT, "exit", "e", (cmd_fn)game_callback_exit );
+  cmd_set( ROLL, "roll", "rl", (cmd_fn)game_callback_roll );
   cmd_set( LEFT, "left", "l", (cmd_fn)game_callback_left );
   cmd_set( RIGHT, "right", "r", (cmd_fn)game_callback_right );
-  cmd_set( ROLL, "roll", "rl", (cmd_fn)game_callback_roll );
 
-
-  return OK;
+  return game;
 }
 
-STATUS game_create_from_file(Game *game, char *filename) {
-
-  if (game_create( game ) == ERROR)
-    return ERROR;
+STATUS game_create_from_file( Game *game, char *filename ) {
 
   if (reader_load_spaces( game, filename ) == ERROR)
     return ERROR;
@@ -182,6 +189,9 @@ STATUS game_create_from_file(Game *game, char *filename) {
 STATUS game_destroy(Game *game) {
 
   int i;
+
+  if ( !game )
+    return ERROR;
 
   /* clean spaces */
   for (i=0; (i < MAX_SPACES) && (game->spaces[ i ] != NULL); i++) {
@@ -201,6 +211,8 @@ STATUS game_destroy(Game *game) {
 
   /* destroy commands */
   cmd_free();
+
+  free( game );
 
   return OK;
 }
@@ -312,9 +324,23 @@ void game_set_die( Game *game, Die *d ) {
 
 }
 
+Die *game_get_die( Game *game ){
+  if (!game) {
+    return NULL;
+  }
+  return game->die;
+}
+
+Cmd *game_get_cmd( Game *game ){
+  if (!game) {
+    return NULL;
+  }
+  return game->cmd;
+}
+
 STATUS game_update( Game *game, Cmd *cmd ) {
 
-  game->last_cmd = cmd;
+  game->cmd = cmd;
 
   if ( cmd ) {
     cmd_cb( cmd, game );
@@ -326,11 +352,11 @@ STATUS game_update( Game *game, Cmd *cmd ) {
 bool game_is_over(Game *game) { return false; }
 
 void game_callback_unknown( Game *game ) {
-  cmd_set_ans( game->last_cmd, 0, "unknown command" );
+  cmd_set_ans( game->cmd, 0, "unknown command" );
 }
 
 void game_callback_exit( Game *game ) {
-  cmd_set_ans( game->last_cmd, 0, "exit success" );
+  cmd_set_ans( game->cmd, 0, "exit success" );
 }
 
 void game_callback_next( Game *game ) {
@@ -338,7 +364,7 @@ void game_callback_next( Game *game ) {
   Space *sp;
   Player *player;
   Id go_to = NO_ID;
-  Cmd *cmd = game->last_cmd;
+  Cmd *cmd = game->cmd;
 
   if ( !game )
     return;
@@ -368,7 +394,7 @@ void game_callback_back( Game *game ) {
   Space *sp;
   Player *player;
   Id go_to = NO_ID;
-  Cmd *cmd = game->last_cmd;
+  Cmd *cmd = game->cmd;
 
   if ( !game )
     return;
@@ -410,12 +436,21 @@ Space* game_get_object_space( Game *game, Id id ) {
   return NULL;
 }
 
+
+Object **game_get_objects( Game *game ) {
+
+  if (!game)
+    return NULL;
+
+  return game->objects;
+}
+
 void game_callback_take( Game *game ) {
 
   Space *sp;
   Player *player;
   Id p_loc, o_id;
-  Cmd *cmd = game->last_cmd;
+  Cmd *cmd = game->cmd;
 
   if ( !game )
     return;
@@ -464,7 +499,7 @@ void game_callback_drop( Game *game ) {
 
   player = game_get_player( game );
 
-  cmd = game->last_cmd;
+  cmd = game->cmd;
 
   if ( !player_has_object( player ) ) {
     cmd_set_ans( cmd, 1, "no obj");
@@ -484,7 +519,7 @@ void game_callback_drop( Game *game ) {
 void game_callback_roll( Game *game ) {
   int n;
   n = die_roll( game->die );
-  cmd_set_ans( game->last_cmd, 0, "%d", n );
+  cmd_set_ans( game->cmd, 0, "%d", n );
 }
 
 void game_callback_left( Game *game ){
@@ -498,7 +533,7 @@ void game_callback_left( Game *game ){
   if ( !game )
     return;
 
-  cmd = game->last_cmd;
+  cmd = game->cmd;
   space = game_get_space( game, player_get_location( game->player ) );
   go_to = space_get_west ( space );
 
@@ -525,7 +560,7 @@ void game_callback_right( Game *game ) {
 
   if ( !game )
     return;
-  cmd = game->last_cmd;
+  cmd = game->cmd;
   space = game_get_space( game, player_get_location( game->player ) );
   go_to = space_get_east( space );
 
