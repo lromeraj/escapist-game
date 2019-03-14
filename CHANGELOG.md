@@ -52,9 +52,9 @@
 - Commands now handles arguments too.
 - Now you can go next n cells.
 - Now you can go back n cells.
-- New game dice.
-- Added "roll" command.
-- Added "dice" module.
+- New game die.
+- Added `roll` command.
+- Added `dice` module.
 - Added command answers.
 - Now you can "take" a certain object of a cell.
 
