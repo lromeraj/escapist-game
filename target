@@ -132,7 +132,7 @@ _date()
 # finds a version inside a file
 _findV()
 {
-  grep -P -m1 '^v[0-9]' "$1"
+  grep -Po -m1 'v[0-9].*' "$1"
 }
 
 _avai()
@@ -276,6 +276,7 @@ env_load()
   DISTDIR=$(env_get "DISTDIR")
   CFLAGS=$(env_get "CFLAGS")
   LDFLAGS=$(env_get "CFLAGS")
+  CHANGELOG=$(env_get "CLOG")
 
 }
 
@@ -472,9 +473,9 @@ while [ $# -gt 0 ]; do
       name="${TARGET}_$(_date).zip"
 
 
-      if [ -e CHANGELOG ]; then
+      if [[ -e "$CHANGELOG" ]]; then
 
-        _v=$(_findV CHANGELOG) # find version
+        _v=$(_findV "$CHANGELOG") # find last version
 
         if [[ ! -z $_v ]]; then
 
