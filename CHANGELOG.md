@@ -9,10 +9,10 @@
 - `_kill()` function now needs an argument to return an exit code.
 
 `[NEW]`
-- Implemented `game_get_objects()`
-- Implemented `game_get_die()`
-- Implemented `game_get_cmd()`
-- Implemented `game_get_player()`
+- Implemented `game_get_objects()`.
+- Implemented `game_get_die()`.
+- Implemented `game_get_cmd()`.
+- Implemented `game_get_player()`.
 
 # I2
 
