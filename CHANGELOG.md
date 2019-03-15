@@ -4,7 +4,7 @@
 
 `[IMPROVEMENTS]`
 - Improved `game` module.
-- Main game structure is now private.
+- Main `game` structure is now private.
 - Adapted modules to the new privatization.
 - `_kill()` function now needs an argument to return an exit code.
 
