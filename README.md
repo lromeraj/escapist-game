@@ -14,11 +14,11 @@ El juego ha sido diseñado para ser compilado en un entorno de Linux. Para facil
 
  ## Makefile
 
- Hacer una limpieza completa y después genera todos los ejecutables:
+ Hacer una limpieza completa y después generar todos los ejecutables:
 
 `$ make`
 
-dGenerar el ejecutable del juego:
+Generar el ejecutable del juego:
 
 `$ make goose`
 
