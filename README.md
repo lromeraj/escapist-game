@@ -80,7 +80,7 @@ Para generar el paquete de distribución:
 `$ ./target [-e <env>] [options] ...`
 
 
-`-e, --env` - establece el entorno con el que se va a trabajar, en este caso un entorno sería    por ejemplo [goose], si no se especifica ningún entorno, el script 		usará el primero que esté definido en el archivo de configuración. 		Si el entorno especificado no se encuentra en el archivo de configuración 		se saltarán todos las acciones solicitadas para dicho entorno y se pasará 		al siguiente (en el caso de que se hayan solicitado acciones para varios 		entornos)
+`-e, --env` - establece el entorno con el que se va a trabajar, en este caso un entorno sería    por ejemplo `[goose]`, si no se especifica ningún entorno, el script 		usará el primero que esté definido en el archivo de configuración. 		Si el entorno especificado no se encuentra en el archivo de configuración 		se saltarán todos las acciones solicitadas para dicho entorno y se pasará 		al siguiente (en el caso de que se hayan solicitado acciones para varios 		entornos)
 
  `-c, --comp` - compila un entorno.
 
