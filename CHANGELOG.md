@@ -125,8 +125,7 @@
 - Majority of functions were commented.
 - The `screen` module was completely redesigned,
 the name has been changed to `ui`.
-- Two new keyboard inputs, `take` and `leave` were introduced,
-allowing players to pick up and drop objects.
+- Two new keyboard inputs, `take` and `leave` were introduced, allowing players to pick up and drop objects.
 
 `[IMPROVEMENTS]`
 - `graphic_engine` has been renamed by "g_engine".
