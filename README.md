@@ -20,12 +20,14 @@ a la hora de comentar.
 - Ejemplo:
 ``` c
 /**
-* @brief <module description>
+* @brief Short module description
 *
-* @file <file name>
-* @author <authors>
-* @version <last version>
-* @date <last modification date>
+* Long module description ...
+*
+* @file File name
+* @author Authors
+* @version Last version
+* @date Last modification date
 */
 ```
 
