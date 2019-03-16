@@ -1,9 +1,9 @@
 /**
- * @brief User interface based on chars
+ * @brief Main draw engine
  *
  * @file g_engine.c
- * @author Álvaro Rodríguez & Javier Romera
- * @version 1.0
+ * @author Javier Romera
+ * @version 0.3.1
  * @date 07/02/2019
  * @copyright GNU Public License
  */
@@ -16,12 +16,21 @@
 #include <stdlib.h>
 #include <string.h>
 
+/*!
+* @brief Main graphic engine structure
+*/
 struct _G_engine {
   Ui *ui;
 };
 
-// box ids
-enum { _MAP, _OVERVIEW, _TITLE, _HELP, _FEED };
+/*! Box list */
+enum _Boxes {
+  _MAP, /*!< Map box */
+  _OVERVIEW, /*!< Overview box */
+  _TITLE, /*!< Title box */
+  _HELP, /*!< Help box */
+  _FEED /*!< Feedback box */
+};
 
 G_engine *g_engine_create() {
 

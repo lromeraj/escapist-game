@@ -12,7 +12,7 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="custom.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -72,7 +72,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>User interface based on chars.  
+<p>Main draw engine.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="game_8h_source.html">game.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="player_8h_source.html">player.h</a>&quot;</code><br />
@@ -102,24 +102,26 @@ Include dependency graph for g_engine.c:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__G__engine.html">_G_engine</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Graphic engine structure.  <a href="struct__G__engine.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:a06fc87d81c62e9abb8790b6e5713c55b"><td class="memItemLeft" align="right" valign="top"><a id="a06fc87d81c62e9abb8790b6e5713c55b"></a>enum &#160;</td><td class="memItemRight" valign="bottom">{ <br />
-&#160;&#160;<b>_MAP</b>, 
-<b>_OVERVIEW</b>, 
-<b>_TITLE</b>, 
-<b>_HELP</b>, 
+<tr class="memitem:a55884d4185031754f710955b5e32ebd9"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="g__engine_8c.html#a55884d4185031754f710955b5e32ebd9">_Boxes</a> { <br />
+&#160;&#160;<a class="el" href="g__engine_8c.html#a55884d4185031754f710955b5e32ebd9a360fbd2548abbea4000f326981569ac4">_MAP</a>, 
+<a class="el" href="g__engine_8c.html#a55884d4185031754f710955b5e32ebd9a3802e832b1629d0ae9fc5f46d982a0f0">_OVERVIEW</a>, 
+<a class="el" href="g__engine_8c.html#a55884d4185031754f710955b5e32ebd9a2f80e6c70847dd42d46a5bd452f6fde2">_TITLE</a>, 
+<a class="el" href="g__engine_8c.html#a55884d4185031754f710955b5e32ebd9a30b7a44316e4d1796a17e9565ed01bc7">_HELP</a>, 
 <br />
-&#160;&#160;<b>_FEED</b>
+&#160;&#160;<a class="el" href="g__engine_8c.html#a55884d4185031754f710955b5e32ebd9acb7ab948a03c1f8b96f0a5e7eba1f16e">_FEED</a>
 <br />
  }</td></tr>
-<tr class="separator:a06fc87d81c62e9abb8790b6e5713c55b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:a55884d4185031754f710955b5e32ebd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:aa2f5a0548ea6fedb671c594d4f0cf039"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct__G__engine.html">G_engine</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="g__engine_8c.html#aa2f5a0548ea6fedb671c594d4f0cf039">g_engine_create</a> ()</td></tr>
+<tr class="memdesc:aa2f5a0548ea6fedb671c594d4f0cf039"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new graphic engine.  <a href="#aa2f5a0548ea6fedb671c594d4f0cf039">More...</a><br /></td></tr>
 <tr class="separator:aa2f5a0548ea6fedb671c594d4f0cf039"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae61d1ed693a2bfc2967b4550fc128536"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="g__engine_8c.html#ae61d1ed693a2bfc2967b4550fc128536">g_engine_destroy</a> (<a class="el" href="struct__G__engine.html">G_engine</a> *ge)</td></tr>
 <tr class="separator:ae61d1ed693a2bfc2967b4550fc128536"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -130,12 +132,40 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>draw_space</b> (<a cl
 <tr class="separator:ab215509a5b24333ada8465e80df43387"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>User interface based on chars. </p>
-<dl class="section author"><dt>Author</dt><dd>Álvaro Rodríguez &amp; Javier Romera </dd></dl>
-<dl class="section version"><dt>Version</dt><dd>1.0 </dd></dl>
+<div class="textblock"><p>Main draw engine. </p>
+<dl class="section author"><dt>Author</dt><dd>Javier Romera </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>0.3.1 </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>07/02/2019 </dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>GNU Public License </dd></dl>
-</div><h2 class="groupheader">Function Documentation</h2>
+</div><h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="a55884d4185031754f710955b5e32ebd9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55884d4185031754f710955b5e32ebd9">&#9670;&nbsp;</a></span>_Boxes</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="g__engine_8c.html#a55884d4185031754f710955b5e32ebd9">_Boxes</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Box list </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a55884d4185031754f710955b5e32ebd9a360fbd2548abbea4000f326981569ac4"></a>_MAP&#160;</td><td class="fielddoc"><p>Map box </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a55884d4185031754f710955b5e32ebd9a3802e832b1629d0ae9fc5f46d982a0f0"></a>_OVERVIEW&#160;</td><td class="fielddoc"><p>Overview box </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a55884d4185031754f710955b5e32ebd9a2f80e6c70847dd42d46a5bd452f6fde2"></a>_TITLE&#160;</td><td class="fielddoc"><p>Title box </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a55884d4185031754f710955b5e32ebd9a30b7a44316e4d1796a17e9565ed01bc7"></a>_HELP&#160;</td><td class="fielddoc"><p>Help box </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a55884d4185031754f710955b5e32ebd9acb7ab948a03c1f8b96f0a5e7eba1f16e"></a>_FEED&#160;</td><td class="fielddoc"><p>Feedback box </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
 <a id="aa2f5a0548ea6fedb671c594d4f0cf039"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa2f5a0548ea6fedb671c594d4f0cf039">&#9670;&nbsp;</a></span>g_engine_create()</h2>
 
@@ -150,14 +180,14 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>draw_space</b> (<a cl
         </tr>
       </table>
 </div><div class="memdoc">
-<p>g_engine_create if no graphic engine is set runs a graphic engine and starts new parameters.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">{}</td><td>- none; </td></tr>
+
+<p>Creates a new graphic engine. </p>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">{G_engine*}</td><td>- Returns a graphic engine pointer </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>{G_engine*} - Returns a graphic engine pointer; </dd></dl>
 
 </div>
 </div>

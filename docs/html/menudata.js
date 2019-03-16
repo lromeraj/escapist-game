@@ -21,4 +21,6 @@ var menudata={children:[
 {text:"p",url:"globals_func.html#index_p"},
 {text:"r",url:"globals_func.html#index_r"},
 {text:"s",url:"globals_func.html#index_s"},
-{text:"u",url:"globals_func.html#index_u"}]}]}]}]}
+{text:"u",url:"globals_func.html#index_u"}]},
+{text:"Enumerations",url:"globals_enum.html"},
+{text:"Enumerator",url:"globals_eval.html"}]}]}]}

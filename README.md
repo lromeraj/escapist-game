@@ -15,7 +15,9 @@ El juego ha sido diseñado para ser compilado en un entorno de Linux. Para facil
 ## Doxygen
 Para que **Doxygen** funcione correctamente se deben seguir ciertas instrucciones
 a la hora de comentar.
-- Todos los módulos deben de comenzar con un comentario de encabezado básico:
+### Módulos
+- Todos los módulos deben de comenzar con un comentario de encabezado básico.
+- Ejemplo:
 ``` c
 /**
 * @brief <module description>
@@ -26,15 +28,22 @@ a la hora de comentar.
 * @date <last modification date>
 */
 ```
-- Los comentarios de los prototipos de las funciones debería realizarse de la siguiente forma:
+
+### Funciones
+
+- Los comentarios de los prototipos de las funciones deberán realizarse de la siguiente forma:
+
 ``` c
-/** <function description>
+/**
+* @brief <function description>
 *
 * @param {<type>} <name> - <description>
 * ...
 * @retval {<type>} - <description>
 */
 ```
+
+- Ejemplos:
 
 ``` c
 /** Multiplies two numbers
@@ -52,6 +61,35 @@ void mult( int a, int b, int *c );
 */
 int mult( int a, int b );
 ```
+
+### Estructuras
+- En las estrucutas se debe comentar cada campo, e incluir además una breve descripción.
+
+``` c
+/*!
+* @brief <brief description>
+*
+* Detailed description ...
+*
+*/
+```
+- Es importante dejar un salto de línea extra entre la descripción abreviada
+y la detallada.
+- Para comentar los campos usar `/*!< field description */`.
+
+### Enumeraciones
+- Las enumeraciones de comentan de forma similar a las estrucutas.
+``` c
+/*!
+* @brief Brief description
+*
+* Detailed explanation ...
+*
+*/
+```
+
+- Para comentar un dato usar `/*!< value description */`.
+
 
 ## Makefile
 

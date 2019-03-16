@@ -2,7 +2,7 @@
 \label{g__engine_8c}\index{src/g\+\_\+engine.\+c@{src/g\+\_\+engine.\+c}}
 
 
-User interface based on chars.  
+Main draw engine.  
 
 
 {\ttfamily \#include \char`\"{}game.\+h\char`\"{}}\newline
@@ -23,25 +23,24 @@ Include dependency graph for g\+\_\+engine.\+c\+:\nopagebreak
 \begin{DoxyCompactItemize}
 \item 
 struct \hyperlink{struct__G__engine}{\+\_\+\+G\+\_\+engine}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Graphic engine structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Enumerations}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{g__engine_8c_a06fc87d81c62e9abb8790b6e5713c55b}\label{g__engine_8c_a06fc87d81c62e9abb8790b6e5713c55b}} 
-enum \{ \newline
-{\bfseries \+\_\+\+M\+AP}, 
-{\bfseries \+\_\+\+O\+V\+E\+R\+V\+I\+EW}, 
-{\bfseries \+\_\+\+T\+I\+T\+LE}, 
-{\bfseries \+\_\+\+H\+E\+LP}, 
+enum \hyperlink{g__engine_8c_a55884d4185031754f710955b5e32ebd9}{\+\_\+\+Boxes} \{ \newline
+\hyperlink{g__engine_8c_a55884d4185031754f710955b5e32ebd9a360fbd2548abbea4000f326981569ac4}{\+\_\+\+M\+AP}, 
+\hyperlink{g__engine_8c_a55884d4185031754f710955b5e32ebd9a3802e832b1629d0ae9fc5f46d982a0f0}{\+\_\+\+O\+V\+E\+R\+V\+I\+EW}, 
+\hyperlink{g__engine_8c_a55884d4185031754f710955b5e32ebd9a2f80e6c70847dd42d46a5bd452f6fde2}{\+\_\+\+T\+I\+T\+LE}, 
+\hyperlink{g__engine_8c_a55884d4185031754f710955b5e32ebd9a30b7a44316e4d1796a17e9565ed01bc7}{\+\_\+\+H\+E\+LP}, 
 \newline
-{\bfseries \+\_\+\+F\+E\+ED}
+\hyperlink{g__engine_8c_a55884d4185031754f710955b5e32ebd9acb7ab948a03c1f8b96f0a5e7eba1f16e}{\+\_\+\+F\+E\+ED}
  \}
 \end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{struct__G__engine}{G\+\_\+engine} $\ast$ \hyperlink{g__engine_8c_aa2f5a0548ea6fedb671c594d4f0cf039}{g\+\_\+engine\+\_\+create} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Creates a new graphic engine. \end{DoxyCompactList}\item 
 void \hyperlink{g__engine_8c_ae61d1ed693a2bfc2967b4550fc128536}{g\+\_\+engine\+\_\+destroy} (\hyperlink{struct__G__engine}{G\+\_\+engine} $\ast$ge)
 \item 
 \mbox{\Hypertarget{g__engine_8c_a9b4e1368c0b4d1caba98f417de1a7507}\label{g__engine_8c_a9b4e1368c0b4d1caba98f417de1a7507}} 
@@ -52,13 +51,13 @@ void \hyperlink{g__engine_8c_ab215509a5b24333ada8465e80df43387}{g\+\_\+engine\+\
 
 
 \subsection{Detailed Description}
-User interface based on chars. 
+Main draw engine. 
 
 \begin{DoxyAuthor}{Author}
-Álvaro Rodríguez \& Javier Romera 
+Javier Romera 
 \end{DoxyAuthor}
 \begin{DoxyVersion}{Version}
-1.\+0 
+0.\+3.\+1 
 \end{DoxyVersion}
 \begin{DoxyDate}{Date}
 07/02/2019 
@@ -68,6 +67,37 @@ G\+NU Public License
 \end{DoxyCopyright}
 
 
+\subsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{g__engine_8c_a55884d4185031754f710955b5e32ebd9}\label{g__engine_8c_a55884d4185031754f710955b5e32ebd9}} 
+\index{g\+\_\+engine.\+c@{g\+\_\+engine.\+c}!\+\_\+\+Boxes@{\+\_\+\+Boxes}}
+\index{\+\_\+\+Boxes@{\+\_\+\+Boxes}!g\+\_\+engine.\+c@{g\+\_\+engine.\+c}}
+\subsubsection{\texorpdfstring{\+\_\+\+Boxes}{\_Boxes}}
+{\footnotesize\ttfamily enum \hyperlink{g__engine_8c_a55884d4185031754f710955b5e32ebd9}{\+\_\+\+Boxes}}
+
+Box list \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{\+\_\+\+M\+AP@{\+\_\+\+M\+AP}!g\+\_\+engine.\+c@{g\+\_\+engine.\+c}}\index{g\+\_\+engine.\+c@{g\+\_\+engine.\+c}!\+\_\+\+M\+AP@{\+\_\+\+M\+AP}}}\mbox{\Hypertarget{g__engine_8c_a55884d4185031754f710955b5e32ebd9a360fbd2548abbea4000f326981569ac4}\label{g__engine_8c_a55884d4185031754f710955b5e32ebd9a360fbd2548abbea4000f326981569ac4}} 
+\+\_\+\+M\+AP&Map box \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{\+\_\+\+O\+V\+E\+R\+V\+I\+EW@{\+\_\+\+O\+V\+E\+R\+V\+I\+EW}!g\+\_\+engine.\+c@{g\+\_\+engine.\+c}}\index{g\+\_\+engine.\+c@{g\+\_\+engine.\+c}!\+\_\+\+O\+V\+E\+R\+V\+I\+EW@{\+\_\+\+O\+V\+E\+R\+V\+I\+EW}}}\mbox{\Hypertarget{g__engine_8c_a55884d4185031754f710955b5e32ebd9a3802e832b1629d0ae9fc5f46d982a0f0}\label{g__engine_8c_a55884d4185031754f710955b5e32ebd9a3802e832b1629d0ae9fc5f46d982a0f0}} 
+\+\_\+\+O\+V\+E\+R\+V\+I\+EW&Overview box \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{\+\_\+\+T\+I\+T\+LE@{\+\_\+\+T\+I\+T\+LE}!g\+\_\+engine.\+c@{g\+\_\+engine.\+c}}\index{g\+\_\+engine.\+c@{g\+\_\+engine.\+c}!\+\_\+\+T\+I\+T\+LE@{\+\_\+\+T\+I\+T\+LE}}}\mbox{\Hypertarget{g__engine_8c_a55884d4185031754f710955b5e32ebd9a2f80e6c70847dd42d46a5bd452f6fde2}\label{g__engine_8c_a55884d4185031754f710955b5e32ebd9a2f80e6c70847dd42d46a5bd452f6fde2}} 
+\+\_\+\+T\+I\+T\+LE&Title box \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{\+\_\+\+H\+E\+LP@{\+\_\+\+H\+E\+LP}!g\+\_\+engine.\+c@{g\+\_\+engine.\+c}}\index{g\+\_\+engine.\+c@{g\+\_\+engine.\+c}!\+\_\+\+H\+E\+LP@{\+\_\+\+H\+E\+LP}}}\mbox{\Hypertarget{g__engine_8c_a55884d4185031754f710955b5e32ebd9a30b7a44316e4d1796a17e9565ed01bc7}\label{g__engine_8c_a55884d4185031754f710955b5e32ebd9a30b7a44316e4d1796a17e9565ed01bc7}} 
+\+\_\+\+H\+E\+LP&Help box \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{\+\_\+\+F\+E\+ED@{\+\_\+\+F\+E\+ED}!g\+\_\+engine.\+c@{g\+\_\+engine.\+c}}\index{g\+\_\+engine.\+c@{g\+\_\+engine.\+c}!\+\_\+\+F\+E\+ED@{\+\_\+\+F\+E\+ED}}}\mbox{\Hypertarget{g__engine_8c_a55884d4185031754f710955b5e32ebd9acb7ab948a03c1f8b96f0a5e7eba1f16e}\label{g__engine_8c_a55884d4185031754f710955b5e32ebd9acb7ab948a03c1f8b96f0a5e7eba1f16e}} 
+\+\_\+\+F\+E\+ED&Feedback box \\
+\hline
+
+\end{DoxyEnumFields}
+
+
 \subsection{Function Documentation}
 \mbox{\Hypertarget{g__engine_8c_aa2f5a0548ea6fedb671c594d4f0cf039}\label{g__engine_8c_aa2f5a0548ea6fedb671c594d4f0cf039}} 
 \index{g\+\_\+engine.\+c@{g\+\_\+engine.\+c}!g\+\_\+engine\+\_\+create@{g\+\_\+engine\+\_\+create}}
@@ -75,16 +105,15 @@ G\+NU Public License
 \subsubsection{\texorpdfstring{g\+\_\+engine\+\_\+create()}{g\_engine\_create()}}
 {\footnotesize\ttfamily \hyperlink{struct__G__engine}{G\+\_\+engine}$\ast$ g\+\_\+engine\+\_\+create (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-g\+\_\+engine\+\_\+create if no graphic engine is set runs a graphic engine and starts new parameters.
 
 
-\begin{DoxyParams}{Parameters}
-{\em \{\}} & -\/ none; \\
+Creates a new graphic engine. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em \{\+G\+\_\+engine$\ast$\}} & -\/ Returns a graphic engine pointer \\
 \hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-\{G\+\_\+engine$\ast$\} -\/ Returns a graphic engine pointer; 
-\end{DoxyReturn}
+\end{DoxyRetVals}
 \mbox{\Hypertarget{g__engine_8c_ae61d1ed693a2bfc2967b4550fc128536}\label{g__engine_8c_ae61d1ed693a2bfc2967b4550fc128536}} 
 \index{g\+\_\+engine.\+c@{g\+\_\+engine.\+c}!g\+\_\+engine\+\_\+destroy@{g\+\_\+engine\+\_\+destroy}}
 \index{g\+\_\+engine\+\_\+destroy@{g\+\_\+engine\+\_\+destroy}!g\+\_\+engine.\+c@{g\+\_\+engine.\+c}}

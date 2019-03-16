@@ -13,16 +13,14 @@
 
 #include "game.h"
 
-/* Private structure for graphic engine. */
-
+/**
+* Private structure for graphic engine.
+*/
 typedef struct _G_engine G_engine;
 
-
-/** g_engine_create if no graphic engine is set
-* runs a graphic engine and starts new parameters.
+/** @brief Creates a new graphic engine
 *
-* @param {} - none;
-* @return {G_engine*} - Returns a graphic engine pointer;
+* @retval {G_engine*} - Returns a graphic engine pointer
 */
 G_engine* g_engine_create();
 
