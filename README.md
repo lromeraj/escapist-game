@@ -16,15 +16,16 @@ El juego ha sido diseñado para ser compilado en un entorno de Linux. Para facil
 Para que Doxygen funciione correctamente se deben seguir ciertas instrucciones
 a la hora de comentar.
   - Todos los módulos deben de comenzar con un comentario de encabezado básico:
-  `/**
-    * @brief <descripción básica del módulo>
-    *
-    * @file <nombre del fichero>
-    * @author <autor o autores>
-    * @version <versión>
-    * @date <última fecha de modificación>
-    */
-    `
+``` c
+/**
+* @brief <descripción básica del módulo>
+*
+* @file <nombre del fichero>
+* @author <autor o autores>
+* @version <versión>
+* @date <última fecha de modificación>
+*/
+```
   - Los comentarios de los prototipos de las funciones debería realizarse de la siguiente forma:
 ``` c
 /** <descripción básica de la función>
