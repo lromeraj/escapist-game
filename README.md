@@ -27,28 +27,30 @@ a la hora de comentar.
     `
   - Los prototipos de las funciones debería realizarse de la siguiente forma:
 ```
-    /** <descripción básica de la función>
-    *
-    * @param {<type>} <var_name> - <description>
-    * ...
-    * @retval {<type>} - <description>
-    */
+/** <descripción básica de la función>
+*
+* @param {<type>} <var_name> - <description>
+* ...
+* @retval {<type>} - <description>
+*/
 ```
-    /** Multiplies two numbers
-    * @param {int} a - First operand
-    * @param {int} b - Second operand
-    * @param {int*} c - Result destination
-    */
-    void mult( int a, int b, int *c );
 
-
-    /** Multiplies two numbers
-    * @param {int} a - First operand
-    * @param {int} b - Second operand
-    * @retval {int} - Returns the operation result
-    */
-    int mult( int a, int b );
-
+```
+/** Multiplies two numbers
+* @param {int} a - First operand
+* @param {int} b - Second operand
+* @param {int*} c - Result destination
+*/
+void mult( int a, int b, int *c );
+```
+```
+/** Multiplies two numbers
+* @param {int} a - First operand
+* @param {int} b - Second operand
+* @retval {int} - Returns the operation result
+*/
+int mult( int a, int b );
+```
 
 ## Makefile
 
