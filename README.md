@@ -12,9 +12,48 @@ El juego ha sido diseñado para ser compilado en un entorno de Linux. Para facil
 * El archivo `data.dat` contiene la información necesaria para inicializar/cargar el juego.
 * El archivo oculto `.clang_complete` puede ser ignorado, no ofrece ningún tipo de información relevante. En general todos los archivos ocultos deberían ser ignorados.
 
- ## Makefile
+## Comentarios
+Para que Doxygen funciione correctamente se deben seguir ciertas instrucciones
+a la hora de comentar.
+  - Todos los módulos deben de comenzar con un comentario de encabezado básico:
+  `/**
+    * @brief <descripción básica del módulo>
+    *
+    * @file <nombre del fichero>
+    * @author <autor o autores>
+    * @version <versión>
+    * @date <última fecha de modificación>
+    */
+    `
+  - Los prototipos de las funciones debería realizarse de la siguiente forma:
+  `/** <descripción básica de la función>
+    *
+    * @param {<type>} <var_name> - <description>
+    * ...
+    * @retval {<type>} - <description>
+    */
+    `
 
- Hacer una limpieza completa y después generar todos los ejecutables:
+  `/** Multiplies two numbers
+    * @param {int} a - First operand
+    * @param {int} b - Second operand
+    * @param {int*} c - Result destination
+    void mult( int a, int b, int *c );
+    */
+    `
+
+  `/** Multiplies two numbers
+    * @param {int} a - First operand
+    * @param {int} b - Second operand
+    * @retval {int} - Returns the operation result
+    int mult( int a, int b );
+    */
+    `
+
+
+## Makefile
+
+Hacer una limpieza completa y después generar todos los ejecutables:
 
 `$ make`
 
@@ -22,7 +61,7 @@ Generar el ejecutable del juego:
 
 `$ make goose`
 
- Generar el ejecutable que testea el módulo `set`:
+Generar el ejecutable que testea el módulo `set`:
 
 `$ make set_tb`
 

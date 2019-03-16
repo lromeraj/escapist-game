@@ -20,10 +20,11 @@
 
 typedef struct _Game Game;
 
-/** game_add_space adds a given space into the game.
+/** Adds a given space into the game
 *
-* @param {Game*} - game, {Space*} - space;
-* @return {STATUS} - Returns an status code;
+* @param {Game*} game - Game pointer
+* @param {Space*} space - Space pointer
+* @retval {STATUS} - Returns an status code
 */
 STATUS game_add_space(Game *game, Space *space);
 

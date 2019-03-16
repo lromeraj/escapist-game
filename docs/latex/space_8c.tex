@@ -1,0 +1,507 @@
+\hypertarget{space_8c}{}\section{src/space.c File Reference}
+\label{space_8c}\index{src/space.\+c@{src/space.\+c}}
+{\ttfamily \#include \char`\"{}space.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}types.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}object.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+Include dependency graph for space.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{space_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct__Space}{\+\_\+\+Space}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{struct__Space}{Space} $\ast$ \hyperlink{space_8c_a162866fcea156b800fd546d0ffd271c9}{space\+\_\+create} (Id id)
+\begin{DoxyCompactList}\small\item\em creates a new sapce \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{space_8c_a5c70c70398923693ddbe4dfac8d72a0d}\label{space_8c_a5c70c70398923693ddbe4dfac8d72a0d}} 
+S\+T\+A\+T\+US {\bfseries space\+\_\+destroy} (\hyperlink{struct__Space}{Space} $\ast$space)
+\item 
+S\+T\+A\+T\+US \hyperlink{space_8c_aab5b468f9822ab78dbe16d1321870d93}{space\+\_\+set\+\_\+name} (\hyperlink{struct__Space}{Space} $\ast$space, char $\ast$name)
+\begin{DoxyCompactList}\small\item\em defines the name of a space. \end{DoxyCompactList}\item 
+S\+T\+A\+T\+US \hyperlink{space_8c_a9e6e3e3bac4996ac6b8bd555e52bfb26}{space\+\_\+set\+\_\+north} (\hyperlink{struct__Space}{Space} $\ast$space, Id id)
+\begin{DoxyCompactList}\small\item\em sets the id of a space to north. \end{DoxyCompactList}\item 
+S\+T\+A\+T\+US \hyperlink{space_8c_a422ab9f220b4c471c44256a27377de1a}{space\+\_\+set\+\_\+south} (\hyperlink{struct__Space}{Space} $\ast$space, Id id)
+\begin{DoxyCompactList}\small\item\em sets the id of a space to south. \end{DoxyCompactList}\item 
+S\+T\+A\+T\+US \hyperlink{space_8c_a860a8f3e0227955ad56d1a12f0bdc44a}{space\+\_\+set\+\_\+east} (\hyperlink{struct__Space}{Space} $\ast$space, Id id)
+\begin{DoxyCompactList}\small\item\em sets the id of a space to east. \end{DoxyCompactList}\item 
+S\+T\+A\+T\+US \hyperlink{space_8c_ad44b14cb38902cf31fa1f341beaab0db}{space\+\_\+set\+\_\+west} (\hyperlink{struct__Space}{Space} $\ast$space, Id id)
+\begin{DoxyCompactList}\small\item\em sets the id of a space to west. \end{DoxyCompactList}\item 
+S\+T\+A\+T\+US \hyperlink{space_8c_a32c30f0aa89f3f28c06802f1c72c1fdc}{space\+\_\+del\+\_\+object} (\hyperlink{struct__Space}{Space} $\ast$space, Id id)
+\begin{DoxyCompactList}\small\item\em it deletes the object with the specified id from the space \end{DoxyCompactList}\item 
+S\+T\+A\+T\+US \hyperlink{space_8c_a69b9e22046b7b44dc5aa2afe7cc0a1b9}{space\+\_\+add\+\_\+object} (\hyperlink{struct__Space}{Space} $\ast$space, Id id)
+\begin{DoxyCompactList}\small\item\em it adds the object with the specified id to the space \end{DoxyCompactList}\item 
+const char $\ast$ \hyperlink{space_8c_a310c540cd6e11073f7328add1f927001}{space\+\_\+get\+\_\+name} (\hyperlink{struct__Space}{Space} $\ast$space)
+\begin{DoxyCompactList}\small\item\em takes the name of a space. \end{DoxyCompactList}\item 
+Id \hyperlink{space_8c_ac8ddfd0d8692fd852ee49698c446cb50}{space\+\_\+get\+\_\+id} (\hyperlink{struct__Space}{Space} $\ast$space)
+\begin{DoxyCompactList}\small\item\em takes the id of a space. \end{DoxyCompactList}\item 
+Id \hyperlink{space_8c_ad331fba774897900f615d9d2e8d81a90}{space\+\_\+get\+\_\+north} (\hyperlink{struct__Space}{Space} $\ast$space)
+\begin{DoxyCompactList}\small\item\em gets a pointer towards north. \end{DoxyCompactList}\item 
+Id \hyperlink{space_8c_a9b86e1335c423eaad832e50d4c12cf1f}{space\+\_\+get\+\_\+south} (\hyperlink{struct__Space}{Space} $\ast$space)
+\begin{DoxyCompactList}\small\item\em gets a pointer towards south. \end{DoxyCompactList}\item 
+Id \hyperlink{space_8c_a978a22b77f74bb2dab68a00571abbe0b}{space\+\_\+get\+\_\+east} (\hyperlink{struct__Space}{Space} $\ast$space)
+\begin{DoxyCompactList}\small\item\em gets a pointer towards east. \end{DoxyCompactList}\item 
+Id \hyperlink{space_8c_af495ebfd5d13eba1a48cebd10992a17f}{space\+\_\+get\+\_\+west} (\hyperlink{struct__Space}{Space} $\ast$space)
+\begin{DoxyCompactList}\small\item\em gets a pointer towards west. \end{DoxyCompactList}\item 
+Id \hyperlink{space_8c_ab7442e9184cd345333916b04165ab843}{space\+\_\+get\+\_\+object} (\hyperlink{struct__Space}{Space} $\ast$space, Id id)
+\begin{DoxyCompactList}\small\item\em gets a pointer towads an object. \end{DoxyCompactList}\item 
+bool \hyperlink{space_8c_a3d17d1e189651d3d997891d4649e96c1}{space\+\_\+has\+\_\+object} (\hyperlink{struct__Space}{Space} $\ast$space, Id id)
+\begin{DoxyCompactList}\small\item\em checks if the space has an object with the specified id \end{DoxyCompactList}\item 
+S\+T\+A\+T\+US \hyperlink{space_8c_a49badcee7e68b79f40dad37c83193f74}{space\+\_\+set\+\_\+picture} (\hyperlink{struct__Space}{Space} $\ast$space, char $\ast$pict)
+\begin{DoxyCompactList}\small\item\em it paints the figure associated to the space \end{DoxyCompactList}\item 
+char $\ast$ \hyperlink{space_8c_ae1afecfe9f7bb189edfc2f5bbd39b47f}{space\+\_\+get\+\_\+picture} (\hyperlink{struct__Space}{Space} $\ast$space)
+\begin{DoxyCompactList}\small\item\em it gets the figure associated to the specified space \end{DoxyCompactList}\item 
+S\+T\+A\+T\+US \hyperlink{space_8c_a18eca058da6cdf20ae5eda9d122d992e}{space\+\_\+print} (\hyperlink{struct__Space}{Space} $\ast$space)
+\begin{DoxyCompactList}\small\item\em prints a space. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Manages the cells player can move to.
+
+\begin{DoxyAuthor}{Author}
+Álvaro Rodríguez $\vert$$\vert$ Javier Romera 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+07/02/2019 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+G\+NU Public License 
+\end{DoxyCopyright}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{space_8c_a69b9e22046b7b44dc5aa2afe7cc0a1b9}\label{space_8c_a69b9e22046b7b44dc5aa2afe7cc0a1b9}} 
+\index{space.\+c@{space.\+c}!space\+\_\+add\+\_\+object@{space\+\_\+add\+\_\+object}}
+\index{space\+\_\+add\+\_\+object@{space\+\_\+add\+\_\+object}!space.\+c@{space.\+c}}
+\subsubsection{\texorpdfstring{space\+\_\+add\+\_\+object()}{space\_add\_object()}}
+{\footnotesize\ttfamily S\+T\+A\+T\+US space\+\_\+add\+\_\+object (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Space}{Space} $\ast$}]{space,  }\item[{Id}]{id }\end{DoxyParamCaption})}
+
+
+
+it adds the object with the specified id to the space 
+
+\begin{DoxyAuthor}{Author}
+Javier Romera 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+Space$\ast$\}} & -\/ space; \{Id\} -\/ id; \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\{S\+T\+A\+T\+US\} -\/ Returns an state; 
+\end{DoxyReturn}
+\mbox{\Hypertarget{space_8c_a162866fcea156b800fd546d0ffd271c9}\label{space_8c_a162866fcea156b800fd546d0ffd271c9}} 
+\index{space.\+c@{space.\+c}!space\+\_\+create@{space\+\_\+create}}
+\index{space\+\_\+create@{space\+\_\+create}!space.\+c@{space.\+c}}
+\subsubsection{\texorpdfstring{space\+\_\+create()}{space\_create()}}
+{\footnotesize\ttfamily \hyperlink{struct__Space}{Space}$\ast$ space\+\_\+create (\begin{DoxyParamCaption}\item[{Id}]{id }\end{DoxyParamCaption})}
+
+
+
+creates a new sapce 
+
+\begin{DoxyAuthor}{Author}
+Javier Romera 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+Id\}} & -\/ id; \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\{Space\} -\/ returns an space pointer; 
+\end{DoxyReturn}
+\mbox{\Hypertarget{space_8c_a32c30f0aa89f3f28c06802f1c72c1fdc}\label{space_8c_a32c30f0aa89f3f28c06802f1c72c1fdc}} 
+\index{space.\+c@{space.\+c}!space\+\_\+del\+\_\+object@{space\+\_\+del\+\_\+object}}
+\index{space\+\_\+del\+\_\+object@{space\+\_\+del\+\_\+object}!space.\+c@{space.\+c}}
+\subsubsection{\texorpdfstring{space\+\_\+del\+\_\+object()}{space\_del\_object()}}
+{\footnotesize\ttfamily S\+T\+A\+T\+US space\+\_\+del\+\_\+object (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Space}{Space} $\ast$}]{space,  }\item[{Id}]{id }\end{DoxyParamCaption})}
+
+
+
+it deletes the object with the specified id from the space 
+
+\begin{DoxyAuthor}{Author}
+Javier Romera 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+Space$\ast$\}} & -\/ space; \{Id\} -\/ id; \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\{S\+T\+A\+T\+US\} -\/ Returns an state; 
+\end{DoxyReturn}
+\mbox{\Hypertarget{space_8c_a978a22b77f74bb2dab68a00571abbe0b}\label{space_8c_a978a22b77f74bb2dab68a00571abbe0b}} 
+\index{space.\+c@{space.\+c}!space\+\_\+get\+\_\+east@{space\+\_\+get\+\_\+east}}
+\index{space\+\_\+get\+\_\+east@{space\+\_\+get\+\_\+east}!space.\+c@{space.\+c}}
+\subsubsection{\texorpdfstring{space\+\_\+get\+\_\+east()}{space\_get\_east()}}
+{\footnotesize\ttfamily Id space\+\_\+get\+\_\+east (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Space}{Space} $\ast$}]{space }\end{DoxyParamCaption})}
+
+
+
+gets a pointer towards east. 
+
+\begin{DoxyAuthor}{Author}
+Javier Romera 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+Space$\ast$\}} & -\/ space; \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\{S\+T\+A\+T\+US\} -\/ Returns an state; 
+\end{DoxyReturn}
+\mbox{\Hypertarget{space_8c_ac8ddfd0d8692fd852ee49698c446cb50}\label{space_8c_ac8ddfd0d8692fd852ee49698c446cb50}} 
+\index{space.\+c@{space.\+c}!space\+\_\+get\+\_\+id@{space\+\_\+get\+\_\+id}}
+\index{space\+\_\+get\+\_\+id@{space\+\_\+get\+\_\+id}!space.\+c@{space.\+c}}
+\subsubsection{\texorpdfstring{space\+\_\+get\+\_\+id()}{space\_get\_id()}}
+{\footnotesize\ttfamily Id space\+\_\+get\+\_\+id (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Space}{Space} $\ast$}]{space }\end{DoxyParamCaption})}
+
+
+
+takes the id of a space. 
+
+\begin{DoxyAuthor}{Author}
+Javier Romera 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+2.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+07/02/2019 
+\end{DoxyDate}
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+Space$\ast$\}} & -\/ space; \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\{Id\} -\/ Returns an id; 
+\end{DoxyReturn}
+\mbox{\Hypertarget{space_8c_a310c540cd6e11073f7328add1f927001}\label{space_8c_a310c540cd6e11073f7328add1f927001}} 
+\index{space.\+c@{space.\+c}!space\+\_\+get\+\_\+name@{space\+\_\+get\+\_\+name}}
+\index{space\+\_\+get\+\_\+name@{space\+\_\+get\+\_\+name}!space.\+c@{space.\+c}}
+\subsubsection{\texorpdfstring{space\+\_\+get\+\_\+name()}{space\_get\_name()}}
+{\footnotesize\ttfamily const char$\ast$ space\+\_\+get\+\_\+name (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Space}{Space} $\ast$}]{space }\end{DoxyParamCaption})}
+
+
+
+takes the name of a space. 
+
+\begin{DoxyAuthor}{Author}
+Javier Romera 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+2.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+07/02/2019 
+\end{DoxyDate}
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+Space$\ast$\}} & -\/ space; \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\{const char$\ast$\} -\/ Returns a constant character array; 
+\end{DoxyReturn}
+\mbox{\Hypertarget{space_8c_ad331fba774897900f615d9d2e8d81a90}\label{space_8c_ad331fba774897900f615d9d2e8d81a90}} 
+\index{space.\+c@{space.\+c}!space\+\_\+get\+\_\+north@{space\+\_\+get\+\_\+north}}
+\index{space\+\_\+get\+\_\+north@{space\+\_\+get\+\_\+north}!space.\+c@{space.\+c}}
+\subsubsection{\texorpdfstring{space\+\_\+get\+\_\+north()}{space\_get\_north()}}
+{\footnotesize\ttfamily Id space\+\_\+get\+\_\+north (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Space}{Space} $\ast$}]{space }\end{DoxyParamCaption})}
+
+
+
+gets a pointer towards north. 
+
+\begin{DoxyAuthor}{Author}
+Javier Romera 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+Space$\ast$\}} & -\/ space; \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\{S\+T\+A\+T\+US\} -\/ Returns an state; 
+\end{DoxyReturn}
+\mbox{\Hypertarget{space_8c_ab7442e9184cd345333916b04165ab843}\label{space_8c_ab7442e9184cd345333916b04165ab843}} 
+\index{space.\+c@{space.\+c}!space\+\_\+get\+\_\+object@{space\+\_\+get\+\_\+object}}
+\index{space\+\_\+get\+\_\+object@{space\+\_\+get\+\_\+object}!space.\+c@{space.\+c}}
+\subsubsection{\texorpdfstring{space\+\_\+get\+\_\+object()}{space\_get\_object()}}
+{\footnotesize\ttfamily Id space\+\_\+get\+\_\+object (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Space}{Space} $\ast$}]{space,  }\item[{Id}]{id }\end{DoxyParamCaption})}
+
+
+
+gets a pointer towads an object. 
+
+\begin{DoxyAuthor}{Author}
+Javier Romera 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+Game$\ast$\}} & -\/ game; \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\{void\} -\/ Do not returns nothing; 
+\end{DoxyReturn}
+\mbox{\Hypertarget{space_8c_ae1afecfe9f7bb189edfc2f5bbd39b47f}\label{space_8c_ae1afecfe9f7bb189edfc2f5bbd39b47f}} 
+\index{space.\+c@{space.\+c}!space\+\_\+get\+\_\+picture@{space\+\_\+get\+\_\+picture}}
+\index{space\+\_\+get\+\_\+picture@{space\+\_\+get\+\_\+picture}!space.\+c@{space.\+c}}
+\subsubsection{\texorpdfstring{space\+\_\+get\+\_\+picture()}{space\_get\_picture()}}
+{\footnotesize\ttfamily char$\ast$ space\+\_\+get\+\_\+picture (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Space}{Space} $\ast$}]{space }\end{DoxyParamCaption})}
+
+
+
+it gets the figure associated to the specified space 
+
+\begin{DoxyAuthor}{Author}
+Javier Romera 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+Space$\ast$\}} & -\/ space; \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\{char$\ast$\} -\/ Returns a pointer to char; 
+\end{DoxyReturn}
+\mbox{\Hypertarget{space_8c_a9b86e1335c423eaad832e50d4c12cf1f}\label{space_8c_a9b86e1335c423eaad832e50d4c12cf1f}} 
+\index{space.\+c@{space.\+c}!space\+\_\+get\+\_\+south@{space\+\_\+get\+\_\+south}}
+\index{space\+\_\+get\+\_\+south@{space\+\_\+get\+\_\+south}!space.\+c@{space.\+c}}
+\subsubsection{\texorpdfstring{space\+\_\+get\+\_\+south()}{space\_get\_south()}}
+{\footnotesize\ttfamily Id space\+\_\+get\+\_\+south (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Space}{Space} $\ast$}]{space }\end{DoxyParamCaption})}
+
+
+
+gets a pointer towards south. 
+
+\begin{DoxyAuthor}{Author}
+Javier Romera 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+Space$\ast$\}} & -\/ space; \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\{S\+T\+A\+T\+US\} -\/ Returns an state; 
+\end{DoxyReturn}
+\mbox{\Hypertarget{space_8c_af495ebfd5d13eba1a48cebd10992a17f}\label{space_8c_af495ebfd5d13eba1a48cebd10992a17f}} 
+\index{space.\+c@{space.\+c}!space\+\_\+get\+\_\+west@{space\+\_\+get\+\_\+west}}
+\index{space\+\_\+get\+\_\+west@{space\+\_\+get\+\_\+west}!space.\+c@{space.\+c}}
+\subsubsection{\texorpdfstring{space\+\_\+get\+\_\+west()}{space\_get\_west()}}
+{\footnotesize\ttfamily Id space\+\_\+get\+\_\+west (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Space}{Space} $\ast$}]{space }\end{DoxyParamCaption})}
+
+
+
+gets a pointer towards west. 
+
+\begin{DoxyAuthor}{Author}
+Javier Romera 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+Space$\ast$\}} & -\/ space; \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\{S\+T\+A\+T\+US\} -\/ Returns an state; 
+\end{DoxyReturn}
+\mbox{\Hypertarget{space_8c_a3d17d1e189651d3d997891d4649e96c1}\label{space_8c_a3d17d1e189651d3d997891d4649e96c1}} 
+\index{space.\+c@{space.\+c}!space\+\_\+has\+\_\+object@{space\+\_\+has\+\_\+object}}
+\index{space\+\_\+has\+\_\+object@{space\+\_\+has\+\_\+object}!space.\+c@{space.\+c}}
+\subsubsection{\texorpdfstring{space\+\_\+has\+\_\+object()}{space\_has\_object()}}
+{\footnotesize\ttfamily bool space\+\_\+has\+\_\+object (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Space}{Space} $\ast$}]{space,  }\item[{Id}]{id }\end{DoxyParamCaption})}
+
+
+
+checks if the space has an object with the specified id 
+
+\begin{DoxyAuthor}{Author}
+Javier Romera 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+2.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+07/02/2019 
+\end{DoxyDate}
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+Space\}} & -\/ space; \{Id\} -\/ id; \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\{bool\} -\/ Returns T\+R\+UE or F\+A\+L\+SE; 
+\end{DoxyReturn}
+\mbox{\Hypertarget{space_8c_a18eca058da6cdf20ae5eda9d122d992e}\label{space_8c_a18eca058da6cdf20ae5eda9d122d992e}} 
+\index{space.\+c@{space.\+c}!space\+\_\+print@{space\+\_\+print}}
+\index{space\+\_\+print@{space\+\_\+print}!space.\+c@{space.\+c}}
+\subsubsection{\texorpdfstring{space\+\_\+print()}{space\_print()}}
+{\footnotesize\ttfamily S\+T\+A\+T\+US space\+\_\+print (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Space}{Space} $\ast$}]{space }\end{DoxyParamCaption})}
+
+
+
+prints a space. 
+
+\begin{DoxyAuthor}{Author}
+Javier Romera 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+Game$\ast$\}} & -\/ game; \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\{void\} -\/ Do not returns nothing; 
+\end{DoxyReturn}
+\mbox{\Hypertarget{space_8c_a860a8f3e0227955ad56d1a12f0bdc44a}\label{space_8c_a860a8f3e0227955ad56d1a12f0bdc44a}} 
+\index{space.\+c@{space.\+c}!space\+\_\+set\+\_\+east@{space\+\_\+set\+\_\+east}}
+\index{space\+\_\+set\+\_\+east@{space\+\_\+set\+\_\+east}!space.\+c@{space.\+c}}
+\subsubsection{\texorpdfstring{space\+\_\+set\+\_\+east()}{space\_set\_east()}}
+{\footnotesize\ttfamily S\+T\+A\+T\+US space\+\_\+set\+\_\+east (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Space}{Space} $\ast$}]{space,  }\item[{Id}]{id }\end{DoxyParamCaption})}
+
+
+
+sets the id of a space to east. 
+
+\begin{DoxyAuthor}{Author}
+Javier Romera 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+Space$\ast$\}} & -\/ space; \{Id\} -\/ id; \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\{S\+T\+A\+T\+US\} -\/ Returns an state; 
+\end{DoxyReturn}
+\mbox{\Hypertarget{space_8c_aab5b468f9822ab78dbe16d1321870d93}\label{space_8c_aab5b468f9822ab78dbe16d1321870d93}} 
+\index{space.\+c@{space.\+c}!space\+\_\+set\+\_\+name@{space\+\_\+set\+\_\+name}}
+\index{space\+\_\+set\+\_\+name@{space\+\_\+set\+\_\+name}!space.\+c@{space.\+c}}
+\subsubsection{\texorpdfstring{space\+\_\+set\+\_\+name()}{space\_set\_name()}}
+{\footnotesize\ttfamily S\+T\+A\+T\+US space\+\_\+set\+\_\+name (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Space}{Space} $\ast$}]{space,  }\item[{char $\ast$}]{name }\end{DoxyParamCaption})}
+
+
+
+defines the name of a space. 
+
+\begin{DoxyAuthor}{Author}
+Javier Romera 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+2.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+07/02/2019 
+\end{DoxyDate}
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+Space$\ast$\}} & -\/ space; \{Char$\ast$\} -\/ name; \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\{S\+T\+A\+T\+US\} -\/ Returns an state; 
+\end{DoxyReturn}
+\mbox{\Hypertarget{space_8c_a9e6e3e3bac4996ac6b8bd555e52bfb26}\label{space_8c_a9e6e3e3bac4996ac6b8bd555e52bfb26}} 
+\index{space.\+c@{space.\+c}!space\+\_\+set\+\_\+north@{space\+\_\+set\+\_\+north}}
+\index{space\+\_\+set\+\_\+north@{space\+\_\+set\+\_\+north}!space.\+c@{space.\+c}}
+\subsubsection{\texorpdfstring{space\+\_\+set\+\_\+north()}{space\_set\_north()}}
+{\footnotesize\ttfamily S\+T\+A\+T\+US space\+\_\+set\+\_\+north (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Space}{Space} $\ast$}]{space,  }\item[{Id}]{id }\end{DoxyParamCaption})}
+
+
+
+sets the id of a space to north. 
+
+\begin{DoxyAuthor}{Author}
+Javier Romera 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+Space$\ast$\}} & -\/ space; \{Id\} -\/ id; \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\{S\+T\+A\+T\+US\} -\/ Returns an state; 
+\end{DoxyReturn}
+\mbox{\Hypertarget{space_8c_a49badcee7e68b79f40dad37c83193f74}\label{space_8c_a49badcee7e68b79f40dad37c83193f74}} 
+\index{space.\+c@{space.\+c}!space\+\_\+set\+\_\+picture@{space\+\_\+set\+\_\+picture}}
+\index{space\+\_\+set\+\_\+picture@{space\+\_\+set\+\_\+picture}!space.\+c@{space.\+c}}
+\subsubsection{\texorpdfstring{space\+\_\+set\+\_\+picture()}{space\_set\_picture()}}
+{\footnotesize\ttfamily S\+T\+A\+T\+US space\+\_\+set\+\_\+picture (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Space}{Space} $\ast$}]{space,  }\item[{char $\ast$}]{pict }\end{DoxyParamCaption})}
+
+
+
+it paints the figure associated to the space 
+
+\begin{DoxyAuthor}{Author}
+Javier Romera 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+Space$\ast$\}} & -\/ space; \{char$\ast$\} -\/ pict; \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\{S\+T\+A\+T\+US\} -\/ Returns an state; 
+\end{DoxyReturn}
+\mbox{\Hypertarget{space_8c_a422ab9f220b4c471c44256a27377de1a}\label{space_8c_a422ab9f220b4c471c44256a27377de1a}} 
+\index{space.\+c@{space.\+c}!space\+\_\+set\+\_\+south@{space\+\_\+set\+\_\+south}}
+\index{space\+\_\+set\+\_\+south@{space\+\_\+set\+\_\+south}!space.\+c@{space.\+c}}
+\subsubsection{\texorpdfstring{space\+\_\+set\+\_\+south()}{space\_set\_south()}}
+{\footnotesize\ttfamily S\+T\+A\+T\+US space\+\_\+set\+\_\+south (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Space}{Space} $\ast$}]{space,  }\item[{Id}]{id }\end{DoxyParamCaption})}
+
+
+
+sets the id of a space to south. 
+
+\begin{DoxyAuthor}{Author}
+Javier Romera 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+Space$\ast$\}} & -\/ space; \{Id\} -\/ id; \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\{S\+T\+A\+T\+US\} -\/ Returns an state; 
+\end{DoxyReturn}
+\mbox{\Hypertarget{space_8c_ad44b14cb38902cf31fa1f341beaab0db}\label{space_8c_ad44b14cb38902cf31fa1f341beaab0db}} 
+\index{space.\+c@{space.\+c}!space\+\_\+set\+\_\+west@{space\+\_\+set\+\_\+west}}
+\index{space\+\_\+set\+\_\+west@{space\+\_\+set\+\_\+west}!space.\+c@{space.\+c}}
+\subsubsection{\texorpdfstring{space\+\_\+set\+\_\+west()}{space\_set\_west()}}
+{\footnotesize\ttfamily S\+T\+A\+T\+US space\+\_\+set\+\_\+west (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Space}{Space} $\ast$}]{space,  }\item[{Id}]{id }\end{DoxyParamCaption})}
+
+
+
+sets the id of a space to west. 
+
+\begin{DoxyAuthor}{Author}
+Javier Romera 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+Space$\ast$\}} & -\/ space; \{Id\} -\/ id; \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\{S\+T\+A\+T\+US\} -\/ Returns an state; 
+\end{DoxyReturn}

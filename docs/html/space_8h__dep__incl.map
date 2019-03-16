@@ -1,0 +1,10 @@
+<map id="src/space.h" name="src/space.h">
+<area shape="rect" id="node2" href="$game_8h.html" title="It defines the game interface. " alt="" coords="253,80,339,107"/>
+<area shape="rect" id="node8" href="$reader_8c.html" title="Game file reader. " alt="" coords="391,229,481,256"/>
+<area shape="rect" id="node9" href="$space_8c.html" title="src/space.c" alt="" coords="508,80,599,107"/>
+<area shape="rect" id="node3" href="$g__engine_8c.html" title="User interface based on chars. " alt="" coords="5,229,112,256"/>
+<area shape="rect" id="node4" href="$g__engine_8h_source.html" title="src/g_engine.h" alt="" coords="111,155,217,181"/>
+<area shape="rect" id="node6" href="$game_8c.html" title="It implements the game interface and all the associated callbacks for each command. " alt="" coords="279,229,366,256"/>
+<area shape="rect" id="node7" href="$reader_8h.html" title="Defines a game reader. " alt="" coords="292,155,383,181"/>
+<area shape="rect" id="node5" href="$game__loop_8c.html" title="Main game loop. " alt="" coords="137,229,255,256"/>
+</map>

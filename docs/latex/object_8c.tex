@@ -1,0 +1,61 @@
+\hypertarget{object_8c}{}\section{src/object.c File Reference}
+\label{object_8c}\index{src/object.\+c@{src/object.\+c}}
+
+
+Manages the game objects.  
+
+
+{\ttfamily \#include \char`\"{}object.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+Include dependency graph for object.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{object_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct__Object}{\+\_\+\+Object}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{object_8c_a74155461b19a380976895194a7181965}\label{object_8c_a74155461b19a380976895194a7181965}} 
+\hyperlink{struct__Object}{Object} $\ast$ {\bfseries obj\+\_\+init} ()
+\item 
+\mbox{\Hypertarget{object_8c_ac9aeb62f8e8555a59661cca384db6b47}\label{object_8c_ac9aeb62f8e8555a59661cca384db6b47}} 
+void {\bfseries obj\+\_\+destroy} (\hyperlink{struct__Object}{Object} $\ast$obj)
+\item 
+\mbox{\Hypertarget{object_8c_a35e89614838eaf4f660b70d8e1bb7a83}\label{object_8c_a35e89614838eaf4f660b70d8e1bb7a83}} 
+void {\bfseries obj\+\_\+set\+\_\+name} (\hyperlink{struct__Object}{Object} $\ast$obj, const char $\ast$name)
+\item 
+\mbox{\Hypertarget{object_8c_a9592df618edfeffbb0cf0ae098e06ac7}\label{object_8c_a9592df618edfeffbb0cf0ae098e06ac7}} 
+const char $\ast$ {\bfseries obj\+\_\+get\+\_\+name} (\hyperlink{struct__Object}{Object} $\ast$obj)
+\item 
+\mbox{\Hypertarget{object_8c_af3ca397f0f2c6784bde1f1ae5d63b7f9}\label{object_8c_af3ca397f0f2c6784bde1f1ae5d63b7f9}} 
+void {\bfseries obj\+\_\+set\+\_\+id} (\hyperlink{struct__Object}{Object} $\ast$obj, const Id id)
+\item 
+\mbox{\Hypertarget{object_8c_a7241dbfc246b252ee486f31519794922}\label{object_8c_a7241dbfc246b252ee486f31519794922}} 
+const Id {\bfseries obj\+\_\+get\+\_\+id} (\hyperlink{struct__Object}{Object} $\ast$obj)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Manages the game objects. 
+
+\begin{DoxyAuthor}{Author}
+Álvaro Rodríguez \& Javier Romera 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+07/02/2019 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+G\+NU Public License 
+\end{DoxyCopyright}

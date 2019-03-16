@@ -1,0 +1,95 @@
+\hypertarget{log_8h}{}\section{src/log.h File Reference}
+\label{log_8h}\index{src/log.\+h@{src/log.\+h}}
+
+
+Logger.  
+
+
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+Include dependency graph for log.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=136pt]{log_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=169pt]{log_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{Indent}\textbf{ log\+\_\+begin}\par
+{\em it checks if the log file is open
+
+\begin{DoxyAuthor}{Author}
+Javier Romera 
+\end{DoxyAuthor}
+\begin{DoxyReturn}{Returns}
+\{bool\} -\/ Returns false or true 
+\end{DoxyReturn}
+}\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{log_8h_a0c91588938d1cce9d3e9cb940054cd0c}\label{log_8h_a0c91588938d1cce9d3e9cb940054cd0c}} 
+void {\bfseries log\+\_\+begin} (const char $\ast$log\+\_\+n)
+\item 
+\mbox{\Hypertarget{log_8h_a91c077066e868dc9488657aaf84d911d}\label{log_8h_a91c077066e868dc9488657aaf84d911d}} 
+bool {\bfseries log\+\_\+is\+Open} ()
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ log\+\_\+w}\par
+{\em writes in the file
+
+\begin{DoxyAuthor}{Author}
+Javier Romera 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em \{const} & char$\ast$\} frm -\/ String format \\
+\hline
+{\em \{...\}} & -\/ String format arguments \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\{void\} -\/ Do not returns nothing 
+\end{DoxyReturn}
+}\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{log_8h_a364f0afe48f0446c287eb861e30672e5}\label{log_8h_a364f0afe48f0446c287eb861e30672e5}} 
+void {\bfseries log\+\_\+w} (const char $\ast$frm,...)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ log\+\_\+end}\par
+{\em it closes the file opened before
+
+\begin{DoxyAuthor}{Author}
+Javier Romera 
+\end{DoxyAuthor}
+\begin{DoxyReturn}{Returns}
+\{void\} -\/ Do not returns nothing 
+\end{DoxyReturn}
+}\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{log_8h_a73e93b618b1802ac18d6e6d81b246378}\label{log_8h_a73e93b618b1802ac18d6e6d81b246378}} 
+void {\bfseries log\+\_\+end} ()
+\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\subsection{Detailed Description}
+Logger. 
+
+\begin{DoxyAuthor}{Author}
+Javier Romera 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+3.\+3 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+16/02/2019 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+G\+NU Public License 
+\end{DoxyCopyright}

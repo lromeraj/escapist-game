@@ -1,6 +1,6 @@
 # I3
 
-## v3.0.1
+## v0.3.1
 
 `[IMPROVEMENTS]`
 - Improved `game` module.

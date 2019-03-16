@@ -12,5 +12,8 @@ set_tb:
 dist:
 	./target -e goose -d
 
+doc:
+	doxygen Doxyfile
+
 clean:
 	./target -e goose --clean -e die_tb --clean -e set_tb --clean

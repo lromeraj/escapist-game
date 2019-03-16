@@ -1,0 +1,12 @@
+<map id="src/game_loop.c" name="src/game_loop.c">
+<area shape="rect" id="node2" href="$g__engine_8h_source.html" title="g_engine.h" alt="" coords="282,80,367,107"/>
+<area shape="rect" id="node5" href="$types_8h.html" title="It defines common type. " alt="" coords="229,379,295,405"/>
+<area shape="rect" id="node14" href="$log_8h.html" title="Logger. " alt="" coords="559,155,610,181"/>
+<area shape="rect" id="node3" href="$game_8h.html" title="It defines the game interface. " alt="" coords="225,155,291,181"/>
+<area shape="rect" id="node4" href="$cmd_8h_source.html" title="cmd.h" alt="" coords="199,304,258,331"/>
+<area shape="rect" id="node8" href="$space_8h.html" title="Space module. " alt="" coords="296,229,364,256"/>
+<area shape="rect" id="node11" href="$player_8h.html" title="It defines a player. " alt="" coords="5,304,73,331"/>
+<area shape="rect" id="node12" href="$object_8h.html" title="Object manager. " alt="" coords="77,229,145,256"/>
+<area shape="rect" id="node13" href="$die_8h_source.html" title="die.h" alt="" coords="170,229,221,256"/>
+<area shape="rect" id="node9" href="$set_8h_source.html" title="set.h" alt="" coords="333,304,383,331"/>
+</map>

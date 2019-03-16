@@ -1,0 +1,98 @@
+\hypertarget{game__loop_8c}{}\section{src/game\+\_\+loop.c File Reference}
+\label{game__loop_8c}\index{src/game\+\_\+loop.\+c@{src/game\+\_\+loop.\+c}}
+
+
+Main game loop.  
+
+
+{\ttfamily \#include \char`\"{}g\+\_\+engine.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}types.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}log.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$signal.\+h$>$}\newline
+Include dependency graph for game\+\_\+loop.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{game__loop_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{game__loop_8c_ac2aeadb517220b0bdc34fe1963ef4d9f}{ctrl\+\_\+c} ()
+\item 
+void \hyperlink{game__loop_8c_a0ed15a34423726cf23f8dd30a0968dbb}{\+\_\+kill} (int)
+\item 
+\mbox{\Hypertarget{game__loop_8c_abe62cf25c3e968d4548ffc64cef3e521}\label{game__loop_8c_abe62cf25c3e968d4548ffc64cef3e521}} 
+void {\bfseries ctrl\+\_\+c} (int sign)
+\item 
+\mbox{\Hypertarget{game__loop_8c_a0ddf1224851353fc92bfbff6f499fa97}\label{game__loop_8c_a0ddf1224851353fc92bfbff6f499fa97}} 
+int {\bfseries main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{game__loop_8c_a58bdb5643d0814ac4e697a1564b79b70}\label{game__loop_8c_a58bdb5643d0814ac4e697a1564b79b70}} 
+\hyperlink{struct__Game}{Game} $\ast$ {\bfseries game}
+\item 
+\mbox{\Hypertarget{game__loop_8c_a01956169a8ec25a149bc0130df54e3d8}\label{game__loop_8c_a01956169a8ec25a149bc0130df54e3d8}} 
+\hyperlink{struct__G__engine}{G\+\_\+engine} $\ast$ {\bfseries gengine}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Main game loop. 
+
+\begin{DoxyAuthor}{Author}
+Álvaro Rodríguez \& Javier Romera 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+07/02/2019 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+G\+NU Public License 
+\end{DoxyCopyright}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{game__loop_8c_a0ed15a34423726cf23f8dd30a0968dbb}\label{game__loop_8c_a0ed15a34423726cf23f8dd30a0968dbb}} 
+\index{game\+\_\+loop.\+c@{game\+\_\+loop.\+c}!\+\_\+kill@{\+\_\+kill}}
+\index{\+\_\+kill@{\+\_\+kill}!game\+\_\+loop.\+c@{game\+\_\+loop.\+c}}
+\subsubsection{\texorpdfstring{\+\_\+kill()}{\_kill()}}
+{\footnotesize\ttfamily void \+\_\+kill (\begin{DoxyParamCaption}\item[{int}]{errc }\end{DoxyParamCaption})}
+
+This function will free all the memory 
+\begin{DoxyParams}{Parameters}
+{\em \{void\}} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{game__loop_8c_ac2aeadb517220b0bdc34fe1963ef4d9f}\label{game__loop_8c_ac2aeadb517220b0bdc34fe1963ef4d9f}} 
+\index{game\+\_\+loop.\+c@{game\+\_\+loop.\+c}!ctrl\+\_\+c@{ctrl\+\_\+c}}
+\index{ctrl\+\_\+c@{ctrl\+\_\+c}!game\+\_\+loop.\+c@{game\+\_\+loop.\+c}}
+\subsubsection{\texorpdfstring{ctrl\+\_\+c()}{ctrl\_c()}}
+{\footnotesize\ttfamily void ctrl\+\_\+c (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Main function of the game, works on a loop while no exit or quit option is being introduced. Returns 1 if it fails openning data file or graphic engine module, returns 0 if the player decides quiting game.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \{int\}} & argc -\/ number of arguments with which was called the process \\
+\hline
+{\em \{char$\ast$\}} & argv -\/ arguments with which was called the process \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\{int\} -\/ returns an error code This function will be executed when a signal is dispatched 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em \{int\}} & sign -\/ Signal id \\
+\hline
+\end{DoxyParams}

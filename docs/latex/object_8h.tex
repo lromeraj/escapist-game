@@ -1,0 +1,78 @@
+\hypertarget{object_8h}{}\section{src/object.h File Reference}
+\label{object_8h}\index{src/object.\+h@{src/object.\+h}}
+
+
+Object manager.  
+
+
+{\ttfamily \#include \char`\"{}types.\+h\char`\"{}}\newline
+Include dependency graph for object.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=204pt]{object_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{object_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{object_8h_a0ab18f0c564533c5cf437c64e48cfb0f}\label{object_8h_a0ab18f0c564533c5cf437c64e48cfb0f}} 
+\#define {\bfseries O\+B\+J\+\_\+\+M\+A\+X\+\_\+\+N\+A\+M\+E\+\_\+\+L\+EN}~50
+\item 
+\mbox{\Hypertarget{object_8h_a5618e894ee26a87ff4100613baf38f62}\label{object_8h_a5618e894ee26a87ff4100613baf38f62}} 
+\#define {\bfseries F\+I\+R\+S\+T\+\_\+\+O\+B\+J\+E\+CT}~1
+\item 
+\mbox{\Hypertarget{object_8h_acdc7844fbd4d45737d4aa56834d37829}\label{object_8h_acdc7844fbd4d45737d4aa56834d37829}} 
+\#define {\bfseries M\+A\+X\+\_\+\+O\+B\+J\+E\+C\+TS}~4
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{object_8h_a7f8bbcda919b65ce67f92fba08e0212f}\label{object_8h_a7f8bbcda919b65ce67f92fba08e0212f}} 
+typedef struct \hyperlink{struct__Object}{\+\_\+\+Object} {\bfseries Object}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{object_8h_a74155461b19a380976895194a7181965}\label{object_8h_a74155461b19a380976895194a7181965}} 
+\hyperlink{struct__Object}{Object} $\ast$ {\bfseries obj\+\_\+init} ()
+\item 
+\mbox{\Hypertarget{object_8h_ac9aeb62f8e8555a59661cca384db6b47}\label{object_8h_ac9aeb62f8e8555a59661cca384db6b47}} 
+void {\bfseries obj\+\_\+destroy} (\hyperlink{struct__Object}{Object} $\ast$obj)
+\item 
+\mbox{\Hypertarget{object_8h_a35e89614838eaf4f660b70d8e1bb7a83}\label{object_8h_a35e89614838eaf4f660b70d8e1bb7a83}} 
+void {\bfseries obj\+\_\+set\+\_\+name} (\hyperlink{struct__Object}{Object} $\ast$obj, const char $\ast$name)
+\item 
+\mbox{\Hypertarget{object_8h_a9592df618edfeffbb0cf0ae098e06ac7}\label{object_8h_a9592df618edfeffbb0cf0ae098e06ac7}} 
+const char $\ast$ {\bfseries obj\+\_\+get\+\_\+name} (\hyperlink{struct__Object}{Object} $\ast$obj)
+\item 
+\mbox{\Hypertarget{object_8h_af3ca397f0f2c6784bde1f1ae5d63b7f9}\label{object_8h_af3ca397f0f2c6784bde1f1ae5d63b7f9}} 
+void {\bfseries obj\+\_\+set\+\_\+id} (\hyperlink{struct__Object}{Object} $\ast$obj, const Id id)
+\item 
+\mbox{\Hypertarget{object_8h_a7241dbfc246b252ee486f31519794922}\label{object_8h_a7241dbfc246b252ee486f31519794922}} 
+const Id {\bfseries obj\+\_\+get\+\_\+id} (\hyperlink{struct__Object}{Object} $\ast$obj)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Object manager. 
+
+\begin{DoxyAuthor}{Author}
+Álvaro Rodríguez \& Javier Romera 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+9.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+10/03/2019 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+G\+NU Public License 
+\end{DoxyCopyright}
