@@ -22,7 +22,7 @@ a la hora de comentar.
 /**
 * @brief Short module description
 *
-* Long module description ...
+* Detailed information about the module ...
 *
 * @file File name
 * @author Authors
