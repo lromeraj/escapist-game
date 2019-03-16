@@ -1,4 +1,4 @@
-# Goose Game
+# Goose Game :game_die:
 
 El juego ha sido diseñado para ser compilado en un entorno de Linux. Para facilitar el proceso de compilación/enlazado/ejecución del juego se ha desarrollado un script, más abajo está la guía de su uso. En caso de tener cualquier problema a la hora de compilar o cualquier otro tipo de fallo, ir a la sección de `Issues` y pinchar en `New issue`, rellenar el diálogo con la información necesaria y finalmente publicar el fallo.
 
