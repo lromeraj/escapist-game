@@ -56,9 +56,7 @@ int mult( int a, int b );
 
 Hacer una limpieza completa y después generar todos los ejecutables:
 
-``` bash
-make
-```
+`$ make`
 
 Generar el ejecutable del juego:
 
