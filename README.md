@@ -46,7 +46,8 @@ a la hora de comentar.
 - Ejemplos:
 
 ``` c
-/** Multiplies two numbers
+/**
+* @brief Multiplies two numbers
 * @param {int} a - First operand
 * @param {int} b - Second operand
 * @param {int*} c - Result destination
@@ -54,7 +55,8 @@ a la hora de comentar.
 void mult( int a, int b, int *c );
 ```
 ``` c
-/** Multiplies two numbers
+/**
+* @brief Multiplies two numbers
 * @param {int} a - First operand
 * @param {int} b - Second operand
 * @retval {int} - Returns the operation result
