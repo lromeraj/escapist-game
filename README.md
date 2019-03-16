@@ -12,7 +12,7 @@ El juego ha sido diseñado para ser compilado en un entorno de Linux. Para facil
 * El archivo `data.dat` contiene la información necesaria para inicializar/cargar el juego.
 * El archivo oculto `.clang_complete` puede ser ignorado, no ofrece ningún tipo de información relevante. En general todos los archivos ocultos deberían ser ignorados.
 
-## Comentarios
+## Doxygen
 Para que **Doxygen** funcione correctamente se deben seguir ciertas instrucciones
 a la hora de comentar.
 - Todos los módulos deben de comenzar con un comentario de encabezado básico:
