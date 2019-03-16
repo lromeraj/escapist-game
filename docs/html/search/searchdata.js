@@ -1,11 +1,12 @@
 var indexSectionsWithContent =
 {
-  0: "_cgloprstu",
+  0: "_abcgiloprstu",
   1: "_",
   2: "gloprstu",
   3: "_cgprsu",
-  4: "_",
-  5: "_"
+  4: "abis",
+  5: "_",
+  6: "_"
 };
 
 var indexSectionNames =
@@ -14,8 +15,9 @@ var indexSectionNames =
   1: "classes",
   2: "files",
   3: "functions",
-  4: "enums",
-  5: "enumvalues"
+  4: "variables",
+  5: "enums",
+  6: "enumvalues"
 };
 
 var indexSectionLabels =
@@ -24,7 +26,8 @@ var indexSectionLabels =
   1: "Data Structures",
   2: "Files",
   3: "Functions",
-  4: "Enumerations",
-  5: "Enumerator"
+  4: "Variables",
+  5: "Enumerations",
+  6: "Enumerator"
 };
 

@@ -15,14 +15,17 @@
 #include <stdarg.h>
 #include <unistd.h>
 
+/**
+* @brief Command data structure
+*/
 struct _Cmd {
-  Cid id; /* id */
-  int argc; /* number of arguments */
-  char *argv[ MAX_CMD_ARGC ]; /* arguments */
-  char b_name[ MAX_CMD_LEN ]; /* base name */
-  char s_name[ MAX_CMD_LEN ]; /* short name */
-  char input[ MAX_CMD_IN ]; /* cmd input */
-  char answer[ MAX_CMD_ANS ]; /* command answer */
+  Cid id; /*!< id */
+  int argc; /*!< number of arguments */
+  char *argv[ MAX_CMD_ARGC ]; /*!< arguments */
+  char b_name[ MAX_CMD_LEN ]; /*!< base name */
+  char s_name[ MAX_CMD_LEN ]; /*!< short name */
+  char input[ MAX_CMD_IN ]; /*!< cmd input */
+  char answer[ MAX_CMD_ANS ]; /*!< command answer */
   int errc;
   cmd_fn fn; /* callback function */
 };
