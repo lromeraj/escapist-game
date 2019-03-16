@@ -26,7 +26,7 @@ a la hora de comentar.
     */
     `
   - Los comentarios de los prototipos de las funciones debería realizarse de la siguiente forma:
-```
+``` c
 /** <descripción básica de la función>
 *
 * @param {<type>} <var_name> - <description>
@@ -35,7 +35,7 @@ a la hora de comentar.
 */
 ```
 
-```
+``` c
 /** Multiplies two numbers
 * @param {int} a - First operand
 * @param {int} b - Second operand
@@ -43,7 +43,7 @@ a la hora de comentar.
 */
 void mult( int a, int b, int *c );
 ```
-```
+``` c
 /** Multiplies two numbers
 * @param {int} a - First operand
 * @param {int} b - Second operand
