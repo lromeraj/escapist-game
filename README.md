@@ -25,7 +25,7 @@ a la hora de comentar.
     * @date <última fecha de modificación>
     */
     `
-  - Los prototipos de las funciones debería realizarse de la siguiente forma:
+  - Los comentarios de los prototipos de las funciones debería realizarse de la siguiente forma:
 ```
 /** <descripción básica de la función>
 *
