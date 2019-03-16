@@ -76,14 +76,13 @@ _fnEnd()
   echo -en "========== [${BPurple}$ENV${NC}] ${BRed}$1${NC}\\n" >&1
 }
 
-
 _clean()
 {
 
   BUFFER=()
   BUFFER+=( "$TARGET" )
 
-  for m in $SRCS; do
+  for m in "${SRCS[@]}"; do
     BUFFER+=( "$OBJDIR/$m.o" )
   done
 
@@ -107,7 +106,7 @@ _link()
 
   OFILES=()
 
-  for f in $SRCS; do
+  for f in "${SRCS[@]}"; do
     if [[ -e "$OBJDIR/$f.o" ]]; then
       OFILES+=( "$OBJDIR/$f.o" )
     fi
@@ -266,16 +265,16 @@ env_load()
 {
 
   TARGET=$(env_get "TARGET")
-  TARGET_ARGS=$(env_get "TARGET_ARGS")
+  TARGET_ARGS=( $(env_get "TARGET_ARGS") )
   VGR_FLAGS=$(env_get "TARGET_FLAGS")
-  SRCS=$(env_get "SRCS")
+  SRCS=( $(env_get "SRCS") )
   OBJDIR=$(env_get "OBJDIR")
   SRCDIR=$(env_get "SRCDIR")
   ASCII_TITLE=$(env_get "ASCII_TITLE")
   ASCII_VERSION=$(env_get "ASCII_VERSION")
   DISTDIR=$(env_get "DISTDIR")
-  CFLAGS=$(env_get "CFLAGS")
-  LDFLAGS=$(env_get "CFLAGS")
+  CFLAGS=( $(env_get "CFLAGS") )
+  LDFLAGS=( $(env_get "CFLAGS") )
   CHANGELOG=$(env_get "CLOG")
 
 }
@@ -333,7 +332,7 @@ _comp()
   if [ -d "${SRCDIR}" ]; then
 
     # modules
-    for re in $SRCS; do
+    for re in "${SRCS[@]}"; do
 
       FILES=()
       cit=false # compilation flag
@@ -526,8 +525,8 @@ while [ $# -gt 0 ]; do
       if [[ -e ${TARGET} ]]; then
 
         reg="^-e|^--env"
-
         shift
+
         while [[ $# -gt 0 ]]; do
           if [[ $1 =~ $reg ]]; then break;
           else
@@ -557,9 +556,25 @@ while [ $# -gt 0 ]; do
 
       if [[ -e "${TARGET}" ]]; then
 
+        reg="^-e|^--env"
+        shift
+
+        while [[ $# -gt 0 ]]; do
+          if [[ $1 =~ $reg ]]; then break;
+          else
+            _ARGS+=( "$1" )
+            shift
+          fi
+        done
+
         if [[ -n "$( _avai valgrind )" ]]; then
-          shift 1
-          valgrind $VGR_FLAGS "./${TARGET}" "$@"
+
+          if [ ${#_ARGS[@]} -gt 0 ]; then
+            valgrind ${VGR_FLAGS} "./${TARGET}" "${_ARGS[@]}"
+          else
+            valgrind ${VGR_FLAGS} "./${TARGET}" "${TARGET_ARGS}"
+          fi
+
         else
           echo "hola"
         fi
@@ -567,8 +582,6 @@ while [ $# -gt 0 ]; do
       else
         warn "cmem: not compiled yet\\n"
       fi
-
-      shift
 
     ;;
 

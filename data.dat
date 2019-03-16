@@ -1,4 +1,4 @@
-# @s: <id> | <name> | <north> | <east> | <south> | <west> | <graphics1> | <graphics2> | <graphics3>
+# @s: <id> | <name> | <north> | <east> | <south> | <west> | <char_graph>
 
 @s: 1| Cell 1| -1|-1|  2|-1
 @s: 2| Cell 2|  1|-1|  3|-1

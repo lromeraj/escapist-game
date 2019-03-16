@@ -7,6 +7,7 @@
 - Main `Game` structure is now private.
 - Adapted modules to the new privatization.
 - `_kill()` function now needs an argument to return an exit code.
+- Improved `target` script.
 
 `[NEW]`
 - Implemented `game_get_objects()`.
