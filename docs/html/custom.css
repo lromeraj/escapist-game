@@ -1948,4 +1948,14 @@ div.contents ul li a.el {
 
 
 
+
+hr.footer {
+	border: none;
+}
+
+address.footer {
+	display: none;
+}
+
+
 /* @end */
