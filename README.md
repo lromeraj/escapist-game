@@ -17,7 +17,7 @@ Para que **Doxygen** funcione correctamente se deben seguir ciertas instruccione
 a la hora de comentar.
 ### Módulos
 - Todos los módulos deben de comenzar con un comentario de encabezado básico.
-- NO incluir este encabezado en los archivos `.c`, solamente en los archivos `.h`
+- **NO** incluir este encabezado en los archivos `.c`, **solamente en los archivos `.h`**
 
 ``` c
 /**
