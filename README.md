@@ -46,22 +46,24 @@ Procurar hacer **toda la documentación en inglés**.
 
 ``` c
 /**
-* @brief Multiplies two numbers
-* @author Gonzalo Serrano
-* @param {int} a - First operand
-* @param {int} b - Second operand
-* @param {int*} c - Result destination
+* @brief Sets up a new command and stores it inside a private array
+* @author Javier Romera
+* @param {Cid} id - Command identification
+* @param {char*} b_name - The base name of the command
+* @param {char*} s_name - The short name of the command
+* @param {cmd_fn} fn - Command callback function
 */
-void mult( int a, int b, int *c );
+void cmd_set( Cid id, const char* b_name, const char *s_name, cmd_fn fn );
 ```
+
 ``` c
 /**
-* @brief Multiplies two numbers
-* @param {int} a - First operand
-* @param {int} b - Second operand
-* @retval {int} - Returns the operation result
+* @brief Reserves memory to alloc a certain quantity of pixels
+* @param {int} __len - The quantity of pixels to be allocted
+* @retval {Ui_pix**} - Returns a pointer which points to the pixels
 */
-int mult( int a, int b );
+Ui_pix **alloc_pixs( int __len );
+
 ```
 
 ### Estructuras

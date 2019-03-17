@@ -60,9 +60,10 @@ struct _Ui {
 
 /****** PRIVATE FUNCTIONS ******/
 
-/** Reserves memory to alloc a certain quantity of pixels
+/**
+* @brief Reserves memory to alloc a certain quantity of pixels
 * @param {int} __len - The quantity of pixels to be allocted
-* @retval - Returns a pointer which points to the pixels
+* @retval {Ui_pix**} - Returns a pointer which points to the pixels
 */
 Ui_pix **alloc_pixs( int __len );
 
