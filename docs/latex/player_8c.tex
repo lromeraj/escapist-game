@@ -64,6 +64,22 @@ G\+NU Public License
 
 
 \subsection{Function Documentation}
+\mbox{\Hypertarget{player_8c_aed0f40de36238a60267abf71c6720599}\label{player_8c_aed0f40de36238a60267abf71c6720599}} 
+\index{player.\+c@{player.\+c}!player\+\_\+init@{player\+\_\+init}}
+\index{player\+\_\+init@{player\+\_\+init}!player.\+c@{player.\+c}}
+\subsubsection{\texorpdfstring{player\+\_\+init()}{player\_init()}}
+{\footnotesize\ttfamily \hyperlink{struct__Player}{Player}$\ast$ player\+\_\+init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+player\+\_\+create defines a new player.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \{\}} & -\/ do not receive arguments; \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\{Player$\ast$\} -\/ returns a player pointer; 
+\end{DoxyReturn}
 \mbox{\Hypertarget{player_8c_a68e324aa5064e27d0a2f38aafb6809ad}\label{player_8c_a68e324aa5064e27d0a2f38aafb6809ad}} 
 \index{player.\+c@{player.\+c}!player\+\_\+destroy@{player\+\_\+destroy}}
 \index{player\+\_\+destroy@{player\+\_\+destroy}!player.\+c@{player.\+c}}
@@ -79,6 +95,86 @@ player\+\_\+destroy destroys a player.
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 \{S\+T\+A\+T\+US\} -\/ Returns a state; 
+\end{DoxyReturn}
+\mbox{\Hypertarget{player_8c_a6a30809f7775f5c2d3bef47d92769e59}\label{player_8c_a6a30809f7775f5c2d3bef47d92769e59}} 
+\index{player.\+c@{player.\+c}!player\+\_\+set\+\_\+name@{player\+\_\+set\+\_\+name}}
+\index{player\+\_\+set\+\_\+name@{player\+\_\+set\+\_\+name}!player.\+c@{player.\+c}}
+\subsubsection{\texorpdfstring{player\+\_\+set\+\_\+name()}{player\_set\_name()}}
+{\footnotesize\ttfamily S\+T\+A\+T\+US player\+\_\+set\+\_\+name (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Player}{Player} $\ast$}]{player,  }\item[{char $\ast$}]{name }\end{DoxyParamCaption})}
+
+player\+\_\+set\+\_\+name defines the name of a player.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+Player$\ast$\}} & -\/ player; \{Char$\ast$\} -\/ name; \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\{S\+T\+A\+T\+US\} -\/ Returns an state; 
+\end{DoxyReturn}
+\mbox{\Hypertarget{player_8c_ac8ace1a1b6b11bc7f92a71a3922e4b83}\label{player_8c_ac8ace1a1b6b11bc7f92a71a3922e4b83}} 
+\index{player.\+c@{player.\+c}!player\+\_\+set\+\_\+location@{player\+\_\+set\+\_\+location}}
+\index{player\+\_\+set\+\_\+location@{player\+\_\+set\+\_\+location}!player.\+c@{player.\+c}}
+\subsubsection{\texorpdfstring{player\+\_\+set\+\_\+location()}{player\_set\_location()}}
+{\footnotesize\ttfamily S\+T\+A\+T\+US player\+\_\+set\+\_\+location (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Player}{Player} $\ast$}]{player,  }\item[{Id}]{id }\end{DoxyParamCaption})}
+
+player\+\_\+set\+\_\+north sets the location of a player.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+Player$\ast$\}} & -\/ player; \{Id\} -\/ id; \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\{S\+T\+A\+T\+US\} -\/ Returns an state; 
+\end{DoxyReturn}
+\mbox{\Hypertarget{player_8c_af5eacaf6a51631f28500d8127e761c1b}\label{player_8c_af5eacaf6a51631f28500d8127e761c1b}} 
+\index{player.\+c@{player.\+c}!player\+\_\+set\+\_\+object@{player\+\_\+set\+\_\+object}}
+\index{player\+\_\+set\+\_\+object@{player\+\_\+set\+\_\+object}!player.\+c@{player.\+c}}
+\subsubsection{\texorpdfstring{player\+\_\+set\+\_\+object()}{player\_set\_object()}}
+{\footnotesize\ttfamily S\+T\+A\+T\+US player\+\_\+set\+\_\+object (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Player}{Player} $\ast$}]{player,  }\item[{Id}]{id }\end{DoxyParamCaption})}
+
+player\+\_\+set\+\_\+object sets an id to a player\textquotesingle{}s object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+Player$\ast$\}} & -\/ player; \{Id\} -\/ id; \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\{S\+T\+A\+T\+US\} -\/ Returns an state; 
+\end{DoxyReturn}
+\mbox{\Hypertarget{player_8c_a6622c02be2fe230a5c0df66385a13ece}\label{player_8c_a6622c02be2fe230a5c0df66385a13ece}} 
+\index{player.\+c@{player.\+c}!player\+\_\+get\+\_\+name@{player\+\_\+get\+\_\+name}}
+\index{player\+\_\+get\+\_\+name@{player\+\_\+get\+\_\+name}!player.\+c@{player.\+c}}
+\subsubsection{\texorpdfstring{player\+\_\+get\+\_\+name()}{player\_get\_name()}}
+{\footnotesize\ttfamily const char$\ast$ player\+\_\+get\+\_\+name (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Player}{Player} $\ast$}]{player }\end{DoxyParamCaption})}
+
+player\+\_\+get\+\_\+name takes the name of a player.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+Player$\ast$\}} & -\/ player; \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\{const char$\ast$\} -\/ Returns a constant character array; 
+\end{DoxyReturn}
+\mbox{\Hypertarget{player_8c_a278466eff9dd013babc5bdbd485f1da0}\label{player_8c_a278466eff9dd013babc5bdbd485f1da0}} 
+\index{player.\+c@{player.\+c}!player\+\_\+set\+\_\+id@{player\+\_\+set\+\_\+id}}
+\index{player\+\_\+set\+\_\+id@{player\+\_\+set\+\_\+id}!player.\+c@{player.\+c}}
+\subsubsection{\texorpdfstring{player\+\_\+set\+\_\+id()}{player\_set\_id()}}
+{\footnotesize\ttfamily void player\+\_\+set\+\_\+id (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Player}{Player} $\ast$}]{player,  }\item[{Id}]{id }\end{DoxyParamCaption})}
+
+player\+\_\+set\+\_\+id sets te id of a player.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+Player$\ast$\}} & -\/ player; \{Id\} -\/ id; \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\{void\} -\/ Do not return nothing; 
 \end{DoxyReturn}
 \mbox{\Hypertarget{player_8c_af5a101ec91427951c5875569a8709956}\label{player_8c_af5a101ec91427951c5875569a8709956}} 
 \index{player.\+c@{player.\+c}!player\+\_\+get\+\_\+id@{player\+\_\+get\+\_\+id}}
@@ -112,21 +208,21 @@ player\+\_\+get\+\_\+north gets the location of a players.
 \begin{DoxyReturn}{Returns}
 \{Id\} -\/ Returns an id; 
 \end{DoxyReturn}
-\mbox{\Hypertarget{player_8c_a6622c02be2fe230a5c0df66385a13ece}\label{player_8c_a6622c02be2fe230a5c0df66385a13ece}} 
-\index{player.\+c@{player.\+c}!player\+\_\+get\+\_\+name@{player\+\_\+get\+\_\+name}}
-\index{player\+\_\+get\+\_\+name@{player\+\_\+get\+\_\+name}!player.\+c@{player.\+c}}
-\subsubsection{\texorpdfstring{player\+\_\+get\+\_\+name()}{player\_get\_name()}}
-{\footnotesize\ttfamily const char$\ast$ player\+\_\+get\+\_\+name (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Player}{Player} $\ast$}]{player }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{player_8c_a2e262401b9b2b77978b421917c13279d}\label{player_8c_a2e262401b9b2b77978b421917c13279d}} 
+\index{player.\+c@{player.\+c}!player\+\_\+has\+\_\+object@{player\+\_\+has\+\_\+object}}
+\index{player\+\_\+has\+\_\+object@{player\+\_\+has\+\_\+object}!player.\+c@{player.\+c}}
+\subsubsection{\texorpdfstring{player\+\_\+has\+\_\+object()}{player\_has\_object()}}
+{\footnotesize\ttfamily bool player\+\_\+has\+\_\+object (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Player}{Player} $\ast$}]{player }\end{DoxyParamCaption})}
 
-player\+\_\+get\+\_\+name takes the name of a player.
+player\+\_\+has\+\_\+object gets a pointer towards an object.
 
 
 \begin{DoxyParams}{Parameters}
-{\em \{\+Player$\ast$\}} & -\/ player; \\
+{\em \{\+Game$\ast$\}} & -\/ game; \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-\{const char$\ast$\} -\/ Returns a constant character array; 
+\{void\} -\/ Do not returns nothing; 
 \end{DoxyReturn}
 \mbox{\Hypertarget{player_8c_a96e37051cdc1540e0dde770f6b713f39}\label{player_8c_a96e37051cdc1540e0dde770f6b713f39}} 
 \index{player.\+c@{player.\+c}!player\+\_\+get\+\_\+object@{player\+\_\+get\+\_\+object}}
@@ -144,38 +240,6 @@ player\+\_\+get\+\_\+object gets the id of a player\textquotesingle{}s object.
 \begin{DoxyReturn}{Returns}
 \{Id\} -\/ Returns id; 
 \end{DoxyReturn}
-\mbox{\Hypertarget{player_8c_a2e262401b9b2b77978b421917c13279d}\label{player_8c_a2e262401b9b2b77978b421917c13279d}} 
-\index{player.\+c@{player.\+c}!player\+\_\+has\+\_\+object@{player\+\_\+has\+\_\+object}}
-\index{player\+\_\+has\+\_\+object@{player\+\_\+has\+\_\+object}!player.\+c@{player.\+c}}
-\subsubsection{\texorpdfstring{player\+\_\+has\+\_\+object()}{player\_has\_object()}}
-{\footnotesize\ttfamily bool player\+\_\+has\+\_\+object (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Player}{Player} $\ast$}]{player }\end{DoxyParamCaption})}
-
-player\+\_\+has\+\_\+object gets a pointer towards an object.
-
-
-\begin{DoxyParams}{Parameters}
-{\em \{\+Game$\ast$\}} & -\/ game; \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-\{void\} -\/ Do not returns nothing; 
-\end{DoxyReturn}
-\mbox{\Hypertarget{player_8c_aed0f40de36238a60267abf71c6720599}\label{player_8c_aed0f40de36238a60267abf71c6720599}} 
-\index{player.\+c@{player.\+c}!player\+\_\+init@{player\+\_\+init}}
-\index{player\+\_\+init@{player\+\_\+init}!player.\+c@{player.\+c}}
-\subsubsection{\texorpdfstring{player\+\_\+init()}{player\_init()}}
-{\footnotesize\ttfamily \hyperlink{struct__Player}{Player}$\ast$ player\+\_\+init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-player\+\_\+create defines a new player.
-
-
-\begin{DoxyParams}{Parameters}
-{\em \{\}} & -\/ do not receive arguments; \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-\{Player$\ast$\} -\/ returns a player pointer; 
-\end{DoxyReturn}
 \mbox{\Hypertarget{player_8c_aa0f2f8b4d1b63a60ef927d47aa45dbd1}\label{player_8c_aa0f2f8b4d1b63a60ef927d47aa45dbd1}} 
 \index{player.\+c@{player.\+c}!player\+\_\+print@{player\+\_\+print}}
 \index{player\+\_\+print@{player\+\_\+print}!player.\+c@{player.\+c}}
@@ -191,68 +255,4 @@ player\+\_\+print prints a player on the game screen.
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 \{void\} -\/ Do not returns nothing; 
-\end{DoxyReturn}
-\mbox{\Hypertarget{player_8c_a278466eff9dd013babc5bdbd485f1da0}\label{player_8c_a278466eff9dd013babc5bdbd485f1da0}} 
-\index{player.\+c@{player.\+c}!player\+\_\+set\+\_\+id@{player\+\_\+set\+\_\+id}}
-\index{player\+\_\+set\+\_\+id@{player\+\_\+set\+\_\+id}!player.\+c@{player.\+c}}
-\subsubsection{\texorpdfstring{player\+\_\+set\+\_\+id()}{player\_set\_id()}}
-{\footnotesize\ttfamily void player\+\_\+set\+\_\+id (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Player}{Player} $\ast$}]{player,  }\item[{Id}]{id }\end{DoxyParamCaption})}
-
-player\+\_\+set\+\_\+id sets te id of a player.
-
-
-\begin{DoxyParams}{Parameters}
-{\em \{\+Player$\ast$\}} & -\/ player; \{Id\} -\/ id; \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-\{void\} -\/ Do not return nothing; 
-\end{DoxyReturn}
-\mbox{\Hypertarget{player_8c_ac8ace1a1b6b11bc7f92a71a3922e4b83}\label{player_8c_ac8ace1a1b6b11bc7f92a71a3922e4b83}} 
-\index{player.\+c@{player.\+c}!player\+\_\+set\+\_\+location@{player\+\_\+set\+\_\+location}}
-\index{player\+\_\+set\+\_\+location@{player\+\_\+set\+\_\+location}!player.\+c@{player.\+c}}
-\subsubsection{\texorpdfstring{player\+\_\+set\+\_\+location()}{player\_set\_location()}}
-{\footnotesize\ttfamily S\+T\+A\+T\+US player\+\_\+set\+\_\+location (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Player}{Player} $\ast$}]{player,  }\item[{Id}]{id }\end{DoxyParamCaption})}
-
-player\+\_\+set\+\_\+north sets the location of a player.
-
-
-\begin{DoxyParams}{Parameters}
-{\em \{\+Player$\ast$\}} & -\/ player; \{Id\} -\/ id; \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-\{S\+T\+A\+T\+US\} -\/ Returns an state; 
-\end{DoxyReturn}
-\mbox{\Hypertarget{player_8c_a6a30809f7775f5c2d3bef47d92769e59}\label{player_8c_a6a30809f7775f5c2d3bef47d92769e59}} 
-\index{player.\+c@{player.\+c}!player\+\_\+set\+\_\+name@{player\+\_\+set\+\_\+name}}
-\index{player\+\_\+set\+\_\+name@{player\+\_\+set\+\_\+name}!player.\+c@{player.\+c}}
-\subsubsection{\texorpdfstring{player\+\_\+set\+\_\+name()}{player\_set\_name()}}
-{\footnotesize\ttfamily S\+T\+A\+T\+US player\+\_\+set\+\_\+name (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Player}{Player} $\ast$}]{player,  }\item[{char $\ast$}]{name }\end{DoxyParamCaption})}
-
-player\+\_\+set\+\_\+name defines the name of a player.
-
-
-\begin{DoxyParams}{Parameters}
-{\em \{\+Player$\ast$\}} & -\/ player; \{Char$\ast$\} -\/ name; \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-\{S\+T\+A\+T\+US\} -\/ Returns an state; 
-\end{DoxyReturn}
-\mbox{\Hypertarget{player_8c_af5eacaf6a51631f28500d8127e761c1b}\label{player_8c_af5eacaf6a51631f28500d8127e761c1b}} 
-\index{player.\+c@{player.\+c}!player\+\_\+set\+\_\+object@{player\+\_\+set\+\_\+object}}
-\index{player\+\_\+set\+\_\+object@{player\+\_\+set\+\_\+object}!player.\+c@{player.\+c}}
-\subsubsection{\texorpdfstring{player\+\_\+set\+\_\+object()}{player\_set\_object()}}
-{\footnotesize\ttfamily S\+T\+A\+T\+US player\+\_\+set\+\_\+object (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Player}{Player} $\ast$}]{player,  }\item[{Id}]{id }\end{DoxyParamCaption})}
-
-player\+\_\+set\+\_\+object sets an id to a player\textquotesingle{}s object.
-
-
-\begin{DoxyParams}{Parameters}
-{\em \{\+Player$\ast$\}} & -\/ player; \{Id\} -\/ id; \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-\{S\+T\+A\+T\+US\} -\/ Returns an state; 
 \end{DoxyReturn}

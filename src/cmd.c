@@ -19,15 +19,15 @@
 * @brief Command data structure
 */
 struct _Cmd {
-  Cid id; /*!< id */
-  int argc; /*!< number of arguments */
-  char *argv[ MAX_CMD_ARGC ]; /*!< arguments */
-  char b_name[ MAX_CMD_LEN ]; /*!< base name */
-  char s_name[ MAX_CMD_LEN ]; /*!< short name */
-  char input[ MAX_CMD_IN ]; /*!< cmd input */
-  char answer[ MAX_CMD_ANS ]; /*!< command answer */
-  int errc;
-  cmd_fn fn; /* callback function */
+  Cid id; /*!< Id */
+  int argc; /*!< Number of arguments */
+  char *argv[ MAX_CMD_ARGC ]; /*!< Value of the arguments */
+  char b_name[ MAX_CMD_LEN ]; /*!< Base name */
+  char s_name[ MAX_CMD_LEN ]; /*!< Short name */
+  char input[ MAX_CMD_IN ]; /*!< Cmd input */
+  char answer[ MAX_CMD_ANS ]; /*!< Command answer */
+  int errc; /*!< Error code */
+  cmd_fn fn; /*!< Callback function */
 };
 
 Cmd *CMDS[ MAX_CMDS ];

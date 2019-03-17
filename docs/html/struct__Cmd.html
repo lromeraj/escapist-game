@@ -85,28 +85,26 @@ Data Fields</h2></td></tr>
 <tr class="separator:a3d023ded28ab2b9ec8daae3ebf1a3759"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a143c62700ed611e1ff0d70611c76fa55"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__Cmd.html#a143c62700ed611e1ff0d70611c76fa55">answer</a> [MAX_CMD_ANS]</td></tr>
 <tr class="separator:a143c62700ed611e1ff0d70611c76fa55"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4f3acf8cfdc67548121c1989765cbbcf"><td class="memItemLeft" align="right" valign="top"><a id="a4f3acf8cfdc67548121c1989765cbbcf"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>errc</b></td></tr>
+<tr class="memitem:a4f3acf8cfdc67548121c1989765cbbcf"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__Cmd.html#a4f3acf8cfdc67548121c1989765cbbcf">errc</a></td></tr>
 <tr class="separator:a4f3acf8cfdc67548121c1989765cbbcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abfca5a0889206135702ed3e398079bad"><td class="memItemLeft" align="right" valign="top"><a id="abfca5a0889206135702ed3e398079bad"></a>
-cmd_fn&#160;</td><td class="memItemRight" valign="bottom"><b>fn</b></td></tr>
+<tr class="memitem:abfca5a0889206135702ed3e398079bad"><td class="memItemLeft" align="right" valign="top">cmd_fn&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__Cmd.html#abfca5a0889206135702ed3e398079bad">fn</a></td></tr>
 <tr class="separator:abfca5a0889206135702ed3e398079bad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Command data structure. </p>
 </div><h2 class="groupheader">Field Documentation</h2>
-<a id="a143c62700ed611e1ff0d70611c76fa55"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a143c62700ed611e1ff0d70611c76fa55">&#9670;&nbsp;</a></span>answer</h2>
+<a id="a106b2045967078710623e3a5f401dde2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a106b2045967078710623e3a5f401dde2">&#9670;&nbsp;</a></span>id</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">char _Cmd::answer[MAX_CMD_ANS]</td>
+          <td class="memname">Cid _Cmd::id</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>command answer </p>
+<p>Id </p>
 
 </div>
 </div>
@@ -121,7 +119,7 @@ cmd_fn&#160;</td><td class="memItemRight" valign="bottom"><b>fn</b></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>number of arguments </p>
+<p>Number of arguments </p>
 
 </div>
 </div>
@@ -136,7 +134,7 @@ cmd_fn&#160;</td><td class="memItemRight" valign="bottom"><b>fn</b></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>arguments </p>
+<p>Value of the arguments </p>
 
 </div>
 </div>
@@ -151,37 +149,7 @@ cmd_fn&#160;</td><td class="memItemRight" valign="bottom"><b>fn</b></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>base name </p>
-
-</div>
-</div>
-<a id="a106b2045967078710623e3a5f401dde2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a106b2045967078710623e3a5f401dde2">&#9670;&nbsp;</a></span>id</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Cid _Cmd::id</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>id </p>
-
-</div>
-</div>
-<a id="a3d023ded28ab2b9ec8daae3ebf1a3759"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3d023ded28ab2b9ec8daae3ebf1a3759">&#9670;&nbsp;</a></span>input</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">char _Cmd::input[MAX_CMD_IN]</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>cmd input </p>
+<p>Base name </p>
 
 </div>
 </div>
@@ -196,7 +164,67 @@ cmd_fn&#160;</td><td class="memItemRight" valign="bottom"><b>fn</b></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>short name </p>
+<p>Short name </p>
+
+</div>
+</div>
+<a id="a3d023ded28ab2b9ec8daae3ebf1a3759"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d023ded28ab2b9ec8daae3ebf1a3759">&#9670;&nbsp;</a></span>input</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char _Cmd::input[MAX_CMD_IN]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Cmd input </p>
+
+</div>
+</div>
+<a id="a143c62700ed611e1ff0d70611c76fa55"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a143c62700ed611e1ff0d70611c76fa55">&#9670;&nbsp;</a></span>answer</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char _Cmd::answer[MAX_CMD_ANS]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Command answer </p>
+
+</div>
+</div>
+<a id="a4f3acf8cfdc67548121c1989765cbbcf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f3acf8cfdc67548121c1989765cbbcf">&#9670;&nbsp;</a></span>errc</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int _Cmd::errc</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Error code </p>
+
+</div>
+</div>
+<a id="abfca5a0889206135702ed3e398079bad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abfca5a0889206135702ed3e398079bad">&#9670;&nbsp;</a></span>fn</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cmd_fn _Cmd::fn</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Callback function </p>
 
 </div>
 </div>

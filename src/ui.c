@@ -238,7 +238,7 @@ void ui_clear_box( Ui *ui, int id ) {
   if ( !box )
     return;
 
-  box->cx = box->pad[3];
+  box->cx = box->pad[3]; // reset
   box->cy = box->pad[0];
 
   for ( i=0; i < box->__len; i++ ) {
@@ -420,7 +420,7 @@ void ui_box_seek( Ui *ui, int id, int x, int y ) {
     return;
 
   if ( y*box->w + x >= box->__len )
-    return;
+		return;
 
   box->cx = x;
   box->cy = y;
@@ -557,7 +557,7 @@ void ui_box_put( Ui *ui, int id, const char *fmt, ... ) {
 
   }
 
-  // dump the box data into the ui buffer
+  // dump the box data to the ui buffer
   ui_dump_box( ui, id );
 
 }

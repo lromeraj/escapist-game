@@ -152,6 +152,22 @@ game\+\_\+create\+\_\+from\+\_\+file presets game state with the data value incl
 \begin{DoxyReturn}{Returns}
 \{S\+T\+A\+T\+US\} -\/ Returns an status code; 
 \end{DoxyReturn}
+\mbox{\Hypertarget{game_8h_a4a8f3de1cdc4bcb9a508a191677ee33f}\label{game_8h_a4a8f3de1cdc4bcb9a508a191677ee33f}} 
+\index{game.\+h@{game.\+h}!game\+\_\+update@{game\+\_\+update}}
+\index{game\+\_\+update@{game\+\_\+update}!game.\+h@{game.\+h}}
+\subsubsection{\texorpdfstring{game\+\_\+update()}{game\_update()}}
+{\footnotesize\ttfamily S\+T\+A\+T\+US game\+\_\+update (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Game}{Game} $\ast$}]{game,  }\item[{\hyperlink{struct__Cmd}{Cmd} $\ast$}]{cmd }\end{DoxyParamCaption})}
+
+game\+\_\+update sets the last command value onto last key introduced.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+Game$\ast$\}} & -\/ game; \{T\+\_\+\+Command\} -\/ cmd; \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\{Status\} -\/ Returns an status code; 
+\end{DoxyReturn}
 \mbox{\Hypertarget{game_8h_a0736924a1235c0e6fe9b6d91c2a12af8}\label{game_8h_a0736924a1235c0e6fe9b6d91c2a12af8}} 
 \index{game.\+h@{game.\+h}!game\+\_\+destroy@{game\+\_\+destroy}}
 \index{game\+\_\+destroy@{game\+\_\+destroy}!game.\+h@{game.\+h}}
@@ -167,84 +183,6 @@ game\+\_\+destroy frees dynamic memory reserved in game spaces.
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 \{S\+T\+A\+T\+US\} -\/ Returns an status code (OK); 
-\end{DoxyReturn}
-\mbox{\Hypertarget{game_8h_a9dca92a603769c72a708a7d042e76dfa}\label{game_8h_a9dca92a603769c72a708a7d042e76dfa}} 
-\index{game.\+h@{game.\+h}!game\+\_\+get\+\_\+object@{game\+\_\+get\+\_\+object}}
-\index{game\+\_\+get\+\_\+object@{game\+\_\+get\+\_\+object}!game.\+h@{game.\+h}}
-\subsubsection{\texorpdfstring{game\+\_\+get\+\_\+object()}{game\_get\_object()}}
-{\footnotesize\ttfamily \hyperlink{struct__Object}{Object}$\ast$ game\+\_\+get\+\_\+object (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Game}{Game} $\ast$}]{game,  }\item[{Id}]{id }\end{DoxyParamCaption})}
-
-game\+\_\+get\+\_\+object gets a pointer towards player.
-
-
-\begin{DoxyParams}{Parameters}
-{\em \{\+Game$\ast$\}} & -\/ game; \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-\{T\+\_\+\+Command\} -\/ Returns a object pointer; 
-\end{DoxyReturn}
-\mbox{\Hypertarget{game_8h_a5c8922fd5fc6de08b0b57899013ad117}\label{game_8h_a5c8922fd5fc6de08b0b57899013ad117}} 
-\index{game.\+h@{game.\+h}!game\+\_\+get\+\_\+object\+\_\+space@{game\+\_\+get\+\_\+object\+\_\+space}}
-\index{game\+\_\+get\+\_\+object\+\_\+space@{game\+\_\+get\+\_\+object\+\_\+space}!game.\+h@{game.\+h}}
-\subsubsection{\texorpdfstring{game\+\_\+get\+\_\+object\+\_\+space()}{game\_get\_object\_space()}}
-{\footnotesize\ttfamily \hyperlink{struct__Space}{Space}$\ast$ game\+\_\+get\+\_\+object\+\_\+space (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Game}{Game} $\ast$}]{game,  }\item[{Id}]{id }\end{DoxyParamCaption})}
-
-Searches inside spaces array and if it founds an object it will return a pointer to the space containing that object There is no need to comapre id\textquotesingle{}s by the moment becouse there is only one object and one player 
-\begin{DoxyParams}{Parameters}
-{\em \{\+Game$\ast$\}} & -\/ game \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-\{Space$\ast$\} -\/ Returns an space pointer or N\+U\+LL; 
-\end{DoxyReturn}
-\mbox{\Hypertarget{game_8h_aacbf28320fd70aa492a722ad1789f479}\label{game_8h_aacbf28320fd70aa492a722ad1789f479}} 
-\index{game.\+h@{game.\+h}!game\+\_\+get\+\_\+objects@{game\+\_\+get\+\_\+objects}}
-\index{game\+\_\+get\+\_\+objects@{game\+\_\+get\+\_\+objects}!game.\+h@{game.\+h}}
-\subsubsection{\texorpdfstring{game\+\_\+get\+\_\+objects()}{game\_get\_objects()}}
-{\footnotesize\ttfamily \hyperlink{struct__Object}{Object}$\ast$$\ast$ game\+\_\+get\+\_\+objects (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Game}{Game} $\ast$}]{game }\end{DoxyParamCaption})}
-
-Returns a pointer to game objects.
-
-
-\begin{DoxyParams}{Parameters}
-{\em \{\+Game$\ast$\}} & -\/ game; \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-\{Object$\ast$$\ast$\} -\/ Returns an array of object pointers; 
-\end{DoxyReturn}
-\mbox{\Hypertarget{game_8h_af46efd507d797aec6da90d08aa592e32}\label{game_8h_af46efd507d797aec6da90d08aa592e32}} 
-\index{game.\+h@{game.\+h}!game\+\_\+get\+\_\+player@{game\+\_\+get\+\_\+player}}
-\index{game\+\_\+get\+\_\+player@{game\+\_\+get\+\_\+player}!game.\+h@{game.\+h}}
-\subsubsection{\texorpdfstring{game\+\_\+get\+\_\+player()}{game\_get\_player()}}
-{\footnotesize\ttfamily \hyperlink{struct__Player}{Player}$\ast$ game\+\_\+get\+\_\+player (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Game}{Game} $\ast$}]{game }\end{DoxyParamCaption})}
-
-game\+\_\+get\+\_\+player gets a pointer towards player.
-
-
-\begin{DoxyParams}{Parameters}
-{\em \{\+Game$\ast$\}} & -\/ game; \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-\{T\+\_\+\+Command\} -\/ Returns a player pointer; 
-\end{DoxyReturn}
-\mbox{\Hypertarget{game_8h_a69d94da9d27b542d3ebdeb8b60f1f2dc}\label{game_8h_a69d94da9d27b542d3ebdeb8b60f1f2dc}} 
-\index{game.\+h@{game.\+h}!game\+\_\+get\+\_\+space@{game\+\_\+get\+\_\+space}}
-\index{game\+\_\+get\+\_\+space@{game\+\_\+get\+\_\+space}!game.\+h@{game.\+h}}
-\subsubsection{\texorpdfstring{game\+\_\+get\+\_\+space()}{game\_get\_space()}}
-{\footnotesize\ttfamily \hyperlink{struct__Space}{Space}$\ast$ game\+\_\+get\+\_\+space (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Game}{Game} $\ast$}]{game,  }\item[{Id}]{id }\end{DoxyParamCaption})}
-
-game\+\_\+get\+\_\+space gets all the existing spaces with the same id if the id passed as argument exist.
-
-
-\begin{DoxyParams}{Parameters}
-{\em \{\+Game$\ast$\}} & -\/ game, \{Id\} -\/ id; \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-\{Space$\ast$\} -\/ Returns a space or N\+U\+LL; 
 \end{DoxyReturn}
 \mbox{\Hypertarget{game_8h_a27711fe1fc6f5a353b9ab63b92602359}\label{game_8h_a27711fe1fc6f5a353b9ab63b92602359}} 
 \index{game.\+h@{game.\+h}!game\+\_\+is\+\_\+over@{game\+\_\+is\+\_\+over}}
@@ -262,22 +200,6 @@ game\+\_\+is\+\_\+over quits game.
 \begin{DoxyReturn}{Returns}
 \{B\+O\+OL\} -\/ Returns a boolean code (F\+A\+L\+SE); 
 \end{DoxyReturn}
-\mbox{\Hypertarget{game_8h_a33a5ed8937423f8c012df3cedad4fa4c}\label{game_8h_a33a5ed8937423f8c012df3cedad4fa4c}} 
-\index{game.\+h@{game.\+h}!game\+\_\+print\+\_\+data@{game\+\_\+print\+\_\+data}}
-\index{game\+\_\+print\+\_\+data@{game\+\_\+print\+\_\+data}!game.\+h@{game.\+h}}
-\subsubsection{\texorpdfstring{game\+\_\+print\+\_\+data()}{game\_print\_data()}}
-{\footnotesize\ttfamily void game\+\_\+print\+\_\+data (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Game}{Game} $\ast$}]{game }\end{DoxyParamCaption})}
-
-game\+\_\+print\+\_\+data prints by screen the message that indicates player\+\_\+location where the command has to be introduced, as well as the spaces, object and player location.
-
-
-\begin{DoxyParams}{Parameters}
-{\em \{\+Game$\ast$\}} & -\/ game; \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-\{void\} -\/ Do not returns nothing; 
-\end{DoxyReturn}
 \mbox{\Hypertarget{game_8h_a108f413649a6dc99d3ffeed092dc15f5}\label{game_8h_a108f413649a6dc99d3ffeed092dc15f5}} 
 \index{game.\+h@{game.\+h}!game\+\_\+print\+\_\+screen@{game\+\_\+print\+\_\+screen}}
 \index{game\+\_\+print\+\_\+screen@{game\+\_\+print\+\_\+screen}!game.\+h@{game.\+h}}
@@ -294,17 +216,127 @@ game\+\_\+print\+\_\+screen prints game screen. Unused.
 \begin{DoxyReturn}{Returns}
 \{void\} -\/ Do not returns nothing; 
 \end{DoxyReturn}
-\mbox{\Hypertarget{game_8h_a9d64221dbc653f866adc43c4ef849bb1}\label{game_8h_a9d64221dbc653f866adc43c4ef849bb1}} 
-\index{game.\+h@{game.\+h}!game\+\_\+set\+\_\+die@{game\+\_\+set\+\_\+die}}
-\index{game\+\_\+set\+\_\+die@{game\+\_\+set\+\_\+die}!game.\+h@{game.\+h}}
-\subsubsection{\texorpdfstring{game\+\_\+set\+\_\+die()}{game\_set\_die()}}
-{\footnotesize\ttfamily void game\+\_\+set\+\_\+die (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Game}{Game} $\ast$}]{game,  }\item[{\hyperlink{struct__Die}{Die} $\ast$}]{d }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{game_8h_a33a5ed8937423f8c012df3cedad4fa4c}\label{game_8h_a33a5ed8937423f8c012df3cedad4fa4c}} 
+\index{game.\+h@{game.\+h}!game\+\_\+print\+\_\+data@{game\+\_\+print\+\_\+data}}
+\index{game\+\_\+print\+\_\+data@{game\+\_\+print\+\_\+data}!game.\+h@{game.\+h}}
+\subsubsection{\texorpdfstring{game\+\_\+print\+\_\+data()}{game\_print\_data()}}
+{\footnotesize\ttfamily void game\+\_\+print\+\_\+data (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Game}{Game} $\ast$}]{game }\end{DoxyParamCaption})}
 
-game\+\_\+set\+\_\+die sets a new die.
+game\+\_\+print\+\_\+data prints by screen the message that indicates player\+\_\+location where the command has to be introduced, as well as the spaces, object and player location.
 
 
 \begin{DoxyParams}{Parameters}
-{\em \{\+Game$\ast$\}} & -\/ game; \{Object$\ast$\} -\/ object; \\
+{\em \{\+Game$\ast$\}} & -\/ game; \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\{void\} -\/ Do not returns nothing; 
+\end{DoxyReturn}
+\mbox{\Hypertarget{game_8h_a69d94da9d27b542d3ebdeb8b60f1f2dc}\label{game_8h_a69d94da9d27b542d3ebdeb8b60f1f2dc}} 
+\index{game.\+h@{game.\+h}!game\+\_\+get\+\_\+space@{game\+\_\+get\+\_\+space}}
+\index{game\+\_\+get\+\_\+space@{game\+\_\+get\+\_\+space}!game.\+h@{game.\+h}}
+\subsubsection{\texorpdfstring{game\+\_\+get\+\_\+space()}{game\_get\_space()}}
+{\footnotesize\ttfamily \hyperlink{struct__Space}{Space}$\ast$ game\+\_\+get\+\_\+space (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Game}{Game} $\ast$}]{game,  }\item[{Id}]{id }\end{DoxyParamCaption})}
+
+game\+\_\+get\+\_\+space gets all the existing spaces with the same id if the id passed as argument exist.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+Game$\ast$\}} & -\/ game, \{Id\} -\/ id; \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\{Space$\ast$\} -\/ Returns a space or N\+U\+LL; 
+\end{DoxyReturn}
+\mbox{\Hypertarget{game_8h_a5c8922fd5fc6de08b0b57899013ad117}\label{game_8h_a5c8922fd5fc6de08b0b57899013ad117}} 
+\index{game.\+h@{game.\+h}!game\+\_\+get\+\_\+object\+\_\+space@{game\+\_\+get\+\_\+object\+\_\+space}}
+\index{game\+\_\+get\+\_\+object\+\_\+space@{game\+\_\+get\+\_\+object\+\_\+space}!game.\+h@{game.\+h}}
+\subsubsection{\texorpdfstring{game\+\_\+get\+\_\+object\+\_\+space()}{game\_get\_object\_space()}}
+{\footnotesize\ttfamily \hyperlink{struct__Space}{Space}$\ast$ game\+\_\+get\+\_\+object\+\_\+space (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Game}{Game} $\ast$}]{game,  }\item[{Id}]{id }\end{DoxyParamCaption})}
+
+Searches inside spaces array and if it founds an object it will return a pointer to the space containing that object There is no need to comapre id\textquotesingle{}s by the moment becouse there is only one object and one player 
+\begin{DoxyParams}{Parameters}
+{\em \{\+Game$\ast$\}} & -\/ game \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\{Space$\ast$\} -\/ Returns an space pointer or N\+U\+LL; 
+\end{DoxyReturn}
+\mbox{\Hypertarget{game_8h_ad361335e40fd953eaf6839414617eb5b}\label{game_8h_ad361335e40fd953eaf6839414617eb5b}} 
+\index{game.\+h@{game.\+h}!game\+\_\+set\+\_\+object\+\_\+location@{game\+\_\+set\+\_\+object\+\_\+location}}
+\index{game\+\_\+set\+\_\+object\+\_\+location@{game\+\_\+set\+\_\+object\+\_\+location}!game.\+h@{game.\+h}}
+\subsubsection{\texorpdfstring{game\+\_\+set\+\_\+object\+\_\+location()}{game\_set\_object\_location()}}
+{\footnotesize\ttfamily S\+T\+A\+T\+US game\+\_\+set\+\_\+object\+\_\+location (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Game}{Game} $\ast$}]{game,  }\item[{Id}]{id }\end{DoxyParamCaption})}
+
+game\+\_\+set\+\_\+object\+\_\+location set the position of an object in the game.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+Game$\ast$\}} & -\/ game; \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\{Id\} -\/ Returns a pointer; 
+\end{DoxyReturn}
+\mbox{\Hypertarget{game_8h_af46efd507d797aec6da90d08aa592e32}\label{game_8h_af46efd507d797aec6da90d08aa592e32}} 
+\index{game.\+h@{game.\+h}!game\+\_\+get\+\_\+player@{game\+\_\+get\+\_\+player}}
+\index{game\+\_\+get\+\_\+player@{game\+\_\+get\+\_\+player}!game.\+h@{game.\+h}}
+\subsubsection{\texorpdfstring{game\+\_\+get\+\_\+player()}{game\_get\_player()}}
+{\footnotesize\ttfamily \hyperlink{struct__Player}{Player}$\ast$ game\+\_\+get\+\_\+player (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Game}{Game} $\ast$}]{game }\end{DoxyParamCaption})}
+
+game\+\_\+get\+\_\+player gets a pointer towards player.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+Game$\ast$\}} & -\/ game; \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\{T\+\_\+\+Command\} -\/ Returns a player pointer; 
+\end{DoxyReturn}
+\mbox{\Hypertarget{game_8h_a9dca92a603769c72a708a7d042e76dfa}\label{game_8h_a9dca92a603769c72a708a7d042e76dfa}} 
+\index{game.\+h@{game.\+h}!game\+\_\+get\+\_\+object@{game\+\_\+get\+\_\+object}}
+\index{game\+\_\+get\+\_\+object@{game\+\_\+get\+\_\+object}!game.\+h@{game.\+h}}
+\subsubsection{\texorpdfstring{game\+\_\+get\+\_\+object()}{game\_get\_object()}}
+{\footnotesize\ttfamily \hyperlink{struct__Object}{Object}$\ast$ game\+\_\+get\+\_\+object (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Game}{Game} $\ast$}]{game,  }\item[{Id}]{id }\end{DoxyParamCaption})}
+
+game\+\_\+get\+\_\+object gets a pointer towards player.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+Game$\ast$\}} & -\/ game; \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\{T\+\_\+\+Command\} -\/ Returns a object pointer; 
+\end{DoxyReturn}
+\mbox{\Hypertarget{game_8h_aacbf28320fd70aa492a722ad1789f479}\label{game_8h_aacbf28320fd70aa492a722ad1789f479}} 
+\index{game.\+h@{game.\+h}!game\+\_\+get\+\_\+objects@{game\+\_\+get\+\_\+objects}}
+\index{game\+\_\+get\+\_\+objects@{game\+\_\+get\+\_\+objects}!game.\+h@{game.\+h}}
+\subsubsection{\texorpdfstring{game\+\_\+get\+\_\+objects()}{game\_get\_objects()}}
+{\footnotesize\ttfamily \hyperlink{struct__Object}{Object}$\ast$$\ast$ game\+\_\+get\+\_\+objects (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Game}{Game} $\ast$}]{game }\end{DoxyParamCaption})}
+
+Returns a pointer to game objects.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+Game$\ast$\}} & -\/ game; \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\{Object$\ast$$\ast$\} -\/ Returns an array of object pointers; 
+\end{DoxyReturn}
+\mbox{\Hypertarget{game_8h_ade0d25f267771b1f9b27fcc0383e93b8}\label{game_8h_ade0d25f267771b1f9b27fcc0383e93b8}} 
+\index{game.\+h@{game.\+h}!game\+\_\+set\+\_\+player@{game\+\_\+set\+\_\+player}}
+\index{game\+\_\+set\+\_\+player@{game\+\_\+set\+\_\+player}!game.\+h@{game.\+h}}
+\subsubsection{\texorpdfstring{game\+\_\+set\+\_\+player()}{game\_set\_player()}}
+{\footnotesize\ttfamily S\+T\+A\+T\+US game\+\_\+set\+\_\+player (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Game}{Game} $\ast$}]{game,  }\item[{\hyperlink{struct__Player}{Player} $\ast$}]{player }\end{DoxyParamCaption})}
+
+game\+\_\+set\+\_\+player sets a new player.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+Game$\ast$\}} & -\/ game; \{Player$\ast$\} -\/ player; \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -326,51 +358,19 @@ game\+\_\+set\+\_\+object sets a new object.
 \begin{DoxyReturn}{Returns}
 \{T\+\_\+\+Command\} -\/ Returns a state; 
 \end{DoxyReturn}
-\mbox{\Hypertarget{game_8h_ad361335e40fd953eaf6839414617eb5b}\label{game_8h_ad361335e40fd953eaf6839414617eb5b}} 
-\index{game.\+h@{game.\+h}!game\+\_\+set\+\_\+object\+\_\+location@{game\+\_\+set\+\_\+object\+\_\+location}}
-\index{game\+\_\+set\+\_\+object\+\_\+location@{game\+\_\+set\+\_\+object\+\_\+location}!game.\+h@{game.\+h}}
-\subsubsection{\texorpdfstring{game\+\_\+set\+\_\+object\+\_\+location()}{game\_set\_object\_location()}}
-{\footnotesize\ttfamily S\+T\+A\+T\+US game\+\_\+set\+\_\+object\+\_\+location (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Game}{Game} $\ast$}]{game,  }\item[{Id}]{id }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{game_8h_a9d64221dbc653f866adc43c4ef849bb1}\label{game_8h_a9d64221dbc653f866adc43c4ef849bb1}} 
+\index{game.\+h@{game.\+h}!game\+\_\+set\+\_\+die@{game\+\_\+set\+\_\+die}}
+\index{game\+\_\+set\+\_\+die@{game\+\_\+set\+\_\+die}!game.\+h@{game.\+h}}
+\subsubsection{\texorpdfstring{game\+\_\+set\+\_\+die()}{game\_set\_die()}}
+{\footnotesize\ttfamily void game\+\_\+set\+\_\+die (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Game}{Game} $\ast$}]{game,  }\item[{\hyperlink{struct__Die}{Die} $\ast$}]{d }\end{DoxyParamCaption})}
 
-game\+\_\+set\+\_\+object\+\_\+location set the position of an object in the game.
-
-
-\begin{DoxyParams}{Parameters}
-{\em \{\+Game$\ast$\}} & -\/ game; \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-\{Id\} -\/ Returns a pointer; 
-\end{DoxyReturn}
-\mbox{\Hypertarget{game_8h_ade0d25f267771b1f9b27fcc0383e93b8}\label{game_8h_ade0d25f267771b1f9b27fcc0383e93b8}} 
-\index{game.\+h@{game.\+h}!game\+\_\+set\+\_\+player@{game\+\_\+set\+\_\+player}}
-\index{game\+\_\+set\+\_\+player@{game\+\_\+set\+\_\+player}!game.\+h@{game.\+h}}
-\subsubsection{\texorpdfstring{game\+\_\+set\+\_\+player()}{game\_set\_player()}}
-{\footnotesize\ttfamily S\+T\+A\+T\+US game\+\_\+set\+\_\+player (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Game}{Game} $\ast$}]{game,  }\item[{\hyperlink{struct__Player}{Player} $\ast$}]{player }\end{DoxyParamCaption})}
-
-game\+\_\+set\+\_\+player sets a new player.
+game\+\_\+set\+\_\+die sets a new die.
 
 
 \begin{DoxyParams}{Parameters}
-{\em \{\+Game$\ast$\}} & -\/ game; \{Player$\ast$\} -\/ player; \\
+{\em \{\+Game$\ast$\}} & -\/ game; \{Object$\ast$\} -\/ object; \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 \{T\+\_\+\+Command\} -\/ Returns a state; 
-\end{DoxyReturn}
-\mbox{\Hypertarget{game_8h_a4a8f3de1cdc4bcb9a508a191677ee33f}\label{game_8h_a4a8f3de1cdc4bcb9a508a191677ee33f}} 
-\index{game.\+h@{game.\+h}!game\+\_\+update@{game\+\_\+update}}
-\index{game\+\_\+update@{game\+\_\+update}!game.\+h@{game.\+h}}
-\subsubsection{\texorpdfstring{game\+\_\+update()}{game\_update()}}
-{\footnotesize\ttfamily S\+T\+A\+T\+US game\+\_\+update (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Game}{Game} $\ast$}]{game,  }\item[{\hyperlink{struct__Cmd}{Cmd} $\ast$}]{cmd }\end{DoxyParamCaption})}
-
-game\+\_\+update sets the last command value onto last key introduced.
-
-
-\begin{DoxyParams}{Parameters}
-{\em \{\+Game$\ast$\}} & -\/ game; \{T\+\_\+\+Command\} -\/ cmd; \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-\{Status\} -\/ Returns an status code; 
 \end{DoxyReturn}

@@ -4,15 +4,18 @@
  * @file ui.h
  * @author Javier Romera
  * @version 0.3.3
- * @date 14/03/2019
+ * @date 16/02/2019
  * @copyright GNU Public License
  */
 
 #ifndef UI_H
 #define UI_H
 
-#define MAX_BOXES 10
+#define MAX_BOXES 10 /*!< Maximum number of boxes */
 
+/*!
+* @brief Text formats
+*/
 typedef enum {
   BG_BLACK=40,
   BG_RED=41,
@@ -32,21 +35,24 @@ typedef enum {
   FG_WHITE=37
 } Color;
 
-// S - Set
+/*!
+* @brief Text formats
+*/
 typedef enum {
-  S_DEFAULT=0,
-  S_BOLD=1,
-  S_DIM=2,
-  S_UNDERLINED=4,
-  S_BLINK=5,
-  S_REVERSE=7,
-  S_HIDDEN=9
+  S_DEFAULT=0, /*!< Resets text format */
+  S_BOLD=1,  /*!< Bold text */
+  S_DIM=2,  /*!< Small text */
+  S_UNDERLINED=4,  /*!< Underlined text */
+  S_BLINK=5,  /*!< Blink text */
+  S_REVERSE=7,  /*!< Reversed text format */
+  S_HIDDEN=9  /*!< Hidden text */
 } Format;
 
 typedef struct _Ui_screen Ui_screen;
 typedef struct _Ui_pix Ui_pix;
 typedef struct _Ui_box Ui_box;
 typedef struct _Ui Ui;
+
 
 /** Initializes UI struct
 * @param {int} w - The width of the user interface based on chars

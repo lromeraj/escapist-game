@@ -274,6 +274,42 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a4a8f3de1cdc4bcb9a508a191677ee33f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a8f3de1cdc4bcb9a508a191677ee33f">&#9670;&nbsp;</a></span>game_update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">STATUS game_update </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct__Game.html">Game</a> *&#160;</td>
+          <td class="paramname"><em>game</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct__Cmd.html">Cmd</a> *&#160;</td>
+          <td class="paramname"><em>cmd</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>game_update sets the last command value onto last key introduced.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">{Game*}</td><td>- game; {T_Command} - cmd; </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>{Status} - Returns an status code; </dd></dl>
+
+</div>
+</div>
 <a id="a0736924a1235c0e6fe9b6d91c2a12af8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0736924a1235c0e6fe9b6d91c2a12af8">&#9670;&nbsp;</a></span>game_destroy()</h2>
 
@@ -300,85 +336,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a9dca92a603769c72a708a7d042e76dfa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9dca92a603769c72a708a7d042e76dfa">&#9670;&nbsp;</a></span>game_get_object()</h2>
+<a id="a27711fe1fc6f5a353b9ab63b92602359"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27711fe1fc6f5a353b9ab63b92602359">&#9670;&nbsp;</a></span>game_is_over()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="struct__Object.html">Object</a>* game_get_object </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="struct__Game.html">Game</a> *&#160;</td>
-          <td class="paramname"><em>game</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Id&#160;</td>
-          <td class="paramname"><em>id</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>game_get_object gets a pointer towards player.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">{Game*}</td><td>- game; </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>{T_Command} - Returns a object pointer; </dd></dl>
-
-</div>
-</div>
-<a id="a5c8922fd5fc6de08b0b57899013ad117"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5c8922fd5fc6de08b0b57899013ad117">&#9670;&nbsp;</a></span>game_get_object_space()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="struct__Space.html">Space</a>* game_get_object_space </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="struct__Game.html">Game</a> *&#160;</td>
-          <td class="paramname"><em>game</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Id&#160;</td>
-          <td class="paramname"><em>id</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Searches inside spaces array and if it founds an object it will return a pointer to the space containing that object There is no need to comapre id's by the moment becouse there is only one object and one player </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">{Game*}</td><td>- game </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>{Space*} - Returns an space pointer or NULL; </dd></dl>
-
-</div>
-</div>
-<a id="aacbf28320fd70aa492a722ad1789f479"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aacbf28320fd70aa492a722ad1789f479">&#9670;&nbsp;</a></span>game_get_objects()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="struct__Object.html">Object</a>** game_get_objects </td>
+          <td class="memname">bool game_is_over </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="struct__Game.html">Game</a> *&#160;</td>
           <td class="paramname"><em>game</em></td><td>)</td>
@@ -386,25 +351,25 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Returns a pointer to game objects.</p>
+<p>game_is_over quits game.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">{Game*}</td><td>- game; </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>{Object**} - Returns an array of object pointers; </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>{BOOL} - Returns a boolean code (FALSE); </dd></dl>
 
 </div>
 </div>
-<a id="af46efd507d797aec6da90d08aa592e32"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af46efd507d797aec6da90d08aa592e32">&#9670;&nbsp;</a></span>game_get_player()</h2>
+<a id="a108f413649a6dc99d3ffeed092dc15f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a108f413649a6dc99d3ffeed092dc15f5">&#9670;&nbsp;</a></span>game_print_screen()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="struct__Player.html">Player</a>* game_get_player </td>
+          <td class="memname">void game_print_screen </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="struct__Game.html">Game</a> *&#160;</td>
           <td class="paramname"><em>game</em></td><td>)</td>
@@ -412,14 +377,40 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>game_get_player gets a pointer towards player.</p>
+<p>game_print_screen prints game screen. Unused.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">{Game*}</td><td>- game; </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>{T_Command} - Returns a player pointer; </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>{void} - Do not returns nothing; </dd></dl>
+
+</div>
+</div>
+<a id="a33a5ed8937423f8c012df3cedad4fa4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33a5ed8937423f8c012df3cedad4fa4c">&#9670;&nbsp;</a></span>game_print_data()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void game_print_data </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct__Game.html">Game</a> *&#160;</td>
+          <td class="paramname"><em>game</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>game_print_data prints by screen the message that indicates player_location where the command has to be introduced, as well as the spaces, object and player location.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">{Game*}</td><td>- game; </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>{void} - Do not returns nothing; </dd></dl>
 
 </div>
 </div>
@@ -459,92 +450,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a27711fe1fc6f5a353b9ab63b92602359"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a27711fe1fc6f5a353b9ab63b92602359">&#9670;&nbsp;</a></span>game_is_over()</h2>
+<a id="a5c8922fd5fc6de08b0b57899013ad117"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c8922fd5fc6de08b0b57899013ad117">&#9670;&nbsp;</a></span>game_get_object_space()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool game_is_over </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="struct__Game.html">Game</a> *&#160;</td>
-          <td class="paramname"><em>game</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>game_is_over quits game.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">{Game*}</td><td>- game; </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>{BOOL} - Returns a boolean code (FALSE); </dd></dl>
-
-</div>
-</div>
-<a id="a33a5ed8937423f8c012df3cedad4fa4c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a33a5ed8937423f8c012df3cedad4fa4c">&#9670;&nbsp;</a></span>game_print_data()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void game_print_data </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="struct__Game.html">Game</a> *&#160;</td>
-          <td class="paramname"><em>game</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>game_print_data prints by screen the message that indicates player_location where the command has to be introduced, as well as the spaces, object and player location.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">{Game*}</td><td>- game; </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>{void} - Do not returns nothing; </dd></dl>
-
-</div>
-</div>
-<a id="a108f413649a6dc99d3ffeed092dc15f5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a108f413649a6dc99d3ffeed092dc15f5">&#9670;&nbsp;</a></span>game_print_screen()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void game_print_screen </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="struct__Game.html">Game</a> *&#160;</td>
-          <td class="paramname"><em>game</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>game_print_screen prints game screen. Unused.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">{Game*}</td><td>- game; </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>{void} - Do not returns nothing; </dd></dl>
-
-</div>
-</div>
-<a id="a9d64221dbc653f866adc43c4ef849bb1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9d64221dbc653f866adc43c4ef849bb1">&#9670;&nbsp;</a></span>game_set_die()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void game_set_die </td>
+          <td class="memname"><a class="el" href="struct__Space.html">Space</a>* game_get_object_space </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="struct__Game.html">Game</a> *&#160;</td>
           <td class="paramname"><em>game</em>, </td>
@@ -552,8 +465,8 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="struct__Die.html">Die</a> *&#160;</td>
-          <td class="paramname"><em>d</em>&#160;</td>
+          <td class="paramtype">Id&#160;</td>
+          <td class="paramname"><em>id</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -562,10 +475,169 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>game_set_die sets a new die.</p>
+<p>Searches inside spaces array and if it founds an object it will return a pointer to the space containing that object There is no need to comapre id's by the moment becouse there is only one object and one player </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">{Game*}</td><td>- game </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>{Space*} - Returns an space pointer or NULL; </dd></dl>
+
+</div>
+</div>
+<a id="ad361335e40fd953eaf6839414617eb5b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad361335e40fd953eaf6839414617eb5b">&#9670;&nbsp;</a></span>game_set_object_location()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">STATUS game_set_object_location </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct__Game.html">Game</a> *&#160;</td>
+          <td class="paramname"><em>game</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Id&#160;</td>
+          <td class="paramname"><em>id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>game_set_object_location set the position of an object in the game.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">{Game*}</td><td>- game; {Object*} - object; </td></tr>
+    <tr><td class="paramname">{Game*}</td><td>- game; </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>{Id} - Returns a pointer; </dd></dl>
+
+</div>
+</div>
+<a id="af46efd507d797aec6da90d08aa592e32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af46efd507d797aec6da90d08aa592e32">&#9670;&nbsp;</a></span>game_get_player()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct__Player.html">Player</a>* game_get_player </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct__Game.html">Game</a> *&#160;</td>
+          <td class="paramname"><em>game</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>game_get_player gets a pointer towards player.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">{Game*}</td><td>- game; </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>{T_Command} - Returns a player pointer; </dd></dl>
+
+</div>
+</div>
+<a id="a9dca92a603769c72a708a7d042e76dfa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9dca92a603769c72a708a7d042e76dfa">&#9670;&nbsp;</a></span>game_get_object()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct__Object.html">Object</a>* game_get_object </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct__Game.html">Game</a> *&#160;</td>
+          <td class="paramname"><em>game</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Id&#160;</td>
+          <td class="paramname"><em>id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>game_get_object gets a pointer towards player.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">{Game*}</td><td>- game; </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>{T_Command} - Returns a object pointer; </dd></dl>
+
+</div>
+</div>
+<a id="aacbf28320fd70aa492a722ad1789f479"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aacbf28320fd70aa492a722ad1789f479">&#9670;&nbsp;</a></span>game_get_objects()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct__Object.html">Object</a>** game_get_objects </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct__Game.html">Game</a> *&#160;</td>
+          <td class="paramname"><em>game</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Returns a pointer to game objects.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">{Game*}</td><td>- game; </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>{Object**} - Returns an array of object pointers; </dd></dl>
+
+</div>
+</div>
+<a id="ade0d25f267771b1f9b27fcc0383e93b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade0d25f267771b1f9b27fcc0383e93b8">&#9670;&nbsp;</a></span>game_set_player()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">STATUS game_set_player </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct__Game.html">Game</a> *&#160;</td>
+          <td class="paramname"><em>game</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct__Player.html">Player</a> *&#160;</td>
+          <td class="paramname"><em>player</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>game_set_player sets a new player.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">{Game*}</td><td>- game; {Player*} - player; </td></tr>
   </table>
   </dd>
 </dl>
@@ -609,14 +681,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ad361335e40fd953eaf6839414617eb5b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad361335e40fd953eaf6839414617eb5b">&#9670;&nbsp;</a></span>game_set_object_location()</h2>
+<a id="a9d64221dbc653f866adc43c4ef849bb1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d64221dbc653f866adc43c4ef849bb1">&#9670;&nbsp;</a></span>game_set_die()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">STATUS game_set_object_location </td>
+          <td class="memname">void game_set_die </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="struct__Game.html">Game</a> *&#160;</td>
           <td class="paramname"><em>game</em>, </td>
@@ -624,8 +696,8 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Id&#160;</td>
-          <td class="paramname"><em>id</em>&#160;</td>
+          <td class="paramtype"><a class="el" href="struct__Die.html">Die</a> *&#160;</td>
+          <td class="paramname"><em>d</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -634,86 +706,14 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>game_set_object_location set the position of an object in the game.</p>
+<p>game_set_die sets a new die.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">{Game*}</td><td>- game; </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>{Id} - Returns a pointer; </dd></dl>
-
-</div>
-</div>
-<a id="ade0d25f267771b1f9b27fcc0383e93b8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ade0d25f267771b1f9b27fcc0383e93b8">&#9670;&nbsp;</a></span>game_set_player()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">STATUS game_set_player </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="struct__Game.html">Game</a> *&#160;</td>
-          <td class="paramname"><em>game</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="struct__Player.html">Player</a> *&#160;</td>
-          <td class="paramname"><em>player</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>game_set_player sets a new player.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">{Game*}</td><td>- game; {Player*} - player; </td></tr>
+    <tr><td class="paramname">{Game*}</td><td>- game; {Object*} - object; </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>{T_Command} - Returns a state; </dd></dl>
-
-</div>
-</div>
-<a id="a4a8f3de1cdc4bcb9a508a191677ee33f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4a8f3de1cdc4bcb9a508a191677ee33f">&#9670;&nbsp;</a></span>game_update()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">STATUS game_update </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="struct__Game.html">Game</a> *&#160;</td>
-          <td class="paramname"><em>game</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="struct__Cmd.html">Cmd</a> *&#160;</td>
-          <td class="paramname"><em>cmd</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>game_update sets the last command value onto last key introduced.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">{Game*}</td><td>- game; {T_Command} - cmd; </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>{Status} - Returns an status code; </dd></dl>
 
 </div>
 </div>

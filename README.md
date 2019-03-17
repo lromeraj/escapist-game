@@ -31,14 +31,23 @@ a la hora de comentar.
 */
 ```
 
+### Macros
+- Para comentar una macro usar `/*!< field description */`.
+- Ejemplo:
+``` c
+#define MACRO 100 /*!< Macro description */
+```
+
 ### Funciones
 
 - Los comentarios de los prototipos de las funciones deberán realizarse de la siguiente forma:
 
 ``` c
 /**
-* @brief <function description>
+* @brief Brief description
 *
+* Long description ...
+* @author Author name
 * @param {<type>} <name> - <description>
 * ...
 * @retval {<type>} - <description>
@@ -50,6 +59,7 @@ a la hora de comentar.
 ``` c
 /**
 * @brief Multiplies two numbers
+* @author Gonzalo Serrano
 * @param {int} a - First operand
 * @param {int} b - Second operand
 * @param {int*} c - Result destination

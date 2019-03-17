@@ -204,44 +204,6 @@ STATUS&#160;</td><td class="memItemRight" valign="bottom"><b>space_destroy</b> (
 <dl class="section date"><dt>Date</dt><dd>14/03/2019 </dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>GNU Public License </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="a69b9e22046b7b44dc5aa2afe7cc0a1b9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a69b9e22046b7b44dc5aa2afe7cc0a1b9">&#9670;&nbsp;</a></span>space_add_object()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">STATUS space_add_object </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="struct__Space.html">Space</a> *&#160;</td>
-          <td class="paramname"><em>space</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Id&#160;</td>
-          <td class="paramname"><em>id</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>it adds the object with the specified id to the space </p>
-<dl class="section author"><dt>Author</dt><dd>Javier Romera </dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">{Space*}</td><td>- space; {Id} - id; </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>{STATUS} - Returns an state; </dd></dl>
-
-</div>
-</div>
 <a id="a162866fcea156b800fd546d0ffd271c9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a162866fcea156b800fd546d0ffd271c9">&#9670;&nbsp;</a></span>space_create()</h2>
 
@@ -267,72 +229,6 @@ STATUS&#160;</td><td class="memItemRight" valign="bottom"><b>space_destroy</b> (
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>{Space} - returns an space pointer; </dd></dl>
-
-</div>
-</div>
-<a id="a32c30f0aa89f3f28c06802f1c72c1fdc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a32c30f0aa89f3f28c06802f1c72c1fdc">&#9670;&nbsp;</a></span>space_del_object()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">STATUS space_del_object </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="struct__Space.html">Space</a> *&#160;</td>
-          <td class="paramname"><em>space</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Id&#160;</td>
-          <td class="paramname"><em>id</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>it deletes the object with the specified id from the space </p>
-<dl class="section author"><dt>Author</dt><dd>Javier Romera </dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">{Space*}</td><td>- space; {Id} - id; </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>{STATUS} - Returns an state; </dd></dl>
-
-</div>
-</div>
-<a id="a978a22b77f74bb2dab68a00571abbe0b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a978a22b77f74bb2dab68a00571abbe0b">&#9670;&nbsp;</a></span>space_get_east()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Id space_get_east </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="struct__Space.html">Space</a> *&#160;</td>
-          <td class="paramname"><em>space</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>gets a pointer towards east. </p>
-<dl class="section author"><dt>Author</dt><dd>Javier Romera </dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">{Space*}</td><td>- space; </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>{STATUS} - Returns an state; </dd></dl>
 
 </div>
 </div>
@@ -363,292 +259,6 @@ STATUS&#160;</td><td class="memItemRight" valign="bottom"><b>space_destroy</b> (
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>{Id} - Returns an id; </dd></dl>
-
-</div>
-</div>
-<a id="a310c540cd6e11073f7328add1f927001"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a310c540cd6e11073f7328add1f927001">&#9670;&nbsp;</a></span>space_get_name()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const char* space_get_name </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="struct__Space.html">Space</a> *&#160;</td>
-          <td class="paramname"><em>space</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>takes the name of a space. </p>
-<dl class="section author"><dt>Author</dt><dd>Javier Romera </dd></dl>
-<dl class="section version"><dt>Version</dt><dd>2.0 </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>07/02/2019 </dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">{Space*}</td><td>- space; </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>{const char*} - Returns a constant character array; </dd></dl>
-
-</div>
-</div>
-<a id="ad331fba774897900f615d9d2e8d81a90"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad331fba774897900f615d9d2e8d81a90">&#9670;&nbsp;</a></span>space_get_north()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Id space_get_north </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="struct__Space.html">Space</a> *&#160;</td>
-          <td class="paramname"><em>space</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>gets a pointer towards north. </p>
-<dl class="section author"><dt>Author</dt><dd>Javier Romera </dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">{Space*}</td><td>- space; </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>{STATUS} - Returns an state; </dd></dl>
-
-</div>
-</div>
-<a id="ab7442e9184cd345333916b04165ab843"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab7442e9184cd345333916b04165ab843">&#9670;&nbsp;</a></span>space_get_object()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Id space_get_object </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="struct__Space.html">Space</a> *&#160;</td>
-          <td class="paramname"><em>space</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Id&#160;</td>
-          <td class="paramname"><em>id</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>gets a pointer towads an object. </p>
-<dl class="section author"><dt>Author</dt><dd>Javier Romera </dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">{Game*}</td><td>- game; </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>{void} - Do not returns nothing; </dd></dl>
-
-</div>
-</div>
-<a id="ae1afecfe9f7bb189edfc2f5bbd39b47f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae1afecfe9f7bb189edfc2f5bbd39b47f">&#9670;&nbsp;</a></span>space_get_picture()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">char* space_get_picture </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="struct__Space.html">Space</a> *&#160;</td>
-          <td class="paramname"><em>space</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>it gets the figure associated to the specified space </p>
-<dl class="section author"><dt>Author</dt><dd>Javier Romera </dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">{Space*}</td><td>- space; </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>{char*} - Returns a pointer to char; </dd></dl>
-
-</div>
-</div>
-<a id="a9b86e1335c423eaad832e50d4c12cf1f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9b86e1335c423eaad832e50d4c12cf1f">&#9670;&nbsp;</a></span>space_get_south()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Id space_get_south </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="struct__Space.html">Space</a> *&#160;</td>
-          <td class="paramname"><em>space</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>gets a pointer towards south. </p>
-<dl class="section author"><dt>Author</dt><dd>Javier Romera </dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">{Space*}</td><td>- space; </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>{STATUS} - Returns an state; </dd></dl>
-
-</div>
-</div>
-<a id="af495ebfd5d13eba1a48cebd10992a17f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af495ebfd5d13eba1a48cebd10992a17f">&#9670;&nbsp;</a></span>space_get_west()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Id space_get_west </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="struct__Space.html">Space</a> *&#160;</td>
-          <td class="paramname"><em>space</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>gets a pointer towards west. </p>
-<dl class="section author"><dt>Author</dt><dd>Javier Romera </dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">{Space*}</td><td>- space; </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>{STATUS} - Returns an state; </dd></dl>
-
-</div>
-</div>
-<a id="a3d17d1e189651d3d997891d4649e96c1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3d17d1e189651d3d997891d4649e96c1">&#9670;&nbsp;</a></span>space_has_object()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool space_has_object </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="struct__Space.html">Space</a> *&#160;</td>
-          <td class="paramname"><em>space</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Id&#160;</td>
-          <td class="paramname"><em>id</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>checks if the space has an object with the specified id </p>
-<dl class="section author"><dt>Author</dt><dd>Javier Romera </dd></dl>
-<dl class="section version"><dt>Version</dt><dd>2.0 </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>07/02/2019 </dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">{Space}</td><td>- space; {Id} - id; </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>{bool} - Returns TRUE or FALSE; </dd></dl>
-
-</div>
-</div>
-<a id="a18eca058da6cdf20ae5eda9d122d992e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a18eca058da6cdf20ae5eda9d122d992e">&#9670;&nbsp;</a></span>space_print()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">STATUS space_print </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="struct__Space.html">Space</a> *&#160;</td>
-          <td class="paramname"><em>space</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>prints a space. </p>
-<dl class="section author"><dt>Author</dt><dd>Javier Romera </dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">{Game*}</td><td>- game; </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>{void} - Do not returns nothing; </dd></dl>
-
-</div>
-</div>
-<a id="a860a8f3e0227955ad56d1a12f0bdc44a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a860a8f3e0227955ad56d1a12f0bdc44a">&#9670;&nbsp;</a></span>space_set_east()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">STATUS space_set_east </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="struct__Space.html">Space</a> *&#160;</td>
-          <td class="paramname"><em>space</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Id&#160;</td>
-          <td class="paramname"><em>id</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>sets the id of a space to east. </p>
-<dl class="section author"><dt>Author</dt><dd>Javier Romera </dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">{Space*}</td><td>- space; {Id} - id; </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>{STATUS} - Returns an state; </dd></dl>
 
 </div>
 </div>
@@ -692,6 +302,36 @@ STATUS&#160;</td><td class="memItemRight" valign="bottom"><b>space_destroy</b> (
 
 </div>
 </div>
+<a id="a310c540cd6e11073f7328add1f927001"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a310c540cd6e11073f7328add1f927001">&#9670;&nbsp;</a></span>space_get_name()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* space_get_name </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct__Space.html">Space</a> *&#160;</td>
+          <td class="paramname"><em>space</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>takes the name of a space. </p>
+<dl class="section author"><dt>Author</dt><dd>Javier Romera </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>2.0 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>07/02/2019 </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">{Space*}</td><td>- space; </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>{const char*} - Returns a constant character array; </dd></dl>
+
+</div>
+</div>
 <a id="a9e6e3e3bac4996ac6b8bd555e52bfb26"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9e6e3e3bac4996ac6b8bd555e52bfb26">&#9670;&nbsp;</a></span>space_set_north()</h2>
 
@@ -730,37 +370,27 @@ STATUS&#160;</td><td class="memItemRight" valign="bottom"><b>space_destroy</b> (
 
 </div>
 </div>
-<a id="a49badcee7e68b79f40dad37c83193f74"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a49badcee7e68b79f40dad37c83193f74">&#9670;&nbsp;</a></span>space_set_picture()</h2>
+<a id="ad331fba774897900f615d9d2e8d81a90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad331fba774897900f615d9d2e8d81a90">&#9670;&nbsp;</a></span>space_get_north()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">STATUS space_set_picture </td>
+          <td class="memname">Id space_get_north </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="struct__Space.html">Space</a> *&#160;</td>
-          <td class="paramname"><em>space</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"><em>space</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>pict</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>it paints the figure associated to the space </p>
+<p>gets a pointer towards north. </p>
 <dl class="section author"><dt>Author</dt><dd>Javier Romera </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">{Space*}</td><td>- space; {char*} - pict; </td></tr>
+    <tr><td class="paramname">{Space*}</td><td>- space; </td></tr>
   </table>
   </dd>
 </dl>
@@ -806,6 +436,100 @@ STATUS&#160;</td><td class="memItemRight" valign="bottom"><b>space_destroy</b> (
 
 </div>
 </div>
+<a id="a9b86e1335c423eaad832e50d4c12cf1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b86e1335c423eaad832e50d4c12cf1f">&#9670;&nbsp;</a></span>space_get_south()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Id space_get_south </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct__Space.html">Space</a> *&#160;</td>
+          <td class="paramname"><em>space</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>gets a pointer towards south. </p>
+<dl class="section author"><dt>Author</dt><dd>Javier Romera </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">{Space*}</td><td>- space; </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>{STATUS} - Returns an state; </dd></dl>
+
+</div>
+</div>
+<a id="a860a8f3e0227955ad56d1a12f0bdc44a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a860a8f3e0227955ad56d1a12f0bdc44a">&#9670;&nbsp;</a></span>space_set_east()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">STATUS space_set_east </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct__Space.html">Space</a> *&#160;</td>
+          <td class="paramname"><em>space</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Id&#160;</td>
+          <td class="paramname"><em>id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>sets the id of a space to east. </p>
+<dl class="section author"><dt>Author</dt><dd>Javier Romera </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">{Space*}</td><td>- space; {Id} - id; </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>{STATUS} - Returns an state; </dd></dl>
+
+</div>
+</div>
+<a id="a978a22b77f74bb2dab68a00571abbe0b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a978a22b77f74bb2dab68a00571abbe0b">&#9670;&nbsp;</a></span>space_get_east()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Id space_get_east </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct__Space.html">Space</a> *&#160;</td>
+          <td class="paramname"><em>space</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>gets a pointer towards east. </p>
+<dl class="section author"><dt>Author</dt><dd>Javier Romera </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">{Space*}</td><td>- space; </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>{STATUS} - Returns an state; </dd></dl>
+
+</div>
+</div>
 <a id="ad44b14cb38902cf31fa1f341beaab0db"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad44b14cb38902cf31fa1f341beaab0db">&#9670;&nbsp;</a></span>space_set_west()</h2>
 
@@ -841,6 +565,282 @@ STATUS&#160;</td><td class="memItemRight" valign="bottom"><b>space_destroy</b> (
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>{STATUS} - Returns an state; </dd></dl>
+
+</div>
+</div>
+<a id="af495ebfd5d13eba1a48cebd10992a17f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af495ebfd5d13eba1a48cebd10992a17f">&#9670;&nbsp;</a></span>space_get_west()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Id space_get_west </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct__Space.html">Space</a> *&#160;</td>
+          <td class="paramname"><em>space</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>gets a pointer towards west. </p>
+<dl class="section author"><dt>Author</dt><dd>Javier Romera </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">{Space*}</td><td>- space; </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>{STATUS} - Returns an state; </dd></dl>
+
+</div>
+</div>
+<a id="a32c30f0aa89f3f28c06802f1c72c1fdc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32c30f0aa89f3f28c06802f1c72c1fdc">&#9670;&nbsp;</a></span>space_del_object()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">STATUS space_del_object </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct__Space.html">Space</a> *&#160;</td>
+          <td class="paramname"><em>space</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Id&#160;</td>
+          <td class="paramname"><em>id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>it deletes the object with the specified id from the space </p>
+<dl class="section author"><dt>Author</dt><dd>Javier Romera </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">{Space*}</td><td>- space; {Id} - id; </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>{STATUS} - Returns an state; </dd></dl>
+
+</div>
+</div>
+<a id="a69b9e22046b7b44dc5aa2afe7cc0a1b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69b9e22046b7b44dc5aa2afe7cc0a1b9">&#9670;&nbsp;</a></span>space_add_object()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">STATUS space_add_object </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct__Space.html">Space</a> *&#160;</td>
+          <td class="paramname"><em>space</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Id&#160;</td>
+          <td class="paramname"><em>id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>it adds the object with the specified id to the space </p>
+<dl class="section author"><dt>Author</dt><dd>Javier Romera </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">{Space*}</td><td>- space; {Id} - id; </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>{STATUS} - Returns an state; </dd></dl>
+
+</div>
+</div>
+<a id="ab7442e9184cd345333916b04165ab843"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7442e9184cd345333916b04165ab843">&#9670;&nbsp;</a></span>space_get_object()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Id space_get_object </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct__Space.html">Space</a> *&#160;</td>
+          <td class="paramname"><em>space</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Id&#160;</td>
+          <td class="paramname"><em>id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>gets a pointer towads an object. </p>
+<dl class="section author"><dt>Author</dt><dd>Javier Romera </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">{Game*}</td><td>- game; </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>{void} - Do not returns nothing; </dd></dl>
+
+</div>
+</div>
+<a id="a18eca058da6cdf20ae5eda9d122d992e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18eca058da6cdf20ae5eda9d122d992e">&#9670;&nbsp;</a></span>space_print()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">STATUS space_print </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct__Space.html">Space</a> *&#160;</td>
+          <td class="paramname"><em>space</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>prints a space. </p>
+<dl class="section author"><dt>Author</dt><dd>Javier Romera </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">{Game*}</td><td>- game; </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>{void} - Do not returns nothing; </dd></dl>
+
+</div>
+</div>
+<a id="a3d17d1e189651d3d997891d4649e96c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d17d1e189651d3d997891d4649e96c1">&#9670;&nbsp;</a></span>space_has_object()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool space_has_object </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct__Space.html">Space</a> *&#160;</td>
+          <td class="paramname"><em>space</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Id&#160;</td>
+          <td class="paramname"><em>id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>checks if the space has an object with the specified id </p>
+<dl class="section author"><dt>Author</dt><dd>Javier Romera </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>2.0 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>07/02/2019 </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">{Space}</td><td>- space; {Id} - id; </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>{bool} - Returns TRUE or FALSE; </dd></dl>
+
+</div>
+</div>
+<a id="a49badcee7e68b79f40dad37c83193f74"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49badcee7e68b79f40dad37c83193f74">&#9670;&nbsp;</a></span>space_set_picture()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">STATUS space_set_picture </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct__Space.html">Space</a> *&#160;</td>
+          <td class="paramname"><em>space</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>pict</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>it paints the figure associated to the space </p>
+<dl class="section author"><dt>Author</dt><dd>Javier Romera </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">{Space*}</td><td>- space; {char*} - pict; </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>{STATUS} - Returns an state; </dd></dl>
+
+</div>
+</div>
+<a id="ae1afecfe9f7bb189edfc2f5bbd39b47f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1afecfe9f7bb189edfc2f5bbd39b47f">&#9670;&nbsp;</a></span>space_get_picture()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* space_get_picture </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct__Space.html">Space</a> *&#160;</td>
+          <td class="paramname"><em>space</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>it gets the figure associated to the specified space </p>
+<dl class="section author"><dt>Author</dt><dd>Javier Romera </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">{Space*}</td><td>- space; </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>{char*} - Returns a pointer to char; </dd></dl>
 
 </div>
 </div>

@@ -1645,12 +1645,129 @@ th.markdownTableHeadCenter, td.markdownTableBodyCenter {
 	box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
+div.textblock p {
+	margin: 0;
+}
+
+div.directory {
+	border: none;
+}
+
+div.directory table.directory tbody tr.even {
+	background: rgba(41, 118, 165, 0.05);
+}
+div.directory table.directory tbody tr td.entry {
+	padding: .7em .2em 0 0;
+}
+div.directory table.directory tbody tr td.entry a.el {
+	color: #EA3A60;
+	background: rgba(234, 58, 96, 0.1);
+	padding: .2em .4em;
+	border-radius: 5px;
+}
+
+div.directory table.directory tbody tr td.desc {
+	color: #444;
+}
+
 div.contents {
 	margin: 0;
 }
 
-div.contents div.textblock {
-	margin: 1em;
+div.contents > p {
+	padding: .5em;
+}
+
+div.contents table.memberdecls tr[class^=memitem] td.memItemLeft {
+	color: #444;
+	font-weight: bold;
+}
+
+div.contents table.memberdecls tr[class^=memitem] td.memItemRight a.el {
+	border-radius: 5px;
+	font-weight: bold;
+	padding: .1em .4em;
+
+}
+
+div.contents table.memberdecls tr[class^=memitem] td.memItemRight a.el:first-child {
+	color: #2976A5;
+	background: rgba(41, 118, 165, 0.1);
+}
+
+div.contents table.memberdecls tr[class^=memitem] td.memItemRight a.el:not(:first-child) {
+	color: #EA3A60;
+	background: rgba(234, 58, 96, 0.1);
+}
+
+div.contents > h2.memtitle {
+	color: #fff;
+	font-weight: bold;
+	background: #2976A5;
+	border: none;
+	border-radius: 0 7px 0 0;
+	padding: .2em .5em;
+}
+
+div.contents > p {
+	color: #444;
+}
+
+div.contents > h2.memtitle span.permalink a {
+	color: #fff;
+}
+
+div.contents div.memitem {
+	box-shadow: 0 0 20px rgba(0,0,0,0.2);
+	margin-bottom: 2em;
+}
+
+div.contents div.memitem div.memproto {
+	border: none;
+	background: #fff;
+	box-shadow: none;
+}
+
+div.contents div.memitem div.memdoc {
+	border: none;
+	box-shadow: 0 -1px 5px rgba(0,0,0,0.1);
+	background-image: none;
+}
+
+div.contents div.memitem div.memdoc p {
+	margin: 0 0 .2em 0;
+}
+
+div.contents div.memitem div.memdoc dl.params table.params td.paramname {
+	color: #EA3A60;
+	background: rgba(234, 58, 96, 0.1);
+	padding: .1em .4em;
+	border-radius: 5px;
+}
+
+div.contents div.memitem div.memproto table.memname {
+	color: #444;
+	background: rgba(0, 0, 0, 0.05);
+	border-radius: 7px;
+	margin: .5em 0 .5em .8em;
+	padding: .1em .3em;
+}
+
+div.contents h2.groupheader {
+	text-decoration: none;
+	border: none;
+	display: inline-block !important;
+	background: #fff;
+	color: #2976A5;
+	border-bottom: 3px dashed #2976A5;
+	font-weight: bold;
+	box-shadow: 0 2px 15px rgba(0,0,0,0.15);
+	padding: .5em;
+	margin: 1.5em 0 0 0;
+}
+
+div.contents > div.textblock {
+	margin: 1em 1em 0 1em;
 	padding: .5em .7em;
 	color: #444;
 	border-radius: 5px;
@@ -1661,6 +1778,7 @@ div.contents div.textblock {
 div.contents h3 {
 	background: #fff;
 	padding: .5em;
+	margin: 1.5em 0 0 0;
 	border-radius: 0px;
 	box-shadow: 0 0 10px rgba(0,0,0,0.15);
 }
@@ -1682,8 +1800,8 @@ div.contents ul li {
 div.contents ul li a.el {
 	color: #EA3A60;
 	background: rgba(234, 58, 96, 0.1);
-	padding: .1em .3em;
-	border-radius: 3px;
+	padding: .1em .4em;
+	border-radius: 5px;
 }
 
 

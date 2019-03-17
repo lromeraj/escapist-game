@@ -124,6 +124,31 @@ Functions</h2></td></tr>
 <dl class="section date"><dt>Date</dt><dd>07/02/2019 </dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>GNU Public License </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
+<a id="aed0f40de36238a60267abf71c6720599"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed0f40de36238a60267abf71c6720599">&#9670;&nbsp;</a></span>player_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct__Player.html">Player</a>* player_init </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>player_create defines a new player.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">{}</td><td>- do not receive arguments; </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>{Player*} - returns a player pointer; </dd></dl>
+
+</div>
+</div>
 <a id="a68e324aa5064e27d0a2f38aafb6809ad"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a68e324aa5064e27d0a2f38aafb6809ad">&#9670;&nbsp;</a></span>player_destroy()</h2>
 
@@ -147,6 +172,176 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>{STATUS} - Returns a state; </dd></dl>
+
+</div>
+</div>
+<a id="a6a30809f7775f5c2d3bef47d92769e59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a30809f7775f5c2d3bef47d92769e59">&#9670;&nbsp;</a></span>player_set_name()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">STATUS player_set_name </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct__Player.html">Player</a> *&#160;</td>
+          <td class="paramname"><em>player</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>player_set_name defines the name of a player.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">{Player*}</td><td>- player; {Char*} - name; </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>{STATUS} - Returns an state; </dd></dl>
+
+</div>
+</div>
+<a id="ac8ace1a1b6b11bc7f92a71a3922e4b83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8ace1a1b6b11bc7f92a71a3922e4b83">&#9670;&nbsp;</a></span>player_set_location()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">STATUS player_set_location </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct__Player.html">Player</a> *&#160;</td>
+          <td class="paramname"><em>player</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Id&#160;</td>
+          <td class="paramname"><em>id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>player_set_north sets the location of a player.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">{Player*}</td><td>- player; {Id} - id; </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>{STATUS} - Returns an state; </dd></dl>
+
+</div>
+</div>
+<a id="af5eacaf6a51631f28500d8127e761c1b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5eacaf6a51631f28500d8127e761c1b">&#9670;&nbsp;</a></span>player_set_object()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">STATUS player_set_object </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct__Player.html">Player</a> *&#160;</td>
+          <td class="paramname"><em>player</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Id&#160;</td>
+          <td class="paramname"><em>id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>player_set_object sets an id to a player's object.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">{Player*}</td><td>- player; {Id} - id; </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>{STATUS} - Returns an state; </dd></dl>
+
+</div>
+</div>
+<a id="a6622c02be2fe230a5c0df66385a13ece"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6622c02be2fe230a5c0df66385a13ece">&#9670;&nbsp;</a></span>player_get_name()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* player_get_name </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct__Player.html">Player</a> *&#160;</td>
+          <td class="paramname"><em>player</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>player_get_name takes the name of a player.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">{Player*}</td><td>- player; </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>{const char*} - Returns a constant character array; </dd></dl>
+
+</div>
+</div>
+<a id="a278466eff9dd013babc5bdbd485f1da0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a278466eff9dd013babc5bdbd485f1da0">&#9670;&nbsp;</a></span>player_set_id()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void player_set_id </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct__Player.html">Player</a> *&#160;</td>
+          <td class="paramname"><em>player</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Id&#160;</td>
+          <td class="paramname"><em>id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>player_set_id sets te id of a player.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">{Player*}</td><td>- player; {Id} - id; </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>{void} - Do not return nothing; </dd></dl>
 
 </div>
 </div>
@@ -202,14 +397,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a6622c02be2fe230a5c0df66385a13ece"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6622c02be2fe230a5c0df66385a13ece">&#9670;&nbsp;</a></span>player_get_name()</h2>
+<a id="a2e262401b9b2b77978b421917c13279d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e262401b9b2b77978b421917c13279d">&#9670;&nbsp;</a></span>player_has_object()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const char* player_get_name </td>
+          <td class="memname">bool player_has_object </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="struct__Player.html">Player</a> *&#160;</td>
           <td class="paramname"><em>player</em></td><td>)</td>
@@ -217,14 +412,14 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>player_get_name takes the name of a player.</p>
+<p>player_has_object gets a pointer towards an object.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">{Player*}</td><td>- player; </td></tr>
+    <tr><td class="paramname">{Game*}</td><td>- game; </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>{const char*} - Returns a constant character array; </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>{void} - Do not returns nothing; </dd></dl>
 
 </div>
 </div>
@@ -254,57 +449,6 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a2e262401b9b2b77978b421917c13279d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2e262401b9b2b77978b421917c13279d">&#9670;&nbsp;</a></span>player_has_object()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool player_has_object </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="struct__Player.html">Player</a> *&#160;</td>
-          <td class="paramname"><em>player</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>player_has_object gets a pointer towards an object.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">{Game*}</td><td>- game; </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>{void} - Do not returns nothing; </dd></dl>
-
-</div>
-</div>
-<a id="aed0f40de36238a60267abf71c6720599"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aed0f40de36238a60267abf71c6720599">&#9670;&nbsp;</a></span>player_init()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="struct__Player.html">Player</a>* player_init </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>player_create defines a new player.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">{}</td><td>- do not receive arguments; </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>{Player*} - returns a player pointer; </dd></dl>
-
-</div>
-</div>
 <a id="aa0f2f8b4d1b63a60ef927d47aa45dbd1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa0f2f8b4d1b63a60ef927d47aa45dbd1">&#9670;&nbsp;</a></span>player_print()</h2>
 
@@ -328,150 +472,6 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>{void} - Do not returns nothing; </dd></dl>
-
-</div>
-</div>
-<a id="a278466eff9dd013babc5bdbd485f1da0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a278466eff9dd013babc5bdbd485f1da0">&#9670;&nbsp;</a></span>player_set_id()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void player_set_id </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="struct__Player.html">Player</a> *&#160;</td>
-          <td class="paramname"><em>player</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Id&#160;</td>
-          <td class="paramname"><em>id</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>player_set_id sets te id of a player.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">{Player*}</td><td>- player; {Id} - id; </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>{void} - Do not return nothing; </dd></dl>
-
-</div>
-</div>
-<a id="ac8ace1a1b6b11bc7f92a71a3922e4b83"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac8ace1a1b6b11bc7f92a71a3922e4b83">&#9670;&nbsp;</a></span>player_set_location()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">STATUS player_set_location </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="struct__Player.html">Player</a> *&#160;</td>
-          <td class="paramname"><em>player</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Id&#160;</td>
-          <td class="paramname"><em>id</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>player_set_north sets the location of a player.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">{Player*}</td><td>- player; {Id} - id; </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>{STATUS} - Returns an state; </dd></dl>
-
-</div>
-</div>
-<a id="a6a30809f7775f5c2d3bef47d92769e59"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6a30809f7775f5c2d3bef47d92769e59">&#9670;&nbsp;</a></span>player_set_name()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">STATUS player_set_name </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="struct__Player.html">Player</a> *&#160;</td>
-          <td class="paramname"><em>player</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>name</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>player_set_name defines the name of a player.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">{Player*}</td><td>- player; {Char*} - name; </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>{STATUS} - Returns an state; </dd></dl>
-
-</div>
-</div>
-<a id="af5eacaf6a51631f28500d8127e761c1b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af5eacaf6a51631f28500d8127e761c1b">&#9670;&nbsp;</a></span>player_set_object()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">STATUS player_set_object </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="struct__Player.html">Player</a> *&#160;</td>
-          <td class="paramname"><em>player</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Id&#160;</td>
-          <td class="paramname"><em>id</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>player_set_object sets an id to a player's object.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">{Player*}</td><td>- player; {Id} - id; </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>{STATUS} - Returns an state; </dd></dl>
 
 </div>
 </div>
