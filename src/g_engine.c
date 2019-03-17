@@ -1,13 +1,3 @@
-/**
- * @brief Main draw engine
- *
- * @file g_engine.c
- * @author Javier Romera
- * @version 0.3.1
- * @date 07/02/2019
- * @copyright GNU Public License
- */
-
 #include "game.h"
 #include "player.h"
 #include "g_engine.h"

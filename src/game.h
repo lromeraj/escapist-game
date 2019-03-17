@@ -2,7 +2,6 @@
  * @brief It defines the game interface
  *
  * @file game.h
- * @author Álvaro Rodríguez & Javier Romera
  * @version 0.5.1
  * @date 14/03/2019
  * @copyright GNU Public License
@@ -20,13 +19,13 @@
 
 typedef struct _Game Game;
 
-/** Adds a given space into the game
-*
+/**
+* @brief Adds a given space into the game
 * @param {Game*} game - Game pointer
 * @param {Space*} space - Space pointer
 * @retval {STATUS} - Returns an status code
 */
-STATUS game_add_space(Game *game, Space *space);
+STATUS game_add_space( Game *game, Space *space );
 
 /*Declaration of funcions used in game.c*/
 

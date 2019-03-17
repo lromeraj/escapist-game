@@ -1,13 +1,3 @@
-/**
- * @brief Manages the game objects.
- *
- * @file object.c
- * @author Álvaro Rodríguez & Javier Romera
- * @version 1.0
- * @date 07/02/2019
- * @copyright GNU Public License
- */
-
 #include "object.h"
 #include <stdio.h>
 #include <stdlib.h>

@@ -1,13 +1,3 @@
-/**
- * @brief It implements the game command interpreter.
- *
- * @file command.c
- * @author Álvaro Rodríguez & Javier Romera
- * @version 1.0
- * @date 07/02/2019
- * @copyright GNU Public License
- */
-
 #include "cmd.h"
 #include <stdio.h>
 #include <stdlib.h>

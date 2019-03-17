@@ -30,14 +30,11 @@ typedef struct _Space Space;
 Space* space_create(Id id);
 
 /**
-* @name space_destroy
 * @brief sets to null a space area.
 *
-* @author Javier Romera
-* @version 2.0
 * @date 07/02/2019
-* @param {Space*} - space;
-* @return {STATUS} - Returns a state;
+* @param {Space*} - space
+* @retval {STATUS} - Returns an status
 */
 
 STATUS space_destroy(Space* space);

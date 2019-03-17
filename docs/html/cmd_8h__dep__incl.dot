@@ -6,18 +6,9 @@ digraph "src/cmd.h"
   Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node5 [label="src/game.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$game_8h.html",tooltip="It defines the game interface. "];
   Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node6 [label="src/g_engine.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$g__engine_8c.html",tooltip="Main draw engine. "];
-  Node5 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node7 [label="src/g_engine.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$g__engine_8h_source.html"];
-  Node7 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node7 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node8 [label="src/game_loop.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$game__loop_8c.html",tooltip="Main game loop. "];
-  Node5 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node9 [label="src/game.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$game_8c.html",tooltip="It implements the game interface and all the associated callbacks for each command. "];
-  Node5 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node10 [label="src/reader.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$reader_8h.html",tooltip="Defines a game reader. "];
-  Node10 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node10 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node11 [label="src/reader.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$reader_8c.html",tooltip="Game file reader. "];
-  Node5 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="src/g_engine.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$g__engine_8h.html",tooltip="It defines a textual graphic engine. "];
+  Node6 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="src/game_loop.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$game__loop_8c.html",tooltip="Main game loop. "];
+  Node5 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="src/reader.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$reader_8h.html",tooltip="Defines a game reader. "];
 }

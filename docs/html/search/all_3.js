@@ -15,7 +15,7 @@ var searchData=
   ['cmd_5fget_5ferrc',['cmd_get_errc',['../cmd_8h.html#a57baf1963c86de1643043f9c4cee9567',1,'cmd.c']]],
   ['cmd_5fget_5fsname',['cmd_get_sname',['../cmd_8h.html#aa3bd4090b15be64bd3d4839233f85ee9',1,'cmd.c']]],
   ['cmd_5freq',['cmd_req',['../cmd_8h.html#abb04779da8a594a45843a10b91e9e3a3',1,'cmd.c']]],
-  ['cmd_5fset',['cmd_set',['../cmd_8h.html#a40c3dc0a5c4e1c9d58d781241fa5301d',1,'cmd.h']]],
+  ['cmd_5fset',['cmd_set',['../cmd_8h.html#ab2829bf716f494548177511118bf6c5b',1,'cmd.c']]],
   ['cmd_5fset_5fans',['cmd_set_ans',['../cmd_8h.html#aefbbd086c6cc093159c8dcc077363a31',1,'cmd.c']]],
   ['color',['Color',['../ui_8h.html#ab87bacfdad76e61b9412d7124be44c1c',1,'ui.h']]],
   ['ctrl_5fc',['ctrl_c',['../game__loop_8c.html#ac2aeadb517220b0bdc34fe1963ef4d9f',1,'game_loop.c']]],

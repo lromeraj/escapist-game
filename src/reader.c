@@ -1,13 +1,3 @@
-/**
- * @brief Game file reader
- *
- * @file reader.c
- * @author Álvaro Rodríguez & Javier Romera
- * @version 1.0
- * @date 07/02/2019
- * @copyright GNU Public License
- */
-
 #include "reader.h"
 #include "game.h"
 #include "space.h"

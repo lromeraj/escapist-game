@@ -13,14 +13,22 @@
 
 #include "game.h"
 
-/** game_load_spaces loads the available current spaces from the data file.
+/**
+* @brief Loads spaces from a file
 *
-* @param {Game*} - pointer to game data
+* @param {Game*} game - Pointer to game data
 * @poram {char*} filename - name of the source file
-* @return {STATUS} - returns an status
+* @retval {STATUS} - Returns an status
 */
-
 STATUS reader_load_spaces( Game *game , char *f_name );
+
+/**
+* @brief Loads objects from a file
+*
+* @param {Game*} game - Pointer to game data
+* @poram {char*} filename - name of the source file
+* @retval {STATUS} - Returns an status
+*/
 STATUS reader_load_objects( Game *game , char *f_name );
 
 #endif

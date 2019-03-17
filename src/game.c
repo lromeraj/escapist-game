@@ -1,14 +1,3 @@
-/**
- * @brief It implements the game interface and all the associated callbacks
- * for each command.
- *
- * @file game.c
- * @author Álvaro Rodríguez || Javier Romera
- * @version 1.0
- * @date 07/02/2019
- * @copyright GNU Public License
- */
-
 #include "types.h"
 #include "game.h"
 #include "reader.h"

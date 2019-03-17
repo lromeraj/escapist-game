@@ -13,21 +13,13 @@ Include dependency graph for reader.\+h\+:\nopagebreak
 \includegraphics[width=350pt]{reader_8h__incl}
 \end{center}
 \end{figure}
-This graph shows which files directly or indirectly include this file\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=232pt]{reader_8h__dep__incl}
-\end{center}
-\end{figure}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 S\+T\+A\+T\+US \hyperlink{reader_8h_a329b3f09b9f244887808b807a33457c8}{reader\+\_\+load\+\_\+spaces} (\hyperlink{struct__Game}{Game} $\ast$game, char $\ast$f\+\_\+name)
-\item 
-\mbox{\Hypertarget{reader_8h_ab8bed1641bb108e505b372bfb23a6604}\label{reader_8h_ab8bed1641bb108e505b372bfb23a6604}} 
-S\+T\+A\+T\+US {\bfseries reader\+\_\+load\+\_\+objects} (\hyperlink{struct__Game}{Game} $\ast$game, char $\ast$f\+\_\+name)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Loads spaces from a file. \end{DoxyCompactList}\item 
+S\+T\+A\+T\+US \hyperlink{reader_8h_ab8bed1641bb108e505b372bfb23a6604}{reader\+\_\+load\+\_\+objects} (\hyperlink{struct__Game}{Game} $\ast$game, char $\ast$f\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Loads objects from a file. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -54,13 +46,37 @@ G\+NU Public License
 \subsubsection{\texorpdfstring{reader\+\_\+load\+\_\+spaces()}{reader\_load\_spaces()}}
 {\footnotesize\ttfamily S\+T\+A\+T\+US reader\+\_\+load\+\_\+spaces (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Game}{Game} $\ast$}]{game,  }\item[{char $\ast$}]{f\+\_\+name }\end{DoxyParamCaption})}
 
-game\+\_\+load\+\_\+spaces loads the available current spaces from the data file.
+
+
+Loads spaces from a file. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em \{\+Game$\ast$\}} & -\/ pointer to game data  \{char$\ast$\} filename -\/ name of the source file \\
+{\em \{\+Game$\ast$\}} & game -\/ Pointer to game data  \{char$\ast$\} filename -\/ name of the source file \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-\{S\+T\+A\+T\+US\} -\/ returns an status 
-\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em \{\+S\+T\+A\+T\+U\+S\}} & -\/ Returns an status \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{reader_8h_ab8bed1641bb108e505b372bfb23a6604}\label{reader_8h_ab8bed1641bb108e505b372bfb23a6604}} 
+\index{reader.\+h@{reader.\+h}!reader\+\_\+load\+\_\+objects@{reader\+\_\+load\+\_\+objects}}
+\index{reader\+\_\+load\+\_\+objects@{reader\+\_\+load\+\_\+objects}!reader.\+h@{reader.\+h}}
+\subsubsection{\texorpdfstring{reader\+\_\+load\+\_\+objects()}{reader\_load\_objects()}}
+{\footnotesize\ttfamily S\+T\+A\+T\+US reader\+\_\+load\+\_\+objects (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Game}{Game} $\ast$}]{game,  }\item[{char $\ast$}]{f\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+Loads objects from a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+Game$\ast$\}} & game -\/ Pointer to game data  \{char$\ast$\} filename -\/ name of the source file \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \{\+S\+T\+A\+T\+U\+S\}} & -\/ Returns an status \\
+\hline
+\end{DoxyRetVals}

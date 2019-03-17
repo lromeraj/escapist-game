@@ -88,24 +88,16 @@ Include dependency graph for reader.h:</div>
 <area shape="rect" id="node8" href="set_8h_source.html" title="set.h" alt="" coords="333,229,384,256"/>
 </map>
 </div>
-</div><div class="textblock"><div class="dynheader">
-This graph shows which files directly or indirectly include this file:</div>
-<div class="dyncontent">
-<div class="center"><img src="reader_8h__dep__incl.png" border="0" usemap="#src_2reader_8hdep" alt=""/></div>
-<map name="src_2reader_8hdep" id="src_2reader_8hdep">
-<area shape="rect" id="node2" href="game_8c.html" title="It implements the game interface and all the associated callbacks for each command. " alt="" coords="5,80,92,107"/>
-<area shape="rect" id="node3" href="reader_8c.html" title="Game file reader. " alt="" coords="117,80,207,107"/>
-</map>
-</div>
 </div>
 <p><a href="reader_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a329b3f09b9f244887808b807a33457c8"><td class="memItemLeft" align="right" valign="top">STATUS&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="reader_8h.html#a329b3f09b9f244887808b807a33457c8">reader_load_spaces</a> (<a class="el" href="struct__Game.html">Game</a> *game, char *f_name)</td></tr>
+<tr class="memdesc:a329b3f09b9f244887808b807a33457c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads spaces from a file.  <a href="#a329b3f09b9f244887808b807a33457c8">More...</a><br /></td></tr>
 <tr class="separator:a329b3f09b9f244887808b807a33457c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab8bed1641bb108e505b372bfb23a6604"><td class="memItemLeft" align="right" valign="top"><a id="ab8bed1641bb108e505b372bfb23a6604"></a>
-STATUS&#160;</td><td class="memItemRight" valign="bottom"><b>reader_load_objects</b> (<a class="el" href="struct__Game.html">Game</a> *game, char *f_name)</td></tr>
+<tr class="memitem:ab8bed1641bb108e505b372bfb23a6604"><td class="memItemLeft" align="right" valign="top">STATUS&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="reader_8h.html#ab8bed1641bb108e505b372bfb23a6604">reader_load_objects</a> (<a class="el" href="struct__Game.html">Game</a> *game, char *f_name)</td></tr>
+<tr class="memdesc:ab8bed1641bb108e505b372bfb23a6604"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads objects from a file.  <a href="#ab8bed1641bb108e505b372bfb23a6604">More...</a><br /></td></tr>
 <tr class="separator:ab8bed1641bb108e505b372bfb23a6604"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -140,14 +132,62 @@ STATUS&#160;</td><td class="memItemRight" valign="bottom"><b>reader_load_objects
         </tr>
       </table>
 </div><div class="memdoc">
-<p>game_load_spaces loads the available current spaces from the data file.</p>
+
+<p>Loads spaces from a file. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">{Game*}</td><td>- pointer to game data  {char*} filename - name of the source file </td></tr>
+    <tr><td class="paramname">{Game*}</td><td>game - Pointer to game data  {char*} filename - name of the source file </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>{STATUS} - returns an status </dd></dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">{STATUS}</td><td>- Returns an status </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab8bed1641bb108e505b372bfb23a6604"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8bed1641bb108e505b372bfb23a6604">&#9670;&nbsp;</a></span>reader_load_objects()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">STATUS reader_load_objects </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct__Game.html">Game</a> *&#160;</td>
+          <td class="paramname"><em>game</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>f_name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Loads objects from a file. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">{Game*}</td><td>game - Pointer to game data  {char*} filename - name of the source file </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">{STATUS}</td><td>- Returns an status </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

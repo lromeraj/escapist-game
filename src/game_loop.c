@@ -18,28 +18,19 @@
 #include <signal.h>
 
 
-/** Main function of the game, works on a loop while no exit or quit option
-* is being introduced.
-* Returns 1 if it fails openning data file or graphic engine module,
-* returns 0 if the player decides quiting game.
-*
-* @param {int} argc - number of arguments with which was called the process
-* @param {char*} argv - arguments with which was called the process
-* @return {int} - returns an error code
-*/
-
-
 /******* PRIVATE_FUNCTIONS ******/
 
-/** This function will be executed when a signal is dispatched
+/**
+* @brief This function will be executed when a signal is dispatched
 * @param {int} sign - Signal id
 */
 void ctrl_c();
 
-/** This function will free all the memory
-* @param {void}
+/**
+* @brief This function will free all the memory
+* @param {int} errc - Error code
 */
-void _kill( int );
+void _kill( int errc );
 
 /********************************/
 
@@ -64,8 +55,8 @@ void _kill( int errc ) {
 
 }
 
-/* signal handler */
-void ctrl_c( int sign ) {
+
+void ctrl_c() {
   _kill( 1 );
 }
 

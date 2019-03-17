@@ -1674,6 +1674,10 @@ div.contents {
 	margin: 0;
 }
 
+div.contents div.textblock div.dynheader {
+	margin: 0;
+}
+
 div.contents > p {
 	padding: .5em;
 }

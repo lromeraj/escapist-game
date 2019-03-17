@@ -73,7 +73,7 @@ $(function() {
 
 <p>Main game loop.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;g_engine.h&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="g__engine_8h_source.html">g_engine.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="types_8h_source.html">types.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="log_8h_source.html">log.h</a>&quot;</code><br />
 <code>#include &lt;stdio.h&gt;</code><br />
@@ -102,12 +102,11 @@ Include dependency graph for game_loop.c:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ac2aeadb517220b0bdc34fe1963ef4d9f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game__loop_8c.html#ac2aeadb517220b0bdc34fe1963ef4d9f">ctrl_c</a> ()</td></tr>
+<tr class="memdesc:ac2aeadb517220b0bdc34fe1963ef4d9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function will be executed when a signal is dispatched.  <a href="#ac2aeadb517220b0bdc34fe1963ef4d9f">More...</a><br /></td></tr>
 <tr class="separator:ac2aeadb517220b0bdc34fe1963ef4d9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0ed15a34423726cf23f8dd30a0968dbb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game__loop_8c.html#a0ed15a34423726cf23f8dd30a0968dbb">_kill</a> (int)</td></tr>
-<tr class="separator:a0ed15a34423726cf23f8dd30a0968dbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abe62cf25c3e968d4548ffc64cef3e521"><td class="memItemLeft" align="right" valign="top"><a id="abe62cf25c3e968d4548ffc64cef3e521"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>ctrl_c</b> (int sign)</td></tr>
-<tr class="separator:abe62cf25c3e968d4548ffc64cef3e521"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acca7de49935d305a8dc26faa07d53706"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game__loop_8c.html#acca7de49935d305a8dc26faa07d53706">_kill</a> (int errc)</td></tr>
+<tr class="memdesc:acca7de49935d305a8dc26faa07d53706"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function will free all the memory.  <a href="#acca7de49935d305a8dc26faa07d53706">More...</a><br /></td></tr>
+<tr class="separator:acca7de49935d305a8dc26faa07d53706"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0ddf1224851353fc92bfbff6f499fa97"><td class="memItemLeft" align="right" valign="top"><a id="a0ddf1224851353fc92bfbff6f499fa97"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>main</b> (int argc, char *argv[])</td></tr>
 <tr class="separator:a0ddf1224851353fc92bfbff6f499fa97"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -142,15 +141,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Main function of the game, works on a loop while no exit or quit option is being introduced. Returns 1 if it fails openning data file or graphic engine module, returns 0 if the player decides quiting game.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">{int}</td><td>argc - number of arguments with which was called the process </td></tr>
-    <tr><td class="paramname">{char*}</td><td>argv - arguments with which was called the process </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>{int} - returns an error code This function will be executed when a signal is dispatched </dd></dl>
+
+<p>This function will be executed when a signal is dispatched. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">{int}</td><td>sign - Signal id </td></tr>
@@ -160,8 +152,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a0ed15a34423726cf23f8dd30a0968dbb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0ed15a34423726cf23f8dd30a0968dbb">&#9670;&nbsp;</a></span>_kill()</h2>
+<a id="acca7de49935d305a8dc26faa07d53706"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acca7de49935d305a8dc26faa07d53706">&#9670;&nbsp;</a></span>_kill()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -175,9 +167,11 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>This function will free all the memory </p><dl class="params"><dt>Parameters</dt><dd>
+
+<p>This function will free all the memory. </p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">{void}</td><td></td></tr>
+    <tr><td class="paramname">{int}</td><td>errc - Error code </td></tr>
   </table>
   </dd>
 </dl>

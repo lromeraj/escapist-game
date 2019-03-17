@@ -1,12 +1,3 @@
-/**
- * @briefImp Manages player data.
- *
- * @file player.c
- * @author Álvaro Rodríguez || Javier Romera
- * @version 1.0
- * @date 07/02/2019
- * @copyright GNU Public License
- */
 #include "player.h"
 #include "types.h"
 #include <stdio.h>

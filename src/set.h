@@ -1,3 +1,12 @@
+/**
+ * @brief Command interpreter
+ *
+ * @file set.h
+ * @version 0.1.3
+ * @date 13/03/2019
+ * @copyright GNU Public License
+ */
+
 #ifndef SET_H
 #define SET_H
 

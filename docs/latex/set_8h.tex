@@ -1,0 +1,72 @@
+\hypertarget{set_8h}{}\section{src/set.h File Reference}
+\label{set_8h}\index{src/set.\+h@{src/set.\+h}}
+
+
+Command interpreter.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}types.\+h\char`\"{}}\newline
+Include dependency graph for set.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{set_8h_abc21882f4958e6b56aaf2f3c18f80d43}\label{set_8h_abc21882f4958e6b56aaf2f3c18f80d43}} 
+\#define {\bfseries M\+A\+X\+\_\+\+S\+ET}~5
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{set_8h_a6d3b7f7c92cbb4577ef3ef7ddbf93161}\label{set_8h_a6d3b7f7c92cbb4577ef3ef7ddbf93161}} 
+typedef struct \hyperlink{struct__Set}{\+\_\+\+Set} {\bfseries Set}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{set_8h_abcc73b7ad3913fc92dd95d366c9c8687}\label{set_8h_abcc73b7ad3913fc92dd95d366c9c8687}} 
+\hyperlink{struct__Set}{Set} $\ast$ {\bfseries set\+\_\+create} ()
+\item 
+\mbox{\Hypertarget{set_8h_a9d762a027f1c3bcdd22f70ee9093a7dd}\label{set_8h_a9d762a027f1c3bcdd22f70ee9093a7dd}} 
+void {\bfseries set\+\_\+destroy} (\hyperlink{struct__Set}{Set} $\ast$set)
+\item 
+\mbox{\Hypertarget{set_8h_af5e2395ece6e4c771f92a09039e20c48}\label{set_8h_af5e2395ece6e4c771f92a09039e20c48}} 
+S\+T\+A\+T\+US {\bfseries set\+\_\+add\+\_\+id} (\hyperlink{struct__Set}{Set} $\ast$set, Id id)
+\item 
+\mbox{\Hypertarget{set_8h_abcd3b47d23dc810bdf9c95cee08657f8}\label{set_8h_abcd3b47d23dc810bdf9c95cee08657f8}} 
+S\+T\+A\+T\+US {\bfseries set\+\_\+del\+\_\+id} (\hyperlink{struct__Set}{Set} $\ast$set, Id id)
+\item 
+\mbox{\Hypertarget{set_8h_a6f711461ca39891dd255f69fda0dac63}\label{set_8h_a6f711461ca39891dd255f69fda0dac63}} 
+bool {\bfseries set\+\_\+has\+\_\+id} (\hyperlink{struct__Set}{Set} $\ast$set, Id id)
+\item 
+\mbox{\Hypertarget{set_8h_af7ef2f473f47ce1ea8cfc2c3d38f06ef}\label{set_8h_af7ef2f473f47ce1ea8cfc2c3d38f06ef}} 
+int {\bfseries set\+\_\+get\+\_\+total} (\hyperlink{struct__Set}{Set} $\ast$set)
+\item 
+\mbox{\Hypertarget{set_8h_acfcaddd02eb2182e51853316a47b277b}\label{set_8h_acfcaddd02eb2182e51853316a47b277b}} 
+bool {\bfseries set\+\_\+is\+\_\+full} (\hyperlink{struct__Set}{Set} $\ast$set)
+\item 
+\mbox{\Hypertarget{set_8h_a708ba2be9a85217a7fe47705b11136d1}\label{set_8h_a708ba2be9a85217a7fe47705b11136d1}} 
+bool {\bfseries set\+\_\+is\+\_\+empty} (\hyperlink{struct__Set}{Set} $\ast$set)
+\item 
+\mbox{\Hypertarget{set_8h_af299dc4d834e837a9530858608c165dd}\label{set_8h_af299dc4d834e837a9530858608c165dd}} 
+Id {\bfseries set\+\_\+get\+\_\+first} (\hyperlink{struct__Set}{Set} $\ast$set)
+\item 
+\mbox{\Hypertarget{set_8h_a4a2be47265517919b4d98b9e209c578e}\label{set_8h_a4a2be47265517919b4d98b9e209c578e}} 
+int {\bfseries set\+\_\+print} (F\+I\+LE $\ast$stream, \hyperlink{struct__Set}{Set} $\ast$set)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Command interpreter. 
+
+\begin{DoxyVersion}{Version}
+0.\+1.\+3 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+13/03/2019 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+G\+NU Public License 
+\end{DoxyCopyright}

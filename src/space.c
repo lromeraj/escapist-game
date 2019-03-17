@@ -1,13 +1,3 @@
-/**
- * @briefImp Manages the cells player can move to.
- *
- * @file space.c
- * @author Álvaro Rodríguez || Javier Romera
- * @version 1.0
- * @date 07/02/2019
- * @copyright GNU Public License
- */
-
 #include "space.h"
 #include "types.h"
 #include "object.h"

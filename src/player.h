@@ -2,7 +2,6 @@
  * @brief It defines a player.
  *
  * @file player.h
- * @author Álvaro Rodríguez || Javier Romera
  * @version 1.0
  * @date 07/02/2019
  * @copyright GNU Public License

@@ -1,3 +1,12 @@
+/**
+ * @brief Command interpreter
+ *
+ * @file die.h
+ * @version 0.0.3
+ * @date 10/03/2019
+ * @copyright GNU Public License
+ */
+
 #ifndef DICE_H
 #define DICE_H
 

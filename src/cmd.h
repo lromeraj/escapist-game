@@ -43,17 +43,17 @@ typedef struct _Cmd Cmd;
 
 /**
 * @brief Sets up a new command and stores it inside a private array
-* @param {Cid} id - Command id
+* @param {Cid} id - Command identification
 * @param {char*} b_name - The base name of the command
 * @param {char*} s_name - The short name of the command
 * @param {cmd_fn} fn - Command callback function
 */
-void cmd_set( Cid id, char* b_name, const char *s_name, cmd_fn fn );
+void cmd_set( Cid id, const char* b_name, const char *s_name, cmd_fn fn );
 
 /**
 * @brief Sets a command by its id
-* @param {Cid} id - Command id
-* @return - Command pointer
+* @param {Cid} id - Command identification
+* @retval - Command pointer
 */
 Cmd *cmd_get( Cid id );
 
@@ -64,7 +64,7 @@ void cmd_free();
 
 /**
 * @brief Requests a new command from stdin
-* @return - Returns a pointer of the parsed command
+* @retval - Returns a pointer of the parsed command
 */
 Cmd *cmd_req();
 
@@ -86,50 +86,50 @@ void cmd_set_ans( Cmd *cmd, int errc, const char *str, ... );
 /**
 * @brief Gets a previus answer of the given command
 * @param {Cmd*} cmd - Command pointer
-* @return {char*} - Command answer
+* @retval {char*} - Command answer
 */
 const char *cmd_get_ans( Cmd *cmd );
 
 /**
 * @brief Gets the desired indexed argument
 * @param {Cmd*} cmd - Command pointer
-* @return {int} idx - Argument index
-* @return {char*} - Returns the requested indexed argument
+* @retval {int} idx - Argument index
+* @retval {char*} - Returns the requested indexed argument
 */
 const char *cmd_get_argv( Cmd *cmd, int idx );
 
 /**
 * @brief Gets the number of arguemnts of a given command
 * @param {Cmd*} cmd - Command pointer
-* @return {int} - Number of arguments
+* @retval {int} - Number of arguments
 */
 const int cmd_get_argc( Cmd *cmd );
 
 /**
 * @brief Gets the error code of a given command
 * @param {Cmd*} cmd - Command pointer
-* @return {int} - Error code
+* @retval {int} - Error code
 */
 const int cmd_get_errc( Cmd *cmd );
 
 /**
 * @brief Gets the command id
 * @param {Cmd*} cmd - Command pointer
-* @return {Cid} - Command id
+* @retval {Cid} - Command id
 */
 const Cid cmd_get_cid( Cmd *cmd );
 
 /**
 * @brief Gets the base name of a given command
 * @param {Cmd*} cmd - Command pointer
-* @return {char*} - Command base name
+* @retval {char*} - Command base name
 */
 const char *cmd_get_bname( Cmd *cmd );
 
 /**
 * @brief Gets the short name of a given command
 * @param {Cmd*} cmd - Command pointer
-* @return {char*} - Command short name
+* @retval {char*} - Command short name
 */
 const char *cmd_get_sname( Cmd *cmd );
 
