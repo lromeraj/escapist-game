@@ -1672,6 +1672,10 @@ div#titlearea div#projectname span#projectnumber {
 	box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
+.sm-dox li div#MSearchBox {
+	display: none;
+}
+
 .sm-dox li div#MSearchBox * {
 	box-shadow: none;
 	background-image: none;
