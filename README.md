@@ -46,6 +46,8 @@ ser omitida, y añadir mejor un autor por función.
 
 - Por cada parámetro que reciva la función se debe añadir la etiqueta `@param`, **no se deben hacer
 ningún tipo de abreviaciones**, de ser así `Doxygen` no será capaz de parsear correctamente los comentarios.
+- Si por un casual un parámetro tuviese más de un tipo de definición por ejemplo `const char*`, **la palabra `const`
+deberá ser omitida en el comentario**. 
 - Los comentarios de los prototipos de las funciones deberán realizarse de la siguiente forma:
 
 ``` c
