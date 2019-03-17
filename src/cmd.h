@@ -53,7 +53,7 @@ void cmd_set( Cid id, const char* b_name, const char *s_name, cmd_fn fn );
 /**
 * @brief Sets a command by its id
 * @param {Cid} id - Command identification
-* @retval - Command pointer
+* @retval {Cmd*} - Command pointer
 */
 Cmd *cmd_get( Cid id );
 
