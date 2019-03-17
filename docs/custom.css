@@ -1594,10 +1594,15 @@ th.markdownTableHeadCenter, td.markdownTableBodyCenter {
 
 /* @custom */
 
+* {
+	padding: 0;
+	margin: 0;
+}
+
 div#top { }
 
-div#titlearea {
-	margin: .5em 0 .5em .5em;
+div#titlearea table {
+	margin: .5em .5em 0 .5em;
 }
 
 div#titlearea td#projectalign {
@@ -1772,6 +1777,9 @@ div.header div.headertitle div.title {
 
 div.contents {
 	margin: 0;
+	overflow: hidden;
+	width: 100%;
+	padding: 0;
 }
 
 div.contents div.textblock div.dynheader {
@@ -1887,14 +1895,13 @@ div.contents div.memitem div.memproto table.memname {
 div.contents h2.groupheader {
 	text-decoration: none;
 	border: none;
-	display: inline-block !important;
 	background: #fff;
 	color: #2976A5;
 	border-bottom: 3px dashed #2976A5;
 	font-weight: bold;
+	padding: .3em;
 	box-shadow: 0 2px 15px rgba(0,0,0,0.15);
-	padding: .5em;
-	margin: 1.5em 0 0 0;
+	margin: 1.5em 0 .7em 0;
 }
 
 div.contents > div.textblock {
