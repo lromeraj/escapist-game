@@ -110,7 +110,7 @@ void ui_rs( Ui* ui );
 
 /**
 * @brief Creates a new box
-* @param {Ui*} ui - UI where the box should be used
+* @param {Ui*} ui - UI where the box should be created
 * @param {int} id - The ID with which the box will be referenced
 * @param {int} x - The x position of the box ( col of the matrix )
 * @param {int} y - The y position of the box ( row of the matrix )

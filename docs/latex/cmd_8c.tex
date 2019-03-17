@@ -1,0 +1,332 @@
+\hypertarget{cmd_8c}{}\section{src/cmd.c File Reference}
+\label{cmd_8c}\index{src/cmd.\+c@{src/cmd.\+c}}
+
+
+Command source code.  
+
+
+{\ttfamily \#include \char`\"{}cmd.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdarg.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+Include dependency graph for cmd.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{cmd_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct__Cmd}{\+\_\+\+Cmd}
+\begin{DoxyCompactList}\small\item\em Command data structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{cmd_8c_a41754cc6e6c54b0caa4d19371cfa37da}{cmd\+\_\+argv\+\_\+free} (\hyperlink{struct__Cmd}{Cmd} $\ast$cmd)
+\begin{DoxyCompactList}\small\item\em Frees the argument values of a given command. \end{DoxyCompactList}\item 
+void \hyperlink{cmd_8c_ab2829bf716f494548177511118bf6c5b}{cmd\+\_\+set} (\hyperlink{cmd_8h_a2933336e1f8003400f3b050402f0f5f3}{Cid} id, const char $\ast$b\+\_\+name, const char $\ast$s\+\_\+name, \hyperlink{cmd_8h_a78d7a8bd781b5514e6dd7e1253bb1907}{cmd\+\_\+fn} fn)
+\begin{DoxyCompactList}\small\item\em Sets up a new command and stores it inside a private array. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{cmd_8c_a3078f0effe67b212b1b913e3ff0c08dc}\label{cmd_8c_a3078f0effe67b212b1b913e3ff0c08dc}} 
+void \hyperlink{cmd_8c_a3078f0effe67b212b1b913e3ff0c08dc}{cmd\+\_\+free} ()
+\begin{DoxyCompactList}\small\item\em Destroy all the setted commands. \end{DoxyCompactList}\item 
+const char $\ast$ \hyperlink{cmd_8c_aa1e02137469ddc06fa9bcb3dac2c3a56}{cmd\+\_\+get\+\_\+argv} (\hyperlink{struct__Cmd}{Cmd} $\ast$cmd, int idx)
+\begin{DoxyCompactList}\small\item\em Gets the desired indexed argument. \end{DoxyCompactList}\item 
+const char $\ast$ \hyperlink{cmd_8c_afc6f99e63609bd15653ea164fbe59ede}{cmd\+\_\+get\+\_\+bname} (\hyperlink{struct__Cmd}{Cmd} $\ast$cmd)
+\begin{DoxyCompactList}\small\item\em Gets the base name of a given command. \end{DoxyCompactList}\item 
+const char $\ast$ \hyperlink{cmd_8c_aa3bd4090b15be64bd3d4839233f85ee9}{cmd\+\_\+get\+\_\+sname} (\hyperlink{struct__Cmd}{Cmd} $\ast$cmd)
+\begin{DoxyCompactList}\small\item\em Gets the short name of a given command. \end{DoxyCompactList}\item 
+const \hyperlink{cmd_8h_a2933336e1f8003400f3b050402f0f5f3}{Cid} \hyperlink{cmd_8c_a399883b5394d12f2c19816e72a756245}{cmd\+\_\+get\+\_\+cid} (\hyperlink{struct__Cmd}{Cmd} $\ast$cmd)
+\begin{DoxyCompactList}\small\item\em Gets the command id. \end{DoxyCompactList}\item 
+const int \hyperlink{cmd_8c_a45b6622fba552dd2b1c620afb4af451c}{cmd\+\_\+get\+\_\+argc} (\hyperlink{struct__Cmd}{Cmd} $\ast$cmd)
+\begin{DoxyCompactList}\small\item\em Gets the number of arguemnts of a given command. \end{DoxyCompactList}\item 
+void \hyperlink{cmd_8c_a3787fda022912652a1f98b9c6b8441d3}{cmd\+\_\+set\+\_\+ans} (\hyperlink{struct__Cmd}{Cmd} $\ast$cmd, int errc, const char $\ast$frm,...)
+\begin{DoxyCompactList}\small\item\em Sets an answer to the given command. \end{DoxyCompactList}\item 
+const int \hyperlink{cmd_8c_a57baf1963c86de1643043f9c4cee9567}{cmd\+\_\+get\+\_\+errc} (\hyperlink{struct__Cmd}{Cmd} $\ast$cmd)
+\begin{DoxyCompactList}\small\item\em Gets the error code of a given command. \end{DoxyCompactList}\item 
+const char $\ast$ \hyperlink{cmd_8c_a9fc56f507a2e6dabe93d8e8e03a81164}{cmd\+\_\+get\+\_\+ans} (\hyperlink{struct__Cmd}{Cmd} $\ast$cmd)
+\begin{DoxyCompactList}\small\item\em Gets a previus answer of the given command. \end{DoxyCompactList}\item 
+\hyperlink{struct__Cmd}{Cmd} $\ast$ \hyperlink{cmd_8c_a511ba687ae937a7eb95ea06b79b2b8ec}{cmd\+\_\+get} (\hyperlink{cmd_8h_a2933336e1f8003400f3b050402f0f5f3}{Cid} id)
+\begin{DoxyCompactList}\small\item\em Sets a command by its id. \end{DoxyCompactList}\item 
+void \hyperlink{cmd_8c_a5090e929f5e97aa5492b47dfd7a6ec91}{cmd\+\_\+cb} (\hyperlink{struct__Cmd}{Cmd} $\ast$cmd, void $\ast$vp)
+\begin{DoxyCompactList}\small\item\em Calls to the callback function stored in the given command. \end{DoxyCompactList}\item 
+\hyperlink{struct__Cmd}{Cmd} $\ast$ \hyperlink{cmd_8c_abb04779da8a594a45843a10b91e9e3a3}{cmd\+\_\+req} ()
+\begin{DoxyCompactList}\small\item\em Requests a new command from stdin. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{cmd_8c_a3660f29836df7f6e9098155b8dc20bb8}\label{cmd_8c_a3660f29836df7f6e9098155b8dc20bb8}} 
+\hyperlink{struct__Cmd}{Cmd} $\ast$ {\bfseries C\+M\+DS} \mbox{[}\hyperlink{cmd_8h_ad14effda14501a769b3d46984d43aa00}{M\+A\+X\+\_\+\+C\+M\+DS}\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Command source code. 
+
+\begin{DoxyAuthor}{Author}
+Javier Romera 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+8.\+4 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+17/03/2019 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+G\+NU Public License 
+\end{DoxyCopyright}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{cmd_8c_a41754cc6e6c54b0caa4d19371cfa37da}\label{cmd_8c_a41754cc6e6c54b0caa4d19371cfa37da}} 
+\index{cmd.\+c@{cmd.\+c}!cmd\+\_\+argv\+\_\+free@{cmd\+\_\+argv\+\_\+free}}
+\index{cmd\+\_\+argv\+\_\+free@{cmd\+\_\+argv\+\_\+free}!cmd.\+c@{cmd.\+c}}
+\subsubsection{\texorpdfstring{cmd\+\_\+argv\+\_\+free()}{cmd\_argv\_free()}}
+{\footnotesize\ttfamily void cmd\+\_\+argv\+\_\+free (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Cmd}{Cmd} $\ast$}]{cmd }\end{DoxyParamCaption})}
+
+
+
+Frees the argument values of a given command. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+Cmd$\ast$\}} & cmd -\/ Command to be manipulated \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{cmd_8c_ab2829bf716f494548177511118bf6c5b}\label{cmd_8c_ab2829bf716f494548177511118bf6c5b}} 
+\index{cmd.\+c@{cmd.\+c}!cmd\+\_\+set@{cmd\+\_\+set}}
+\index{cmd\+\_\+set@{cmd\+\_\+set}!cmd.\+c@{cmd.\+c}}
+\subsubsection{\texorpdfstring{cmd\+\_\+set()}{cmd\_set()}}
+{\footnotesize\ttfamily void cmd\+\_\+set (\begin{DoxyParamCaption}\item[{\hyperlink{cmd_8h_a2933336e1f8003400f3b050402f0f5f3}{Cid}}]{id,  }\item[{const char $\ast$}]{b\+\_\+name,  }\item[{const char $\ast$}]{s\+\_\+name,  }\item[{\hyperlink{cmd_8h_a78d7a8bd781b5514e6dd7e1253bb1907}{cmd\+\_\+fn}}]{fn }\end{DoxyParamCaption})}
+
+
+
+Sets up a new command and stores it inside a private array. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+Cid\}} & id -\/ Command identification \\
+\hline
+{\em \{char$\ast$\}} & b\+\_\+name -\/ The base name of the command \\
+\hline
+{\em \{char$\ast$\}} & s\+\_\+name -\/ The short name of the command \\
+\hline
+{\em \{cmd\+\_\+fn\}} & fn -\/ Command callback function \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{cmd_8c_aa1e02137469ddc06fa9bcb3dac2c3a56}\label{cmd_8c_aa1e02137469ddc06fa9bcb3dac2c3a56}} 
+\index{cmd.\+c@{cmd.\+c}!cmd\+\_\+get\+\_\+argv@{cmd\+\_\+get\+\_\+argv}}
+\index{cmd\+\_\+get\+\_\+argv@{cmd\+\_\+get\+\_\+argv}!cmd.\+c@{cmd.\+c}}
+\subsubsection{\texorpdfstring{cmd\+\_\+get\+\_\+argv()}{cmd\_get\_argv()}}
+{\footnotesize\ttfamily const char$\ast$ cmd\+\_\+get\+\_\+argv (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Cmd}{Cmd} $\ast$}]{cmd,  }\item[{int}]{idx }\end{DoxyParamCaption})}
+
+
+
+Gets the desired indexed argument. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+Cmd$\ast$\}} & cmd -\/ Command pointer \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \{int\}} & idx -\/ Argument index \\
+\hline
+{\em \{char$\ast$\}} & -\/ Returns the requested indexed argument \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{cmd_8c_afc6f99e63609bd15653ea164fbe59ede}\label{cmd_8c_afc6f99e63609bd15653ea164fbe59ede}} 
+\index{cmd.\+c@{cmd.\+c}!cmd\+\_\+get\+\_\+bname@{cmd\+\_\+get\+\_\+bname}}
+\index{cmd\+\_\+get\+\_\+bname@{cmd\+\_\+get\+\_\+bname}!cmd.\+c@{cmd.\+c}}
+\subsubsection{\texorpdfstring{cmd\+\_\+get\+\_\+bname()}{cmd\_get\_bname()}}
+{\footnotesize\ttfamily const char$\ast$ cmd\+\_\+get\+\_\+bname (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Cmd}{Cmd} $\ast$}]{cmd }\end{DoxyParamCaption})}
+
+
+
+Gets the base name of a given command. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+Cmd$\ast$\}} & cmd -\/ Command pointer \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \{char$\ast$\}} & -\/ Command base name \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{cmd_8c_aa3bd4090b15be64bd3d4839233f85ee9}\label{cmd_8c_aa3bd4090b15be64bd3d4839233f85ee9}} 
+\index{cmd.\+c@{cmd.\+c}!cmd\+\_\+get\+\_\+sname@{cmd\+\_\+get\+\_\+sname}}
+\index{cmd\+\_\+get\+\_\+sname@{cmd\+\_\+get\+\_\+sname}!cmd.\+c@{cmd.\+c}}
+\subsubsection{\texorpdfstring{cmd\+\_\+get\+\_\+sname()}{cmd\_get\_sname()}}
+{\footnotesize\ttfamily const char$\ast$ cmd\+\_\+get\+\_\+sname (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Cmd}{Cmd} $\ast$}]{cmd }\end{DoxyParamCaption})}
+
+
+
+Gets the short name of a given command. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+Cmd$\ast$\}} & cmd -\/ Command pointer \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \{char$\ast$\}} & -\/ Command short name \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{cmd_8c_a399883b5394d12f2c19816e72a756245}\label{cmd_8c_a399883b5394d12f2c19816e72a756245}} 
+\index{cmd.\+c@{cmd.\+c}!cmd\+\_\+get\+\_\+cid@{cmd\+\_\+get\+\_\+cid}}
+\index{cmd\+\_\+get\+\_\+cid@{cmd\+\_\+get\+\_\+cid}!cmd.\+c@{cmd.\+c}}
+\subsubsection{\texorpdfstring{cmd\+\_\+get\+\_\+cid()}{cmd\_get\_cid()}}
+{\footnotesize\ttfamily const \hyperlink{cmd_8h_a2933336e1f8003400f3b050402f0f5f3}{Cid} cmd\+\_\+get\+\_\+cid (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Cmd}{Cmd} $\ast$}]{cmd }\end{DoxyParamCaption})}
+
+
+
+Gets the command id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+Cmd$\ast$\}} & cmd -\/ Command pointer \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \{\+Cid\}} & -\/ Command id \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{cmd_8c_a45b6622fba552dd2b1c620afb4af451c}\label{cmd_8c_a45b6622fba552dd2b1c620afb4af451c}} 
+\index{cmd.\+c@{cmd.\+c}!cmd\+\_\+get\+\_\+argc@{cmd\+\_\+get\+\_\+argc}}
+\index{cmd\+\_\+get\+\_\+argc@{cmd\+\_\+get\+\_\+argc}!cmd.\+c@{cmd.\+c}}
+\subsubsection{\texorpdfstring{cmd\+\_\+get\+\_\+argc()}{cmd\_get\_argc()}}
+{\footnotesize\ttfamily const int cmd\+\_\+get\+\_\+argc (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Cmd}{Cmd} $\ast$}]{cmd }\end{DoxyParamCaption})}
+
+
+
+Gets the number of arguemnts of a given command. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+Cmd$\ast$\}} & cmd -\/ Command pointer \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \{int\}} & -\/ Number of arguments \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{cmd_8c_a3787fda022912652a1f98b9c6b8441d3}\label{cmd_8c_a3787fda022912652a1f98b9c6b8441d3}} 
+\index{cmd.\+c@{cmd.\+c}!cmd\+\_\+set\+\_\+ans@{cmd\+\_\+set\+\_\+ans}}
+\index{cmd\+\_\+set\+\_\+ans@{cmd\+\_\+set\+\_\+ans}!cmd.\+c@{cmd.\+c}}
+\subsubsection{\texorpdfstring{cmd\+\_\+set\+\_\+ans()}{cmd\_set\_ans()}}
+{\footnotesize\ttfamily void cmd\+\_\+set\+\_\+ans (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Cmd}{Cmd} $\ast$}]{cmd,  }\item[{int}]{errc,  }\item[{const char $\ast$}]{str,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+
+
+Sets an answer to the given command. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+Cmd$\ast$\}} & cmd -\/ Command pointer \\
+\hline
+{\em \{int\}} & errc -\/ Error code \\
+\hline
+{\em \{char$\ast$\}} & str -\/ String format \\
+\hline
+{\em \{...\}} & -\/ String format arguments \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{cmd_8c_a57baf1963c86de1643043f9c4cee9567}\label{cmd_8c_a57baf1963c86de1643043f9c4cee9567}} 
+\index{cmd.\+c@{cmd.\+c}!cmd\+\_\+get\+\_\+errc@{cmd\+\_\+get\+\_\+errc}}
+\index{cmd\+\_\+get\+\_\+errc@{cmd\+\_\+get\+\_\+errc}!cmd.\+c@{cmd.\+c}}
+\subsubsection{\texorpdfstring{cmd\+\_\+get\+\_\+errc()}{cmd\_get\_errc()}}
+{\footnotesize\ttfamily const int cmd\+\_\+get\+\_\+errc (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Cmd}{Cmd} $\ast$}]{cmd }\end{DoxyParamCaption})}
+
+
+
+Gets the error code of a given command. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+Cmd$\ast$\}} & cmd -\/ Command pointer \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \{int\}} & -\/ Error code \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{cmd_8c_a9fc56f507a2e6dabe93d8e8e03a81164}\label{cmd_8c_a9fc56f507a2e6dabe93d8e8e03a81164}} 
+\index{cmd.\+c@{cmd.\+c}!cmd\+\_\+get\+\_\+ans@{cmd\+\_\+get\+\_\+ans}}
+\index{cmd\+\_\+get\+\_\+ans@{cmd\+\_\+get\+\_\+ans}!cmd.\+c@{cmd.\+c}}
+\subsubsection{\texorpdfstring{cmd\+\_\+get\+\_\+ans()}{cmd\_get\_ans()}}
+{\footnotesize\ttfamily const char$\ast$ cmd\+\_\+get\+\_\+ans (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Cmd}{Cmd} $\ast$}]{cmd }\end{DoxyParamCaption})}
+
+
+
+Gets a previus answer of the given command. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+Cmd$\ast$\}} & cmd -\/ Command pointer \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \{char$\ast$\}} & -\/ Command answer \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{cmd_8c_a511ba687ae937a7eb95ea06b79b2b8ec}\label{cmd_8c_a511ba687ae937a7eb95ea06b79b2b8ec}} 
+\index{cmd.\+c@{cmd.\+c}!cmd\+\_\+get@{cmd\+\_\+get}}
+\index{cmd\+\_\+get@{cmd\+\_\+get}!cmd.\+c@{cmd.\+c}}
+\subsubsection{\texorpdfstring{cmd\+\_\+get()}{cmd\_get()}}
+{\footnotesize\ttfamily \hyperlink{struct__Cmd}{Cmd}$\ast$ cmd\+\_\+get (\begin{DoxyParamCaption}\item[{\hyperlink{cmd_8h_a2933336e1f8003400f3b050402f0f5f3}{Cid}}]{id }\end{DoxyParamCaption})}
+
+
+
+Sets a command by its id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+Cid\}} & id -\/ Command identification \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \{\+Cmd$\ast$\}} & -\/ Command pointer \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{cmd_8c_a5090e929f5e97aa5492b47dfd7a6ec91}\label{cmd_8c_a5090e929f5e97aa5492b47dfd7a6ec91}} 
+\index{cmd.\+c@{cmd.\+c}!cmd\+\_\+cb@{cmd\+\_\+cb}}
+\index{cmd\+\_\+cb@{cmd\+\_\+cb}!cmd.\+c@{cmd.\+c}}
+\subsubsection{\texorpdfstring{cmd\+\_\+cb()}{cmd\_cb()}}
+{\footnotesize\ttfamily void cmd\+\_\+cb (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Cmd}{Cmd} $\ast$}]{cmd,  }\item[{void $\ast$}]{vp }\end{DoxyParamCaption})}
+
+
+
+Calls to the callback function stored in the given command. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+Cmd$\ast$\}} & cmd -\/ Command pointer \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{cmd_8c_abb04779da8a594a45843a10b91e9e3a3}\label{cmd_8c_abb04779da8a594a45843a10b91e9e3a3}} 
+\index{cmd.\+c@{cmd.\+c}!cmd\+\_\+req@{cmd\+\_\+req}}
+\index{cmd\+\_\+req@{cmd\+\_\+req}!cmd.\+c@{cmd.\+c}}
+\subsubsection{\texorpdfstring{cmd\+\_\+req()}{cmd\_req()}}
+{\footnotesize\ttfamily \hyperlink{struct__Cmd}{Cmd}$\ast$ cmd\+\_\+req (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Requests a new command from stdin. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em -\/} & Returns a pointer of the parsed command \\
+\hline
+\end{DoxyRetVals}

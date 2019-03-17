@@ -1,3 +1,13 @@
+/**
+* @brief Command source code
+*
+* @file cmd.c
+* @author Javier Romera
+* @version 0.8.4
+* @date 17/03/2019
+* @copyright GNU Public License
+*/
+
 #include "cmd.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -21,6 +31,16 @@ struct _Cmd {
 };
 
 Cmd *CMDS[ MAX_CMDS ];
+
+/****** PRIVATE FUNCTIONS ******/
+
+/**
+* @brief Frees the argument values of a given command
+* @param {Cmd*} cmd - Command to be manipulated
+*/
+void cmd_argv_free( Cmd *cmd );
+
+/*******************************/
 
 void cmd_set( Cid id, const char* b_name, const char *s_name, cmd_fn fn ) {
 

@@ -1,3 +1,13 @@
+/**
+* @brief Graphic engine source code
+*
+* @file g_engine.c
+* @version 0.7.2
+* @date 17/03/2019
+* @copyright GNU Public License
+*/
+
+
 #include "game.h"
 #include "player.h"
 #include "g_engine.h"

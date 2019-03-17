@@ -1,12 +1,12 @@
 /**
- * @brief Command interpreter
- *
- * @file cmd.h
- * @author Javier Romera
- * @version 0.8.3
- * @date 14/03/2019
- * @copyright GNU Public License
- */
+* @brief Command interpreter
+*
+* @file cmd.h
+* @author Javier Romera
+* @version 0.8.3
+* @date 14/03/2019
+* @copyright GNU Public License
+*/
 
 #ifndef COMMAND_H
 #define COMMAND_H

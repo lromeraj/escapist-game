@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['g_5fengine_5fcreate',['g_engine_create',['../g__engine_8h.html#aa2f5a0548ea6fedb671c594d4f0cf039',1,'g_engine.c']]],
-  ['g_5fengine_5fdestroy',['g_engine_destroy',['../g__engine_8h.html#ae61d1ed693a2bfc2967b4550fc128536',1,'g_engine.c']]],
-  ['g_5fengine_5fpaint_5fgame',['g_engine_paint_game',['../g__engine_8h.html#ab215509a5b24333ada8465e80df43387',1,'g_engine.c']]],
+  ['g_5fengine_5fcreate',['g_engine_create',['../g__engine_8c.html#aa2f5a0548ea6fedb671c594d4f0cf039',1,'g_engine_create():&#160;g_engine.c'],['../g__engine_8h.html#aa2f5a0548ea6fedb671c594d4f0cf039',1,'g_engine_create():&#160;g_engine.c']]],
+  ['g_5fengine_5fdestroy',['g_engine_destroy',['../g__engine_8c.html#ae61d1ed693a2bfc2967b4550fc128536',1,'g_engine_destroy(G_engine *ge):&#160;g_engine.c'],['../g__engine_8h.html#ae61d1ed693a2bfc2967b4550fc128536',1,'g_engine_destroy(G_engine *ge):&#160;g_engine.c']]],
+  ['g_5fengine_5fpaint_5fgame',['g_engine_paint_game',['../g__engine_8c.html#ab215509a5b24333ada8465e80df43387',1,'g_engine_paint_game(G_engine *ge, Game *game):&#160;g_engine.c'],['../g__engine_8h.html#ab215509a5b24333ada8465e80df43387',1,'g_engine_paint_game(G_engine *ge, Game *game):&#160;g_engine.c']]],
   ['game_5fadd_5fspace',['game_add_space',['../game_8h.html#ae5ad86de0a92d9eccb234948458da7f1',1,'game.c']]],
   ['game_5fcreate',['game_create',['../game_8h.html#a1cdbe3f06b9bf49eb5e334a22ad3b2b9',1,'game.c']]],
   ['game_5fcreate_5ffrom_5ffile',['game_create_from_file',['../game_8h.html#afc77f90739be0fd45b7f5616e543bfae',1,'game.c']]],

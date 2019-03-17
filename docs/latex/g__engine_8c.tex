@@ -1,0 +1,145 @@
+\hypertarget{g__engine_8c}{}\section{src/g\+\_\+engine.c File Reference}
+\label{g__engine_8c}\index{src/g\+\_\+engine.\+c@{src/g\+\_\+engine.\+c}}
+
+
+Graphic engine source code.  
+
+
+{\ttfamily \#include \char`\"{}game.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}player.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}g\+\_\+engine.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ui.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+Include dependency graph for g\+\_\+engine.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{g__engine_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct__G__engine}{\+\_\+\+G\+\_\+engine}
+\begin{DoxyCompactList}\small\item\em Main graphic engine structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{g__engine_8c_a55884d4185031754f710955b5e32ebd9}{\+\_\+\+Boxes} \{ \newline
+\hyperlink{g__engine_8c_a55884d4185031754f710955b5e32ebd9a360fbd2548abbea4000f326981569ac4}{\+\_\+\+M\+AP}, 
+\hyperlink{g__engine_8c_a55884d4185031754f710955b5e32ebd9a3802e832b1629d0ae9fc5f46d982a0f0}{\+\_\+\+O\+V\+E\+R\+V\+I\+EW}, 
+\hyperlink{g__engine_8c_a55884d4185031754f710955b5e32ebd9a2f80e6c70847dd42d46a5bd452f6fde2}{\+\_\+\+T\+I\+T\+LE}, 
+\hyperlink{g__engine_8c_a55884d4185031754f710955b5e32ebd9a30b7a44316e4d1796a17e9565ed01bc7}{\+\_\+\+H\+E\+LP}, 
+\newline
+\hyperlink{g__engine_8c_a55884d4185031754f710955b5e32ebd9acb7ab948a03c1f8b96f0a5e7eba1f16e}{\+\_\+\+F\+E\+ED}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{struct__G__engine}{G\+\_\+engine} $\ast$ \hyperlink{g__engine_8c_aa2f5a0548ea6fedb671c594d4f0cf039}{g\+\_\+engine\+\_\+create} ()
+\begin{DoxyCompactList}\small\item\em Creates a new graphic engine. \end{DoxyCompactList}\item 
+void \hyperlink{g__engine_8c_ae61d1ed693a2bfc2967b4550fc128536}{g\+\_\+engine\+\_\+destroy} (\hyperlink{struct__G__engine}{G\+\_\+engine} $\ast$ge)
+\begin{DoxyCompactList}\small\item\em deletes the paramters defined by G\+\_\+engine\+\_\+create \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{g__engine_8c_a9b4e1368c0b4d1caba98f417de1a7507}\label{g__engine_8c_a9b4e1368c0b4d1caba98f417de1a7507}} 
+void {\bfseries draw\+\_\+space} (\hyperlink{struct__Game}{Game} $\ast$game, \hyperlink{struct__G__engine}{G\+\_\+engine} $\ast$ge, \hyperlink{struct__Space}{Space} $\ast$sp, int id, int x, int y)
+\item 
+void \hyperlink{g__engine_8c_ab215509a5b24333ada8465e80df43387}{g\+\_\+engine\+\_\+paint\+\_\+game} (\hyperlink{struct__G__engine}{G\+\_\+engine} $\ast$ge, \hyperlink{struct__Game}{Game} $\ast$game)
+\begin{DoxyCompactList}\small\item\em Draws the user interface. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Graphic engine source code. 
+
+\begin{DoxyVersion}{Version}
+0.\+7.\+2 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+17/03/2019 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+G\+NU Public License 
+\end{DoxyCopyright}
+
+
+\subsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{g__engine_8c_a55884d4185031754f710955b5e32ebd9}\label{g__engine_8c_a55884d4185031754f710955b5e32ebd9}} 
+\index{g\+\_\+engine.\+c@{g\+\_\+engine.\+c}!\+\_\+\+Boxes@{\+\_\+\+Boxes}}
+\index{\+\_\+\+Boxes@{\+\_\+\+Boxes}!g\+\_\+engine.\+c@{g\+\_\+engine.\+c}}
+\subsubsection{\texorpdfstring{\+\_\+\+Boxes}{\_Boxes}}
+{\footnotesize\ttfamily enum \hyperlink{g__engine_8c_a55884d4185031754f710955b5e32ebd9}{\+\_\+\+Boxes}}
+
+Box list \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{\+\_\+\+M\+AP@{\+\_\+\+M\+AP}!g\+\_\+engine.\+c@{g\+\_\+engine.\+c}}\index{g\+\_\+engine.\+c@{g\+\_\+engine.\+c}!\+\_\+\+M\+AP@{\+\_\+\+M\+AP}}}\mbox{\Hypertarget{g__engine_8c_a55884d4185031754f710955b5e32ebd9a360fbd2548abbea4000f326981569ac4}\label{g__engine_8c_a55884d4185031754f710955b5e32ebd9a360fbd2548abbea4000f326981569ac4}} 
+\+\_\+\+M\+AP&Map box \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{\+\_\+\+O\+V\+E\+R\+V\+I\+EW@{\+\_\+\+O\+V\+E\+R\+V\+I\+EW}!g\+\_\+engine.\+c@{g\+\_\+engine.\+c}}\index{g\+\_\+engine.\+c@{g\+\_\+engine.\+c}!\+\_\+\+O\+V\+E\+R\+V\+I\+EW@{\+\_\+\+O\+V\+E\+R\+V\+I\+EW}}}\mbox{\Hypertarget{g__engine_8c_a55884d4185031754f710955b5e32ebd9a3802e832b1629d0ae9fc5f46d982a0f0}\label{g__engine_8c_a55884d4185031754f710955b5e32ebd9a3802e832b1629d0ae9fc5f46d982a0f0}} 
+\+\_\+\+O\+V\+E\+R\+V\+I\+EW&Overview box \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{\+\_\+\+T\+I\+T\+LE@{\+\_\+\+T\+I\+T\+LE}!g\+\_\+engine.\+c@{g\+\_\+engine.\+c}}\index{g\+\_\+engine.\+c@{g\+\_\+engine.\+c}!\+\_\+\+T\+I\+T\+LE@{\+\_\+\+T\+I\+T\+LE}}}\mbox{\Hypertarget{g__engine_8c_a55884d4185031754f710955b5e32ebd9a2f80e6c70847dd42d46a5bd452f6fde2}\label{g__engine_8c_a55884d4185031754f710955b5e32ebd9a2f80e6c70847dd42d46a5bd452f6fde2}} 
+\+\_\+\+T\+I\+T\+LE&Title box \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{\+\_\+\+H\+E\+LP@{\+\_\+\+H\+E\+LP}!g\+\_\+engine.\+c@{g\+\_\+engine.\+c}}\index{g\+\_\+engine.\+c@{g\+\_\+engine.\+c}!\+\_\+\+H\+E\+LP@{\+\_\+\+H\+E\+LP}}}\mbox{\Hypertarget{g__engine_8c_a55884d4185031754f710955b5e32ebd9a30b7a44316e4d1796a17e9565ed01bc7}\label{g__engine_8c_a55884d4185031754f710955b5e32ebd9a30b7a44316e4d1796a17e9565ed01bc7}} 
+\+\_\+\+H\+E\+LP&Help box \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{\+\_\+\+F\+E\+ED@{\+\_\+\+F\+E\+ED}!g\+\_\+engine.\+c@{g\+\_\+engine.\+c}}\index{g\+\_\+engine.\+c@{g\+\_\+engine.\+c}!\+\_\+\+F\+E\+ED@{\+\_\+\+F\+E\+ED}}}\mbox{\Hypertarget{g__engine_8c_a55884d4185031754f710955b5e32ebd9acb7ab948a03c1f8b96f0a5e7eba1f16e}\label{g__engine_8c_a55884d4185031754f710955b5e32ebd9acb7ab948a03c1f8b96f0a5e7eba1f16e}} 
+\+\_\+\+F\+E\+ED&Feedback box \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{g__engine_8c_aa2f5a0548ea6fedb671c594d4f0cf039}\label{g__engine_8c_aa2f5a0548ea6fedb671c594d4f0cf039}} 
+\index{g\+\_\+engine.\+c@{g\+\_\+engine.\+c}!g\+\_\+engine\+\_\+create@{g\+\_\+engine\+\_\+create}}
+\index{g\+\_\+engine\+\_\+create@{g\+\_\+engine\+\_\+create}!g\+\_\+engine.\+c@{g\+\_\+engine.\+c}}
+\subsubsection{\texorpdfstring{g\+\_\+engine\+\_\+create()}{g\_engine\_create()}}
+{\footnotesize\ttfamily \hyperlink{struct__G__engine}{G\+\_\+engine}$\ast$ g\+\_\+engine\+\_\+create (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Creates a new graphic engine. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em \{\+G\+\_\+engine$\ast$\}} & -\/ Returns a graphic engine pointer \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{g__engine_8c_ae61d1ed693a2bfc2967b4550fc128536}\label{g__engine_8c_ae61d1ed693a2bfc2967b4550fc128536}} 
+\index{g\+\_\+engine.\+c@{g\+\_\+engine.\+c}!g\+\_\+engine\+\_\+destroy@{g\+\_\+engine\+\_\+destroy}}
+\index{g\+\_\+engine\+\_\+destroy@{g\+\_\+engine\+\_\+destroy}!g\+\_\+engine.\+c@{g\+\_\+engine.\+c}}
+\subsubsection{\texorpdfstring{g\+\_\+engine\+\_\+destroy()}{g\_engine\_destroy()}}
+{\footnotesize\ttfamily void g\+\_\+engine\+\_\+destroy (\begin{DoxyParamCaption}\item[{\hyperlink{struct__G__engine}{G\+\_\+engine} $\ast$}]{ge }\end{DoxyParamCaption})}
+
+
+
+deletes the paramters defined by G\+\_\+engine\+\_\+create 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+G\+\_\+engine$\ast$\}} & ge -\/ Graphic engine pointer \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{g__engine_8c_ab215509a5b24333ada8465e80df43387}\label{g__engine_8c_ab215509a5b24333ada8465e80df43387}} 
+\index{g\+\_\+engine.\+c@{g\+\_\+engine.\+c}!g\+\_\+engine\+\_\+paint\+\_\+game@{g\+\_\+engine\+\_\+paint\+\_\+game}}
+\index{g\+\_\+engine\+\_\+paint\+\_\+game@{g\+\_\+engine\+\_\+paint\+\_\+game}!g\+\_\+engine.\+c@{g\+\_\+engine.\+c}}
+\subsubsection{\texorpdfstring{g\+\_\+engine\+\_\+paint\+\_\+game()}{g\_engine\_paint\_game()}}
+{\footnotesize\ttfamily void g\+\_\+engine\+\_\+paint\+\_\+game (\begin{DoxyParamCaption}\item[{\hyperlink{struct__G__engine}{G\+\_\+engine} $\ast$}]{ge,  }\item[{\hyperlink{struct__Game}{Game} $\ast$}]{game }\end{DoxyParamCaption})}
+
+
+
+Draws the user interface. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+G\+\_\+engine$\ast$\}} & ge -\/ Graphic engine pointer \\
+\hline
+{\em \{\+Game$\ast$\}} & -\/ Game pointer \\
+\hline
+\end{DoxyParams}

@@ -41,6 +41,7 @@ var menudata={children:[
 {text:"Typedefs",url:"globals_type.html"},
 {text:"Enumerations",url:"globals_enum.html"},
 {text:"Enumerator",url:"globals_eval.html",children:[
+{text:"_",url:"globals_eval.html#index__"},
 {text:"b",url:"globals_eval.html#index_b"},
 {text:"d",url:"globals_eval.html#index_d"},
 {text:"e",url:"globals_eval.html#index_e"},
