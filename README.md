@@ -44,6 +44,8 @@ ser omitida, y añadir mejor un autor por función.
 
 ### Funciones
 
+- Por cada parámetro que reciva la función se debe añadir la etiqueta `@param`, no se deben hacer
+ningún tipo de abreviaciones, de ser así `Doxygen` no será capaz de parsear correctamente los comentarios.
 - Los comentarios de los prototipos de las funciones deberán realizarse de la siguiente forma:
 
 ``` c
