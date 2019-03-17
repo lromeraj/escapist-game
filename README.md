@@ -31,10 +31,10 @@ a la hora de comentar.
 ```
 
 ### Macros
-- Para comentar una macro usar `/*!< field description */`.
+- Para comentar una macro usar `/*!< macro description */`.
 - Ejemplo:
 ``` c
-#define MACRO 100 /*!< Macro description */
+#define MAX_BOXES 100 /*!< Maximum number of boxes */
 ```
 
 ### Funciones
