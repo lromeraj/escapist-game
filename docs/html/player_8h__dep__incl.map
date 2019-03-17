@@ -1,10 +1,6 @@
 <map id="src/player.h" name="src/player.h">
-<area shape="rect" id="node2" href="$game_8h.html" title="It defines the game interface. " alt="" coords="282,80,369,107"/>
-<area shape="rect" id="node3" href="$g__engine_8c.html" title="User interface based on chars. " alt="" coords="5,229,112,256"/>
-<area shape="rect" id="node6" href="$game_8c.html" title="It implements the game interface and all the associated callbacks for each command. " alt="" coords="406,229,493,256"/>
-<area shape="rect" id="node9" href="$player_8c.html" title="src/player.c" alt="" coords="537,80,628,107"/>
-<area shape="rect" id="node4" href="$g__engine_8h_source.html" title="src/g_engine.h" alt="" coords="140,155,247,181"/>
-<area shape="rect" id="node7" href="$reader_8h.html" title="Defines a game reader. " alt="" coords="321,155,412,181"/>
-<area shape="rect" id="node8" href="$reader_8c.html" title="Game file reader. " alt="" coords="284,229,375,256"/>
-<area shape="rect" id="node5" href="$game__loop_8c.html" title="Main game loop. " alt="" coords="137,229,255,256"/>
+<area shape="rect" id="node2" href="$game_8h.html" title="It defines the game interface. " alt="" coords="83,80,169,107"/>
+<area shape="rect" id="node3" href="$g__engine_8h.html" title="It defines a textual graphic engine. " alt="" coords="11,155,118,181"/>
+<area shape="rect" id="node5" href="$reader_8h.html" title="Defines a game reader. " alt="" coords="142,155,233,181"/>
+<area shape="rect" id="node4" href="$game__loop_8c.html" title="Main game loop. " alt="" coords="5,229,124,256"/>
 </map>

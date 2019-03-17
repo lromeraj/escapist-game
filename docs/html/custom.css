@@ -1594,6 +1594,23 @@ th.markdownTableHeadCenter, td.markdownTableBodyCenter {
 
 /* @custom */
 
+div#top { }
+
+div#titlearea {
+	margin: .5em 0 0 .5em;
+}
+
+div#titlearea td#projectalign {
+	padding: 0 !important;
+}
+
+div#titlearea div#projectname {
+	color: #EA3A60;
+	background: rgba(234, 58, 96, 0.1);
+	padding: .1em .3em;
+	border-radius: 10px;
+}
+
 .sm-dox {
 	border: none;
 	background: #fff;
@@ -1669,6 +1686,45 @@ div.directory table.directory tbody tr td.entry a.el {
 div.directory table.directory tbody tr td.desc {
 	color: #444;
 }
+
+div.navpath {
+	margin: 0;
+	padding: 0;
+	display: inline-block;
+}
+
+div.navpath ul {
+	background-image: none;
+	border: none;
+	margin: 0;
+	padding: 0;
+	height: auto;
+	line-height: inherit;
+	background-color: #2976A5;
+}
+
+div.navpath ul li.navelem {
+	background-image: none;
+	border-right: 2px dashed #fff;
+	padding: 1em 0 1em 0;
+	padding: 0;
+}
+
+div.navpath ul li.navelem a.el {
+	color: #fff;
+	text-shadow: none;
+	font-size: 1.2em;
+	border-radius: 5px;
+	padding: .1em .6em .2em .6em;
+	margin: .3em .6em;
+	height: auto;
+}
+
+div.navpath ul li.navelem a.el:hover {
+	background: rgba(255,255,255,0.2);
+}
+
+
 
 div.contents {
 	margin: 0;

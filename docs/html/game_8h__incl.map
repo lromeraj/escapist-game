@@ -1,9 +1,9 @@
 <map id="src/game.h" name="src/game.h">
-<area shape="rect" id="node2" href="$cmd_8h_source.html" title="cmd.h" alt="" coords="5,155,64,181"/>
+<area shape="rect" id="node2" href="$cmd_8h.html" title="Command interpreter. " alt="" coords="5,155,64,181"/>
 <area shape="rect" id="node6" href="$space_8h.html" title="Space module. " alt="" coords="315,80,383,107"/>
 <area shape="rect" id="node9" href="$player_8h.html" title="It defines a player. " alt="" coords="89,155,157,181"/>
 <area shape="rect" id="node10" href="$object_8h.html" title="Object manager. " alt="" coords="147,80,215,107"/>
-<area shape="rect" id="node11" href="$die_8h_source.html" title="die.h" alt="" coords="240,80,291,107"/>
+<area shape="rect" id="node11" href="$die_8h.html" title="Command interpreter. " alt="" coords="240,80,291,107"/>
 <area shape="rect" id="node3" href="$types_8h.html" title="It defines common type. " alt="" coords="187,229,253,256"/>
-<area shape="rect" id="node7" href="$set_8h_source.html" title="set.h" alt="" coords="333,155,384,181"/>
+<area shape="rect" id="node7" href="$set_8h.html" title="Command interpreter. " alt="" coords="333,155,384,181"/>
 </map>

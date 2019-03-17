@@ -1,5 +1,5 @@
 <map id="_Ui" name="_Ui">
-<area shape="rect" id="node2" href="$struct__Ui__box.html" title="_Ui_box" alt="" coords="85,95,155,121"/>
-<area shape="rect" id="node3" href="$struct__Ui__pix.html" title="_Ui_pix" alt="" coords="5,5,72,32"/>
-<area shape="rect" id="node4" href="$struct__Ui__screen.html" title="_Ui_screen" alt="" coords="180,95,268,121"/>
+<area shape="rect" id="node2" href="$struct__Ui__box.html" title="Main box structure. " alt="" coords="85,95,155,121"/>
+<area shape="rect" id="node3" href="$struct__Ui__pix.html" title="Basic pixel structure. " alt="" coords="5,5,72,32"/>
+<area shape="rect" id="node4" href="$struct__Ui__screen.html" title="Main UI screen structure. " alt="" coords="180,95,268,121"/>
 </map>
