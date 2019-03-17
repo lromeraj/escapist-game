@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['object_2ec',['object.c',['../object_8c.html',1,'']]],
-  ['object_2eh',['object.h',['../object_8h.html',1,'']]]
+  ['max_5fboxes',['MAX_BOXES',['../ui_8h.html#abe040ae255b70ffb201aacc407ed614d',1,'ui.h']]]
 ];

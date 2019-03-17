@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdarg.h>
+#include <stdbool.h>
 
 #define DEFAULT_TXT_BG_COLOR BG_WHITE
 #define DEFAULT_TXT_FG_COLOR FG_BLACK
@@ -12,19 +13,29 @@
 #define FRM_LEN 30
 #define TAB_SIZE 3
 
-typedef enum { FALSE, TRUE } bool;
-
+/*!
+* @brief Basic pixel structure
+*/
 struct _Ui_pix {
-  char c, frm[ FRM_LEN ];
+  char c; /*!< Pixel char */
+  char frm[ FRM_LEN ];  /*!< Pixel format */
 };
 
+/*!
+* @brief Main box structure
+*/
 struct _Ui_box {
-  Ui_pix **__pixs;
-  int id; // box id
-  int x, y, w, h;
-  int cx, cy, __len;
-  int pad[4];
-  Color bg;
+  Ui_pix **__pixs; /*!< @brief Pixels array */
+  int id; /*!< @brief Box identification */
+  int x; /*!< @brief Coordenate x */
+  int y; /*!< @brief Coordenate y */
+  int w; /*!< @brief Width */
+  int h; /*!< @brief Height */
+  int cx; /*!< @brief Position of the x cursor */
+  int cy;  /*!< @brief Position of the y cursor */
+  int __len;  /*!< @brief Length of the pixels array */
+  int pad[4];  /*!< @brief Box padding */
+  Color bg;  /*!< @brief Background color */
 };
 
 struct _Ui_screen {
@@ -43,7 +54,7 @@ struct _Ui {
 
 /** Reserves memory to alloc a certain quantity of pixels
 * @param {int} __len - The quantity of pixels to be allocted
-* @return - Returns a pointer which points to the pixels
+* @retval - Returns a pointer which points to the pixels
 */
 Ui_pix **alloc_pixs( int __len );
 
@@ -60,7 +71,7 @@ void kill_pixs( Ui_pix **__pixs, int __len );
 * @param {int} y - Represents the y position ( row of the matrix )
 * @param {int} w - Represents the space width
 * @param {int} h - Represents the space height
-* @return {bool} - Returns a boolean value, FALSE(0) if there is no overflow, else TRUE(!=0)
+* @retval {bool} - Returns a boolean value, FALSE(0) if there is no overflow, else TRUE(!=0)
 */
 bool ui_pix_ovf( int x, int y, int w, int h );
 
@@ -71,7 +82,7 @@ bool ui_pix_ovf( int x, int y, int w, int h );
 * @param {int} y - Represents the y position ( row of the matrix )
 * @param {int} w - Represents the space width
 * @param {int} h - Represents the space height
-* @return {Ui_pix*} - Returns a pointer to the found pixel, else returns NULL
+* @retval {Ui_pix*} - Returns a pointer to the found pixel, else returns NULL
 */
 Ui_pix *ui_get_pix( Ui_pix **__pixs, int x, int y, int w, int h );
 
@@ -90,7 +101,7 @@ void ui_set_pix( Ui_pix **__pixs, int x, int y, int w, int h, Ui_pix pix );
 /** Finds a box in a given UI
 * @param {Ui*} ui - UI where the box should be located
 * @param {int} id - The id of the requested box
-* @return {Ui_box*} - If the box was found returns a pointer
+* @retval {Ui_box*} - If the box was found returns a pointer
 * to the requested box, else returns NULL
 */
 Ui_box* ui_get_box( Ui* ui, int id );
@@ -381,9 +392,9 @@ bool ui_pix_ovf( int x, int y, int w, int h ) {
   int _idx = w*y + x;
 
   if ( _idx < 0 || _idx >= w*h )
-    return TRUE;
+    return true;
 
-  return FALSE;
+  return false;
 }
 
 Ui_pix *ui_get_pix( Ui_pix **__pixs, int x, int y, int w, int h ) {

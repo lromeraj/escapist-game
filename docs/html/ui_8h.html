@@ -178,8 +178,8 @@ Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>User interface based on chars. </p>
 <dl class="section author"><dt>Author</dt><dd>Javier Romera </dd></dl>
-<dl class="section version"><dt>Version</dt><dd>0.3.3 </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>16/02/2019 </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>0.6.1 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>17/03/2019 </dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>GNU Public License </dd></dl>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="abe040ae255b70ffb201aacc407ed614d"></a>
@@ -263,7 +263,12 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>{Ui*} - Returns an UI pointer </dd></dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">{Ui*}</td><td>- Returns an UI pointer </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -664,7 +669,7 @@ Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">{Ui*}</td><td>ui - UI where the box is located </td></tr>
     <tr><td class="paramname">{int}</td><td>id - The id of the box </td></tr>
-    <tr><td class="paramname">{const</td><td>char*} pad - The padding of the box "&lt;top&gt; &lt;right&gt; &lt;bottom&gt; &lt;left&gt;" </td></tr>
+    <tr><td class="paramname">{char*}</td><td>pad - The padding of the box "&lt;top&gt; &lt;right&gt; &lt;bottom&gt; &lt;left&gt;" </td></tr>
   </table>
   </dd>
 </dl>
@@ -712,7 +717,7 @@ Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">{Ui*}</td><td>ui - UI where the box is located </td></tr>
     <tr><td class="paramname">{int}</td><td>id - The id of the box </td></tr>
-    <tr><td class="paramname">{const</td><td>char*} str - String format </td></tr>
+    <tr><td class="paramname">{char*}</td><td>str - String format </td></tr>
     <tr><td class="paramname">{...}</td><td>- String format arguments </td></tr>
   </table>
   </dd>

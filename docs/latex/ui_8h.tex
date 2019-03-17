@@ -107,10 +107,10 @@ User interface based on chars.
 Javier Romera 
 \end{DoxyAuthor}
 \begin{DoxyVersion}{Version}
-0.\+3.\+3 
+0.\+6.\+1 
 \end{DoxyVersion}
 \begin{DoxyDate}{Date}
-16/02/2019 
+17/03/2019 
 \end{DoxyDate}
 \begin{DoxyCopyright}{Copyright}
 G\+NU Public License 
@@ -183,9 +183,11 @@ Initializes UI struct
 {\em \{int\}} & h -\/ The height of the user interface based on chars \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-\{Ui$\ast$\} -\/ Returns an UI pointer 
-\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em \{\+Ui$\ast$\}} & -\/ Returns an UI pointer \\
+\hline
+\end{DoxyRetVals}
 \mbox{\Hypertarget{ui_8h_a26dcc63df2a1df20c72a9f8c9eb460d1}\label{ui_8h_a26dcc63df2a1df20c72a9f8c9eb460d1}} 
 \index{ui.\+h@{ui.\+h}!ui\+\_\+destroy@{ui\+\_\+destroy}}
 \index{ui\+\_\+destroy@{ui\+\_\+destroy}!ui.\+h@{ui.\+h}}
@@ -336,7 +338,7 @@ Sets the padding of a box
 \hline
 {\em \{int\}} & id -\/ The id of the box \\
 \hline
-{\em \{const} & char$\ast$\} pad -\/ The padding of the box \char`\"{}$<$top$>$ $<$right$>$ $<$bottom$>$ $<$left$>$\char`\"{} \\
+{\em \{char$\ast$\}} & pad -\/ The padding of the box \char`\"{}$<$top$>$ $<$right$>$ $<$bottom$>$ $<$left$>$\char`\"{} \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{ui_8h_a104d255f566d4579b63439f4dd06e802}\label{ui_8h_a104d255f566d4579b63439f4dd06e802}} 
@@ -351,7 +353,7 @@ Updates the box buffer with a given string
 \hline
 {\em \{int\}} & id -\/ The id of the box \\
 \hline
-{\em \{const} & char$\ast$\} str -\/ String format \\
+{\em \{char$\ast$\}} & str -\/ String format \\
 \hline
 {\em \{...\}} & -\/ String format arguments \\
 \hline

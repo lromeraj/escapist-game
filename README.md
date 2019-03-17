@@ -31,10 +31,10 @@ a la hora de comentar.
 ```
 
 ### Macros
-- Para comentar una macro usar `/*!< macro description */`.
+- Para comentar una macro usar `/*!< @brief macro description */`.
 - Ejemplo:
 ``` c
-#define MAX_BOXES 100 /*!< Maximum number of boxes */
+#define MAX_BOXES 100 /*!< @brief Maximum number of boxes */
 ```
 
 ### Funciones
@@ -80,7 +80,7 @@ int mult( int a, int b );
 
 ``` c
 /*!
-* @brief <brief description>
+* @brief Brief description
 *
 * Detailed description ...
 *
@@ -88,7 +88,7 @@ int mult( int a, int b );
 ```
 - Es importante dejar un salto de línea extra entre la descripción abreviada
 y la detallada.
-- Para comentar los campos usar `/*!< field description */`.
+- Para comentar los campos usar `/*!< @brief field description */`.
 
 ### Enumeraciones
 - Las enumeraciones de comentan de forma similar a las estrucutas.
@@ -101,7 +101,7 @@ y la detallada.
 */
 ```
 
-- Para comentar un dato usar `/*!< value description */`.
+- Para comentar un dato usar `/*!< @brief value description */`.
 
 
 ## Makefile

@@ -3,8 +3,8 @@
  *
  * @file ui.h
  * @author Javier Romera
- * @version 0.3.3
- * @date 16/02/2019
+ * @version 0.6.1
+ * @date 17/03/2019
  * @copyright GNU Public License
  */
 
@@ -57,7 +57,7 @@ typedef struct _Ui Ui;
 /** Initializes UI struct
 * @param {int} w - The width of the user interface based on chars
 * @param {int} h - The height of the user interface based on chars
-* @return {Ui*} - Returns an UI pointer
+* @retval {Ui*} - Returns an UI pointer
 */
 Ui* ui_init( int w, int h );
 
@@ -142,7 +142,7 @@ void ui_clear_box( Ui* ui, int id );
 /** Sets the padding of a box
 * @param {Ui*} ui - UI where the box is located
 * @param {int} id - The id of the box
-* @param {const char*} pad - The padding of the box "<top> <right> <bottom> <left>"
+* @param {char*} pad - The padding of the box "<top> <right> <bottom> <left>"
 */
 void ui_box_pad( Ui* ui, int id, const char* pad );
 
@@ -150,7 +150,7 @@ void ui_box_pad( Ui* ui, int id, const char* pad );
 /** Updates the box buffer with a given string
 * @param {Ui*} ui - UI where the box is located
 * @param {int} id - The id of the box
-* @param {const char*} str - String format
+* @param {char*} str - String format
 * @param {...} - String format arguments
 */
 void ui_box_put( Ui* ui, int id, const char* str, ... );
