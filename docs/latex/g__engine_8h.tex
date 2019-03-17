@@ -32,7 +32,7 @@ typedef struct \hyperlink{struct__G__engine}{\+\_\+\+G\+\_\+engine} {\bfseries G
 \hyperlink{struct__G__engine}{G\+\_\+engine} $\ast$ \hyperlink{g__engine_8h_aa2f5a0548ea6fedb671c594d4f0cf039}{g\+\_\+engine\+\_\+create} ()
 \begin{DoxyCompactList}\small\item\em Creates a new graphic engine. \end{DoxyCompactList}\item 
 void \hyperlink{g__engine_8h_ae61d1ed693a2bfc2967b4550fc128536}{g\+\_\+engine\+\_\+destroy} (\hyperlink{struct__G__engine}{G\+\_\+engine} $\ast$ge)
-\begin{DoxyCompactList}\small\item\em deletes the paramters defined by G\+\_\+engine\+\_\+create \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Destroys a graphic engine. \end{DoxyCompactList}\item 
 void \hyperlink{g__engine_8h_ab215509a5b24333ada8465e80df43387}{g\+\_\+engine\+\_\+paint\+\_\+game} (\hyperlink{struct__G__engine}{G\+\_\+engine} $\ast$ge, \hyperlink{struct__Game}{Game} $\ast$game)
 \begin{DoxyCompactList}\small\item\em Draws the user interface. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
@@ -75,7 +75,7 @@ Creates a new graphic engine.
 
 
 
-deletes the paramters defined by G\+\_\+engine\+\_\+create 
+Destroys a graphic engine. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -96,6 +96,6 @@ Draws the user interface.
 \begin{DoxyParams}{Parameters}
 {\em \{\+G\+\_\+engine$\ast$\}} & ge -\/ Graphic engine pointer \\
 \hline
-{\em \{\+Game$\ast$\}} & -\/ Game pointer \\
+{\em \{\+Game$\ast$\}} & game -\/ Game pointer \\
 \hline
 \end{DoxyParams}

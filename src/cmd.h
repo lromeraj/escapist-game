@@ -51,9 +51,9 @@ typedef struct _Cmd Cmd;
 void cmd_set( Cid id, const char* b_name, const char *s_name, cmd_fn fn );
 
 /**
-* @brief Sets a command by its id
+* @brief Gets a command by its id
 * @param {Cid} id - Command identification
-* @retval {Cmd*} - Command pointer
+* @retval {Cmd*} - Returns a pointer to the requested command
 */
 Cmd *cmd_get( Cid id );
 

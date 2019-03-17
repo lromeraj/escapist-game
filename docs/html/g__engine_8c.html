@@ -120,15 +120,15 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a947f9e2e4c31ea006fd0c69072c9abf3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="g__engine_8c.html#a947f9e2e4c31ea006fd0c69072c9abf3">parse_space</a> (<a class="el" href="struct__Game.html">Game</a> *game, <a class="el" href="struct__G__engine.html">G_engine</a> *ge, <a class="el" href="struct__Space.html">Space</a> *sp, int id, int x, int y)</td></tr>
+<tr class="memdesc:a947f9e2e4c31ea006fd0c69072c9abf3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses a given space.  <a href="#a947f9e2e4c31ea006fd0c69072c9abf3">More...</a><br /></td></tr>
+<tr class="separator:a947f9e2e4c31ea006fd0c69072c9abf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa2f5a0548ea6fedb671c594d4f0cf039"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct__G__engine.html">G_engine</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="g__engine_8c.html#aa2f5a0548ea6fedb671c594d4f0cf039">g_engine_create</a> ()</td></tr>
 <tr class="memdesc:aa2f5a0548ea6fedb671c594d4f0cf039"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new graphic engine.  <a href="#aa2f5a0548ea6fedb671c594d4f0cf039">More...</a><br /></td></tr>
 <tr class="separator:aa2f5a0548ea6fedb671c594d4f0cf039"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae61d1ed693a2bfc2967b4550fc128536"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="g__engine_8c.html#ae61d1ed693a2bfc2967b4550fc128536">g_engine_destroy</a> (<a class="el" href="struct__G__engine.html">G_engine</a> *ge)</td></tr>
-<tr class="memdesc:ae61d1ed693a2bfc2967b4550fc128536"><td class="mdescLeft">&#160;</td><td class="mdescRight">deletes the paramters defined by G_engine_create  <a href="#ae61d1ed693a2bfc2967b4550fc128536">More...</a><br /></td></tr>
+<tr class="memdesc:ae61d1ed693a2bfc2967b4550fc128536"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys a graphic engine.  <a href="#ae61d1ed693a2bfc2967b4550fc128536">More...</a><br /></td></tr>
 <tr class="separator:ae61d1ed693a2bfc2967b4550fc128536"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9b4e1368c0b4d1caba98f417de1a7507"><td class="memItemLeft" align="right" valign="top"><a id="a9b4e1368c0b4d1caba98f417de1a7507"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>draw_space</b> (<a class="el" href="struct__Game.html">Game</a> *game, <a class="el" href="struct__G__engine.html">G_engine</a> *ge, <a class="el" href="struct__Space.html">Space</a> *sp, int id, int x, int y)</td></tr>
-<tr class="separator:a9b4e1368c0b4d1caba98f417de1a7507"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab215509a5b24333ada8465e80df43387"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="g__engine_8c.html#ab215509a5b24333ada8465e80df43387">g_engine_paint_game</a> (<a class="el" href="struct__G__engine.html">G_engine</a> *ge, <a class="el" href="struct__Game.html">Game</a> *game)</td></tr>
 <tr class="memdesc:ab215509a5b24333ada8465e80df43387"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws the user interface.  <a href="#ab215509a5b24333ada8465e80df43387">More...</a><br /></td></tr>
 <tr class="separator:ab215509a5b24333ada8465e80df43387"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -167,6 +167,71 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>draw_space</b> (<a cl
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="a947f9e2e4c31ea006fd0c69072c9abf3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a947f9e2e4c31ea006fd0c69072c9abf3">&#9670;&nbsp;</a></span>parse_space()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void parse_space </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct__Game.html">Game</a> *&#160;</td>
+          <td class="paramname"><em>game</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct__G__engine.html">G_engine</a> *&#160;</td>
+          <td class="paramname"><em>ge</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct__Space.html">Space</a> *&#160;</td>
+          <td class="paramname"><em>sp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Parses a given space. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">{Game*}</td><td>game - Game pointer </td></tr>
+    <tr><td class="paramname">{G_engine*}</td><td>ge - Graphic engine pointer </td></tr>
+    <tr><td class="paramname">{Space*}</td><td>sp - Space to be drawn </td></tr>
+    <tr><td class="paramname">{int}</td><td>id - Box id </td></tr>
+    <tr><td class="paramname">{int}</td><td>x - Begin x position (relative to the box) </td></tr>
+    <tr><td class="paramname">{int}</td><td>y - Begin y position (relative to the box) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="aa2f5a0548ea6fedb671c594d4f0cf039"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa2f5a0548ea6fedb671c594d4f0cf039">&#9670;&nbsp;</a></span>g_engine_create()</h2>
 
@@ -208,7 +273,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>draw_space</b> (<a cl
       </table>
 </div><div class="memdoc">
 
-<p>deletes the paramters defined by G_engine_create </p>
+<p>Destroys a graphic engine. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">{G_engine*}</td><td>ge - Graphic engine pointer </td></tr>
@@ -248,7 +313,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>draw_space</b> (<a cl
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">{G_engine*}</td><td>ge - Graphic engine pointer </td></tr>
-    <tr><td class="paramname">{Game*}</td><td>- Game pointer </td></tr>
+    <tr><td class="paramname">{Game*}</td><td>game - Game pointer </td></tr>
   </table>
   </dd>
 </dl>

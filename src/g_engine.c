@@ -32,6 +32,21 @@ enum _Boxes {
   _FEED /*!< Feedback box */
 };
 
+/****** PRIVATE FUNCTIONS ******/
+
+/**
+* @brief Parses a given space
+* @param {Game*} game - Game pointer
+* @param {G_engine*} ge - Graphic engine pointer
+* @param {Space*} sp - Space to be drawn
+* @param {int} id - Box id
+* @param {int} x - Begin x position (relative to the box)
+* @param {int} y - Begin y position (relative to the box)
+*/
+void parse_space( Game *game, G_engine *ge, Space *sp, int id, int x, int y );
+
+/*******************************/
+
 G_engine *g_engine_create() {
 
   static G_engine *ge = NULL;
@@ -81,7 +96,7 @@ void g_engine_destroy( G_engine *ge ) {
 
 }
 
-void draw_space( Game *game, G_engine *ge, Space *sp, int id, int x, int y ) {
+void parse_space( Game *game, G_engine *ge, Space *sp, int id, int x, int y ) {
 
   int i;
   Ui *ui;
@@ -214,12 +229,12 @@ void g_engine_paint_game( G_engine *ge, Game *game ) {
   sp_south_id = space_get_south( cu_sp ); // south id
 
   if ( sp_cu_id != NO_ID ) {
-    draw_space( game, ge, cu_sp, _MAP, 1, 1 );
+    parse_space( game, ge, cu_sp, _MAP, 1, 1 );
   }
   if ( sp_south_id != NO_ID ) {
     ui_box_seek( ui, _MAP, 12, 7 );
     ui_box_put( ui, _MAP, "v");
-    draw_space( game, ge, game_get_space( game, sp_south_id ), _MAP, 1, 8 );
+    parse_space( game, ge, game_get_space( game, sp_south_id ), _MAP, 1, 8 );
   }
 
   x=42;

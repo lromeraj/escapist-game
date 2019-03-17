@@ -50,7 +50,7 @@ const int \hyperlink{cmd_8c_a57baf1963c86de1643043f9c4cee9567}{cmd\+\_\+get\+\_\
 const char $\ast$ \hyperlink{cmd_8c_a9fc56f507a2e6dabe93d8e8e03a81164}{cmd\+\_\+get\+\_\+ans} (\hyperlink{struct__Cmd}{Cmd} $\ast$cmd)
 \begin{DoxyCompactList}\small\item\em Gets a previus answer of the given command. \end{DoxyCompactList}\item 
 \hyperlink{struct__Cmd}{Cmd} $\ast$ \hyperlink{cmd_8c_a511ba687ae937a7eb95ea06b79b2b8ec}{cmd\+\_\+get} (\hyperlink{cmd_8h_a2933336e1f8003400f3b050402f0f5f3}{Cid} id)
-\begin{DoxyCompactList}\small\item\em Sets a command by its id. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Gets a command by its id. \end{DoxyCompactList}\item 
 void \hyperlink{cmd_8c_a5090e929f5e97aa5492b47dfd7a6ec91}{cmd\+\_\+cb} (\hyperlink{struct__Cmd}{Cmd} $\ast$cmd, void $\ast$vp)
 \begin{DoxyCompactList}\small\item\em Calls to the callback function stored in the given command. \end{DoxyCompactList}\item 
 \hyperlink{struct__Cmd}{Cmd} $\ast$ \hyperlink{cmd_8c_abb04779da8a594a45843a10b91e9e3a3}{cmd\+\_\+req} ()
@@ -288,7 +288,7 @@ Gets a previus answer of the given command.
 
 
 
-Sets a command by its id. 
+Gets a command by its id. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -297,7 +297,7 @@ Sets a command by its id.
 \end{DoxyParams}
 
 \begin{DoxyRetVals}{Return values}
-{\em \{\+Cmd$\ast$\}} & -\/ Command pointer \\
+{\em \{\+Cmd$\ast$\}} & -\/ Returns a pointer to the requested command \\
 \hline
 \end{DoxyRetVals}
 \mbox{\Hypertarget{cmd_8c_a5090e929f5e97aa5492b47dfd7a6ec91}\label{cmd_8c_a5090e929f5e97aa5492b47dfd7a6ec91}} 

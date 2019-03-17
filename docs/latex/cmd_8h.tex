@@ -73,7 +73,7 @@ enum \hyperlink{cmd_8h_a00a332e55439547f3ed90d0839bd1995}{enum\+\_\+\+Cid} \{ \n
 void \hyperlink{cmd_8h_ab2829bf716f494548177511118bf6c5b}{cmd\+\_\+set} (\hyperlink{cmd_8h_a2933336e1f8003400f3b050402f0f5f3}{Cid} id, const char $\ast$b\+\_\+name, const char $\ast$s\+\_\+name, \hyperlink{cmd_8h_a78d7a8bd781b5514e6dd7e1253bb1907}{cmd\+\_\+fn} fn)
 \begin{DoxyCompactList}\small\item\em Sets up a new command and stores it inside a private array. \end{DoxyCompactList}\item 
 \hyperlink{struct__Cmd}{Cmd} $\ast$ \hyperlink{cmd_8h_a511ba687ae937a7eb95ea06b79b2b8ec}{cmd\+\_\+get} (\hyperlink{cmd_8h_a2933336e1f8003400f3b050402f0f5f3}{Cid} id)
-\begin{DoxyCompactList}\small\item\em Sets a command by its id. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Gets a command by its id. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{cmd_8h_a3078f0effe67b212b1b913e3ff0c08dc}\label{cmd_8h_a3078f0effe67b212b1b913e3ff0c08dc}} 
 void \hyperlink{cmd_8h_a3078f0effe67b212b1b913e3ff0c08dc}{cmd\+\_\+free} ()
 \begin{DoxyCompactList}\small\item\em Destroy all the setted commands. \end{DoxyCompactList}\item 
@@ -197,7 +197,7 @@ Sets up a new command and stores it inside a private array.
 
 
 
-Sets a command by its id. 
+Gets a command by its id. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -206,7 +206,7 @@ Sets a command by its id.
 \end{DoxyParams}
 
 \begin{DoxyRetVals}{Return values}
-{\em \{\+Cmd$\ast$\}} & -\/ Command pointer \\
+{\em \{\+Cmd$\ast$\}} & -\/ Returns a pointer to the requested command \\
 \hline
 \end{DoxyRetVals}
 \mbox{\Hypertarget{cmd_8h_abb04779da8a594a45843a10b91e9e3a3}\label{cmd_8h_abb04779da8a594a45843a10b91e9e3a3}} 
