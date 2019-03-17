@@ -59,7 +59,8 @@ void cmd_set( Cid id, const char* b_name, const char *s_name, cmd_fn fn );
 ```
 
 ``` c
-/** Reserves memory to alloc a certain quantity of pixels
+/**
+* @brief Reserves memory to alloc a certain quantity of pixels
 * @param {int} __len - The quantity of pixels to be allocted
 * @retval {Ui_pix**} - Returns a pointer which points to other pixels pointers
 */
