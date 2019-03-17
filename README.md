@@ -111,7 +111,7 @@ typedef enum {
 } Format;
 ```
 
-- Para comentar un dato usar `/*!< @brief Value description */`.
+- Para comentar un dato usar `/*!< Value description */`.
 
 
 ## Makefile
