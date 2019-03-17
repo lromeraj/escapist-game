@@ -19,7 +19,7 @@ Procurar hacer **toda la documentación en inglés**.
 
 ### Módulos
 - Todos los módulos deben de comenzar con un comentario de encabezado básico.
-- **NO** incluir este encabezado en los archivos `.c`, **solamente en los archivos `.h`**
+- Incluir este encabezado en todos los archivos tanto en los archivos `.c` y `.h`.
 - En vez de poner todos los participantes en el encabezado del módulo, la etiqueta `@author` puede
 ser omitida, y añadir mejor un autor por función.
 

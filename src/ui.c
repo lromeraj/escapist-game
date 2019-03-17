@@ -1,3 +1,14 @@
+/**
+* @brief Ui source code
+*
+* @file ui.c
+* @author Javier Romera
+* @version 0.6.1
+* @date 17/03/2019
+* @copyright GNU Public License
+*/
+
+
 #include "ui.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -10,7 +21,7 @@
 #define DEFAULT_TXT_FORMAT S_DEFAULT
 #define DEFAULT_BOX_BG_COLOR BG_WHITE
 #define DEFAULT_BG_COLOR BG_WHITE
-#define FRM_LEN 30
+#define FRM_LEN 30 /*!< @brief Maximum format length */
 #define TAB_SIZE 3
 #define MAX_BOXES 10
 

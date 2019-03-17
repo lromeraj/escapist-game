@@ -1,16 +1,5 @@
 var searchData=
 [
-  ['s_5fblink',['S_BLINK',['../ui_8h.html#ab4e88c89b3b7ea1735996cc4def22d58aa71a2dfb347a18e3a158667c17440ff2',1,'ui.h']]],
-  ['s_5fbold',['S_BOLD',['../ui_8h.html#ab4e88c89b3b7ea1735996cc4def22d58a102ce3bf8f47f2b8b10d2e3f872d8885',1,'ui.h']]],
-  ['s_5fdefault',['S_DEFAULT',['../ui_8h.html#ab4e88c89b3b7ea1735996cc4def22d58a7ec4e09925986b754439a1f94a0d96db',1,'ui.h']]],
-  ['s_5fdim',['S_DIM',['../ui_8h.html#ab4e88c89b3b7ea1735996cc4def22d58a853c3cc3fbd75aa00e16505d1242e575',1,'ui.h']]],
-  ['s_5fhidden',['S_HIDDEN',['../ui_8h.html#ab4e88c89b3b7ea1735996cc4def22d58a2c4c9d9d754df0bfd7d1e82ba21acb40',1,'ui.h']]],
-  ['s_5fname',['s_name',['../struct__Cmd.html#ac7a8c09e258cb2b2f63d179943616d08',1,'_Cmd']]],
-  ['s_5freverse',['S_REVERSE',['../ui_8h.html#ab4e88c89b3b7ea1735996cc4def22d58a12119c5fb581b9b351983dce8e0bf23d',1,'ui.h']]],
-  ['s_5funderlined',['S_UNDERLINED',['../ui_8h.html#ab4e88c89b3b7ea1735996cc4def22d58aae501dc5817876361aa06f3da39d1cfb',1,'ui.h']]],
-  ['scr',['scr',['../struct__Ui.html#abd7c2a78bbdbe0e91a47a1461660b747',1,'_Ui']]],
-  ['set_2eh',['set.h',['../set_8h.html',1,'']]],
-  ['space_2eh',['space.h',['../space_8h.html',1,'']]],
   ['space_5fadd_5fobject',['space_add_object',['../space_8h.html#a69b9e22046b7b44dc5aa2afe7cc0a1b9',1,'space.c']]],
   ['space_5fcreate',['space_create',['../space_8h.html#a162866fcea156b800fd546d0ffd271c9',1,'space.c']]],
   ['space_5fdel_5fobject',['space_del_object',['../space_8h.html#a32c30f0aa89f3f28c06802f1c72c1fdc',1,'space.c']]],

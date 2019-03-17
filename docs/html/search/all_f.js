@@ -1,8 +1,17 @@
 var searchData=
 [
-  ['reader_2eh',['reader.h',['../reader_8h.html',1,'']]],
-  ['reader_5fload_5fobjects',['reader_load_objects',['../reader_8h.html#ab8bed1641bb108e505b372bfb23a6604',1,'reader.c']]],
-  ['reader_5fload_5fspaces',['reader_load_spaces',['../reader_8h.html#a329b3f09b9f244887808b807a33457c8',1,'reader.c']]],
-  ['right',['RIGHT',['../cmd_8h.html#a00a332e55439547f3ed90d0839bd1995aec8379af7490bb9eaaf579cf17876f38',1,'cmd.h']]],
-  ['roll',['ROLL',['../cmd_8h.html#a00a332e55439547f3ed90d0839bd1995a2eeb9fef8a6a516fa6437a44a6efbd52',1,'cmd.h']]]
+  ['pad',['pad',['../struct__Ui__box.html#a4030a2fd2487e5a4cde2b4fccc999166',1,'_Ui_box']]],
+  ['player_2eh',['player.h',['../player_8h.html',1,'']]],
+  ['player_5fdestroy',['player_destroy',['../player_8h.html#a68e324aa5064e27d0a2f38aafb6809ad',1,'player.c']]],
+  ['player_5fget_5fid',['player_get_id',['../player_8h.html#af5a101ec91427951c5875569a8709956',1,'player.c']]],
+  ['player_5fget_5flocation',['player_get_location',['../player_8h.html#aa50ce77ab79af7166d749619fd60acfe',1,'player.c']]],
+  ['player_5fget_5fname',['player_get_name',['../player_8h.html#a6622c02be2fe230a5c0df66385a13ece',1,'player.c']]],
+  ['player_5fget_5fobject',['player_get_object',['../player_8h.html#a96e37051cdc1540e0dde770f6b713f39',1,'player.c']]],
+  ['player_5fhas_5fobject',['player_has_object',['../player_8h.html#a2e262401b9b2b77978b421917c13279d',1,'player.c']]],
+  ['player_5finit',['player_init',['../player_8h.html#aed0f40de36238a60267abf71c6720599',1,'player.c']]],
+  ['player_5fprint',['player_print',['../player_8h.html#aa0f2f8b4d1b63a60ef927d47aa45dbd1',1,'player.c']]],
+  ['player_5fset_5fid',['player_set_id',['../player_8h.html#a278466eff9dd013babc5bdbd485f1da0',1,'player.c']]],
+  ['player_5fset_5flocation',['player_set_location',['../player_8h.html#ac8ace1a1b6b11bc7f92a71a3922e4b83',1,'player.c']]],
+  ['player_5fset_5fname',['player_set_name',['../player_8h.html#a6a30809f7775f5c2d3bef47d92769e59',1,'player.c']]],
+  ['player_5fset_5fobject',['player_set_object',['../player_8h.html#af5eacaf6a51631f28500d8127e761c1b',1,'player.c']]]
 ];

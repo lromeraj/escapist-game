@@ -1,12 +1,12 @@
 /**
- * @brief User interface based on chars
- *
- * @file ui.h
- * @author Javier Romera
- * @version 0.6.1
- * @date 17/03/2019
- * @copyright GNU Public License
- */
+* @brief User interface based on chars
+*
+* @file ui.h
+* @author Javier Romera
+* @version 0.6.1
+* @date 17/03/2019
+* @copyright GNU Public License
+*/
 
 #ifndef UI_H
 #define UI_H
