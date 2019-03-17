@@ -1785,6 +1785,9 @@ div.contents {
 div.contents div.textblock div.dynheader {
 	margin: 0;
 }
+div.contents div.textblock code a.el {
+	color: #EA3A60;
+}
 
 div.contents > p {
 	padding: .5em;
