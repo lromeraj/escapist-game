@@ -66,41 +66,41 @@ void \hyperlink{ui_8c_afde9d47a49687dc0831376c3f2454259}{kill\+\_\+pixs} (\hyper
 bool \hyperlink{ui_8c_a4c6715d14c979c363f6dd1876a2db06a}{ui\+\_\+pix\+\_\+ovf} (int x, int y, int w, int h)
 \begin{DoxyCompactList}\small\item\em Checks if a given position ( usually for pixels ) is overflowing the max size. \end{DoxyCompactList}\item 
 \hyperlink{struct__Ui__pix}{Ui\+\_\+pix} $\ast$ \hyperlink{ui_8c_abdf66a7ffe3750fb2371e14178d91561}{ui\+\_\+get\+\_\+pix} (\hyperlink{struct__Ui__pix}{Ui\+\_\+pix} $\ast$$\ast$\+\_\+\+\_\+pixs, int x, int y, int w, int h)
-\item 
+\begin{DoxyCompactList}\small\item\em Gets a pixel that is located in a given position. \end{DoxyCompactList}\item 
 void \hyperlink{ui_8c_af6c65abe47ab9915826c7490f00becfe}{ui\+\_\+set\+\_\+pix} (\hyperlink{struct__Ui__pix}{Ui\+\_\+pix} $\ast$$\ast$\+\_\+\+\_\+pixs, int x, int y, int w, int h, \hyperlink{struct__Ui__pix}{Ui\+\_\+pix} pix)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets a given pixel in a given position. \end{DoxyCompactList}\item 
 \hyperlink{struct__Ui__box}{Ui\+\_\+box} $\ast$ \hyperlink{ui_8c_aab4edc4858af0c8e0a0813067737cc64}{ui\+\_\+get\+\_\+box} (\hyperlink{struct__Ui}{Ui} $\ast$ui, int id)
-\item 
+\begin{DoxyCompactList}\small\item\em Finds a box in a given UI. \end{DoxyCompactList}\item 
 void \hyperlink{ui_8c_a69697d0036f5af74ca0219183b81303f}{ui\+\_\+dump\+\_\+box} (\hyperlink{struct__Ui}{Ui} $\ast$ui, int id)
-\item 
+\begin{DoxyCompactList}\small\item\em This functions dumps all the box data inside the Ui. \end{DoxyCompactList}\item 
 void \hyperlink{ui_8c_a12cd87ff407c2b2d7515e67e4f4449b8}{ui\+\_\+kill\+\_\+box} (\hyperlink{struct__Ui__box}{Ui\+\_\+box} $\ast$)
-\item 
+\begin{DoxyCompactList}\small\item\em Destroys a given box. \end{DoxyCompactList}\item 
 void \hyperlink{ui_8c_afe39a41934b6658bb06c4ffc8cba413f}{ui\+\_\+frm} (\hyperlink{struct__Ui}{Ui} $\ast$ui, int num,...)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets a temporary format of the UI This means that all the text, shapes and other items will use the format that was setted in the last \hyperlink{ui_8h_a70ca5594ea91504bec5a8a16826f3c23}{ui\+\_\+frm()} call. \end{DoxyCompactList}\item 
 \hyperlink{struct__Ui}{Ui} $\ast$ \hyperlink{ui_8c_adc8d261a6cf4862dc48958d7fdb5b9c6}{ui\+\_\+init} (int w, int h)
-\item 
+\begin{DoxyCompactList}\small\item\em Initializes UI struct. \end{DoxyCompactList}\item 
 void \hyperlink{ui_8c_a26dcc63df2a1df20c72a9f8c9eb460d1}{ui\+\_\+destroy} (\hyperlink{struct__Ui}{Ui} $\ast$ui)
-\item 
+\begin{DoxyCompactList}\small\item\em Destroys UI struct. \end{DoxyCompactList}\item 
 void \hyperlink{ui_8c_a8e6b5fdd9c0dfd19c145a701b445ad05}{ui\+\_\+bg} (\hyperlink{struct__Ui}{Ui} $\ast$ui, \hyperlink{ui_8h_ab87bacfdad76e61b9412d7124be44c1c}{Color} c)
-\item 
+\begin{DoxyCompactList}\small\item\em Fills the main UI background with a given color. \end{DoxyCompactList}\item 
 void \hyperlink{ui_8c_ae33678d6064b4939cd98b2ba7b80357e}{ui\+\_\+rs} (\hyperlink{struct__Ui}{Ui} $\ast$ui)
-\item 
+\begin{DoxyCompactList}\small\item\em Resets the temporary format of the UI to default. \end{DoxyCompactList}\item 
 void \hyperlink{ui_8c_aa1ded7a0cb2d451204058c0dfa70c27f}{ui\+\_\+box\+\_\+bg} (\hyperlink{struct__Ui}{Ui} $\ast$ui, int id, \hyperlink{ui_8h_ab87bacfdad76e61b9412d7124be44c1c}{Color} c)
-\item 
+\begin{DoxyCompactList}\small\item\em Fills the main box background with a given color This function does N\+OT clear the box buffer. \end{DoxyCompactList}\item 
 void \hyperlink{ui_8c_a5f90f8ec38b654d40d68bf3b23542d20}{ui\+\_\+clear\+\_\+box} (\hyperlink{struct__Ui}{Ui} $\ast$ui, int id)
-\item 
+\begin{DoxyCompactList}\small\item\em Clears the box buffer. \end{DoxyCompactList}\item 
 void \hyperlink{ui_8c_af9b58458649ecd779d095f3d102d85c8}{ui\+\_\+clear} (\hyperlink{struct__Ui}{Ui} $\ast$ui)
-\item 
+\begin{DoxyCompactList}\small\item\em Clears all the UI data, including inherit objects like boxes, shapes, ... \end{DoxyCompactList}\item 
 void \hyperlink{ui_8c_a6eaad07fdf59b0544ee82c2ef461e0b1}{ui\+\_\+new\+\_\+box} (\hyperlink{struct__Ui}{Ui} $\ast$ui, int id, int x, int y, int w, int h)
-\item 
+\begin{DoxyCompactList}\small\item\em Creates a new box. \end{DoxyCompactList}\item 
 void \hyperlink{ui_8c_a603e6d6365ab52e1ee44d11745d3267a}{ui\+\_\+box\+\_\+seek} (\hyperlink{struct__Ui}{Ui} $\ast$ui, int id, int x, int y)
-\item 
+\begin{DoxyCompactList}\small\item\em Changes the cursor position of a box. \end{DoxyCompactList}\item 
 void \hyperlink{ui_8c_ab6a43ed5c9793ef4fc7f1c4ca35a8519}{ui\+\_\+box\+\_\+pad} (\hyperlink{struct__Ui}{Ui} $\ast$ui, int id, const char $\ast$pad)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the padding of a box. \end{DoxyCompactList}\item 
 void \hyperlink{ui_8c_a970596ba0fd0c93879026a87dd2e6dc2}{ui\+\_\+box\+\_\+put} (\hyperlink{struct__Ui}{Ui} $\ast$ui, int id, const char $\ast$fmt,...)
-\item 
+\begin{DoxyCompactList}\small\item\em Updates the box buffer with a given string. \end{DoxyCompactList}\item 
 void \hyperlink{ui_8c_a02dd6678b83f5554e3614e455666b245}{ui\+\_\+draw} (\hyperlink{struct__Ui}{Ui} $\ast$ui)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Prints all buffered data inside the UI into the stdout. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -190,7 +190,11 @@ Checks if a given position ( usually for pixels ) is overflowing the max size.
 \subsubsection{\texorpdfstring{ui\+\_\+get\+\_\+pix()}{ui\_get\_pix()}}
 {\footnotesize\ttfamily \hyperlink{struct__Ui__pix}{Ui\+\_\+pix} $\ast$ ui\+\_\+get\+\_\+pix (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Ui__pix}{Ui\+\_\+pix} $\ast$$\ast$}]{\+\_\+\+\_\+pixs,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{w,  }\item[{int}]{h }\end{DoxyParamCaption})}
 
-Gets a pixel that is located in a given position 
+
+
+Gets a pixel that is located in a given position. 
+
+
 \begin{DoxyParams}{Parameters}
 {\em \{\+Ui\+\_\+pix$\ast$$\ast$\}} & \+\_\+\+\_\+pixs -\/ the array where the pixel should be located \\
 \hline
@@ -214,7 +218,11 @@ Gets a pixel that is located in a given position
 \subsubsection{\texorpdfstring{ui\+\_\+set\+\_\+pix()}{ui\_set\_pix()}}
 {\footnotesize\ttfamily void ui\+\_\+set\+\_\+pix (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Ui__pix}{Ui\+\_\+pix} $\ast$$\ast$}]{\+\_\+\+\_\+pixs,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{w,  }\item[{int}]{h,  }\item[{\hyperlink{struct__Ui__pix}{Ui\+\_\+pix}}]{pix }\end{DoxyParamCaption})}
 
-Sets a given pixel in a given position 
+
+
+Sets a given pixel in a given position. 
+
+
 \begin{DoxyParams}{Parameters}
 {\em \{\+Ui\+\_\+pix$\ast$$\ast$\}} & \+\_\+\+\_\+pixs -\/ the array where the pixel should be located \\
 \hline
@@ -235,7 +243,11 @@ Sets a given pixel in a given position
 \subsubsection{\texorpdfstring{ui\+\_\+get\+\_\+box()}{ui\_get\_box()}}
 {\footnotesize\ttfamily \hyperlink{struct__Ui__box}{Ui\+\_\+box} $\ast$ ui\+\_\+get\+\_\+box (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Ui}{Ui} $\ast$}]{ui,  }\item[{int}]{id }\end{DoxyParamCaption})}
 
-Finds a box in a given UI 
+
+
+Finds a box in a given UI. 
+
+
 \begin{DoxyParams}{Parameters}
 {\em \{\+Ui$\ast$\}} & ui -\/ UI where the box should be located \\
 \hline
@@ -253,7 +265,11 @@ Finds a box in a given UI
 \subsubsection{\texorpdfstring{ui\+\_\+dump\+\_\+box()}{ui\_dump\_box()}}
 {\footnotesize\ttfamily void ui\+\_\+dump\+\_\+box (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Ui}{Ui} $\ast$}]{ui,  }\item[{int}]{id }\end{DoxyParamCaption})}
 
-This functions dumps all the box data inside the Ui 
+
+
+This functions dumps all the box data inside the Ui. 
+
+
 \begin{DoxyParams}{Parameters}
 {\em \{\+Ui$\ast$\}} & ui -\/ The ui where data sohuld be dumped \\
 \hline
@@ -266,7 +282,11 @@ This functions dumps all the box data inside the Ui
 \subsubsection{\texorpdfstring{ui\+\_\+kill\+\_\+box()}{ui\_kill\_box()}}
 {\footnotesize\ttfamily void ui\+\_\+kill\+\_\+box (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Ui__box}{Ui\+\_\+box} $\ast$}]{box }\end{DoxyParamCaption})}
 
-Destroys a given box 
+
+
+Destroys a given box. 
+
+
 \begin{DoxyParams}{Parameters}
 {\em \{\+Ui\+\_\+box$\ast$\}} & box -\/ Box pointer to be destroyed \\
 \hline
@@ -277,7 +297,11 @@ Destroys a given box
 \subsubsection{\texorpdfstring{ui\+\_\+frm()}{ui\_frm()}}
 {\footnotesize\ttfamily void ui\+\_\+frm (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Ui}{Ui} $\ast$}]{ui,  }\item[{int}]{n,  }\item[{}]{... }\end{DoxyParamCaption})}
 
-Sets a temporary format of the UI This means that all the text, shapes and other items will use the format that was setted in the last \hyperlink{ui_8h_a70ca5594ea91504bec5a8a16826f3c23}{ui\+\_\+frm()} call 
+
+
+Sets a temporary format of the UI This means that all the text, shapes and other items will use the format that was setted in the last \hyperlink{ui_8h_a70ca5594ea91504bec5a8a16826f3c23}{ui\+\_\+frm()} call. 
+
+
 \begin{DoxyParams}{Parameters}
 {\em \{\+Ui$\ast$\}} & ui -\/ UI to set the temporary parameters \\
 \hline
@@ -292,7 +316,11 @@ Sets a temporary format of the UI This means that all the text, shapes and other
 \subsubsection{\texorpdfstring{ui\+\_\+init()}{ui\_init()}}
 {\footnotesize\ttfamily \hyperlink{struct__Ui}{Ui}$\ast$ ui\+\_\+init (\begin{DoxyParamCaption}\item[{int}]{w,  }\item[{int}]{h }\end{DoxyParamCaption})}
 
-Initializes UI struct 
+
+
+Initializes UI struct. 
+
+
 \begin{DoxyParams}{Parameters}
 {\em \{int\}} & w -\/ The width of the user interface based on chars \\
 \hline
@@ -310,7 +338,11 @@ Initializes UI struct
 \subsubsection{\texorpdfstring{ui\+\_\+destroy()}{ui\_destroy()}}
 {\footnotesize\ttfamily void ui\+\_\+destroy (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Ui}{Ui} $\ast$}]{ui }\end{DoxyParamCaption})}
 
-Destroys UI struct 
+
+
+Destroys UI struct. 
+
+
 \begin{DoxyParams}{Parameters}
 {\em \{\+Ui$\ast$\}} & ui -\/ A pointer to the UI struct \\
 \hline
@@ -321,7 +353,11 @@ Destroys UI struct
 \subsubsection{\texorpdfstring{ui\+\_\+bg()}{ui\_bg()}}
 {\footnotesize\ttfamily void ui\+\_\+bg (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Ui}{Ui} $\ast$}]{ui,  }\item[{\hyperlink{ui_8h_ab87bacfdad76e61b9412d7124be44c1c}{Color}}]{c }\end{DoxyParamCaption})}
 
-Fills the main UI background with a given color 
+
+
+Fills the main UI background with a given color. 
+
+
 \begin{DoxyParams}{Parameters}
 {\em \{\+Ui$\ast$\}} & ui -\/ UI to be filled \\
 \hline
@@ -334,7 +370,11 @@ Fills the main UI background with a given color
 \subsubsection{\texorpdfstring{ui\+\_\+rs()}{ui\_rs()}}
 {\footnotesize\ttfamily void ui\+\_\+rs (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Ui}{Ui} $\ast$}]{ui }\end{DoxyParamCaption})}
 
-Resets the temporary format of the UI to default 
+
+
+Resets the temporary format of the UI to default. 
+
+
 \begin{DoxyParams}{Parameters}
 {\em \{\+Ui$\ast$\}} & ui -\/ the UI where the temporary parameters should be resetted \\
 \hline
@@ -345,7 +385,11 @@ Resets the temporary format of the UI to default
 \subsubsection{\texorpdfstring{ui\+\_\+box\+\_\+bg()}{ui\_box\_bg()}}
 {\footnotesize\ttfamily void ui\+\_\+box\+\_\+bg (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Ui}{Ui} $\ast$}]{ui,  }\item[{int}]{id,  }\item[{\hyperlink{ui_8h_ab87bacfdad76e61b9412d7124be44c1c}{Color}}]{c }\end{DoxyParamCaption})}
 
-Fills the main box background with a given color This function does N\+OT clear the box buffer 
+
+
+Fills the main box background with a given color This function does N\+OT clear the box buffer. 
+
+
 \begin{DoxyParams}{Parameters}
 {\em \{\+Ui$\ast$\}} & ui -\/ UI where the box is located \\
 \hline
@@ -360,7 +404,11 @@ Fills the main box background with a given color This function does N\+OT clear 
 \subsubsection{\texorpdfstring{ui\+\_\+clear\+\_\+box()}{ui\_clear\_box()}}
 {\footnotesize\ttfamily void ui\+\_\+clear\+\_\+box (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Ui}{Ui} $\ast$}]{ui,  }\item[{int}]{id }\end{DoxyParamCaption})}
 
-Clears the box buffer 
+
+
+Clears the box buffer. 
+
+
 \begin{DoxyParams}{Parameters}
 {\em \{\+Ui$\ast$\}} & ui -\/ UI where the box is located \\
 \hline
@@ -373,7 +421,11 @@ Clears the box buffer
 \subsubsection{\texorpdfstring{ui\+\_\+clear()}{ui\_clear()}}
 {\footnotesize\ttfamily void ui\+\_\+clear (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Ui}{Ui} $\ast$}]{ui }\end{DoxyParamCaption})}
 
+
+
 Clears all the UI data, including inherit objects like boxes, shapes, ... 
+
+
 \begin{DoxyParams}{Parameters}
 {\em \{\+Ui$\ast$\}} & ui -\/ The UI that should be clered \\
 \hline
@@ -384,7 +436,11 @@ Clears all the UI data, including inherit objects like boxes, shapes, ...
 \subsubsection{\texorpdfstring{ui\+\_\+new\+\_\+box()}{ui\_new\_box()}}
 {\footnotesize\ttfamily void ui\+\_\+new\+\_\+box (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Ui}{Ui} $\ast$}]{ui,  }\item[{int}]{id,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{w,  }\item[{int}]{h }\end{DoxyParamCaption})}
 
-Creates a new box 
+
+
+Creates a new box. 
+
+
 \begin{DoxyParams}{Parameters}
 {\em \{\+Ui$\ast$\}} & ui -\/ UI where the box should be used \\
 \hline
@@ -405,7 +461,11 @@ Creates a new box
 \subsubsection{\texorpdfstring{ui\+\_\+box\+\_\+seek()}{ui\_box\_seek()}}
 {\footnotesize\ttfamily void ui\+\_\+box\+\_\+seek (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Ui}{Ui} $\ast$}]{ui,  }\item[{int}]{id,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
 
-Changes the cursor position of a box 
+
+
+Changes the cursor position of a box. 
+
+
 \begin{DoxyParams}{Parameters}
 {\em \{\+Ui$\ast$\}} & ui -\/ UI where the box is located \\
 \hline
@@ -422,7 +482,11 @@ Changes the cursor position of a box
 \subsubsection{\texorpdfstring{ui\+\_\+box\+\_\+pad()}{ui\_box\_pad()}}
 {\footnotesize\ttfamily void ui\+\_\+box\+\_\+pad (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Ui}{Ui} $\ast$}]{ui,  }\item[{int}]{id,  }\item[{const char $\ast$}]{pad }\end{DoxyParamCaption})}
 
-Sets the padding of a box 
+
+
+Sets the padding of a box. 
+
+
 \begin{DoxyParams}{Parameters}
 {\em \{\+Ui$\ast$\}} & ui -\/ UI where the box is located \\
 \hline
@@ -437,7 +501,11 @@ Sets the padding of a box
 \subsubsection{\texorpdfstring{ui\+\_\+box\+\_\+put()}{ui\_box\_put()}}
 {\footnotesize\ttfamily void ui\+\_\+box\+\_\+put (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Ui}{Ui} $\ast$}]{ui,  }\item[{int}]{id,  }\item[{const char $\ast$}]{str,  }\item[{}]{... }\end{DoxyParamCaption})}
 
-Updates the box buffer with a given string 
+
+
+Updates the box buffer with a given string. 
+
+
 \begin{DoxyParams}{Parameters}
 {\em \{\+Ui$\ast$\}} & ui -\/ UI where the box is located \\
 \hline
@@ -454,7 +522,11 @@ Updates the box buffer with a given string
 \subsubsection{\texorpdfstring{ui\+\_\+draw()}{ui\_draw()}}
 {\footnotesize\ttfamily void ui\+\_\+draw (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Ui}{Ui} $\ast$}]{ui }\end{DoxyParamCaption})}
 
-Prints all buffered data inside the UI into the stdout 
+
+
+Prints all buffered data inside the UI into the stdout. 
+
+
 \begin{DoxyParams}{Parameters}
 {\em \{\+Ui$\ast$\}} & ui -\/ The UI that sueld be printed \\
 \hline
