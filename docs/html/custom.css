@@ -1827,10 +1827,9 @@ div.contents div.memitem div.memdoc p {
 div.contents div.memitem div.memdoc dl.params table.params td.paramname,
 div.contents div.memitem div.memdoc dl.retval table.retval td.paramname {
 	color: #EA3A60;
-	background: rgba(234, 58, 96, 0.1);
 	padding: .1em .4em;
 	border-radius: 5px;
-	display: inline-block;
+	display: inline-block !important;
 }
 
 div.contents div.memitem div.memproto table.memname {
