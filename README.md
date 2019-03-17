@@ -86,10 +86,16 @@ int mult( int a, int b );
 *
 */
 
-struct a {
-
-} xD;
-
+/*!
+* @brief Main UI structure
+*/
+struct _Ui {
+  Ui_screen scr; /*!< @brief Screen */
+  Ui_box *boxes[ MAX_BOXES ]; /*!< @brief Boxes */
+  Ui_pix **__pixs; /*!< @brief Pixels buffer */
+  int __len; /*!< @brief Number of pixels */
+  char __frm[ FRM_LEN ]; /*!< @brief Temporary format */
+};
 ```
 - Es importante dejar un salto de línea extra entre la descripción abreviada
 y la detallada.
