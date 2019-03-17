@@ -66,7 +66,7 @@ Ui_pix **alloc_pixs( int __len );
 ```
 
 ### Estructuras
-- En las estrucutas se debe comentar cada campo, e incluir además una breve descripción.
+- En las estrucutas se debe comentar cada campo e incluir además una breve descripción.
 
 ``` c
 /*!
@@ -82,6 +82,21 @@ struct _Ui {
 ```
 - Es importante dejar un salto de línea extra entre la descripción abreviada
 y la detallada.
+
+``` c
+/*!
+* @brief Main UI screen structure
+*
+* This is a long description of the screen structure,
+* which stores data related with a screen, like the screen width,
+* screen height, etc ...
+*/
+struct _Ui_screen {
+  int w; /*!< @brief Width */
+  int h; /*!< @brief Height */
+};
+
+``
 
 ### Enumeraciones
 - Las enumeraciones de comentan de forma similar a las estrucutas...
