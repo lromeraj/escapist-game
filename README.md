@@ -46,20 +46,6 @@ Procurar hacer **toda la documentación en inglés**.
 
 ``` c
 /**
-* @brief Brief description
-*
-* Long description ...
-* @author Author name
-* @param {<type>} <name> - <description>
-* ...
-* @retval {<type>} - <description>
-*/
-```
-
-- Ejemplos:
-
-``` c
-/**
 * @brief Multiplies two numbers
 * @author Gonzalo Serrano
 * @param {int} a - First operand
