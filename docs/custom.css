@@ -1816,6 +1816,10 @@ div.contents div.memitem div.memdoc {
 	background-image: none;
 }
 
+div.contents div.memitem div.memdoc table.fieldtable {
+	
+}
+
 div.contents div.memitem div.memdoc p {
 	margin: 0 0 .2em 0;
 }
