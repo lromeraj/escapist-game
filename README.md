@@ -106,7 +106,7 @@ struct _Ui_screen {
 ```
 
 ### Enumeraciones
-- Las enumeraciones se comentan de forma similar a las estrucutas...
+- Las enumeraciones se comentan de forma similar a las estrucutas.
 - Para comentar un dato usar `/*!< Value description */`.
 
 ``` c
