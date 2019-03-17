@@ -1693,6 +1693,10 @@ div#titlearea div#projectname span#projectnumber {
 	font-size: .9em;
 }
 
+div.contents div.textblock div.dyncontent img {
+	width: auto;
+}
+
 div.textblock p {
 	margin: 0;
 }
