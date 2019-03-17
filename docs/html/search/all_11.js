@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['w',['w',['../struct__Ui__box.html#a90f1e8d481ccbf0cc06e3bbb1c12b386',1,'_Ui_box']]]
+  ['take',['TAKE',['../cmd_8h.html#a00a332e55439547f3ed90d0839bd1995a7405647410e343caba1bf383e83d4f5f',1,'cmd.h']]],
+  ['types_2eh',['types.h',['../types_8h.html',1,'']]]
 ];

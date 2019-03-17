@@ -11,8 +11,6 @@
 #ifndef UI_H
 #define UI_H
 
-#define MAX_BOXES 10 /*!< Maximum number of boxes */
-
 /*!
 * @brief Text colors
 */

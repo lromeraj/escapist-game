@@ -12,6 +12,7 @@
 #define DEFAULT_BG_COLOR BG_WHITE
 #define FRM_LEN 30
 #define TAB_SIZE 3
+#define MAX_BOXES 10
 
 /*!
 * @brief Basic pixel structure
@@ -38,16 +39,23 @@ struct _Ui_box {
   Color bg;  /*!< @brief Background color */
 };
 
+/*!
+* @brief Main UI screen structure
+*/
 struct _Ui_screen {
-  int w, h;
+  int w; /*!< @brief Width */
+  int h; /*!< @brief Height */
 };
 
+/*!
+* @brief Main UI structure
+*/
 struct _Ui {
-  Ui_screen scr;
-  Ui_box *boxes[ MAX_BOXES ];
-  Ui_pix **__pixs;
-  int __len;
-  char __frm[ FRM_LEN ];
+  Ui_screen scr; /*!< @brief Screen */
+  Ui_box *boxes[ MAX_BOXES ]; /*!< @brief Boxes */
+  Ui_pix **__pixs; /*!< @brief Pixels buffer */
+  int __len; /*!< @brief Number of pixels */
+  char __frm[ FRM_LEN ]; /*!< @brief Temporary format */
 };
 
 /****** PRIVATE FUNCTIONS ******/
