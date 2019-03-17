@@ -1816,6 +1816,10 @@ div.contents div.memitem div.memdoc {
 	background-image: none;
 }
 
+div.contents div.memitem div.memdoc table.fieldtable {
+
+}
+
 div.contents div.memitem div.memdoc p {
 	margin: 0 0 .2em 0;
 }
@@ -1826,6 +1830,7 @@ div.contents div.memitem div.memdoc dl.retval table.retval td.paramname {
 	background: rgba(234, 58, 96, 0.1);
 	padding: .1em .4em;
 	border-radius: 5px;
+	display: inline-block;
 }
 
 div.contents div.memitem div.memproto table.memname {
