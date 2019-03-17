@@ -1694,7 +1694,7 @@ div#titlearea div#projectname span#projectnumber {
 }
 
 div.contents div.textblock div.dyncontent img {
-	width: auto;
+	max-width: 50%;
 }
 
 div.textblock p {
