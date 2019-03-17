@@ -85,6 +85,11 @@ int mult( int a, int b );
 * Detailed description ...
 *
 */
+
+struct a {
+
+} xD;
+
 ```
 - Es importante dejar un salto de línea extra entre la descripción abreviada
 y la detallada.
