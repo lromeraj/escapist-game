@@ -1894,6 +1894,16 @@ div.contents div.memitem div.memproto table.memname {
 	margin: .5em 0 .5em .8em;
 	padding: .1em .3em;
 }
+div.contents div.memitem div.memproto table.memname td.paramtype a.el {
+	color: #EA3A60;
+	background: rgba(234, 58, 96, 0.1);
+	padding: .1em .4em;
+	border-radius: 5px;
+}
+div.contents div.memitem div.memproto table.memname td.paramname {
+	color: #2976A5;
+	font-weight: bold;
+}
 
 div.contents h2.groupheader {
 	text-decoration: none;
@@ -1926,7 +1936,7 @@ div.contents h3 {
 
 div.contents ul {
 	display: block;
-	margin-bottom: 3em;
+	margin: .7em 0 2em 0;
 }
 
 div.contents ul li {
