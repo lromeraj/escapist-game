@@ -1597,7 +1597,7 @@ th.markdownTableHeadCenter, td.markdownTableBodyCenter {
 div#top { }
 
 div#titlearea {
-	margin: .5em 0 0 .5em;
+	margin: .5em 0 .5em .5em;
 }
 
 div#titlearea td#projectalign {
@@ -1609,11 +1609,16 @@ div#titlearea div#projectname {
 	background: rgba(234, 58, 96, 0.1);
 	padding: .1em .3em;
 	border-radius: 10px;
+	font-weight: bold;
+}
+div#titlearea div#projectname span#projectnumber {
+	font-weight: normal;
 }
 
 .sm-dox {
 	border: none;
 	background: #fff;
+	padding: 0;
 }
 
 .sm-dox li a.has-submenu span.sub-arrow {
@@ -1660,6 +1665,23 @@ div#titlearea div#projectname {
 	border: none;
 	border-radius: 5px;
 	box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.sm-dox li div#MSearchBox * {
+	box-shadow: none;
+	background-image: none;
+}
+
+.sm-dox li div#MSearchBox {
+	border-radius: 5px;
+	margin: 0 .5em 0 0;
+	padding: .2em 0 0 0;
+	box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.sm-dox li div#MSearchBox input {
+	color: #444;
+	font-size: .9em;
 }
 
 div.textblock p {
