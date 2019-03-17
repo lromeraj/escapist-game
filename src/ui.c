@@ -98,7 +98,8 @@ void kill_pixs( Ui_pix **__pixs, int __len );
 bool ui_pix_ovf( int x, int y, int w, int h );
 
 
-/** Gets a pixel that is located in a given position
+/**
+* @brief Gets a pixel that is located in a given position
 * @param {Ui_pix**} __pixs - the array where the pixel should be located
 * @param {int} x - Represents the x position ( column of the matrix )
 * @param {int} y - Represents the y position ( row of the matrix )
@@ -109,7 +110,8 @@ bool ui_pix_ovf( int x, int y, int w, int h );
 Ui_pix *ui_get_pix( Ui_pix **__pixs, int x, int y, int w, int h );
 
 
-/** Sets a given pixel in a given position
+/**
+* @brief Sets a given pixel in a given position
 * @param {Ui_pix**} __pixs - the array where the pixel should be located
 * @param {int} x - Represents the x position ( column of the matrix )
 * @param {int} y - Represents the y position ( row of the matrix )
@@ -120,7 +122,8 @@ Ui_pix *ui_get_pix( Ui_pix **__pixs, int x, int y, int w, int h );
 void ui_set_pix( Ui_pix **__pixs, int x, int y, int w, int h, Ui_pix pix );
 
 
-/** Finds a box in a given UI
+/**
+* @brief Finds a box in a given UI
 * @param {Ui*} ui - UI where the box should be located
 * @param {int} id - The id of the requested box
 * @retval {Ui_box*} - If the box was found returns a pointer
@@ -129,13 +132,15 @@ void ui_set_pix( Ui_pix **__pixs, int x, int y, int w, int h, Ui_pix pix );
 Ui_box* ui_get_box( Ui* ui, int id );
 
 
-/** This functions dumps all the box data inside the Ui
+/**
+* @brief This functions dumps all the box data inside the Ui
 * @param {Ui*} ui - The ui where data sohuld be dumped
 * @param {int} id - The id of the box to be dumped
 */
 void ui_dump_box( Ui *ui, int id );
 
-/** Destroys a given box
+/**
+* @brief Destroys a given box
 * @param {Ui_box*} box - Box pointer to be destroyed
 */
 void ui_kill_box( Ui_box* );
