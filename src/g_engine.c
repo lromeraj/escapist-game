@@ -10,7 +10,7 @@
 * @brief Main graphic engine structure
 */
 struct _G_engine {
-  Ui *ui;
+  Ui *ui; /*!< @brief User interface */
 };
 
 /*! Box list */
