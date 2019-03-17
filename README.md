@@ -80,13 +80,6 @@ int mult( int a, int b );
 
 ``` c
 /*!
-* @brief Brief description
-*
-* Detailed description ...
-*
-*/
-
-/*!
 * @brief Main UI structure
 */
 struct _Ui {
@@ -99,17 +92,23 @@ struct _Ui {
 ```
 - Es importante dejar un salto de línea extra entre la descripción abreviada
 y la detallada.
-- Para comentar los campos usar `/*!< @brief Field description */`.
 
 ### Enumeraciones
-- Las enumeraciones de comentan de forma similar a las estrucutas.
+- Las enumeraciones de comentan de forma similar a las estrucutas...
+
 ``` c
 /*!
-* @brief Brief description
-*
-* Detailed explanation ...
-*
+* @brief Text formats
 */
+typedef enum {
+  S_DEFAULT=0, /*!< Resets text format */
+  S_BOLD=1,  /*!< Bold text */
+  S_DIM=2,  /*!< Small text */
+  S_UNDERLINED=4,  /*!< Underlined text */
+  S_BLINK=5,  /*!< Blink text */
+  S_REVERSE=7,  /*!< Reversed text format */
+  S_HIDDEN=9  /*!< Hidden text */
+} Format;
 ```
 
 - Para comentar un dato usar `/*!< @brief Value description */`.
