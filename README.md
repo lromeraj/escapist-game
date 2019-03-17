@@ -96,7 +96,7 @@ struct _Ui_screen {
   int h; /*!< @brief Height */
 };
 
-``
+```
 
 ### Enumeraciones
 - Las enumeraciones de comentan de forma similar a las estrucutas...
