@@ -14,6 +14,7 @@
 - Implemented `game_get_die()`.
 - Implemented `game_get_cmd()`.
 - Implemented `game_get_player()`.
+- Added code documentation.
 
 # I2
 

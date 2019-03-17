@@ -14,7 +14,7 @@
 #define MAX_BOXES 10 /*!< Maximum number of boxes */
 
 /*!
-* @brief Text formats
+* @brief Text colors
 */
 typedef enum {
   BG_BLACK=40,

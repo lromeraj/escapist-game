@@ -17,8 +17,8 @@
 * @brief Basic pixel structure
 */
 struct _Ui_pix {
-  char c; /*!< Pixel char */
-  char frm[ FRM_LEN ];  /*!< Pixel format */
+  char c; /*!< @brief Pixel char */
+  char frm[ FRM_LEN ];  /*!< @brief Pixel format */
 };
 
 /*!
@@ -71,7 +71,7 @@ void kill_pixs( Ui_pix **__pixs, int __len );
 * @param {int} y - Represents the y position ( row of the matrix )
 * @param {int} w - Represents the space width
 * @param {int} h - Represents the space height
-* @retval {bool} - Returns a boolean value, FALSE(0) if there is no overflow, else TRUE(!=0)
+* @retval {bool} - Returns a boolean value, false if there is no overflow, else true
 */
 bool ui_pix_ovf( int x, int y, int w, int h );
 
