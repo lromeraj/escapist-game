@@ -68,14 +68,16 @@ struct _Ui {
 Ui_pix **alloc_pixs( int __len );
 
 
-/** This function destroys an array of pixels to liberate memory
+/**
+* @brief This function destroys an array of pixels to liberate memory
 * @param {Ui_pix**} __pixs - Pointer which points to the data
 * @param {int} __len - The length of the pixs matrix
 */
 void kill_pixs( Ui_pix **__pixs, int __len );
 
 
-/** Checks if a given position ( usually for pixels ) is overflowing the max size
+/**
+* @brief Checks if a given position ( usually for pixels ) is overflowing the max size
 * @param {int} x - Represents the x position ( column of the matrix )
 * @param {int} y - Represents the y position ( row of the matrix )
 * @param {int} w - Represents the space width

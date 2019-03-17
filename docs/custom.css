@@ -1817,7 +1817,29 @@ div.contents div.memitem div.memdoc {
 }
 
 div.contents div.memitem div.memdoc table.fieldtable {
+	border: none;
+	box-shadow: 0 0 10px rgba(0,0,0,0.2);
+	border-radius: 8px;
+	margin: .8em 0 1em 0;
+	overflow: hidden;
+}
 
+div.contents div.memitem div.memdoc table.fieldtable th {
+	background: #fff;
+	background-image: none;
+	color: #444;
+	background: rgba(0, 0, 0, 0.05);
+	font-size: 1.1em;
+	font-weight: bold;
+	border: none;
+}
+div.contents div.memitem div.memdoc table.fieldtable td {
+	border: .5px solid rgba(0,0,0,0.1);
+}
+
+div.contents div.memitem div.memdoc table.fieldtable td.fieldname {
+	color: #EA3A60;
+	font-weight: bold;
 }
 
 div.contents div.memitem div.memdoc p {

@@ -15,22 +15,22 @@
 * @brief Text colors
 */
 typedef enum {
-  BG_BLACK=40,
-  BG_RED=41,
-  BG_GREEN=42,
-  BG_YELLOW=43,
-  BG_BLUE=44,
-  BG_PURPLE=45,
-  BG_CYAN=46,
-  BG_WHITE=47,
-  FG_BLACK=30,
-  FG_RED=31,
-  FG_GREEN=32,
-  FG_YELLOW=33,
-  FG_BLUE=34,
-  FG_PURPLE=35,
-  FG_CYAN=36,
-  FG_WHITE=37
+  BG_BLACK=40, /*!< Background black */
+  BG_RED=41, /*!< Background red */
+  BG_GREEN=42, /*!< Background green */
+  BG_YELLOW=43, /*!< Background yellow */
+  BG_BLUE=44, /*!< Background blue */
+  BG_PURPLE=45, /*!< Background purple */
+  BG_CYAN=46, /*!< Background cyan */
+  BG_WHITE=47, /*!< Background white */
+  FG_BLACK=30, /*!< Foreground black */
+  FG_RED=31, /*!< Foreground red */
+  FG_GREEN=32, /*!< Foreground green */
+  FG_YELLOW=33, /*!< Foreground yellow */
+  FG_BLUE=34, /*!< Foreground blue */
+  FG_PURPLE=35, /*!< Foreground purple */
+  FG_CYAN=36, /*!< Foreground cyan */
+  FG_WHITE=37 /*!< Foreground white */
 } Color;
 
 /*!
