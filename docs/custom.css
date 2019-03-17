@@ -1747,6 +1747,28 @@ div.navpath ul li.navelem a.el:hover {
 }
 
 
+div.header {
+	border-bottom: 2px dashed #444;
+	background: none;
+}
+
+div.header div.summary {
+	margin: .2em 0 0 0;
+}
+div.header div.summary a {
+	color: #2976A5;
+	background: rgba(41, 118, 165, 0.1);
+	padding: .2em .4em;
+	font-size: 1.1em;
+	border-radius: 3px;
+}
+
+div.header div.headertitle {
+
+}
+div.header div.headertitle div.title {
+	color: #444;
+}
 
 div.contents {
 	margin: 0;

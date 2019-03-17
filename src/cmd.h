@@ -24,7 +24,7 @@
 */
 typedef enum enum_Cid {
   UNKNOWN, /*!< Unknown command */
-  EXIT,  /*!< xit command */
+  EXIT,  /*!< Exit command */
   NEXT,  /*!< Next command */
   BACK, /*!< Back command */
   TAKE, /*!< Take command */

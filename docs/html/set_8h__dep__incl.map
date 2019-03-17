@@ -1,7 +1,7 @@
 <map id="src/set.h" name="src/set.h">
 <area shape="rect" id="node2" href="$space_8h.html" title="Space module. " alt="" coords="81,80,171,107"/>
 <area shape="rect" id="node3" href="$game_8h.html" title="It defines the game interface. " alt="" coords="83,155,169,181"/>
-<area shape="rect" id="node4" href="$g__engine_8h.html" title="It defines a textual graphic engine. " alt="" coords="11,229,118,256"/>
+<area shape="rect" id="node4" href="$g__engine_8h.html" title="Main graphic engine. " alt="" coords="11,229,118,256"/>
 <area shape="rect" id="node6" href="$reader_8h.html" title="Defines a game reader. " alt="" coords="142,229,233,256"/>
 <area shape="rect" id="node5" href="$game__loop_8c.html" title="Main game loop. " alt="" coords="5,304,124,331"/>
 </map>

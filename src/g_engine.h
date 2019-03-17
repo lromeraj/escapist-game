@@ -1,5 +1,5 @@
 /**
- * @brief It defines a textual graphic engine.
+ * @brief Main graphic engine
  *
  * @file g_engine.h
  * @version 0.7.1

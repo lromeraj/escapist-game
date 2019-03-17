@@ -1,6 +1,6 @@
 <map id="src/die.h" name="src/die.h">
 <area shape="rect" id="node2" href="$game_8h.html" title="It defines the game interface. " alt="" coords="83,80,169,107"/>
-<area shape="rect" id="node3" href="$g__engine_8h.html" title="It defines a textual graphic engine. " alt="" coords="11,155,118,181"/>
+<area shape="rect" id="node3" href="$g__engine_8h.html" title="Main graphic engine. " alt="" coords="11,155,118,181"/>
 <area shape="rect" id="node5" href="$reader_8h.html" title="Defines a game reader. " alt="" coords="142,155,233,181"/>
 <area shape="rect" id="node4" href="$game__loop_8c.html" title="Main game loop. " alt="" coords="5,229,124,256"/>
 </map>
