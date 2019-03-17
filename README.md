@@ -15,6 +15,8 @@ El juego ha sido diseñado para ser compilado en un entorno de Linux. Para facil
 ## Doxygen
 Para que **Doxygen** funcione correctamente se deben seguir ciertas instrucciones
 a la hora de comentar.
+Procurar hacer **toda la documentación en inglés**.
+
 ### Módulos
 - Todos los módulos deben de comenzar con un comentario de encabezado básico.
 - **NO** incluir este encabezado en los archivos `.c`, **solamente en los archivos `.h`**
