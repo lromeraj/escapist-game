@@ -36,7 +36,6 @@ Procurar hacer **toda la documentación en inglés**.
 
 ### Macros
 - Para comentar una macro usar `/*!< @brief Macro description */`.
-- Ejemplo:
 ``` c
 #define MAX_BOXES 100 /*!< @brief Maximum number of boxes */
 ```
