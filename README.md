@@ -17,7 +17,6 @@ Para que **Doxygen** funcione correctamente se deben seguir ciertas instruccione
 a la hora de comentar.
 ### Módulos
 - Todos los módulos deben de comenzar con un comentario de encabezado básico.
-- Ejemplo:
 ``` c
 /**
 * @brief Short module description
