@@ -12,7 +12,7 @@
 - Improved functions responsible of taking and dropping objects.
 - Improved game stability.
 - Improved file `data.dat`.
-- Overview now shows more information about the objects.
+- Overview now shows more information about the objects and the player.
 
 `[NEW]`
 - Implemented inventory module.
