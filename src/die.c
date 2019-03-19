@@ -1,10 +1,25 @@
+/**
+ * @brief Die functions
+ *
+ * @file die.c
+ * @version 0.0.3
+ * @date 10/03/2019
+ * @author Javier Romera
+ * @copyright GNU Public License
+ */
+
 #include "die.h"
 #include <stdio.h>
 #include <stdlib.h>
 
+/*!
+ * @brief The die structure
+ *
+ * It stores information about the different chracteristics of the die
+ */
 struct _Die {
-  Id id;
-  int last_n;
+  Id id;      /*!< Id of the die*/
+  int last_n; /*!< The value of the last roll of the die */
 };
 
 Die *die_init() {
@@ -40,7 +55,7 @@ int die_roll( Die *d ) {
 }
 
 const int die_get_lastn( Die *die ) {
-  
+
   if (!die)
     return -1;
 

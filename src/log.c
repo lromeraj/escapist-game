@@ -1,3 +1,13 @@
+/**
+ * @brief Logger
+ *
+ * @file log.c
+ * @version 0.3.3
+ * @date 16/02/2019
+ * @author Javier Romera
+ * @copyright GNU Public License
+ */
+
 #include <stdio.h>
 #include <stdarg.h>
 #include <stdbool.h>

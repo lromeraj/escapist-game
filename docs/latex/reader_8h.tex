@@ -13,6 +13,14 @@ Include dependency graph for reader.\+h\+:\nopagebreak
 \includegraphics[width=350pt]{reader_8h__incl}
 \end{center}
 \end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=148pt]{reader_8h__dep__incl}
+\end{center}
+\end{figure}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -25,15 +33,17 @@ S\+T\+A\+T\+US \hyperlink{reader_8h_ab8bed1641bb108e505b372bfb23a6604}{reader\+\
 \subsection{Detailed Description}
 Defines a game reader. 
 
-\begin{DoxyAuthor}{Author}
-Álvaro Rodríguez \& Javier Romera 
-\end{DoxyAuthor}
+Contains the implementation of the functions that are associated to the reading of the file To obtain its values
+
 \begin{DoxyVersion}{Version}
 1.\+0 
 \end{DoxyVersion}
 \begin{DoxyDate}{Date}
 07/02/2019 
 \end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Álvaro Rodríguez 
+\end{DoxyAuthor}
 \begin{DoxyCopyright}{Copyright}
 G\+NU Public License 
 \end{DoxyCopyright}
@@ -50,9 +60,17 @@ G\+NU Public License
 
 Loads spaces from a file. 
 
+\begin{DoxyDate}{Date}
+07/02/2019 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Álvaro Rodríguez
+\end{DoxyAuthor}
 
 \begin{DoxyParams}{Parameters}
-{\em \{\+Game$\ast$\}} & game -\/ Pointer to game data  \{char$\ast$\} filename -\/ name of the source file \\
+{\em \{\+Game$\ast$\}} & game -\/ Pointer to game data \\
+\hline
+{\em \{char$\ast$\}} & filename -\/ name of the source file \\
 \hline
 \end{DoxyParams}
 
@@ -70,6 +88,12 @@ Loads spaces from a file.
 
 Loads objects from a file. 
 
+\begin{DoxyDate}{Date}
+07/02/2019 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Álvaro Rodríguez
+\end{DoxyAuthor}
 
 \begin{DoxyParams}{Parameters}
 {\em \{\+Game$\ast$\}} & game -\/ Pointer to game data  \{char$\ast$\} filename -\/ name of the source file \\

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['pad',['pad',['../struct__Ui__box.html#a4030a2fd2487e5a4cde2b4fccc999166',1,'_Ui_box']]]
+  ['last_5fn',['last_n',['../struct__Die.html#abf73744a544920c64d79d84d964be62d',1,'_Die']]]
 ];

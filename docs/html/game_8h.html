@@ -88,7 +88,7 @@ Include dependency graph for game.h:</div>
 <area shape="rect" id="node6" href="space_8h.html" title="Space module. " alt="" coords="315,80,383,107"/>
 <area shape="rect" id="node9" href="player_8h.html" title="It defines a player. " alt="" coords="89,155,157,181"/>
 <area shape="rect" id="node10" href="object_8h.html" title="Object manager. " alt="" coords="147,80,215,107"/>
-<area shape="rect" id="node11" href="die_8h.html" title="Command interpreter. " alt="" coords="240,80,291,107"/>
+<area shape="rect" id="node11" href="die_8h.html" title="Die functions. " alt="" coords="240,80,291,107"/>
 <area shape="rect" id="node3" href="types_8h.html" title="It defines common type. " alt="" coords="187,229,253,256"/>
 <area shape="rect" id="node7" href="set_8h.html" title="Command interpreter. " alt="" coords="333,155,384,181"/>
 </map>
@@ -101,6 +101,7 @@ This graph shows which files directly or indirectly include this file:</div>
 <area shape="rect" id="node2" href="g__engine_8c.html" title="Graphic engine source code. " alt="" coords="5,155,112,181"/>
 <area shape="rect" id="node3" href="g__engine_8h.html" title="Main graphic engine. " alt="" coords="96,80,203,107"/>
 <area shape="rect" id="node5" href="reader_8h.html" title="Defines a game reader. " alt="" coords="227,80,317,107"/>
+<area shape="rect" id="node6" href="reader_8c.html" title="Main game reader. " alt="" coords="295,155,385,181"/>
 <area shape="rect" id="node4" href="game__loop_8c.html" title="Main game loop. " alt="" coords="137,155,255,181"/>
 </map>
 </div>
@@ -148,7 +149,7 @@ Functions</h2></td></tr>
 <tr class="separator:ade0d25f267771b1f9b27fcc0383e93b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a051b1f4a7b5dd97b949a50fec93bd159"><td class="memItemLeft" align="right" valign="top">STATUS&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8h.html#a051b1f4a7b5dd97b949a50fec93bd159">game_set_object</a> (<a class="el" href="struct__Game.html">Game</a> *game, <a class="el" href="struct__Object.html">Object</a> *object)</td></tr>
 <tr class="separator:a051b1f4a7b5dd97b949a50fec93bd159"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9d64221dbc653f866adc43c4ef849bb1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8h.html#a9d64221dbc653f866adc43c4ef849bb1">game_set_die</a> (<a class="el" href="struct__Game.html">Game</a> *game, <a class="el" href="struct__Die.html">Die</a> *d)</td></tr>
+<tr class="memitem:a9d64221dbc653f866adc43c4ef849bb1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8h.html#a9d64221dbc653f866adc43c4ef849bb1">game_set_die</a> (<a class="el" href="struct__Game.html">Game</a> *game, <a class="el" href="die_8h.html#a892f0b0bf81d69a1f7a14ea238e36dd3">Die</a> *d)</td></tr>
 <tr class="separator:a9d64221dbc653f866adc43c4ef849bb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab2506331340cbef8592780e0564cc8b7"><td class="memItemLeft" align="right" valign="top"><a id="ab2506331340cbef8592780e0564cc8b7"></a>
 <a class="el" href="struct__Space.html">Space</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>game_get_last_space</b> (<a class="el" href="struct__Game.html">Game</a> *game)</td></tr>
@@ -157,7 +158,7 @@ Functions</h2></td></tr>
 <a class="el" href="struct__Space.html">Space</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>game_get_first_space</b> (<a class="el" href="struct__Game.html">Game</a> *game)</td></tr>
 <tr class="separator:a584f1f96a3b7b428d7a6d76aa26dff2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5753a09313b092a52c0cea742c40f3cf"><td class="memItemLeft" align="right" valign="top"><a id="a5753a09313b092a52c0cea742c40f3cf"></a>
-<a class="el" href="struct__Die.html">Die</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>game_get_die</b> (<a class="el" href="struct__Game.html">Game</a> *game)</td></tr>
+<a class="el" href="die_8h.html#a892f0b0bf81d69a1f7a14ea238e36dd3">Die</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>game_get_die</b> (<a class="el" href="struct__Game.html">Game</a> *game)</td></tr>
 <tr class="separator:a5753a09313b092a52c0cea742c40f3cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad4f3192f7515879d7ff47522a7f489d7"><td class="memItemLeft" align="right" valign="top"><a id="ad4f3192f7515879d7ff47522a7f489d7"></a>
 <a class="el" href="struct__Cmd.html">Cmd</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>game_get_cmd</b> (<a class="el" href="struct__Game.html">Game</a> *game)</td></tr>
@@ -695,7 +696,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="struct__Die.html">Die</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="die_8h.html#a892f0b0bf81d69a1f7a14ea238e36dd3">Die</a> *&#160;</td>
           <td class="paramname"><em>d</em>&#160;</td>
         </tr>
         <tr>

@@ -1,3 +1,16 @@
+/**
+ * @brief Main game reader
+ *
+ * The main function of this module is read data from files
+ *
+ * @file reader.c
+ * @version 1.0
+ * @date 07/02/2019
+ * @author Álvaro Rodríguez
+ * @copyright GNU Public License
+ */
+
+
 #include "reader.h"
 #include "game.h"
 #include "space.h"

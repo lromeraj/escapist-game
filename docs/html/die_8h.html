@@ -71,7 +71,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Command interpreter.  
+<p>Die functions.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="types_8h_source.html">types.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
@@ -87,11 +87,13 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="die_8h__dep__incl.png" border="0" usemap="#src_2die_8hdep" alt=""/></div>
 <map name="src_2die_8hdep" id="src_2die_8hdep">
-<area shape="rect" id="node2" href="game_8h.html" title="It defines the game interface. " alt="" coords="106,80,193,107"/>
-<area shape="rect" id="node3" href="g__engine_8c.html" title="Graphic engine source code. " alt="" coords="5,229,112,256"/>
-<area shape="rect" id="node4" href="g__engine_8h.html" title="Main graphic engine. " alt="" coords="96,155,203,181"/>
-<area shape="rect" id="node6" href="reader_8h.html" title="Defines a game reader. " alt="" coords="227,155,317,181"/>
-<area shape="rect" id="node5" href="game__loop_8c.html" title="Main game loop. " alt="" coords="137,229,255,256"/>
+<area shape="rect" id="node2" href="die_8c.html" title="Die functions. " alt="" coords="71,80,143,107"/>
+<area shape="rect" id="node3" href="game_8h.html" title="It defines the game interface. " alt="" coords="167,80,254,107"/>
+<area shape="rect" id="node4" href="g__engine_8c.html" title="Graphic engine source code. " alt="" coords="5,229,112,256"/>
+<area shape="rect" id="node5" href="g__engine_8h.html" title="Main graphic engine. " alt="" coords="96,155,203,181"/>
+<area shape="rect" id="node7" href="reader_8h.html" title="Defines a game reader. " alt="" coords="227,155,317,181"/>
+<area shape="rect" id="node8" href="reader_8c.html" title="Main game reader. " alt="" coords="295,229,385,256"/>
+<area shape="rect" id="node6" href="game__loop_8c.html" title="Main game loop. " alt="" coords="137,229,255,256"/>
 </map>
 </div>
 </div>
@@ -100,28 +102,30 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr class="memitem:a892f0b0bf81d69a1f7a14ea238e36dd3"><td class="memItemLeft" align="right" valign="top"><a id="a892f0b0bf81d69a1f7a14ea238e36dd3"></a>
-typedef struct <a class="el" href="struct__Die.html">_Die</a>&#160;</td><td class="memItemRight" valign="bottom"><b>Die</b></td></tr>
+typedef struct <a class="el" href="struct__Die.html">_Die</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="die_8h.html#a892f0b0bf81d69a1f7a14ea238e36dd3">Die</a></td></tr>
+<tr class="memdesc:a892f0b0bf81d69a1f7a14ea238e36dd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">The die structure with its elements. <br /></td></tr>
 <tr class="separator:a892f0b0bf81d69a1f7a14ea238e36dd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a795dc61932c2291619e6b8763d45fbe0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct__Die.html">Die</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="die_8h.html#a795dc61932c2291619e6b8763d45fbe0">die_init</a> ()</td></tr>
+<tr class="memitem:a795dc61932c2291619e6b8763d45fbe0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="die_8h.html#a892f0b0bf81d69a1f7a14ea238e36dd3">Die</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="die_8h.html#a795dc61932c2291619e6b8763d45fbe0">die_init</a> ()</td></tr>
 <tr class="memdesc:a795dc61932c2291619e6b8763d45fbe0"><td class="mdescLeft">&#160;</td><td class="mdescRight">initializes a new die for the game  <a href="#a795dc61932c2291619e6b8763d45fbe0">More...</a><br /></td></tr>
 <tr class="separator:a795dc61932c2291619e6b8763d45fbe0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0155d7ec003966bace47f3e032a368e8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="die_8h.html#a0155d7ec003966bace47f3e032a368e8">die_destroy</a> (<a class="el" href="struct__Die.html">Die</a> *die)</td></tr>
+<tr class="memitem:a0155d7ec003966bace47f3e032a368e8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="die_8h.html#a0155d7ec003966bace47f3e032a368e8">die_destroy</a> (<a class="el" href="die_8h.html#a892f0b0bf81d69a1f7a14ea238e36dd3">Die</a> *die)</td></tr>
 <tr class="memdesc:a0155d7ec003966bace47f3e032a368e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">destroys a die  <a href="#a0155d7ec003966bace47f3e032a368e8">More...</a><br /></td></tr>
 <tr class="separator:a0155d7ec003966bace47f3e032a368e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a06289514edbedf660c4b043f78e859fc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="die_8h.html#a06289514edbedf660c4b043f78e859fc">die_roll</a> (<a class="el" href="struct__Die.html">Die</a> *die)</td></tr>
+<tr class="memitem:a06289514edbedf660c4b043f78e859fc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="die_8h.html#a06289514edbedf660c4b043f78e859fc">die_roll</a> (<a class="el" href="die_8h.html#a892f0b0bf81d69a1f7a14ea238e36dd3">Die</a> *die)</td></tr>
 <tr class="memdesc:a06289514edbedf660c4b043f78e859fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">rolls a die getting a random number  <a href="#a06289514edbedf660c4b043f78e859fc">More...</a><br /></td></tr>
 <tr class="separator:a06289514edbedf660c4b043f78e859fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0ae47c02f343ffdbdf0750bb4864558b"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="die_8h.html#a0ae47c02f343ffdbdf0750bb4864558b">die_get_lastn</a> (<a class="el" href="struct__Die.html">Die</a> *die)</td></tr>
+<tr class="memitem:a0ae47c02f343ffdbdf0750bb4864558b"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="die_8h.html#a0ae47c02f343ffdbdf0750bb4864558b">die_get_lastn</a> (<a class="el" href="die_8h.html#a892f0b0bf81d69a1f7a14ea238e36dd3">Die</a> *die)</td></tr>
 <tr class="memdesc:a0ae47c02f343ffdbdf0750bb4864558b"><td class="mdescLeft">&#160;</td><td class="mdescRight">gets the last random number of the die  <a href="#a0ae47c02f343ffdbdf0750bb4864558b">More...</a><br /></td></tr>
 <tr class="separator:a0ae47c02f343ffdbdf0750bb4864558b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Command interpreter. </p>
+<div class="textblock"><p>Die functions. </p>
 <dl class="section version"><dt>Version</dt><dd>0.0.3 </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>10/03/2019 </dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Javier Romera </dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>GNU Public License </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
 <a id="a795dc61932c2291619e6b8763d45fbe0"></a>
@@ -131,7 +135,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="struct__Die.html">Die</a>* die_init </td>
+          <td class="memname"><a class="el" href="die_8h.html#a892f0b0bf81d69a1f7a14ea238e36dd3">Die</a>* die_init </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -140,8 +144,20 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>initializes a new die for the game </p>
-<dl class="section author"><dt>Author</dt><dd>Javier Romera </dd></dl>
-<dl class="section return"><dt>Returns</dt><dd>{Die*} - returns a pointer to the new die </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>10/03/2019 </dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Javier Romera</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">empty</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">{Die*}</td><td>- returns a pointer to the new die </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -154,7 +170,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void die_destroy </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct__Die.html">Die</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="die_8h.html#a892f0b0bf81d69a1f7a14ea238e36dd3">Die</a> *&#160;</td>
           <td class="paramname"><em>die</em></td><td>)</td>
           <td></td>
         </tr>
@@ -162,14 +178,20 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>destroys a die </p>
-<dl class="section author"><dt>Author</dt><dd>Javier Romera </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>10/03/2019 </dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Javier Romera</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">{Die*}</td><td>die - Die pointer </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>{void} - Do not returns nothing; </dd></dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">{void}</td><td>- Do not returns nothing </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -182,7 +204,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">int die_roll </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct__Die.html">Die</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="die_8h.html#a892f0b0bf81d69a1f7a14ea238e36dd3">Die</a> *&#160;</td>
           <td class="paramname"><em>die</em></td><td>)</td>
           <td></td>
         </tr>
@@ -190,14 +212,20 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>rolls a die getting a random number </p>
-<dl class="section author"><dt>Author</dt><dd>Javier Romera </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>10/03/2019 </dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Javier Romera</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">{Die*}</td><td>die - Die pointer </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>{int} - Returns the random number; </dd></dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">{int}</td><td>- Returns the random number </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -210,7 +238,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">const int die_get_lastn </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct__Die.html">Die</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="die_8h.html#a892f0b0bf81d69a1f7a14ea238e36dd3">Die</a> *&#160;</td>
           <td class="paramname"><em>die</em></td><td>)</td>
           <td></td>
         </tr>
@@ -218,14 +246,20 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>gets the last random number of the die </p>
-<dl class="section author"><dt>Author</dt><dd>Javier Romera </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>10/03/2019 </dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Javier Romera</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">{Die*}</td><td>die - Die pointer </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>{int} - Returns the last random number; </dd></dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">{int}</td><td>- Returns the last random number </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

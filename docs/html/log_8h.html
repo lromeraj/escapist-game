@@ -63,6 +63,8 @@ $(function() {
 </div>
 </div><!-- top -->
 <div class="header">
+  <div class="summary">
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">log.h File Reference</div>  </div>
 </div><!--header-->
@@ -75,6 +77,8 @@ $(function() {
 Include dependency graph for log.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="log_8h__incl.png" border="0" usemap="#src_2log_8h" alt=""/></div>
+<map name="src_2log_8h" id="src_2log_8h">
+</map>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
@@ -89,20 +93,83 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr><td colspan="2"><div class="groupHeader">log_begin</div></td></tr>
-<tr><td colspan="2"><div class="groupText"><p>it checks if the log file is open</p>
-<dl class="section author"><dt>Author</dt><dd>Javier Romera </dd></dl>
-<dl class="section return"><dt>Returns</dt><dd>{bool} - Returns false or true </dd></dl>
-</div></td></tr>
-<tr class="memitem:a0c91588938d1cce9d3e9cb940054cd0c"><td class="memItemLeft" align="right" valign="top"><a id="a0c91588938d1cce9d3e9cb940054cd0c"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>log_begin</b> (const char *log_n)</td></tr>
+<tr class="memitem:a0c91588938d1cce9d3e9cb940054cd0c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="log_8h.html#a0c91588938d1cce9d3e9cb940054cd0c">log_begin</a> (const char *log_n)</td></tr>
+<tr class="memdesc:a0c91588938d1cce9d3e9cb940054cd0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">initializes the file  <a href="#a0c91588938d1cce9d3e9cb940054cd0c">More...</a><br /></td></tr>
 <tr class="separator:a0c91588938d1cce9d3e9cb940054cd0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a91c077066e868dc9488657aaf84d911d"><td class="memItemLeft" align="right" valign="top"><a id="a91c077066e868dc9488657aaf84d911d"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>log_isOpen</b> ()</td></tr>
+<tr class="memitem:a364f0afe48f0446c287eb861e30672e5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="log_8h.html#a364f0afe48f0446c287eb861e30672e5">log_w</a> (const char *frm,...)</td></tr>
+<tr class="memdesc:a364f0afe48f0446c287eb861e30672e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">writes in the file  <a href="#a364f0afe48f0446c287eb861e30672e5">More...</a><br /></td></tr>
+<tr class="separator:a364f0afe48f0446c287eb861e30672e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73e93b618b1802ac18d6e6d81b246378"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="log_8h.html#a73e93b618b1802ac18d6e6d81b246378">log_end</a> ()</td></tr>
+<tr class="memdesc:a73e93b618b1802ac18d6e6d81b246378"><td class="mdescLeft">&#160;</td><td class="mdescRight">it closes the file opened before  <a href="#a73e93b618b1802ac18d6e6d81b246378">More...</a><br /></td></tr>
+<tr class="separator:a73e93b618b1802ac18d6e6d81b246378"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91c077066e868dc9488657aaf84d911d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="log_8h.html#a91c077066e868dc9488657aaf84d911d">log_isOpen</a> ()</td></tr>
+<tr class="memdesc:a91c077066e868dc9488657aaf84d911d"><td class="mdescLeft">&#160;</td><td class="mdescRight">it checks if the log file is open  <a href="#a91c077066e868dc9488657aaf84d911d">More...</a><br /></td></tr>
 <tr class="separator:a91c077066e868dc9488657aaf84d911d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr><td colspan="2"><div class="groupHeader">log_w</div></td></tr>
-<tr><td colspan="2"><div class="groupText"><p>writes in the file</p>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Logger. </p>
+<dl class="section version"><dt>Version</dt><dd>0.3.3 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>16/02/2019 </dd></dl>
 <dl class="section author"><dt>Author</dt><dd>Javier Romera </dd></dl>
+<dl class="section copyright"><dt>Copyright</dt><dd>GNU Public License </dd></dl>
+</div><h2 class="groupheader">Function Documentation</h2>
+<a id="a0c91588938d1cce9d3e9cb940054cd0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c91588938d1cce9d3e9cb940054cd0c">&#9670;&nbsp;</a></span>log_begin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void log_begin </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>log_n</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>initializes the file </p>
+<dl class="section date"><dt>Date</dt><dd>16/02/2019 </dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Javier Romera</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">{const</td><td>char*} log_n - Log name </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a364f0afe48f0446c287eb861e30672e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a364f0afe48f0446c287eb861e30672e5">&#9670;&nbsp;</a></span>log_w()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void log_w </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>frm</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>writes in the file </p>
+<dl class="section date"><dt>Date</dt><dd>16/02/2019 </dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Javier Romera</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">{const</td><td>char*} frm - String format </td></tr>
@@ -110,27 +177,71 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>log_isOpen</b> ()</td
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>{void} - Do not returns nothing </dd></dl>
-</div></td></tr>
-<tr class="memitem:a364f0afe48f0446c287eb861e30672e5"><td class="memItemLeft" align="right" valign="top"><a id="a364f0afe48f0446c287eb861e30672e5"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>log_w</b> (const char *frm,...)</td></tr>
-<tr class="separator:a364f0afe48f0446c287eb861e30672e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr><td colspan="2"><div class="groupHeader">log_end</div></td></tr>
-<tr><td colspan="2"><div class="groupText"><p>it closes the file opened before</p>
-<dl class="section author"><dt>Author</dt><dd>Javier Romera </dd></dl>
-<dl class="section return"><dt>Returns</dt><dd>{void} - Do not returns nothing </dd></dl>
-</div></td></tr>
-<tr class="memitem:a73e93b618b1802ac18d6e6d81b246378"><td class="memItemLeft" align="right" valign="top"><a id="a73e93b618b1802ac18d6e6d81b246378"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>log_end</b> ()</td></tr>
-<tr class="separator:a73e93b618b1802ac18d6e6d81b246378"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Logger. </p>
-<dl class="section author"><dt>Author</dt><dd>Javier Romera </dd></dl>
-<dl class="section version"><dt>Version</dt><dd>0.3.3 </dd></dl>
+
+</div>
+</div>
+<a id="a73e93b618b1802ac18d6e6d81b246378"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73e93b618b1802ac18d6e6d81b246378">&#9670;&nbsp;</a></span>log_end()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void log_end </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>it closes the file opened before </p>
 <dl class="section date"><dt>Date</dt><dd>16/02/2019 </dd></dl>
-<dl class="section copyright"><dt>Copyright</dt><dd>GNU Public License </dd></dl>
-</div></div><!-- contents -->
+<dl class="section author"><dt>Author</dt><dd>Javier Romera </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">{char*}</td><td>frm - String format </td></tr>
+    <tr><td class="paramname">{...}</td><td>- String format arguments </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a91c077066e868dc9488657aaf84d911d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91c077066e868dc9488657aaf84d911d">&#9670;&nbsp;</a></span>log_isOpen()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool log_isOpen </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>it checks if the log file is open </p>
+<dl class="section date"><dt>Date</dt><dd>16/02/2019 </dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Javier Romera</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">empty</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">{bool}</td><td>- Returns False or True </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">
