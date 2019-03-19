@@ -7,7 +7,6 @@ var searchData=
   ['game_5fcreate',['game_create',['../game_8h.html#a1cdbe3f06b9bf49eb5e334a22ad3b2b9',1,'game.c']]],
   ['game_5fcreate_5ffrom_5ffile',['game_create_from_file',['../game_8h.html#afc77f90739be0fd45b7f5616e543bfae',1,'game.c']]],
   ['game_5fdestroy',['game_destroy',['../game_8h.html#a0736924a1235c0e6fe9b6d91c2a12af8',1,'game.c']]],
-  ['game_5fget_5fobject',['game_get_object',['../game_8h.html#a9dca92a603769c72a708a7d042e76dfa',1,'game.c']]],
   ['game_5fget_5fobject_5fspace',['game_get_object_space',['../game_8h.html#a5c8922fd5fc6de08b0b57899013ad117',1,'game.c']]],
   ['game_5fget_5fobjects',['game_get_objects',['../game_8h.html#aacbf28320fd70aa492a722ad1789f479',1,'game.c']]],
   ['game_5fget_5fplayer',['game_get_player',['../game_8h.html#af46efd507d797aec6da90d08aa592e32',1,'game.c']]],

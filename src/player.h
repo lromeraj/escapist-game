@@ -1,8 +1,8 @@
 /**
- * @brief It defines a player.
+ * @brief Player header
  *
  * @file player.h
- * @version 1.0
+ * @version 0.5.6
  * @date 07/02/2019
  * @copyright GNU Public License
  */
@@ -12,108 +12,114 @@
 
 #include "types.h"
 
-/* Public structure Player contains the id, name, location and the object of a player. */
-
 typedef struct _Player Player;
 
-/* Defines maximum number of players as 100 and the first player Id as 1. */
 
-#define MAX_PLAYERS 100
-#define FIRST_PLAYER 1
-
-/** player_create defines a new player.
-*
-* @param {} - do not receive arguments;
-* @return {Player*} - returns a player pointer;
+/**
+* @brief This fuction initializes a player
+* @author Miguel Rodríguez
+* @retval {Player*} - Returns a player's pointer
 */
-
 Player* player_init();
 
-/** player_destroy destroys a player.
-*
-* @param {Player*} - player;
-* @return {STATUS} - Returns a state;
+/**
+* @brief This fuction destroys a player
+* @author Miguel Rodríguez
+* @param {Player*} player - player's pointer
 */
-
 STATUS player_destroy(Player* player);
 
-/** player_get_id takes the id of a player.
-*
-* @param {Player*} - player;
-* @return {Id} - Returns an id;
+/**
+* @brief This fuction gets the palyer's id
+* @author Miguel Rodríguez
+* @param {Player*} player - player's pointer
+* @retval {Id} - player's id
 */
-
 Id player_get_id(Player* player);
 
-/** player_set_id sets te id of a player.
-*
-* @param {Player*} - player; {Id} - id;
-* @return {void} - Do not return nothing;
+/**
+* @brief This fuction sets the palyer's id
+* @author Miguel Rodríguez
+* @param {Player*} player - player's pointer
+* @param {Id} id - player's id
 */
-
 void player_set_id( Player* player, Id id );
 
-/** player_set_name defines the name of a player.
-*
-* @param {Player*} - player; {Char*} - name;
-* @return {STATUS} - Returns an state;
+/**
+* @brief This fuction sets the player's name
+* @author Miguel Rodríguez
+* @param {Player*} player - player's pointer
+* @param {char*} name - player's name
+* @retval {STATUS} - Returns a status code
 */
-
 STATUS player_set_name(Player* player, char* name);
 
-/** player_get_name takes the name of a player.
-*
-* @param {Player*} - player;
-* @return {const char*} - Returns a constant character array;
-*/
 
+/**
+* @brief This fuction gets the palyer's name
+* @author Miguel Rodríguez
+* @param {Player*} player - player's pointer
+* @retval {char*} - Returns a pointer to the player's name
+*/
 const char* player_get_name(Player* player);
 
-/** player_set_north sets the location of a player.
-*
-* @param {Player*} - player; {Id} - id;
-* @return {STATUS} - Returns an state;
+/**
+* @brief This fuction sets the player's location
+* @author Miguel Rodríguez
+* @param {Player*} player - player's pointer
+* @param {Id} id - player's identifier
+* @retval {STATUS} - Returns a status code
 */
-
 STATUS player_set_location(Player* player, Id id);
 
-/** player_get_north gets the location of a players.
-*
-* @param {Player*} - player;
-* @return {Id} - Returns an id;
+/**
+* @brief This fuction gets the palyer's location
+* @author Miguel Rodríguez
+* @param {Player*} player - player's pointer
+* @retval {Id} - player's location
 */
-
 Id player_get_location(Player* player);
 
-/** player_set_object sets an id to a player's object.
-*
-* @param {Player*} - player; {Id} - id;
-* @return {STATUS} - Returns an state;
+/**
+* @brief This fuction adds an object to playes's inventory
+* @author Miguel Rodríguez
+* @param {Player*} player - player's pointer
+* @param {Id} id - player's identifier
+*@retval {STATUS} - Returns a status code
 */
+STATUS player_add_object(Player* player, Id id);
 
-STATUS player_set_object(Player* player, Id id);
-
-/** player_has_object gets a pointer towards an object.
-*
-* @param {Game*} - game;
-* @return {void} - Do not returns nothing;
+/**
+* @brief This fuction searches if an object is in the player's inventory
+* @author Miguel Rodríguez
+* @param {Player*} player - player's pointer
+* @param {Id} id - player's identifier
+* @retval {BOOL} - Returns a boolean code
 */
-bool player_has_object(Player* player);
+bool player_has_object( Player* player, Id id );
 
-/** player_print prints a player on the game screen.
-*
-* @param {Game*} - game;
-* @return {void} - Do not returns nothing;
+/**
+* @brief This fuction removes an object from player's inventory
+* @author Miguel Rodríguez
+* @param {Player*} player - player's pointer
+* @param {Id} id - player's identifier
+*@retval {STATUS} - Returns a status code
 */
+STATUS player_del_object(Player* player, Id id);
 
+/**
+* @brief This fuction prints the payer structure
+* @author Miguel Rodríguez
+* @param {Player*} player - player's pointer
+* @retval {STATUS} - Returns a status code
+*/
 STATUS player_print(Player* player);
 
-/** player_get_object gets the id of a player's object.
+/**
+* @brief Gets the current player object
 *
-* @param {Player*} - player;
-* @return {Id} - Returns id;
+* @param {Player*} player - Player to be checked
+* @retval {Id} - Returns the id of the player's object
 */
-
-Id player_get_object(Player* player);
 
 #endif

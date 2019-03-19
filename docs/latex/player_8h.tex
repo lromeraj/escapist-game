@@ -2,7 +2,7 @@
 \label{player_8h}\index{src/player.\+h@{src/player.\+h}}
 
 
-It defines a player.  
+Player header.  
 
 
 {\ttfamily \#include \char`\"{}types.\+h\char`\"{}}\newline
@@ -20,15 +20,6 @@ This graph shows which files directly or indirectly include this file\+:\nopageb
 \includegraphics[width=319pt]{player_8h__dep__incl}
 \end{center}
 \end{figure}
-\subsection*{Macros}
-\begin{DoxyCompactItemize}
-\item 
-\mbox{\Hypertarget{player_8h_a1c346c944e8204fd06dc057393c7c96d}\label{player_8h_a1c346c944e8204fd06dc057393c7c96d}} 
-\#define {\bfseries M\+A\+X\+\_\+\+P\+L\+A\+Y\+E\+RS}~100
-\item 
-\mbox{\Hypertarget{player_8h_a89f0201fca94cbc3ca0f5fbce851e7c9}\label{player_8h_a89f0201fca94cbc3ca0f5fbce851e7c9}} 
-\#define {\bfseries F\+I\+R\+S\+T\+\_\+\+P\+L\+A\+Y\+ER}~1
-\end{DoxyCompactItemize}
 \subsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
@@ -39,36 +30,36 @@ typedef struct \hyperlink{struct__Player}{\+\_\+\+Player} {\bfseries Player}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{struct__Player}{Player} $\ast$ \hyperlink{player_8h_aed0f40de36238a60267abf71c6720599}{player\+\_\+init} ()
-\item 
-S\+T\+A\+T\+US \hyperlink{player_8h_a68e324aa5064e27d0a2f38aafb6809ad}{player\+\_\+destroy} (\hyperlink{struct__Player}{Player} $\ast$player)
-\item 
-Id \hyperlink{player_8h_af5a101ec91427951c5875569a8709956}{player\+\_\+get\+\_\+id} (\hyperlink{struct__Player}{Player} $\ast$player)
-\item 
-void \hyperlink{player_8h_a278466eff9dd013babc5bdbd485f1da0}{player\+\_\+set\+\_\+id} (\hyperlink{struct__Player}{Player} $\ast$player, Id id)
-\item 
-S\+T\+A\+T\+US \hyperlink{player_8h_a6a30809f7775f5c2d3bef47d92769e59}{player\+\_\+set\+\_\+name} (\hyperlink{struct__Player}{Player} $\ast$player, char $\ast$name)
-\item 
+\begin{DoxyCompactList}\small\item\em This fuction initializes a player. \end{DoxyCompactList}\item 
+\hyperlink{types_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+US} \hyperlink{player_8h_a68e324aa5064e27d0a2f38aafb6809ad}{player\+\_\+destroy} (\hyperlink{struct__Player}{Player} $\ast$player)
+\begin{DoxyCompactList}\small\item\em This fuction destroys a player. \end{DoxyCompactList}\item 
+\hyperlink{types_8h_a845e604fb28f7e3d97549da3448149d3}{Id} \hyperlink{player_8h_af5a101ec91427951c5875569a8709956}{player\+\_\+get\+\_\+id} (\hyperlink{struct__Player}{Player} $\ast$player)
+\begin{DoxyCompactList}\small\item\em This fuction gets the palyer\textquotesingle{}s id. \end{DoxyCompactList}\item 
+void \hyperlink{player_8h_a278466eff9dd013babc5bdbd485f1da0}{player\+\_\+set\+\_\+id} (\hyperlink{struct__Player}{Player} $\ast$player, \hyperlink{types_8h_a845e604fb28f7e3d97549da3448149d3}{Id} id)
+\begin{DoxyCompactList}\small\item\em This fuction sets the palyer\textquotesingle{}s id. \end{DoxyCompactList}\item 
+\hyperlink{types_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+US} \hyperlink{player_8h_a6a30809f7775f5c2d3bef47d92769e59}{player\+\_\+set\+\_\+name} (\hyperlink{struct__Player}{Player} $\ast$player, char $\ast$name)
+\begin{DoxyCompactList}\small\item\em This fuction sets the player\textquotesingle{}s name. \end{DoxyCompactList}\item 
 const char $\ast$ \hyperlink{player_8h_a6622c02be2fe230a5c0df66385a13ece}{player\+\_\+get\+\_\+name} (\hyperlink{struct__Player}{Player} $\ast$player)
-\item 
-S\+T\+A\+T\+US \hyperlink{player_8h_ac8ace1a1b6b11bc7f92a71a3922e4b83}{player\+\_\+set\+\_\+location} (\hyperlink{struct__Player}{Player} $\ast$player, Id id)
-\item 
-Id \hyperlink{player_8h_aa50ce77ab79af7166d749619fd60acfe}{player\+\_\+get\+\_\+location} (\hyperlink{struct__Player}{Player} $\ast$player)
-\item 
-S\+T\+A\+T\+US \hyperlink{player_8h_af5eacaf6a51631f28500d8127e761c1b}{player\+\_\+set\+\_\+object} (\hyperlink{struct__Player}{Player} $\ast$player, Id id)
-\item 
-bool \hyperlink{player_8h_a2e262401b9b2b77978b421917c13279d}{player\+\_\+has\+\_\+object} (\hyperlink{struct__Player}{Player} $\ast$player)
-\item 
-S\+T\+A\+T\+US \hyperlink{player_8h_aa0f2f8b4d1b63a60ef927d47aa45dbd1}{player\+\_\+print} (\hyperlink{struct__Player}{Player} $\ast$player)
-\item 
-Id \hyperlink{player_8h_a96e37051cdc1540e0dde770f6b713f39}{player\+\_\+get\+\_\+object} (\hyperlink{struct__Player}{Player} $\ast$player)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em This fuction gets the palyer\textquotesingle{}s name. \end{DoxyCompactList}\item 
+\hyperlink{types_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+US} \hyperlink{player_8h_ac8ace1a1b6b11bc7f92a71a3922e4b83}{player\+\_\+set\+\_\+location} (\hyperlink{struct__Player}{Player} $\ast$player, \hyperlink{types_8h_a845e604fb28f7e3d97549da3448149d3}{Id} id)
+\begin{DoxyCompactList}\small\item\em This fuction sets the player\textquotesingle{}s location. \end{DoxyCompactList}\item 
+\hyperlink{types_8h_a845e604fb28f7e3d97549da3448149d3}{Id} \hyperlink{player_8h_aa50ce77ab79af7166d749619fd60acfe}{player\+\_\+get\+\_\+location} (\hyperlink{struct__Player}{Player} $\ast$player)
+\begin{DoxyCompactList}\small\item\em This fuction gets the palyer\textquotesingle{}s location. \end{DoxyCompactList}\item 
+\hyperlink{types_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+US} \hyperlink{player_8h_a2fc269feb0641f59daab5e6b77cb1a75}{player\+\_\+add\+\_\+object} (\hyperlink{struct__Player}{Player} $\ast$player, \hyperlink{types_8h_a845e604fb28f7e3d97549da3448149d3}{Id} id)
+\begin{DoxyCompactList}\small\item\em This fuction adds an object to playes\textquotesingle{}s inventory. \end{DoxyCompactList}\item 
+bool \hyperlink{player_8h_aa23cae616f2d42403a1f99fdde686f06}{player\+\_\+has\+\_\+object} (\hyperlink{struct__Player}{Player} $\ast$player, \hyperlink{types_8h_a845e604fb28f7e3d97549da3448149d3}{Id} id)
+\begin{DoxyCompactList}\small\item\em This fuction searches if an object is in the player\textquotesingle{}s inventory. \end{DoxyCompactList}\item 
+\hyperlink{types_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+US} \hyperlink{player_8h_a68871bc282449eb64b977acbdbd7565a}{player\+\_\+del\+\_\+object} (\hyperlink{struct__Player}{Player} $\ast$player, \hyperlink{types_8h_a845e604fb28f7e3d97549da3448149d3}{Id} id)
+\begin{DoxyCompactList}\small\item\em This fuction removes an object from player\textquotesingle{}s inventory. \end{DoxyCompactList}\item 
+\hyperlink{types_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+US} \hyperlink{player_8h_aa0f2f8b4d1b63a60ef927d47aa45dbd1}{player\+\_\+print} (\hyperlink{struct__Player}{Player} $\ast$player)
+\begin{DoxyCompactList}\small\item\em This fuction prints the payer structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-It defines a player. 
+Player header. 
 
 \begin{DoxyVersion}{Version}
-1.\+0 
+0.\+5.\+6 
 \end{DoxyVersion}
 \begin{DoxyDate}{Date}
 07/02/2019 
@@ -85,189 +76,270 @@ G\+NU Public License
 \subsubsection{\texorpdfstring{player\+\_\+init()}{player\_init()}}
 {\footnotesize\ttfamily \hyperlink{struct__Player}{Player}$\ast$ player\+\_\+init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-player\+\_\+create defines a new player.
 
 
-\begin{DoxyParams}{Parameters}
-{\em \{\}} & -\/ do not receive arguments; \\
+This fuction initializes a player. 
+
+\begin{DoxyAuthor}{Author}
+Miguel Rodríguez 
+\end{DoxyAuthor}
+
+\begin{DoxyRetVals}{Return values}
+{\em \{\+Player$\ast$\}} & -\/ Returns a player\textquotesingle{}s pointer \\
 \hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-\{Player$\ast$\} -\/ returns a player pointer; 
-\end{DoxyReturn}
+\end{DoxyRetVals}
 \mbox{\Hypertarget{player_8h_a68e324aa5064e27d0a2f38aafb6809ad}\label{player_8h_a68e324aa5064e27d0a2f38aafb6809ad}} 
 \index{player.\+h@{player.\+h}!player\+\_\+destroy@{player\+\_\+destroy}}
 \index{player\+\_\+destroy@{player\+\_\+destroy}!player.\+h@{player.\+h}}
 \subsubsection{\texorpdfstring{player\+\_\+destroy()}{player\_destroy()}}
-{\footnotesize\ttfamily S\+T\+A\+T\+US player\+\_\+destroy (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Player}{Player} $\ast$}]{player }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \hyperlink{types_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+US} player\+\_\+destroy (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Player}{Player} $\ast$}]{player }\end{DoxyParamCaption})}
 
-player\+\_\+destroy destroys a player.
 
+
+This fuction destroys a player. 
+
+\begin{DoxyAuthor}{Author}
+Miguel Rodríguez 
+\end{DoxyAuthor}
 
 \begin{DoxyParams}{Parameters}
-{\em \{\+Player$\ast$\}} & -\/ player; \\
+{\em \{\+Player$\ast$\}} & player -\/ player\textquotesingle{}s pointer \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-\{S\+T\+A\+T\+US\} -\/ Returns a state; 
-\end{DoxyReturn}
 \mbox{\Hypertarget{player_8h_af5a101ec91427951c5875569a8709956}\label{player_8h_af5a101ec91427951c5875569a8709956}} 
 \index{player.\+h@{player.\+h}!player\+\_\+get\+\_\+id@{player\+\_\+get\+\_\+id}}
 \index{player\+\_\+get\+\_\+id@{player\+\_\+get\+\_\+id}!player.\+h@{player.\+h}}
 \subsubsection{\texorpdfstring{player\+\_\+get\+\_\+id()}{player\_get\_id()}}
-{\footnotesize\ttfamily Id player\+\_\+get\+\_\+id (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Player}{Player} $\ast$}]{player }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \hyperlink{types_8h_a845e604fb28f7e3d97549da3448149d3}{Id} player\+\_\+get\+\_\+id (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Player}{Player} $\ast$}]{player }\end{DoxyParamCaption})}
 
-player\+\_\+get\+\_\+id takes the id of a player.
 
+
+This fuction gets the palyer\textquotesingle{}s id. 
+
+\begin{DoxyAuthor}{Author}
+Miguel Rodríguez 
+\end{DoxyAuthor}
 
 \begin{DoxyParams}{Parameters}
-{\em \{\+Player$\ast$\}} & -\/ player; \\
+{\em \{\+Player$\ast$\}} & player -\/ player\textquotesingle{}s pointer \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-\{Id\} -\/ Returns an id; 
-\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em \{\+Id\}} & -\/ player\textquotesingle{}s id \\
+\hline
+\end{DoxyRetVals}
 \mbox{\Hypertarget{player_8h_a278466eff9dd013babc5bdbd485f1da0}\label{player_8h_a278466eff9dd013babc5bdbd485f1da0}} 
 \index{player.\+h@{player.\+h}!player\+\_\+set\+\_\+id@{player\+\_\+set\+\_\+id}}
 \index{player\+\_\+set\+\_\+id@{player\+\_\+set\+\_\+id}!player.\+h@{player.\+h}}
 \subsubsection{\texorpdfstring{player\+\_\+set\+\_\+id()}{player\_set\_id()}}
-{\footnotesize\ttfamily void player\+\_\+set\+\_\+id (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Player}{Player} $\ast$}]{player,  }\item[{Id}]{id }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void player\+\_\+set\+\_\+id (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Player}{Player} $\ast$}]{player,  }\item[{\hyperlink{types_8h_a845e604fb28f7e3d97549da3448149d3}{Id}}]{id }\end{DoxyParamCaption})}
 
-player\+\_\+set\+\_\+id sets te id of a player.
 
+
+This fuction sets the palyer\textquotesingle{}s id. 
+
+\begin{DoxyAuthor}{Author}
+Miguel Rodríguez 
+\end{DoxyAuthor}
 
 \begin{DoxyParams}{Parameters}
-{\em \{\+Player$\ast$\}} & -\/ player; \{Id\} -\/ id; \\
+{\em \{\+Player$\ast$\}} & player -\/ player\textquotesingle{}s pointer \\
+\hline
+{\em \{\+Id\}} & id -\/ player\textquotesingle{}s id \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-\{void\} -\/ Do not return nothing; 
-\end{DoxyReturn}
 \mbox{\Hypertarget{player_8h_a6a30809f7775f5c2d3bef47d92769e59}\label{player_8h_a6a30809f7775f5c2d3bef47d92769e59}} 
 \index{player.\+h@{player.\+h}!player\+\_\+set\+\_\+name@{player\+\_\+set\+\_\+name}}
 \index{player\+\_\+set\+\_\+name@{player\+\_\+set\+\_\+name}!player.\+h@{player.\+h}}
 \subsubsection{\texorpdfstring{player\+\_\+set\+\_\+name()}{player\_set\_name()}}
-{\footnotesize\ttfamily S\+T\+A\+T\+US player\+\_\+set\+\_\+name (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Player}{Player} $\ast$}]{player,  }\item[{char $\ast$}]{name }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \hyperlink{types_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+US} player\+\_\+set\+\_\+name (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Player}{Player} $\ast$}]{player,  }\item[{char $\ast$}]{name }\end{DoxyParamCaption})}
 
-player\+\_\+set\+\_\+name defines the name of a player.
 
+
+This fuction sets the player\textquotesingle{}s name. 
+
+\begin{DoxyAuthor}{Author}
+Miguel Rodríguez 
+\end{DoxyAuthor}
 
 \begin{DoxyParams}{Parameters}
-{\em \{\+Player$\ast$\}} & -\/ player; \{Char$\ast$\} -\/ name; \\
+{\em \{\+Player$\ast$\}} & player -\/ player\textquotesingle{}s pointer \\
+\hline
+{\em \{char$\ast$\}} & name -\/ player\textquotesingle{}s name \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-\{S\+T\+A\+T\+US\} -\/ Returns an state; 
-\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em \{\+S\+T\+A\+T\+U\+S\}} & -\/ Returns a status code \\
+\hline
+\end{DoxyRetVals}
 \mbox{\Hypertarget{player_8h_a6622c02be2fe230a5c0df66385a13ece}\label{player_8h_a6622c02be2fe230a5c0df66385a13ece}} 
 \index{player.\+h@{player.\+h}!player\+\_\+get\+\_\+name@{player\+\_\+get\+\_\+name}}
 \index{player\+\_\+get\+\_\+name@{player\+\_\+get\+\_\+name}!player.\+h@{player.\+h}}
 \subsubsection{\texorpdfstring{player\+\_\+get\+\_\+name()}{player\_get\_name()}}
 {\footnotesize\ttfamily const char$\ast$ player\+\_\+get\+\_\+name (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Player}{Player} $\ast$}]{player }\end{DoxyParamCaption})}
 
-player\+\_\+get\+\_\+name takes the name of a player.
 
+
+This fuction gets the palyer\textquotesingle{}s name. 
+
+\begin{DoxyAuthor}{Author}
+Miguel Rodríguez 
+\end{DoxyAuthor}
 
 \begin{DoxyParams}{Parameters}
-{\em \{\+Player$\ast$\}} & -\/ player; \\
+{\em \{\+Player$\ast$\}} & player -\/ player\textquotesingle{}s pointer \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-\{const char$\ast$\} -\/ Returns a constant character array; 
-\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em \{char$\ast$\}} & -\/ Returns a pointer to the player\textquotesingle{}s name \\
+\hline
+\end{DoxyRetVals}
 \mbox{\Hypertarget{player_8h_ac8ace1a1b6b11bc7f92a71a3922e4b83}\label{player_8h_ac8ace1a1b6b11bc7f92a71a3922e4b83}} 
 \index{player.\+h@{player.\+h}!player\+\_\+set\+\_\+location@{player\+\_\+set\+\_\+location}}
 \index{player\+\_\+set\+\_\+location@{player\+\_\+set\+\_\+location}!player.\+h@{player.\+h}}
 \subsubsection{\texorpdfstring{player\+\_\+set\+\_\+location()}{player\_set\_location()}}
-{\footnotesize\ttfamily S\+T\+A\+T\+US player\+\_\+set\+\_\+location (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Player}{Player} $\ast$}]{player,  }\item[{Id}]{id }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \hyperlink{types_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+US} player\+\_\+set\+\_\+location (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Player}{Player} $\ast$}]{player,  }\item[{\hyperlink{types_8h_a845e604fb28f7e3d97549da3448149d3}{Id}}]{id }\end{DoxyParamCaption})}
 
-player\+\_\+set\+\_\+north sets the location of a player.
 
+
+This fuction sets the player\textquotesingle{}s location. 
+
+\begin{DoxyAuthor}{Author}
+Miguel Rodríguez 
+\end{DoxyAuthor}
 
 \begin{DoxyParams}{Parameters}
-{\em \{\+Player$\ast$\}} & -\/ player; \{Id\} -\/ id; \\
+{\em \{\+Player$\ast$\}} & player -\/ player\textquotesingle{}s pointer \\
+\hline
+{\em \{\+Id\}} & id -\/ player\textquotesingle{}s identifier \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-\{S\+T\+A\+T\+US\} -\/ Returns an state; 
-\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em \{\+S\+T\+A\+T\+U\+S\}} & -\/ Returns a status code \\
+\hline
+\end{DoxyRetVals}
 \mbox{\Hypertarget{player_8h_aa50ce77ab79af7166d749619fd60acfe}\label{player_8h_aa50ce77ab79af7166d749619fd60acfe}} 
 \index{player.\+h@{player.\+h}!player\+\_\+get\+\_\+location@{player\+\_\+get\+\_\+location}}
 \index{player\+\_\+get\+\_\+location@{player\+\_\+get\+\_\+location}!player.\+h@{player.\+h}}
 \subsubsection{\texorpdfstring{player\+\_\+get\+\_\+location()}{player\_get\_location()}}
-{\footnotesize\ttfamily Id player\+\_\+get\+\_\+location (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Player}{Player} $\ast$}]{player }\end{DoxyParamCaption})}
-
-player\+\_\+get\+\_\+north gets the location of a players.
+{\footnotesize\ttfamily \hyperlink{types_8h_a845e604fb28f7e3d97549da3448149d3}{Id} player\+\_\+get\+\_\+location (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Player}{Player} $\ast$}]{player }\end{DoxyParamCaption})}
 
 
-\begin{DoxyParams}{Parameters}
-{\em \{\+Player$\ast$\}} & -\/ player; \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-\{Id\} -\/ Returns an id; 
-\end{DoxyReturn}
-\mbox{\Hypertarget{player_8h_af5eacaf6a51631f28500d8127e761c1b}\label{player_8h_af5eacaf6a51631f28500d8127e761c1b}} 
-\index{player.\+h@{player.\+h}!player\+\_\+set\+\_\+object@{player\+\_\+set\+\_\+object}}
-\index{player\+\_\+set\+\_\+object@{player\+\_\+set\+\_\+object}!player.\+h@{player.\+h}}
-\subsubsection{\texorpdfstring{player\+\_\+set\+\_\+object()}{player\_set\_object()}}
-{\footnotesize\ttfamily S\+T\+A\+T\+US player\+\_\+set\+\_\+object (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Player}{Player} $\ast$}]{player,  }\item[{Id}]{id }\end{DoxyParamCaption})}
 
-player\+\_\+set\+\_\+object sets an id to a player\textquotesingle{}s object.
+This fuction gets the palyer\textquotesingle{}s location. 
 
+\begin{DoxyAuthor}{Author}
+Miguel Rodríguez 
+\end{DoxyAuthor}
 
 \begin{DoxyParams}{Parameters}
-{\em \{\+Player$\ast$\}} & -\/ player; \{Id\} -\/ id; \\
+{\em \{\+Player$\ast$\}} & player -\/ player\textquotesingle{}s pointer \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-\{S\+T\+A\+T\+US\} -\/ Returns an state; 
-\end{DoxyReturn}
-\mbox{\Hypertarget{player_8h_a2e262401b9b2b77978b421917c13279d}\label{player_8h_a2e262401b9b2b77978b421917c13279d}} 
+
+\begin{DoxyRetVals}{Return values}
+{\em \{\+Id\}} & -\/ player\textquotesingle{}s location \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{player_8h_a2fc269feb0641f59daab5e6b77cb1a75}\label{player_8h_a2fc269feb0641f59daab5e6b77cb1a75}} 
+\index{player.\+h@{player.\+h}!player\+\_\+add\+\_\+object@{player\+\_\+add\+\_\+object}}
+\index{player\+\_\+add\+\_\+object@{player\+\_\+add\+\_\+object}!player.\+h@{player.\+h}}
+\subsubsection{\texorpdfstring{player\+\_\+add\+\_\+object()}{player\_add\_object()}}
+{\footnotesize\ttfamily \hyperlink{types_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+US} player\+\_\+add\+\_\+object (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Player}{Player} $\ast$}]{player,  }\item[{\hyperlink{types_8h_a845e604fb28f7e3d97549da3448149d3}{Id}}]{id }\end{DoxyParamCaption})}
+
+
+
+This fuction adds an object to playes\textquotesingle{}s inventory. 
+
+\begin{DoxyAuthor}{Author}
+Miguel Rodríguez 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+Player$\ast$\}} & player -\/ player\textquotesingle{}s pointer \\
+\hline
+{\em \{\+Id\}} & id -\/ player\textquotesingle{}s identifier \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \{\+S\+T\+A\+T\+U\+S\}} & -\/ Returns a status code \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{player_8h_aa23cae616f2d42403a1f99fdde686f06}\label{player_8h_aa23cae616f2d42403a1f99fdde686f06}} 
 \index{player.\+h@{player.\+h}!player\+\_\+has\+\_\+object@{player\+\_\+has\+\_\+object}}
 \index{player\+\_\+has\+\_\+object@{player\+\_\+has\+\_\+object}!player.\+h@{player.\+h}}
 \subsubsection{\texorpdfstring{player\+\_\+has\+\_\+object()}{player\_has\_object()}}
-{\footnotesize\ttfamily bool player\+\_\+has\+\_\+object (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Player}{Player} $\ast$}]{player }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily bool player\+\_\+has\+\_\+object (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Player}{Player} $\ast$}]{player,  }\item[{\hyperlink{types_8h_a845e604fb28f7e3d97549da3448149d3}{Id}}]{id }\end{DoxyParamCaption})}
 
-player\+\_\+has\+\_\+object gets a pointer towards an object.
 
+
+This fuction searches if an object is in the player\textquotesingle{}s inventory. 
+
+\begin{DoxyAuthor}{Author}
+Miguel Rodríguez 
+\end{DoxyAuthor}
 
 \begin{DoxyParams}{Parameters}
-{\em \{\+Game$\ast$\}} & -\/ game; \\
+{\em \{\+Player$\ast$\}} & player -\/ player\textquotesingle{}s pointer \\
+\hline
+{\em \{\+Id\}} & id -\/ player\textquotesingle{}s identifier \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-\{void\} -\/ Do not returns nothing; 
-\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em \{\+B\+O\+O\+L\}} & -\/ Returns a boolean code \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{player_8h_a68871bc282449eb64b977acbdbd7565a}\label{player_8h_a68871bc282449eb64b977acbdbd7565a}} 
+\index{player.\+h@{player.\+h}!player\+\_\+del\+\_\+object@{player\+\_\+del\+\_\+object}}
+\index{player\+\_\+del\+\_\+object@{player\+\_\+del\+\_\+object}!player.\+h@{player.\+h}}
+\subsubsection{\texorpdfstring{player\+\_\+del\+\_\+object()}{player\_del\_object()}}
+{\footnotesize\ttfamily \hyperlink{types_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+US} player\+\_\+del\+\_\+object (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Player}{Player} $\ast$}]{player,  }\item[{\hyperlink{types_8h_a845e604fb28f7e3d97549da3448149d3}{Id}}]{id }\end{DoxyParamCaption})}
+
+
+
+This fuction removes an object from player\textquotesingle{}s inventory. 
+
+\begin{DoxyAuthor}{Author}
+Miguel Rodríguez 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+Player$\ast$\}} & player -\/ player\textquotesingle{}s pointer \\
+\hline
+{\em \{\+Id\}} & id -\/ player\textquotesingle{}s identifier \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \{\+S\+T\+A\+T\+U\+S\}} & -\/ Returns a status code \\
+\hline
+\end{DoxyRetVals}
 \mbox{\Hypertarget{player_8h_aa0f2f8b4d1b63a60ef927d47aa45dbd1}\label{player_8h_aa0f2f8b4d1b63a60ef927d47aa45dbd1}} 
 \index{player.\+h@{player.\+h}!player\+\_\+print@{player\+\_\+print}}
 \index{player\+\_\+print@{player\+\_\+print}!player.\+h@{player.\+h}}
 \subsubsection{\texorpdfstring{player\+\_\+print()}{player\_print()}}
-{\footnotesize\ttfamily S\+T\+A\+T\+US player\+\_\+print (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Player}{Player} $\ast$}]{player }\end{DoxyParamCaption})}
-
-player\+\_\+print prints a player on the game screen.
+{\footnotesize\ttfamily \hyperlink{types_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+US} player\+\_\+print (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Player}{Player} $\ast$}]{player }\end{DoxyParamCaption})}
 
 
-\begin{DoxyParams}{Parameters}
-{\em \{\+Game$\ast$\}} & -\/ game; \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-\{void\} -\/ Do not returns nothing; 
-\end{DoxyReturn}
-\mbox{\Hypertarget{player_8h_a96e37051cdc1540e0dde770f6b713f39}\label{player_8h_a96e37051cdc1540e0dde770f6b713f39}} 
-\index{player.\+h@{player.\+h}!player\+\_\+get\+\_\+object@{player\+\_\+get\+\_\+object}}
-\index{player\+\_\+get\+\_\+object@{player\+\_\+get\+\_\+object}!player.\+h@{player.\+h}}
-\subsubsection{\texorpdfstring{player\+\_\+get\+\_\+object()}{player\_get\_object()}}
-{\footnotesize\ttfamily Id player\+\_\+get\+\_\+object (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Player}{Player} $\ast$}]{player }\end{DoxyParamCaption})}
 
-player\+\_\+get\+\_\+object gets the id of a player\textquotesingle{}s object.
+This fuction prints the payer structure. 
 
+\begin{DoxyAuthor}{Author}
+Miguel Rodríguez 
+\end{DoxyAuthor}
 
 \begin{DoxyParams}{Parameters}
-{\em \{\+Player$\ast$\}} & -\/ player; \\
+{\em \{\+Player$\ast$\}} & player -\/ player\textquotesingle{}s pointer \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-\{Id\} -\/ Returns id; 
-\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em \{\+S\+T\+A\+T\+U\+S\}} & -\/ Returns a status code \\
+\hline
+\end{DoxyRetVals}

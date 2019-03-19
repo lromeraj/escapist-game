@@ -2,55 +2,66 @@
  * @brief Object manager
  *
  * @file object.h
- * @author Álvaro Rodríguez & Javier Romera
  * @version 0.9.1
- * @date 10/03/2019
- * @copyright GNU Public License
+ * @date 18/03/2019
  */
 
 #ifndef OBJECT_H
 #define OBJECT_H
 
-#define OBJ_MAX_NAME_LEN 50
-#define FIRST_OBJECT 1
-#define MAX_OBJECTS 4
-
 #include "types.h"
 
+#define OBJ_MAX_NAME_LEN 50 /*!< @brief Maximum number of characters that can have a name of an object */
+#define MAX_OBJECTS 4 /*!< @brief Maximum number of objects */
+
+/*!
+ * @brief Defines the type of object structure
+ */
 typedef struct _Object Object;
 
-/* Initializes an object
-* @return {Object*} - returns a pointer
-* to the new allocated object
+/**
+* @brief This fuction initializes an object
+* @author Miguel Rodríguez
+* @retval {Object*} - Returns an object's pointer
 */
 Object *obj_init();
 
-/* Destroys an object
-* @param {Object*} - object to be freed
+/**
+* @brief This fuction destroys an object
+* @author Miguel Rodríguez
+* @param {Object*} obj - object pointer
 */
 void obj_destroy( Object *obj );
 
-/* Sets a name to an object
-* @param {Object*} - object to be updated
-* @param {const char*} name - new name
+/**
+* @brief This fuction sets an object name
+* @author Miguel Rodríguez
+* @param {Object*} obj - object pointer
+* @param {char*} name - object's name
 */
 void obj_set_name( Object *obj, const char *name );
 
-/* Gets the name of given object
-* @param {Object*} - object to request name
-* @return {const char*} - returns the requested object's name
+/**
+* @brief This fuction gets an object name
+* @author Miguel Rodríguez
+* @param {Object*} obj - object's pointer
+* @retval {char*} - Returns a pointer to the object's name
 */
 const char *obj_get_name( Object *obj );
 
-/* Sets an id to an object
-* @param {Object*} - object to be updated
-* @param {const char*} name - new name
+/**
+* @brief This fuction sets the object id
+* @author Miguel Rodríguez
+* @param {Object*} obj - object's pointer
+* @param {Id} id - Variable of Id type
 */
 void obj_set_id( Object *obj, const Id id );
 
-/* Gets the id of given object
-* @param {Object*} - object to request id
-* @return {const Id*} - returns the requested object's id
+/**
+* @brief This fuction gets the object id
+* @author Miguel Rodríguez
+* @param {Object*} obj - object's pointer
+* @retval {Id} - Returns an id
 */
 const Id obj_get_id( Object *obj );
 

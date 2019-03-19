@@ -1,0 +1,177 @@
+\hypertarget{object_8c}{}\section{src/object.c File Reference}
+\label{object_8c}\index{src/object.\+c@{src/object.\+c}}
+
+
+Manages the game objects.  
+
+
+{\ttfamily \#include \char`\"{}object.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+Include dependency graph for object.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{object_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct__Object}{\+\_\+\+Object}
+\begin{DoxyCompactList}\small\item\em Main object structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{object_8h_a7f8bbcda919b65ce67f92fba08e0212f}{Object} $\ast$ \hyperlink{object_8c_a74155461b19a380976895194a7181965}{obj\+\_\+init} ()
+\begin{DoxyCompactList}\small\item\em This fuction initializes an object. \end{DoxyCompactList}\item 
+void \hyperlink{object_8c_ac9aeb62f8e8555a59661cca384db6b47}{obj\+\_\+destroy} (\hyperlink{object_8h_a7f8bbcda919b65ce67f92fba08e0212f}{Object} $\ast$obj)
+\begin{DoxyCompactList}\small\item\em This fuction destroys an object. \end{DoxyCompactList}\item 
+void \hyperlink{object_8c_a35e89614838eaf4f660b70d8e1bb7a83}{obj\+\_\+set\+\_\+name} (\hyperlink{object_8h_a7f8bbcda919b65ce67f92fba08e0212f}{Object} $\ast$obj, const char $\ast$name)
+\begin{DoxyCompactList}\small\item\em This fuction sets an object name. \end{DoxyCompactList}\item 
+const char $\ast$ \hyperlink{object_8c_a9592df618edfeffbb0cf0ae098e06ac7}{obj\+\_\+get\+\_\+name} (\hyperlink{object_8h_a7f8bbcda919b65ce67f92fba08e0212f}{Object} $\ast$obj)
+\begin{DoxyCompactList}\small\item\em This fuction gets an object name. \end{DoxyCompactList}\item 
+void \hyperlink{object_8c_af3ca397f0f2c6784bde1f1ae5d63b7f9}{obj\+\_\+set\+\_\+id} (\hyperlink{object_8h_a7f8bbcda919b65ce67f92fba08e0212f}{Object} $\ast$obj, const \hyperlink{types_8h_a845e604fb28f7e3d97549da3448149d3}{Id} id)
+\begin{DoxyCompactList}\small\item\em This fuction sets the object id. \end{DoxyCompactList}\item 
+const \hyperlink{types_8h_a845e604fb28f7e3d97549da3448149d3}{Id} \hyperlink{object_8c_a7241dbfc246b252ee486f31519794922}{obj\+\_\+get\+\_\+id} (\hyperlink{object_8h_a7f8bbcda919b65ce67f92fba08e0212f}{Object} $\ast$obj)
+\begin{DoxyCompactList}\small\item\em This fuction gets the object id. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Manages the game objects. 
+
+\begin{DoxyAuthor}{Author}
+Miguel Rodríguez 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+18/03/2019 
+\end{DoxyDate}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{object_8c_a74155461b19a380976895194a7181965}\label{object_8c_a74155461b19a380976895194a7181965}} 
+\index{object.\+c@{object.\+c}!obj\+\_\+init@{obj\+\_\+init}}
+\index{obj\+\_\+init@{obj\+\_\+init}!object.\+c@{object.\+c}}
+\subsubsection{\texorpdfstring{obj\+\_\+init()}{obj\_init()}}
+{\footnotesize\ttfamily \hyperlink{object_8h_a7f8bbcda919b65ce67f92fba08e0212f}{Object}$\ast$ obj\+\_\+init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+This fuction initializes an object. 
+
+\begin{DoxyAuthor}{Author}
+Miguel Rodríguez 
+\end{DoxyAuthor}
+
+\begin{DoxyRetVals}{Return values}
+{\em \{\+Object$\ast$\}} & -\/ Returns an object\textquotesingle{}s pointer \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{object_8c_ac9aeb62f8e8555a59661cca384db6b47}\label{object_8c_ac9aeb62f8e8555a59661cca384db6b47}} 
+\index{object.\+c@{object.\+c}!obj\+\_\+destroy@{obj\+\_\+destroy}}
+\index{obj\+\_\+destroy@{obj\+\_\+destroy}!object.\+c@{object.\+c}}
+\subsubsection{\texorpdfstring{obj\+\_\+destroy()}{obj\_destroy()}}
+{\footnotesize\ttfamily void obj\+\_\+destroy (\begin{DoxyParamCaption}\item[{\hyperlink{object_8h_a7f8bbcda919b65ce67f92fba08e0212f}{Object} $\ast$}]{obj }\end{DoxyParamCaption})}
+
+
+
+This fuction destroys an object. 
+
+\begin{DoxyAuthor}{Author}
+Miguel Rodríguez 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+Object$\ast$\}} & obj -\/ object pointer \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{object_8c_a35e89614838eaf4f660b70d8e1bb7a83}\label{object_8c_a35e89614838eaf4f660b70d8e1bb7a83}} 
+\index{object.\+c@{object.\+c}!obj\+\_\+set\+\_\+name@{obj\+\_\+set\+\_\+name}}
+\index{obj\+\_\+set\+\_\+name@{obj\+\_\+set\+\_\+name}!object.\+c@{object.\+c}}
+\subsubsection{\texorpdfstring{obj\+\_\+set\+\_\+name()}{obj\_set\_name()}}
+{\footnotesize\ttfamily void obj\+\_\+set\+\_\+name (\begin{DoxyParamCaption}\item[{\hyperlink{object_8h_a7f8bbcda919b65ce67f92fba08e0212f}{Object} $\ast$}]{obj,  }\item[{const char $\ast$}]{name }\end{DoxyParamCaption})}
+
+
+
+This fuction sets an object name. 
+
+\begin{DoxyAuthor}{Author}
+Miguel Rodríguez 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+Object$\ast$\}} & obj -\/ object pointer \\
+\hline
+{\em \{char$\ast$\}} & name -\/ object\textquotesingle{}s name \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{object_8c_a9592df618edfeffbb0cf0ae098e06ac7}\label{object_8c_a9592df618edfeffbb0cf0ae098e06ac7}} 
+\index{object.\+c@{object.\+c}!obj\+\_\+get\+\_\+name@{obj\+\_\+get\+\_\+name}}
+\index{obj\+\_\+get\+\_\+name@{obj\+\_\+get\+\_\+name}!object.\+c@{object.\+c}}
+\subsubsection{\texorpdfstring{obj\+\_\+get\+\_\+name()}{obj\_get\_name()}}
+{\footnotesize\ttfamily const char$\ast$ obj\+\_\+get\+\_\+name (\begin{DoxyParamCaption}\item[{\hyperlink{object_8h_a7f8bbcda919b65ce67f92fba08e0212f}{Object} $\ast$}]{obj }\end{DoxyParamCaption})}
+
+
+
+This fuction gets an object name. 
+
+\begin{DoxyAuthor}{Author}
+Miguel Rodríguez 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+Object$\ast$\}} & obj -\/ object\textquotesingle{}s pointer \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \{char$\ast$\}} & -\/ Returns a pointer to the object\textquotesingle{}s name \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{object_8c_af3ca397f0f2c6784bde1f1ae5d63b7f9}\label{object_8c_af3ca397f0f2c6784bde1f1ae5d63b7f9}} 
+\index{object.\+c@{object.\+c}!obj\+\_\+set\+\_\+id@{obj\+\_\+set\+\_\+id}}
+\index{obj\+\_\+set\+\_\+id@{obj\+\_\+set\+\_\+id}!object.\+c@{object.\+c}}
+\subsubsection{\texorpdfstring{obj\+\_\+set\+\_\+id()}{obj\_set\_id()}}
+{\footnotesize\ttfamily void obj\+\_\+set\+\_\+id (\begin{DoxyParamCaption}\item[{\hyperlink{object_8h_a7f8bbcda919b65ce67f92fba08e0212f}{Object} $\ast$}]{obj,  }\item[{const \hyperlink{types_8h_a845e604fb28f7e3d97549da3448149d3}{Id}}]{id }\end{DoxyParamCaption})}
+
+
+
+This fuction sets the object id. 
+
+\begin{DoxyAuthor}{Author}
+Miguel Rodríguez 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+Object$\ast$\}} & obj -\/ object\textquotesingle{}s pointer \\
+\hline
+{\em \{\+Id\}} & id -\/ Variable of Id type \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{object_8c_a7241dbfc246b252ee486f31519794922}\label{object_8c_a7241dbfc246b252ee486f31519794922}} 
+\index{object.\+c@{object.\+c}!obj\+\_\+get\+\_\+id@{obj\+\_\+get\+\_\+id}}
+\index{obj\+\_\+get\+\_\+id@{obj\+\_\+get\+\_\+id}!object.\+c@{object.\+c}}
+\subsubsection{\texorpdfstring{obj\+\_\+get\+\_\+id()}{obj\_get\_id()}}
+{\footnotesize\ttfamily const \hyperlink{types_8h_a845e604fb28f7e3d97549da3448149d3}{Id} obj\+\_\+get\+\_\+id (\begin{DoxyParamCaption}\item[{\hyperlink{object_8h_a7f8bbcda919b65ce67f92fba08e0212f}{Object} $\ast$}]{obj }\end{DoxyParamCaption})}
+
+
+
+This fuction gets the object id. 
+
+\begin{DoxyAuthor}{Author}
+Miguel Rodríguez 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+Object$\ast$\}} & obj -\/ object\textquotesingle{}s pointer \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \{\+Id\}} & -\/ Returns an id \\
+\hline
+\end{DoxyRetVals}

@@ -200,11 +200,19 @@ void g_engine_paint_game( G_engine *ge, Game *game ) {
   Id  sp_id = NO_ID,
       sp_cu_id = NO_ID,
       sp_south_id = NO_ID;
+  Player *player;
   Space *cu_sp = NULL;
   Object *obj;
   Object **objs;
   char *answer;
-  Cmd *cmd = game_get_cmd( game );
+  Cmd *cmd;
+
+  if ( !ge || !game ) {
+    return;
+  }
+
+  cmd = game_get_cmd( game );
+  player = game_get_player( game );
 
   // title box
   ui_clear_box( ui, _TITLE );
@@ -268,16 +276,20 @@ void g_engine_paint_game( G_engine *ge, Game *game ) {
       sp_id = space_get_id( game_get_object_space( game, obj_get_id( obj ) ) );
 
       ui_frm( ui, 3, S_BOLD, BG_WHITE, FG_BLACK );
-      ui_box_put( ui, _OVERVIEW, " O%ld: ", obj_get_id( obj ) );
+      ui_box_put( ui, _OVERVIEW, " %s", obj_get_name( obj ) );
+      ui_rs( ui );
+
+      ui_box_put( ui, _OVERVIEW, "{id: %d, ",  obj_get_id( obj ) );
+      ui_box_put( ui, _OVERVIEW, "loc: ");
+
       if ( sp_id == -1 ) {
         ui_frm( ui, 4, S_BLINK, BG_WHITE, FG_RED, S_BOLD );
-        ui_box_put( ui, _OVERVIEW, "(taken)" );
+        ui_box_put( ui, _OVERVIEW, "?" );
       } else {
-        ui_rs( ui );
-        ui_box_put( ui, _OVERVIEW, "%d", (int)sp_id );
+        ui_box_put( ui, _OVERVIEW, "%ld", sp_id );
       }
-
-      ui_box_put( ui, _OVERVIEW, "\n" );
+      ui_rs( ui );
+      ui_box_put( ui, _OVERVIEW, "}\n" );
 
     }
 
@@ -288,10 +300,10 @@ void g_engine_paint_game( G_engine *ge, Game *game ) {
 
   // player name
   ui_frm( ui, 3, BG_WHITE, FG_BLACK, S_BOLD );
-  ui_box_put( ui, _OVERVIEW, " P%d", player_get_id( game_get_player( game ) ) );
+  ui_box_put( ui, _OVERVIEW, " %s", player_get_name( player ) );
   ui_rs( ui );
 
-  ui_box_put( ui, _OVERVIEW, ": %ld\n", player_get_location( game_get_player( game ) ) );
+  ui_box_put( ui, _OVERVIEW, "{id: %ld, loc: %ld}\n", player_get_id( player ), player_get_location( player ) );
 
   // help box
   ui_clear_box( ui, _HELP );

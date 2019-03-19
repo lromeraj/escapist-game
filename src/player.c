@@ -1,15 +1,31 @@
+/**
+ * @brief Main player manager
+ *
+ * @file player.c
+ * @author Miguel Rodríguez
+ * @version 1.0
+ * @date 18/03/2019
+ */
+
 #include "player.h"
 #include "types.h"
+#include "inventory.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
+/*!
+* @brief Player's structure
+*
+* This structure defines an player whose fields are an id, a name, a location and an inventary of objects
+*/
 struct _Player {
-  Id id;
-  char name[WORD_SIZE + 1];
-  Id location;
-  Id hand_object;
+  Id id;	                   /*!< PLayer's Identifier */
+  char name[WORD_SIZE + 1];  /*!< Player's name */
+  Id loc;		                 /*!< Player's location */
+  Inventory *inv;            /*!< Player's inventory */
 };
+
 
 Player *player_init() {
 
@@ -22,24 +38,27 @@ Player *player_init() {
   }
 
   newplayer->name[0] = '\0';
-  newplayer->location = NO_ID;
-  newplayer->hand_object = NO_ID;
+  newplayer->loc = NO_ID;
+  newplayer->inv = inventory_create();
 
   return newplayer;
 }
 
-STATUS player_destroy(Player *player) {
+STATUS player_destroy( Player *player ) {
 
-  if (!player)
+  if ( !player )
     return ERROR;
+
+  inventory_destroy( player->inv );
 
   free( player );
 
   return OK;
 }
 
-STATUS player_set_name(Player *player, char *name) {
-  if (!player || !name) {
+STATUS player_set_name( Player *player, char *name ) {
+
+  if ( !player || !name ) {
     return ERROR;
   }
 
@@ -51,31 +70,42 @@ STATUS player_set_name(Player *player, char *name) {
 }
 
 STATUS player_set_location(Player *player, Id id) {
-  if (!player || id == NO_ID) {
+
+  if ( !player || id == NO_ID )
     return ERROR;
-  }
-  player->location = id;
+
+  player->loc = id;
+
   return OK;
 }
 
-STATUS player_set_object(Player *player, Id id) {
-  if (!player) {
+STATUS player_add_object( Player *player, Id id ) {
+
+  if ( !player )
     return ERROR;
-  }
-  player->hand_object = id;
-  return OK;
+
+  return inventory_add_id( player->inv, id );
+}
+
+STATUS player_del_object( Player* player, Id id ) {
+
+  if ( !player )
+    return ERROR;
+
+  return inventory_del_id( player->inv, id );
 }
 
 const char *player_get_name(Player *player) {
-  if (!player) {
+  if ( !player )
     return NULL;
-  }
+
   return player->name;
 }
 
 void player_set_id( Player* player, Id id ) {
   if ( !player )
     return;
+
   player->id = id;
 }
 
@@ -90,44 +120,14 @@ Id player_get_location(Player *player) {
   if (!player) {
     return NO_ID;
   }
-  return player->location;
+  return player->loc;
 }
 
-bool player_has_object(Player *player) {
-  if (!player || player->hand_object == NO_ID) {
+bool player_has_object( Player *player, Id id ) {
+
+  if ( !player )
     return false;
-  }
-  return true;
-}
 
-Id player_get_object(Player* player){
-  if(!player || player->hand_object == NO_ID){
-    return NO_ID;
-  }
-  return player->hand_object;
-}
+  return inventory_has_id( player->inv, id );
 
-STATUS player_print(Player *player) {
-  Id idaux = NO_ID;
-
-  if (!player) {
-    return ERROR;
-  }
-
-  fprintf(stdout, "--> player (Id: %ld; Name: %s)\n", player->id, player->name);
-
-  idaux = player_get_location(player);
-  if (NO_ID != idaux) {
-    fprintf(stdout, "---> Location link: %ld.\n", idaux);
-  } else {
-    fprintf(stdout, "---> No location link.\n");
-  }
-
-  if (player_has_object(player)) {
-    fprintf(stdout, "---> Object in the player.\n");
-  } else {
-    fprintf(stdout, "---> No object in the player.\n");
-  }
-
-  return OK;
 }

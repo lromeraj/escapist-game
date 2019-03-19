@@ -1,6 +1,7 @@
 <map id="src/player.h" name="src/player.h">
 <area shape="rect" id="node2" href="$game_8h.html" title="It defines the game interface. " alt="" coords="175,80,262,107"/>
 <area shape="rect" id="node3" href="$g__engine_8c.html" title="Graphic engine source code. " alt="" coords="279,229,385,256"/>
+<area shape="rect" id="node8" href="$player_8c.html" title="Main player manager. " alt="" coords="397,80,488,107"/>
 <area shape="rect" id="node4" href="$g__engine_8h.html" title="Main graphic engine. " alt="" coords="165,155,272,181"/>
 <area shape="rect" id="node6" href="$reader_8h.html" title="Defines a game reader. " alt="" coords="51,155,141,181"/>
 <area shape="rect" id="node7" href="$reader_8c.html" title="Main game reader. " alt="" coords="5,229,96,256"/>

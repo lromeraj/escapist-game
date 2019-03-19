@@ -1,11 +1,10 @@
 /**
- * @brief It defines common type.
+ * @brief It defines types of data.
  *
  * @file types.h
- * @author Álvaro Rodríguez & Javier Romera
- * @version 1.0
- * @date 07/02/2019
- * @copyright GNU Public License
+ * @author Miguel Rodríguez
+ * @version 0.8.4
+ * @date 18/03/2019
  */
 
 #ifndef TYPES_H
@@ -14,31 +13,31 @@
 #include <stdbool.h>
 #include <stdint.h>
 
-/* Defines maximum size of a word as 1000 and no id for players, objects and spaces as -1 */
+#define WORD_SIZE 1000  /*!< @brief Default strings buffer length */
+#define NO_ID -1        /*!< @brief Value of NO_ID */
 
-#define WORD_SIZE 1000
-#define NO_ID -1
-
-/* Id defined as long var */
-
+/**
+ * @brief Defines an id as long
+ */
 typedef long Id;
 
-/* BOOL defines FALSE and TRUE as return types. */
-
+/*!
+* @brief Status variants
+*/
 typedef enum {
-  FALSE, TRUE
-} BOOL;
-
-/* STATUS defines ERROR and OK as return types. */
-
-typedef enum {
-  ERROR, OK
+  ERROR, /*!< @brief Error means a failure */
+  OK     /*!< @brief Ok means success */
 } STATUS;
 
-/* DIRECTION defines: N, north; S, south, ;E, east; W, west; as return types. */
-
+/*!
+* @brief Direction's structure
+*
+*/
 typedef enum {
-  N, S, E, W
+  N, /*!< @brief North */
+  S, /*!< @brief South */
+  E, /*!< @brief East */
+  W /*!< @brief West */
 } DIRECTION;
 
 #endif

@@ -34,15 +34,15 @@ typedef struct \hyperlink{struct__Game}{\+\_\+\+Game} {\bfseries Game}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-S\+T\+A\+T\+US \hyperlink{game_8h_ae5ad86de0a92d9eccb234948458da7f1}{game\+\_\+add\+\_\+space} (\hyperlink{struct__Game}{Game} $\ast$game, \hyperlink{struct__Space}{Space} $\ast$space)
+\hyperlink{types_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+US} \hyperlink{game_8h_ae5ad86de0a92d9eccb234948458da7f1}{game\+\_\+add\+\_\+space} (\hyperlink{struct__Game}{Game} $\ast$game, \hyperlink{struct__Space}{Space} $\ast$space)
 \begin{DoxyCompactList}\small\item\em Adds a given space into the game. \end{DoxyCompactList}\item 
 \hyperlink{struct__Game}{Game} $\ast$ \hyperlink{game_8h_a1cdbe3f06b9bf49eb5e334a22ad3b2b9}{game\+\_\+create} ()
 \item 
-S\+T\+A\+T\+US \hyperlink{game_8h_afc77f90739be0fd45b7f5616e543bfae}{game\+\_\+create\+\_\+from\+\_\+file} (\hyperlink{struct__Game}{Game} $\ast$game, char $\ast$filename)
+\hyperlink{types_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+US} \hyperlink{game_8h_afc77f90739be0fd45b7f5616e543bfae}{game\+\_\+create\+\_\+from\+\_\+file} (\hyperlink{struct__Game}{Game} $\ast$game, char $\ast$filename)
 \item 
-S\+T\+A\+T\+US \hyperlink{game_8h_a4a8f3de1cdc4bcb9a508a191677ee33f}{game\+\_\+update} (\hyperlink{struct__Game}{Game} $\ast$game, \hyperlink{struct__Cmd}{Cmd} $\ast$cmd)
+\hyperlink{types_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+US} \hyperlink{game_8h_a4a8f3de1cdc4bcb9a508a191677ee33f}{game\+\_\+update} (\hyperlink{struct__Game}{Game} $\ast$game, \hyperlink{struct__Cmd}{Cmd} $\ast$cmd)
 \item 
-S\+T\+A\+T\+US \hyperlink{game_8h_a0736924a1235c0e6fe9b6d91c2a12af8}{game\+\_\+destroy} (\hyperlink{struct__Game}{Game} $\ast$game)
+\hyperlink{types_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+US} \hyperlink{game_8h_a0736924a1235c0e6fe9b6d91c2a12af8}{game\+\_\+destroy} (\hyperlink{struct__Game}{Game} $\ast$game)
 \item 
 bool \hyperlink{game_8h_a27711fe1fc6f5a353b9ab63b92602359}{game\+\_\+is\+\_\+over} (\hyperlink{struct__Game}{Game} $\ast$game)
 \item 
@@ -50,21 +50,28 @@ void \hyperlink{game_8h_a108f413649a6dc99d3ffeed092dc15f5}{game\+\_\+print\+\_\+
 \item 
 void \hyperlink{game_8h_a33a5ed8937423f8c012df3cedad4fa4c}{game\+\_\+print\+\_\+data} (\hyperlink{struct__Game}{Game} $\ast$game)
 \item 
-\hyperlink{struct__Space}{Space} $\ast$ \hyperlink{game_8h_a69d94da9d27b542d3ebdeb8b60f1f2dc}{game\+\_\+get\+\_\+space} (\hyperlink{struct__Game}{Game} $\ast$game, Id id)
+\hyperlink{struct__Space}{Space} $\ast$ \hyperlink{game_8h_a69d94da9d27b542d3ebdeb8b60f1f2dc}{game\+\_\+get\+\_\+space} (\hyperlink{struct__Game}{Game} $\ast$game, \hyperlink{types_8h_a845e604fb28f7e3d97549da3448149d3}{Id} id)
 \item 
-\hyperlink{struct__Space}{Space} $\ast$ \hyperlink{game_8h_a5c8922fd5fc6de08b0b57899013ad117}{game\+\_\+get\+\_\+object\+\_\+space} (\hyperlink{struct__Game}{Game} $\ast$game, Id id)
+\hyperlink{struct__Space}{Space} $\ast$ \hyperlink{game_8h_a5c8922fd5fc6de08b0b57899013ad117}{game\+\_\+get\+\_\+object\+\_\+space} (\hyperlink{struct__Game}{Game} $\ast$game, \hyperlink{types_8h_a845e604fb28f7e3d97549da3448149d3}{Id} id)
 \item 
-S\+T\+A\+T\+US \hyperlink{game_8h_ad361335e40fd953eaf6839414617eb5b}{game\+\_\+set\+\_\+object\+\_\+location} (\hyperlink{struct__Game}{Game} $\ast$game, Id id)
+\hyperlink{types_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+US} \hyperlink{game_8h_ad361335e40fd953eaf6839414617eb5b}{game\+\_\+set\+\_\+object\+\_\+location} (\hyperlink{struct__Game}{Game} $\ast$game, \hyperlink{types_8h_a845e604fb28f7e3d97549da3448149d3}{Id} id)
 \item 
 \hyperlink{struct__Player}{Player} $\ast$ \hyperlink{game_8h_af46efd507d797aec6da90d08aa592e32}{game\+\_\+get\+\_\+player} (\hyperlink{struct__Game}{Game} $\ast$game)
 \item 
-\hyperlink{struct__Object}{Object} $\ast$ \hyperlink{game_8h_a9dca92a603769c72a708a7d042e76dfa}{game\+\_\+get\+\_\+object} (\hyperlink{struct__Game}{Game} $\ast$game, Id id)
+\mbox{\Hypertarget{game_8h_a7ca2ae962cbba287a65d71efdcd4ff93}\label{game_8h_a7ca2ae962cbba287a65d71efdcd4ff93}} 
+\hyperlink{object_8h_a7f8bbcda919b65ce67f92fba08e0212f}{Object} $\ast$ {\bfseries game\+\_\+get\+\_\+object\+\_\+by\+\_\+id} (\hyperlink{struct__Game}{Game} $\ast$game, \hyperlink{types_8h_a845e604fb28f7e3d97549da3448149d3}{Id} id)
 \item 
-\hyperlink{struct__Object}{Object} $\ast$$\ast$ \hyperlink{game_8h_aacbf28320fd70aa492a722ad1789f479}{game\+\_\+get\+\_\+objects} (\hyperlink{struct__Game}{Game} $\ast$game)
+\mbox{\Hypertarget{game_8h_aea02495378a96ed422b8bc67552d69d7}\label{game_8h_aea02495378a96ed422b8bc67552d69d7}} 
+\hyperlink{object_8h_a7f8bbcda919b65ce67f92fba08e0212f}{Object} $\ast$ {\bfseries game\+\_\+get\+\_\+object\+\_\+by\+\_\+idx} (\hyperlink{struct__Game}{Game} $\ast$game, int idx)
 \item 
-S\+T\+A\+T\+US \hyperlink{game_8h_ade0d25f267771b1f9b27fcc0383e93b8}{game\+\_\+set\+\_\+player} (\hyperlink{struct__Game}{Game} $\ast$game, \hyperlink{struct__Player}{Player} $\ast$player)
+\mbox{\Hypertarget{game_8h_a1ee080f6cdfb95f72007e688927da393}\label{game_8h_a1ee080f6cdfb95f72007e688927da393}} 
+\hyperlink{object_8h_a7f8bbcda919b65ce67f92fba08e0212f}{Object} $\ast$ {\bfseries game\+\_\+get\+\_\+object\+\_\+by\+\_\+name} (\hyperlink{struct__Game}{Game} $\ast$game, const char $\ast$name)
 \item 
-S\+T\+A\+T\+US \hyperlink{game_8h_a051b1f4a7b5dd97b949a50fec93bd159}{game\+\_\+set\+\_\+object} (\hyperlink{struct__Game}{Game} $\ast$game, \hyperlink{struct__Object}{Object} $\ast$object)
+\hyperlink{object_8h_a7f8bbcda919b65ce67f92fba08e0212f}{Object} $\ast$$\ast$ \hyperlink{game_8h_aacbf28320fd70aa492a722ad1789f479}{game\+\_\+get\+\_\+objects} (\hyperlink{struct__Game}{Game} $\ast$game)
+\item 
+\hyperlink{types_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+US} \hyperlink{game_8h_ade0d25f267771b1f9b27fcc0383e93b8}{game\+\_\+set\+\_\+player} (\hyperlink{struct__Game}{Game} $\ast$game, \hyperlink{struct__Player}{Player} $\ast$player)
+\item 
+\hyperlink{types_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+US} \hyperlink{game_8h_a051b1f4a7b5dd97b949a50fec93bd159}{game\+\_\+set\+\_\+object} (\hyperlink{struct__Game}{Game} $\ast$game, \hyperlink{object_8h_a7f8bbcda919b65ce67f92fba08e0212f}{Object} $\ast$object)
 \item 
 void \hyperlink{game_8h_a9d64221dbc653f866adc43c4ef849bb1}{game\+\_\+set\+\_\+die} (\hyperlink{struct__Game}{Game} $\ast$game, \hyperlink{die_8h_a892f0b0bf81d69a1f7a14ea238e36dd3}{Die} $\ast$d)
 \item 
@@ -101,7 +108,7 @@ G\+NU Public License
 \index{game.\+h@{game.\+h}!game\+\_\+add\+\_\+space@{game\+\_\+add\+\_\+space}}
 \index{game\+\_\+add\+\_\+space@{game\+\_\+add\+\_\+space}!game.\+h@{game.\+h}}
 \subsubsection{\texorpdfstring{game\+\_\+add\+\_\+space()}{game\_add\_space()}}
-{\footnotesize\ttfamily S\+T\+A\+T\+US game\+\_\+add\+\_\+space (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Game}{Game} $\ast$}]{game,  }\item[{\hyperlink{struct__Space}{Space} $\ast$}]{space }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \hyperlink{types_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+US} game\+\_\+add\+\_\+space (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Game}{Game} $\ast$}]{game,  }\item[{\hyperlink{struct__Space}{Space} $\ast$}]{space }\end{DoxyParamCaption})}
 
 
 
@@ -139,7 +146,7 @@ game\+\_\+create presets game initial state onto N\+U\+LL.
 \index{game.\+h@{game.\+h}!game\+\_\+create\+\_\+from\+\_\+file@{game\+\_\+create\+\_\+from\+\_\+file}}
 \index{game\+\_\+create\+\_\+from\+\_\+file@{game\+\_\+create\+\_\+from\+\_\+file}!game.\+h@{game.\+h}}
 \subsubsection{\texorpdfstring{game\+\_\+create\+\_\+from\+\_\+file()}{game\_create\_from\_file()}}
-{\footnotesize\ttfamily S\+T\+A\+T\+US game\+\_\+create\+\_\+from\+\_\+file (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Game}{Game} $\ast$}]{game,  }\item[{char $\ast$}]{filename }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \hyperlink{types_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+US} game\+\_\+create\+\_\+from\+\_\+file (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Game}{Game} $\ast$}]{game,  }\item[{char $\ast$}]{filename }\end{DoxyParamCaption})}
 
 game\+\_\+create\+\_\+from\+\_\+file presets game state with the data value included in the save file.
 
@@ -155,7 +162,7 @@ game\+\_\+create\+\_\+from\+\_\+file presets game state with the data value incl
 \index{game.\+h@{game.\+h}!game\+\_\+update@{game\+\_\+update}}
 \index{game\+\_\+update@{game\+\_\+update}!game.\+h@{game.\+h}}
 \subsubsection{\texorpdfstring{game\+\_\+update()}{game\_update()}}
-{\footnotesize\ttfamily S\+T\+A\+T\+US game\+\_\+update (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Game}{Game} $\ast$}]{game,  }\item[{\hyperlink{struct__Cmd}{Cmd} $\ast$}]{cmd }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \hyperlink{types_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+US} game\+\_\+update (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Game}{Game} $\ast$}]{game,  }\item[{\hyperlink{struct__Cmd}{Cmd} $\ast$}]{cmd }\end{DoxyParamCaption})}
 
 game\+\_\+update sets the last command value onto last key introduced.
 
@@ -171,7 +178,7 @@ game\+\_\+update sets the last command value onto last key introduced.
 \index{game.\+h@{game.\+h}!game\+\_\+destroy@{game\+\_\+destroy}}
 \index{game\+\_\+destroy@{game\+\_\+destroy}!game.\+h@{game.\+h}}
 \subsubsection{\texorpdfstring{game\+\_\+destroy()}{game\_destroy()}}
-{\footnotesize\ttfamily S\+T\+A\+T\+US game\+\_\+destroy (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Game}{Game} $\ast$}]{game }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \hyperlink{types_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+US} game\+\_\+destroy (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Game}{Game} $\ast$}]{game }\end{DoxyParamCaption})}
 
 game\+\_\+destroy frees dynamic memory reserved in game spaces.
 
@@ -235,7 +242,7 @@ game\+\_\+print\+\_\+data prints by screen the message that indicates player\+\_
 \index{game.\+h@{game.\+h}!game\+\_\+get\+\_\+space@{game\+\_\+get\+\_\+space}}
 \index{game\+\_\+get\+\_\+space@{game\+\_\+get\+\_\+space}!game.\+h@{game.\+h}}
 \subsubsection{\texorpdfstring{game\+\_\+get\+\_\+space()}{game\_get\_space()}}
-{\footnotesize\ttfamily \hyperlink{struct__Space}{Space}$\ast$ game\+\_\+get\+\_\+space (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Game}{Game} $\ast$}]{game,  }\item[{Id}]{id }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \hyperlink{struct__Space}{Space}$\ast$ game\+\_\+get\+\_\+space (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Game}{Game} $\ast$}]{game,  }\item[{\hyperlink{types_8h_a845e604fb28f7e3d97549da3448149d3}{Id}}]{id }\end{DoxyParamCaption})}
 
 game\+\_\+get\+\_\+space gets all the existing spaces with the same id if the id passed as argument exist.
 
@@ -251,7 +258,7 @@ game\+\_\+get\+\_\+space gets all the existing spaces with the same id if the id
 \index{game.\+h@{game.\+h}!game\+\_\+get\+\_\+object\+\_\+space@{game\+\_\+get\+\_\+object\+\_\+space}}
 \index{game\+\_\+get\+\_\+object\+\_\+space@{game\+\_\+get\+\_\+object\+\_\+space}!game.\+h@{game.\+h}}
 \subsubsection{\texorpdfstring{game\+\_\+get\+\_\+object\+\_\+space()}{game\_get\_object\_space()}}
-{\footnotesize\ttfamily \hyperlink{struct__Space}{Space}$\ast$ game\+\_\+get\+\_\+object\+\_\+space (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Game}{Game} $\ast$}]{game,  }\item[{Id}]{id }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \hyperlink{struct__Space}{Space}$\ast$ game\+\_\+get\+\_\+object\+\_\+space (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Game}{Game} $\ast$}]{game,  }\item[{\hyperlink{types_8h_a845e604fb28f7e3d97549da3448149d3}{Id}}]{id }\end{DoxyParamCaption})}
 
 Searches inside spaces array and if it founds an object it will return a pointer to the space containing that object There is no need to comapre id\textquotesingle{}s by the moment becouse there is only one object and one player 
 \begin{DoxyParams}{Parameters}
@@ -265,7 +272,7 @@ Searches inside spaces array and if it founds an object it will return a pointer
 \index{game.\+h@{game.\+h}!game\+\_\+set\+\_\+object\+\_\+location@{game\+\_\+set\+\_\+object\+\_\+location}}
 \index{game\+\_\+set\+\_\+object\+\_\+location@{game\+\_\+set\+\_\+object\+\_\+location}!game.\+h@{game.\+h}}
 \subsubsection{\texorpdfstring{game\+\_\+set\+\_\+object\+\_\+location()}{game\_set\_object\_location()}}
-{\footnotesize\ttfamily S\+T\+A\+T\+US game\+\_\+set\+\_\+object\+\_\+location (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Game}{Game} $\ast$}]{game,  }\item[{Id}]{id }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \hyperlink{types_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+US} game\+\_\+set\+\_\+object\+\_\+location (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Game}{Game} $\ast$}]{game,  }\item[{\hyperlink{types_8h_a845e604fb28f7e3d97549da3448149d3}{Id}}]{id }\end{DoxyParamCaption})}
 
 game\+\_\+set\+\_\+object\+\_\+location set the position of an object in the game.
 
@@ -293,27 +300,11 @@ game\+\_\+get\+\_\+player gets a pointer towards player.
 \begin{DoxyReturn}{Returns}
 \{T\+\_\+\+Command\} -\/ Returns a player pointer; 
 \end{DoxyReturn}
-\mbox{\Hypertarget{game_8h_a9dca92a603769c72a708a7d042e76dfa}\label{game_8h_a9dca92a603769c72a708a7d042e76dfa}} 
-\index{game.\+h@{game.\+h}!game\+\_\+get\+\_\+object@{game\+\_\+get\+\_\+object}}
-\index{game\+\_\+get\+\_\+object@{game\+\_\+get\+\_\+object}!game.\+h@{game.\+h}}
-\subsubsection{\texorpdfstring{game\+\_\+get\+\_\+object()}{game\_get\_object()}}
-{\footnotesize\ttfamily \hyperlink{struct__Object}{Object}$\ast$ game\+\_\+get\+\_\+object (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Game}{Game} $\ast$}]{game,  }\item[{Id}]{id }\end{DoxyParamCaption})}
-
-game\+\_\+get\+\_\+object gets a pointer towards player.
-
-
-\begin{DoxyParams}{Parameters}
-{\em \{\+Game$\ast$\}} & -\/ game; \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-\{T\+\_\+\+Command\} -\/ Returns a object pointer; 
-\end{DoxyReturn}
 \mbox{\Hypertarget{game_8h_aacbf28320fd70aa492a722ad1789f479}\label{game_8h_aacbf28320fd70aa492a722ad1789f479}} 
 \index{game.\+h@{game.\+h}!game\+\_\+get\+\_\+objects@{game\+\_\+get\+\_\+objects}}
 \index{game\+\_\+get\+\_\+objects@{game\+\_\+get\+\_\+objects}!game.\+h@{game.\+h}}
 \subsubsection{\texorpdfstring{game\+\_\+get\+\_\+objects()}{game\_get\_objects()}}
-{\footnotesize\ttfamily \hyperlink{struct__Object}{Object}$\ast$$\ast$ game\+\_\+get\+\_\+objects (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Game}{Game} $\ast$}]{game }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \hyperlink{object_8h_a7f8bbcda919b65ce67f92fba08e0212f}{Object}$\ast$$\ast$ game\+\_\+get\+\_\+objects (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Game}{Game} $\ast$}]{game }\end{DoxyParamCaption})}
 
 Returns a pointer to game objects.
 
@@ -329,7 +320,7 @@ Returns a pointer to game objects.
 \index{game.\+h@{game.\+h}!game\+\_\+set\+\_\+player@{game\+\_\+set\+\_\+player}}
 \index{game\+\_\+set\+\_\+player@{game\+\_\+set\+\_\+player}!game.\+h@{game.\+h}}
 \subsubsection{\texorpdfstring{game\+\_\+set\+\_\+player()}{game\_set\_player()}}
-{\footnotesize\ttfamily S\+T\+A\+T\+US game\+\_\+set\+\_\+player (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Game}{Game} $\ast$}]{game,  }\item[{\hyperlink{struct__Player}{Player} $\ast$}]{player }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \hyperlink{types_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+US} game\+\_\+set\+\_\+player (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Game}{Game} $\ast$}]{game,  }\item[{\hyperlink{struct__Player}{Player} $\ast$}]{player }\end{DoxyParamCaption})}
 
 game\+\_\+set\+\_\+player sets a new player.
 
@@ -345,7 +336,7 @@ game\+\_\+set\+\_\+player sets a new player.
 \index{game.\+h@{game.\+h}!game\+\_\+set\+\_\+object@{game\+\_\+set\+\_\+object}}
 \index{game\+\_\+set\+\_\+object@{game\+\_\+set\+\_\+object}!game.\+h@{game.\+h}}
 \subsubsection{\texorpdfstring{game\+\_\+set\+\_\+object()}{game\_set\_object()}}
-{\footnotesize\ttfamily S\+T\+A\+T\+US game\+\_\+set\+\_\+object (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Game}{Game} $\ast$}]{game,  }\item[{\hyperlink{struct__Object}{Object} $\ast$}]{object }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \hyperlink{types_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+US} game\+\_\+set\+\_\+object (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Game}{Game} $\ast$}]{game,  }\item[{\hyperlink{object_8h_a7f8bbcda919b65ce67f92fba08e0212f}{Object} $\ast$}]{object }\end{DoxyParamCaption})}
 
 game\+\_\+set\+\_\+object sets a new object.
 

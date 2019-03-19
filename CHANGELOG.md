@@ -1,9 +1,32 @@
 # I3
 
+## v0.3.5
+
+`[OVERVIEW]`
+- No visible memory leaks by the moment.
+
+`[FIXES]`
+- Fixed a bug in function `set_has_id()` it was returning `true` when the given id was `-1`.
+
+`[IMPROVEMENTS]`
+- Improved functions responsible of taking and dropping objects.
+- Improved game stability.
+- Improved file `data.dat`.
+- Overview now shows more information about the objects.
+
+`[NEW]`
+- Implemented inventory module.
+- The player can wear more than one object at a time.
+- Added more code documentation.
+- Implemented new `Game` getters like `game_get_object_by_name()`, `game_get_object_by_idx()`.
+- `game_get_object()` has been renamed to `game_get_object_by_id()`.
+- Now you can take or drop objects by it's name or it's id.
+To `take|drop` an object by it's id use `take|drop -i <id>`, by name use `take|drop -n <name>` or just `take|drop <name>`.
+
 ## v0.3.1
 
 `[IMPROVEMENTS]`
-- Improved `game` module.
+- Improved `Game` module.
 - Main `Game` structure is now private.
 - Adapted modules to the new privatization.
 - `_kill()` function now needs an argument to return an exit code.

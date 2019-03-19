@@ -118,12 +118,11 @@ Player* game_get_player(Game *game);
 */
 Player* game_get_player(Game *game);
 
-/** game_get_object gets a pointer towards player.
-*
-* @param {Game*} - game;
-* @return {T_Command} - Returns a object pointer;
-*/
-Object* game_get_object( Game *game, Id id );
+
+
+Object* game_get_object_by_id( Game *game, Id id );
+Object* game_get_object_by_idx( Game *game, int idx );
+Object* game_get_object_by_name( Game *game, const char *name );
 
 
 /** Returns a pointer to game objects.

@@ -140,9 +140,9 @@ Game* game_create() {
   /* load player */
   player = player_init();
 
-  player_set_id( player, FIRST_PLAYER );
-  player_set_name( player, "p1" );
-  player_set_location( player, FIRST_SPACE );
+  player_set_id( player, 1 );
+  player_set_name( player, "player1" );
+  player_set_location( player, 1 );
 
   game_set_player( game, player );
 
@@ -257,16 +257,51 @@ Player* game_get_player( Game *game ) {
   return game->player;
 }
 
-Object* game_get_object( Game *game, Id id ){
+Object* game_get_object_by_name( Game *game, const char *name ) {
 
   int i;
+  Object *obj;
 
-  if (id == NO_ID)
+  if ( !game || !name )
     return NULL;
 
-  for (i=0; i < MAX_OBJECTS && game->objects[ i ] != NULL; i++) {
-    if ( id == obj_get_id( game->objects[ i ] ) ) {
-      return game->objects[ i ];
+  for (i=0; i < MAX_OBJECTS; i++) {
+    obj = game->objects[ i ];
+    if ( !obj ) continue;
+    if ( !strcmp( obj_get_name( obj ), name ) ) {
+      return obj;
+    }
+  }
+
+  return NULL;
+
+}
+
+
+Object* game_get_object_by_idx( Game *game, int idx ) {
+
+  if ( !game )
+    return NULL;
+
+  if ( idx < 0 || idx >= MAX_OBJECTS )
+    return NULL;
+
+  return game->objects[ idx ];
+}
+
+Object* game_get_object_by_id( Game *game, Id id ) {
+
+  int i;
+  Object *obj;
+
+  if ( !game || id == NO_ID )
+    return NULL;
+
+  for (i=0; i < MAX_OBJECTS; i++) {
+    obj = game->objects[ i ];
+    if ( !obj ) continue;
+    if ( id == obj_get_id( obj ) ) {
+      return obj;
     }
   }
 
@@ -438,40 +473,60 @@ void game_callback_take( Game *game ) {
 
   Space *sp;
   Player *player;
+  Object *obj;
   Id p_loc, o_id;
-  Cmd *cmd = game->cmd;
+  char *o_name, *_arg;
+  Cmd *cmd;
 
   if ( !game )
     return;
 
+  cmd = game->cmd;
   player = game_get_player( game );
-  o_id = player_get_object( player );
-
-  if ( player_get_object( player ) != NO_ID ) {
-    cmd_set_ans( cmd, 2, "taken: O%d", o_id );
-    return;
-  }
-
   p_loc = player_get_location( player );
-
   sp = game_get_space( game, p_loc );
 
   if ( !sp )
     return;
 
-  if ( cmd_get_argc( cmd ) > 1 ) {
-    o_id = space_get_object( sp, atoi( cmd_get_argv( cmd, 1 ) ) );
+  obj = NULL;
+  _arg = NULL;
+  o_name = NULL;
 
-    if ( o_id == NO_ID ) {
-      cmd_set_ans( cmd, 2, "O%d: not found",  atoi( cmd_get_argv( cmd, 1 ) ) );
+  if ( cmd_get_argc( cmd ) == 2 ) {
+
+    _arg = (char*)cmd_get_argv( cmd, 1 );
+    obj = game_get_object_by_name( game, _arg );
+
+  } else if ( cmd_get_argc( cmd ) == 3 ) {
+
+    _arg = (char*)cmd_get_argv( cmd, 2 );
+
+    if ( !strcmp( cmd_get_argv( cmd, 1 ), "-i" ) ) {
+      obj = game_get_object_by_id( game, atol( _arg ) );
+    } else if ( !strcmp( cmd_get_argv( cmd, 1 ), "-n" ) ) {
+      obj = game_get_object_by_name( game, _arg );
+    }
+
+  }
+
+  if ( cmd_get_argc( cmd ) > 1 && _arg ) {
+
+    o_id = obj_get_id( obj );
+    o_name = (char*)obj_get_name( obj );
+
+    if ( !space_has_object( sp, o_id ) ) {
+      cmd_set_ans( cmd, 2, "'%s': not found", _arg );
+    } else if ( player_has_object( player, o_id ) ) {
+      cmd_set_ans( cmd, 2, "taken: %s#%ld", o_name, o_id );
     } else {
-      player_set_object( player, o_id );
+      player_add_object( player, o_id );
       space_del_object( sp, o_id );
-      cmd_set_ans( cmd, 0, "taking: O%ld", o_id );
+      cmd_set_ans( cmd, 0, "taking: %s#%ld", o_name, o_id );
     }
 
   } else {
-    cmd_set_ans( cmd, 1, "too few args" );
+    cmd_set_ans( cmd, 1, "invalid args" );
   }
 
   return;
@@ -479,28 +534,56 @@ void game_callback_take( Game *game ) {
 
 void game_callback_drop( Game *game ) {
 
-  Cmd *cmd;
   Player *player;
-  Id o_id;
+  Object *obj;
+  Id p_loc, o_id;
+  char *o_name, *_arg;
+  Cmd *cmd;
 
   if ( !game )
     return;
 
-  player = game_get_player( game );
-
   cmd = game->cmd;
+  player = game_get_player( game );
+  p_loc = player_get_location( player );
 
-  if ( !player_has_object( player ) ) {
-    cmd_set_ans( cmd, 1, "no obj");
-    return;
+  obj = NULL;
+  _arg = NULL;
+  o_name = NULL;
+
+  if ( cmd_get_argc( cmd ) == 2 ) {
+
+    _arg = (char*)cmd_get_argv( cmd, 1 );
+    obj = game_get_object_by_name( game, _arg );
+
+  } else if ( cmd_get_argc( cmd ) == 3 ) {
+
+    _arg = (char*)cmd_get_argv( cmd, 2 );
+
+    if ( !strcmp( cmd_get_argv( cmd, 1 ), "-i" ) ) {
+      obj = game_get_object_by_id( game, atol( _arg ) );
+    } else if ( !strcmp( cmd_get_argv( cmd, 1 ), "-n" ) ) {
+      obj = game_get_object_by_name( game, _arg );
+    }
+
   }
 
-  o_id = player_get_object( player );
+  if ( cmd_get_argc( cmd ) > 1 && _arg ) {
 
-  space_add_object( game_get_space( game, player_get_location( player ) ), o_id );
-  player_set_object( player, NO_ID );
+    o_id = obj_get_id( obj );
+    o_name = (char*)obj_get_name( obj );
 
-  cmd_set_ans( cmd, 0, "dropping: O%ld in C%ld", o_id, player_get_location( player ) );
+    if ( !player_has_object( player, o_id ) ) {
+      cmd_set_ans( cmd, 1, "'%s': not taken", _arg );
+    } else {
+      space_add_object( game_get_space( game, p_loc ), o_id );
+      player_del_object( player, o_id );
+      cmd_set_ans( cmd, 0, "dropping: %s#%ld in C%ld", o_name, o_id, p_loc );
+    }
+
+  } else {
+    cmd_set_ans( cmd, 1, "invalid args" );
+  }
 
   return;
 }

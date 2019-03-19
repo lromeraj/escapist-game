@@ -14,10 +14,8 @@ Set* set_create() {
 
   set = (Set*)malloc(sizeof(Set));
 
-  if (!set) {
-    fprintf(stderr, "ERROR WHILE ALLOC. MEM - SET\n");
+  if ( !set )
     return NULL;
-  }
 
   for ( i=0; i < MAX_SET; i++ ) {
     set->ids[ i ] = NO_ID;
@@ -54,6 +52,7 @@ STATUS set_add_id( Set *set, Id id ){
 
   }
 
+
   return ERROR;
 }
 
@@ -75,7 +74,7 @@ Id set_get_first( Set *set ) {
 bool set_has_id( Set *set, Id id ) {
   int i;
 
-  if ( !set )
+  if ( !set || id == NO_ID )
     return false;
 
   for ( i=0; i < MAX_SET; i++ ) {

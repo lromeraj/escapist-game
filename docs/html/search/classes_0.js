@@ -4,6 +4,7 @@ var searchData=
   ['_5fdie',['_Die',['../struct__Die.html',1,'']]],
   ['_5fg_5fengine',['_G_engine',['../struct__G__engine.html',1,'']]],
   ['_5fgame',['_Game',['../struct__Game.html',1,'']]],
+  ['_5finventory',['_Inventory',['../struct__Inventory.html',1,'']]],
   ['_5fobject',['_Object',['../struct__Object.html',1,'']]],
   ['_5fplayer',['_Player',['../struct__Player.html',1,'']]],
   ['_5fset',['_Set',['../struct__Set.html',1,'']]],

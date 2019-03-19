@@ -105,6 +105,14 @@ STATUS space_del_object( Space *space, Id id ) {
   return set_del_id( space->objects, id );
 }
 
+bool space_has_object( Space *space, Id id ) {
+
+  if ( !space )
+    return false;
+
+  return set_has_id( space->objects, id );
+}
+
 STATUS space_add_object( Space *space, Id id ) {
 
   if ( !space )
@@ -167,17 +175,6 @@ Id space_get_object( Space *space, Id id ) {
   }
 
   return set_has_id(space->objects, id ) ? id : NO_ID;
-}
-
-bool space_has_object( Space *space, Id id ) {
-
-  if ( !space || id == NO_ID )
-    return false;
-
-  if( space_get_object( space, id ) != NO_ID )
-    return true;
-
-  return false;
 }
 
 STATUS space_set_picture( Space *space, char *pict ){

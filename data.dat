@@ -27,10 +27,9 @@
 @s:25|Cell 25| 24|-1| -1|21|       \n<O)__/ \n \_-/
 
 
-
 # @o: <id> | <name> | <obj_def_pos>
 
-@o:01|Object 1|1
-@o:02|Object 2|1
-@o:03|Object 3|1
-@o:04|Object 4|1
+@o:01|ball|1
+@o:02|book|1
+@o:03|gun|1
+@o:04|pen|1
