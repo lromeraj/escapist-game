@@ -19,8 +19,9 @@
 * This structure defines an object whose fields are an id and a name
 */
 struct _Object {
-  Id id;  /*!< Identifier */
-  char name[ OBJ_MAX_NAME_LEN ];   /*!< Object's name */
+  Id id; /*!< Identifier */
+  char name[ MAX_OBJ_NAME ]; /*!< Object's name */
+  char descrp[ MAX_OBJ_DESCRP ]; /*!< Object's description */
 };
 
 Object *obj_init() {
@@ -43,7 +44,8 @@ void obj_destroy( Object *obj ) {
 
 
 void obj_set_name( Object *obj, const char *name ) {
-  if ( !obj ) return;
+  if ( !obj )
+    return;
   strcpy( obj->name, name );
 }
 
@@ -51,6 +53,18 @@ const char *obj_get_name( Object *obj ) {
   if ( !obj )
     return NULL;
   return obj->name;
+}
+
+void obj_set_descrp( Object *obj, const char *descrp ) {
+  if ( !obj )
+    return;
+  strcpy( obj->descrp, descrp );
+}
+
+const char *obj_get_descrp( Object *obj ) {
+  if ( !obj )
+    return NULL;
+  return obj->descrp;
 }
 
 void obj_set_id( Object *obj, const Id id ) {

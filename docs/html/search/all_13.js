@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['ui',['ui',['../struct__G__engine.html#abf87df76723f99d4d39a4d5f629777cb',1,'_G_engine']]],
   ['ui_2ec',['ui.c',['../ui_8c.html',1,'']]],
   ['ui_2eh',['ui.h',['../ui_8h.html',1,'']]],
   ['ui_5fbg',['ui_bg',['../ui_8c.html#a8e6b5fdd9c0dfd19c145a701b445ad05',1,'ui_bg(Ui *ui, Color c):&#160;ui.c'],['../ui_8h.html#a8e6b5fdd9c0dfd19c145a701b445ad05',1,'ui_bg(Ui *ui, Color c):&#160;ui.c']]],

@@ -1,3 +1,12 @@
+/**
+ * @brief Defines player's inventory
+ *
+ * @file inventory.h
+ * @version 0.0.3
+ * @date 20/03/2019
+ * @copyright GNU Public License
+ */
+
 #ifndef INVENTORY_H
 #define INVENTORY_H
 

@@ -78,6 +78,7 @@ $(function() {
 <code>#include &quot;<a class="el" href="player_8h_source.html">player.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="g__engine_8h_source.html">g_engine.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="ui_8h_source.html">ui.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="link_8h_source.html">link.h</a>&quot;</code><br />
 <code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &lt;string.h&gt;</code><br />
@@ -93,9 +94,9 @@ Include dependency graph for g_engine.c:</div>
 <area shape="rect" id="node3" href="cmd_8h.html" title="Command interpreter. " alt="" coords="5,304,64,331"/>
 <area shape="rect" id="node7" href="space_8h.html" title="Space module. " alt="" coords="245,229,313,256"/>
 <area shape="rect" id="node11" href="object_8h.html" title="Object manager. " alt="" coords="89,304,157,331"/>
-<area shape="rect" id="node12" href="die_8h.html" title="Die functions. " alt="" coords="169,229,220,256"/>
+<area shape="rect" id="node12" href="die_8h.html" title="Die&#39;s module header. " alt="" coords="169,229,220,256"/>
 <area shape="rect" id="node4" href="types_8h.html" title="It defines types of data. " alt="" coords="187,379,253,405"/>
-<area shape="rect" id="node8" href="set_8h.html" title="Command interpreter. " alt="" coords="283,304,333,331"/>
+<area shape="rect" id="node8" href="set_8h.html" title="It defines the set interface. " alt="" coords="283,304,333,331"/>
 </map>
 </div>
 </div><table class="memberdecls">
@@ -108,29 +109,34 @@ Data Structures</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
 <tr class="memitem:a55884d4185031754f710955b5e32ebd9"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="g__engine_8c.html#a55884d4185031754f710955b5e32ebd9">_Boxes</a> { <br />
-&#160;&#160;<a class="el" href="g__engine_8c.html#a55884d4185031754f710955b5e32ebd9a360fbd2548abbea4000f326981569ac4">_MAP</a>, 
-<a class="el" href="g__engine_8c.html#a55884d4185031754f710955b5e32ebd9a3802e832b1629d0ae9fc5f46d982a0f0">_OVERVIEW</a>, 
-<a class="el" href="g__engine_8c.html#a55884d4185031754f710955b5e32ebd9a2f80e6c70847dd42d46a5bd452f6fde2">_TITLE</a>, 
-<a class="el" href="g__engine_8c.html#a55884d4185031754f710955b5e32ebd9a30b7a44316e4d1796a17e9565ed01bc7">_HELP</a>, 
+&#160;&#160;<a class="el" href="g__engine_8c.html#a55884d4185031754f710955b5e32ebd9a82705894b9f5f3e3d088c69b4c0a41d5">GAME_MAP</a>, 
+<a class="el" href="g__engine_8c.html#a55884d4185031754f710955b5e32ebd9a2f1db279e9c845748e9e4ef979f4471b">GAME_OVERVIEW</a>, 
+<a class="el" href="g__engine_8c.html#a55884d4185031754f710955b5e32ebd9a7c646ef62564b0dcc5e6653e223cfc52">GAME_TITLE</a>, 
+<a class="el" href="g__engine_8c.html#a55884d4185031754f710955b5e32ebd9ac49bda619a85c79a6be5bd102371c84d">GAME_HELP</a>, 
 <br />
-&#160;&#160;<a class="el" href="g__engine_8c.html#a55884d4185031754f710955b5e32ebd9acb7ab948a03c1f8b96f0a5e7eba1f16e">_FEED</a>
+&#160;&#160;<a class="el" href="g__engine_8c.html#a55884d4185031754f710955b5e32ebd9af3d3abc00730bab6971ebfa9608f1770">GAME_FEED</a>, 
+<a class="el" href="g__engine_8c.html#a55884d4185031754f710955b5e32ebd9a02d9fd1e8fff421c9c3bf1c0cd108171">HELP_TITLE</a>, 
+<a class="el" href="g__engine_8c.html#a55884d4185031754f710955b5e32ebd9ad585f458456d9720cec9aa4d845ecd93">HELP_BODY</a>
 <br />
  }</td></tr>
 <tr class="separator:a55884d4185031754f710955b5e32ebd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a947f9e2e4c31ea006fd0c69072c9abf3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="g__engine_8c.html#a947f9e2e4c31ea006fd0c69072c9abf3">parse_space</a> (<a class="el" href="struct__Game.html">Game</a> *game, <a class="el" href="struct__G__engine.html">G_engine</a> *ge, <a class="el" href="struct__Space.html">Space</a> *sp, int id, int x, int y)</td></tr>
+<tr class="memitem:a947f9e2e4c31ea006fd0c69072c9abf3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="g__engine_8c.html#a947f9e2e4c31ea006fd0c69072c9abf3">parse_space</a> (<a class="el" href="struct__Game.html">Game</a> *game, <a class="el" href="struct__G__engine.html">G_engine</a> *ge, <a class="el" href="space_8h.html#a67533ffc2b70463baecc38fb0629bbfc">Space</a> *sp, int id, int x, int y)</td></tr>
 <tr class="memdesc:a947f9e2e4c31ea006fd0c69072c9abf3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses a given space.  <a href="#a947f9e2e4c31ea006fd0c69072c9abf3">More...</a><br /></td></tr>
 <tr class="separator:a947f9e2e4c31ea006fd0c69072c9abf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa2f5a0548ea6fedb671c594d4f0cf039"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct__G__engine.html">G_engine</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="g__engine_8c.html#aa2f5a0548ea6fedb671c594d4f0cf039">g_engine_create</a> ()</td></tr>
 <tr class="memdesc:aa2f5a0548ea6fedb671c594d4f0cf039"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new graphic engine.  <a href="#aa2f5a0548ea6fedb671c594d4f0cf039">More...</a><br /></td></tr>
 <tr class="separator:aa2f5a0548ea6fedb671c594d4f0cf039"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22856c5bd4a0185424313f9fcb5ed4d7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="g__engine_8c.html#a22856c5bd4a0185424313f9fcb5ed4d7">g_engine_paint_help</a> (<a class="el" href="struct__G__engine.html">G_engine</a> *ge, <a class="el" href="struct__Game.html">Game</a> *game)</td></tr>
+<tr class="memdesc:a22856c5bd4a0185424313f9fcb5ed4d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws the help interface.  <a href="#a22856c5bd4a0185424313f9fcb5ed4d7">More...</a><br /></td></tr>
+<tr class="separator:a22856c5bd4a0185424313f9fcb5ed4d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae61d1ed693a2bfc2967b4550fc128536"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="g__engine_8c.html#ae61d1ed693a2bfc2967b4550fc128536">g_engine_destroy</a> (<a class="el" href="struct__G__engine.html">G_engine</a> *ge)</td></tr>
 <tr class="memdesc:ae61d1ed693a2bfc2967b4550fc128536"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys a graphic engine.  <a href="#ae61d1ed693a2bfc2967b4550fc128536">More...</a><br /></td></tr>
 <tr class="separator:ae61d1ed693a2bfc2967b4550fc128536"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab215509a5b24333ada8465e80df43387"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="g__engine_8c.html#ab215509a5b24333ada8465e80df43387">g_engine_paint_game</a> (<a class="el" href="struct__G__engine.html">G_engine</a> *ge, <a class="el" href="struct__Game.html">Game</a> *game)</td></tr>
-<tr class="memdesc:ab215509a5b24333ada8465e80df43387"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws the user interface.  <a href="#ab215509a5b24333ada8465e80df43387">More...</a><br /></td></tr>
+<tr class="memdesc:ab215509a5b24333ada8465e80df43387"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws the game interface.  <a href="#ab215509a5b24333ada8465e80df43387">More...</a><br /></td></tr>
 <tr class="separator:ab215509a5b24333ada8465e80df43387"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -152,15 +158,19 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Box list </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a55884d4185031754f710955b5e32ebd9a360fbd2548abbea4000f326981569ac4"></a>_MAP&#160;</td><td class="fielddoc"><p>Map box </p>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a55884d4185031754f710955b5e32ebd9a82705894b9f5f3e3d088c69b4c0a41d5"></a>GAME_MAP&#160;</td><td class="fielddoc"><p>Map box </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a55884d4185031754f710955b5e32ebd9a3802e832b1629d0ae9fc5f46d982a0f0"></a>_OVERVIEW&#160;</td><td class="fielddoc"><p>Overview box </p>
+<tr><td class="fieldname"><a id="a55884d4185031754f710955b5e32ebd9a2f1db279e9c845748e9e4ef979f4471b"></a>GAME_OVERVIEW&#160;</td><td class="fielddoc"><p>Overview box </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a55884d4185031754f710955b5e32ebd9a2f80e6c70847dd42d46a5bd452f6fde2"></a>_TITLE&#160;</td><td class="fielddoc"><p>Title box </p>
+<tr><td class="fieldname"><a id="a55884d4185031754f710955b5e32ebd9a7c646ef62564b0dcc5e6653e223cfc52"></a>GAME_TITLE&#160;</td><td class="fielddoc"><p>Title box </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a55884d4185031754f710955b5e32ebd9a30b7a44316e4d1796a17e9565ed01bc7"></a>_HELP&#160;</td><td class="fielddoc"><p>Help box </p>
+<tr><td class="fieldname"><a id="a55884d4185031754f710955b5e32ebd9ac49bda619a85c79a6be5bd102371c84d"></a>GAME_HELP&#160;</td><td class="fielddoc"><p>Help box </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a55884d4185031754f710955b5e32ebd9acb7ab948a03c1f8b96f0a5e7eba1f16e"></a>_FEED&#160;</td><td class="fielddoc"><p>Feedback box </p>
+<tr><td class="fieldname"><a id="a55884d4185031754f710955b5e32ebd9af3d3abc00730bab6971ebfa9608f1770"></a>GAME_FEED&#160;</td><td class="fielddoc"><p>Feedback box </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a55884d4185031754f710955b5e32ebd9a02d9fd1e8fff421c9c3bf1c0cd108171"></a>HELP_TITLE&#160;</td><td class="fielddoc"><p>Help title </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a55884d4185031754f710955b5e32ebd9ad585f458456d9720cec9aa4d845ecd93"></a>HELP_BODY&#160;</td><td class="fielddoc"><p>Help body </p>
 </td></tr>
 </table>
 
@@ -188,7 +198,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="struct__Space.html">Space</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="space_8h.html#a67533ffc2b70463baecc38fb0629bbfc">Space</a> *&#160;</td>
           <td class="paramname"><em>sp</em>, </td>
         </tr>
         <tr>
@@ -257,6 +267,43 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a22856c5bd4a0185424313f9fcb5ed4d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22856c5bd4a0185424313f9fcb5ed4d7">&#9670;&nbsp;</a></span>g_engine_paint_help()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void g_engine_paint_help </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct__G__engine.html">G_engine</a> *&#160;</td>
+          <td class="paramname"><em>ge</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct__Game.html">Game</a> *&#160;</td>
+          <td class="paramname"><em>game</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Draws the help interface. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">{G_engine*}</td><td>ge - Graphic engine pointer </td></tr>
+    <tr><td class="paramname">{Game*}</td><td>game - Game pointer </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="ae61d1ed693a2bfc2967b4550fc128536"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae61d1ed693a2bfc2967b4550fc128536">&#9670;&nbsp;</a></span>g_engine_destroy()</h2>
 
@@ -309,7 +356,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Draws the user interface. </p>
+<p>Draws the game interface. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">{G_engine*}</td><td>ge - Graphic engine pointer </td></tr>

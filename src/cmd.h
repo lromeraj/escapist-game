@@ -30,8 +30,10 @@ typedef enum enum_Cid {
   TAKE, /*!< Take command */
   DROP, /*!< Drop command */
   ROLL, /*!< Roll command */
+  MOVE, /*!< Move command */
   LEFT, /*!< Left command */
-  RIGHT /*!< Right command */
+  RIGHT, /*!< Right command */
+  HELP /*!< Right command */
 } Cid;
 
 /*!
@@ -55,7 +57,15 @@ void cmd_set( Cid id, const char* b_name, const char *s_name, cmd_fn fn );
 * @param {Cid} id - Command identification
 * @retval {Cmd*} - Returns a pointer to the requested command
 */
-Cmd *cmd_get( Cid id );
+Cmd *cmd_get_by_cid( Cid id );
+
+
+/**
+* @brief Gets a command by its id
+* @param {char*} n - Short name or base name
+* @retval {Cmd*} - Returns a pointer to the requested command
+*/
+Cmd *cmd_get_by_name( const char *n );
 
 /**
 * @brief Destroy all the setted commands

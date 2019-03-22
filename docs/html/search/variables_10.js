@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['y',['y',['../struct__Ui__box.html#a7bacb19580dcf6ece3ca60b64f62e459',1,'_Ui_box']]]
+  ['to',['to',['../struct__Link.html#a54563ccd62fdc5057f55fa8f205d928c',1,'_Link']]],
+  ['total',['total',['../struct__Set.html#a9ae5f2cab9df62f0a98dd683be804878',1,'_Set']]]
 ];

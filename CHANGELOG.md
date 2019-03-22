@@ -1,5 +1,46 @@
 # I3
 
+## v0.3.8
+
+`[FIXES]`
+- Fixed segmentation fault when `space_parser()` was trying to use a null pointer,
+specifically when working with the string that contains the drawing of the space.
+- Fixed a bug in the function `cmd_req()` that was preventing a correct input parsing.
+If the string was not ending with the char `\n` the parser was ignoring null char `\0`.
+- Fixed an `Ui` bug that caused a false filling of boxes when using other Ui's at the same time.
+
+`[IMPROVEMENTS]`
+- Added new authors to the header.
+- Reordered code inside the file `game.c`.
+- Improved `Reader` module functions.
+- Improved function `g_engine_paint_game()`.
+- Improved function `parse_space()`.
+- Game screen has been redesigned.
+- Removed blue background.
+- File `data.dat` has been adapted to the new features.
+
+`[NEW]`
+- Implemented `Link` module.
+- Implemented new `Game` getters like `game_get_link_by_id()`, `game_get_links()`, ...
+- Implemented new `Game` adder `game_add_link()`.
+- Implemented new `Reader` function `reader_load_links()`.
+- Implemented new `Space` functions, `space_set_link()`, `space_get_link()`.
+- The following primitives have been removed from `Space` module: `space_set_north()`,
+`space_get_north()`, `space_set_east()`, `space_get_east()`, `space_set_east()`,
+`space_get_south()`, `space_set_south()`, `space_set_west()` and `space_get_west()`.
+The use of that functions has been simplified to `space_set_link()` and `space_get_link()`. To specify the cardinal point where the link
+should be set or gotten, you have to pass an extra argument.
+- Now you can use file records. That files stores commands of a previous game.
+Use it with `target -e goose -c -r < rec1.goo`.
+- Added objects description, `obj_set_descrp()` and `obj_get_descrp()`.
+- New help user interface.
+- Added `help` command, now you can see more information about the commands.
+
+`[UPCOMING]`
+- Data file generator.
+- Reader improvements.
+- `inspect` command.
+
 ## v0.3.5
 
 `[OVERVIEW]`

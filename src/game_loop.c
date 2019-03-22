@@ -116,8 +116,17 @@ int main( int argc, char *argv[] ) {
 
     log_w( "\n********** L%d **********\n", loop );
 
-    g_engine_paint_game( gengine, game );
     log_w( "drawing frame ...\n" );
+
+    _cmd = game_get_cmd( game );
+
+    /* print different screens depending on the command */
+    if ( cmd_get_cid( _cmd ) == HELP ) {
+      g_engine_paint_help( gengine, game );
+    } else {
+      g_engine_paint_game( gengine, game );
+    }
+
     log_w( "requesting cmd ...\n" );
     _cmd = cmd_req();
 

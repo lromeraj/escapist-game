@@ -3,9 +3,13 @@
 #include "set.h"
 
 
+/*!
+*  @brief Set structure
+*/
+
 struct _Set {
-  Id ids[ MAX_SET ];
-  int total;
+  Id ids[ MAX_SET ]; /*!< @brief Array of id's */
+  int total; /*!< @brief Total number of id's */
 };
 
 Set* set_create() {

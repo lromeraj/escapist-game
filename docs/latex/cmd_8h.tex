@@ -13,11 +13,12 @@ Include dependency graph for cmd.\+h\+:\nopagebreak
 \includegraphics[width=204pt]{cmd_8h__incl}
 \end{center}
 \end{figure}
-This graph shows which files directly or indirectly include this file\+:\nopagebreak
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=314pt]{cmd_8h__dep__incl}
+\includegraphics[width=350pt]{cmd_8h__dep__incl}
 \end{center}
 \end{figure}
 \subsection*{Macros}
@@ -62,9 +63,11 @@ enum \hyperlink{cmd_8h_a00a332e55439547f3ed90d0839bd1995}{enum\+\_\+\+Cid} \{ \n
 \hyperlink{cmd_8h_a00a332e55439547f3ed90d0839bd1995a7405647410e343caba1bf383e83d4f5f}{T\+A\+KE}, 
 \hyperlink{cmd_8h_a00a332e55439547f3ed90d0839bd1995a8b0b0025af76a3d8f0b7b1d4758e51a6}{D\+R\+OP}, 
 \hyperlink{cmd_8h_a00a332e55439547f3ed90d0839bd1995a2eeb9fef8a6a516fa6437a44a6efbd52}{R\+O\+LL}, 
-\hyperlink{cmd_8h_a00a332e55439547f3ed90d0839bd1995adb45120aafd37a973140edee24708065}{L\+E\+FT}, 
+\hyperlink{cmd_8h_a00a332e55439547f3ed90d0839bd1995aed3ef32890b6da0919b57254c5206c62}{M\+O\+VE}, 
 \newline
-\hyperlink{cmd_8h_a00a332e55439547f3ed90d0839bd1995aec8379af7490bb9eaaf579cf17876f38}{R\+I\+G\+HT}
+\hyperlink{cmd_8h_a00a332e55439547f3ed90d0839bd1995adb45120aafd37a973140edee24708065}{L\+E\+FT}, 
+\hyperlink{cmd_8h_a00a332e55439547f3ed90d0839bd1995aec8379af7490bb9eaaf579cf17876f38}{R\+I\+G\+HT}, 
+\hyperlink{cmd_8h_a00a332e55439547f3ed90d0839bd1995a9f5cb747b2e1f0ea781d2b1f2a5b4824}{H\+E\+LP}
  \}\begin{DoxyCompactList}\small\item\em Command identification. \end{DoxyCompactList}
 \end{DoxyCompactItemize}
 \subsection*{Functions}
@@ -72,7 +75,9 @@ enum \hyperlink{cmd_8h_a00a332e55439547f3ed90d0839bd1995}{enum\+\_\+\+Cid} \{ \n
 \item 
 void \hyperlink{cmd_8h_ab2829bf716f494548177511118bf6c5b}{cmd\+\_\+set} (\hyperlink{cmd_8h_a2933336e1f8003400f3b050402f0f5f3}{Cid} id, const char $\ast$b\+\_\+name, const char $\ast$s\+\_\+name, \hyperlink{cmd_8h_a78d7a8bd781b5514e6dd7e1253bb1907}{cmd\+\_\+fn} fn)
 \begin{DoxyCompactList}\small\item\em Sets up a new command and stores it inside a private array. \end{DoxyCompactList}\item 
-\hyperlink{struct__Cmd}{Cmd} $\ast$ \hyperlink{cmd_8h_a511ba687ae937a7eb95ea06b79b2b8ec}{cmd\+\_\+get} (\hyperlink{cmd_8h_a2933336e1f8003400f3b050402f0f5f3}{Cid} id)
+\hyperlink{struct__Cmd}{Cmd} $\ast$ \hyperlink{cmd_8h_ad26761936b79469541883548b5a69e02}{cmd\+\_\+get\+\_\+by\+\_\+cid} (\hyperlink{cmd_8h_a2933336e1f8003400f3b050402f0f5f3}{Cid} id)
+\begin{DoxyCompactList}\small\item\em Gets a command by its id. \end{DoxyCompactList}\item 
+\hyperlink{struct__Cmd}{Cmd} $\ast$ \hyperlink{cmd_8h_afce1f6a7a163afaac5ffe4ca55faee59}{cmd\+\_\+get\+\_\+by\+\_\+name} (const char $\ast$n)
 \begin{DoxyCompactList}\small\item\em Gets a command by its id. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{cmd_8h_a3078f0effe67b212b1b913e3ff0c08dc}\label{cmd_8h_a3078f0effe67b212b1b913e3ff0c08dc}} 
 void \hyperlink{cmd_8h_a3078f0effe67b212b1b913e3ff0c08dc}{cmd\+\_\+free} ()
@@ -156,12 +161,20 @@ D\+R\+OP&Drop command \\
 R\+O\+LL&Roll command \\
 \hline
 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+O\+VE@{M\+O\+VE}!cmd.\+h@{cmd.\+h}}\index{cmd.\+h@{cmd.\+h}!M\+O\+VE@{M\+O\+VE}}}\mbox{\Hypertarget{cmd_8h_a00a332e55439547f3ed90d0839bd1995aed3ef32890b6da0919b57254c5206c62}\label{cmd_8h_a00a332e55439547f3ed90d0839bd1995aed3ef32890b6da0919b57254c5206c62}} 
+M\+O\+VE&Move command \\
+\hline
+
 \raisebox{\heightof{T}}[0pt][0pt]{\index{L\+E\+FT@{L\+E\+FT}!cmd.\+h@{cmd.\+h}}\index{cmd.\+h@{cmd.\+h}!L\+E\+FT@{L\+E\+FT}}}\mbox{\Hypertarget{cmd_8h_a00a332e55439547f3ed90d0839bd1995adb45120aafd37a973140edee24708065}\label{cmd_8h_a00a332e55439547f3ed90d0839bd1995adb45120aafd37a973140edee24708065}} 
 L\+E\+FT&Left command \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{R\+I\+G\+HT@{R\+I\+G\+HT}!cmd.\+h@{cmd.\+h}}\index{cmd.\+h@{cmd.\+h}!R\+I\+G\+HT@{R\+I\+G\+HT}}}\mbox{\Hypertarget{cmd_8h_a00a332e55439547f3ed90d0839bd1995aec8379af7490bb9eaaf579cf17876f38}\label{cmd_8h_a00a332e55439547f3ed90d0839bd1995aec8379af7490bb9eaaf579cf17876f38}} 
 R\+I\+G\+HT&Right command \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{H\+E\+LP@{H\+E\+LP}!cmd.\+h@{cmd.\+h}}\index{cmd.\+h@{cmd.\+h}!H\+E\+LP@{H\+E\+LP}}}\mbox{\Hypertarget{cmd_8h_a00a332e55439547f3ed90d0839bd1995a9f5cb747b2e1f0ea781d2b1f2a5b4824}\label{cmd_8h_a00a332e55439547f3ed90d0839bd1995a9f5cb747b2e1f0ea781d2b1f2a5b4824}} 
+H\+E\+LP&Right command \\
 \hline
 
 \end{DoxyEnumFields}
@@ -189,11 +202,11 @@ Sets up a new command and stores it inside a private array.
 {\em \{cmd\+\_\+fn\}} & fn -\/ Command callback function \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{cmd_8h_a511ba687ae937a7eb95ea06b79b2b8ec}\label{cmd_8h_a511ba687ae937a7eb95ea06b79b2b8ec}} 
-\index{cmd.\+h@{cmd.\+h}!cmd\+\_\+get@{cmd\+\_\+get}}
-\index{cmd\+\_\+get@{cmd\+\_\+get}!cmd.\+h@{cmd.\+h}}
-\subsubsection{\texorpdfstring{cmd\+\_\+get()}{cmd\_get()}}
-{\footnotesize\ttfamily \hyperlink{struct__Cmd}{Cmd}$\ast$ cmd\+\_\+get (\begin{DoxyParamCaption}\item[{\hyperlink{cmd_8h_a2933336e1f8003400f3b050402f0f5f3}{Cid}}]{id }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{cmd_8h_ad26761936b79469541883548b5a69e02}\label{cmd_8h_ad26761936b79469541883548b5a69e02}} 
+\index{cmd.\+h@{cmd.\+h}!cmd\+\_\+get\+\_\+by\+\_\+cid@{cmd\+\_\+get\+\_\+by\+\_\+cid}}
+\index{cmd\+\_\+get\+\_\+by\+\_\+cid@{cmd\+\_\+get\+\_\+by\+\_\+cid}!cmd.\+h@{cmd.\+h}}
+\subsubsection{\texorpdfstring{cmd\+\_\+get\+\_\+by\+\_\+cid()}{cmd\_get\_by\_cid()}}
+{\footnotesize\ttfamily \hyperlink{struct__Cmd}{Cmd}$\ast$ cmd\+\_\+get\+\_\+by\+\_\+cid (\begin{DoxyParamCaption}\item[{\hyperlink{cmd_8h_a2933336e1f8003400f3b050402f0f5f3}{Cid}}]{id }\end{DoxyParamCaption})}
 
 
 
@@ -202,6 +215,26 @@ Gets a command by its id.
 
 \begin{DoxyParams}{Parameters}
 {\em \{\+Cid\}} & id -\/ Command identification \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \{\+Cmd$\ast$\}} & -\/ Returns a pointer to the requested command \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{cmd_8h_afce1f6a7a163afaac5ffe4ca55faee59}\label{cmd_8h_afce1f6a7a163afaac5ffe4ca55faee59}} 
+\index{cmd.\+h@{cmd.\+h}!cmd\+\_\+get\+\_\+by\+\_\+name@{cmd\+\_\+get\+\_\+by\+\_\+name}}
+\index{cmd\+\_\+get\+\_\+by\+\_\+name@{cmd\+\_\+get\+\_\+by\+\_\+name}!cmd.\+h@{cmd.\+h}}
+\subsubsection{\texorpdfstring{cmd\+\_\+get\+\_\+by\+\_\+name()}{cmd\_get\_by\_name()}}
+{\footnotesize\ttfamily \hyperlink{struct__Cmd}{Cmd}$\ast$ cmd\+\_\+get\+\_\+by\+\_\+name (\begin{DoxyParamCaption}\item[{const char $\ast$}]{n }\end{DoxyParamCaption})}
+
+
+
+Gets a command by its id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \{char$\ast$\}} & n -\/ Short name or base name \\
 \hline
 \end{DoxyParams}
 

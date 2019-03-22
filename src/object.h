@@ -11,7 +11,8 @@
 
 #include "types.h"
 
-#define OBJ_MAX_NAME_LEN 50 /*!< @brief Maximum number of characters that can have a name of an object */
+#define MAX_OBJ_DESCRP 100 /*!< @brief Maximum number of characters that can have a description of an object */
+#define MAX_OBJ_NAME 50 /*!< @brief Maximum number of characters that can have a name of an object */
 #define MAX_OBJECTS 4 /*!< @brief Maximum number of objects */
 
 /*!
@@ -48,6 +49,22 @@ void obj_set_name( Object *obj, const char *name );
 * @retval {char*} - Returns a pointer to the object's name
 */
 const char *obj_get_name( Object *obj );
+
+/**
+* @brief This fuction sets the description of an object
+* @author Miguel Rodríguez
+* @param {Object*} obj - object's pointer
+* @param {char*} name - object's description
+*/
+void obj_set_descrp( Object *obj, const char *descrp );
+
+/**
+* @brief This fuction gets the description of an object
+* @author Miguel Rodríguez
+* @param {Object*} obj - object's pointer
+* @retval {char*} - Returns a pointer to the object's name
+*/
+const char *obj_get_descrp( Object *obj );
 
 /**
 * @brief This fuction sets the object id

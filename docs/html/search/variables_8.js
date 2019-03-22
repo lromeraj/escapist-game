@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['last_5fn',['last_n',['../struct__Die.html#abf73744a544920c64d79d84d964be62d',1,'_Die']]],
-  ['loc',['loc',['../struct__Player.html#a40f39335ccf0d2de882b7588f1917e58',1,'_Player']]]
+  ['h',['h',['../struct__Ui__box.html#ab81930762400818df39bd6acc348d26f',1,'_Ui_box::h()'],['../struct__Ui__screen.html#ad16a11cf58cfd3423e7b5e9b2fa184e3',1,'_Ui_screen::h()']]],
+  ['help_5fui',['help_ui',['../struct__G__engine.html#a76c426bc9bdd8031c0961abd5530e9c3',1,'_G_engine']]]
 ];

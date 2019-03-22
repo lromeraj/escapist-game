@@ -89,13 +89,15 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="cmd_8h__dep__incl.png" border="0" usemap="#src_2cmd_8hdep" alt=""/></div>
 <map name="src_2cmd_8hdep" id="src_2cmd_8hdep">
-<area shape="rect" id="node2" href="cmd_8c.html" title="Command source code. " alt="" coords="63,80,143,107"/>
-<area shape="rect" id="node3" href="game_8h.html" title="It defines the game interface. " alt="" coords="167,80,254,107"/>
+<area shape="rect" id="node2" href="cmd_8c.html" title="Command source code. " alt="" coords="108,80,188,107"/>
+<area shape="rect" id="node3" href="game_8h.html" title="It defines the game interface. " alt="" coords="213,80,299,107"/>
 <area shape="rect" id="node4" href="g__engine_8c.html" title="Graphic engine source code. " alt="" coords="5,229,112,256"/>
-<area shape="rect" id="node5" href="g__engine_8h.html" title="Main graphic engine. " alt="" coords="96,155,203,181"/>
-<area shape="rect" id="node7" href="reader_8h.html" title="Defines a game reader. " alt="" coords="227,155,317,181"/>
-<area shape="rect" id="node8" href="reader_8c.html" title="Main game reader. " alt="" coords="295,229,385,256"/>
+<area shape="rect" id="node5" href="g__engine_8h.html" title="Main graphic engine. " alt="" coords="141,155,248,181"/>
+<area shape="rect" id="node7" href="reader_8h.html" title="Defines a game reader. " alt="" coords="272,155,363,181"/>
+<area shape="rect" id="node10" href="reader_8c.html" title="Main game reader. " alt="" coords="377,229,468,256"/>
 <area shape="rect" id="node6" href="game__loop_8c.html" title="Main game loop. " alt="" coords="137,229,255,256"/>
+<area shape="rect" id="node8" href="link_8h.html" title="link functions " alt="" coords="279,229,353,256"/>
+<area shape="rect" id="node9" href="link_8c.html" title="link functions " alt="" coords="279,304,353,331"/>
 </map>
 </div>
 </div>
@@ -149,9 +151,11 @@ Enumerations</h2></td></tr>
 &#160;&#160;<a class="el" href="cmd_8h.html#a00a332e55439547f3ed90d0839bd1995a7405647410e343caba1bf383e83d4f5f">TAKE</a>, 
 <a class="el" href="cmd_8h.html#a00a332e55439547f3ed90d0839bd1995a8b0b0025af76a3d8f0b7b1d4758e51a6">DROP</a>, 
 <a class="el" href="cmd_8h.html#a00a332e55439547f3ed90d0839bd1995a2eeb9fef8a6a516fa6437a44a6efbd52">ROLL</a>, 
-<a class="el" href="cmd_8h.html#a00a332e55439547f3ed90d0839bd1995adb45120aafd37a973140edee24708065">LEFT</a>, 
+<a class="el" href="cmd_8h.html#a00a332e55439547f3ed90d0839bd1995aed3ef32890b6da0919b57254c5206c62">MOVE</a>, 
 <br />
-&#160;&#160;<a class="el" href="cmd_8h.html#a00a332e55439547f3ed90d0839bd1995aec8379af7490bb9eaaf579cf17876f38">RIGHT</a>
+&#160;&#160;<a class="el" href="cmd_8h.html#a00a332e55439547f3ed90d0839bd1995adb45120aafd37a973140edee24708065">LEFT</a>, 
+<a class="el" href="cmd_8h.html#a00a332e55439547f3ed90d0839bd1995aec8379af7490bb9eaaf579cf17876f38">RIGHT</a>, 
+<a class="el" href="cmd_8h.html#a00a332e55439547f3ed90d0839bd1995a9f5cb747b2e1f0ea781d2b1f2a5b4824">HELP</a>
 <br />
  }<tr class="memdesc:a00a332e55439547f3ed90d0839bd1995"><td class="mdescLeft">&#160;</td><td class="mdescRight">Command identification.  <a href="cmd_8h.html#a00a332e55439547f3ed90d0839bd1995">More...</a><br /></td></tr>
 </td></tr>
@@ -162,9 +166,12 @@ Functions</h2></td></tr>
 <tr class="memitem:ab2829bf716f494548177511118bf6c5b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8h.html#ab2829bf716f494548177511118bf6c5b">cmd_set</a> (<a class="el" href="cmd_8h.html#a2933336e1f8003400f3b050402f0f5f3">Cid</a> id, const char *b_name, const char *s_name, <a class="el" href="cmd_8h.html#a78d7a8bd781b5514e6dd7e1253bb1907">cmd_fn</a> fn)</td></tr>
 <tr class="memdesc:ab2829bf716f494548177511118bf6c5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets up a new command and stores it inside a private array.  <a href="#ab2829bf716f494548177511118bf6c5b">More...</a><br /></td></tr>
 <tr class="separator:ab2829bf716f494548177511118bf6c5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a511ba687ae937a7eb95ea06b79b2b8ec"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct__Cmd.html">Cmd</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8h.html#a511ba687ae937a7eb95ea06b79b2b8ec">cmd_get</a> (<a class="el" href="cmd_8h.html#a2933336e1f8003400f3b050402f0f5f3">Cid</a> id)</td></tr>
-<tr class="memdesc:a511ba687ae937a7eb95ea06b79b2b8ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a command by its id.  <a href="#a511ba687ae937a7eb95ea06b79b2b8ec">More...</a><br /></td></tr>
-<tr class="separator:a511ba687ae937a7eb95ea06b79b2b8ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad26761936b79469541883548b5a69e02"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct__Cmd.html">Cmd</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8h.html#ad26761936b79469541883548b5a69e02">cmd_get_by_cid</a> (<a class="el" href="cmd_8h.html#a2933336e1f8003400f3b050402f0f5f3">Cid</a> id)</td></tr>
+<tr class="memdesc:ad26761936b79469541883548b5a69e02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a command by its id.  <a href="#ad26761936b79469541883548b5a69e02">More...</a><br /></td></tr>
+<tr class="separator:ad26761936b79469541883548b5a69e02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afce1f6a7a163afaac5ffe4ca55faee59"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct__Cmd.html">Cmd</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8h.html#afce1f6a7a163afaac5ffe4ca55faee59">cmd_get_by_name</a> (const char *n)</td></tr>
+<tr class="memdesc:afce1f6a7a163afaac5ffe4ca55faee59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a command by its id.  <a href="#afce1f6a7a163afaac5ffe4ca55faee59">More...</a><br /></td></tr>
+<tr class="separator:afce1f6a7a163afaac5ffe4ca55faee59"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3078f0effe67b212b1b913e3ff0c08dc"><td class="memItemLeft" align="right" valign="top"><a id="a3078f0effe67b212b1b913e3ff0c08dc"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8h.html#a3078f0effe67b212b1b913e3ff0c08dc">cmd_free</a> ()</td></tr>
 <tr class="memdesc:a3078f0effe67b212b1b913e3ff0c08dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy all the setted commands. <br /></td></tr>
@@ -235,9 +242,13 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_
 </td></tr>
 <tr><td class="fieldname"><a id="a00a332e55439547f3ed90d0839bd1995a2eeb9fef8a6a516fa6437a44a6efbd52"></a>ROLL&#160;</td><td class="fielddoc"><p>Roll command </p>
 </td></tr>
+<tr><td class="fieldname"><a id="a00a332e55439547f3ed90d0839bd1995aed3ef32890b6da0919b57254c5206c62"></a>MOVE&#160;</td><td class="fielddoc"><p>Move command </p>
+</td></tr>
 <tr><td class="fieldname"><a id="a00a332e55439547f3ed90d0839bd1995adb45120aafd37a973140edee24708065"></a>LEFT&#160;</td><td class="fielddoc"><p>Left command </p>
 </td></tr>
 <tr><td class="fieldname"><a id="a00a332e55439547f3ed90d0839bd1995aec8379af7490bb9eaaf579cf17876f38"></a>RIGHT&#160;</td><td class="fielddoc"><p>Right command </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a00a332e55439547f3ed90d0839bd1995a9f5cb747b2e1f0ea781d2b1f2a5b4824"></a>HELP&#160;</td><td class="fielddoc"><p>Right command </p>
 </td></tr>
 </table>
 
@@ -295,14 +306,14 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_
 
 </div>
 </div>
-<a id="a511ba687ae937a7eb95ea06b79b2b8ec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a511ba687ae937a7eb95ea06b79b2b8ec">&#9670;&nbsp;</a></span>cmd_get()</h2>
+<a id="ad26761936b79469541883548b5a69e02"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad26761936b79469541883548b5a69e02">&#9670;&nbsp;</a></span>cmd_get_by_cid()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="struct__Cmd.html">Cmd</a>* cmd_get </td>
+          <td class="memname"><a class="el" href="struct__Cmd.html">Cmd</a>* cmd_get_by_cid </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="cmd_8h.html#a2933336e1f8003400f3b050402f0f5f3">Cid</a>&#160;</td>
           <td class="paramname"><em>id</em></td><td>)</td>
@@ -315,6 +326,38 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">{Cid}</td><td>id - Command identification </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">{Cmd*}</td><td>- Returns a pointer to the requested command </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="afce1f6a7a163afaac5ffe4ca55faee59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afce1f6a7a163afaac5ffe4ca55faee59">&#9670;&nbsp;</a></span>cmd_get_by_name()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct__Cmd.html">Cmd</a>* cmd_get_by_name </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>n</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets a command by its id. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">{char*}</td><td>n - Short name or base name </td></tr>
   </table>
   </dd>
 </dl>

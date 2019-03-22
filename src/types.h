@@ -38,6 +38,6 @@ typedef enum {
   S, /*!< @brief South */
   E, /*!< @brief East */
   W /*!< @brief West */
-} DIRECTION;
+} CardinalPoint;
 
 #endif

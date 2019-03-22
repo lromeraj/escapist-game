@@ -1,0 +1,11 @@
+<map id="src/link.h" name="src/link.h">
+<area shape="rect" id="node2" href="$reader_8h.html" title="Defines a game reader. " alt="" coords="136,80,206,107"/>
+<area shape="rect" id="node5" href="$types_8h.html" title="It defines types of data. " alt="" coords="168,379,233,405"/>
+<area shape="rect" id="node3" href="$game_8h.html" title="It defines the game interface. " alt="" coords="190,155,256,181"/>
+<area shape="rect" id="node4" href="$cmd_8h.html" title="Command interpreter. " alt="" coords="238,304,296,331"/>
+<area shape="rect" id="node8" href="$space_8h.html" title="Space module. " alt="" coords="324,229,392,256"/>
+<area shape="rect" id="node11" href="$player_8h.html" title="Player header. " alt="" coords="44,304,112,331"/>
+<area shape="rect" id="node12" href="$object_8h.html" title="Object manager. " alt="" coords="105,229,173,256"/>
+<area shape="rect" id="node13" href="$die_8h.html" title="Die&#39;s module header. " alt="" coords="198,229,248,256"/>
+<area shape="rect" id="node9" href="$set_8h.html" title="It defines the set interface. " alt="" coords="371,304,422,331"/>
+</map>

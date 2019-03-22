@@ -1,0 +1,79 @@
+\hypertarget{inventory_8h}{}\section{src/inventory.h File Reference}
+\label{inventory_8h}\index{src/inventory.\+h@{src/inventory.\+h}}
+
+
+Defines player\textquotesingle{}s inventory.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}types.\+h\char`\"{}}\newline
+Include dependency graph for inventory.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{inventory_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=161pt]{inventory_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{inventory_8h_a44ebc1f23fbda13f8df116041c33c5f0}\label{inventory_8h_a44ebc1f23fbda13f8df116041c33c5f0}} 
+\#define {\bfseries M\+A\+X\+\_\+\+I\+N\+V\+E\+N\+T\+O\+RY}~5
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{inventory_8h_a2253bf64ac4ce6a9c1d6f39c0b0d32a3}\label{inventory_8h_a2253bf64ac4ce6a9c1d6f39c0b0d32a3}} 
+typedef struct \hyperlink{struct__Inventory}{\+\_\+\+Inventory} {\bfseries Inventory}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{inventory_8h_a5d6b47f7a727932c56d66a65fb540910}\label{inventory_8h_a5d6b47f7a727932c56d66a65fb540910}} 
+\hyperlink{struct__Inventory}{Inventory} $\ast$ {\bfseries inventory\+\_\+create} ()
+\item 
+\mbox{\Hypertarget{inventory_8h_a90250adb627aaa1305954287a9154966}\label{inventory_8h_a90250adb627aaa1305954287a9154966}} 
+void {\bfseries inventory\+\_\+destroy} (\hyperlink{struct__Inventory}{Inventory} $\ast$inv)
+\item 
+\mbox{\Hypertarget{inventory_8h_a91549cebec2fd5c6f3ec0c7d6448dc31}\label{inventory_8h_a91549cebec2fd5c6f3ec0c7d6448dc31}} 
+\hyperlink{types_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+US} {\bfseries inventory\+\_\+add\+\_\+id} (\hyperlink{struct__Inventory}{Inventory} $\ast$inv, \hyperlink{types_8h_a845e604fb28f7e3d97549da3448149d3}{Id} id)
+\item 
+\mbox{\Hypertarget{inventory_8h_abfdd9b2876ee540ae426bfb5b200bf3c}\label{inventory_8h_abfdd9b2876ee540ae426bfb5b200bf3c}} 
+\hyperlink{types_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+US} {\bfseries inventory\+\_\+del\+\_\+id} (\hyperlink{struct__Inventory}{Inventory} $\ast$inv, \hyperlink{types_8h_a845e604fb28f7e3d97549da3448149d3}{Id} id)
+\item 
+\mbox{\Hypertarget{inventory_8h_aebb90d4c533fbf389e77df3987b6e76d}\label{inventory_8h_aebb90d4c533fbf389e77df3987b6e76d}} 
+bool {\bfseries inventory\+\_\+has\+\_\+id} (\hyperlink{struct__Inventory}{Inventory} $\ast$inv, \hyperlink{types_8h_a845e604fb28f7e3d97549da3448149d3}{Id} id)
+\item 
+\mbox{\Hypertarget{inventory_8h_a9ea9977c26995708d271af60ad96650b}\label{inventory_8h_a9ea9977c26995708d271af60ad96650b}} 
+int {\bfseries inventory\+\_\+get\+\_\+max} (\hyperlink{struct__Inventory}{Inventory} $\ast$inv)
+\item 
+\mbox{\Hypertarget{inventory_8h_aa1391bde411c1726b2d8fc23de1d18b9}\label{inventory_8h_aa1391bde411c1726b2d8fc23de1d18b9}} 
+int {\bfseries inventory\+\_\+get\+\_\+total} (\hyperlink{struct__Inventory}{Inventory} $\ast$inv)
+\item 
+\mbox{\Hypertarget{inventory_8h_a913ebf717a79dced571ff9aad64352b5}\label{inventory_8h_a913ebf717a79dced571ff9aad64352b5}} 
+bool {\bfseries inventory\+\_\+is\+\_\+full} (\hyperlink{struct__Inventory}{Inventory} $\ast$inv)
+\item 
+\mbox{\Hypertarget{inventory_8h_aaa1a7e022c311412859a6a588b7c78fe}\label{inventory_8h_aaa1a7e022c311412859a6a588b7c78fe}} 
+bool {\bfseries inventory\+\_\+is\+\_\+empty} (\hyperlink{struct__Inventory}{Inventory} $\ast$inv)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Defines player\textquotesingle{}s inventory. 
+
+\begin{DoxyVersion}{Version}
+0.\+0.\+3 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+20/03/2019 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+G\+NU Public License 
+\end{DoxyCopyright}

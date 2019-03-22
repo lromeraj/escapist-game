@@ -89,14 +89,17 @@ Include dependency graph for reader.c:</div>
 <area shape="rect" id="node4" href="cmd_8h.html" title="Command interpreter. " alt="" coords="74,304,133,331"/>
 <area shape="rect" id="node11" href="player_8h.html" title="Player header. " alt="" coords="208,304,276,331"/>
 <area shape="rect" id="node12" href="object_8h.html" title="Object manager. " alt="" coords="5,229,73,256"/>
-<area shape="rect" id="node13" href="die_8h.html" title="Die functions. " alt="" coords="194,229,245,256"/>
+<area shape="rect" id="node13" href="die_8h.html" title="Die&#39;s module header. " alt="" coords="194,229,245,256"/>
 <area shape="rect" id="node5" href="types_8h.html" title="It defines types of data. " alt="" coords="173,379,239,405"/>
-<area shape="rect" id="node9" href="set_8h.html" title="Command interpreter. " alt="" coords="351,304,402,331"/>
+<area shape="rect" id="node9" href="set_8h.html" title="It defines the set interface. " alt="" coords="351,304,402,331"/>
 </map>
 </div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a06b7c64080352bc7659460735c0e93be"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a32c27cc471df37f4fc818d65de0a56c4">STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="reader_8c.html#a06b7c64080352bc7659460735c0e93be">reader_load_links</a> (<a class="el" href="struct__Game.html">Game</a> *game, char *f_name)</td></tr>
+<tr class="memdesc:a06b7c64080352bc7659460735c0e93be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads links from a file.  <a href="#a06b7c64080352bc7659460735c0e93be">More...</a><br /></td></tr>
+<tr class="separator:a06b7c64080352bc7659460735c0e93be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a329b3f09b9f244887808b807a33457c8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a32c27cc471df37f4fc818d65de0a56c4">STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="reader_8c.html#a329b3f09b9f244887808b807a33457c8">reader_load_spaces</a> (<a class="el" href="struct__Game.html">Game</a> *game, char *f_name)</td></tr>
 <tr class="memdesc:a329b3f09b9f244887808b807a33457c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads spaces from a file.  <a href="#a329b3f09b9f244887808b807a33457c8">More...</a><br /></td></tr>
 <tr class="separator:a329b3f09b9f244887808b807a33457c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -112,6 +115,51 @@ Functions</h2></td></tr>
 <dl class="section author"><dt>Author</dt><dd>Álvaro Rodríguez </dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>GNU Public License </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
+<a id="a06b7c64080352bc7659460735c0e93be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06b7c64080352bc7659460735c0e93be">&#9670;&nbsp;</a></span>reader_load_links()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="types_8h.html#a32c27cc471df37f4fc818d65de0a56c4">STATUS</a> reader_load_links </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct__Game.html">Game</a> *&#160;</td>
+          <td class="paramname"><em>game</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>f_name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Loads links from a file. </p>
+<dl class="section date"><dt>Date</dt><dd>07/02/2019 </dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Javier Romera</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">{Game*}</td><td>game - Pointer to game data </td></tr>
+    <tr><td class="paramname">{char*}</td><td>f_name - name of the source file </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">{STATUS}</td><td>- Returns an status </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a329b3f09b9f244887808b807a33457c8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a329b3f09b9f244887808b807a33457c8">&#9670;&nbsp;</a></span>reader_load_spaces()</h2>
 

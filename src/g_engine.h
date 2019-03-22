@@ -20,14 +20,24 @@ typedef struct _G_engine G_engine;
 */
 G_engine* g_engine_create();
 
+
 /**
 * @brief Destroys a graphic engine
 * @param {G_engine*} ge - Graphic engine pointer
 */
 void g_engine_destroy( G_engine *ge );
 
+
 /**
-* @brief Draws the user interface
+* @brief Draws the help interface
+* @param {G_engine*} ge - Graphic engine pointer
+* @param {Game*} game - Game pointer
+*/
+void g_engine_paint_help( G_engine *ge, Game *game );
+
+
+/**
+* @brief Draws the game interface
 * @param {G_engine*} ge - Graphic engine pointer
 * @param {Game*} game - Game pointer
 */

@@ -30,7 +30,7 @@ struct _Cmd {
   cmd_fn fn; /*!< @brief Callback function */
 };
 
-Cmd *CMDS[ MAX_CMDS ];
+Cmd *CMDS[ MAX_CMDS ]; /*!< @brief Array where known commands will be stored */
 
 /****** PRIVATE FUNCTIONS ******/
 
@@ -186,13 +186,30 @@ const char *cmd_get_ans( Cmd *cmd ) {
   return cmd->answer;
 }
 
-Cmd *cmd_get( Cid id ) {
+Cmd *cmd_get_by_cid( Cid id ) {
   int i;
   Cmd *_cmd = NULL;
 
   for (i=0; i < MAX_CMDS; i++) {
     _cmd = CMDS[ i ];
     if ( _cmd && _cmd->id == id  ) {
+      return _cmd;
+    }
+  }
+
+  return _cmd;
+}
+
+
+Cmd *cmd_get_by_name( const char *n ) {
+
+  int i;
+  Cmd *_cmd = NULL;
+
+  for (i=0; i < MAX_CMDS; i++) {
+    _cmd = CMDS[ i ];
+    if ( !_cmd ) continue;
+    if ( !strcmp( n, _cmd->s_name ) || !strcmp( n, _cmd->b_name ) ) {
       return _cmd;
     }
   }
@@ -214,15 +231,21 @@ Cmd *cmd_req() {
   int i, _i, j, len, argc;
   char c, in[ MAX_CMD_IN ], _buff[ MAX_CMD_IN ];
 
+  printf("\e[0;1m\emcmd:>\e[0m ");
+
   if ( !fgets( in, MAX_CMD_IN - 1, stdin ) )
     return NULL;
+
+  in[ strlen( in )-1 ] = 0;
+  printf("%s", in );
+  putchar('\n');
 
   len = strlen( in );
   _i = 0;
   argc = 0;
   _buff[ 0 ] = 0;
 
-  for ( i=0; i < len; i++ ) {
+  for ( i=0; i <= len; i++ ) {
 
     c = in[ i ];
     bool addChar = true;
@@ -245,7 +268,7 @@ Cmd *cmd_req() {
 
       if ( !argc ) {
 
-        _cmd = cmd_get( UNKNOWN );
+        _cmd = cmd_get_by_cid( UNKNOWN );
 
         /* find the command */
         for ( j=0; (j < MAX_CMDS) && CMDS[ j ]; j++ ) {

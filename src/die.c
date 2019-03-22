@@ -1,6 +1,7 @@
 /**
- * @brief Die functions
+ * @brief Die's module dynamic
  *
+ * Defines functions responsible of constrolling a die
  * @file die.c
  * @version 0.0.3
  * @date 10/03/2019
@@ -8,56 +9,55 @@
  * @copyright GNU Public License
  */
 
-#include "die.h"
-#include <stdio.h>
-#include <stdlib.h>
+ #include "die.h"
+ #include <stdio.h>
+ #include <stdlib.h>
 
-/*!
- * @brief The die structure
- *
- * It stores information about the different chracteristics of the die
+ /*!
+ * @brief Die structure which contains information about Die
  */
-struct _Die {
-  Id id;      /*!< Id of the die*/
-  int last_n; /*!< The value of the last roll of the die */
-};
 
-Die *die_init() {
+ struct _Die {
+   Id id; /*!< @brief Die's id */
+   int last_n; /*!< @brief Die's last number rolled */
+ };
 
-  Die *d = (Die*) malloc( sizeof( Die ) );
+ Die *die_init() {
 
-  if ( d ) {
-    d->id = NO_ID;
-    d->last_n = 0;
-  }
+   Die *d = (Die*) malloc( sizeof( Die ) );
 
-  return d;
+   if ( d ) {
+     d->id = NO_ID;
+     d->last_n = 0;
+   }
 
-}
+   return d;
 
-void die_destroy( Die *d ) {
-  if ( !d ) return;
-  free( d );
-}
+ }
 
-int die_roll( Die *d ) {
+ void die_destroy( Die *d ) {
+   if ( !d ) return;
+   free( d );
+ }
 
-  int n;
-  if ( !d )
-    return -1;
+ int die_roll( Die *d ) {
 
-  n = rand() % 6 + 1;
+   int n;
+   if ( !d )
+     return -1;
 
-  d->last_n = n;
+   n = rand() % 6 + 1;
 
-  return n;
+   d->last_n = n;
 
-}
+   return n;
 
-const int die_get_lastn( Die *die ) {
+ }
 
-  if (!die)
-    return -1;
+ const int die_get_lastn( Die *die ) {
 
-  return die->last_n;
-}
+   if (!die)
+     return -1;
+
+   return die->last_n;
+ }

@@ -67,6 +67,7 @@ struct _Ui {
   Ui_pix **__pixs; /*!< @brief Pixels buffer */
   int __len; /*!< @brief Number of pixels */
   char __frm[ FRM_LEN ]; /*!< @brief Temporary format */
+  int nbox; /*!< @brief Number of boxes */
 };
 
 /****** PRIVATE FUNCTIONS ******/
@@ -185,6 +186,7 @@ Ui *ui_init( int w, int h ) {
     ui->scr.w = w;
     ui->scr.h = h;
     ui->__len = w*h;
+    ui->nbox = 0;
 
     ui_frm( ui, 1, S_DEFAULT );
 
@@ -276,7 +278,7 @@ void ui_clear_box( Ui *ui, int id ) {
   if ( !box )
     return;
 
-  box->cx = box->pad[3]; // reset
+  box->cx = box->pad[3];
   box->cy = box->pad[0];
 
   for ( i=0; i < box->__len; i++ ) {
@@ -341,16 +343,18 @@ void ui_new_box( Ui *ui, int id, int x, int y, int w, int h ) {
   int i;
   Ui_pix *pix;
   Ui_box *box;
-  static int _idx=0;
 
-  // check new box id
-  for ( i=0; i < _idx; i++ ) {
+  if ( !ui )
+    return;
+
+  /* check new box id */
+  for ( i=0; i < ui->nbox; i++ ) {
     box = ui->boxes[i];
     if ( box->id == id )
       return;
   }
 
-  if ( _idx < MAX_BOXES ) {
+  if ( ui->nbox < MAX_BOXES ) {
 
     box = (Ui_box*) calloc( 1, sizeof( Ui_box ) );
 
@@ -370,7 +374,7 @@ void ui_new_box( Ui *ui, int id, int x, int y, int w, int h ) {
 
       if ( box->__pixs ) {
 
-        ui->boxes[ _idx ] = box; // store the box inside the ui
+        ui->boxes[ ui->nbox ] = box; /* store the box inside the ui */
 
         for (i=0; i < box->__len; i++) {
           pix = box->__pixs[ i ];
@@ -378,7 +382,7 @@ void ui_new_box( Ui *ui, int id, int x, int y, int w, int h ) {
           sprintf( pix->frm, "%s", ui->__frm );
         }
 
-        _idx++;
+        ui->nbox++;
 
         ui_dump_box( ui, id );
 
@@ -476,7 +480,7 @@ void ui_dump_box( Ui *ui, int id ) {
   if ( !box )
     return;
 
-  // shorthands
+  /* shorthands */
   box_x = box->x;
   box_y = box->y;
   box_w = box->w;
@@ -493,8 +497,8 @@ void ui_dump_box( Ui *ui, int id ) {
     _pix = *pix;
 
     if ( x >= box_x + box_w ) {
-      y++; // go to the next line
-      x = box_x; // fall back to the begining of the new line
+      y++; /* go to the next line */
+      x = box_x; /* fall back to the begining of the new line */
     }
 
     if ( y >= box_y + box_h ) break;
@@ -540,19 +544,19 @@ void ui_box_put( Ui *ui, int id, const char *fmt, ... ) {
   va_end( _args );
 
 
-  // shorthands
+  /* shorthands */
   box_w = box->w;
   box_h = box->h;
-  cx = &box->cx; // cursor x
-  cy = &box->cy; // cursor y
+  cx = &box->cx; /* cursor x */
+  cy = &box->cy; /* cursor y */
   pad = box->pad;
 
-  // concat
+  /* concat */
   for ( i=0; _buff[i]; i++ ) {
 
     if ( *cx >= box_w - pad[1] ) {
-      (*cy)++; // go to the next line
-      *cx = pad[3]; // fall back to the begining of the new line
+      (*cy)++; /* go to the next line */
+      *cx = pad[3]; /* fall back to the begining of the new line */
     }
 
     if ( *cy >= box_h - pad[2] ) {
@@ -568,7 +572,7 @@ void ui_box_put( Ui *ui, int id, const char *fmt, ... ) {
 
     _pix.c = _buff[ i ];
 
-    sprintf( _pix.frm, "%s", ui->__frm ); // set pix format with the temp ui format
+    sprintf( _pix.frm, "%s", ui->__frm ); /* set pix format with the temp ui format */
 
     if ( _pix.c == '\n' ) {
 
@@ -595,7 +599,7 @@ void ui_box_put( Ui *ui, int id, const char *fmt, ... ) {
 
   }
 
-  // dump the box data to the ui buffer
+  /* dump the box data to the ui buffer */
   ui_dump_box( ui, id );
 
 }

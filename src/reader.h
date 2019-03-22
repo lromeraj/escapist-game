@@ -17,6 +17,18 @@
 #include "game.h"
 
 /**
+ * @brief Loads links from a file
+ *
+ * @date 07/02/2019
+ * @author Javier Romera
+ *
+ * @param {Game*} game - Pointer to game data
+ * @param {char*} f_name - name of the source file
+ * @retval {STATUS} - Returns an status
+ */
+STATUS reader_load_links( Game *game, char *f_name );
+
+/**
  * @brief Loads spaces from a file
  *
  * @date 07/02/2019

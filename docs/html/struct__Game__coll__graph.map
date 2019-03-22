@@ -1,7 +1,7 @@
 <map id="_Game" name="_Game">
-<area shape="rect" id="node2" href="$struct__Die.html" title="The die structure. " alt="" coords="5,196,55,223"/>
-<area shape="rect" id="node3" href="$struct__Space.html" title="_Space" alt="" coords="77,145,143,172"/>
-<area shape="rect" id="node4" href="$struct__Set.html" title="_Set" alt="" coords="136,5,185,32"/>
+<area shape="rect" id="node2" href="$struct__Die.html" title="Die structure which contains information about Die. " alt="" coords="5,196,55,223"/>
+<area shape="rect" id="node3" href="$struct__Space.html" title="Space structure. " alt="" coords="77,145,143,172"/>
+<area shape="rect" id="node4" href="$struct__Set.html" title="Set structure. " alt="" coords="136,5,185,32"/>
 <area shape="rect" id="node8" href="$struct__Inventory.html" title="_Inventory" alt="" coords="162,95,245,121"/>
 <area shape="rect" id="node5" href="$struct__Object.html" title="Main object structure. " alt="" coords="265,196,331,223"/>
 <area shape="rect" id="node6" href="$struct__Cmd.html" title="Command data structure. " alt="" coords="356,196,413,223"/>

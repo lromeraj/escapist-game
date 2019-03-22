@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['w',['w',['../struct__Ui__box.html#a90f1e8d481ccbf0cc06e3bbb1c12b386',1,'_Ui_box::w()'],['../struct__Ui__screen.html#a0d1d60ef32f78df18ce4f7ac8b97e5ea',1,'_Ui_screen::w()']]]
+  ['pad',['pad',['../struct__Ui__box.html#a4030a2fd2487e5a4cde2b4fccc999166',1,'_Ui_box']]],
+  ['picture',['picture',['../struct__Space.html#ab4b3f4af835727b6afe807d2aded4ff2',1,'_Space']]],
+  ['player',['player',['../struct__Game.html#a31406605782d71ec00c4bf258ea76267',1,'_Game']]]
 ];
