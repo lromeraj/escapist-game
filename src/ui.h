@@ -3,13 +3,16 @@
 *
 * @file ui.h
 * @author Javier Romera
-* @version 0.6.1
-* @date 17/03/2019
+* @version 0.7.1-beta
+* @date 24/03/2019
 * @copyright GNU Public License
 */
 
 #ifndef UI_H
 #define UI_H
+
+#include <wchar.h>
+#include <stdio.h>
 
 /*!
 * @brief Text colors
@@ -70,9 +73,10 @@ void ui_destroy( Ui* ui );
 
 /**
 * @brief Prints all buffered data inside the UI into the stdout
+* @param {FILE*} stream - Buffer destination
 * @param {Ui*} ui - The UI that sueld be printed
 */
-void ui_draw( Ui* ui );
+void ui_draw( FILE* stream, Ui* ui );
 
 
 /**
@@ -165,5 +169,14 @@ void ui_box_pad( Ui* ui, int id, const char* pad );
 * @param {...} - String format arguments
 */
 void ui_box_put( Ui* ui, int id, const char* str, ... );
+
+/**
+* @brief Updates the box buffer with a given string of wide chars
+* @param {Ui*} ui - UI where the box is located
+* @param {int} id - The id of the box
+* @param {wchar_t*} str - String format
+* @param {...} - String format arguments
+*/
+void ui_box_wput( Ui* ui, int id, const wchar_t* str, ... );
 
 #endif

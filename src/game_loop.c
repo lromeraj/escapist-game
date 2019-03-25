@@ -16,7 +16,7 @@
 #include <time.h>
 #include <string.h>
 #include <signal.h>
-
+#include <locale.h>
 
 /******* PRIVATE_FUNCTIONS ******/
 
@@ -66,8 +66,8 @@ int main( int argc, char *argv[] ) {
   Cmd *_cmd;
   long loop = 0;
 
+  setlocale( LC_ALL, "" );
   signal( SIGINT, ctrl_c );
-
   srand( time( NULL ) );
 
   if ( argc < 2 ) {

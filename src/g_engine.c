@@ -67,6 +67,9 @@ G_engine *g_engine_create() {
 
     if ( _ui ) {
 
+
+      ui_bg( _ui, BG_BLACK ); 
+
       ui_new_box( _ui, GAME_TITLE, 0, 0, 80, 1 );
       ui_new_box( _ui, GAME_MAP, 0, 2, 49, 14 );
       ui_new_box( _ui, GAME_OVERVIEW, 50, 2, 30, 14 );
@@ -135,7 +138,7 @@ void g_engine_paint_help( G_engine *ge, Game *game ) {
 
       b_name = (char*)cmd_get_bname( _cmd );
 
-      ui_frm( ui, 3, S_BOLD, BG_BLUE, FG_BLACK );
+      ui_frm( ui, 3, S_BOLD, BG_BLUE, FG_WHITE );
       ui_box_put( ui, HELP_BODY, "%s, %s - ", b_name, cmd_get_sname( _cmd ) );
 
       if ( !strcmp( b_name, "move" ) ) {
@@ -262,8 +265,8 @@ void g_engine_paint_help( G_engine *ge, Game *game ) {
   }
 
   ui_box_put( ui, HELP_BODY, "\nPress ENTER key to exit help\n" );
-  
-  ui_draw( ui );
+
+  ui_draw( stdout, ui );
 
 }
 
@@ -372,7 +375,7 @@ void parse_space( Game *game, G_engine *ge, Space *sp, int id, int x, int y ) {
 
   if ( space_get_id( sp ) == player_get_location( player ) ) {
     ui_box_seek( ui, id, x+off[3]+2, y+1 );
-    ui_box_put( ui, id, ">8D");
+    ui_box_put( ui, id, "☻" );
   }
 
   /* space id */
@@ -582,6 +585,6 @@ void g_engine_paint_game( G_engine *ge, Game *game ) {
 
 
   /* prints all the data into stdout */
-  ui_draw( ui );
+  ui_draw( stdout, ui );
 
 }

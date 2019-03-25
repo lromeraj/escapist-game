@@ -1,5 +1,20 @@
 # I3
 
+## v0.3.8.2
+
+`[OVERVIEW]`
+- Updated `Ui` module to version `0.7.1-beta`.
+
+`[FIXES]`
+- `Ui` module now supports wide char strings, now you can print any Unicode char at the cost
+of memory.
+- Minor text fixes.
+
+`[IMPROVEMENTS]`
+- Improved `Ui` performance.
+- `Ui` module is now more stable and solid.
+- Added black background.
+
 ## v0.3.8
 
 `[FIXES]`
