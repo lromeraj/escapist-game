@@ -5,7 +5,18 @@
 User interface based on chars.  
 
 
-This graph shows which files directly or indirectly include this file\+:\nopagebreak
+{\ttfamily \#include $<$wchar.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+Include dependency graph for ui.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{ui_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -70,7 +81,7 @@ enum \hyperlink{ui_8h_ab4e88c89b3b7ea1735996cc4def22d58}{Format} \{ \newline
 \begin{DoxyCompactList}\small\item\em Initializes UI struct. \end{DoxyCompactList}\item 
 void \hyperlink{ui_8h_a26dcc63df2a1df20c72a9f8c9eb460d1}{ui\+\_\+destroy} (\hyperlink{struct__Ui}{Ui} $\ast$ui)
 \begin{DoxyCompactList}\small\item\em Destroys UI struct. \end{DoxyCompactList}\item 
-void \hyperlink{ui_8h_a02dd6678b83f5554e3614e455666b245}{ui\+\_\+draw} (\hyperlink{struct__Ui}{Ui} $\ast$ui)
+void \hyperlink{ui_8h_abad117bfcc94b8da0e6074977052c708}{ui\+\_\+draw} (F\+I\+LE $\ast$stream, \hyperlink{struct__Ui}{Ui} $\ast$ui)
 \begin{DoxyCompactList}\small\item\em Prints all buffered data inside the UI into the stdout. \end{DoxyCompactList}\item 
 void \hyperlink{ui_8h_af9b58458649ecd779d095f3d102d85c8}{ui\+\_\+clear} (\hyperlink{struct__Ui}{Ui} $\ast$ui)
 \begin{DoxyCompactList}\small\item\em Clears all the UI data, including inherit objects like boxes, shapes, ... \end{DoxyCompactList}\item 
@@ -91,7 +102,9 @@ void \hyperlink{ui_8h_a5f90f8ec38b654d40d68bf3b23542d20}{ui\+\_\+clear\+\_\+box}
 void \hyperlink{ui_8h_ab6a43ed5c9793ef4fc7f1c4ca35a8519}{ui\+\_\+box\+\_\+pad} (\hyperlink{struct__Ui}{Ui} $\ast$ui, int id, const char $\ast$pad)
 \begin{DoxyCompactList}\small\item\em Sets the padding of a box. \end{DoxyCompactList}\item 
 void \hyperlink{ui_8h_a104d255f566d4579b63439f4dd06e802}{ui\+\_\+box\+\_\+put} (\hyperlink{struct__Ui}{Ui} $\ast$ui, int id, const char $\ast$str,...)
-\begin{DoxyCompactList}\small\item\em Updates the box buffer with a given string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Updates the box buffer with a given string. \end{DoxyCompactList}\item 
+void \hyperlink{ui_8h_a0a7b8fcd52910361b31870e8e6687437}{ui\+\_\+box\+\_\+wput} (\hyperlink{struct__Ui}{Ui} $\ast$ui, int id, const wchar\+\_\+t $\ast$str,...)
+\begin{DoxyCompactList}\small\item\em Updates the box buffer with a given string of wide chars. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -101,10 +114,10 @@ User interface based on chars.
 Javier Romera 
 \end{DoxyAuthor}
 \begin{DoxyVersion}{Version}
-0.\+6.\+1 
+0.\+7.\+1-\/beta 
 \end{DoxyVersion}
 \begin{DoxyDate}{Date}
-17/03/2019 
+24/03/2019 
 \end{DoxyDate}
 \begin{DoxyCopyright}{Copyright}
 G\+NU Public License 
@@ -268,11 +281,11 @@ Destroys UI struct.
 {\em \{\+Ui$\ast$\}} & ui -\/ A pointer to the UI struct \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{ui_8h_a02dd6678b83f5554e3614e455666b245}\label{ui_8h_a02dd6678b83f5554e3614e455666b245}} 
+\mbox{\Hypertarget{ui_8h_abad117bfcc94b8da0e6074977052c708}\label{ui_8h_abad117bfcc94b8da0e6074977052c708}} 
 \index{ui.\+h@{ui.\+h}!ui\+\_\+draw@{ui\+\_\+draw}}
 \index{ui\+\_\+draw@{ui\+\_\+draw}!ui.\+h@{ui.\+h}}
 \subsubsection{\texorpdfstring{ui\+\_\+draw()}{ui\_draw()}}
-{\footnotesize\ttfamily void ui\+\_\+draw (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Ui}{Ui} $\ast$}]{ui }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void ui\+\_\+draw (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{stream,  }\item[{\hyperlink{struct__Ui}{Ui} $\ast$}]{ui }\end{DoxyParamCaption})}
 
 
 
@@ -280,6 +293,8 @@ Prints all buffered data inside the UI into the stdout.
 
 
 \begin{DoxyParams}{Parameters}
+{\em \{\+F\+I\+L\+E$\ast$\}} & stream -\/ Buffer destination \\
+\hline
 {\em \{\+Ui$\ast$\}} & ui -\/ The UI that sueld be printed \\
 \hline
 \end{DoxyParams}
@@ -467,6 +482,27 @@ Updates the box buffer with a given string.
 {\em \{int\}} & id -\/ The id of the box \\
 \hline
 {\em \{char$\ast$\}} & str -\/ String format \\
+\hline
+{\em \{...\}} & -\/ String format arguments \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{ui_8h_a0a7b8fcd52910361b31870e8e6687437}\label{ui_8h_a0a7b8fcd52910361b31870e8e6687437}} 
+\index{ui.\+h@{ui.\+h}!ui\+\_\+box\+\_\+wput@{ui\+\_\+box\+\_\+wput}}
+\index{ui\+\_\+box\+\_\+wput@{ui\+\_\+box\+\_\+wput}!ui.\+h@{ui.\+h}}
+\subsubsection{\texorpdfstring{ui\+\_\+box\+\_\+wput()}{ui\_box\_wput()}}
+{\footnotesize\ttfamily void ui\+\_\+box\+\_\+wput (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Ui}{Ui} $\ast$}]{ui,  }\item[{int}]{id,  }\item[{const wchar\+\_\+t $\ast$}]{str,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+
+
+Updates the box buffer with a given string of wide chars. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+Ui$\ast$\}} & ui -\/ UI where the box is located \\
+\hline
+{\em \{int\}} & id -\/ The id of the box \\
+\hline
+{\em \{wchar\+\_\+t$\ast$\}} & str -\/ String format \\
 \hline
 {\em \{...\}} & -\/ String format arguments \\
 \hline

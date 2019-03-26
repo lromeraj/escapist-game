@@ -17,6 +17,7 @@
 #include <string.h>
 #include <signal.h>
 #include <locale.h>
+#include <unistd.h>
 
 /******* PRIVATE_FUNCTIONS ******/
 
@@ -120,6 +121,8 @@ int main( int argc, char *argv[] ) {
 
     _cmd = game_get_cmd( game );
 
+
+
     /* print different screens depending on the command */
     if ( cmd_get_cid( _cmd ) == HELP ) {
       g_engine_paint_help( gengine, game );
@@ -130,6 +133,7 @@ int main( int argc, char *argv[] ) {
     log_w( "requesting cmd ...\n" );
     _cmd = cmd_req();
 
+    
     log_w( "updating game data ...\n" );
     game_update( game, _cmd );
 

@@ -230,13 +230,15 @@ Cmd *cmd_req() {
   Cmd *_cmd = NULL;
   int i, _i, j, len, argc;
   char c, in[ MAX_CMD_IN ], _buff[ MAX_CMD_IN ];
-
+  
   printf("\e[0;1m\emcmd:>\e[0m ");
 
   if ( !fgets( in, MAX_CMD_IN - 1, stdin ) )
     return NULL;
 
+
   in[ strlen( in )-1 ] = 0;
+
   printf("%s", in );
   putchar('\n');
 

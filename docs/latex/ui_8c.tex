@@ -11,7 +11,8 @@ Ui source code.
 {\ttfamily \#include $<$string.\+h$>$}\newline
 {\ttfamily \#include $<$stdarg.\+h$>$}\newline
 {\ttfamily \#include $<$stdbool.\+h$>$}\newline
-Include dependency graph for ui.\+c\+:\nopagebreak
+Include dependency graph for ui.\+c\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -69,11 +70,15 @@ bool \hyperlink{ui_8c_a4c6715d14c979c363f6dd1876a2db06a}{ui\+\_\+pix\+\_\+ovf} (
 \begin{DoxyCompactList}\small\item\em Gets a pixel that is located in a given position. \end{DoxyCompactList}\item 
 void \hyperlink{ui_8c_af6c65abe47ab9915826c7490f00becfe}{ui\+\_\+set\+\_\+pix} (\hyperlink{struct__Ui__pix}{Ui\+\_\+pix} $\ast$$\ast$\+\_\+\+\_\+pixs, int x, int y, int w, int h, \hyperlink{struct__Ui__pix}{Ui\+\_\+pix} pix)
 \begin{DoxyCompactList}\small\item\em Sets a given pixel in a given position. \end{DoxyCompactList}\item 
-\hyperlink{struct__Ui__box}{Ui\+\_\+box} $\ast$ \hyperlink{ui_8c_aab4edc4858af0c8e0a0813067737cc64}{ui\+\_\+get\+\_\+box} (\hyperlink{struct__Ui}{Ui} $\ast$ui, int id)
-\begin{DoxyCompactList}\small\item\em Finds a box in a given UI. \end{DoxyCompactList}\item 
+void \hyperlink{ui_8c_a5f7f91da0114b8eef11398961793ec71}{ui\+\_\+box\+\_\+vput} (\hyperlink{struct__Ui}{Ui} $\ast$ui, int id, const void $\ast$frmt, va\+\_\+list list)
+\begin{DoxyCompactList}\small\item\em Updates the box buffer with a given string. \end{DoxyCompactList}\item 
+\hyperlink{struct__Ui__box}{Ui\+\_\+box} $\ast$ \hyperlink{ui_8c_a007fbe4446d1945531b3b21c06678659}{ui\+\_\+get\+\_\+box\+\_\+by\+\_\+id} (\hyperlink{struct__Ui}{Ui} $\ast$ui, int id)
+\begin{DoxyCompactList}\small\item\em Finds a box by it\textquotesingle{}s id (slow) \end{DoxyCompactList}\item 
+\hyperlink{struct__Ui__box}{Ui\+\_\+box} $\ast$ \hyperlink{ui_8c_a3026235f23c0877ca588066e0f3b2299}{ui\+\_\+get\+\_\+box\+\_\+by\+\_\+idx} (\hyperlink{struct__Ui}{Ui} $\ast$ui, int id)
+\begin{DoxyCompactList}\small\item\em Gets a box by it\textquotesingle{}s idx (fast) \end{DoxyCompactList}\item 
 void \hyperlink{ui_8c_a69697d0036f5af74ca0219183b81303f}{ui\+\_\+dump\+\_\+box} (\hyperlink{struct__Ui}{Ui} $\ast$ui, int id)
 \begin{DoxyCompactList}\small\item\em This functions dumps all the box data inside the Ui. \end{DoxyCompactList}\item 
-void \hyperlink{ui_8c_a12cd87ff407c2b2d7515e67e4f4449b8}{ui\+\_\+kill\+\_\+box} (\hyperlink{struct__Ui__box}{Ui\+\_\+box} $\ast$)
+void \hyperlink{ui_8c_aa20d570ab281c0262dde9440f9fbc9c3}{ui\+\_\+kill\+\_\+box} (\hyperlink{struct__Ui}{Ui} $\ast$ui, int idx)
 \begin{DoxyCompactList}\small\item\em Destroys a given box. \end{DoxyCompactList}\item 
 void \hyperlink{ui_8c_afe39a41934b6658bb06c4ffc8cba413f}{ui\+\_\+frm} (\hyperlink{struct__Ui}{Ui} $\ast$ui, int num,...)
 \begin{DoxyCompactList}\small\item\em Sets a temporary format of the UI This means that all the text, shapes and other items will use the format that was setted in the last \hyperlink{ui_8h_a70ca5594ea91504bec5a8a16826f3c23}{ui\+\_\+frm()} call. \end{DoxyCompactList}\item 
@@ -97,9 +102,9 @@ void \hyperlink{ui_8c_a603e6d6365ab52e1ee44d11745d3267a}{ui\+\_\+box\+\_\+seek} 
 \begin{DoxyCompactList}\small\item\em Changes the cursor position of a box. \end{DoxyCompactList}\item 
 void \hyperlink{ui_8c_ab6a43ed5c9793ef4fc7f1c4ca35a8519}{ui\+\_\+box\+\_\+pad} (\hyperlink{struct__Ui}{Ui} $\ast$ui, int id, const char $\ast$pad)
 \begin{DoxyCompactList}\small\item\em Sets the padding of a box. \end{DoxyCompactList}\item 
-void \hyperlink{ui_8c_a970596ba0fd0c93879026a87dd2e6dc2}{ui\+\_\+box\+\_\+put} (\hyperlink{struct__Ui}{Ui} $\ast$ui, int id, const char $\ast$fmt,...)
+void \hyperlink{ui_8c_a0ced19f430cbd712b3b935966b646147}{ui\+\_\+box\+\_\+put} (\hyperlink{struct__Ui}{Ui} $\ast$ui, int id, const char $\ast$frmt,...)
 \begin{DoxyCompactList}\small\item\em Updates the box buffer with a given string. \end{DoxyCompactList}\item 
-void \hyperlink{ui_8c_a02dd6678b83f5554e3614e455666b245}{ui\+\_\+draw} (\hyperlink{struct__Ui}{Ui} $\ast$ui)
+void \hyperlink{ui_8c_abad117bfcc94b8da0e6074977052c708}{ui\+\_\+draw} (F\+I\+LE $\ast$stream, \hyperlink{struct__Ui}{Ui} $\ast$ui)
 \begin{DoxyCompactList}\small\item\em Prints all buffered data inside the UI into the stdout. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -110,7 +115,7 @@ Ui source code.
 Javier Romera 
 \end{DoxyAuthor}
 \begin{DoxyVersion}{Version}
-0.\+6.\+1 
+0.\+7.\+1-\/beta 
 \end{DoxyVersion}
 \begin{DoxyDate}{Date}
 17/03/2019 
@@ -237,15 +242,36 @@ Sets a given pixel in a given position.
 {\em \{\+Ui\+\_\+pix\}} & pix -\/ Struct of the pixel to be setted \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{ui_8c_aab4edc4858af0c8e0a0813067737cc64}\label{ui_8c_aab4edc4858af0c8e0a0813067737cc64}} 
-\index{ui.\+c@{ui.\+c}!ui\+\_\+get\+\_\+box@{ui\+\_\+get\+\_\+box}}
-\index{ui\+\_\+get\+\_\+box@{ui\+\_\+get\+\_\+box}!ui.\+c@{ui.\+c}}
-\subsubsection{\texorpdfstring{ui\+\_\+get\+\_\+box()}{ui\_get\_box()}}
-{\footnotesize\ttfamily \hyperlink{struct__Ui__box}{Ui\+\_\+box} $\ast$ ui\+\_\+get\+\_\+box (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Ui}{Ui} $\ast$}]{ui,  }\item[{int}]{id }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{ui_8c_a5f7f91da0114b8eef11398961793ec71}\label{ui_8c_a5f7f91da0114b8eef11398961793ec71}} 
+\index{ui.\+c@{ui.\+c}!ui\+\_\+box\+\_\+vput@{ui\+\_\+box\+\_\+vput}}
+\index{ui\+\_\+box\+\_\+vput@{ui\+\_\+box\+\_\+vput}!ui.\+c@{ui.\+c}}
+\subsubsection{\texorpdfstring{ui\+\_\+box\+\_\+vput()}{ui\_box\_vput()}}
+{\footnotesize\ttfamily void ui\+\_\+box\+\_\+vput (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Ui}{Ui} $\ast$}]{ui,  }\item[{int}]{id,  }\item[{const void $\ast$}]{frmt,  }\item[{va\+\_\+list}]{list }\end{DoxyParamCaption})}
 
 
 
-Finds a box in a given UI. 
+Updates the box buffer with a given string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+Ui$\ast$\}} & ui -\/ UI where the box is located \\
+\hline
+{\em \{int\}} & id -\/ The id of the box \\
+\hline
+{\em \{void$\ast$\}} & frmt -\/ String format \\
+\hline
+{\em \{va\+\_\+list\}} & -\/ String format arguments \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{ui_8c_a007fbe4446d1945531b3b21c06678659}\label{ui_8c_a007fbe4446d1945531b3b21c06678659}} 
+\index{ui.\+c@{ui.\+c}!ui\+\_\+get\+\_\+box\+\_\+by\+\_\+id@{ui\+\_\+get\+\_\+box\+\_\+by\+\_\+id}}
+\index{ui\+\_\+get\+\_\+box\+\_\+by\+\_\+id@{ui\+\_\+get\+\_\+box\+\_\+by\+\_\+id}!ui.\+c@{ui.\+c}}
+\subsubsection{\texorpdfstring{ui\+\_\+get\+\_\+box\+\_\+by\+\_\+id()}{ui\_get\_box\_by\_id()}}
+{\footnotesize\ttfamily \hyperlink{struct__Ui__box}{Ui\+\_\+box} $\ast$ ui\+\_\+get\+\_\+box\+\_\+by\+\_\+id (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Ui}{Ui} $\ast$}]{ui,  }\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Finds a box by it\textquotesingle{}s id (slow) 
 
 
 \begin{DoxyParams}{Parameters}
@@ -257,6 +283,28 @@ Finds a box in a given UI.
 
 \begin{DoxyRetVals}{Return values}
 {\em \{\+Ui\+\_\+box$\ast$\}} & -\/ If the box was found returns a pointer to the requested box, else returns N\+U\+LL \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{ui_8c_a3026235f23c0877ca588066e0f3b2299}\label{ui_8c_a3026235f23c0877ca588066e0f3b2299}} 
+\index{ui.\+c@{ui.\+c}!ui\+\_\+get\+\_\+box\+\_\+by\+\_\+idx@{ui\+\_\+get\+\_\+box\+\_\+by\+\_\+idx}}
+\index{ui\+\_\+get\+\_\+box\+\_\+by\+\_\+idx@{ui\+\_\+get\+\_\+box\+\_\+by\+\_\+idx}!ui.\+c@{ui.\+c}}
+\subsubsection{\texorpdfstring{ui\+\_\+get\+\_\+box\+\_\+by\+\_\+idx()}{ui\_get\_box\_by\_idx()}}
+{\footnotesize\ttfamily \hyperlink{struct__Ui__box}{Ui\+\_\+box} $\ast$ ui\+\_\+get\+\_\+box\+\_\+by\+\_\+idx (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Ui}{Ui} $\ast$}]{ui,  }\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Gets a box by it\textquotesingle{}s idx (fast) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+Ui$\ast$\}} & ui -\/ UI where the box should be located \\
+\hline
+{\em \{int\}} & id -\/ The id of the requested box \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \{\+Ui\+\_\+box$\ast$\}} & -\/ The box at the given index (can be N\+U\+LL) \\
 \hline
 \end{DoxyRetVals}
 \mbox{\Hypertarget{ui_8c_a69697d0036f5af74ca0219183b81303f}\label{ui_8c_a69697d0036f5af74ca0219183b81303f}} 
@@ -276,11 +324,11 @@ This functions dumps all the box data inside the Ui.
 {\em \{int\}} & id -\/ The id of the box to be dumped \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{ui_8c_a12cd87ff407c2b2d7515e67e4f4449b8}\label{ui_8c_a12cd87ff407c2b2d7515e67e4f4449b8}} 
+\mbox{\Hypertarget{ui_8c_aa20d570ab281c0262dde9440f9fbc9c3}\label{ui_8c_aa20d570ab281c0262dde9440f9fbc9c3}} 
 \index{ui.\+c@{ui.\+c}!ui\+\_\+kill\+\_\+box@{ui\+\_\+kill\+\_\+box}}
 \index{ui\+\_\+kill\+\_\+box@{ui\+\_\+kill\+\_\+box}!ui.\+c@{ui.\+c}}
 \subsubsection{\texorpdfstring{ui\+\_\+kill\+\_\+box()}{ui\_kill\_box()}}
-{\footnotesize\ttfamily void ui\+\_\+kill\+\_\+box (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Ui__box}{Ui\+\_\+box} $\ast$}]{box }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void ui\+\_\+kill\+\_\+box (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Ui}{Ui} $\ast$}]{ui,  }\item[{int}]{idx }\end{DoxyParamCaption})}
 
 
 
@@ -288,7 +336,9 @@ Destroys a given box.
 
 
 \begin{DoxyParams}{Parameters}
-{\em \{\+Ui\+\_\+box$\ast$\}} & box -\/ Box pointer to be destroyed \\
+{\em \{\+Ui$\ast$\}} & ui -\/ Ui where the box should be removed \\
+\hline
+{\em \{int\}} & idx -\/ Box index \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{ui_8c_afe39a41934b6658bb06c4ffc8cba413f}\label{ui_8c_afe39a41934b6658bb06c4ffc8cba413f}} 
@@ -495,7 +545,7 @@ Sets the padding of a box.
 {\em \{char$\ast$\}} & pad -\/ The padding of the box \char`\"{}$<$top$>$ $<$right$>$ $<$bottom$>$ $<$left$>$\char`\"{} \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{ui_8c_a970596ba0fd0c93879026a87dd2e6dc2}\label{ui_8c_a970596ba0fd0c93879026a87dd2e6dc2}} 
+\mbox{\Hypertarget{ui_8c_a0ced19f430cbd712b3b935966b646147}\label{ui_8c_a0ced19f430cbd712b3b935966b646147}} 
 \index{ui.\+c@{ui.\+c}!ui\+\_\+box\+\_\+put@{ui\+\_\+box\+\_\+put}}
 \index{ui\+\_\+box\+\_\+put@{ui\+\_\+box\+\_\+put}!ui.\+c@{ui.\+c}}
 \subsubsection{\texorpdfstring{ui\+\_\+box\+\_\+put()}{ui\_box\_put()}}
@@ -516,11 +566,11 @@ Updates the box buffer with a given string.
 {\em \{...\}} & -\/ String format arguments \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{ui_8c_a02dd6678b83f5554e3614e455666b245}\label{ui_8c_a02dd6678b83f5554e3614e455666b245}} 
+\mbox{\Hypertarget{ui_8c_abad117bfcc94b8da0e6074977052c708}\label{ui_8c_abad117bfcc94b8da0e6074977052c708}} 
 \index{ui.\+c@{ui.\+c}!ui\+\_\+draw@{ui\+\_\+draw}}
 \index{ui\+\_\+draw@{ui\+\_\+draw}!ui.\+c@{ui.\+c}}
 \subsubsection{\texorpdfstring{ui\+\_\+draw()}{ui\_draw()}}
-{\footnotesize\ttfamily void ui\+\_\+draw (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Ui}{Ui} $\ast$}]{ui }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void ui\+\_\+draw (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{stream,  }\item[{\hyperlink{struct__Ui}{Ui} $\ast$}]{ui }\end{DoxyParamCaption})}
 
 
 
@@ -528,6 +578,8 @@ Prints all buffered data inside the UI into the stdout.
 
 
 \begin{DoxyParams}{Parameters}
+{\em \{\+F\+I\+L\+E$\ast$\}} & stream -\/ Buffer destination \\
+\hline
 {\em \{\+Ui$\ast$\}} & ui -\/ The UI that sueld be printed \\
 \hline
 \end{DoxyParams}

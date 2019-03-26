@@ -1,11 +1,9 @@
 <map id="src/space.h" name="src/space.h">
-<area shape="rect" id="node2" href="$game_8h.html" title="It defines the game interface. " alt="" coords="273,80,359,107"/>
-<area shape="rect" id="node9" href="$reader_8c.html" title="Main game reader. " alt="" coords="377,229,468,256"/>
-<area shape="rect" id="node10" href="$space_8c.html" title="src/space.c" alt="" coords="487,80,577,107"/>
+<area shape="rect" id="node2" href="$game_8h.html" title="It defines the game interface. " alt="" coords="229,80,315,107"/>
+<area shape="rect" id="node7" href="$reader_8c.html" title="Main game reader. " alt="" coords="309,229,400,256"/>
+<area shape="rect" id="node8" href="$space_8c.html" title="src/space.c" alt="" coords="443,80,533,107"/>
 <area shape="rect" id="node3" href="$g__engine_8c.html" title="Graphic engine source code. " alt="" coords="5,229,112,256"/>
-<area shape="rect" id="node4" href="$g__engine_8h.html" title="Main graphic engine. " alt="" coords="140,155,247,181"/>
-<area shape="rect" id="node6" href="$reader_8h.html" title="Defines a game reader. " alt="" coords="271,155,361,181"/>
+<area shape="rect" id="node4" href="$g__engine_8h.html" title="Main graphic engine. " alt="" coords="96,155,203,181"/>
+<area shape="rect" id="node6" href="$reader_8h.html" title="Defines a game reader. " alt="" coords="227,155,317,181"/>
 <area shape="rect" id="node5" href="$game__loop_8c.html" title="Main game loop. " alt="" coords="137,229,255,256"/>
-<area shape="rect" id="node7" href="$link_8h.html" title="link functions " alt="" coords="279,229,353,256"/>
-<area shape="rect" id="node8" href="$link_8c.html" title="link functions " alt="" coords="279,304,353,331"/>
 </map>

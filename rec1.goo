@@ -1,11 +1,27 @@
+n 5
+rl
+rl
+rl
+rl
+rl
+rl
+rl
+h m
+h t
+h h
+b 5
 m s
 m s
 m n
 m n
-take pen
+t book
+t gun
+t pen
 m s
 m s
+d book
 m s
 m s
+d gun
 d pen
 exit

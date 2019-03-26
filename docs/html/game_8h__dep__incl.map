@@ -1,9 +1,7 @@
 <map id="src/game.h" name="src/game.h">
 <area shape="rect" id="node2" href="$g__engine_8c.html" title="Graphic engine source code. " alt="" coords="5,155,112,181"/>
-<area shape="rect" id="node3" href="$g__engine_8h.html" title="Main graphic engine. " alt="" coords="141,80,248,107"/>
-<area shape="rect" id="node5" href="$reader_8h.html" title="Defines a game reader. " alt="" coords="272,80,363,107"/>
-<area shape="rect" id="node8" href="$reader_8c.html" title="Main game reader. " alt="" coords="377,155,468,181"/>
+<area shape="rect" id="node3" href="$g__engine_8h.html" title="Main graphic engine. " alt="" coords="96,80,203,107"/>
+<area shape="rect" id="node5" href="$reader_8h.html" title="Defines a game reader. " alt="" coords="227,80,317,107"/>
+<area shape="rect" id="node6" href="$reader_8c.html" title="Main game reader. " alt="" coords="295,155,385,181"/>
 <area shape="rect" id="node4" href="$game__loop_8c.html" title="Main game loop. " alt="" coords="137,155,255,181"/>
-<area shape="rect" id="node6" href="$link_8h.html" title="link functions " alt="" coords="279,155,353,181"/>
-<area shape="rect" id="node7" href="$link_8c.html" title="link functions " alt="" coords="279,229,353,256"/>
 </map>

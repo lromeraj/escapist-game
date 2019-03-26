@@ -365,7 +365,7 @@ void parse_space( Game *game, G_engine *ge, Space *sp, int id, int x, int y ) {
   tid = link_get_to( ln );
 
   if ( tid != NO_ID ) {
-    ui_box_seek( ui, id, x+off[3]+11, 7 );
+    ui_box_seek( ui, id, x+off[3]+10, 7 );
     ui_frm( ui, 3, S_BOLD, BG_WHITE, FG_BLACK );
     ui_box_put( ui, id, "⇓ " );
     ui_frm( ui, 2, BG_WHITE, FG_BLACK );

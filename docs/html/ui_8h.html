@@ -74,7 +74,16 @@ $(function() {
 
 <p>User interface based on chars.  
 <a href="#details">More...</a></p>
-<div class="textblock"><div class="dynheader">
+<div class="textblock"><code>#include &lt;wchar.h&gt;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Include dependency graph for ui.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="ui_8h__incl.png" border="0" usemap="#src_2ui_8h" alt=""/></div>
+<map name="src_2ui_8h" id="src_2ui_8h">
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="ui_8h__dep__incl.png" border="0" usemap="#src_2ui_8hdep" alt=""/></div>
@@ -149,9 +158,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a26dcc63df2a1df20c72a9f8c9eb460d1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8h.html#a26dcc63df2a1df20c72a9f8c9eb460d1">ui_destroy</a> (<a class="el" href="struct__Ui.html">Ui</a> *ui)</td></tr>
 <tr class="memdesc:a26dcc63df2a1df20c72a9f8c9eb460d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys UI struct.  <a href="#a26dcc63df2a1df20c72a9f8c9eb460d1">More...</a><br /></td></tr>
 <tr class="separator:a26dcc63df2a1df20c72a9f8c9eb460d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a02dd6678b83f5554e3614e455666b245"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8h.html#a02dd6678b83f5554e3614e455666b245">ui_draw</a> (<a class="el" href="struct__Ui.html">Ui</a> *ui)</td></tr>
-<tr class="memdesc:a02dd6678b83f5554e3614e455666b245"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints all buffered data inside the UI into the stdout.  <a href="#a02dd6678b83f5554e3614e455666b245">More...</a><br /></td></tr>
-<tr class="separator:a02dd6678b83f5554e3614e455666b245"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abad117bfcc94b8da0e6074977052c708"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8h.html#abad117bfcc94b8da0e6074977052c708">ui_draw</a> (FILE *stream, <a class="el" href="struct__Ui.html">Ui</a> *ui)</td></tr>
+<tr class="memdesc:abad117bfcc94b8da0e6074977052c708"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints all buffered data inside the UI into the stdout.  <a href="#abad117bfcc94b8da0e6074977052c708">More...</a><br /></td></tr>
+<tr class="separator:abad117bfcc94b8da0e6074977052c708"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af9b58458649ecd779d095f3d102d85c8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8h.html#af9b58458649ecd779d095f3d102d85c8">ui_clear</a> (<a class="el" href="struct__Ui.html">Ui</a> *ui)</td></tr>
 <tr class="memdesc:af9b58458649ecd779d095f3d102d85c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears all the UI data, including inherit objects like boxes, shapes, ...  <a href="#af9b58458649ecd779d095f3d102d85c8">More...</a><br /></td></tr>
 <tr class="separator:af9b58458649ecd779d095f3d102d85c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -182,12 +191,15 @@ Functions</h2></td></tr>
 <tr class="memitem:a104d255f566d4579b63439f4dd06e802"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8h.html#a104d255f566d4579b63439f4dd06e802">ui_box_put</a> (<a class="el" href="struct__Ui.html">Ui</a> *ui, int id, const char *str,...)</td></tr>
 <tr class="memdesc:a104d255f566d4579b63439f4dd06e802"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the box buffer with a given string.  <a href="#a104d255f566d4579b63439f4dd06e802">More...</a><br /></td></tr>
 <tr class="separator:a104d255f566d4579b63439f4dd06e802"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a7b8fcd52910361b31870e8e6687437"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8h.html#a0a7b8fcd52910361b31870e8e6687437">ui_box_wput</a> (<a class="el" href="struct__Ui.html">Ui</a> *ui, int id, const wchar_t *str,...)</td></tr>
+<tr class="memdesc:a0a7b8fcd52910361b31870e8e6687437"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the box buffer with a given string of wide chars.  <a href="#a0a7b8fcd52910361b31870e8e6687437">More...</a><br /></td></tr>
+<tr class="separator:a0a7b8fcd52910361b31870e8e6687437"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>User interface based on chars. </p>
 <dl class="section author"><dt>Author</dt><dd>Javier Romera </dd></dl>
-<dl class="section version"><dt>Version</dt><dd>0.6.1 </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>17/03/2019 </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>0.7.1-beta </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>24/03/2019 </dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>GNU Public License </dd></dl>
 </div><h2 class="groupheader">Enumeration Type Documentation</h2>
 <a id="ab87bacfdad76e61b9412d7124be44c1c"></a>
@@ -342,8 +354,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a02dd6678b83f5554e3614e455666b245"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a02dd6678b83f5554e3614e455666b245">&#9670;&nbsp;</a></span>ui_draw()</h2>
+<a id="abad117bfcc94b8da0e6074977052c708"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abad117bfcc94b8da0e6074977052c708">&#9670;&nbsp;</a></span>ui_draw()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -351,9 +363,19 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void ui_draw </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct__Ui.html">Ui</a> *&#160;</td>
-          <td class="paramname"><em>ui</em></td><td>)</td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>stream</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="struct__Ui.html">Ui</a> *&#160;</td>
+          <td class="paramname"><em>ui</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -361,6 +383,7 @@ Functions</h2></td></tr>
 <p>Prints all buffered data inside the UI into the stdout. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
+    <tr><td class="paramname">{FILE*}</td><td>stream - Buffer destination </td></tr>
     <tr><td class="paramname">{Ui*}</td><td>ui - The UI that sueld be printed </td></tr>
   </table>
   </dd>
@@ -786,6 +809,57 @@ Functions</h2></td></tr>
     <tr><td class="paramname">{Ui*}</td><td>ui - UI where the box is located </td></tr>
     <tr><td class="paramname">{int}</td><td>id - The id of the box </td></tr>
     <tr><td class="paramname">{char*}</td><td>str - String format </td></tr>
+    <tr><td class="paramname">{...}</td><td>- String format arguments </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a0a7b8fcd52910361b31870e8e6687437"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a7b8fcd52910361b31870e8e6687437">&#9670;&nbsp;</a></span>ui_box_wput()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ui_box_wput </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct__Ui.html">Ui</a> *&#160;</td>
+          <td class="paramname"><em>ui</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const wchar_t *&#160;</td>
+          <td class="paramname"><em>str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Updates the box buffer with a given string of wide chars. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">{Ui*}</td><td>ui - UI where the box is located </td></tr>
+    <tr><td class="paramname">{int}</td><td>id - The id of the box </td></tr>
+    <tr><td class="paramname">{wchar_t*}</td><td>str - String format </td></tr>
     <tr><td class="paramname">{...}</td><td>- String format arguments </td></tr>
   </table>
   </dd>
