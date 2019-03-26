@@ -322,7 +322,7 @@ void parse_space( Game *game, G_engine *ge, Space *sp, int id, int x, int y ) {
     ui_box_seek( ui, id, x+off[3]+25, y );
     ui_box_put( ui, id, "%-2d", link_get_id( ln ) );
     ui_box_seek( ui, id, x+off[3]+24, y+1 );
-    ui_box_put( ui, id, "->" );
+    ui_box_put( ui, id, "⇒ " );
     if ( space_get_id( sp ) == player_get_location( player) ) {
       ui_frm( ui, 3, BG_WHITE, S_BOLD, FG_RED );
     }
@@ -343,7 +343,7 @@ void parse_space( Game *game, G_engine *ge, Space *sp, int id, int x, int y ) {
     ui_box_put( ui, id, "%2d", tid );
 
     ui_frm( ui, 2, BG_WHITE, FG_BLACK );
-    ui_box_put( ui, id, " <-");
+    ui_box_put( ui, id, " ⇐");
     ui_box_seek( ui, id, x+off[3]-3, y );
     ui_box_put( ui, id, "%2d", link_get_id( ln ) );
   }
@@ -367,7 +367,7 @@ void parse_space( Game *game, G_engine *ge, Space *sp, int id, int x, int y ) {
   if ( tid != NO_ID ) {
     ui_box_seek( ui, id, x+off[3]+11, 7 );
     ui_frm( ui, 3, S_BOLD, BG_WHITE, FG_BLACK );
-    ui_box_put( ui, id, "v " );
+    ui_box_put( ui, id, "⇓ " );
     ui_frm( ui, 2, BG_WHITE, FG_BLACK );
     ui_box_put( ui, id, "%d", link_get_id( ln ) );
     ui_rs( ui );
