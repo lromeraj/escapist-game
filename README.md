@@ -12,6 +12,9 @@ El juego ha sido diseñado para ser compilado en un entorno de Linux. Para facil
 * El archivo `data.dat` contiene la información necesaria para inicializar/cargar el juego.
 * El archivo oculto `.clang_complete` puede ser ignorado, no ofrece ningún tipo de información relevante. En general todos los archivos ocultos deberían ser ignorados.
 
+* Los archivos con extensión `.goo`, son archivos que contienen grabaciones de partidas.
+  Para reproducir estas partidas usar `./target -e goose -c -r data.dat < rec1.goo`.
+
 ## Doxygen
 Para que **Doxygen** funcione correctamente se deben seguir ciertas instrucciones
 a la hora de comentar.
