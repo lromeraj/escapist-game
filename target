@@ -507,10 +507,9 @@ while [ $# -gt 0 ]; do
 
       if [[ -d ${DISTDIR} ]]; then
         mv "$name" "$DISTDIR"
-      else
-        warn "dist: ${DISTDIR}: no such directory\\n"
+      elif [[ -n $DISTDIR ]]; then
+        warn "dist: '$DISTDIR': no such directory\\n"
       fi
-
 
       shift 1
 
@@ -576,7 +575,7 @@ while [ $# -gt 0 ]; do
           fi
 
         else
-          echo "hola"
+          error "valgrind: command not found\n"
         fi
 
       else

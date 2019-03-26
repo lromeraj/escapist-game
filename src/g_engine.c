@@ -68,7 +68,7 @@ G_engine *g_engine_create() {
     if ( _ui ) {
 
 
-      ui_bg( _ui, BG_BLACK ); 
+      ui_bg( _ui, BG_BLACK );
 
       ui_new_box( _ui, GAME_TITLE, 0, 0, 80, 1 );
       ui_new_box( _ui, GAME_MAP, 0, 2, 49, 14 );
@@ -491,6 +491,7 @@ void g_engine_paint_game( G_engine *ge, Game *game ) {
   ui_box_seek( ui, GAME_MAP, x, y++ );
   ui_box_put( ui, GAME_MAP, "+---+");
 
+
   /* overview box */
   ui_clear_box( ui, GAME_OVERVIEW );
   ui_box_bg( ui, GAME_OVERVIEW, BG_WHITE );
@@ -498,12 +499,11 @@ void g_engine_paint_game( G_engine *ge, Game *game ) {
   ui_box_put( ui, GAME_OVERVIEW, "          OVERVIEW\n");
   ui_rs( ui );
 
-
+  /* objects overview */
   objs = game_get_objects( game );
 
   if ( objs ) {
 
-    /* object data */
     for ( i=0; i < MAX_OBJECTS; i++ ) {
 
       obj = objs[ i ];
@@ -532,15 +532,48 @@ void g_engine_paint_game( G_engine *ge, Game *game ) {
 
   }
 
-  /* player data */
+  /* player overview */
   ui_box_put( ui, GAME_OVERVIEW, "\n" );
 
-  /* player name */
   ui_frm( ui, 3, BG_WHITE, FG_BLACK, S_BOLD );
   ui_box_put( ui, GAME_OVERVIEW, " %s", player_get_name( player ) );
   ui_rs( ui );
 
   ui_box_put( ui, GAME_OVERVIEW, "{id: %ld, loc: %ld}\n", player_get_id( player ), player_get_location( player ) );
+
+
+  /* die overview */
+  ui_box_put( ui, GAME_OVERVIEW, "\n" );
+  ui_frm( ui, 3, BG_WHITE, FG_BLACK, S_BOLD );
+  ui_box_put( ui, GAME_OVERVIEW, " Die: " );
+  ui_rs( ui );
+
+  switch ( die_get_lastn( game_get_die( game ) ) ) {
+
+    case 1:
+      ui_box_put( ui, GAME_OVERVIEW, "⚀");
+      break;
+    case 2:
+      ui_box_put( ui, GAME_OVERVIEW, "⚁");
+      break;
+    case 3:
+      ui_box_put( ui, GAME_OVERVIEW, "⚂");
+      break;
+    case 4:
+      ui_box_put( ui, GAME_OVERVIEW, "⚃");
+      break;
+    case 5:
+      ui_box_put( ui, GAME_OVERVIEW, "⚄");
+      break;
+    case 6:
+      ui_box_put( ui, GAME_OVERVIEW, "⚅");
+      break;
+
+    default:
+      ui_box_put( ui, GAME_OVERVIEW, "?" );
+
+  }
+
 
   /* help box */
   ui_clear_box( ui, GAME_HELP );
