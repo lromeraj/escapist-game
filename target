@@ -538,7 +538,7 @@ while [ $# -gt 0 ]; do
         if [ ${#_ARGS[@]} -gt 0 ]; then
           "./${TARGET}" "${_ARGS[@]}"
         else
-          "./${TARGET}" ${TARGET_ARGS[@]}
+          "./${TARGET}" "${TARGET_ARGS[@]}"
         fi
 
 
@@ -571,7 +571,7 @@ while [ $# -gt 0 ]; do
           if [ ${#_ARGS[@]} -gt 0 ]; then
             valgrind ${VGR_FLAGS} "./${TARGET}" "${_ARGS[@]}"
           else
-            valgrind ${VGR_FLAGS} "./${TARGET}" "${TARGET_ARGS}"
+            valgrind ${VGR_FLAGS} "./${TARGET}" "${TARGET_ARGS[@]}"
           fi
 
         else
