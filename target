@@ -266,7 +266,6 @@ env_load()
 
   TARGET=$(env_get "TARGET")
   TARGET_ARGS=( $(env_get "TARGET_ARGS") )
-  VGR_FLAGS=$(env_get "TARGET_FLAGS")
   SRCS=( $(env_get "SRCS") )
   OBJDIR=$(env_get "OBJDIR")
   SRCDIR=$(env_get "SRCDIR")
@@ -275,6 +274,7 @@ env_load()
   DISTDIR=$(env_get "DISTDIR")
   CFLAGS=( $(env_get "CFLAGS") )
   LDFLAGS=( $(env_get "CFLAGS") )
+  VGR_FLAGS=( $(env_get "TARGET_FLAGS") )
   CHANGELOG=$(env_get "CLOG")
 
 }
@@ -538,7 +538,7 @@ while [ $# -gt 0 ]; do
         if [ ${#_ARGS[@]} -gt 0 ]; then
           "./${TARGET}" "${_ARGS[@]}"
         else
-          "./${TARGET}" "${TARGET_ARGS}"
+          "./${TARGET}" ${TARGET_ARGS[@]}
         fi
 
 
