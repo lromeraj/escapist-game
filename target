@@ -112,7 +112,7 @@ _link()
     fi
   done
 
-	gcc "${OFILES[@]}" $LDFLAGS -o $TARGET
+	gcc "${OFILES[@]}" ${LDFLAGS[@]} -o $TARGET
 
   return $?
 }
@@ -374,7 +374,7 @@ _comp()
 
       if [ $cit == true ] && [[ -e $c_file ]]; then
         info "compiling: ${BYellow}$c_file${NC} -> $o_file\\n"
-        gcc $CFLAGS -c "$c_file" -o "$o_file"
+        gcc ${CFLAGS[@]} -c "$c_file" -o "$o_file"
       else
         info "up to date: ${BGreen}$c_file${NC} -> $o_file\\n"
       fi
