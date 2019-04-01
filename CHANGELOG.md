@@ -14,8 +14,7 @@
 - General improvements and adaptations in the graphic engine.
 
 `[FIXES]`
-- Fixed a bug that caused user interface problems when the
-user input was including special chars like `\033`.
+- Fixed a bug that caused user interface problems when the user input was including special chars like `\033`.
 - Fixed compiler errors and warnings when using `-ansi -pedantic` compilation flags.
 
 `[NEW]`
