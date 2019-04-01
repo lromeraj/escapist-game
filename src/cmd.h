@@ -33,6 +33,7 @@ typedef enum enum_Cid {
   MOVE, /*!< Move command */
   LEFT, /*!< Left command */
   RIGHT, /*!< Right command */
+  INSPECT, /*!< Inspect command */
   HELP /*!< Right command */
 } Cid;
 

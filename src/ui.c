@@ -3,7 +3,6 @@
 *
 * @file ui.c
 * @author Javier Romera
-* @version 0.7.1-beta
 * @date 17/03/2019
 * @copyright GNU Public License
 */
@@ -21,16 +20,18 @@
 #define DEFAULT_TXT_FORMAT S_DEFAULT
 #define DEFAULT_BOX_BG_COLOR BG_WHITE
 #define DEFAULT_BG_COLOR BG_WHITE
-#define FRM_LEN 30 /*!< @brief Maximum format length */
-#define TAB_SIZE 3
-#define MAX_BOXES 10
+
+#define UI_MAX_BUFF_LEN 500 /*!< @brief Maximum buffer length */
+#define UI_MAX_FRM_LEN 100 /*!< @brief Maximum format length */
+#define UI_TAB_SIZE 3 /*!< @brief Tab key size */
+#define UI_MAX_BOXES 15 /*!< @brief Maximum quantity of boxes per UI */
 
 /*!
 * @brief Basic pixel structure
 */
 struct _Ui_pix {
-  wchar_t c; /*!< @brief Pixel char */
-  char frm[ FRM_LEN ];  /*!< @brief Pixel format */
+  char c; /*!< @brief Pixel char */
+  char frm[ UI_MAX_FRM_LEN ];  /*!< @brief Pixel format */
 };
 
 /*!
@@ -46,8 +47,9 @@ struct _Ui_box {
   int cx; /*!< @brief Position of the x cursor */
   int cy;  /*!< @brief Position of the y cursor */
   int __len;  /*!< @brief Length of the pixels array */
-  int pad[4];  /*!< @brief Box padding */
+  int pad[ 4 ];  /*!< @brief Box padding */
   Color bg;  /*!< @brief Background color */
+  char frm[ UI_MAX_FRM_LEN ]; /*!< @brief Default format for the content of the box */
 };
 
 /*!
@@ -63,10 +65,10 @@ struct _Ui_screen {
 */
 struct _Ui {
   Ui_screen scr; /*!< @brief Screen */
-  Ui_box *boxes[ MAX_BOXES ]; /*!< @brief Boxes */
+  Ui_box *boxes[ UI_MAX_BOXES ]; /*!< @brief Boxes */
   Ui_pix **__pixs; /*!< @brief Pixels buffer */
   int __len; /*!< @brief Number of pixels */
-  char __frm[ FRM_LEN ]; /*!< @brief Temporary format */
+  char __frm[ UI_MAX_FRM_LEN ]; /*!< @brief Temporary format */
 };
 
 /****** PRIVATE FUNCTIONS ******/
@@ -121,16 +123,6 @@ Ui_pix *ui_get_pix( Ui_pix **__pixs, int x, int y, int w, int h );
 */
 void ui_set_pix( Ui_pix **__pixs, int x, int y, int w, int h, Ui_pix pix );
 
-
-/**
-* @brief Updates the box buffer with a given string
-* @param {Ui*} ui - UI where the box is located
-* @param {int} id - The id of the box
-* @param {void*} frmt - String format
-* @param {va_list} - String format arguments
-*/
-void ui_box_vput( Ui *ui, int id, const void *frmt, va_list list );
-
 /**
 * @brief Finds a box by it's id (slow)
 * @param {Ui*} ui - UI where the box should be located
@@ -147,15 +139,8 @@ Ui_box* ui_get_box_by_id( Ui* ui, int id );
 * @param {int} id - The id of the requested box
 * @retval {Ui_box*} - The box at the given index (can be NULL)
 */
-Ui_box* ui_get_box_by_idx( Ui* ui, int id );
+Ui_box* ui_get_box_by_idx( Ui* ui, int idx );
 
-
-/**
-* @brief This functions dumps all the box data inside the Ui
-* @param {Ui*} ui - The ui where data sohuld be dumped
-* @param {int} id - The id of the box to be dumped
-*/
-void ui_dump_box( Ui *ui, int id );
 
 /**
 * @brief Destroys a given box
@@ -164,12 +149,16 @@ void ui_dump_box( Ui *ui, int id );
 */
 void ui_kill_box( Ui* ui, int idx );
 
+
+int vsnprintf( char *buf, size_t size, const char *fmt, va_list list );
+int snprintf(char *buf, size_t size, const char *fmt, ...);
+
 /*******************************/
 
 void ui_frm( Ui *ui, int num, ... ) {
 
   int i;
-  char _buff[ 100 ] = "\e[";
+  char _buff[ UI_MAX_FRM_LEN ] = "\033[";
   va_list _args;
   int _arg;
 
@@ -188,14 +177,15 @@ void ui_frm( Ui *ui, int num, ... ) {
   }
 
   sprintf( _buff+strlen( _buff ), "m" );
-  strcpy( ui->__frm, _buff );
+  strncpy( ui->__frm, _buff, UI_MAX_FRM_LEN );
+
 
   va_end( _args );
 }
 
 Ui *ui_init( int w, int h ) {
 
-  Ui *ui = (Ui*) calloc( 1, sizeof( Ui ) );
+  Ui *ui = (Ui*) malloc( sizeof( Ui ) );
   Ui_pix *pix;
   int i;
 
@@ -204,6 +194,10 @@ Ui *ui_init( int w, int h ) {
     ui->scr.w = w;
     ui->scr.h = h;
     ui->__len = w*h;
+
+    for ( i=0; i < UI_MAX_BOXES; i++) {
+      ui->boxes[ i ] = NULL;
+    }
 
     ui_frm( ui, 1, S_DEFAULT );
 
@@ -236,7 +230,7 @@ void ui_destroy( Ui *ui ) {
 
   kill_pixs( ui->__pixs, ui->__len );
 
-  for ( i=0; i < MAX_BOXES; i++ ) {
+  for ( i=0; i < UI_MAX_BOXES; i++ ) {
     ui_kill_box( ui, i );
   }
 
@@ -252,7 +246,7 @@ void ui_bg( Ui *ui, Color c ) {
     return;
 
   for ( i=0; i < ui->__len; i++ ) {
-    sprintf( ui->__pixs[ i ]->frm, "\e[%dm", c );
+    sprintf( ui->__pixs[ i ]->frm, "\033[%dm", c );
   }
 
 }
@@ -266,12 +260,12 @@ void ui_rs( Ui *ui ) {
 
 }
 
-void ui_box_bg( Ui *ui, int id, Color c ) {
+void ui_box_bg( Ui *ui, int idx, Color c ) {
 
   int i;
   Ui_box *box;
 
-  box = ui_get_box_by_id( ui, id );
+  box = ui_get_box_by_idx( ui, idx );
 
   if ( !box )
     return;
@@ -279,19 +273,38 @@ void ui_box_bg( Ui *ui, int id, Color c ) {
   box->bg = c;
 
   for (i=0; i < box->__len; i++ ) {
-    sprintf( box->__pixs[ i ]->frm, "\e[%dm", c );
+    sprintf( box->__pixs[ i ]->frm, "\033[%dm", c );
   }
 
-  ui_dump_box( ui, id );
+  ui_dump_box( ui, idx );
 
 }
 
-void ui_clear_box( Ui *ui, int id ) {
+void ui_box_frm( Ui *ui, int idx, const char *frmt, ... ) {
+
+  Ui_box *box;
+  va_list _args;
+  char _buff[ UI_MAX_FRM_LEN ];
+
+  box = ui_get_box_by_idx( ui, idx );
+
+  if ( !box || !frmt )
+    return;
+
+  va_start( _args, frmt );
+  vsnprintf( _buff, UI_MAX_FRM_LEN, frmt, _args );
+  va_end( _args );
+
+  strncpy( box->frm, _buff, UI_MAX_FRM_LEN );
+
+}
+
+void ui_clear_box( Ui *ui, int idx ) {
 
   int i;
   Ui_box *box;
 
-  box = ui_get_box_by_id( ui, id );
+  box = ui_get_box_by_idx( ui, idx );
 
   if ( !box )
     return;
@@ -313,7 +326,7 @@ void ui_clear( Ui *ui ) {
   if ( !ui )
     return;
 
-  for ( i=0; i < MAX_BOXES; i++ ) {
+  for ( i=0; i < UI_MAX_BOXES; i++ ) {
     box = ui->boxes[ i ];
     if ( !box ) continue;
     ui_clear_box( ui, box->id );
@@ -342,13 +355,13 @@ Ui_pix **alloc_pixs( int __len ) {
 
   int i;
   Ui_pix *pix;
-  Ui_pix **__pixs = (Ui_pix**) calloc( __len, sizeof(Ui_pix*) );
+  Ui_pix **__pixs = (Ui_pix**) malloc( __len * sizeof(Ui_pix*) );
 
   if ( __pixs ) {
 
     for ( i=0; i < __len; i++ ) {
 
-      pix = (Ui_pix*) calloc( 1, sizeof(Ui_pix) );
+      pix = (Ui_pix*) malloc( sizeof(Ui_pix) );
 
       if ( pix ) {
         __pixs[ i ] = pix;
@@ -365,63 +378,50 @@ Ui_pix **alloc_pixs( int __len ) {
 
 }
 
-void ui_new_box( Ui *ui, int id, int x, int y, int w, int h ) {
+void ui_new_box( Ui *ui, int idx, int x, int y, int w, int h ) {
 
-  int i, idx = -1;
+  int i;
   Ui_pix *pix;
   Ui_box *box;
 
   if ( !ui )
     return;
 
-  /* check new box id and find empty index */
-  for ( i=0; i < MAX_BOXES; i++ ) {
+  /* check new box idx */
+  if ( idx < 0 || idx >= UI_MAX_BOXES )
+    return;
 
-    box = ui->boxes[ i ];
+  if ( ui->boxes[ idx ] )
+    return;
 
-    if ( box ) {
-      if ( box->id == id )
-        return;
-    } else if ( idx == -1 ) {
-      idx = i;
-    }
+  box = (Ui_box*) malloc( sizeof( Ui_box ) );
 
-  }
+  if ( box ) {
 
-  if ( idx > -1 && idx < MAX_BOXES ) {
+    box->id = idx;
+    box->x = x;
+    box->y = y;
+    box->w = w;
+    box->h = h;
+    box->cx = 0;
+    box->cy = 0;
+    box->bg = DEFAULT_BOX_BG_COLOR;
+    box->frm[ 0 ] = 0;
+    box->__len = w*h;
 
-    box = (Ui_box*) calloc( 1, sizeof( Ui_box ) );
+    box->__pixs = alloc_pixs( box->__len );
 
-    if ( box ) {
+    if ( box->__pixs ) {
 
-      box->id = id;
-      box->x = x;
-      box->y = y;
-      box->w = w;
-      box->h = h;
-      box->bg = DEFAULT_BOX_BG_COLOR;
-      box->__len = w*h;
-      box->cx = 0;
-      box->cy = 0;
+      ui->boxes[ idx ] = box; /* store the box inside the ui */
 
-      box->__pixs = alloc_pixs( box->__len );
-
-      if ( box->__pixs ) {
-
-        ui->boxes[ idx ] = box; /* store the box inside the ui */
-
-        for (i=0; i < box->__len; i++) {
-          pix = box->__pixs[ i ];
-          pix->c = ' ';
-          sprintf( pix->frm, "%s", ui->__frm );
-        }
-
-        ui_dump_box( ui, id );
-
-      } else {
-        ui_kill_box( ui, idx );
+      for (i=0; i < box->__len; i++) {
+        pix = box->__pixs[ i ];
+        pix->c = ' ';
       }
-
+      ui_dump_box( ui, idx );
+    } else {
+      ui_kill_box( ui, idx );
     }
 
   }
@@ -436,7 +436,7 @@ Ui_box *ui_get_box_by_id( Ui *ui, int id ) {
   if ( !ui )
     return NULL;
 
-  for ( i=0; i < MAX_BOXES; i++) {
+  for ( i=0; i < UI_MAX_BOXES; i++) {
 
     box = ui->boxes[ i ];
 
@@ -457,7 +457,7 @@ Ui_box *ui_get_box_by_idx( Ui *ui, int idx ) {
   if ( !ui )
     return NULL;
 
-  if ( idx > -1 && idx < MAX_BOXES )
+  if ( idx > -1 && idx < UI_MAX_BOXES )
     return ui->boxes[ idx ];
 
   return NULL;
@@ -494,11 +494,11 @@ void ui_set_pix( Ui_pix **__pixs, int x, int y, int w, int h, Ui_pix pix ) {
 
 }
 
-void ui_box_seek( Ui *ui, int id, int x, int y ) {
+void ui_box_seek( Ui *ui, int idx, int x, int y ) {
 
   Ui_box *box;
 
-  box = ui_get_box_by_id( ui, id );
+  box = ui_get_box_by_idx( ui, idx );
 
   if ( !box )
     return;
@@ -511,13 +511,13 @@ void ui_box_seek( Ui *ui, int id, int x, int y ) {
 
 }
 
-void ui_dump_box( Ui *ui, int id ) {
+void ui_dump_box( Ui *ui, int idx ) {
 
   Ui_box *box;
   Ui_pix *pix, _pix;
   int i, x, y, box_x, box_y, box_w, box_h, scr_w, scr_h;
 
-  box = ui_get_box_by_id( ui, id );
+  box = ui_get_box_by_idx( ui, idx );
 
   if ( !box )
     return;
@@ -553,48 +553,50 @@ void ui_dump_box( Ui *ui, int id ) {
 
 }
 
-void ui_box_pad( Ui *ui, int id, const char *pad ) {
+void ui_box_pad( Ui *ui, int idx, const char *pad ) {
 
   Ui_box *box;
 
-  box = ui_get_box_by_id( ui, id );
+  box = ui_get_box_by_idx( ui, idx );
 
   if ( !box )
     return;
 
   sscanf( pad, "%d %d %d %d", &box->pad[0], &box->pad[1], &box->pad[2], &box->pad[3] );
 
-  ui_clear_box( ui, id );
+  ui_clear_box( ui, idx );
 
 }
 
 
-void ui_box_vput( Ui *ui, int id, const void *frmt, va_list list ) {
+void ui_box_put( Ui *ui, int idx, const char *frmt, ... ) {
 
   Ui_box *box;
   Ui_pix _pix;
-  wchar_t _buff[500];
-  wchar_t _frmt[500];
+  va_list _args;
+  char _buff[ UI_MAX_BUFF_LEN ];
+  char __frm[ UI_MAX_FRM_LEN ];
 
   int i, j, box_w, box_h, *pad, *cx, *cy;
 
-  box = ui_get_box_by_id( ui, id );
+  box = ui_get_box_by_idx( ui, idx );
 
   if ( !box || !frmt )
     return;
 
-  mbstowcs(_frmt, (char*)frmt, 500 );
-  vswprintf( _buff, 500, _frmt, list );
+  va_start( _args, frmt );
+  vsnprintf( _buff, UI_MAX_BUFF_LEN, frmt, _args );
+  va_end( _args );
 
   /* shorthands */
   box_w = box->w;
   box_h = box->h;
   cx = &box->cx; /* cursor x */
   cy = &box->cy; /* cursor y */
-  pad = box->pad;
+  pad = box->pad; /* box padding */
 
   /* concat */
-  for ( i=0; _buff[i]; i++ ) {
+  for ( i=0; _buff[ i ]; i++ ) {
 
     if ( *cx >= box_w - pad[1] ) {
       (*cy)++; /* go to the next line */
@@ -629,9 +631,36 @@ void ui_box_vput( Ui *ui, int id, const void *frmt, va_list list ) {
       _pix.c = ' ';
 
       j=0;
-      while ( *cx < box_w - pad[1] && j < TAB_SIZE ) {
+      while ( *cx < box_w - pad[1] && j < UI_TAB_SIZE ) {
         ui_set_pix( box->__pixs, *cx, *cy, box_w, box_h, _pix );
         (*cx)++; j++;
+      }
+
+    } else if ( _pix.c == '\033' ) {
+
+      j=0;
+      while ( _pix.c != 'm' ) {
+
+        if ( j >= UI_MAX_FRM_LEN ) { /* format overflow */
+          strcpy( __frm, "\033[0" );
+          j=3;
+          break;
+        }
+
+        __frm[ j ] = _pix.c;
+        __frm[ j + 1 ] = 0;
+        j++; i++;
+        _pix.c = _buff[ i ];
+
+      }
+
+      __frm[ j ] = 'm';
+      __frm[ j + 1 ] = 0;
+
+      if ( !strcmp( __frm, "\033[0m" ) ) {
+        strncpy( ui->__frm, box->frm, UI_MAX_FRM_LEN );
+      } else {
+        snprintf( ui->__frm, UI_MAX_FRM_LEN, "%s", __frm );
       }
 
     } else {
@@ -641,38 +670,20 @@ void ui_box_vput( Ui *ui, int id, const void *frmt, va_list list ) {
 
   }
 
-  /* dump the box data to the ui buffer */
-  ui_dump_box( ui, id );
-
-}
-
-void ui_box_put( Ui *ui, int id, const char *frmt, ... ) {
-
-  va_list list;
-  va_start( list, frmt );
-  ui_box_vput( ui, id, frmt, list );
-  va_end( list );
-
 }
 
 void ui_kill_box( Ui *ui, int idx ) {
 
   Ui_box *box;
 
-  if ( !ui )
+  box = ui_get_box_by_idx( ui, idx );
+
+  if ( !box )
     return;
 
-  if ( idx > -1 && idx < MAX_BOXES ) {
-
-    box = ui->boxes[ idx ];
-
-    if ( box ) {
-      kill_pixs( box->__pixs, box->__len );
-      free( box );
-      ui->boxes[ idx ] = NULL;
-    }
-
-  }
+  kill_pixs( box->__pixs, box->__len );
+  ui->boxes[ idx ] = NULL;
+  free( box );
 
 }
 
@@ -691,11 +702,11 @@ void ui_draw( FILE *stream, Ui *ui ) {
     pix = ui->__pixs[ i ];
 
     if ( !pix ) {
-      fprintf( stream, "\e[1;31;47m UI FATAL ERROR \e[0m\n");
+      fprintf( stream, "\033[1;31;47m UI FATAL ERROR \033[0m\n");
       break;
     }
 
-    fprintf( stream, "%s%lc\e[0m",pix->frm, pix->c );
+    fprintf( stream, "%s%c\033[0m",pix->frm, pix->c );
 
     if ( (i+1)%scr_w == 0 ) {
       fprintf( stream, "\n");

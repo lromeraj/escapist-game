@@ -1,5 +1,30 @@
 # I3
 
+## v0.3.9
+
+`[OVERVIEW]`
+- Updated `Ui` module to version `0.9.5-stable`.
+
+`[IMPROVEMENTS]`
+- Improved `Ui` performance.
+- `Ui` is now more stable and solid.
+- `Ui` rendering is now `60% faster` than before.
+- Frame is now **rendered and drawn** in approximately **`2.7 ms`** before was ~ `7-8 ms`
+- Improved `ui_box_put()`, now you can add text styling in the same call.
+- General improvements and adaptations in the graphic engine.
+
+`[FIXES]`
+- Fixed a bug that caused user interface problems when the
+user input was including special chars like `\033`.
+- Fixed compiler errors and warnings when using `-ansi -pedantic` compilation flags.
+
+`[NEW]`
+- Now you can inspect spaces and objects with the `inspect` command.
+
+`[OTHER]`
+- IMPORTANT: removed wide char support in the `Ui` (by the moment).
+
+
 ## v0.3.8.2
 
 `[OVERVIEW]`

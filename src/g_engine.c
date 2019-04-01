@@ -7,7 +7,6 @@
 * @copyright GNU Public License
 */
 
-
 #include "game.h"
 #include "player.h"
 #include "g_engine.h"
@@ -16,6 +15,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <sys/time.h>
+
 
 /*!
 * @brief Main graphic engine structure
@@ -32,6 +33,7 @@ enum _Boxes {
   GAME_TITLE, /*!< Title box */
   GAME_HELP, /*!< Help box */
   GAME_FEED, /*!< Feedback box */
+  GAME_INFO, /*!< Info box */
   HELP_TITLE, /*!< Help title */
   HELP_BODY /*!< Help body */
 };
@@ -75,10 +77,29 @@ G_engine *g_engine_create() {
       ui_new_box( _ui, GAME_OVERVIEW, 50, 2, 30, 14 );
       ui_new_box( _ui, GAME_HELP, 0, 17, 30, 6 );
       ui_new_box( _ui, GAME_FEED, 31, 17, 49, 6 );
+      ui_new_box( _ui, GAME_INFO, 31, 17, 49, 6 );
 
+      /* game feed */
       ui_box_bg( _ui, GAME_FEED, BG_BLACK );
-      ui_frm( _ui, 3, FG_BLACK, BG_YELLOW, S_BOLD );
-      ui_box_put( _ui, GAME_FEED, " FEED\n");
+      ui_frm( _ui, 3, FG_BLACK, BG_YELLOW );
+      ui_box_frm( _ui, GAME_FEED, "\033[%d;%dm", BG_BLACK, FG_WHITE );
+      ui_box_put( _ui, GAME_FEED, "\033[1;%d;%dm FEED\n", FG_BLACK, BG_YELLOW );
+
+      /* game info */
+      ui_box_frm( _ui, GAME_OVERVIEW, "\033[%d;%dm", BG_BLACK, FG_WHITE );
+
+      /* game map */
+      ui_box_frm( _ui, GAME_MAP, "\033[%d;%dm", BG_WHITE, FG_BLACK );
+
+      /* game overview */
+      ui_box_frm( _ui, GAME_OVERVIEW, "\033[%d;%dm", BG_WHITE, FG_BLACK );
+
+      /* game help */
+      ui_box_frm( _ui, GAME_HELP, "\033[%d;%dm", BG_WHITE, FG_BLACK );
+
+      /* game help */
+      ui_box_frm( _ui, GAME_TITLE, "\033[%d;%dm", BG_YELLOW, FG_BLACK );
+
 
       ge->game_ui = _ui;
 
@@ -105,6 +126,8 @@ G_engine *g_engine_create() {
   return ge;
 
 }
+
+
 
 void g_engine_paint_help( G_engine *ge, Game *game ) {
 
@@ -266,6 +289,10 @@ void g_engine_paint_help( G_engine *ge, Game *game ) {
 
   ui_box_put( ui, HELP_BODY, "\nPress ENTER key to exit help\n" );
 
+
+  ui_dump_box( ui, HELP_TITLE );
+  ui_dump_box( ui, HELP_BODY );
+
   ui_draw( stdout, ui );
 
 }
@@ -280,9 +307,10 @@ void g_engine_destroy( G_engine *ge ) {
 
 }
 
+
 void parse_space( Game *game, G_engine *ge, Space *sp, int id, int x, int y ) {
 
-  int i;
+  int i, len;
   Ui *ui;
   char *pp;
   int _x, _y;
@@ -316,13 +344,13 @@ void parse_space( Game *game, G_engine *ge, Space *sp, int id, int x, int y ) {
   ln = game_get_link_by_id( game, space_get_link( sp, E ) );
   tid = link_get_to( ln );
 
+
   if ( tid != NO_ID ) {
 
-    ui_frm( ui, 2, BG_WHITE, FG_BLACK );
     ui_box_seek( ui, id, x+off[3]+25, y );
-    ui_box_put( ui, id, "%-2d", link_get_id( ln ) );
+    ui_box_put( ui, id, "\033[%d;%dm%-2d", BG_WHITE, FG_BLACK, link_get_id( ln ) );
     ui_box_seek( ui, id, x+off[3]+24, y+1 );
-    ui_box_put( ui, id, "⇒ " );
+    ui_box_put( ui, id, "->" );
     if ( space_get_id( sp ) == player_get_location( player) ) {
       ui_frm( ui, 3, BG_WHITE, S_BOLD, FG_RED );
     }
@@ -337,13 +365,13 @@ void parse_space( Game *game, G_engine *ge, Space *sp, int id, int x, int y ) {
 
     ui_box_seek( ui, id, x, y+1 );
 
-    if ( space_get_id( sp ) == player_get_location( player) ) {
+    if ( space_get_id( sp ) == player_get_location( player ) ) {
       ui_frm( ui, 3, BG_WHITE, S_BOLD, FG_RED );
     }
     ui_box_put( ui, id, "%2d", tid );
 
     ui_frm( ui, 2, BG_WHITE, FG_BLACK );
-    ui_box_put( ui, id, " ⇐");
+    ui_box_put( ui, id, " <-");
     ui_box_seek( ui, id, x+off[3]-3, y );
     ui_box_put( ui, id, "%2d", link_get_id( ln ) );
   }
@@ -364,10 +392,11 @@ void parse_space( Game *game, G_engine *ge, Space *sp, int id, int x, int y ) {
   ln = game_get_link_by_id( game, space_get_link( sp, S ) );
   tid = link_get_to( ln );
 
+
   if ( tid != NO_ID ) {
     ui_box_seek( ui, id, x+off[3]+10, 7 );
     ui_frm( ui, 3, S_BOLD, BG_WHITE, FG_BLACK );
-    ui_box_put( ui, id, "⇓ " );
+    ui_box_put( ui, id, "v " );
     ui_frm( ui, 2, BG_WHITE, FG_BLACK );
     ui_box_put( ui, id, "%d", link_get_id( ln ) );
     ui_rs( ui );
@@ -375,7 +404,7 @@ void parse_space( Game *game, G_engine *ge, Space *sp, int id, int x, int y ) {
 
   if ( space_get_id( sp ) == player_get_location( player ) ) {
     ui_box_seek( ui, id, x+off[3]+2, y+1 );
-    ui_box_put( ui, id, "☻" );
+    ui_box_put( ui, id, "8D" );
   }
 
   /* space id */
@@ -389,16 +418,25 @@ void parse_space( Game *game, G_engine *ge, Space *sp, int id, int x, int y ) {
 
   if ( pp ) {
 
-    ui_box_seek( ui, id, _x, _y );
+    len = strlen( pp );
 
-    for (i=0; i < strlen( pp ); i++ ) {
+    if ( len > 0 ) {
 
-      if ( pp[ i ] == '\\' && pp[ i + 1 ] == 'n' ) {
-        i++; _y++;
-        ui_box_seek( ui, id, _x, _y );
-      } else if ( pp[ i ] != '\n' ) {
-        ui_box_put( ui, id, "%c", pp[ i ] );
+      ui_box_seek( ui, id, _x, _y );
+
+      len = strlen( pp );
+
+      for (i=0; i < len; i++ ) {
+
+        if ( pp[ i ] == '\\' && pp[ i + 1 ] == 'n' ) {
+          i++; _y++;
+          ui_box_seek( ui, id, _x, _y );
+        } else if ( pp[ i ] != '\n' ) {
+          ui_box_put( ui, id, "%c", pp[ i ] );
+        }
+
       }
+
 
     }
 
@@ -426,11 +464,13 @@ void parse_space( Game *game, G_engine *ge, Space *sp, int id, int x, int y ) {
 
 }
 
+
 void g_engine_paint_game( G_engine *ge, Game *game ) {
 
   int i, x, y;
   Ui *ui = ge->game_ui;
-  Id  sp_id = NO_ID,
+  Id  tid = NO_ID, /* temporary id */
+      sp_id = NO_ID, /* temporary space id */
       sp_cu_id = NO_ID,
       sp_south_id = NO_ID;
   Player *player;
@@ -438,8 +478,8 @@ void g_engine_paint_game( G_engine *ge, Game *game ) {
   Space *cu_sp = NULL;
   Object *obj;
   Object **objs;
-  char *answer;
-  Cmd *cmd;
+  char *answer, *tstr; /* temporary string */
+  Cmd *cmd; /* last command */
 
   if ( !ge || !game )
     return;
@@ -455,6 +495,7 @@ void g_engine_paint_game( G_engine *ge, Game *game ) {
   ui_frm( ui, 2, BG_YELLOW, FG_BLACK );
   ui_box_put( ui, GAME_TITLE, " by lromeraj, Mikel04, alvarorp00 and Gosma00");
   ui_rs( ui );
+  ui_dump_box( ui, GAME_TITLE );
 
   /* map box */
   ui_clear_box( ui, GAME_MAP );
@@ -470,7 +511,6 @@ void g_engine_paint_game( G_engine *ge, Game *game ) {
 
   ln = game_get_link_by_id( game, space_get_link( cu_sp, S ) );
   sp_south_id = link_get_to( ln );
-
 
   if ( sp_cu_id != NO_ID ) {
     parse_space( game, ge, cu_sp, GAME_MAP, 0, 1 );
@@ -492,6 +532,9 @@ void g_engine_paint_game( G_engine *ge, Game *game ) {
   ui_box_put( ui, GAME_MAP, "+---+");
 
 
+  ui_dump_box( ui, GAME_MAP );
+
+
   /* overview box */
   ui_clear_box( ui, GAME_OVERVIEW );
   ui_box_bg( ui, GAME_OVERVIEW, BG_WHITE );
@@ -499,7 +542,6 @@ void g_engine_paint_game( G_engine *ge, Game *game ) {
   ui_box_put( ui, GAME_OVERVIEW, "          OVERVIEW\n");
   ui_rs( ui );
 
-  /* objects overview */
   objs = game_get_objects( game );
 
   if ( objs ) {
@@ -545,35 +587,10 @@ void g_engine_paint_game( G_engine *ge, Game *game ) {
   /* die overview */
   ui_box_put( ui, GAME_OVERVIEW, "\n" );
   ui_frm( ui, 3, BG_WHITE, FG_BLACK, S_BOLD );
-  ui_box_put( ui, GAME_OVERVIEW, " Die: " );
+  ui_box_put( ui, GAME_OVERVIEW, " Die: \033[0m%d", die_get_lastn( game_get_die( game ) ) );
   ui_rs( ui );
 
-  switch ( die_get_lastn( game_get_die( game ) ) ) {
-
-    case 1:
-      ui_box_put( ui, GAME_OVERVIEW, "⚀");
-      break;
-    case 2:
-      ui_box_put( ui, GAME_OVERVIEW, "⚁");
-      break;
-    case 3:
-      ui_box_put( ui, GAME_OVERVIEW, "⚂");
-      break;
-    case 4:
-      ui_box_put( ui, GAME_OVERVIEW, "⚃");
-      break;
-    case 5:
-      ui_box_put( ui, GAME_OVERVIEW, "⚄");
-      break;
-    case 6:
-      ui_box_put( ui, GAME_OVERVIEW, "⚅");
-      break;
-
-    default:
-      ui_box_put( ui, GAME_OVERVIEW, "?" );
-
-  }
-
+  ui_dump_box( ui, GAME_OVERVIEW );
 
   /* help box */
   ui_clear_box( ui, GAME_HELP );
@@ -588,11 +605,13 @@ void g_engine_paint_game( G_engine *ge, Game *game ) {
   ui_box_put( ui, GAME_HELP, " help: h\n" );
   ui_rs( ui );
 
+  ui_dump_box( ui, GAME_HELP );
+
   /* feedback box */
   if ( cmd ) {
 
     ui_frm( ui, 3, S_BOLD, BG_BLACK, FG_WHITE );
-    ui_box_put( ui, GAME_FEED, " $ " );
+    ui_box_put( ui, GAME_FEED, "$ " );
     ui_rs( ui );
 
     ui_frm( ui, 3, FG_YELLOW, S_BOLD, BG_BLACK  );
@@ -614,10 +633,49 @@ void g_engine_paint_game( G_engine *ge, Game *game ) {
     }
 
     ui_box_put( ui, GAME_FEED, "\n" );
-  }
 
+  }
+  ui_dump_box( ui, GAME_FEED );
+
+  ui_clear_box( ui, GAME_INFO );
+
+  if ( cmd_get_cid( cmd ) == INSPECT && !cmd_get_errc( cmd ) ) {
+
+    ui_box_bg( ui, GAME_INFO, BG_BLACK );
+    ui_frm( ui, 3, S_BOLD, BG_YELLOW, FG_BLACK );
+    ui_box_put( ui, GAME_INFO, " INSPECT\n" );
+    ui_frm( ui, 2, BG_BLACK, FG_WHITE );
+
+    tid = NO_ID;
+    tstr = (char*)cmd_get_argv( cmd, 1 );
+    sscanf( tstr, "O%ld", &tid );
+
+    if ( !strncmp( tstr, "s", 1 ) ) {
+      ui_frm( ui, 3, BG_BLACK, FG_WHITE, S_BOLD );
+      ui_box_put( ui, GAME_INFO, "%s", space_get_name( cu_sp ) );
+      ui_frm( ui, 2, BG_BLACK, FG_WHITE );
+      ui_box_put( ui, GAME_INFO, "{id: %ld}\n", space_get_id( cu_sp ) );
+    } else if ( tid != NO_ID ) {
+
+      obj = game_get_object_by_id( game, tid );
+
+      if ( !obj ) {
+        ui_box_put( ui, GAME_INFO, "could not get information about\nthe requested object");
+      } else {
+        ui_frm( ui, 3, BG_BLACK, FG_WHITE, S_BOLD );
+        ui_box_put( ui, GAME_INFO, "%s", obj_get_name( obj ) );
+        ui_frm( ui, 2, BG_BLACK, FG_WHITE );
+        ui_box_put( ui, GAME_INFO, "{id: %ld, loc: %s}\n", obj_get_id( obj ), space_has_object( cu_sp, tid ) ? "inspace" : "inbag" );
+        ui_box_put( ui, GAME_INFO, "%s", obj_get_descrp( obj ) );
+      }
+
+    } else {
+
+    }
+
+    ui_dump_box( ui, GAME_INFO );
+  }
 
   /* prints all the data into stdout */
   ui_draw( stdout, ui );
-
 }

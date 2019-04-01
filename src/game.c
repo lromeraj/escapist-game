@@ -85,6 +85,12 @@ void game_callback_left( Game *game );
 
 
 /**
+* @brief Moves player towards right if possible
+* @param {Game*} - game
+*/
+void game_callback_right( Game *game );
+
+/**
 * @brief Shows a help screen
 * @param {Game*} - game
 */
@@ -92,10 +98,10 @@ void game_callback_help( Game *game );
 
 
 /**
-* @brief Moves player towards right if possible
+* @brief Shows info about game elements
 * @param {Game*} - game
 */
-void game_callback_right( Game *game );
+void game_callback_inspect( Game *game );
 
 /*******************************/
 
@@ -138,7 +144,7 @@ Game* game_create() {
   die = die_init();
   game_set_die( game, die );
 
-  /* set up commands */
+  /* set up command interface */
   cmd_set( UNKNOWN, "unknown", "unknown", (cmd_fn)game_callback_unknown );
   cmd_set( TAKE, "take", "t", (cmd_fn)game_callback_take );
   cmd_set( DROP, "drop", "d", (cmd_fn)game_callback_drop );
@@ -149,6 +155,7 @@ Game* game_create() {
   cmd_set( ROLL, "roll", "rl", (cmd_fn)game_callback_roll );
   cmd_set( MOVE, "move", "m", (cmd_fn)game_callback_move );
   cmd_set( RIGHT, "right", "r", (cmd_fn)game_callback_right );
+  cmd_set( INSPECT, "inspect", "i", (cmd_fn)game_callback_inspect );
   cmd_set( HELP, "help", "h", (cmd_fn)game_callback_help );
 
   return game;
@@ -494,11 +501,55 @@ void game_callback_exit( Game *game ) {
 }
 
 
-void game_callback_help( Game *game ) {
+void game_callback_inspect( Game *game ) {
+
+  Id tid;
+  char *arg;
+  Cmd *cmd;
+  Player *player;
+  Space *cu_sp;
+
+  if ( !game )
+    return;
+
+  cmd = game_get_cmd( game );
+  player = game_get_player( game );
+  cu_sp = game_get_space( game, player_get_location( player ) );
+
+  if ( cmd_get_argc( cmd ) > 1 ) {
+
+    tid = NO_ID;
+    arg = (char*)cmd_get_argv( cmd, 1 );
+    sscanf( cmd_get_argv( cmd, 1 ), "O%ld", &tid );
+
+    if ( !strncmp( arg, "s", 1 ) ) {
+      cmd_set_ans( cmd, 0, "inspecting space ...", arg );
+    } else {
+
+      if ( tid != NO_ID ) {
+
+        if ( !player_has_object( player, tid ) && !space_has_object( cu_sp, tid ) ) {
+          cmd_set_ans( cmd, 1, "object not reachable", arg );
+        } else {
+          cmd_set_ans( cmd, 0, "inspecting object ...", arg );
+        }
+
+      } else {
+        cmd_set_ans( cmd, 1, "invalid input key");
+      }
+
+    }
+
+  } else {
+    cmd_set_ans( cmd, 1, "invalid args" );
+  }
+
 
 
 
 }
+
+void game_callback_help( Game *game ) { }
 
 void game_callback_next( Game *game ) {
 
@@ -774,11 +825,11 @@ void game_callback_right( Game *game ) {
 
   if ( !game )
     return;
-
-    cmd = game->cmd;
-    space = game_get_space( game, player_get_location( game->player ) );
-    ln = game_get_link_by_id( game, space_get_link( space, E ) );
-    go_to = link_get_to( ln );
+      
+  cmd = game->cmd;
+  space = game_get_space( game, player_get_location( game->player ) );
+  ln = game_get_link_by_id( game, space_get_link( space, E ) );
+  go_to = link_get_to( ln );
 
   if (go_to == NO_ID) {
     err = 1;

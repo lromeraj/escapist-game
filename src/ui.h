@@ -3,7 +3,7 @@
 *
 * @file ui.h
 * @author Javier Romera
-* @version 0.7.1-beta
+* @version 0.9.5-stable
 * @date 24/03/2019
 * @copyright GNU Public License
 */
@@ -121,7 +121,15 @@ void ui_rs( Ui* ui );
 * @param {int} w - The width of the box ( number of cols )
 * @param {int} h - The height of the box ( number of rows )
 */
-void ui_new_box( Ui* ui, int id, int x, int y, int w, int h );
+void ui_new_box( Ui* ui, int idx, int x, int y, int w, int h );
+
+
+/**
+* @brief This functions dumps all the box data inside the Ui
+* @param {Ui*} ui - The ui where data sohuld be dumped
+* @param {int} id - The id of the box to be dumped
+*/
+void ui_dump_box( Ui *ui, int idx );
 
 
 /**
@@ -131,7 +139,7 @@ void ui_new_box( Ui* ui, int id, int x, int y, int w, int h );
 * @param {int} id - The id of the box
 * @param {Color} c - The color with which the background will be filled
 */
-void ui_box_bg( Ui* ui, int id , Color c );
+void ui_box_bg( Ui* ui, int idx, Color c );
 
 
 /**
@@ -141,15 +149,24 @@ void ui_box_bg( Ui* ui, int id , Color c );
 * @param {int} x - Cursor x position ( col matrix )
 * @param {int} y - Curosr y position ( row matrix )
 */
-void ui_box_seek( Ui* ui, int id, int x, int y );
+void ui_box_seek( Ui* ui, int idx, int x, int y );
 
+
+/**
+* @brief Sets the default format for the content of the box
+* @param {Ui*} ui - UI where the box is located
+* @param {int} id - The id of the box
+* @param {char*} str - String format
+* @param {...} - String format arguments
+*/
+void ui_box_frm( Ui* ui, int idx, const char *frmt, ... );
 
 /**
 * @brief Clears the box buffer
 * @param {Ui*} ui - UI where the box is located
 * @param {int} id - The id of the box
 */
-void ui_clear_box( Ui* ui, int id );
+void ui_clear_box( Ui* ui, int idx );
 
 
 /**
@@ -158,7 +175,7 @@ void ui_clear_box( Ui* ui, int id );
 * @param {int} id - The id of the box
 * @param {char*} pad - The padding of the box "<top> <right> <bottom> <left>"
 */
-void ui_box_pad( Ui* ui, int id, const char* pad );
+void ui_box_pad( Ui* ui, int idx, const char* pad );
 
 
 /**
@@ -168,15 +185,6 @@ void ui_box_pad( Ui* ui, int id, const char* pad );
 * @param {char*} str - String format
 * @param {...} - String format arguments
 */
-void ui_box_put( Ui* ui, int id, const char* str, ... );
-
-/**
-* @brief Updates the box buffer with a given string of wide chars
-* @param {Ui*} ui - UI where the box is located
-* @param {int} id - The id of the box
-* @param {wchar_t*} str - String format
-* @param {...} - String format arguments
-*/
-void ui_box_wput( Ui* ui, int id, const wchar_t* str, ... );
+void ui_box_put( Ui* ui, int idx, const char* str, ... );
 
 #endif

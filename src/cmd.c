@@ -230,8 +230,9 @@ Cmd *cmd_req() {
   Cmd *_cmd = NULL;
   int i, _i, j, len, argc;
   char c, in[ MAX_CMD_IN ], _buff[ MAX_CMD_IN ];
-  
-  printf("\e[0;1m\emcmd:>\e[0m ");
+  bool addChar, addBuff;
+
+  printf("\033[0;1m\033mcmd:>\033[0m ");
 
   if ( !fgets( in, MAX_CMD_IN - 1, stdin ) )
     return NULL;
@@ -250,10 +251,10 @@ Cmd *cmd_req() {
   for ( i=0; i <= len; i++ ) {
 
     c = in[ i ];
-    bool addChar = true;
-    bool addBuff = false;
+    addChar = true;
+    addBuff = false;
 
-    if ( c == ' ' || c == '\0' || c == '\n' ) {
+    if ( c == ' ' || c == '\0' || c == '\n' ||  c == '\033' ) {
       if ( _i ) {
         addBuff = true;
       }
