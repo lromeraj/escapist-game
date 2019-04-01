@@ -89,8 +89,8 @@ int main( int argc, char *argv[] ) {
 
   if ( game == NULL ) {
     log_w( "ERR\n" );
-    fprintf(stderr, "error while creating game.\n");
-    return 1;
+    fprintf(stderr, "error while creating game\n");
+    _kill( 1 );
   }
 
   if ( game_create_from_file( game, argv[1] ) == ERROR ) {
@@ -109,9 +109,7 @@ int main( int argc, char *argv[] ) {
     _kill( 1 );
   }
 
-
   log_w( "OK\n" );
-
 
   while ( !game_is_over( game ) ) {
 

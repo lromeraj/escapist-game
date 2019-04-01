@@ -302,6 +302,7 @@ void g_engine_paint_help( G_engine *ge, Game *game ) {
     ui_box_put( ui, HELP_BODY, "move, m -> go to a given direction\n" );
     ui_box_put( ui, HELP_BODY, "take, t -> take an object\n" );
     ui_box_put( ui, HELP_BODY, "drop, d -> drop an object\n" );
+    ui_box_put( ui, HELP_BODY, "inspect, i -> inspect an element of the game\n" );
     ui_box_put( ui, HELP_BODY, "exit, e -> game exit\n" );
 
   }
