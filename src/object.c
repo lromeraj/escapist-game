@@ -24,12 +24,12 @@ struct _Object {
   char descrp[ MAX_OBJ_DESCRP ]; /*!< Object's description */
 };
 
-Object *obj_init() {
+Object *obj_create( Id id ) {
 
   Object *obj = (Object*) malloc( sizeof( Object ) );
 
   if ( obj ) {
-    obj->id = NO_ID;
+    obj->id = id;
     obj->name[0] = '\0';
   }
 

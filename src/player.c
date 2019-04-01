@@ -20,14 +20,14 @@
 * This structure defines an player whose fields are an id, a name, a location and an inventary of objects
 */
 struct _Player {
-  Id id;	                   /*!< PLayer's Identifier */
-  char name[WORD_SIZE + 1];  /*!< Player's name */
-  Id loc;		                 /*!< Player's location */
-  Inventory *inv;            /*!< Player's inventory */
+  Id id; /*!< @brief PLayer's Identifier */
+  Id loc; /*!< @brief Player's location */
+  Inventory *inv; /*!< @brief Player's inventory */
+  char name[WORD_SIZE + 1]; /*!< @brief Player's name */
 };
 
 
-Player *player_init() {
+Player *player_create( Id id ) {
 
   Player *newplayer = NULL;
 
@@ -39,6 +39,7 @@ Player *player_init() {
 
   newplayer->name[0] = '\0';
   newplayer->loc = NO_ID;
+  newplayer->id = id;
   newplayer->inv = inventory_create();
 
   return newplayer;

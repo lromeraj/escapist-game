@@ -27,30 +27,31 @@ typedef struct _Space Space;
 /**
 * @brief creates a new space
 * @author Javier Romera
-* @param {Id} - id
-* @retval {Space} - returns an space pointer
+* @param {Id} - Space identification
+* @retval {Space*} - returns an space pointer
 */
-Space* space_create(Id id);
+Space* space_create( Id id );
+
 
 /**
 * @brief sets to null a space area
 * @author Javier Romera
 * @version 2.0
-* @param {Space*} - space
+* @param {Space*} space - Space pointer
 * @retval {STATUS} - Returns a state
 */
-
 STATUS space_destroy(Space* space);
+
 
 /**
 * @brief takes the id of a space
 * @author Javier Romera
 * @version 2.0
-* @param {Space*} - space
+* @param {Space*} space - Space pointer
 * @retval {Id} - Returns an id
 */
-
 Id space_get_id(Space* space);
+
 
 /**
 * @brief defines the name of a space

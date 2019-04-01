@@ -23,9 +23,10 @@ typedef struct _Object Object;
 /**
 * @brief This fuction initializes an object
 * @author Miguel Rodríguez
+* @param {Id} - Object identification
 * @retval {Object*} - Returns an object's pointer
 */
-Object *obj_init();
+Object *obj_create( Id id );
 
 /**
 * @brief This fuction destroys an object

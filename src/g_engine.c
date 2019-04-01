@@ -9,6 +9,7 @@
 
 #include "game.h"
 #include "player.h"
+#include "inventory.h"
 #include "g_engine.h"
 #include "ui.h"
 #include "link.h"
@@ -112,6 +113,10 @@ G_engine *g_engine_create() {
       ui_new_box( _ui, HELP_TITLE, 0, 0, 80, 1 );
       ui_new_box( _ui, HELP_BODY, 0, 1, 80, 22);
 
+
+      ui_box_frm( _ui, HELP_TITLE, "\033[%d;%dm", BG_YELLOW, FG_BLACK );
+      ui_box_frm( _ui, HELP_BODY, "\033[%d;%dm", BG_BLACK, FG_WHITE );
+
       ge->help_ui = _ui;
 
     }
@@ -189,6 +194,8 @@ void g_engine_paint_help( G_engine *ge, Game *game ) {
         ui_box_put( ui, HELP_BODY, "\t\t@ [-i] search by id\n");
         ui_box_put( ui, HELP_BODY, "\t\t@ [-n] search by name\n");
         ui_box_put( ui, HELP_BODY, " (*) <key> searh key\n");
+        ui_box_put( ui, HELP_BODY, "You can take as much \033[1;%d;%dm %d \033[0m object/s\n",
+                                    FG_BLACK, BG_YELLOW, MAX_INVENTORY );
         ui_box_put( ui, HELP_BODY, "\nIf there is only one argument, the default search type used is the name.\n");
 
       } else if ( !strcmp( b_name, "drop" ) ) {
@@ -222,6 +229,7 @@ void g_engine_paint_help( G_engine *ge, Game *game ) {
 
         ui_box_put( ui, HELP_BODY, "This command allows you to exit from the game.\n" );
         ui_box_put( ui, HELP_BODY, "The game will be closed securely and all reserved memory will be freed.\n" );
+
       } else if ( !strcmp( b_name, "next" ) ) {
 
         ui_box_put( ui, HELP_BODY, "<n>\n" );
@@ -255,6 +263,17 @@ void g_engine_paint_help( G_engine *ge, Game *game ) {
         ui_box_put( ui, HELP_BODY, "...\n" );
         ui_frm( ui, 2, BG_BLACK, FG_WHITE );
         ui_box_put( ui, HELP_BODY, "This command allows you to move to the west direction.\n" );
+
+      } else if ( !strcmp( b_name, "inspect" ) ) {
+
+        ui_box_put( ui, HELP_BODY, "<search_key>\n" );
+
+        ui_frm( ui, 2, BG_BLACK, FG_WHITE );
+
+        ui_box_put( ui, HELP_BODY, "This command allows you to inspect objects and spaces.\n" );
+        ui_box_put( ui, HELP_BODY, " (*) <search_key> \n");
+        ui_box_put( ui, HELP_BODY, "\t\t@ Use letter 's' to inspect current space\n");
+        ui_box_put( ui, HELP_BODY, "\t\t@ Use letter 'O<id>' where <id> is the id of the object to be inspect\n");
 
       }
 

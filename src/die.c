@@ -22,12 +22,12 @@
    int last_n; /*!< @brief Die's last number rolled */
  };
 
- Die *die_init() {
+ Die *die_init( Id id ) {
 
    Die *d = (Die*) malloc( sizeof( Die ) );
 
    if ( d ) {
-     d->id = NO_ID;
+     d->id = id;
      d->last_n = 0;
    }
 

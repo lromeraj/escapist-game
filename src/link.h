@@ -31,10 +31,10 @@ typedef struct _Link Link;
  * @date 19/03/2019
  * @author: Gonzalo Serrano
  *
- * @param Id of the link
+ * @param {Id} id - Link identification
  * @retval {Link*} - returns a pointer to the new link
  */
-Link *link_create();
+Link *link_create( Id id );
 
 /**
  * @brief destroys a link

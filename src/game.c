@@ -132,16 +132,15 @@ Game* game_create() {
   game->die = NULL;
 
   /* load player */
-  player = player_init();
+  player = player_create( 1 );
 
-  player_set_id( player, 1 );
   player_set_name( player, "player1" );
   player_set_location( player, 1 );
 
   game_set_player( game, player );
 
   /* load dice */
-  die = die_init();
+  die = die_init( 1 );
   game_set_die( game, die );
 
   /* set up command interface */
@@ -825,7 +824,7 @@ void game_callback_right( Game *game ) {
 
   if ( !game )
     return;
-      
+
   cmd = game->cmd;
   space = game_get_space( game, player_get_location( game->player ) );
   ln = game_get_link_by_id( game, space_get_link( space, E ) );

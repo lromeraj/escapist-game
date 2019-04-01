@@ -51,13 +51,12 @@ STATUS reader_load_links( Game *game, char *f_name ) {
       toks = strtok(NULL, del); strncpy( ln_name, toks, MAX_LINK_NAME );
       toks = strtok(NULL, del); ln_from = atol(toks);
       toks = strtok(NULL, del); ln_to = atol(toks);
-      toks = strtok(NULL, del); ln_state = !atol(toks) ? LINK_CLOSED : LINK_OPENED;
+      toks = strtok(NULL, del); ln_state = !atoi(toks) ? LINK_CLOSED : LINK_OPENED;
 
-      ln = link_create();
+      ln = link_create( ln_id );
 
       if ( ln ) {
 
-        link_set_id( ln, ln_id );
         link_set_name( ln, ln_name );
         link_set_from( ln, ln_from );
         link_set_to( ln, ln_to );
@@ -180,13 +179,12 @@ STATUS reader_load_objects( Game *game, char *f_name ) {
       toks = strtok(NULL, del); obj_pos = atol( toks );
       toks = strtok(NULL, del); strncpy( descrp, toks, MAX_OBJ_DESCRP );
 
-      obj = obj_init();
+      obj = obj_create( obj_id );
 
       if (obj != NULL) {
 
-        obj_set_id( obj, obj_id );
         obj_set_name( obj, name );
-        obj_set_descrp( obj, descrp ); 
+        obj_set_descrp( obj, descrp );
 
         if ( game_add_object( game, obj ) == OK ) {
           space_add_object( game_get_space( game, obj_pos ), obj_get_id( obj ) );

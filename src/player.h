@@ -18,9 +18,10 @@ typedef struct _Player Player;
 /**
 * @brief This fuction initializes a player
 * @author Miguel Rodríguez
+* @param {Id} - Player identification
 * @retval {Player*} - Returns a player's pointer
 */
-Player* player_init();
+Player* player_create( Id id );
 
 /**
 * @brief This fuction destroys a player

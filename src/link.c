@@ -22,7 +22,7 @@ struct _Link {
   LinkState state; /*!< State of the link OPEN or CLOSE */
 };
 
-Link *link_create() {
+Link* link_create( Id id ) {
 
   Link *link;
 
@@ -31,7 +31,7 @@ Link *link_create() {
   if ( !link )
     return NULL;
 
-  link->id = NO_ID;
+  link->id = id;
   link->name[0] = '\0';
   link->from = NO_ID;
   link->to = NO_ID;
