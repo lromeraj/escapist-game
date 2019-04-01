@@ -13,6 +13,7 @@ Graphic engine source code.
 {\ttfamily \#include $<$stdio.\+h$>$}\newline
 {\ttfamily \#include $<$stdlib.\+h$>$}\newline
 {\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$sys/time.\+h$>$}\newline
 Include dependency graph for g\+\_\+engine.\+c\+:
 \nopagebreak
 \begin{figure}[H]
@@ -36,6 +37,7 @@ enum \hyperlink{g__engine_8c_a55884d4185031754f710955b5e32ebd9}{\+\_\+\+Boxes} \
 \hyperlink{g__engine_8c_a55884d4185031754f710955b5e32ebd9ac49bda619a85c79a6be5bd102371c84d}{G\+A\+M\+E\+\_\+\+H\+E\+LP}, 
 \newline
 \hyperlink{g__engine_8c_a55884d4185031754f710955b5e32ebd9af3d3abc00730bab6971ebfa9608f1770}{G\+A\+M\+E\+\_\+\+F\+E\+ED}, 
+\hyperlink{g__engine_8c_a55884d4185031754f710955b5e32ebd9a4c9c8637f3b906daa4173fe12bd95e7d}{G\+A\+M\+E\+\_\+\+I\+N\+FO}, 
 \hyperlink{g__engine_8c_a55884d4185031754f710955b5e32ebd9a02d9fd1e8fff421c9c3bf1c0cd108171}{H\+E\+L\+P\+\_\+\+T\+I\+T\+LE}, 
 \hyperlink{g__engine_8c_a55884d4185031754f710955b5e32ebd9ad585f458456d9720cec9aa4d845ecd93}{H\+E\+L\+P\+\_\+\+B\+O\+DY}
  \}
@@ -95,6 +97,10 @@ G\+A\+M\+E\+\_\+\+H\+E\+LP&Help box \\
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{G\+A\+M\+E\+\_\+\+F\+E\+ED@{G\+A\+M\+E\+\_\+\+F\+E\+ED}!g\+\_\+engine.\+c@{g\+\_\+engine.\+c}}\index{g\+\_\+engine.\+c@{g\+\_\+engine.\+c}!G\+A\+M\+E\+\_\+\+F\+E\+ED@{G\+A\+M\+E\+\_\+\+F\+E\+ED}}}\mbox{\Hypertarget{g__engine_8c_a55884d4185031754f710955b5e32ebd9af3d3abc00730bab6971ebfa9608f1770}\label{g__engine_8c_a55884d4185031754f710955b5e32ebd9af3d3abc00730bab6971ebfa9608f1770}} 
 G\+A\+M\+E\+\_\+\+F\+E\+ED&Feedback box \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{G\+A\+M\+E\+\_\+\+I\+N\+FO@{G\+A\+M\+E\+\_\+\+I\+N\+FO}!g\+\_\+engine.\+c@{g\+\_\+engine.\+c}}\index{g\+\_\+engine.\+c@{g\+\_\+engine.\+c}!G\+A\+M\+E\+\_\+\+I\+N\+FO@{G\+A\+M\+E\+\_\+\+I\+N\+FO}}}\mbox{\Hypertarget{g__engine_8c_a55884d4185031754f710955b5e32ebd9a4c9c8637f3b906daa4173fe12bd95e7d}\label{g__engine_8c_a55884d4185031754f710955b5e32ebd9a4c9c8637f3b906daa4173fe12bd95e7d}} 
+G\+A\+M\+E\+\_\+\+I\+N\+FO&Info box \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{H\+E\+L\+P\+\_\+\+T\+I\+T\+LE@{H\+E\+L\+P\+\_\+\+T\+I\+T\+LE}!g\+\_\+engine.\+c@{g\+\_\+engine.\+c}}\index{g\+\_\+engine.\+c@{g\+\_\+engine.\+c}!H\+E\+L\+P\+\_\+\+T\+I\+T\+LE@{H\+E\+L\+P\+\_\+\+T\+I\+T\+LE}}}\mbox{\Hypertarget{g__engine_8c_a55884d4185031754f710955b5e32ebd9a02d9fd1e8fff421c9c3bf1c0cd108171}\label{g__engine_8c_a55884d4185031754f710955b5e32ebd9a02d9fd1e8fff421c9c3bf1c0cd108171}} 

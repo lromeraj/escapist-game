@@ -11,5 +11,5 @@ var searchData=
   ['bg_5fred',['BG_RED',['../ui_8h.html#ab87bacfdad76e61b9412d7124be44c1ca2ff597ee3a5eafbc85d4762a6fa5dd91',1,'ui.h']]],
   ['bg_5fwhite',['BG_WHITE',['../ui_8h.html#ab87bacfdad76e61b9412d7124be44c1caecc0ff952194921d53813a10bfe2b4d6',1,'ui.h']]],
   ['bg_5fyellow',['BG_YELLOW',['../ui_8h.html#ab87bacfdad76e61b9412d7124be44c1cadc16c75fa1b6ca460dae363706307c43',1,'ui.h']]],
-  ['boxes',['boxes',['../struct__Ui.html#a04ed2c273edd9ab846366eeaba66f097',1,'_Ui']]]
+  ['boxes',['boxes',['../struct__Ui.html#ab4d33275d1afe8817a640653ab4b6848',1,'_Ui']]]
 ];
