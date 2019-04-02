@@ -18,18 +18,14 @@ Include dependency graph for log.\+c\+:\nopagebreak
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{log_8c_a91c077066e868dc9488657aaf84d911d}\label{log_8c_a91c077066e868dc9488657aaf84d911d}} 
-bool {\bfseries log\+\_\+is\+Open} ()
-\item 
-\mbox{\Hypertarget{log_8c_a0c91588938d1cce9d3e9cb940054cd0c}\label{log_8c_a0c91588938d1cce9d3e9cb940054cd0c}} 
-void {\bfseries log\+\_\+begin} (const char $\ast$log\+\_\+n)
-\item 
-\mbox{\Hypertarget{log_8c_a73e93b618b1802ac18d6e6d81b246378}\label{log_8c_a73e93b618b1802ac18d6e6d81b246378}} 
-void {\bfseries log\+\_\+end} ()
-\item 
-\mbox{\Hypertarget{log_8c_a364f0afe48f0446c287eb861e30672e5}\label{log_8c_a364f0afe48f0446c287eb861e30672e5}} 
-void {\bfseries log\+\_\+w} (const char $\ast$frm,...)
-\end{DoxyCompactItemize}
+bool \hyperlink{log_8c_a91c077066e868dc9488657aaf84d911d}{log\+\_\+is\+Open} ()
+\begin{DoxyCompactList}\small\item\em it checks if the log file is open \end{DoxyCompactList}\item 
+void \hyperlink{log_8c_a0c91588938d1cce9d3e9cb940054cd0c}{log\+\_\+begin} (const char $\ast$log\+\_\+n)
+\begin{DoxyCompactList}\small\item\em initializes the file \end{DoxyCompactList}\item 
+void \hyperlink{log_8c_a73e93b618b1802ac18d6e6d81b246378}{log\+\_\+end} ()
+\begin{DoxyCompactList}\small\item\em it closes the file opened before \end{DoxyCompactList}\item 
+void \hyperlink{log_8c_a364f0afe48f0446c287eb861e30672e5}{log\+\_\+w} (const char $\ast$frm,...)
+\begin{DoxyCompactList}\small\item\em writes in the file \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
@@ -53,3 +49,99 @@ Javier Romera
 \begin{DoxyCopyright}{Copyright}
 G\+NU Public License 
 \end{DoxyCopyright}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{log_8c_a91c077066e868dc9488657aaf84d911d}\label{log_8c_a91c077066e868dc9488657aaf84d911d}} 
+\index{log.\+c@{log.\+c}!log\+\_\+is\+Open@{log\+\_\+is\+Open}}
+\index{log\+\_\+is\+Open@{log\+\_\+is\+Open}!log.\+c@{log.\+c}}
+\subsubsection{\texorpdfstring{log\+\_\+is\+Open()}{log\_isOpen()}}
+{\footnotesize\ttfamily bool log\+\_\+is\+Open (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+it checks if the log file is open 
+
+\begin{DoxyDate}{Date}
+16/02/2019 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Javier Romera
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em empty} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \{bool\}} & -\/ Returns False or True \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{log_8c_a0c91588938d1cce9d3e9cb940054cd0c}\label{log_8c_a0c91588938d1cce9d3e9cb940054cd0c}} 
+\index{log.\+c@{log.\+c}!log\+\_\+begin@{log\+\_\+begin}}
+\index{log\+\_\+begin@{log\+\_\+begin}!log.\+c@{log.\+c}}
+\subsubsection{\texorpdfstring{log\+\_\+begin()}{log\_begin()}}
+{\footnotesize\ttfamily void log\+\_\+begin (\begin{DoxyParamCaption}\item[{const char $\ast$}]{log\+\_\+n }\end{DoxyParamCaption})}
+
+
+
+initializes the file 
+
+\begin{DoxyDate}{Date}
+16/02/2019 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Javier Romera
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em \{const} & char$\ast$\} log\+\_\+n -\/ Log name \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{log_8c_a73e93b618b1802ac18d6e6d81b246378}\label{log_8c_a73e93b618b1802ac18d6e6d81b246378}} 
+\index{log.\+c@{log.\+c}!log\+\_\+end@{log\+\_\+end}}
+\index{log\+\_\+end@{log\+\_\+end}!log.\+c@{log.\+c}}
+\subsubsection{\texorpdfstring{log\+\_\+end()}{log\_end()}}
+{\footnotesize\ttfamily void log\+\_\+end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+it closes the file opened before 
+
+\begin{DoxyDate}{Date}
+16/02/2019 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Javier Romera 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em \{char$\ast$\}} & frm -\/ String format \\
+\hline
+{\em \{...\}} & -\/ String format arguments \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{log_8c_a364f0afe48f0446c287eb861e30672e5}\label{log_8c_a364f0afe48f0446c287eb861e30672e5}} 
+\index{log.\+c@{log.\+c}!log\+\_\+w@{log\+\_\+w}}
+\index{log\+\_\+w@{log\+\_\+w}!log.\+c@{log.\+c}}
+\subsubsection{\texorpdfstring{log\+\_\+w()}{log\_w()}}
+{\footnotesize\ttfamily void log\+\_\+w (\begin{DoxyParamCaption}\item[{const char $\ast$}]{frm,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+
+
+writes in the file 
+
+\begin{DoxyDate}{Date}
+16/02/2019 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Javier Romera
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em \{const} & char$\ast$\} frm -\/ String format \\
+\hline
+{\em \{...\}} & -\/ String format arguments \\
+\hline
+\end{DoxyParams}

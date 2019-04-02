@@ -1,5 +1,5 @@
-\hypertarget{link_8h}{}\section{src/link.h File Reference}
-\label{link_8h}\index{src/link.\+h@{src/link.\+h}}
+\hypertarget{link_8h}{}\section{inc/link.h File Reference}
+\label{link_8h}\index{inc/link.\+h@{inc/link.\+h}}
 
 
 link functions  
@@ -14,11 +14,12 @@ Include dependency graph for link.\+h\+:\nopagebreak
 \includegraphics[width=350pt]{link_8h__incl}
 \end{center}
 \end{figure}
-This graph shows which files directly or indirectly include this file\+:\nopagebreak
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=136pt]{link_8h__dep__incl}
+\includegraphics[width=350pt]{link_8h__dep__incl}
 \end{center}
 \end{figure}
 \subsection*{Macros}
@@ -47,7 +48,7 @@ enum \hyperlink{link_8h_ab0033b911037fd995258d117e65461e0}{Link\+State} \{ {\bfs
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{struct__Link}{Link} $\ast$ \hyperlink{link_8h_aaf21d03943afcbed370ca720f972482c}{link\+\_\+create} ()
+\hyperlink{struct__Link}{Link} $\ast$ \hyperlink{link_8h_a8090d7f529cfd6a2fc5df3dd379fe514}{link\+\_\+create} (\hyperlink{types_8h_a845e604fb28f7e3d97549da3448149d3}{Id} id)
 \begin{DoxyCompactList}\small\item\em initializes a new link \end{DoxyCompactList}\item 
 \hyperlink{types_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+US} \hyperlink{link_8h_a85c4dd77887bf31f651ea1162144d712}{link\+\_\+destroy} (\hyperlink{struct__Link}{Link} $\ast$link)
 \begin{DoxyCompactList}\small\item\em destroys a link \end{DoxyCompactList}\item 
@@ -93,11 +94,11 @@ G\+NU Public License
 
 
 \subsection{Function Documentation}
-\mbox{\Hypertarget{link_8h_aaf21d03943afcbed370ca720f972482c}\label{link_8h_aaf21d03943afcbed370ca720f972482c}} 
+\mbox{\Hypertarget{link_8h_a8090d7f529cfd6a2fc5df3dd379fe514}\label{link_8h_a8090d7f529cfd6a2fc5df3dd379fe514}} 
 \index{link.\+h@{link.\+h}!link\+\_\+create@{link\+\_\+create}}
 \index{link\+\_\+create@{link\+\_\+create}!link.\+h@{link.\+h}}
 \subsubsection{\texorpdfstring{link\+\_\+create()}{link\_create()}}
-{\footnotesize\ttfamily \hyperlink{struct__Link}{Link}$\ast$ link\+\_\+create (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \hyperlink{struct__Link}{Link}$\ast$ link\+\_\+create (\begin{DoxyParamCaption}\item[{\hyperlink{types_8h_a845e604fb28f7e3d97549da3448149d3}{Id}}]{id }\end{DoxyParamCaption})}
 
 
 
@@ -111,7 +112,7 @@ initializes a new link
 \end{DoxyAuthor}
 
 \begin{DoxyParams}{Parameters}
-{\em Id} & of the link \\
+{\em \{\+Id\}} & id -\/ Link identification \\
 \hline
 \end{DoxyParams}
 

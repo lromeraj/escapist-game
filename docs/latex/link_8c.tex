@@ -9,7 +9,8 @@ link functions
 {\ttfamily \#include $<$stdio.\+h$>$}\newline
 {\ttfamily \#include $<$stdlib.\+h$>$}\newline
 {\ttfamily \#include $<$string.\+h$>$}\newline
-Include dependency graph for link.\+c\+:\nopagebreak
+Include dependency graph for link.\+c\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -24,45 +25,32 @@ struct \hyperlink{struct__Link}{\+\_\+\+Link}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{link_8c_a8090d7f529cfd6a2fc5df3dd379fe514}\label{link_8c_a8090d7f529cfd6a2fc5df3dd379fe514}} 
-Link $\ast$ {\bfseries link\+\_\+create} (Id id)
-\item 
-\mbox{\Hypertarget{link_8c_a85c4dd77887bf31f651ea1162144d712}\label{link_8c_a85c4dd77887bf31f651ea1162144d712}} 
-S\+T\+A\+T\+US {\bfseries link\+\_\+destroy} (Link $\ast$link)
-\item 
-\mbox{\Hypertarget{link_8c_a2bbd320f995a72b2ea7ea639b1c81892}\label{link_8c_a2bbd320f995a72b2ea7ea639b1c81892}} 
-Id {\bfseries link\+\_\+get\+\_\+id} (Link $\ast$link)
-\item 
-\mbox{\Hypertarget{link_8c_a6e03d80f1a54c61a366a4a81aaca8106}\label{link_8c_a6e03d80f1a54c61a366a4a81aaca8106}} 
-Id {\bfseries link\+\_\+get\+\_\+from} (Link $\ast$link)
-\item 
-\mbox{\Hypertarget{link_8c_a74cf03260545d4b8d19228aab08bdffd}\label{link_8c_a74cf03260545d4b8d19228aab08bdffd}} 
-Id {\bfseries link\+\_\+get\+\_\+to} (Link $\ast$link)
-\item 
-\mbox{\Hypertarget{link_8c_aaab4c9c7d5492873cafd9e11dc0f8059}\label{link_8c_aaab4c9c7d5492873cafd9e11dc0f8059}} 
-const char $\ast$ {\bfseries link\+\_\+get\+\_\+name} (Link $\ast$link)
-\item 
-\mbox{\Hypertarget{link_8c_acbc8c044a54ceb16e24d828370d98244}\label{link_8c_acbc8c044a54ceb16e24d828370d98244}} 
-Link\+State {\bfseries link\+\_\+get\+\_\+state} (Link $\ast$link)
-\item 
-\mbox{\Hypertarget{link_8c_a7e39694824973f396f87d8c01e9b824a}\label{link_8c_a7e39694824973f396f87d8c01e9b824a}} 
-S\+T\+A\+T\+US {\bfseries link\+\_\+set\+\_\+state} (Link $\ast$link, Link\+State state)
-\item 
-\mbox{\Hypertarget{link_8c_a3fd49fb1a3f19be4fc800ff07820cafb}\label{link_8c_a3fd49fb1a3f19be4fc800ff07820cafb}} 
-S\+T\+A\+T\+US {\bfseries link\+\_\+set\+\_\+id} (Link $\ast$link, Id id)
-\item 
-\mbox{\Hypertarget{link_8c_aa0baad3998d882d695136d9112485e78}\label{link_8c_aa0baad3998d882d695136d9112485e78}} 
-S\+T\+A\+T\+US {\bfseries link\+\_\+set\+\_\+from} (Link $\ast$link, Id id)
-\item 
-\mbox{\Hypertarget{link_8c_a48f0e8c3924c608346cef5119a0125a0}\label{link_8c_a48f0e8c3924c608346cef5119a0125a0}} 
-S\+T\+A\+T\+US {\bfseries link\+\_\+set\+\_\+to} (Link $\ast$link, Id id)
-\item 
-\mbox{\Hypertarget{link_8c_a8cf278a0dc6226ed88166f5278d86ca7}\label{link_8c_a8cf278a0dc6226ed88166f5278d86ca7}} 
-S\+T\+A\+T\+US {\bfseries link\+\_\+set\+\_\+name} (Link $\ast$link, const char $\ast$name)
-\item 
-\mbox{\Hypertarget{link_8c_ae42d5937c06a6efccd72041121658b09}\label{link_8c_ae42d5937c06a6efccd72041121658b09}} 
-S\+T\+A\+T\+US {\bfseries link\+\_\+print} (F\+I\+LE $\ast$stream, Link $\ast$link)
-\end{DoxyCompactItemize}
+\hyperlink{struct__Link}{Link} $\ast$ \hyperlink{link_8c_a8090d7f529cfd6a2fc5df3dd379fe514}{link\+\_\+create} (\hyperlink{types_8h_a845e604fb28f7e3d97549da3448149d3}{Id} id)
+\begin{DoxyCompactList}\small\item\em initializes a new link \end{DoxyCompactList}\item 
+\hyperlink{types_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+US} \hyperlink{link_8c_a85c4dd77887bf31f651ea1162144d712}{link\+\_\+destroy} (\hyperlink{struct__Link}{Link} $\ast$link)
+\begin{DoxyCompactList}\small\item\em destroys a link \end{DoxyCompactList}\item 
+\hyperlink{types_8h_a845e604fb28f7e3d97549da3448149d3}{Id} \hyperlink{link_8c_a2bbd320f995a72b2ea7ea639b1c81892}{link\+\_\+get\+\_\+id} (\hyperlink{struct__Link}{Link} $\ast$link)
+\begin{DoxyCompactList}\small\item\em Gets the id of a link. \end{DoxyCompactList}\item 
+\hyperlink{types_8h_a845e604fb28f7e3d97549da3448149d3}{Id} \hyperlink{link_8c_a6e03d80f1a54c61a366a4a81aaca8106}{link\+\_\+get\+\_\+from} (\hyperlink{struct__Link}{Link} $\ast$link)
+\begin{DoxyCompactList}\small\item\em Gets the destination id of a link. \end{DoxyCompactList}\item 
+\hyperlink{types_8h_a845e604fb28f7e3d97549da3448149d3}{Id} \hyperlink{link_8c_a74cf03260545d4b8d19228aab08bdffd}{link\+\_\+get\+\_\+to} (\hyperlink{struct__Link}{Link} $\ast$link)
+\begin{DoxyCompactList}\small\item\em gets the id\+To of a link \end{DoxyCompactList}\item 
+const char $\ast$ \hyperlink{link_8c_aaab4c9c7d5492873cafd9e11dc0f8059}{link\+\_\+get\+\_\+name} (\hyperlink{struct__Link}{Link} $\ast$link)
+\begin{DoxyCompactList}\small\item\em gets the name of a link \end{DoxyCompactList}\item 
+\hyperlink{link_8h_ab0033b911037fd995258d117e65461e0}{Link\+State} \hyperlink{link_8c_acbc8c044a54ceb16e24d828370d98244}{link\+\_\+get\+\_\+state} (\hyperlink{struct__Link}{Link} $\ast$link)
+\begin{DoxyCompactList}\small\item\em gets the state of a link O\+P\+EN or C\+L\+O\+SE \end{DoxyCompactList}\item 
+\hyperlink{types_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+US} \hyperlink{link_8c_a7e39694824973f396f87d8c01e9b824a}{link\+\_\+set\+\_\+state} (\hyperlink{struct__Link}{Link} $\ast$link, \hyperlink{link_8h_ab0033b911037fd995258d117e65461e0}{Link\+State} state)
+\begin{DoxyCompactList}\small\item\em Sets the state of a given link. \end{DoxyCompactList}\item 
+\hyperlink{types_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+US} \hyperlink{link_8c_a3fd49fb1a3f19be4fc800ff07820cafb}{link\+\_\+set\+\_\+id} (\hyperlink{struct__Link}{Link} $\ast$link, \hyperlink{types_8h_a845e604fb28f7e3d97549da3448149d3}{Id} id)
+\begin{DoxyCompactList}\small\item\em it set the id of a link on the structure \end{DoxyCompactList}\item 
+\hyperlink{types_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+US} \hyperlink{link_8c_aa0baad3998d882d695136d9112485e78}{link\+\_\+set\+\_\+from} (\hyperlink{struct__Link}{Link} $\ast$link, \hyperlink{types_8h_a845e604fb28f7e3d97549da3448149d3}{Id} id)
+\begin{DoxyCompactList}\small\item\em it set the id\+From of a link on the structure \end{DoxyCompactList}\item 
+\hyperlink{types_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+US} \hyperlink{link_8c_a48f0e8c3924c608346cef5119a0125a0}{link\+\_\+set\+\_\+to} (\hyperlink{struct__Link}{Link} $\ast$link, \hyperlink{types_8h_a845e604fb28f7e3d97549da3448149d3}{Id} id)
+\begin{DoxyCompactList}\small\item\em it set the id\+To of a link on the structure \end{DoxyCompactList}\item 
+\hyperlink{types_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+US} \hyperlink{link_8c_a8cf278a0dc6226ed88166f5278d86ca7}{link\+\_\+set\+\_\+name} (\hyperlink{struct__Link}{Link} $\ast$link, const char $\ast$name)
+\begin{DoxyCompactList}\small\item\em it set the id of a link on the structure \end{DoxyCompactList}\item 
+\hyperlink{types_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+US} \hyperlink{link_8c_ae42d5937c06a6efccd72041121658b09}{link\+\_\+print} (F\+I\+LE $\ast$stream, \hyperlink{struct__Link}{Link} $\ast$link)
+\begin{DoxyCompactList}\small\item\em prints a link. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -80,3 +68,344 @@ Gonzalo Serrano
 \begin{DoxyCopyright}{Copyright}
 G\+NU Public License 
 \end{DoxyCopyright}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{link_8c_a8090d7f529cfd6a2fc5df3dd379fe514}\label{link_8c_a8090d7f529cfd6a2fc5df3dd379fe514}} 
+\index{link.\+c@{link.\+c}!link\+\_\+create@{link\+\_\+create}}
+\index{link\+\_\+create@{link\+\_\+create}!link.\+c@{link.\+c}}
+\subsubsection{\texorpdfstring{link\+\_\+create()}{link\_create()}}
+{\footnotesize\ttfamily \hyperlink{struct__Link}{Link}$\ast$ link\+\_\+create (\begin{DoxyParamCaption}\item[{\hyperlink{types_8h_a845e604fb28f7e3d97549da3448149d3}{Id}}]{id }\end{DoxyParamCaption})}
+
+
+
+initializes a new link 
+
+\begin{DoxyDate}{Date}
+19/03/2019 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+\+: Gonzalo Serrano
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+Id\}} & id -\/ Link identification \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \{\+Link$\ast$\}} & -\/ returns a pointer to the new link \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{link_8c_a85c4dd77887bf31f651ea1162144d712}\label{link_8c_a85c4dd77887bf31f651ea1162144d712}} 
+\index{link.\+c@{link.\+c}!link\+\_\+destroy@{link\+\_\+destroy}}
+\index{link\+\_\+destroy@{link\+\_\+destroy}!link.\+c@{link.\+c}}
+\subsubsection{\texorpdfstring{link\+\_\+destroy()}{link\_destroy()}}
+{\footnotesize\ttfamily \hyperlink{types_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+US} link\+\_\+destroy (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Link}{Link} $\ast$}]{link }\end{DoxyParamCaption})}
+
+
+
+destroys a link 
+
+\begin{DoxyDate}{Date}
+19/03/2019 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Gonzalo Serrano
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+Link$\ast$\}} & link -\/ Link pointer \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \{void\}} & -\/ Do not returns nothing \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{link_8c_a2bbd320f995a72b2ea7ea639b1c81892}\label{link_8c_a2bbd320f995a72b2ea7ea639b1c81892}} 
+\index{link.\+c@{link.\+c}!link\+\_\+get\+\_\+id@{link\+\_\+get\+\_\+id}}
+\index{link\+\_\+get\+\_\+id@{link\+\_\+get\+\_\+id}!link.\+c@{link.\+c}}
+\subsubsection{\texorpdfstring{link\+\_\+get\+\_\+id()}{link\_get\_id()}}
+{\footnotesize\ttfamily \hyperlink{types_8h_a845e604fb28f7e3d97549da3448149d3}{Id} link\+\_\+get\+\_\+id (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Link}{Link} $\ast$}]{link }\end{DoxyParamCaption})}
+
+
+
+Gets the id of a link. 
+
+\begin{DoxyDate}{Date}
+19/03/2019 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Gonzalo Serrano
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+Link$\ast$\}} & link -\/ Link pointer \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \{\+Id\}} & -\/ Returns the id of a link \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{link_8c_a6e03d80f1a54c61a366a4a81aaca8106}\label{link_8c_a6e03d80f1a54c61a366a4a81aaca8106}} 
+\index{link.\+c@{link.\+c}!link\+\_\+get\+\_\+from@{link\+\_\+get\+\_\+from}}
+\index{link\+\_\+get\+\_\+from@{link\+\_\+get\+\_\+from}!link.\+c@{link.\+c}}
+\subsubsection{\texorpdfstring{link\+\_\+get\+\_\+from()}{link\_get\_from()}}
+{\footnotesize\ttfamily \hyperlink{types_8h_a845e604fb28f7e3d97549da3448149d3}{Id} link\+\_\+get\+\_\+from (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Link}{Link} $\ast$}]{link }\end{DoxyParamCaption})}
+
+
+
+Gets the destination id of a link. 
+
+\begin{DoxyDate}{Date}
+19/03/2019 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Gonzalo Serrano
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+Link$\ast$\}} & link -\/ Link pointer \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \{\+Id\}} & -\/ Returns the id\+From of a link \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{link_8c_a74cf03260545d4b8d19228aab08bdffd}\label{link_8c_a74cf03260545d4b8d19228aab08bdffd}} 
+\index{link.\+c@{link.\+c}!link\+\_\+get\+\_\+to@{link\+\_\+get\+\_\+to}}
+\index{link\+\_\+get\+\_\+to@{link\+\_\+get\+\_\+to}!link.\+c@{link.\+c}}
+\subsubsection{\texorpdfstring{link\+\_\+get\+\_\+to()}{link\_get\_to()}}
+{\footnotesize\ttfamily \hyperlink{types_8h_a845e604fb28f7e3d97549da3448149d3}{Id} link\+\_\+get\+\_\+to (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Link}{Link} $\ast$}]{link }\end{DoxyParamCaption})}
+
+
+
+gets the id\+To of a link 
+
+\begin{DoxyDate}{Date}
+19/03/2019 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Gonzalo Serrano
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+Link$\ast$\}} & link -\/ Link pointer \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \{\+Id\}} & -\/ Returns the id\+To of a link \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{link_8c_aaab4c9c7d5492873cafd9e11dc0f8059}\label{link_8c_aaab4c9c7d5492873cafd9e11dc0f8059}} 
+\index{link.\+c@{link.\+c}!link\+\_\+get\+\_\+name@{link\+\_\+get\+\_\+name}}
+\index{link\+\_\+get\+\_\+name@{link\+\_\+get\+\_\+name}!link.\+c@{link.\+c}}
+\subsubsection{\texorpdfstring{link\+\_\+get\+\_\+name()}{link\_get\_name()}}
+{\footnotesize\ttfamily const char$\ast$ link\+\_\+get\+\_\+name (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Link}{Link} $\ast$}]{link }\end{DoxyParamCaption})}
+
+
+
+gets the name of a link 
+
+\begin{DoxyDate}{Date}
+19/03/2019 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Gonzalo Serrano
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+Link$\ast$\}} & link -\/ Link pointer \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \{\+Id\}} & -\/ Returns the name of a link \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{link_8c_acbc8c044a54ceb16e24d828370d98244}\label{link_8c_acbc8c044a54ceb16e24d828370d98244}} 
+\index{link.\+c@{link.\+c}!link\+\_\+get\+\_\+state@{link\+\_\+get\+\_\+state}}
+\index{link\+\_\+get\+\_\+state@{link\+\_\+get\+\_\+state}!link.\+c@{link.\+c}}
+\subsubsection{\texorpdfstring{link\+\_\+get\+\_\+state()}{link\_get\_state()}}
+{\footnotesize\ttfamily \hyperlink{link_8h_ab0033b911037fd995258d117e65461e0}{Link\+State} link\+\_\+get\+\_\+state (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Link}{Link} $\ast$}]{link }\end{DoxyParamCaption})}
+
+
+
+gets the state of a link O\+P\+EN or C\+L\+O\+SE 
+
+\begin{DoxyDate}{Date}
+19/03/2019 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Gonzalo Serrano
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+Link$\ast$\}} & link -\/ Link pointer \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \{\+Link\+State\}} & -\/ Returns the state of a link \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{link_8c_a7e39694824973f396f87d8c01e9b824a}\label{link_8c_a7e39694824973f396f87d8c01e9b824a}} 
+\index{link.\+c@{link.\+c}!link\+\_\+set\+\_\+state@{link\+\_\+set\+\_\+state}}
+\index{link\+\_\+set\+\_\+state@{link\+\_\+set\+\_\+state}!link.\+c@{link.\+c}}
+\subsubsection{\texorpdfstring{link\+\_\+set\+\_\+state()}{link\_set\_state()}}
+{\footnotesize\ttfamily \hyperlink{types_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+US} link\+\_\+set\+\_\+state (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Link}{Link} $\ast$}]{link,  }\item[{\hyperlink{link_8h_ab0033b911037fd995258d117e65461e0}{Link\+State}}]{state }\end{DoxyParamCaption})}
+
+
+
+Sets the state of a given link. 
+
+\begin{DoxyDate}{Date}
+19/03/2019 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Gonzalo Serrano
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+Link$\ast$\}} & link -\/ Link pointer \\
+\hline
+{\em \{\+Link\+State\}} & id -\/ New state of the link \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\{S\+T\+A\+T\+US\} -\/ Returns an status 
+\end{DoxyReturn}
+\mbox{\Hypertarget{link_8c_a3fd49fb1a3f19be4fc800ff07820cafb}\label{link_8c_a3fd49fb1a3f19be4fc800ff07820cafb}} 
+\index{link.\+c@{link.\+c}!link\+\_\+set\+\_\+id@{link\+\_\+set\+\_\+id}}
+\index{link\+\_\+set\+\_\+id@{link\+\_\+set\+\_\+id}!link.\+c@{link.\+c}}
+\subsubsection{\texorpdfstring{link\+\_\+set\+\_\+id()}{link\_set\_id()}}
+{\footnotesize\ttfamily \hyperlink{types_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+US} link\+\_\+set\+\_\+id (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Link}{Link} $\ast$}]{link,  }\item[{\hyperlink{types_8h_a845e604fb28f7e3d97549da3448149d3}{Id}}]{id }\end{DoxyParamCaption})}
+
+
+
+it set the id of a link on the structure 
+
+\begin{DoxyDate}{Date}
+19/03/2019 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Gonzalo Serrano
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+Link$\ast$\}} & link -\/ Link pointer \\
+\hline
+{\em \{\+Id\}} & id -\/ id of a link \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\{S\+T\+A\+T\+US\} -\/ Returns an status 
+\end{DoxyReturn}
+\mbox{\Hypertarget{link_8c_aa0baad3998d882d695136d9112485e78}\label{link_8c_aa0baad3998d882d695136d9112485e78}} 
+\index{link.\+c@{link.\+c}!link\+\_\+set\+\_\+from@{link\+\_\+set\+\_\+from}}
+\index{link\+\_\+set\+\_\+from@{link\+\_\+set\+\_\+from}!link.\+c@{link.\+c}}
+\subsubsection{\texorpdfstring{link\+\_\+set\+\_\+from()}{link\_set\_from()}}
+{\footnotesize\ttfamily \hyperlink{types_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+US} link\+\_\+set\+\_\+from (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Link}{Link} $\ast$}]{link,  }\item[{\hyperlink{types_8h_a845e604fb28f7e3d97549da3448149d3}{Id}}]{id\+From }\end{DoxyParamCaption})}
+
+
+
+it set the id\+From of a link on the structure 
+
+\begin{DoxyDate}{Date}
+19/03/2019 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Gonzalo Serrano
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+Link$\ast$\}} & link -\/ Link pointer \\
+\hline
+{\em \{\+Id\}} & id\+From -\/ id\+From of a link \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\{S\+T\+A\+T\+US\} -\/ Returns an status 
+\end{DoxyReturn}
+\mbox{\Hypertarget{link_8c_a48f0e8c3924c608346cef5119a0125a0}\label{link_8c_a48f0e8c3924c608346cef5119a0125a0}} 
+\index{link.\+c@{link.\+c}!link\+\_\+set\+\_\+to@{link\+\_\+set\+\_\+to}}
+\index{link\+\_\+set\+\_\+to@{link\+\_\+set\+\_\+to}!link.\+c@{link.\+c}}
+\subsubsection{\texorpdfstring{link\+\_\+set\+\_\+to()}{link\_set\_to()}}
+{\footnotesize\ttfamily \hyperlink{types_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+US} link\+\_\+set\+\_\+to (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Link}{Link} $\ast$}]{link,  }\item[{\hyperlink{types_8h_a845e604fb28f7e3d97549da3448149d3}{Id}}]{id\+To }\end{DoxyParamCaption})}
+
+
+
+it set the id\+To of a link on the structure 
+
+\begin{DoxyDate}{Date}
+19/03/2019 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Gonzalo Serrano
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+Link$\ast$\}} & link -\/ Link pointer \\
+\hline
+{\em \{\+Id\}} & id\+To -\/ id\+To of a link \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\{S\+T\+A\+T\+US\} -\/ Returns an status 
+\end{DoxyReturn}
+\mbox{\Hypertarget{link_8c_a8cf278a0dc6226ed88166f5278d86ca7}\label{link_8c_a8cf278a0dc6226ed88166f5278d86ca7}} 
+\index{link.\+c@{link.\+c}!link\+\_\+set\+\_\+name@{link\+\_\+set\+\_\+name}}
+\index{link\+\_\+set\+\_\+name@{link\+\_\+set\+\_\+name}!link.\+c@{link.\+c}}
+\subsubsection{\texorpdfstring{link\+\_\+set\+\_\+name()}{link\_set\_name()}}
+{\footnotesize\ttfamily \hyperlink{types_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+US} link\+\_\+set\+\_\+name (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Link}{Link} $\ast$}]{link,  }\item[{const char $\ast$}]{name }\end{DoxyParamCaption})}
+
+
+
+it set the id of a link on the structure 
+
+\begin{DoxyDate}{Date}
+19/03/2019 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Gonzalo Serrano
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+Link$\ast$\}} & link -\/ Link pointer \\
+\hline
+{\em \{name\}} & -\/ Link name \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\{S\+T\+A\+T\+US\} -\/ Returns an status 
+\end{DoxyReturn}
+\mbox{\Hypertarget{link_8c_ae42d5937c06a6efccd72041121658b09}\label{link_8c_ae42d5937c06a6efccd72041121658b09}} 
+\index{link.\+c@{link.\+c}!link\+\_\+print@{link\+\_\+print}}
+\index{link\+\_\+print@{link\+\_\+print}!link.\+c@{link.\+c}}
+\subsubsection{\texorpdfstring{link\+\_\+print()}{link\_print()}}
+{\footnotesize\ttfamily \hyperlink{types_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+US} link\+\_\+print (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{stream,  }\item[{\hyperlink{struct__Link}{Link} $\ast$}]{link }\end{DoxyParamCaption})}
+
+
+
+prints a link. 
+
+\begin{DoxyDate}{Date}
+19/03/2019 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Gonzalo Serrano
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+F\+I\+L\+E$\ast$\}} & stream -\/ Streaming output \\
+\hline
+{\em \{\+Link$\ast$\}} & link -\/ Link pointer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\{S\+T\+A\+T\+US\} -\/ Returns an status 
+\end{DoxyReturn}

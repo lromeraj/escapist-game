@@ -1,5 +1,5 @@
-\hypertarget{player_8h}{}\section{src/player.h File Reference}
-\label{player_8h}\index{src/player.\+h@{src/player.\+h}}
+\hypertarget{player_8h}{}\section{inc/player.h File Reference}
+\label{player_8h}\index{inc/player.\+h@{inc/player.\+h}}
 
 
 Player header.  
@@ -13,7 +13,8 @@ Include dependency graph for player.\+h\+:\nopagebreak
 \includegraphics[width=204pt]{player_8h__incl}
 \end{center}
 \end{figure}
-This graph shows which files directly or indirectly include this file\+:\nopagebreak
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -29,7 +30,7 @@ typedef struct \hyperlink{struct__Player}{\+\_\+\+Player} {\bfseries Player}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{struct__Player}{Player} $\ast$ \hyperlink{player_8h_aed0f40de36238a60267abf71c6720599}{player\+\_\+init} ()
+\hyperlink{struct__Player}{Player} $\ast$ \hyperlink{player_8h_a97ea1d0deda3c51ef6ce63a13dab7a38}{player\+\_\+create} (\hyperlink{types_8h_a845e604fb28f7e3d97549da3448149d3}{Id} id)
 \begin{DoxyCompactList}\small\item\em This fuction initializes a player. \end{DoxyCompactList}\item 
 \hyperlink{types_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+US} \hyperlink{player_8h_a68e324aa5064e27d0a2f38aafb6809ad}{player\+\_\+destroy} (\hyperlink{struct__Player}{Player} $\ast$player)
 \begin{DoxyCompactList}\small\item\em This fuction destroys a player. \end{DoxyCompactList}\item 
@@ -70,11 +71,11 @@ G\+NU Public License
 
 
 \subsection{Function Documentation}
-\mbox{\Hypertarget{player_8h_aed0f40de36238a60267abf71c6720599}\label{player_8h_aed0f40de36238a60267abf71c6720599}} 
-\index{player.\+h@{player.\+h}!player\+\_\+init@{player\+\_\+init}}
-\index{player\+\_\+init@{player\+\_\+init}!player.\+h@{player.\+h}}
-\subsubsection{\texorpdfstring{player\+\_\+init()}{player\_init()}}
-{\footnotesize\ttfamily \hyperlink{struct__Player}{Player}$\ast$ player\+\_\+init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{player_8h_a97ea1d0deda3c51ef6ce63a13dab7a38}\label{player_8h_a97ea1d0deda3c51ef6ce63a13dab7a38}} 
+\index{player.\+h@{player.\+h}!player\+\_\+create@{player\+\_\+create}}
+\index{player\+\_\+create@{player\+\_\+create}!player.\+h@{player.\+h}}
+\subsubsection{\texorpdfstring{player\+\_\+create()}{player\_create()}}
+{\footnotesize\ttfamily \hyperlink{struct__Player}{Player}$\ast$ player\+\_\+create (\begin{DoxyParamCaption}\item[{\hyperlink{types_8h_a845e604fb28f7e3d97549da3448149d3}{Id}}]{id }\end{DoxyParamCaption})}
 
 
 
@@ -83,6 +84,11 @@ This fuction initializes a player.
 \begin{DoxyAuthor}{Author}
 Miguel Rodríguez 
 \end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+Id\}} & -\/ Player identification \\
+\hline
+\end{DoxyParams}
 
 \begin{DoxyRetVals}{Return values}
 {\em \{\+Player$\ast$\}} & -\/ Returns a player\textquotesingle{}s pointer \\

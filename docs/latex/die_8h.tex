@@ -1,5 +1,5 @@
-\hypertarget{die_8h}{}\section{src/die.h File Reference}
-\label{die_8h}\index{src/die.\+h@{src/die.\+h}}
+\hypertarget{die_8h}{}\section{inc/die.h File Reference}
+\label{die_8h}\index{inc/die.\+h@{inc/die.\+h}}
 
 
 Die\textquotesingle{}s module header.  
@@ -13,7 +13,8 @@ Include dependency graph for die.\+h\+:\nopagebreak
 \includegraphics[width=204pt]{die_8h__incl}
 \end{center}
 \end{figure}
-This graph shows which files directly or indirectly include this file\+:\nopagebreak
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -29,7 +30,7 @@ typedef struct \hyperlink{struct__Die}{\+\_\+\+Die} {\bfseries Die}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{struct__Die}{Die} $\ast$ \hyperlink{die_8h_a795dc61932c2291619e6b8763d45fbe0}{die\+\_\+init} ()
+\hyperlink{struct__Die}{Die} $\ast$ \hyperlink{die_8h_a47b145c5793416cbb7adbe4e09cff3f7}{die\+\_\+init} (\hyperlink{types_8h_a845e604fb28f7e3d97549da3448149d3}{Id} id)
 \begin{DoxyCompactList}\small\item\em Initializates a die. \end{DoxyCompactList}\item 
 void \hyperlink{die_8h_a0155d7ec003966bace47f3e032a368e8}{die\+\_\+destroy} (\hyperlink{struct__Die}{Die} $\ast$die)
 \begin{DoxyCompactList}\small\item\em destroys a die \end{DoxyCompactList}\item 
@@ -57,11 +58,11 @@ G\+NU Public License
 
 
 \subsection{Function Documentation}
-\mbox{\Hypertarget{die_8h_a795dc61932c2291619e6b8763d45fbe0}\label{die_8h_a795dc61932c2291619e6b8763d45fbe0}} 
+\mbox{\Hypertarget{die_8h_a47b145c5793416cbb7adbe4e09cff3f7}\label{die_8h_a47b145c5793416cbb7adbe4e09cff3f7}} 
 \index{die.\+h@{die.\+h}!die\+\_\+init@{die\+\_\+init}}
 \index{die\+\_\+init@{die\+\_\+init}!die.\+h@{die.\+h}}
 \subsubsection{\texorpdfstring{die\+\_\+init()}{die\_init()}}
-{\footnotesize\ttfamily \hyperlink{struct__Die}{Die}$\ast$ die\+\_\+init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \hyperlink{struct__Die}{Die}$\ast$ die\+\_\+init (\begin{DoxyParamCaption}\item[{\hyperlink{types_8h_a845e604fb28f7e3d97549da3448149d3}{Id}}]{id }\end{DoxyParamCaption})}
 
 
 
@@ -70,6 +71,11 @@ Initializates a die.
 \begin{DoxyAuthor}{Author}
 Javier Romera 
 \end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+Id\}} & id -\/ Die identification \\
+\hline
+\end{DoxyParams}
 
 \begin{DoxyRetVals}{Return values}
 {\em Returns} & a pointer towards die \\

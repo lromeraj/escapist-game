@@ -1,5 +1,5 @@
-\hypertarget{object_8h}{}\section{src/object.h File Reference}
-\label{object_8h}\index{src/object.\+h@{src/object.\+h}}
+\hypertarget{object_8h}{}\section{inc/object.h File Reference}
+\label{object_8h}\index{inc/object.\+h@{inc/object.\+h}}
 
 
 Object manager.  
@@ -13,7 +13,8 @@ Include dependency graph for object.\+h\+:\nopagebreak
 \includegraphics[width=204pt]{object_8h__incl}
 \end{center}
 \end{figure}
-This graph shows which files directly or indirectly include this file\+:\nopagebreak
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -41,7 +42,7 @@ typedef struct \hyperlink{struct__Object}{\+\_\+\+Object} \hyperlink{object_8h_a
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{object_8h_a7f8bbcda919b65ce67f92fba08e0212f}{Object} $\ast$ \hyperlink{object_8h_a74155461b19a380976895194a7181965}{obj\+\_\+init} ()
+\hyperlink{object_8h_a7f8bbcda919b65ce67f92fba08e0212f}{Object} $\ast$ \hyperlink{object_8h_a1196be6af8524bec98758a054f146c66}{obj\+\_\+create} (\hyperlink{types_8h_a845e604fb28f7e3d97549da3448149d3}{Id} id)
 \begin{DoxyCompactList}\small\item\em This fuction initializes an object. \end{DoxyCompactList}\item 
 void \hyperlink{object_8h_ac9aeb62f8e8555a59661cca384db6b47}{obj\+\_\+destroy} (\hyperlink{object_8h_a7f8bbcda919b65ce67f92fba08e0212f}{Object} $\ast$obj)
 \begin{DoxyCompactList}\small\item\em This fuction destroys an object. \end{DoxyCompactList}\item 
@@ -71,11 +72,11 @@ Object manager.
 
 
 \subsection{Function Documentation}
-\mbox{\Hypertarget{object_8h_a74155461b19a380976895194a7181965}\label{object_8h_a74155461b19a380976895194a7181965}} 
-\index{object.\+h@{object.\+h}!obj\+\_\+init@{obj\+\_\+init}}
-\index{obj\+\_\+init@{obj\+\_\+init}!object.\+h@{object.\+h}}
-\subsubsection{\texorpdfstring{obj\+\_\+init()}{obj\_init()}}
-{\footnotesize\ttfamily \hyperlink{object_8h_a7f8bbcda919b65ce67f92fba08e0212f}{Object}$\ast$ obj\+\_\+init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{object_8h_a1196be6af8524bec98758a054f146c66}\label{object_8h_a1196be6af8524bec98758a054f146c66}} 
+\index{object.\+h@{object.\+h}!obj\+\_\+create@{obj\+\_\+create}}
+\index{obj\+\_\+create@{obj\+\_\+create}!object.\+h@{object.\+h}}
+\subsubsection{\texorpdfstring{obj\+\_\+create()}{obj\_create()}}
+{\footnotesize\ttfamily \hyperlink{object_8h_a7f8bbcda919b65ce67f92fba08e0212f}{Object}$\ast$ obj\+\_\+create (\begin{DoxyParamCaption}\item[{\hyperlink{types_8h_a845e604fb28f7e3d97549da3448149d3}{Id}}]{id }\end{DoxyParamCaption})}
 
 
 
@@ -84,6 +85,11 @@ This fuction initializes an object.
 \begin{DoxyAuthor}{Author}
 Miguel Rodríguez 
 \end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+Id\}} & -\/ Object identification \\
+\hline
+\end{DoxyParams}
 
 \begin{DoxyRetVals}{Return values}
 {\em \{\+Object$\ast$\}} & -\/ Returns an object\textquotesingle{}s pointer \\

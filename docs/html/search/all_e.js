@@ -1,5 +1,16 @@
 var searchData=
 [
+  ['obj_5fcreate',['obj_create',['../object_8c.html#a1196be6af8524bec98758a054f146c66',1,'obj_create(Id id):&#160;object.c'],['../object_8h.html#a1196be6af8524bec98758a054f146c66',1,'obj_create(Id id):&#160;object.c']]],
+  ['obj_5fdestroy',['obj_destroy',['../object_8c.html#ac9aeb62f8e8555a59661cca384db6b47',1,'obj_destroy(Object *obj):&#160;object.c'],['../object_8h.html#ac9aeb62f8e8555a59661cca384db6b47',1,'obj_destroy(Object *obj):&#160;object.c']]],
+  ['obj_5fget_5fdescrp',['obj_get_descrp',['../object_8c.html#a4f5633be628368d20545ecce98f1a94a',1,'obj_get_descrp(Object *obj):&#160;object.c'],['../object_8h.html#a4f5633be628368d20545ecce98f1a94a',1,'obj_get_descrp(Object *obj):&#160;object.c']]],
+  ['obj_5fget_5fid',['obj_get_id',['../object_8c.html#a7241dbfc246b252ee486f31519794922',1,'obj_get_id(Object *obj):&#160;object.c'],['../object_8h.html#a7241dbfc246b252ee486f31519794922',1,'obj_get_id(Object *obj):&#160;object.c']]],
+  ['obj_5fget_5fname',['obj_get_name',['../object_8c.html#a9592df618edfeffbb0cf0ae098e06ac7',1,'obj_get_name(Object *obj):&#160;object.c'],['../object_8h.html#a9592df618edfeffbb0cf0ae098e06ac7',1,'obj_get_name(Object *obj):&#160;object.c']]],
+  ['obj_5fset_5fdescrp',['obj_set_descrp',['../object_8c.html#ae7b80516946b9ab5124d975909409f43',1,'obj_set_descrp(Object *obj, const char *descrp):&#160;object.c'],['../object_8h.html#ae7b80516946b9ab5124d975909409f43',1,'obj_set_descrp(Object *obj, const char *descrp):&#160;object.c']]],
+  ['obj_5fset_5fid',['obj_set_id',['../object_8c.html#af3ca397f0f2c6784bde1f1ae5d63b7f9',1,'obj_set_id(Object *obj, const Id id):&#160;object.c'],['../object_8h.html#af3ca397f0f2c6784bde1f1ae5d63b7f9',1,'obj_set_id(Object *obj, const Id id):&#160;object.c']]],
+  ['obj_5fset_5fname',['obj_set_name',['../object_8c.html#a35e89614838eaf4f660b70d8e1bb7a83',1,'obj_set_name(Object *obj, const char *name):&#160;object.c'],['../object_8h.html#a35e89614838eaf4f660b70d8e1bb7a83',1,'obj_set_name(Object *obj, const char *name):&#160;object.c']]],
+  ['object',['Object',['../object_8h.html#a7f8bbcda919b65ce67f92fba08e0212f',1,'object.h']]],
   ['object_2ec',['object.c',['../object_8c.html',1,'']]],
-  ['objects',['objects',['../struct__Game.html#ad45bf5645a26e546d0060a2e61f9cf81',1,'_Game::objects()'],['../struct__Space.html#a661ed8b0fc8085b6db70188aa5085625',1,'_Space::objects()']]]
+  ['object_2eh',['object.h',['../object_8h.html',1,'']]],
+  ['objects',['objects',['../struct__Game.html#ad45bf5645a26e546d0060a2e61f9cf81',1,'_Game::objects()'],['../struct__Space.html#a661ed8b0fc8085b6db70188aa5085625',1,'_Space::objects()']]],
+  ['ok',['OK',['../types_8h.html#a32c27cc471df37f4fc818d65de0a56c4a2bc49ec37d6a5715dd23e85f1ff5bb59',1,'types.h']]]
 ];
