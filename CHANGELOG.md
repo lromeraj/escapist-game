@@ -80,7 +80,7 @@ If the string was not ending with the char `\n` the parser was ignoring null cha
 - Implemented new `Reader` function `reader_load_links()`.
 - Implemented new `Space` functions, `space_set_link()`, `space_get_link()`.
 - The following primitives have been removed from `Space` module: `space_set_north()`,
-`space_get_north()`, `space_set_east()`, `space_get_east()`, `space_set_east()`,
+`space_get_north()`, `space_set_east()`, `space_get_east()`,
 `space_get_south()`, `space_set_south()`, `space_set_west()` and `space_get_west()`.
 The use of that functions has been simplified to `space_set_link()` and `space_get_link()`. To specify the cardinal point where the link
 should be set or gotten, you have to pass an extra argument.

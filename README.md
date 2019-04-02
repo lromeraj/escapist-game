@@ -171,7 +171,7 @@ Para generar el paquete de distribución:
 
 Para compilar, por ejemplo, el entorno `[goose]`:
 
-  `$ ./target -e goose -c`
+`$ ./target -e goose -c`
 
  Para ejecutarlo:
 
