@@ -297,14 +297,16 @@ env_load()
     # parse line
     for (( i=0; i<${#line}; i++ )); do
 
-      c="${line:$i:1}"
+      if [ $end == true ]; then break; fi
 
+      c="${line:$i:1}"
       addChar=true
 
       case $c in
 
         "#")
-          break
+          echo -n "#" > /dev/tty
+          break;
         ;;
 
         "=")
@@ -354,6 +356,7 @@ env_load()
         ;;
 
         4)
+          echo "${buff[ 3 ]}" > /dev/tty
           arr+=( "${buff[ 3 ]}" )
           end=true
         ;;
