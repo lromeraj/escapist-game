@@ -199,6 +199,39 @@ Para compilar, por ejemplo, el entorno `[goose]`:
 
  ## `target.conf`
 
+NOTA: se puden establecer configuraciones comunes a los entornos, es decir,
+si se desea utilizar una configuración básica a todos los entornos utilizar
+el entorno [GLOBAL], un ejemplo de archivo de configuración sería el siguiente:
+
+```
+[GLOBAL]
+SRCDIR="./src" # source dir
+INCDIR="./inc" # inlcude dir
+OBJDIR="./obj" # object dir
+CFLAGS=[ -Wall, -ansi, -pedantic ] # compilation flags
+VGR_FLAGS="--leak-check=full -v" # valgrind flags
+
+[set_tb]
+TARGET="./set_tb_main"
+SRCS=[ set, set_tb ]
+# this env is sharing global configuration
+
+[die_tb]
+TARGET="./die_tb_main"
+SRCS=[ die, die_tb ]
+SRCDIR="./src2"
+# this env is sharing global configuration
+# object dir is overwritten and this
+# environment will use ".src2/" as the default source dir.
+
+[link_tb]
+TARGET="./link_tb_main"
+SRCS=[ link, link_tb ]
+# this env is sharing global configuration
+
+
+```
+
 Para definnir un entorno en el archivo de configuración, debe usar la siguiente nomenclatura `[<env_name>]` donde **<env_name>** es el nombre del entorno.
 
 | PARÁMETRO | DESCRIPCIÓN |
