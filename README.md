@@ -228,8 +228,6 @@ SRCDIR="./src2"
 TARGET="./link_tb_main"
 SRCS=[ link, link_tb ]
 # this env is sharing global configuration
-
-
 ```
 
 Para definnir un entorno en el archivo de configuración, debe usar la siguiente nomenclatura `[<env_name>]` donde **<env_name>** es el nombre del entorno.
