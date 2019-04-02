@@ -207,7 +207,8 @@ Para definnir un entorno en el archivo de configuración, debe usar la siguiente
 | TARGET_ARGS | argumentos por defecto que se pasarán al ejecutable |
 | DISTDIR | directorio de distribución, en el cual se guardarán los archivos de distribución. |
 | OBJDIR | directorio donde se guardarán los archivos objeto |
-| SRCDIR | el directorio donde se encuentran los recursos del ejecutable |
+| SRCDIR | el directorio donde se encuentran los recursos del ejecutable `*.c` |
+| INCDIR | el directorio donde se encuentran los encabezados `*.h` |
 | SRCS | el nombre de los múdulos que se necesitan para generar el ejecutable |
 | LDFLAGS | parámetros que se deben de tener en cuenta a la hora de enlazar |
 | CFLAGS | parámetros que se deben de tener en cuenta a la hora de compilar |
