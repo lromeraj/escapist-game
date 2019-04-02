@@ -2,7 +2,7 @@
 
 #title           	:target
 #description     	:Script to make C projects more manageable
-#author		 				:Javier Romera Llave @lromeraj
+#author           :Javier Romera Llave @lromeraj
 #date            	:20191103
 #version         	:1.1.0
 #notes           	:Install "figlet" and "valgrind"
