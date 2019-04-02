@@ -74,7 +74,7 @@ $(function() {
 
 <p>Ui source code.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="ui_8h_source.html">ui.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;ui.h&quot;</code><br />
 <code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &lt;string.h&gt;</code><br />
@@ -85,7 +85,6 @@ Include dependency graph for ui.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="ui_8c__incl.png" border="0" usemap="#src_2ui_8c" alt=""/></div>
 <map name="src_2ui_8c" id="src_2ui_8c">
-<area shape="rect" id="node2" href="ui_8h.html" title="User interface based on chars. " alt="" coords="49,80,91,107"/>
 </map>
 </div>
 </div><table class="memberdecls">
@@ -107,19 +106,19 @@ Data Structures</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:ad708dfbbffe55244e42be0875fa9029d"><td class="memItemLeft" align="right" valign="top"><a id="ad708dfbbffe55244e42be0875fa9029d"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>DEFAULT_TXT_BG_COLOR</b>&#160;&#160;&#160;<a class="el" href="ui_8h.html#ab87bacfdad76e61b9412d7124be44c1caecc0ff952194921d53813a10bfe2b4d6">BG_WHITE</a></td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>DEFAULT_TXT_BG_COLOR</b>&#160;&#160;&#160;BG_WHITE</td></tr>
 <tr class="separator:ad708dfbbffe55244e42be0875fa9029d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa3a74dc9689a2b55fcd9f966163390a3"><td class="memItemLeft" align="right" valign="top"><a id="aa3a74dc9689a2b55fcd9f966163390a3"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>DEFAULT_TXT_FG_COLOR</b>&#160;&#160;&#160;<a class="el" href="ui_8h.html#ab87bacfdad76e61b9412d7124be44c1ca4d96567df68528c808c8fca495e08098">FG_BLACK</a></td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>DEFAULT_TXT_FG_COLOR</b>&#160;&#160;&#160;FG_BLACK</td></tr>
 <tr class="separator:aa3a74dc9689a2b55fcd9f966163390a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4249ebb1adda7dd451bc03213b87053a"><td class="memItemLeft" align="right" valign="top"><a id="a4249ebb1adda7dd451bc03213b87053a"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>DEFAULT_TXT_FORMAT</b>&#160;&#160;&#160;<a class="el" href="ui_8h.html#ab4e88c89b3b7ea1735996cc4def22d58a7ec4e09925986b754439a1f94a0d96db">S_DEFAULT</a></td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>DEFAULT_TXT_FORMAT</b>&#160;&#160;&#160;S_DEFAULT</td></tr>
 <tr class="separator:a4249ebb1adda7dd451bc03213b87053a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5d14091fc31aaec2ac3ecfc410403598"><td class="memItemLeft" align="right" valign="top"><a id="a5d14091fc31aaec2ac3ecfc410403598"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>DEFAULT_BOX_BG_COLOR</b>&#160;&#160;&#160;<a class="el" href="ui_8h.html#ab87bacfdad76e61b9412d7124be44c1caecc0ff952194921d53813a10bfe2b4d6">BG_WHITE</a></td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>DEFAULT_BOX_BG_COLOR</b>&#160;&#160;&#160;BG_WHITE</td></tr>
 <tr class="separator:a5d14091fc31aaec2ac3ecfc410403598"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1dc97fa1b67c838b5f997b20e8d4b4f9"><td class="memItemLeft" align="right" valign="top"><a id="a1dc97fa1b67c838b5f997b20e8d4b4f9"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>DEFAULT_BG_COLOR</b>&#160;&#160;&#160;<a class="el" href="ui_8h.html#ab87bacfdad76e61b9412d7124be44c1caecc0ff952194921d53813a10bfe2b4d6">BG_WHITE</a></td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>DEFAULT_BG_COLOR</b>&#160;&#160;&#160;BG_WHITE</td></tr>
 <tr class="separator:a1dc97fa1b67c838b5f997b20e8d4b4f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1fb056d53ca550cf384a4dfe0af616af"><td class="memItemLeft" align="right" valign="top"><a id="a1fb056d53ca550cf384a4dfe0af616af"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8c.html#a1fb056d53ca550cf384a4dfe0af616af">UI_MAX_BUFF_LEN</a>&#160;&#160;&#160;500</td></tr>
@@ -140,28 +139,28 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a698711a3b185d76be3bc27576c01054b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct__Ui__pix.html">Ui_pix</a> **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8c.html#a698711a3b185d76be3bc27576c01054b">alloc_pixs</a> (int __len)</td></tr>
+<tr class="memitem:a698711a3b185d76be3bc27576c01054b"><td class="memItemLeft" align="right" valign="top">Ui_pix **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8c.html#a698711a3b185d76be3bc27576c01054b">alloc_pixs</a> (int __len)</td></tr>
 <tr class="memdesc:a698711a3b185d76be3bc27576c01054b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reserves memory to alloc a certain quantity of pixels.  <a href="#a698711a3b185d76be3bc27576c01054b">More...</a><br /></td></tr>
 <tr class="separator:a698711a3b185d76be3bc27576c01054b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afde9d47a49687dc0831376c3f2454259"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8c.html#afde9d47a49687dc0831376c3f2454259">kill_pixs</a> (<a class="el" href="struct__Ui__pix.html">Ui_pix</a> **__pixs, int __len)</td></tr>
+<tr class="memitem:afde9d47a49687dc0831376c3f2454259"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8c.html#afde9d47a49687dc0831376c3f2454259">kill_pixs</a> (Ui_pix **__pixs, int __len)</td></tr>
 <tr class="memdesc:afde9d47a49687dc0831376c3f2454259"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function destroys an array of pixels to liberate memory.  <a href="#afde9d47a49687dc0831376c3f2454259">More...</a><br /></td></tr>
 <tr class="separator:afde9d47a49687dc0831376c3f2454259"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4c6715d14c979c363f6dd1876a2db06a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8c.html#a4c6715d14c979c363f6dd1876a2db06a">ui_pix_ovf</a> (int x, int y, int w, int h)</td></tr>
 <tr class="memdesc:a4c6715d14c979c363f6dd1876a2db06a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a given position ( usually for pixels ) is overflowing the max size.  <a href="#a4c6715d14c979c363f6dd1876a2db06a">More...</a><br /></td></tr>
 <tr class="separator:a4c6715d14c979c363f6dd1876a2db06a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abdf66a7ffe3750fb2371e14178d91561"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct__Ui__pix.html">Ui_pix</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8c.html#abdf66a7ffe3750fb2371e14178d91561">ui_get_pix</a> (<a class="el" href="struct__Ui__pix.html">Ui_pix</a> **__pixs, int x, int y, int w, int h)</td></tr>
+<tr class="memitem:abdf66a7ffe3750fb2371e14178d91561"><td class="memItemLeft" align="right" valign="top">Ui_pix *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8c.html#abdf66a7ffe3750fb2371e14178d91561">ui_get_pix</a> (Ui_pix **__pixs, int x, int y, int w, int h)</td></tr>
 <tr class="memdesc:abdf66a7ffe3750fb2371e14178d91561"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a pixel that is located in a given position.  <a href="#abdf66a7ffe3750fb2371e14178d91561">More...</a><br /></td></tr>
 <tr class="separator:abdf66a7ffe3750fb2371e14178d91561"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af6c65abe47ab9915826c7490f00becfe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8c.html#af6c65abe47ab9915826c7490f00becfe">ui_set_pix</a> (<a class="el" href="struct__Ui__pix.html">Ui_pix</a> **__pixs, int x, int y, int w, int h, <a class="el" href="struct__Ui__pix.html">Ui_pix</a> pix)</td></tr>
+<tr class="memitem:af6c65abe47ab9915826c7490f00becfe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8c.html#af6c65abe47ab9915826c7490f00becfe">ui_set_pix</a> (Ui_pix **__pixs, int x, int y, int w, int h, Ui_pix pix)</td></tr>
 <tr class="memdesc:af6c65abe47ab9915826c7490f00becfe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a given pixel in a given position.  <a href="#af6c65abe47ab9915826c7490f00becfe">More...</a><br /></td></tr>
 <tr class="separator:af6c65abe47ab9915826c7490f00becfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a007fbe4446d1945531b3b21c06678659"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct__Ui__box.html">Ui_box</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8c.html#a007fbe4446d1945531b3b21c06678659">ui_get_box_by_id</a> (<a class="el" href="struct__Ui.html">Ui</a> *ui, int id)</td></tr>
+<tr class="memitem:a007fbe4446d1945531b3b21c06678659"><td class="memItemLeft" align="right" valign="top">Ui_box *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8c.html#a007fbe4446d1945531b3b21c06678659">ui_get_box_by_id</a> (Ui *ui, int id)</td></tr>
 <tr class="memdesc:a007fbe4446d1945531b3b21c06678659"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds a box by it's id (slow)  <a href="#a007fbe4446d1945531b3b21c06678659">More...</a><br /></td></tr>
 <tr class="separator:a007fbe4446d1945531b3b21c06678659"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a83fbc61bd07e50156f4526d0b412017f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct__Ui__box.html">Ui_box</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8c.html#a83fbc61bd07e50156f4526d0b412017f">ui_get_box_by_idx</a> (<a class="el" href="struct__Ui.html">Ui</a> *ui, int idx)</td></tr>
+<tr class="memitem:a83fbc61bd07e50156f4526d0b412017f"><td class="memItemLeft" align="right" valign="top">Ui_box *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8c.html#a83fbc61bd07e50156f4526d0b412017f">ui_get_box_by_idx</a> (Ui *ui, int idx)</td></tr>
 <tr class="memdesc:a83fbc61bd07e50156f4526d0b412017f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a box by it's idx (fast)  <a href="#a83fbc61bd07e50156f4526d0b412017f">More...</a><br /></td></tr>
 <tr class="separator:a83fbc61bd07e50156f4526d0b412017f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa20d570ab281c0262dde9440f9fbc9c3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8c.html#aa20d570ab281c0262dde9440f9fbc9c3">ui_kill_box</a> (<a class="el" href="struct__Ui.html">Ui</a> *ui, int idx)</td></tr>
+<tr class="memitem:aa20d570ab281c0262dde9440f9fbc9c3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8c.html#aa20d570ab281c0262dde9440f9fbc9c3">ui_kill_box</a> (Ui *ui, int idx)</td></tr>
 <tr class="memdesc:aa20d570ab281c0262dde9440f9fbc9c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys a given box.  <a href="#aa20d570ab281c0262dde9440f9fbc9c3">More...</a><br /></td></tr>
 <tr class="separator:aa20d570ab281c0262dde9440f9fbc9c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abb4052814e513471d273eaf1dce5d6fb"><td class="memItemLeft" align="right" valign="top"><a id="abb4052814e513471d273eaf1dce5d6fb"></a>
@@ -170,50 +169,50 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>vsnprintf</b> (char *b
 <tr class="memitem:aed3a44ce00b8d92f93e8a34e7b9dbf54"><td class="memItemLeft" align="right" valign="top"><a id="aed3a44ce00b8d92f93e8a34e7b9dbf54"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>snprintf</b> (char *buf, size_t size, const char *fmt,...)</td></tr>
 <tr class="separator:aed3a44ce00b8d92f93e8a34e7b9dbf54"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe39a41934b6658bb06c4ffc8cba413f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8c.html#afe39a41934b6658bb06c4ffc8cba413f">ui_frm</a> (<a class="el" href="struct__Ui.html">Ui</a> *ui, int num,...)</td></tr>
-<tr class="memdesc:afe39a41934b6658bb06c4ffc8cba413f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a temporary format of the UI This means that all the text, shapes and other items will use the format that was setted in the last <a class="el" href="ui_8h.html#a70ca5594ea91504bec5a8a16826f3c23" title="Sets a temporary format of the UI This means that all the text, shapes and other items will use the f...">ui_frm()</a> call.  <a href="#afe39a41934b6658bb06c4ffc8cba413f">More...</a><br /></td></tr>
+<tr class="memitem:afe39a41934b6658bb06c4ffc8cba413f"><td class="memItemLeft" align="right" valign="top"><a id="afe39a41934b6658bb06c4ffc8cba413f"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>ui_frm</b> (Ui *ui, int num,...)</td></tr>
 <tr class="separator:afe39a41934b6658bb06c4ffc8cba413f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adc8d261a6cf4862dc48958d7fdb5b9c6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct__Ui.html">Ui</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8c.html#adc8d261a6cf4862dc48958d7fdb5b9c6">ui_init</a> (int w, int h)</td></tr>
-<tr class="memdesc:adc8d261a6cf4862dc48958d7fdb5b9c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes UI struct.  <a href="#adc8d261a6cf4862dc48958d7fdb5b9c6">More...</a><br /></td></tr>
+<tr class="memitem:adc8d261a6cf4862dc48958d7fdb5b9c6"><td class="memItemLeft" align="right" valign="top"><a id="adc8d261a6cf4862dc48958d7fdb5b9c6"></a>
+Ui *&#160;</td><td class="memItemRight" valign="bottom"><b>ui_init</b> (int w, int h)</td></tr>
 <tr class="separator:adc8d261a6cf4862dc48958d7fdb5b9c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a26dcc63df2a1df20c72a9f8c9eb460d1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8c.html#a26dcc63df2a1df20c72a9f8c9eb460d1">ui_destroy</a> (<a class="el" href="struct__Ui.html">Ui</a> *ui)</td></tr>
-<tr class="memdesc:a26dcc63df2a1df20c72a9f8c9eb460d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys UI struct.  <a href="#a26dcc63df2a1df20c72a9f8c9eb460d1">More...</a><br /></td></tr>
+<tr class="memitem:a26dcc63df2a1df20c72a9f8c9eb460d1"><td class="memItemLeft" align="right" valign="top"><a id="a26dcc63df2a1df20c72a9f8c9eb460d1"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>ui_destroy</b> (Ui *ui)</td></tr>
 <tr class="separator:a26dcc63df2a1df20c72a9f8c9eb460d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8e6b5fdd9c0dfd19c145a701b445ad05"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8c.html#a8e6b5fdd9c0dfd19c145a701b445ad05">ui_bg</a> (<a class="el" href="struct__Ui.html">Ui</a> *ui, <a class="el" href="ui_8h.html#ab87bacfdad76e61b9412d7124be44c1c">Color</a> c)</td></tr>
-<tr class="memdesc:a8e6b5fdd9c0dfd19c145a701b445ad05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fills the main UI background with a given color.  <a href="#a8e6b5fdd9c0dfd19c145a701b445ad05">More...</a><br /></td></tr>
+<tr class="memitem:a8e6b5fdd9c0dfd19c145a701b445ad05"><td class="memItemLeft" align="right" valign="top"><a id="a8e6b5fdd9c0dfd19c145a701b445ad05"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>ui_bg</b> (Ui *ui, Color c)</td></tr>
 <tr class="separator:a8e6b5fdd9c0dfd19c145a701b445ad05"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae33678d6064b4939cd98b2ba7b80357e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8c.html#ae33678d6064b4939cd98b2ba7b80357e">ui_rs</a> (<a class="el" href="struct__Ui.html">Ui</a> *ui)</td></tr>
-<tr class="memdesc:ae33678d6064b4939cd98b2ba7b80357e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the temporary format of the UI to default.  <a href="#ae33678d6064b4939cd98b2ba7b80357e">More...</a><br /></td></tr>
+<tr class="memitem:ae33678d6064b4939cd98b2ba7b80357e"><td class="memItemLeft" align="right" valign="top"><a id="ae33678d6064b4939cd98b2ba7b80357e"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>ui_rs</b> (Ui *ui)</td></tr>
 <tr class="separator:ae33678d6064b4939cd98b2ba7b80357e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aecf21866c3b1200ca0837aab9dc50653"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8c.html#aecf21866c3b1200ca0837aab9dc50653">ui_box_bg</a> (<a class="el" href="struct__Ui.html">Ui</a> *ui, int idx, <a class="el" href="ui_8h.html#ab87bacfdad76e61b9412d7124be44c1c">Color</a> c)</td></tr>
-<tr class="memdesc:aecf21866c3b1200ca0837aab9dc50653"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fills the main box background with a given color This function does NOT clear the box buffer.  <a href="#aecf21866c3b1200ca0837aab9dc50653">More...</a><br /></td></tr>
+<tr class="memitem:aecf21866c3b1200ca0837aab9dc50653"><td class="memItemLeft" align="right" valign="top"><a id="aecf21866c3b1200ca0837aab9dc50653"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>ui_box_bg</b> (Ui *ui, int idx, Color c)</td></tr>
 <tr class="separator:aecf21866c3b1200ca0837aab9dc50653"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5462519f6d2134a490d719e49a6503f5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8c.html#a5462519f6d2134a490d719e49a6503f5">ui_box_frm</a> (<a class="el" href="struct__Ui.html">Ui</a> *ui, int idx, const char *frmt,...)</td></tr>
-<tr class="memdesc:a5462519f6d2134a490d719e49a6503f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the default format for the content of the box.  <a href="#a5462519f6d2134a490d719e49a6503f5">More...</a><br /></td></tr>
+<tr class="memitem:a5462519f6d2134a490d719e49a6503f5"><td class="memItemLeft" align="right" valign="top"><a id="a5462519f6d2134a490d719e49a6503f5"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>ui_box_frm</b> (Ui *ui, int idx, const char *frmt,...)</td></tr>
 <tr class="separator:a5462519f6d2134a490d719e49a6503f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8064e9aed23d3cd6f94c20d4d70eb8e6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8c.html#a8064e9aed23d3cd6f94c20d4d70eb8e6">ui_clear_box</a> (<a class="el" href="struct__Ui.html">Ui</a> *ui, int idx)</td></tr>
-<tr class="memdesc:a8064e9aed23d3cd6f94c20d4d70eb8e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears the box buffer.  <a href="#a8064e9aed23d3cd6f94c20d4d70eb8e6">More...</a><br /></td></tr>
+<tr class="memitem:a8064e9aed23d3cd6f94c20d4d70eb8e6"><td class="memItemLeft" align="right" valign="top"><a id="a8064e9aed23d3cd6f94c20d4d70eb8e6"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>ui_clear_box</b> (Ui *ui, int idx)</td></tr>
 <tr class="separator:a8064e9aed23d3cd6f94c20d4d70eb8e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af9b58458649ecd779d095f3d102d85c8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8c.html#af9b58458649ecd779d095f3d102d85c8">ui_clear</a> (<a class="el" href="struct__Ui.html">Ui</a> *ui)</td></tr>
-<tr class="memdesc:af9b58458649ecd779d095f3d102d85c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears all the UI data, including inherit objects like boxes, shapes, ...  <a href="#af9b58458649ecd779d095f3d102d85c8">More...</a><br /></td></tr>
+<tr class="memitem:af9b58458649ecd779d095f3d102d85c8"><td class="memItemLeft" align="right" valign="top"><a id="af9b58458649ecd779d095f3d102d85c8"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>ui_clear</b> (Ui *ui)</td></tr>
 <tr class="separator:af9b58458649ecd779d095f3d102d85c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3f68193559fa8a9df589042a4609c97f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8c.html#a3f68193559fa8a9df589042a4609c97f">ui_new_box</a> (<a class="el" href="struct__Ui.html">Ui</a> *ui, int idx, int x, int y, int w, int h)</td></tr>
-<tr class="memdesc:a3f68193559fa8a9df589042a4609c97f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new box.  <a href="#a3f68193559fa8a9df589042a4609c97f">More...</a><br /></td></tr>
+<tr class="memitem:a3f68193559fa8a9df589042a4609c97f"><td class="memItemLeft" align="right" valign="top"><a id="a3f68193559fa8a9df589042a4609c97f"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>ui_new_box</b> (Ui *ui, int idx, int x, int y, int w, int h)</td></tr>
 <tr class="separator:a3f68193559fa8a9df589042a4609c97f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab1abb40d629ddab0740bc91321abe91f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8c.html#ab1abb40d629ddab0740bc91321abe91f">ui_box_seek</a> (<a class="el" href="struct__Ui.html">Ui</a> *ui, int idx, int x, int y)</td></tr>
-<tr class="memdesc:ab1abb40d629ddab0740bc91321abe91f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Changes the cursor position of a box.  <a href="#ab1abb40d629ddab0740bc91321abe91f">More...</a><br /></td></tr>
+<tr class="memitem:ab1abb40d629ddab0740bc91321abe91f"><td class="memItemLeft" align="right" valign="top"><a id="ab1abb40d629ddab0740bc91321abe91f"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>ui_box_seek</b> (Ui *ui, int idx, int x, int y)</td></tr>
 <tr class="separator:ab1abb40d629ddab0740bc91321abe91f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a411b67344c2e5c9b13a4490ee0d930c4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8c.html#a411b67344c2e5c9b13a4490ee0d930c4">ui_dump_box</a> (<a class="el" href="struct__Ui.html">Ui</a> *ui, int idx)</td></tr>
-<tr class="memdesc:a411b67344c2e5c9b13a4490ee0d930c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">This functions dumps all the box data inside the Ui.  <a href="#a411b67344c2e5c9b13a4490ee0d930c4">More...</a><br /></td></tr>
+<tr class="memitem:a411b67344c2e5c9b13a4490ee0d930c4"><td class="memItemLeft" align="right" valign="top"><a id="a411b67344c2e5c9b13a4490ee0d930c4"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>ui_dump_box</b> (Ui *ui, int idx)</td></tr>
 <tr class="separator:a411b67344c2e5c9b13a4490ee0d930c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a17a69a2f4c1c6ee1c7766c314d481ad4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8c.html#a17a69a2f4c1c6ee1c7766c314d481ad4">ui_box_pad</a> (<a class="el" href="struct__Ui.html">Ui</a> *ui, int idx, const char *pad)</td></tr>
-<tr class="memdesc:a17a69a2f4c1c6ee1c7766c314d481ad4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the padding of a box.  <a href="#a17a69a2f4c1c6ee1c7766c314d481ad4">More...</a><br /></td></tr>
+<tr class="memitem:a17a69a2f4c1c6ee1c7766c314d481ad4"><td class="memItemLeft" align="right" valign="top"><a id="a17a69a2f4c1c6ee1c7766c314d481ad4"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>ui_box_pad</b> (Ui *ui, int idx, const char *pad)</td></tr>
 <tr class="separator:a17a69a2f4c1c6ee1c7766c314d481ad4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a76dc97022c2c18996c6846b3c7288b6b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8c.html#a76dc97022c2c18996c6846b3c7288b6b">ui_box_put</a> (<a class="el" href="struct__Ui.html">Ui</a> *ui, int idx, const char *frmt,...)</td></tr>
-<tr class="memdesc:a76dc97022c2c18996c6846b3c7288b6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the box buffer with a given string.  <a href="#a76dc97022c2c18996c6846b3c7288b6b">More...</a><br /></td></tr>
+<tr class="memitem:a76dc97022c2c18996c6846b3c7288b6b"><td class="memItemLeft" align="right" valign="top"><a id="a76dc97022c2c18996c6846b3c7288b6b"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>ui_box_put</b> (Ui *ui, int idx, const char *frmt,...)</td></tr>
 <tr class="separator:a76dc97022c2c18996c6846b3c7288b6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abad117bfcc94b8da0e6074977052c708"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8c.html#abad117bfcc94b8da0e6074977052c708">ui_draw</a> (FILE *stream, <a class="el" href="struct__Ui.html">Ui</a> *ui)</td></tr>
-<tr class="memdesc:abad117bfcc94b8da0e6074977052c708"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints all buffered data inside the UI into the stdout.  <a href="#abad117bfcc94b8da0e6074977052c708">More...</a><br /></td></tr>
+<tr class="memitem:abad117bfcc94b8da0e6074977052c708"><td class="memItemLeft" align="right" valign="top"><a id="abad117bfcc94b8da0e6074977052c708"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>ui_draw</b> (FILE *stream, Ui *ui)</td></tr>
 <tr class="separator:abad117bfcc94b8da0e6074977052c708"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -229,7 +228,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>snprintf</b> (char *bu
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="struct__Ui__pix.html">Ui_pix</a> ** alloc_pixs </td>
+          <td class="memname">Ui_pix ** alloc_pixs </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>__len</em></td><td>)</td>
@@ -263,7 +262,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>snprintf</b> (char *bu
         <tr>
           <td class="memname">void kill_pixs </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct__Ui__pix.html">Ui_pix</a> **&#160;</td>
+          <td class="paramtype">Ui_pix **&#160;</td>
           <td class="paramname"><em>__pixs</em>, </td>
         </tr>
         <tr>
@@ -355,9 +354,9 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>snprintf</b> (char *bu
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="struct__Ui__pix.html">Ui_pix</a> * ui_get_pix </td>
+          <td class="memname">Ui_pix * ui_get_pix </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct__Ui__pix.html">Ui_pix</a> **&#160;</td>
+          <td class="paramtype">Ui_pix **&#160;</td>
           <td class="paramname"><em>__pixs</em>, </td>
         </tr>
         <tr>
@@ -421,7 +420,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>snprintf</b> (char *bu
         <tr>
           <td class="memname">void ui_set_pix </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct__Ui__pix.html">Ui_pix</a> **&#160;</td>
+          <td class="paramtype">Ui_pix **&#160;</td>
           <td class="paramname"><em>__pixs</em>, </td>
         </tr>
         <tr>
@@ -451,7 +450,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>snprintf</b> (char *bu
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="struct__Ui__pix.html">Ui_pix</a>&#160;</td>
+          <td class="paramtype">Ui_pix&#160;</td>
           <td class="paramname"><em>pix</em>&#160;</td>
         </tr>
         <tr>
@@ -484,9 +483,9 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>snprintf</b> (char *bu
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="struct__Ui__box.html">Ui_box</a> * ui_get_box_by_id </td>
+          <td class="memname">Ui_box * ui_get_box_by_id </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct__Ui.html">Ui</a> *&#160;</td>
+          <td class="paramtype">Ui *&#160;</td>
           <td class="paramname"><em>ui</em>, </td>
         </tr>
         <tr>
@@ -527,9 +526,9 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>snprintf</b> (char *bu
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="struct__Ui__box.html">Ui_box</a> * ui_get_box_by_idx </td>
+          <td class="memname">Ui_box * ui_get_box_by_idx </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct__Ui.html">Ui</a> *&#160;</td>
+          <td class="paramtype">Ui *&#160;</td>
           <td class="paramname"><em>ui</em>, </td>
         </tr>
         <tr>
@@ -572,7 +571,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>snprintf</b> (char *bu
         <tr>
           <td class="memname">void ui_kill_box </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct__Ui.html">Ui</a> *&#160;</td>
+          <td class="paramtype">Ui *&#160;</td>
           <td class="paramname"><em>ui</em>, </td>
         </tr>
         <tr>
@@ -594,625 +593,6 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>snprintf</b> (char *bu
   <table class="params">
     <tr><td class="paramname">{Ui*}</td><td>ui - Ui where the box should be removed </td></tr>
     <tr><td class="paramname">{int}</td><td>idx - Box index </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="afe39a41934b6658bb06c4ffc8cba413f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afe39a41934b6658bb06c4ffc8cba413f">&#9670;&nbsp;</a></span>ui_frm()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void ui_frm </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="struct__Ui.html">Ui</a> *&#160;</td>
-          <td class="paramname"><em>ui</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>n</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>...</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets a temporary format of the UI This means that all the text, shapes and other items will use the format that was setted in the last <a class="el" href="ui_8h.html#a70ca5594ea91504bec5a8a16826f3c23" title="Sets a temporary format of the UI This means that all the text, shapes and other items will use the f...">ui_frm()</a> call. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">{Ui*}</td><td>ui - UI to set the temporary parameters </td></tr>
-    <tr><td class="paramname">{int}</td><td>n - The number of parameters that will be set </td></tr>
-    <tr><td class="paramname">{int}</td><td>... - The N parameters to be set, like BG_RED, S_BOLD, ... </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="adc8d261a6cf4862dc48958d7fdb5b9c6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adc8d261a6cf4862dc48958d7fdb5b9c6">&#9670;&nbsp;</a></span>ui_init()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="struct__Ui.html">Ui</a>* ui_init </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>w</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>h</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Initializes UI struct. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">{int}</td><td>w - The width of the user interface based on chars </td></tr>
-    <tr><td class="paramname">{int}</td><td>h - The height of the user interface based on chars </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="retval"><dt>Return values</dt><dd>
-  <table class="retval">
-    <tr><td class="paramname">{Ui*}</td><td>- Returns an UI pointer </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a26dcc63df2a1df20c72a9f8c9eb460d1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a26dcc63df2a1df20c72a9f8c9eb460d1">&#9670;&nbsp;</a></span>ui_destroy()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void ui_destroy </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="struct__Ui.html">Ui</a> *&#160;</td>
-          <td class="paramname"><em>ui</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Destroys UI struct. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">{Ui*}</td><td>ui - A pointer to the UI struct </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a8e6b5fdd9c0dfd19c145a701b445ad05"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8e6b5fdd9c0dfd19c145a701b445ad05">&#9670;&nbsp;</a></span>ui_bg()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void ui_bg </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="struct__Ui.html">Ui</a> *&#160;</td>
-          <td class="paramname"><em>ui</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="ui_8h.html#ab87bacfdad76e61b9412d7124be44c1c">Color</a>&#160;</td>
-          <td class="paramname"><em>c</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Fills the main UI background with a given color. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">{Ui*}</td><td>ui - UI to be filled </td></tr>
-    <tr><td class="paramname">{Color}</td><td>c - The color with which the background will be filled </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="ae33678d6064b4939cd98b2ba7b80357e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae33678d6064b4939cd98b2ba7b80357e">&#9670;&nbsp;</a></span>ui_rs()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void ui_rs </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="struct__Ui.html">Ui</a> *&#160;</td>
-          <td class="paramname"><em>ui</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Resets the temporary format of the UI to default. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">{Ui*}</td><td>ui - the UI where the temporary parameters should be resetted </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="aecf21866c3b1200ca0837aab9dc50653"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aecf21866c3b1200ca0837aab9dc50653">&#9670;&nbsp;</a></span>ui_box_bg()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void ui_box_bg </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="struct__Ui.html">Ui</a> *&#160;</td>
-          <td class="paramname"><em>ui</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>idx</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="ui_8h.html#ab87bacfdad76e61b9412d7124be44c1c">Color</a>&#160;</td>
-          <td class="paramname"><em>c</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Fills the main box background with a given color This function does NOT clear the box buffer. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">{Ui*}</td><td>ui - UI where the box is located </td></tr>
-    <tr><td class="paramname">{int}</td><td>id - The id of the box </td></tr>
-    <tr><td class="paramname">{Color}</td><td>c - The color with which the background will be filled </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a5462519f6d2134a490d719e49a6503f5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5462519f6d2134a490d719e49a6503f5">&#9670;&nbsp;</a></span>ui_box_frm()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void ui_box_frm </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="struct__Ui.html">Ui</a> *&#160;</td>
-          <td class="paramname"><em>ui</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>idx</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>frmt</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>...</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets the default format for the content of the box. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">{Ui*}</td><td>ui - UI where the box is located </td></tr>
-    <tr><td class="paramname">{int}</td><td>id - The id of the box </td></tr>
-    <tr><td class="paramname">{char*}</td><td>str - String format </td></tr>
-    <tr><td class="paramname">{...}</td><td>- String format arguments </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a8064e9aed23d3cd6f94c20d4d70eb8e6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8064e9aed23d3cd6f94c20d4d70eb8e6">&#9670;&nbsp;</a></span>ui_clear_box()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void ui_clear_box </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="struct__Ui.html">Ui</a> *&#160;</td>
-          <td class="paramname"><em>ui</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>idx</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Clears the box buffer. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">{Ui*}</td><td>ui - UI where the box is located </td></tr>
-    <tr><td class="paramname">{int}</td><td>id - The id of the box </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="af9b58458649ecd779d095f3d102d85c8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af9b58458649ecd779d095f3d102d85c8">&#9670;&nbsp;</a></span>ui_clear()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void ui_clear </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="struct__Ui.html">Ui</a> *&#160;</td>
-          <td class="paramname"><em>ui</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Clears all the UI data, including inherit objects like boxes, shapes, ... </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">{Ui*}</td><td>ui - The UI that should be clered </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a3f68193559fa8a9df589042a4609c97f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3f68193559fa8a9df589042a4609c97f">&#9670;&nbsp;</a></span>ui_new_box()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void ui_new_box </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="struct__Ui.html">Ui</a> *&#160;</td>
-          <td class="paramname"><em>ui</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>idx</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>x</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>y</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>w</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>h</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Creates a new box. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">{Ui*}</td><td>ui - UI where the box should be created </td></tr>
-    <tr><td class="paramname">{int}</td><td>id - The ID with which the box will be referenced </td></tr>
-    <tr><td class="paramname">{int}</td><td>x - The x position of the box ( col of the matrix ) </td></tr>
-    <tr><td class="paramname">{int}</td><td>y - The y position of the box ( row of the matrix ) </td></tr>
-    <tr><td class="paramname">{int}</td><td>w - The width of the box ( number of cols ) </td></tr>
-    <tr><td class="paramname">{int}</td><td>h - The height of the box ( number of rows ) </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="ab1abb40d629ddab0740bc91321abe91f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab1abb40d629ddab0740bc91321abe91f">&#9670;&nbsp;</a></span>ui_box_seek()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void ui_box_seek </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="struct__Ui.html">Ui</a> *&#160;</td>
-          <td class="paramname"><em>ui</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>idx</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>x</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>y</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Changes the cursor position of a box. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">{Ui*}</td><td>ui - UI where the box is located </td></tr>
-    <tr><td class="paramname">{int}</td><td>id - The id of the box </td></tr>
-    <tr><td class="paramname">{int}</td><td>x - Cursor x position ( col matrix ) </td></tr>
-    <tr><td class="paramname">{int}</td><td>y - Curosr y position ( row matrix ) </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a411b67344c2e5c9b13a4490ee0d930c4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a411b67344c2e5c9b13a4490ee0d930c4">&#9670;&nbsp;</a></span>ui_dump_box()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void ui_dump_box </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="struct__Ui.html">Ui</a> *&#160;</td>
-          <td class="paramname"><em>ui</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>idx</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>This functions dumps all the box data inside the Ui. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">{Ui*}</td><td>ui - The ui where data sohuld be dumped </td></tr>
-    <tr><td class="paramname">{int}</td><td>id - The id of the box to be dumped </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a17a69a2f4c1c6ee1c7766c314d481ad4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a17a69a2f4c1c6ee1c7766c314d481ad4">&#9670;&nbsp;</a></span>ui_box_pad()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void ui_box_pad </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="struct__Ui.html">Ui</a> *&#160;</td>
-          <td class="paramname"><em>ui</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>idx</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>pad</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets the padding of a box. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">{Ui*}</td><td>ui - UI where the box is located </td></tr>
-    <tr><td class="paramname">{int}</td><td>id - The id of the box </td></tr>
-    <tr><td class="paramname">{char*}</td><td>pad - The padding of the box "&lt;top&gt; &lt;right&gt; &lt;bottom&gt; &lt;left&gt;" </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a76dc97022c2c18996c6846b3c7288b6b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a76dc97022c2c18996c6846b3c7288b6b">&#9670;&nbsp;</a></span>ui_box_put()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void ui_box_put </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="struct__Ui.html">Ui</a> *&#160;</td>
-          <td class="paramname"><em>ui</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>idx</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>str</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>...</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Updates the box buffer with a given string. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">{Ui*}</td><td>ui - UI where the box is located </td></tr>
-    <tr><td class="paramname">{int}</td><td>id - The id of the box </td></tr>
-    <tr><td class="paramname">{char*}</td><td>str - String format </td></tr>
-    <tr><td class="paramname">{...}</td><td>- String format arguments </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="abad117bfcc94b8da0e6074977052c708"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abad117bfcc94b8da0e6074977052c708">&#9670;&nbsp;</a></span>ui_draw()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void ui_draw </td>
-          <td>(</td>
-          <td class="paramtype">FILE *&#160;</td>
-          <td class="paramname"><em>stream</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="struct__Ui.html">Ui</a> *&#160;</td>
-          <td class="paramname"><em>ui</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Prints all buffered data inside the UI into the stdout. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">{FILE*}</td><td>stream - Buffer destination </td></tr>
-    <tr><td class="paramname">{Ui*}</td><td>ui - The UI that sueld be printed </td></tr>
   </table>
   </dd>
 </dl>

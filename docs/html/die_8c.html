@@ -73,7 +73,7 @@ $(function() {
 
 <p>Die's module dynamic.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="die_8h_source.html">die.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;die.h&quot;</code><br />
 <code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;stdlib.h&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
@@ -81,8 +81,6 @@ Include dependency graph for die.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="die_8c__incl.png" border="0" usemap="#src_2die_8c" alt=""/></div>
 <map name="src_2die_8c" id="src_2die_8c">
-<area shape="rect" id="node2" href="die_8h.html" title="Die&#39;s module header. " alt="" coords="64,80,115,107"/>
-<area shape="rect" id="node3" href="types_8h.html" title="It defines types of data. " alt="" coords="57,155,122,181"/>
 </map>
 </div>
 </div><table class="memberdecls">
@@ -94,17 +92,17 @@ Data Structures</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a795dc61932c2291619e6b8763d45fbe0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct__Die.html">Die</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="die_8c.html#a795dc61932c2291619e6b8763d45fbe0">die_init</a> ()</td></tr>
-<tr class="memdesc:a795dc61932c2291619e6b8763d45fbe0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializates a die.  <a href="#a795dc61932c2291619e6b8763d45fbe0">More...</a><br /></td></tr>
-<tr class="separator:a795dc61932c2291619e6b8763d45fbe0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a80d368f2c29bd18044c0f38fd0817bd6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="die_8c.html#a80d368f2c29bd18044c0f38fd0817bd6">die_destroy</a> (<a class="el" href="struct__Die.html">Die</a> *d)</td></tr>
-<tr class="memdesc:a80d368f2c29bd18044c0f38fd0817bd6"><td class="mdescLeft">&#160;</td><td class="mdescRight">destroys a die  <a href="#a80d368f2c29bd18044c0f38fd0817bd6">More...</a><br /></td></tr>
+<tr class="memitem:a47b145c5793416cbb7adbe4e09cff3f7"><td class="memItemLeft" align="right" valign="top"><a id="a47b145c5793416cbb7adbe4e09cff3f7"></a>
+Die *&#160;</td><td class="memItemRight" valign="bottom"><b>die_init</b> (Id id)</td></tr>
+<tr class="separator:a47b145c5793416cbb7adbe4e09cff3f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80d368f2c29bd18044c0f38fd0817bd6"><td class="memItemLeft" align="right" valign="top"><a id="a80d368f2c29bd18044c0f38fd0817bd6"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>die_destroy</b> (Die *d)</td></tr>
 <tr class="separator:a80d368f2c29bd18044c0f38fd0817bd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4e2e6dd9a29d12c3b08dfa594879753e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="die_8c.html#a4e2e6dd9a29d12c3b08dfa594879753e">die_roll</a> (<a class="el" href="struct__Die.html">Die</a> *d)</td></tr>
-<tr class="memdesc:a4e2e6dd9a29d12c3b08dfa594879753e"><td class="mdescLeft">&#160;</td><td class="mdescRight">rolls a die getting a random number  <a href="#a4e2e6dd9a29d12c3b08dfa594879753e">More...</a><br /></td></tr>
+<tr class="memitem:a4e2e6dd9a29d12c3b08dfa594879753e"><td class="memItemLeft" align="right" valign="top"><a id="a4e2e6dd9a29d12c3b08dfa594879753e"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>die_roll</b> (Die *d)</td></tr>
 <tr class="separator:a4e2e6dd9a29d12c3b08dfa594879753e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0ae47c02f343ffdbdf0750bb4864558b"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="die_8c.html#a0ae47c02f343ffdbdf0750bb4864558b">die_get_lastn</a> (<a class="el" href="struct__Die.html">Die</a> *die)</td></tr>
-<tr class="memdesc:a0ae47c02f343ffdbdf0750bb4864558b"><td class="mdescLeft">&#160;</td><td class="mdescRight">gets the last random number of the die  <a href="#a0ae47c02f343ffdbdf0750bb4864558b">More...</a><br /></td></tr>
+<tr class="memitem:a0ae47c02f343ffdbdf0750bb4864558b"><td class="memItemLeft" align="right" valign="top"><a id="a0ae47c02f343ffdbdf0750bb4864558b"></a>
+const int&#160;</td><td class="memItemRight" valign="bottom"><b>die_get_lastn</b> (Die *die)</td></tr>
 <tr class="separator:a0ae47c02f343ffdbdf0750bb4864558b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -114,127 +112,7 @@ Functions</h2></td></tr>
 <dl class="section date"><dt>Date</dt><dd>10/03/2019 </dd></dl>
 <dl class="section author"><dt>Author</dt><dd>Javier Romera </dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>GNU Public License </dd></dl>
-</div><h2 class="groupheader">Function Documentation</h2>
-<a id="a795dc61932c2291619e6b8763d45fbe0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a795dc61932c2291619e6b8763d45fbe0">&#9670;&nbsp;</a></span>die_init()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="struct__Die.html">Die</a>* die_init </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Initializates a die. </p>
-<dl class="section author"><dt>Author</dt><dd>Javier Romera </dd></dl>
-<dl class="retval"><dt>Return values</dt><dd>
-  <table class="retval">
-    <tr><td class="paramname">Returns</td><td>a pointer towards die </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a80d368f2c29bd18044c0f38fd0817bd6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a80d368f2c29bd18044c0f38fd0817bd6">&#9670;&nbsp;</a></span>die_destroy()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void die_destroy </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="struct__Die.html">Die</a> *&#160;</td>
-          <td class="paramname"><em>die</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>destroys a die </p>
-<dl class="section author"><dt>Author</dt><dd>Javier Romera </dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">{Die*}</td><td>die - Die pointer </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a4e2e6dd9a29d12c3b08dfa594879753e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4e2e6dd9a29d12c3b08dfa594879753e">&#9670;&nbsp;</a></span>die_roll()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int die_roll </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="struct__Die.html">Die</a> *&#160;</td>
-          <td class="paramname"><em>die</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>rolls a die getting a random number </p>
-<dl class="section author"><dt>Author</dt><dd>Javier Romera </dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">{Die*}</td><td>die - Die pointer </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="retval"><dt>Return values</dt><dd>
-  <table class="retval">
-    <tr><td class="paramname">{int}</td><td>- Returns the random number; </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a0ae47c02f343ffdbdf0750bb4864558b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0ae47c02f343ffdbdf0750bb4864558b">&#9670;&nbsp;</a></span>die_get_lastn()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const int die_get_lastn </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="struct__Die.html">Die</a> *&#160;</td>
-          <td class="paramname"><em>die</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>gets the last random number of the die </p>
-<dl class="section author"><dt>Author</dt><dd>Javier Romera </dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">{Die*}</td><td>die - Die pointer </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="retval"><dt>Return values</dt><dd>
-  <table class="retval">
-    <tr><td class="paramname">{int}</td><td>- Returns the last random number; </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-</div><!-- contents -->
+</div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

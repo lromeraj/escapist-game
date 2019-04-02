@@ -1,7 +1,0 @@
-<map id="src/game.h" name="src/game.h">
-<area shape="rect" id="node2" href="$g__engine_8c.html" title="Graphic engine source code. " alt="" coords="5,155,112,181"/>
-<area shape="rect" id="node3" href="$g__engine_8h.html" title="Main graphic engine. " alt="" coords="96,80,203,107"/>
-<area shape="rect" id="node5" href="$reader_8h.html" title="Defines a game reader. " alt="" coords="227,80,317,107"/>
-<area shape="rect" id="node6" href="$reader_8c.html" title="Main game reader. " alt="" coords="295,155,385,181"/>
-<area shape="rect" id="node4" href="$game__loop_8c.html" title="Main game loop. " alt="" coords="137,155,255,181"/>
-</map>

@@ -1,9 +1,0 @@
-<map id="src/link.h" name="src/link.h">
-<area shape="rect" id="node2" href="$game_8h.html" title="It defines the game interface. " alt="" coords="175,80,262,107"/>
-<area shape="rect" id="node3" href="$g__engine_8c.html" title="Graphic engine source code. " alt="" coords="279,229,385,256"/>
-<area shape="rect" id="node8" href="$link_8c.html" title="link functions " alt="" coords="397,80,472,107"/>
-<area shape="rect" id="node4" href="$g__engine_8h.html" title="Main graphic engine. " alt="" coords="165,155,272,181"/>
-<area shape="rect" id="node6" href="$reader_8h.html" title="Defines a game reader. " alt="" coords="51,155,141,181"/>
-<area shape="rect" id="node7" href="$reader_8c.html" title="Main game reader. " alt="" coords="5,229,96,256"/>
-<area shape="rect" id="node5" href="$game__loop_8c.html" title="Main game loop. " alt="" coords="135,229,254,256"/>
-</map>
