@@ -203,7 +203,7 @@ NOTA: se puden establecer configuraciones comunes a los entornos, es decir,
 si se desea utilizar una configuración básica a todos los entornos utilizar
 el entorno [GLOBAL], un ejemplo de archivo de configuración sería el siguiente:
 
-``` ApacheConf
+``` Cabal Config
 [GLOBAL]
 SRCDIR="./src" # source dir
 INCDIR="./inc" # inlcude dir
