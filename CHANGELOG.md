@@ -13,6 +13,7 @@
 `[FIXES]`
 - Fixed `Ui` uninitialized values.
 - Adapted `die_tb.c` to the new modifications.
+- Adapted `set_tb.c` to the new modifications.
 
 ## v0.3.9
 
