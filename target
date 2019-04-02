@@ -4,13 +4,15 @@
 #description     	:Script to make C projects more manageable
 #author		 				:Javier Romera Llave @lromeraj
 #date            	:20191103
-#version         	:0.3.1
+#version         	:1.1.0
 #notes           	:Install "figlet" and "valgrind"
 #bash_version    	:4.4.19(1)-release
 #==============================================================================
 
 # main project dir
 MAIN_DIR_NAME=$(basename "$(pwd)" )
+
+declare -A CONFIG
 
 # presets
 CONF=./target.conf # configuration file
@@ -261,47 +263,152 @@ env_get()
 
 }
 
+
+
 env_load()
 {
 
-  TARGET=$(env_get "TARGET")
-  TARGET_ARGS=( $(env_get "TARGET_ARGS") )
-  SRCS=( $(env_get "SRCS") )
-  OBJDIR=$(env_get "OBJDIR")
-  SRCDIR=$(env_get "SRCDIR")
-  ASCII_TITLE=$(env_get "ASCII_TITLE")
-  ASCII_VERSION=$(env_get "ASCII_VERSION")
-  DISTDIR=$(env_get "DISTDIR")
-  CFLAGS=( $(env_get "CFLAGS") )
-  LDFLAGS=( $(env_get "CFLAGS") )
-  VGR_FLAGS=( $(env_get "TARGET_FLAGS") )
-  CHANGELOG=$(env_get "CLOG")
+  _env=""
+  found=false
+
+  reg1="^\\[$ENV\\]"
+  reg2="^\\[(.*)\\]"
+
+  f=0
+  arr=()
+  buff=()
+  isStr=0
+  end=false
+
+  while read -r line; do
+
+    # detect env [env]
+    if [[ -z $_env ]]; then
+      if [[ $line =~ $reg1 ]]; then
+        _env=${BASH_REMATCH[0]}
+      fi
+      continue;
+    else
+      if [[ $line =~ $reg2 ]]; then
+        break;
+      fi
+    fi
+
+    # parse line
+    for (( i=0; i<${#line}; i++ )); do
+
+      c="${line:$i:1}"
+
+      addChar=true
+
+      case $c in
+
+        "#")
+          break
+        ;;
+
+        "=")
+          f=1
+          addChar=false
+        ;;
+
+        "[")
+          f=3
+          addChar=false
+        ;;
+
+        '"')
+          isStr=$(( 1 - isStr ))
+          if [ $isStr -eq 0 ]; then end=true; fi
+          addChar=false
+        ;;
+
+        "]")
+          f=4
+          addChar=false
+        ;;
+      esac
+
+      if [[ $c == " " ]]; then
+        addChar=false
+      fi
+
+      if [ $isStr -eq 1 ] && [[ $c != '"' ]]; then
+        addChar=true
+      fi
+
+      case $f in
+
+        1)
+          if [[ "${buff[0]}" == "$1" ]]; then
+            found=true
+          fi
+        ;;
+
+        3)
+          if [[ $c == "," ]] && [[ -n ${buff[ $f ]} ]]; then
+            arr+=( "${buff[ $f ]}" )
+            buff[ $f ]=""
+            addChar=false
+          fi
+        ;;
+
+        4)
+          arr+=( "${buff[ 3 ]}" )
+          end=true
+        ;;
+
+      esac
+
+      if [ $addChar == true ]; then
+        buff[ $f ]+=$c;
+      fi
+
+    done
+
+    if [ $f -eq 1 ] && [ $isStr -eq 0 ]; then end=true; fi
+
+    if [ $end == true ]; then
+
+      if [ $f -eq 1 ]; then
+        arr[0]=${buff[1]};
+      fi
+
+      CONFIG[${buff[0]}]="${arr[@]}"
+
+      f=0
+      arr=()
+      buff=()
+      end=false
+    fi
+
+  done < $CONF
+
+  TARGET=$( _conf "TARGET" )
+  TARGET_ARGS=( $( _conf "TARGET_ARGS" ) )
+  SRCDIR=$( _conf "SRCDIR" )
+  SRCS=( $( _conf "SRCS" ) )
+  OBJDIR=$( _conf "OBJDIR" )
+  INCDIR=$( _conf "INCDIR" )
+  DISTDIR=$( _conf "DISTDIR" )
+  CFLAGS=( $( _conf "CFLAGS" ) )
+  LDFLAGS=( $( _conf "LDFLAGS" ) )
+  CLOG=$( _conf "CLOG" )
+  ASCII_VERSION=$( _conf "ASCII_VERSION" )
+  ASCII_TITLE=$( _conf "ASCII_TITLE" )
 
 }
 
+
 _notDef()
 {
-  case $1 in
-    OBJDIR)
-      error "\$OBJDIR: object dir not defined\\n"
-    ;;
-    SRCDIR)
-      error "\$SRCDIR: source dir not defined\\n"
-    ;;
-    TARGET)
-      error "\$TARGET: target name not defined\\n"
-    ;;
-    SRCS)
-      error "\$SRCS: source modules are not defined\\n"
-    ;;
-  esac
-
+  error "\$$1 is not defined\\n"
   return 0
 }
 
 _notFnd()
 {
-  error "$1: no such file or directory\\n"
+  error "'$1': no such file or directory\\n"
   return 0
 }
 
@@ -321,6 +428,12 @@ _comp()
     _notFnd "$OBJDIR"; errc=1
   fi
 
+  if [[ -z "$INCDIR" ]]; then
+    _notDef "INCDIR"; errc=1
+  elif [[ ! -d "$INCDIR" ]]; then
+    _notFnd "$INCDIR"; errc=1
+  fi
+
   if [[ -z "$SRCDIR" ]]; then
     _notDef "SRCDIR"; errc=1
   elif [[ ! -d "$SRCDIR" ]]; then
@@ -337,7 +450,7 @@ _comp()
       FILES=()
       cit=false # compilation flag
       c_file="$SRCDIR/$re.c"
-      h_file="$SRCDIR/$re.h"
+      h_file="$INCDIR/$re.h"
       o_file="$OBJDIR/$re.o"
       FILES+=( "$c_file" )
       FILES+=( "$h_file" )
@@ -374,7 +487,7 @@ _comp()
 
       if [ $cit == true ] && [[ -e $c_file ]]; then
         info "compiling: ${BYellow}$c_file${NC} -> $o_file\\n"
-        gcc ${CFLAGS[@]} -c "$c_file" -o "$o_file"
+        gcc ${CFLAGS[@]} -I${INCDIR} -c $c_file -o $o_file
       else
         info "up to date: ${BGreen}$c_file${NC} -> $o_file\\n"
       fi
@@ -388,6 +501,11 @@ _comp()
 
 }
 
+_conf()
+{
+  echo ${CONFIG[$1]}
+}
+
 # check if there are as least 1 argument
 if [ $# -lt 1 ]; then
 	error "too few args\\n"
@@ -399,7 +517,7 @@ if [[ ! -e "$CONF" ]]; then
   error "$CONF: no such file\\n"
   exit 1
 else
-  ENV=$(grep -Po -m1 '^\[\K[^\]]+' "$CONF")
+  ENV="GLOBAL"
   env_load
 fi
 
@@ -440,6 +558,9 @@ while [ $# -gt 0 ]; do
 
     -c|--comp)
 
+      ASCII_TITLE=$( _conf "ASCII_TITLE" )
+      ASCII_VERSION=$( _conf "ASCII_VERSION" )
+
       if [ -e "$ASCII_TITLE" ]; then
         echo -e "${BPurple}$( cat "$ASCII_TITLE" )${NC}"
       fi
@@ -471,10 +592,9 @@ while [ $# -gt 0 ]; do
 
       name="${TARGET}_$(_date).zip"
 
+      if [[ -e $CLOG ]]; then
 
-      if [[ -e "$CHANGELOG" ]]; then
-
-        _v=$(_findV "$CHANGELOG") # find last version
+        _v=$( _findV "$CLOG" ) # find last version
 
         if [[ ! -z $_v ]]; then
 

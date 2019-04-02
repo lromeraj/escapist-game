@@ -60,4 +60,6 @@ int main() {
 
 	fprintf( stderr, "destroying set ...\n" );
 	set_destroy( set );
+
+	return 0;
 }

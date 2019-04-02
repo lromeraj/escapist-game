@@ -1,5 +1,19 @@
 # I3
 
+## v0.3.9.1
+
+`[IMPROVEMENTS]`
+- `target` script updated to version `1.1.0`.
+- `target` script is now hundred times faster.
+- `target` script now supports global/shared configuration for the environments.
+- Added new option `INCDIR`, this represents the include directory.
+- Created new directory `inc/`, the header files should be located in this directory.
+- File `target.conf` was adapted to the new modifications.
+
+`[FIXES]`
+- Fixed `Ui` uninitialized values.
+- Adapted `die_tb.c` to the new modifications.
+
 ## v0.3.9
 
 `[OVERVIEW]`

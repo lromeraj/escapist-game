@@ -12,7 +12,7 @@ int main() {
 	srand( time(NULL) );
 
   fprintf( stderr, "creating die ... " );
-  die = die_init();
+  die = die_init( 1 );
 
 	if ( !die ) {
 		fprintf( stderr, "ERR\n" );
@@ -28,4 +28,6 @@ int main() {
 
   fprintf( stderr, "destroying die ...\n" );
 	die_destroy( die );
+
+	return 0;
 }

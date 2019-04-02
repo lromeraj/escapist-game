@@ -149,7 +149,6 @@ Ui_box* ui_get_box_by_idx( Ui* ui, int idx );
 */
 void ui_kill_box( Ui* ui, int idx );
 
-
 int vsnprintf( char *buf, size_t size, const char *fmt, va_list list );
 int snprintf(char *buf, size_t size, const char *fmt, ...);
 
@@ -179,7 +178,6 @@ void ui_frm( Ui *ui, int num, ... ) {
   sprintf( _buff+strlen( _buff ), "m" );
   strncpy( ui->__frm, _buff, UI_MAX_FRM_LEN );
 
-
   va_end( _args );
 }
 
@@ -194,6 +192,7 @@ Ui *ui_init( int w, int h ) {
     ui->scr.w = w;
     ui->scr.h = h;
     ui->__len = w*h;
+    ui->__frm[0] = 0;
 
     for ( i=0; i < UI_MAX_BOXES; i++) {
       ui->boxes[ i ] = NULL;
@@ -355,7 +354,7 @@ Ui_pix **alloc_pixs( int __len ) {
 
   int i;
   Ui_pix *pix;
-  Ui_pix **__pixs = (Ui_pix**) malloc( __len * sizeof(Ui_pix*) );
+  Ui_pix **__pixs = (Ui_pix**) malloc(__len * sizeof(Ui_pix*) );
 
   if ( __pixs ) {
 
@@ -398,18 +397,23 @@ void ui_new_box( Ui *ui, int idx, int x, int y, int w, int h ) {
 
   if ( box ) {
 
-    box->id = idx;
     box->x = x;
     box->y = y;
     box->w = w;
     box->h = h;
     box->cx = 0;
     box->cy = 0;
-    box->bg = DEFAULT_BOX_BG_COLOR;
-    box->frm[ 0 ] = 0;
+    box->id = idx;
     box->__len = w*h;
+    box->frm[ 0 ] = 0;
+    box->bg = DEFAULT_BOX_BG_COLOR;
+    box->pad[0] = 0;
+    box->pad[1] = 0;
+    box->pad[2] = 0;
+    box->pad[3] = 0;
 
     box->__pixs = alloc_pixs( box->__len );
+
 
     if ( box->__pixs ) {
 
@@ -419,9 +423,13 @@ void ui_new_box( Ui *ui, int idx, int x, int y, int w, int h ) {
         pix = box->__pixs[ i ];
         pix->c = ' ';
       }
+
       ui_dump_box( ui, idx );
+
     } else {
+
       ui_kill_box( ui, idx );
+
     }
 
   }
@@ -638,10 +646,11 @@ void ui_box_put( Ui *ui, int idx, const char *frmt, ... ) {
 
     } else if ( _pix.c == '\033' ) {
 
+
       j=0;
       while ( _pix.c != 'm' ) {
 
-        if ( j >= UI_MAX_FRM_LEN ) { /* format overflow */
+        if ( j >= UI_MAX_FRM_LEN ) {
           strcpy( __frm, "\033[0" );
           j=3;
           break;
