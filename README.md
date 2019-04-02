@@ -156,13 +156,13 @@ Para generar el paquete de distribución:
 
 `-e, --env` - establece el entorno con el que se va a trabajar, en este caso un entorno sería    por ejemplo `[goose]`, si no se especifica ningún entorno, el script 		usará el primero que esté definido en el archivo de configuración. 		Si el entorno especificado no se encuentra en el archivo de configuración 		se saltarán todos las acciones solicitadas para dicho entorno y se pasará 		al siguiente (en el caso de que se hayan solicitado acciones para varios 		entornos)
 
- `-c, --comp` - compila un entorno.
+`-c, --comp` - compila un entorno.
 
 `-r, --run` - ejecuta el archivo ejecutable generado para dicho entorno. También acepta argumentos adicionales que serán pasados al ejecutable.
 
 `--clean` - limpia los archivos objeto y ejecutables generados en un entorno.
 
- `-m, --cmem` - hacer chequeo de memoria con valgrind.
+`-m, --cmem` - hacer chequeo de memoria con valgrind.
 
 `-d, --dist` - genera un archivo comprimido para ser distribuido.
 		Cuando se ejecuta la instrucción `-d, --dist` el script buscará un archivo llamado `CHANGELOG`, si encuentra una definición de versión dentro de éste (por ejemplo `v1.0.0`), actualizará el archivo `ASCII_VERSION` y generará un nombre con la fecha y la versión en caso de encontrarla.
