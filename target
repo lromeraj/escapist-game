@@ -181,7 +181,6 @@ env_load()
       case $c in
 
         "#")
-          echo -n "#" > /dev/tty
           break;
         ;;
 
@@ -232,7 +231,6 @@ env_load()
         ;;
 
         4)
-          echo "${buff[ 3 ]}" > /dev/tty
           arr+=( "${buff[ 3 ]}" )
           end=true
         ;;
@@ -350,16 +348,14 @@ _comp()
 
         fi
 
+        cit=true
+
   			if [ -e "$TARGET" ]; then
           if [ -e "$o_file" ]; then
-  					if [ "$(_modDate "$TARGET" )" -lt "$(_modDate "$f" )" ]; then
-  						cit=true
-  					fi
-          else
-            cit=true
+  					if [ "$(_modDate "$TARGET" )" -gt "$(_modDate "$f" )" ]; then
+              cit=false
+            fi
           fi
-  			else
-          cit=true
         fi
 
       done
@@ -436,9 +432,6 @@ while [ $# -gt 0 ]; do
     ;;
 
     -c|--comp)
-
-      ASCII_TITLE=$( _conf "ASCII_TITLE" )
-      ASCII_VERSION=$( _conf "ASCII_VERSION" )
 
       if [ -e "$ASCII_TITLE" ]; then
         echo -e "${BPurple}$( cat "$ASCII_TITLE" )${NC}"

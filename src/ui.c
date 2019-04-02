@@ -7,7 +7,6 @@
 * @copyright GNU Public License
 */
 
-
 #include "ui.h"
 #include <stdio.h>
 #include <stdlib.h>
