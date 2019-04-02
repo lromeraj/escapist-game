@@ -252,7 +252,7 @@ void g_engine_paint_help( G_engine *ge, Game *game ) {
         ui_box_put( ui, HELP_BODY, "\nIf there is no argument, the default number of jumps is 1.\n");
         ui_box_put( ui, HELP_BODY, "NOTE: this command ignores the space links.\n");
 
-      } else if ( !strcmp( b_name, "rigth" ) ) {
+      } else if ( !strcmp( b_name, "right" ) ) {
 
         ui_box_put( ui, HELP_BODY, "...\n" );
         ui_frm( ui, 2, BG_BLACK, FG_WHITE );
