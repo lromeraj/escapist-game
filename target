@@ -156,6 +156,7 @@ env_load()
   isStr=0
   end=false
 
+  IFS=''
   while read -r line; do
 
     # detect env [env]
@@ -176,6 +177,7 @@ env_load()
       if [ $end == true ]; then break; fi
 
       c="${line:$i:1}"
+
       addChar=true
 
       case $c in
@@ -206,7 +208,7 @@ env_load()
         ;;
       esac
 
-      if [[ $c == " " ]]; then
+      if [[ $c == ' ' ]] || [[ $c =~ '	' ]]; then
         addChar=false
       fi
 
@@ -224,14 +226,14 @@ env_load()
 
         3)
           if [[ $c == "," ]] && [[ -n ${buff[ $f ]} ]]; then
-            arr+=( "${buff[ $f ]}" )
+            arr+=( ${buff[ $f ]} )
             buff[ $f ]=""
             addChar=false
           fi
         ;;
 
         4)
-          arr+=( "${buff[ 3 ]}" )
+          arr+=( ${buff[ 3 ]} )
           end=true
         ;;
 
@@ -261,6 +263,7 @@ env_load()
 
   done < $CONF
 
+  IFS=' '
   TARGET=$( _conf "TARGET" )
   TARGET_ARGS=( $( _conf "TARGET_ARGS" ) )
   SRCDIR=$( _conf "SRCDIR" )
@@ -306,7 +309,8 @@ _comp()
   fi
 
   if [[ -z "$INCDIR" ]]; then
-    _notDef "INCDIR"; errc=1
+    warn "comp: using \$INCDIR as: ${Cyan}$SRCDIR${NC}\\n"
+    INCDIR=$SRCDIR
   elif [[ ! -d "$INCDIR" ]]; then
     _notFnd "$INCDIR"; errc=1
   fi
@@ -325,10 +329,11 @@ _comp()
     for re in "${SRCS[@]}"; do
 
       FILES=()
-      cit=false # compilation flag
+      cit=true # compilation flag
       c_file="$SRCDIR/$re.c"
       h_file="$INCDIR/$re.h"
       o_file="$OBJDIR/$re.o"
+
       FILES+=( "$c_file" )
       FILES+=( "$h_file" )
 
@@ -348,8 +353,6 @@ _comp()
 
         fi
 
-        cit=true
-
   			if [ -e "$TARGET" ]; then
           if [ -e "$o_file" ]; then
   					if [ "$(_modDate "$TARGET" )" -gt "$(_modDate "$f" )" ]; then
@@ -363,6 +366,7 @@ _comp()
       if [ $cit == true ] && [[ -e $c_file ]]; then
         info "compiling: ${BYellow}$c_file${NC} -> $o_file\\n"
         gcc ${CFLAGS[@]} -I${INCDIR} -c $c_file -o $o_file
+        errc=$?
       else
         info "up to date: ${BGreen}$c_file${NC} -> $o_file\\n"
       fi
@@ -371,9 +375,10 @@ _comp()
 
 	else
 		error "${Yellow}$SRCDIR${NC}: no such directory\\n"
-		return 1
-	fi
+    errc=1
+  fi
 
+  return $errc
 }
 
 _conf()
@@ -434,7 +439,7 @@ while [ $# -gt 0 ]; do
     -c|--comp)
 
       if [ -e "$ASCII_TITLE" ]; then
-        echo -e "${BPurple}$( cat "$ASCII_TITLE" )${NC}"
+        echo -e "${BCyan}$( cat "$ASCII_TITLE" )${NC}"
       fi
 
       if [ -e "$ASCII_VERSION" ]; then
@@ -443,6 +448,7 @@ while [ $# -gt 0 ]; do
 
       _fnStart "COMPILATION START"
       _comp
+
       if [ $? -eq 0 ]; then
         _link
         if [ $? -ne 0 ]; then
