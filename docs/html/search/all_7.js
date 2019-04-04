@@ -27,7 +27,6 @@ var searchData=
   ['game_5fget_5fobjects',['game_get_objects',['../game_8h.html#aacbf28320fd70aa492a722ad1789f479',1,'game.c']]],
   ['game_5fget_5fplayer',['game_get_player',['../game_8h.html#af46efd507d797aec6da90d08aa592e32',1,'game.c']]],
   ['game_5fget_5fspace',['game_get_space',['../game_8h.html#a69d94da9d27b542d3ebdeb8b60f1f2dc',1,'game.c']]],
-  ['game_5fhelp',['GAME_HELP',['../g__engine_8c.html#a55884d4185031754f710955b5e32ebd9ac49bda619a85c79a6be5bd102371c84d',1,'g_engine.c']]],
   ['game_5finfo',['GAME_INFO',['../g__engine_8c.html#a55884d4185031754f710955b5e32ebd9a4c9c8637f3b906daa4173fe12bd95e7d',1,'g_engine.c']]],
   ['game_5fis_5fover',['game_is_over',['../game_8h.html#a27711fe1fc6f5a353b9ab63b92602359',1,'game.c']]],
   ['game_5floop_2ec',['game_loop.c',['../game__loop_8c.html',1,'']]],

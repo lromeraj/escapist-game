@@ -27,6 +27,9 @@ This graph shows which files directly or indirectly include this file\+:\nopageb
 \mbox{\Hypertarget{space_8h_a95d9e86d5e1a02663f74b6896e5975c6}\label{space_8h_a95d9e86d5e1a02663f74b6896e5975c6}} 
 \#define \hyperlink{space_8h_a95d9e86d5e1a02663f74b6896e5975c6}{M\+A\+X\+\_\+\+S\+P\+A\+C\+E\+\_\+\+N\+A\+ME}~50
 \begin{DoxyCompactList}\small\item\em Maximum length of the space name. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{space_8h_aed836b26b3a8e93a4d652bbe81bf66d5}\label{space_8h_aed836b26b3a8e93a4d652bbe81bf66d5}} 
+\#define \hyperlink{space_8h_aed836b26b3a8e93a4d652bbe81bf66d5}{M\+A\+X\+\_\+\+S\+P\+A\+C\+E\+\_\+\+D\+E\+S\+C\+RP}~100
+\begin{DoxyCompactList}\small\item\em Maximum number of characters that can have a name of an space. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{space_8h_a5f54fd55f983a2e33ce076cd9f587e82}\label{space_8h_a5f54fd55f983a2e33ce076cd9f587e82}} 
 \#define \hyperlink{space_8h_a5f54fd55f983a2e33ce076cd9f587e82}{M\+A\+X\+\_\+\+S\+P\+A\+C\+ES}~200
 \begin{DoxyCompactList}\small\item\em Maximum number of spaces. \end{DoxyCompactList}\item 
@@ -50,6 +53,10 @@ typedef struct \hyperlink{struct__Space}{\+\_\+\+Space} \hyperlink{space_8h_a675
 \begin{DoxyCompactList}\small\item\em takes the id of a space \end{DoxyCompactList}\item 
 \hyperlink{types_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+US} \hyperlink{space_8h_aab5b468f9822ab78dbe16d1321870d93}{space\+\_\+set\+\_\+name} (\hyperlink{space_8h_a67533ffc2b70463baecc38fb0629bbfc}{Space} $\ast$space, char $\ast$name)
 \begin{DoxyCompactList}\small\item\em defines the name of a space \end{DoxyCompactList}\item 
+const char $\ast$ \hyperlink{space_8h_a7f830fbc083a277fbe916db402b5bddb}{space\+\_\+get\+\_\+descrp} (\hyperlink{space_8h_a67533ffc2b70463baecc38fb0629bbfc}{Space} $\ast$space)
+\begin{DoxyCompactList}\small\item\em This fuction gets the description of an space. \end{DoxyCompactList}\item 
+void \hyperlink{space_8h_a907a4b0274e2ef14eeba594f9dafa596}{space\+\_\+set\+\_\+descrp} (\hyperlink{space_8h_a67533ffc2b70463baecc38fb0629bbfc}{Space} $\ast$space, const char $\ast$descrp)
+\begin{DoxyCompactList}\small\item\em This fuction sets the description of an space. \end{DoxyCompactList}\item 
 const char $\ast$ \hyperlink{space_8h_a310c540cd6e11073f7328add1f927001}{space\+\_\+get\+\_\+name} (\hyperlink{space_8h_a67533ffc2b70463baecc38fb0629bbfc}{Space} $\ast$space)
 \begin{DoxyCompactList}\small\item\em takes the name of a space \end{DoxyCompactList}\item 
 \hyperlink{types_8h_a845e604fb28f7e3d97549da3448149d3}{Id} \hyperlink{space_8h_a753b848210f2098c6328006ae5d90fea}{space\+\_\+get\+\_\+link} (\hyperlink{space_8h_a67533ffc2b70463baecc38fb0629bbfc}{Space} $\ast$sp, \hyperlink{types_8h_a7a09f2d4d51c4b4ba7957bbe676a3855}{Cardinal\+Point} cp)
@@ -190,6 +197,49 @@ Javier Romera
 {\em \{\+S\+T\+A\+T\+U\+S\}} & -\/ Returns an state \\
 \hline
 \end{DoxyRetVals}
+\mbox{\Hypertarget{space_8h_a7f830fbc083a277fbe916db402b5bddb}\label{space_8h_a7f830fbc083a277fbe916db402b5bddb}} 
+\index{space.\+h@{space.\+h}!space\+\_\+get\+\_\+descrp@{space\+\_\+get\+\_\+descrp}}
+\index{space\+\_\+get\+\_\+descrp@{space\+\_\+get\+\_\+descrp}!space.\+h@{space.\+h}}
+\subsubsection{\texorpdfstring{space\+\_\+get\+\_\+descrp()}{space\_get\_descrp()}}
+{\footnotesize\ttfamily const char$\ast$ space\+\_\+get\+\_\+descrp (\begin{DoxyParamCaption}\item[{\hyperlink{space_8h_a67533ffc2b70463baecc38fb0629bbfc}{Space} $\ast$}]{space }\end{DoxyParamCaption})}
+
+
+
+This fuction gets the description of an space. 
+
+\begin{DoxyAuthor}{Author}
+Javier Romera 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+Object$\ast$\}} & obj -\/ space\textquotesingle{}s pointer \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \{char$\ast$\}} & -\/ Returns the space name \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{space_8h_a907a4b0274e2ef14eeba594f9dafa596}\label{space_8h_a907a4b0274e2ef14eeba594f9dafa596}} 
+\index{space.\+h@{space.\+h}!space\+\_\+set\+\_\+descrp@{space\+\_\+set\+\_\+descrp}}
+\index{space\+\_\+set\+\_\+descrp@{space\+\_\+set\+\_\+descrp}!space.\+h@{space.\+h}}
+\subsubsection{\texorpdfstring{space\+\_\+set\+\_\+descrp()}{space\_set\_descrp()}}
+{\footnotesize\ttfamily void space\+\_\+set\+\_\+descrp (\begin{DoxyParamCaption}\item[{\hyperlink{space_8h_a67533ffc2b70463baecc38fb0629bbfc}{Space} $\ast$}]{space,  }\item[{const char $\ast$}]{descrp }\end{DoxyParamCaption})}
+
+
+
+This fuction sets the description of an space. 
+
+\begin{DoxyAuthor}{Author}
+Javier Romera 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+Object$\ast$\}} & obj -\/ space\textquotesingle{}s pointer \\
+\hline
+{\em \{char$\ast$\}} & name -\/ space\textquotesingle{}s description \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{space_8h_a310c540cd6e11073f7328add1f927001}\label{space_8h_a310c540cd6e11073f7328add1f927001}} 
 \index{space.\+h@{space.\+h}!space\+\_\+get\+\_\+name@{space\+\_\+get\+\_\+name}}
 \index{space\+\_\+get\+\_\+name@{space\+\_\+get\+\_\+name}!space.\+h@{space.\+h}}
