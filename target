@@ -329,7 +329,7 @@ _comp()
     for re in "${SRCS[@]}"; do
 
       FILES=()
-      cit=true # compilation flag
+      cit=false # compilation flag
       c_file="$SRCDIR/$re.c"
       h_file="$INCDIR/$re.h"
       o_file="$OBJDIR/$re.o"
@@ -348,17 +348,19 @@ _comp()
             error "no such file: ${BRed}$c_file${NC}\\n"
             return 1
           fi
-
           continue;
-
         fi
 
   			if [ -e "$TARGET" ]; then
           if [ -e "$o_file" ]; then
-  					if [ "$(_modDate "$TARGET" )" -gt "$(_modDate "$f" )" ]; then
-              cit=false
+  					if [ $(_modDate "$TARGET" ) -lt $(_modDate "$f" ) ]; then
+              cit=true
             fi
+          else
+            cit=true
           fi
+        else
+          cit=true
         fi
 
       done

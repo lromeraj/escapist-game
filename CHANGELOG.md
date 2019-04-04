@@ -1,5 +1,13 @@
 # I3
 
+## v0.3.9.2
+
+`[IMPROVEMENTS]`
+- Removed help box, use `help` command to see information about the commands.
+
+`[FIXES]`
+- Fixed `target` script bug that was not compiling after file modifications.
+
 ## v0.3.9.1
 
 `[IMPROVEMENTS]`

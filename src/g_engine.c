@@ -32,7 +32,6 @@ enum _Boxes {
   GAME_MAP, /*!< Map box */
   GAME_OVERVIEW, /*!< Overview box */
   GAME_TITLE, /*!< Title box */
-  GAME_HELP, /*!< Help box */
   GAME_FEED, /*!< Feedback box */
   GAME_INFO, /*!< Info box */
   HELP_TITLE, /*!< Help title */
@@ -76,15 +75,16 @@ G_engine *g_engine_create() {
       ui_new_box( _ui, GAME_TITLE, 0, 0, 80, 1 );
       ui_new_box( _ui, GAME_MAP, 0, 2, 49, 14 );
       ui_new_box( _ui, GAME_OVERVIEW, 50, 2, 30, 14 );
-      ui_new_box( _ui, GAME_HELP, 0, 17, 30, 6 );
-      ui_new_box( _ui, GAME_FEED, 31, 17, 49, 6 );
-      ui_new_box( _ui, GAME_INFO, 31, 17, 49, 6 );
+      ui_new_box( _ui, GAME_FEED, 0, 17, 80, 6 );
+      ui_new_box( _ui, GAME_INFO, 0, 17, 80, 6 );
 
       /* game feed */
       ui_box_bg( _ui, GAME_FEED, BG_BLACK );
       ui_frm( _ui, 3, FG_BLACK, BG_YELLOW );
       ui_box_frm( _ui, GAME_FEED, "\033[%d;%dm", BG_BLACK, FG_WHITE );
-      ui_box_put( _ui, GAME_FEED, "\033[1;%d;%dm FEED\n", FG_BLACK, BG_YELLOW );
+      ui_box_put( _ui, GAME_FEED, "\033[1;%d;%dm FEED\n\033[0m", FG_BLACK, BG_YELLOW );
+      ui_box_put( _ui, GAME_FEED, "NOTE: use\033[1;%d;%dm help \033[0m", BG_BLACK, FG_YELLOW );
+      ui_box_put( _ui, GAME_FEED, "to see information about the game\n" );
 
       /* game info */
       ui_box_frm( _ui, GAME_OVERVIEW, "\033[%d;%dm", BG_BLACK, FG_WHITE );
@@ -94,9 +94,6 @@ G_engine *g_engine_create() {
 
       /* game overview */
       ui_box_frm( _ui, GAME_OVERVIEW, "\033[%d;%dm", BG_WHITE, FG_BLACK );
-
-      /* game help */
-      ui_box_frm( _ui, GAME_HELP, "\033[%d;%dm", BG_WHITE, FG_BLACK );
 
       /* game help */
       ui_box_frm( _ui, GAME_TITLE, "\033[%d;%dm", BG_YELLOW, FG_BLACK );
@@ -304,6 +301,10 @@ void g_engine_paint_help( G_engine *ge, Game *game ) {
     ui_box_put( ui, HELP_BODY, "drop, d -> drop an object\n" );
     ui_box_put( ui, HELP_BODY, "inspect, i -> inspect an element of the game\n" );
     ui_box_put( ui, HELP_BODY, "exit, e -> game exit\n" );
+
+    ui_box_put( ui, HELP_BODY, "\nTo see more information about " );
+    ui_box_put( ui, HELP_BODY, "a particular command use: " );
+    ui_box_put( ui, HELP_BODY, "\033[1;%d;%dmhelp\033[0m <command>\n", BG_BLACK, FG_YELLOW );
 
   }
 
@@ -522,7 +523,7 @@ void g_engine_paint_game( G_engine *ge, Game *game ) {
   ui_box_bg( ui, GAME_MAP, BG_WHITE );
 
   ui_frm( ui, 3, BG_GREEN, FG_WHITE, S_BOLD );
-  ui_box_put( ui, GAME_MAP, "                     MAP\n");
+  ui_box_put( ui, GAME_MAP, "                      MAP\n");
   ui_rs( ui );
 
   /* !!! IMPROVE START */
@@ -559,7 +560,7 @@ void g_engine_paint_game( G_engine *ge, Game *game ) {
   ui_clear_box( ui, GAME_OVERVIEW );
   ui_box_bg( ui, GAME_OVERVIEW, BG_WHITE );
   ui_frm( ui, 3, BG_RED, FG_WHITE, S_BOLD );
-  ui_box_put( ui, GAME_OVERVIEW, "          OVERVIEW\n");
+  ui_box_put( ui, GAME_OVERVIEW, "           OVERVIEW\n");
   ui_rs( ui );
 
   objs = game_get_objects( game );
@@ -612,26 +613,11 @@ void g_engine_paint_game( G_engine *ge, Game *game ) {
 
   ui_dump_box( ui, GAME_OVERVIEW );
 
-  /* help box */
-  ui_clear_box( ui, GAME_HELP );
-  ui_box_bg( ui, GAME_HELP, BG_WHITE );
-  ui_frm( ui, 3, FG_WHITE, BG_PURPLE, S_BOLD );
-  ui_box_put( ui, GAME_HELP, " HELP\n" );
-  ui_rs( ui );
-
-  ui_box_put( ui, GAME_HELP, " next: n  back: b  take: t\n" );
-  ui_box_put( ui, GAME_HELP, " drop: d  exit: e  roll: rl\n" );
-  ui_box_put( ui, GAME_HELP, " left: l  rigth: r move: m\n" );
-  ui_box_put( ui, GAME_HELP, " help: h\n" );
-  ui_rs( ui );
-
-  ui_dump_box( ui, GAME_HELP );
-
   /* feedback box */
   if ( cmd ) {
 
     ui_frm( ui, 3, S_BOLD, BG_BLACK, FG_WHITE );
-    ui_box_put( ui, GAME_FEED, "$ " );
+    ui_box_put( ui, GAME_FEED, " $ " );
     ui_rs( ui );
 
     ui_frm( ui, 3, FG_YELLOW, S_BOLD, BG_BLACK  );
