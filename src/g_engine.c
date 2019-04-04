@@ -661,6 +661,7 @@ void g_engine_paint_game( G_engine *ge, Game *game ) {
       ui_box_put( ui, GAME_INFO, "%s", space_get_name( cu_sp ) );
       ui_frm( ui, 2, BG_BLACK, FG_WHITE );
       ui_box_put( ui, GAME_INFO, "{id: %ld}\n", space_get_id( cu_sp ) );
+      ui_box_put( ui, GAME_INFO, "Description: %s", space_get_descrp( cu_sp ) );
     } else if ( tid != NO_ID ) {
 
       obj = game_get_object_by_id( game, tid );

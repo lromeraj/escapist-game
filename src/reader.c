@@ -85,7 +85,8 @@ STATUS reader_load_spaces( Game *game, char *f_name ) {
 
   FILE *file = NULL;
   char line[WORD_SIZE] = "";
-  char name[WORD_SIZE] = "";
+  char name[ MAX_SPACE_NAME ] = "";
+  char descrp[ MAX_SPACE_DESCRP ] = "";
   char del[] = "|";
   char pref_sp[] = "@s:";
   Id sp_id = NO_ID, north = NO_ID, east = NO_ID, south = NO_ID, west = NO_ID;
@@ -105,7 +106,8 @@ STATUS reader_load_spaces( Game *game, char *f_name ) {
     if ( !strncmp( pref_sp, line, 3 ) ) {
 
       toks = strtok(line + strlen(pref_sp), del); sp_id = atol(toks);
-      toks = strtok(NULL, del); strcpy(name, toks);
+      toks = strtok(NULL, del); strncpy(name, toks, MAX_SPACE_NAME );
+      toks = strtok(NULL, del); strncpy(descrp, toks, MAX_SPACE_DESCRP );
       toks = strtok(NULL, del); north = atol(toks);
       toks = strtok(NULL, del); east = atol(toks);
       toks = strtok(NULL, del); south = atol(toks);
@@ -125,6 +127,7 @@ STATUS reader_load_spaces( Game *game, char *f_name ) {
       if (space != NULL) {
 
         space_set_name( space, name );
+        space_set_descrp( space, descrp );
         space_set_link( space, N, north );
         space_set_link( space, E, east );
         space_set_link( space, S, south );

@@ -4,6 +4,7 @@
 
 `[IMPROVEMENTS]`
 - Removed help box, use `help` command to see information about the commands.
+- Added description of the spaces.
 
 `[FIXES]`
 - Fixed `target` script bug that was not compiling after file modifications.

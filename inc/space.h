@@ -15,6 +15,7 @@
 #include "set.h"
 
 #define MAX_SPACE_NAME 50 /*!< @brief Maximum length of the space name */
+#define MAX_SPACE_DESCRP 100 /*!< @brief Maximum number of characters that can have a name of an space */
 #define MAX_SPACES 200 /*!< @brief Maximum number of spaces */
 #define PICTURE_LEN 100 /*!< @brief Maximum lenght of the space's picture */
 
@@ -62,6 +63,25 @@ Id space_get_id(Space* space);
 */
 
 STATUS space_set_name(Space* space, char* name);
+
+
+/**
+* @brief This fuction gets the description of an space
+* @author Javier Romera
+* @param {Object*} obj - space's pointer
+* @retval {char*} - Returns the space name
+*/
+const char *space_get_descrp( Space *space );
+
+
+/**
+* @brief This fuction sets the description of an space
+* @author Javier Romera
+* @param {Object*} obj - space's pointer
+* @param {char*} name - space's description
+*/
+void space_set_descrp( Space *space, const char *descrp );
+
 
 /**
 *
@@ -119,7 +139,6 @@ STATUS space_add_object(Space* space, Id id);
 * @author Javier Romera
 * @param {Game*} - game
 */
-
 Id space_get_object( Space* space, Id id );
 
 /**

@@ -23,6 +23,7 @@ struct _Space {
   Id east; /*!< @brief Space east id */
   Id west; /*!< @brief Space west id */
   char name[ MAX_SPACE_NAME ]; /*!< @brief Space name */
+  char descrp[ MAX_SPACE_DESCRP ]; /*!< @brief Space description */
   Set *objects; /*!< @brief Set of objects in the space */
   char picture[ PICTURE_LEN ]; /*!< @brief Space structure */
 };
@@ -76,7 +77,17 @@ STATUS space_set_name( Space *space, char *name ) {
   return OK;
 }
 
+void space_set_descrp( Space *space, const char *descrp ) {
+  if ( !space )
+    return;
+  strcpy( space->descrp, descrp );
+}
 
+const char *space_get_descrp( Space *space ) {
+  if ( !space )
+    return NULL;
+  return space->descrp;
+}
 
 Id space_get_link( Space *sp, CardinalPoint cp ) {
 
@@ -211,6 +222,6 @@ char* space_get_picture( Space *space ) {
   if ( !space ) {
     return NULL;
   }
-  
+
   return space->picture;
 }
