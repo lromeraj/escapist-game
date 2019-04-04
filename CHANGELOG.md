@@ -5,9 +5,12 @@
 `[IMPROVEMENTS]`
 - Removed help box, use `help` command to see information about the commands.
 - Added description of the spaces.
+- Improved `set` test bench.
 
 `[FIXES]`
 - Fixed `target` script bug that was not compiling after file modifications.
+- Fixed a syntax error inside `.clang_complete` which was causing problems to the `linter`.
+- Fixed a bug inside function `game_callback_take()`, it was ignoring the max size of the bag.
 
 ## v0.3.9.1
 

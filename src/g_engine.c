@@ -617,7 +617,7 @@ void g_engine_paint_game( G_engine *ge, Game *game ) {
   if ( cmd ) {
 
     ui_frm( ui, 3, S_BOLD, BG_BLACK, FG_WHITE );
-    ui_box_put( ui, GAME_FEED, " $ " );
+    ui_box_put( ui, GAME_FEED, "$ " );
     ui_rs( ui );
 
     ui_frm( ui, 3, FG_YELLOW, S_BOLD, BG_BLACK  );

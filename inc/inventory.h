@@ -13,7 +13,7 @@
 #include <stdio.h>
 #include "types.h"
 
-#define MAX_INVENTORY 5
+#define MAX_INVENTORY 2
 
 typedef struct _Inventory Inventory;
 

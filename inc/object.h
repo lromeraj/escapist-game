@@ -20,6 +20,7 @@
  */
 typedef struct _Object Object;
 
+
 /**
 * @brief This fuction initializes an object
 * @author Miguel Rodríguez
@@ -28,12 +29,14 @@ typedef struct _Object Object;
 */
 Object *obj_create( Id id );
 
+
 /**
 * @brief This fuction destroys an object
 * @author Miguel Rodríguez
 * @param {Object*} obj - object pointer
 */
 void obj_destroy( Object *obj );
+
 
 /**
 * @brief This fuction sets an object name
@@ -43,6 +46,7 @@ void obj_destroy( Object *obj );
 */
 void obj_set_name( Object *obj, const char *name );
 
+
 /**
 * @brief This fuction gets an object name
 * @author Miguel Rodríguez
@@ -50,6 +54,7 @@ void obj_set_name( Object *obj, const char *name );
 * @retval {char*} - Returns a pointer to the object's name
 */
 const char *obj_get_name( Object *obj );
+
 
 /**
 * @brief This fuction sets the description of an object
@@ -59,6 +64,7 @@ const char *obj_get_name( Object *obj );
 */
 void obj_set_descrp( Object *obj, const char *descrp );
 
+
 /**
 * @brief This fuction gets the description of an object
 * @author Miguel Rodríguez
@@ -67,6 +73,7 @@ void obj_set_descrp( Object *obj, const char *descrp );
 */
 const char *obj_get_descrp( Object *obj );
 
+
 /**
 * @brief This fuction sets the object id
 * @author Miguel Rodríguez
@@ -74,6 +81,7 @@ const char *obj_get_descrp( Object *obj );
 * @param {Id} id - Variable of Id type
 */
 void obj_set_id( Object *obj, const Id id );
+
 
 /**
 * @brief This fuction gets the object id

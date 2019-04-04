@@ -41,7 +41,7 @@ STATUS inventory_add_id( Inventory *inv, Id id ) {
   if ( !inv )
     return ERROR;
 
-  if ( inventory_is_full( inv ) )
+  if ( inventory_is_full( inv ) || inventory_get_total( inv ) >= MAX_INVENTORY )
     return ERROR;
 
   if( set_add_id( inv->ids, id ) == ERROR )

@@ -145,17 +145,15 @@ int set_print( FILE *stream, Set *set ) {
   if ( !set )
     return ERROR;
 
-  bytes+=fprintf( stream, "SET: " );
   bytes+=fprintf( stream, "[" );
   for ( i=0; i < MAX_SET; i++ ) {
     if ( i == MAX_SET-1 ) {
-      bytes+=fprintf(stream, "%ld", set->ids[ i ] );
+      bytes+=fprintf(stream, "%2ld", set->ids[ i ] );
     } else {
-      bytes+=fprintf(stream, "%ld, ", set->ids[ i ] );
+      bytes+=fprintf(stream, "%2ld, ", set->ids[ i ] );
     }
   }
-  bytes+=fprintf( stream, "]\n" );
-  bytes+=fprintf( stream, "TOTAL: %d\n", set_get_total( set ));
+  bytes+=fprintf( stream, "]" );
 
   return bytes;
 }

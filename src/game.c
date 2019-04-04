@@ -573,9 +573,9 @@ void game_callback_next( Game *game ) {
 
   if ( sp ) {
     player_set_location( player, go_to );
-    cmd_set_ans( cmd, 0, "going to: C%ld", go_to );
+    cmd_set_ans( cmd, 0, "going to: S%ld", go_to );
   } else {
-    cmd_set_ans( cmd, 1, "could not move", go_to );
+    cmd_set_ans( cmd, 1, "could not move down", go_to );
   }
 
 }
@@ -603,9 +603,9 @@ void game_callback_back( Game *game ) {
 
   if ( sp ) {
     player_set_location( player, go_to );
-    cmd_set_ans( cmd, 0, "going to: C%ld", go_to );
+    cmd_set_ans( cmd, 0, "going to: S%ld", go_to );
   } else {
-    cmd_set_ans( cmd, 1, "could not move", go_to );
+    cmd_set_ans( cmd, 1, "could not move up", go_to );
   }
 }
 
@@ -615,7 +615,9 @@ void game_callback_take( Game *game ) {
   Player *player;
   Object *obj;
   Id p_loc, o_id;
-  char *o_name, *_arg;
+  char  *o_name,
+        *_arg,
+        *skey; /* search key */
   Cmd *cmd;
 
   if ( !game )
@@ -640,11 +642,12 @@ void game_callback_take( Game *game ) {
 
   } else if ( cmd_get_argc( cmd ) == 3 ) {
 
+    skey = (char*)cmd_get_argv( cmd, 1 );
     _arg = (char*)cmd_get_argv( cmd, 2 );
 
-    if ( !strcmp( cmd_get_argv( cmd, 1 ), "-i" ) ) {
+    if ( !strcmp( skey, "-i" ) ) {
       obj = game_get_object_by_id( game, atol( _arg ) );
-    } else if ( !strcmp( cmd_get_argv( cmd, 1 ), "-n" ) ) {
+    } else if ( !strcmp( skey, "-n" ) ) {
       obj = game_get_object_by_name( game, _arg );
     }
 
@@ -656,13 +659,16 @@ void game_callback_take( Game *game ) {
     o_name = (char*)obj_get_name( obj );
 
     if ( !space_has_object( sp, o_id ) ) {
-      cmd_set_ans( cmd, 2, "'%s': not found", _arg );
+      cmd_set_ans( cmd, 2, "object with %s '%s' was not found", !strcmp( skey, "-i") ? "id" : "name" , _arg );
     } else if ( player_has_object( player, o_id ) ) {
       cmd_set_ans( cmd, 2, "taken: %s#%ld", o_name, o_id );
     } else {
-      player_add_object( player, o_id );
-      space_del_object( sp, o_id );
-      cmd_set_ans( cmd, 0, "taking: %s#%ld", o_name, o_id );
+      if ( player_add_object( player, o_id ) == OK ) {
+        space_del_object( sp, o_id );
+        cmd_set_ans( cmd, 0, "taking: %s#%ld", o_name, o_id );
+      } else {
+        cmd_set_ans( cmd, 1, "bag is full" );
+      }
     }
 
   } else {
@@ -716,9 +722,12 @@ void game_callback_drop( Game *game ) {
     if ( !player_has_object( player, o_id ) ) {
       cmd_set_ans( cmd, 1, "'%s': not taken", _arg );
     } else {
-      space_add_object( game_get_space( game, p_loc ), o_id );
-      player_del_object( player, o_id );
-      cmd_set_ans( cmd, 0, "dropping: %s#%ld in C%ld", o_name, o_id, p_loc );
+      if ( space_add_object( game_get_space( game, p_loc ), o_id ) == OK ) {
+        player_del_object( player, o_id );
+        cmd_set_ans( cmd, 0, "dropping: %s#%ld in S%ld", o_name, o_id, p_loc );
+      } else {
+        cmd_set_ans( cmd, 1, "could not drop" );
+      }
     }
 
   } else {
@@ -770,9 +779,9 @@ void game_callback_move( Game *game ) {
       ln = game_get_link_by_id( game, ln_id );
       go_to = link_get_to( ln );
       player_set_location( game->player, go_to );
-      cmd_set_ans( cmd, 0, "going to: C%ld", go_to );
+      cmd_set_ans( cmd, 0, "going to: S%ld", go_to );
     } else {
-      cmd_set_ans( cmd, 0, "no link" );
+      cmd_set_ans( cmd, 0, "invalid move" );
     }
 
   } else {
