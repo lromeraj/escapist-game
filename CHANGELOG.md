@@ -12,6 +12,7 @@
 - Improved `Ui` speed.
 - Improved `Ui` format parsing.
 - `Ui` now uses less memory.
+- Overview box now shows frame average.
 
 `[FIXES]`
 - Fixed `target` script bug that was not compiling after file modifications.
