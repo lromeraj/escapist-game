@@ -7,7 +7,6 @@
 * @copyright GNU Public License
 */
 
-#include "bm.h"
 #include "game.h"
 #include "player.h"
 #include "inventory.h"
@@ -54,9 +53,6 @@ void parse_space( Game *game, G_engine *ge, Space *sp, int id, int x, int y );
 
 /*******************************/
 
-
-Clk *draw_clk = NULL;
-
 G_engine *g_engine_create() {
 
   static G_engine *ge = NULL;
@@ -66,7 +62,6 @@ G_engine *g_engine_create() {
   if (ge)
     return ge;
 
-  draw_clk = bm_clk( "DRAW_CLK" );
 
   ge = (G_engine*) malloc( sizeof( G_engine ) );
 
@@ -514,8 +509,6 @@ void g_engine_paint_game( G_engine *ge, Game *game ) {
   cmd = game_get_cmd( game );
   player = game_get_player( game );
 
-  bm_clk_begin( draw_clk );
-
   /* title box */
   ui_clear_box( ui, GAME_TITLE );
   ui_box_bg( ui, GAME_TITLE, BG_YELLOW );
@@ -619,9 +612,6 @@ void g_engine_paint_game( G_engine *ge, Game *game ) {
   ui_box_put( ui, GAME_OVERVIEW, " Die: @{0}%d\n", die_get_lastn( game_get_die( game ) ) );
   ui_rs( ui );
 
-  ui_box_seek( ui, GAME_OVERVIEW, 0, 12 );
-  ui_box_put( ui, GAME_OVERVIEW, " @{1;31}F_AVG@{0;1} ~ %es", bm_clk_avg( draw_clk ) );
-
   ui_dump_box( ui, GAME_OVERVIEW );
 
   /* feedback box */
@@ -696,6 +686,5 @@ void g_engine_paint_game( G_engine *ge, Game *game ) {
 
   /* prints all the data into stdout */
   ui_draw( stdout, ui );
-  bm_clk_end( draw_clk );
 
 }

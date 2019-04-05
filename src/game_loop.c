@@ -8,7 +8,6 @@
  * @copyright GNU Public License
  */
 
-#include "bm.h"
 #include "g_engine.h"
 #include "types.h"
 #include "log.h"
@@ -71,8 +70,6 @@ int main( int argc, char *argv[] ) {
   setlocale( LC_ALL, "" );
   signal( SIGINT, ctrl_c );
   srand( time( NULL ) );
-
-  bm_build();
 
   if ( argc < 2 ) {
     fprintf(stderr, "game needs 'data.dat'\n" );
@@ -174,7 +171,6 @@ int main( int argc, char *argv[] ) {
     loop++;
   }
 
-  bm_destroy();
   _kill( 0 );
 
   return EXIT_SUCCESS;
