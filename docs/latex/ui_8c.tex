@@ -47,18 +47,18 @@ struct \hyperlink{struct__Ui}{\+\_\+\+Ui}
 \mbox{\Hypertarget{ui_8c_a1dc97fa1b67c838b5f997b20e8d4b4f9}\label{ui_8c_a1dc97fa1b67c838b5f997b20e8d4b4f9}} 
 \#define {\bfseries D\+E\+F\+A\+U\+L\+T\+\_\+\+B\+G\+\_\+\+C\+O\+L\+OR}~\hyperlink{ui_8h_ab87bacfdad76e61b9412d7124be44c1caecc0ff952194921d53813a10bfe2b4d6}{B\+G\+\_\+\+W\+H\+I\+TE}
 \item 
-\mbox{\Hypertarget{ui_8c_a1fb056d53ca550cf384a4dfe0af616af}\label{ui_8c_a1fb056d53ca550cf384a4dfe0af616af}} 
-\#define \hyperlink{ui_8c_a1fb056d53ca550cf384a4dfe0af616af}{U\+I\+\_\+\+M\+A\+X\+\_\+\+B\+U\+F\+F\+\_\+\+L\+EN}~500
-\begin{DoxyCompactList}\small\item\em Maximum buffer length. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{ui_8c_aab208380ff579bef5fd8b91fa0c0215a}\label{ui_8c_aab208380ff579bef5fd8b91fa0c0215a}} 
-\#define \hyperlink{ui_8c_aab208380ff579bef5fd8b91fa0c0215a}{U\+I\+\_\+\+M\+A\+X\+\_\+\+F\+R\+M\+\_\+\+L\+EN}~100
-\begin{DoxyCompactList}\small\item\em Maximum format length. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{ui_8c_a0a87959b3464403d59d798b987218e4e}\label{ui_8c_a0a87959b3464403d59d798b987218e4e}} 
 \#define \hyperlink{ui_8c_a0a87959b3464403d59d798b987218e4e}{U\+I\+\_\+\+T\+A\+B\+\_\+\+S\+I\+ZE}~3
 \begin{DoxyCompactList}\small\item\em Tab key size. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{ui_8c_a1be73fb0e5253951bdb7f2a4bd6a1524}\label{ui_8c_a1be73fb0e5253951bdb7f2a4bd6a1524}} 
 \#define \hyperlink{ui_8c_a1be73fb0e5253951bdb7f2a4bd6a1524}{U\+I\+\_\+\+M\+A\+X\+\_\+\+B\+O\+X\+ES}~15
-\begin{DoxyCompactList}\small\item\em Maximum quantity of boxes per UI. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Maximum quantity of boxes per UI. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{ui_8c_a1fb056d53ca550cf384a4dfe0af616af}\label{ui_8c_a1fb056d53ca550cf384a4dfe0af616af}} 
+\#define \hyperlink{ui_8c_a1fb056d53ca550cf384a4dfe0af616af}{U\+I\+\_\+\+M\+A\+X\+\_\+\+B\+U\+F\+F\+\_\+\+L\+EN}~500
+\begin{DoxyCompactList}\small\item\em Maximum buffer length. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{ui_8c_a0695aa54989d97bfeeb2c65e36a5ad13}\label{ui_8c_a0695aa54989d97bfeeb2c65e36a5ad13}} 
+\#define {\bfseries U\+I\+\_\+\+M\+A\+X\+\_\+\+F\+RM}~10
+\end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -78,13 +78,25 @@ void \hyperlink{ui_8c_af6c65abe47ab9915826c7490f00becfe}{ui\+\_\+set\+\_\+pix} (
 \begin{DoxyCompactList}\small\item\em Gets a box by it\textquotesingle{}s idx (fast) \end{DoxyCompactList}\item 
 void \hyperlink{ui_8c_aa20d570ab281c0262dde9440f9fbc9c3}{ui\+\_\+kill\+\_\+box} (\hyperlink{struct__Ui}{Ui} $\ast$ui, int idx)
 \begin{DoxyCompactList}\small\item\em Destroys a given box. \end{DoxyCompactList}\item 
+void \hyperlink{ui_8c_aef97744c8290fc4837d2238279d0f4f1}{\+\_\+frm\+\_\+rs} (int $\ast$frm)
+\begin{DoxyCompactList}\small\item\em Resets the format. \end{DoxyCompactList}\item 
+void \hyperlink{ui_8c_ad9fc8b100e2d6b12926b604c85360c61}{\+\_\+frm\+\_\+cpy} (int $\ast$dest, int $\ast$src)
+\begin{DoxyCompactList}\small\item\em Copies source format into destinationformat. \end{DoxyCompactList}\item 
+void \hyperlink{ui_8c_a5b9451032a7b28000f768915c526935b}{\+\_\+frm\+\_\+add} (int $\ast$frm, int v)
+\begin{DoxyCompactList}\small\item\em Adds a value to a given format. \end{DoxyCompactList}\item 
+int \hyperlink{ui_8c_a9985d73a4693dae12a4d9e6c26821011}{\+\_\+frm\+\_\+csum} (int $\ast$frm)
+\begin{DoxyCompactList}\small\item\em Returns a checksum of a given format array. \end{DoxyCompactList}\item 
+void \hyperlink{ui_8c_a1968a1e1276abd333bbdfc77338abe9e}{\+\_\+frm} (int $\ast$frm, int n, va\+\_\+list list)
+\begin{DoxyCompactList}\small\item\em Adds a list of values into a format array. \end{DoxyCompactList}\item 
+void \hyperlink{ui_8c_a91d6818962011df968e8e6fca315a66a}{\+\_\+frm\+\_\+parse} (int $\ast$frm, int $\ast$defrm, const char $\ast$sfrm)
+\begin{DoxyCompactList}\small\item\em Parses a given format string into a number format array. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{ui_8c_abb4052814e513471d273eaf1dce5d6fb}\label{ui_8c_abb4052814e513471d273eaf1dce5d6fb}} 
 int {\bfseries vsnprintf} (char $\ast$buf, size\+\_\+t size, const char $\ast$fmt, va\+\_\+list list)
 \item 
 \mbox{\Hypertarget{ui_8c_aed3a44ce00b8d92f93e8a34e7b9dbf54}\label{ui_8c_aed3a44ce00b8d92f93e8a34e7b9dbf54}} 
 int {\bfseries snprintf} (char $\ast$buf, size\+\_\+t size, const char $\ast$fmt,...)
 \item 
-void \hyperlink{ui_8c_afe39a41934b6658bb06c4ffc8cba413f}{ui\+\_\+frm} (\hyperlink{struct__Ui}{Ui} $\ast$ui, int num,...)
+void \hyperlink{ui_8c_a70ca5594ea91504bec5a8a16826f3c23}{ui\+\_\+frm} (\hyperlink{struct__Ui}{Ui} $\ast$ui, int n,...)
 \begin{DoxyCompactList}\small\item\em Sets a temporary format of the UI This means that all the text, shapes and other items will use the format that was setted in the last \hyperlink{ui_8h_a70ca5594ea91504bec5a8a16826f3c23}{ui\+\_\+frm()} call. \end{DoxyCompactList}\item 
 \hyperlink{struct__Ui}{Ui} $\ast$ \hyperlink{ui_8c_adc8d261a6cf4862dc48958d7fdb5b9c6}{ui\+\_\+init} (int w, int h)
 \begin{DoxyCompactList}\small\item\em Initializes UI struct. \end{DoxyCompactList}\item 
@@ -96,7 +108,7 @@ void \hyperlink{ui_8c_ae33678d6064b4939cd98b2ba7b80357e}{ui\+\_\+rs} (\hyperlink
 \begin{DoxyCompactList}\small\item\em Resets the temporary format of the UI to default. \end{DoxyCompactList}\item 
 void \hyperlink{ui_8c_aecf21866c3b1200ca0837aab9dc50653}{ui\+\_\+box\+\_\+bg} (\hyperlink{struct__Ui}{Ui} $\ast$ui, int idx, \hyperlink{ui_8h_ab87bacfdad76e61b9412d7124be44c1c}{Color} c)
 \begin{DoxyCompactList}\small\item\em Fills the main box background with a given color This function does N\+OT clear the box buffer. \end{DoxyCompactList}\item 
-void \hyperlink{ui_8c_a5462519f6d2134a490d719e49a6503f5}{ui\+\_\+box\+\_\+frm} (\hyperlink{struct__Ui}{Ui} $\ast$ui, int idx, const char $\ast$frmt,...)
+void \hyperlink{ui_8c_a173b4e0d7bf667e1bf3ae9dadeafae5e}{ui\+\_\+box\+\_\+frm} (\hyperlink{struct__Ui}{Ui} $\ast$ui, int idx, int n,...)
 \begin{DoxyCompactList}\small\item\em Sets the default format for the content of the box. \end{DoxyCompactList}\item 
 void \hyperlink{ui_8c_a8064e9aed23d3cd6f94c20d4d70eb8e6}{ui\+\_\+clear\+\_\+box} (\hyperlink{struct__Ui}{Ui} $\ast$ui, int idx)
 \begin{DoxyCompactList}\small\item\em Clears the box buffer. \end{DoxyCompactList}\item 
@@ -308,7 +320,114 @@ Destroys a given box.
 {\em \{int\}} & idx -\/ Box index \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{ui_8c_afe39a41934b6658bb06c4ffc8cba413f}\label{ui_8c_afe39a41934b6658bb06c4ffc8cba413f}} 
+\mbox{\Hypertarget{ui_8c_aef97744c8290fc4837d2238279d0f4f1}\label{ui_8c_aef97744c8290fc4837d2238279d0f4f1}} 
+\index{ui.\+c@{ui.\+c}!\+\_\+frm\+\_\+rs@{\+\_\+frm\+\_\+rs}}
+\index{\+\_\+frm\+\_\+rs@{\+\_\+frm\+\_\+rs}!ui.\+c@{ui.\+c}}
+\subsubsection{\texorpdfstring{\+\_\+frm\+\_\+rs()}{\_frm\_rs()}}
+{\footnotesize\ttfamily void \+\_\+frm\+\_\+rs (\begin{DoxyParamCaption}\item[{int $\ast$}]{frm }\end{DoxyParamCaption})}
+
+
+
+Resets the format. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \{int$\ast$\}} & frm -\/ Format array to be reseted\\
+\hline
+\end{DoxyParams}
+formatting functions \mbox{\Hypertarget{ui_8c_ad9fc8b100e2d6b12926b604c85360c61}\label{ui_8c_ad9fc8b100e2d6b12926b604c85360c61}} 
+\index{ui.\+c@{ui.\+c}!\+\_\+frm\+\_\+cpy@{\+\_\+frm\+\_\+cpy}}
+\index{\+\_\+frm\+\_\+cpy@{\+\_\+frm\+\_\+cpy}!ui.\+c@{ui.\+c}}
+\subsubsection{\texorpdfstring{\+\_\+frm\+\_\+cpy()}{\_frm\_cpy()}}
+{\footnotesize\ttfamily void \+\_\+frm\+\_\+cpy (\begin{DoxyParamCaption}\item[{int $\ast$}]{dest,  }\item[{int $\ast$}]{src }\end{DoxyParamCaption})}
+
+
+
+Copies source format into destinationformat. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \{int$\ast$\}} & dest -\/ Format array destination \\
+\hline
+{\em \{int$\ast$\}} & src -\/ Format array source \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{ui_8c_a5b9451032a7b28000f768915c526935b}\label{ui_8c_a5b9451032a7b28000f768915c526935b}} 
+\index{ui.\+c@{ui.\+c}!\+\_\+frm\+\_\+add@{\+\_\+frm\+\_\+add}}
+\index{\+\_\+frm\+\_\+add@{\+\_\+frm\+\_\+add}!ui.\+c@{ui.\+c}}
+\subsubsection{\texorpdfstring{\+\_\+frm\+\_\+add()}{\_frm\_add()}}
+{\footnotesize\ttfamily void \+\_\+frm\+\_\+add (\begin{DoxyParamCaption}\item[{int $\ast$}]{frm,  }\item[{int}]{v }\end{DoxyParamCaption})}
+
+
+
+Adds a value to a given format. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \{int$\ast$\}} & frm -\/ Format array to be modified \\
+\hline
+{\em \{int\}} & v -\/ Value to be added \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{ui_8c_a9985d73a4693dae12a4d9e6c26821011}\label{ui_8c_a9985d73a4693dae12a4d9e6c26821011}} 
+\index{ui.\+c@{ui.\+c}!\+\_\+frm\+\_\+csum@{\+\_\+frm\+\_\+csum}}
+\index{\+\_\+frm\+\_\+csum@{\+\_\+frm\+\_\+csum}!ui.\+c@{ui.\+c}}
+\subsubsection{\texorpdfstring{\+\_\+frm\+\_\+csum()}{\_frm\_csum()}}
+{\footnotesize\ttfamily int \+\_\+frm\+\_\+csum (\begin{DoxyParamCaption}\item[{int $\ast$}]{frm }\end{DoxyParamCaption})}
+
+
+
+Returns a checksum of a given format array. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \{int$\ast$\}} & frm -\/ Format array \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \{int\}} & -\/ Returns the checksum \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{ui_8c_a1968a1e1276abd333bbdfc77338abe9e}\label{ui_8c_a1968a1e1276abd333bbdfc77338abe9e}} 
+\index{ui.\+c@{ui.\+c}!\+\_\+frm@{\+\_\+frm}}
+\index{\+\_\+frm@{\+\_\+frm}!ui.\+c@{ui.\+c}}
+\subsubsection{\texorpdfstring{\+\_\+frm()}{\_frm()}}
+{\footnotesize\ttfamily void \+\_\+frm (\begin{DoxyParamCaption}\item[{int $\ast$}]{frm,  }\item[{int}]{n,  }\item[{va\+\_\+list}]{list }\end{DoxyParamCaption})}
+
+
+
+Adds a list of values into a format array. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \{int$\ast$\}} & frm -\/ format array destination \\
+\hline
+{\em \{int\}} & n -\/ Number of parameters to be added \\
+\hline
+{\em \{va\+\_\+list\}} & list -\/ List of parameters to be inserted \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{ui_8c_a91d6818962011df968e8e6fca315a66a}\label{ui_8c_a91d6818962011df968e8e6fca315a66a}} 
+\index{ui.\+c@{ui.\+c}!\+\_\+frm\+\_\+parse@{\+\_\+frm\+\_\+parse}}
+\index{\+\_\+frm\+\_\+parse@{\+\_\+frm\+\_\+parse}!ui.\+c@{ui.\+c}}
+\subsubsection{\texorpdfstring{\+\_\+frm\+\_\+parse()}{\_frm\_parse()}}
+{\footnotesize\ttfamily void \+\_\+frm\+\_\+parse (\begin{DoxyParamCaption}\item[{int $\ast$}]{frm,  }\item[{int $\ast$}]{defrm,  }\item[{const char $\ast$}]{sfrm }\end{DoxyParamCaption})}
+
+
+
+Parses a given format string into a number format array. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \{int$\ast$\}} & frm -\/ Format destination \\
+\hline
+{\em \{int$\ast$\}} & defrm -\/ Default format in case of reset \\
+\hline
+{\em \{char$\ast$\}} & sfrm -\/ Format string \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{ui_8c_a70ca5594ea91504bec5a8a16826f3c23}\label{ui_8c_a70ca5594ea91504bec5a8a16826f3c23}} 
 \index{ui.\+c@{ui.\+c}!ui\+\_\+frm@{ui\+\_\+frm}}
 \index{ui\+\_\+frm@{ui\+\_\+frm}!ui.\+c@{ui.\+c}}
 \subsubsection{\texorpdfstring{ui\+\_\+frm()}{ui\_frm()}}
@@ -415,11 +534,11 @@ Fills the main box background with a given color This function does N\+OT clear 
 {\em \{\+Color\}} & c -\/ The color with which the background will be filled \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{ui_8c_a5462519f6d2134a490d719e49a6503f5}\label{ui_8c_a5462519f6d2134a490d719e49a6503f5}} 
+\mbox{\Hypertarget{ui_8c_a173b4e0d7bf667e1bf3ae9dadeafae5e}\label{ui_8c_a173b4e0d7bf667e1bf3ae9dadeafae5e}} 
 \index{ui.\+c@{ui.\+c}!ui\+\_\+box\+\_\+frm@{ui\+\_\+box\+\_\+frm}}
 \index{ui\+\_\+box\+\_\+frm@{ui\+\_\+box\+\_\+frm}!ui.\+c@{ui.\+c}}
 \subsubsection{\texorpdfstring{ui\+\_\+box\+\_\+frm()}{ui\_box\_frm()}}
-{\footnotesize\ttfamily void ui\+\_\+box\+\_\+frm (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Ui}{Ui} $\ast$}]{ui,  }\item[{int}]{idx,  }\item[{const char $\ast$}]{frmt,  }\item[{}]{... }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void ui\+\_\+box\+\_\+frm (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Ui}{Ui} $\ast$}]{ui,  }\item[{int}]{idx,  }\item[{int}]{n,  }\item[{}]{... }\end{DoxyParamCaption})}
 
 
 
@@ -431,9 +550,9 @@ Sets the default format for the content of the box.
 \hline
 {\em \{int\}} & id -\/ The id of the box \\
 \hline
-{\em \{char$\ast$\}} & str -\/ String format \\
+{\em \{int\}} & n -\/ Number of parameters \\
 \hline
-{\em \{...\}} & -\/ String format arguments \\
+{\em \{...\}} & -\/ Style parameters \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{ui_8c_a8064e9aed23d3cd6f94c20d4d70eb8e6}\label{ui_8c_a8064e9aed23d3cd6f94c20d4d70eb8e6}} 

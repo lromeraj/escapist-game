@@ -7,6 +7,7 @@
 * @copyright GNU Public License
 */
 
+
 #include "ui.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -20,17 +21,18 @@
 #define DEFAULT_BOX_BG_COLOR BG_WHITE
 #define DEFAULT_BG_COLOR BG_WHITE
 
-#define UI_MAX_BUFF_LEN 500 /*!< @brief Maximum buffer length */
-#define UI_MAX_FRM_LEN 100 /*!< @brief Maximum format length */
+
 #define UI_TAB_SIZE 3 /*!< @brief Tab key size */
 #define UI_MAX_BOXES 15 /*!< @brief Maximum quantity of boxes per UI */
+#define UI_MAX_BUFF_LEN 500 /*!< @brief Maximum buffer length */
+#define UI_MAX_FRM 10
 
 /*!
 * @brief Basic pixel structure
 */
 struct _Ui_pix {
   char c; /*!< @brief Pixel char */
-  char frm[ UI_MAX_FRM_LEN ];  /*!< @brief Pixel format */
+  int frm[ UI_MAX_FRM ];
 };
 
 /*!
@@ -48,7 +50,7 @@ struct _Ui_box {
   int __len;  /*!< @brief Length of the pixels array */
   int pad[ 4 ];  /*!< @brief Box padding */
   Color bg;  /*!< @brief Background color */
-  char frm[ UI_MAX_FRM_LEN ]; /*!< @brief Default format for the content of the box */
+  int frm[ UI_MAX_FRM ]; /*!< @brief Default format for the content of the box */
 };
 
 /*!
@@ -67,7 +69,7 @@ struct _Ui {
   Ui_box *boxes[ UI_MAX_BOXES ]; /*!< @brief Boxes */
   Ui_pix **__pixs; /*!< @brief Pixels buffer */
   int __len; /*!< @brief Number of pixels */
-  char __frm[ UI_MAX_FRM_LEN ]; /*!< @brief Temporary format */
+  int __frm[ UI_MAX_FRM ];
 };
 
 /****** PRIVATE FUNCTIONS ******/
@@ -148,35 +150,173 @@ Ui_box* ui_get_box_by_idx( Ui* ui, int idx );
 */
 void ui_kill_box( Ui* ui, int idx );
 
+
+/**
+* @brief Resets the format
+* @param {int*} frm - Format array to be reseted
+*/
+void _frm_rs( int *frm );
+
+
+/**
+* @brief Copies source format into destinationformat
+* @param {int*} dest - Format array destination
+* @param {int*} src - Format array source
+*/
+void _frm_cpy( int *dest, int *src );
+
+
+/**
+* @brief Adds a value to a given format
+* @param {int*} frm - Format array to be modified
+* @param {int} v - Value to be added
+*/
+void _frm_add( int *frm, int v );
+
+
+/**
+* @brief Returns a checksum of a given format array
+* @param {int*} frm - Format array
+* @retval {int} - Returns the checksum
+*/
+int _frm_csum( int *frm );
+
+
+/**
+* @brief Adds a list of values into a format array
+* @param {int*} frm - format array destination
+* @param {int} n - Number of parameters to be added
+* @param {va_list} list - List of parameters to be inserted
+*/
+void _frm( int *frm, int n, va_list list );
+
+
+/**
+* @brief Parses a given format string into a number format array
+* @param {int*} frm - Format destination
+* @param {int*} defrm - Default format in case of reset
+* @param {char*} sfrm - Format string
+*/
+void _frm_parse( int *frm, int *defrm, const char *sfrm );
+
 int vsnprintf( char *buf, size_t size, const char *fmt, va_list list );
-int snprintf(char *buf, size_t size, const char *fmt, ...);
+int snprintf( char *buf, size_t size, const char *fmt, ... );
 
 /*******************************/
 
-void ui_frm( Ui *ui, int num, ... ) {
 
+/** formatting functions *****************/
+void _frm_rs( int *frm ) {
   int i;
-  char _buff[ UI_MAX_FRM_LEN ] = "\033[";
-  va_list _args;
-  int _arg;
 
-  va_start( _args, num );
+  if ( !frm )
+    return;
 
-  for ( i=0; i < num; i++ ) {
-
-    _arg = va_arg( _args, int );
-
-    sprintf( _buff+strlen( _buff ), "%d", _arg );
-
-    if ( i < num-1 ) {
-      sprintf( _buff+strlen( _buff ), ";" );
-    }
-
+  for ( i=0; i < UI_MAX_FRM; i++ ) {
+    frm[i] = -1;
   }
 
-  sprintf( _buff+strlen( _buff ), "m" );
-  strncpy( ui->__frm, _buff, UI_MAX_FRM_LEN );
+}
 
+void _frm_cpy( int *dest, int *src ) {
+
+  int i;
+
+  if ( !dest || !src )
+    return;
+
+  for ( i=0; i<UI_MAX_FRM; i++ ) {
+    dest[i] = src[i];
+  }
+}
+
+void _frm_add( int *frm, int v ) {
+
+  int i;
+
+  if ( !frm )
+    return;
+
+  for ( i=0; i<UI_MAX_FRM; i++ ) {
+    if ( frm[i] == -1 ) {
+      frm[i] = v;
+      break;
+    }
+  }
+}
+
+int _frm_csum( int *frm ) {
+
+  int i;
+  int xor=0;
+
+  if ( !frm )
+    return 0;
+
+  for ( i=0; i<UI_MAX_FRM; i++ ) {
+    xor = xor^frm[i];
+  }
+
+  return xor;
+}
+
+void _frm_parse( int *frm, int *defrm, const char *sfrm ) {
+
+  int i, _i, len;
+  char c;
+  bool addChar, addSn;
+  char sn[ 5 ] = "";
+
+  addSn = false;
+
+  len = strlen( sfrm );
+  for ( i=0, _i=0; i <= len; i++ ) {
+    c = sfrm[i];
+    addChar = true;
+
+    if ( c == ';' || c == '\0' ) {
+      addChar = false;
+      addSn = true;
+    }
+
+    if ( addSn ) {
+      _i = atoi( sn );
+
+      if ( !_i && defrm != NULL ) {
+        _frm_cpy( frm, defrm );
+      } else {
+        _frm_add( frm, _i ); /* else add new format */
+      }
+
+      addSn = false;
+      _i = 0;
+    }
+
+    if ( addChar ) {
+      sn[ _i ] = c;
+      sn[ _i + 1 ] = 0;
+      _i++;
+    }
+  }
+
+}
+
+void _frm( int *frm, int n, va_list list ) {
+
+  int i, _v;
+  _frm_rs( frm );
+
+  for ( i=0; i < n; i++ ) {
+    _v = va_arg( list, int );
+    _frm_add( frm, _v );
+  }
+
+}
+
+void ui_frm( Ui *ui, int n, ... ) {
+  va_list _args;
+  va_start( _args, n );
+  _frm( ui->__frm, n, _args );
   va_end( _args );
 }
 
@@ -191,7 +331,7 @@ Ui *ui_init( int w, int h ) {
     ui->scr.w = w;
     ui->scr.h = h;
     ui->__len = w*h;
-    ui->__frm[0] = 0;
+    _frm_rs( ui->__frm );
 
     for ( i=0; i < UI_MAX_BOXES; i++) {
       ui->boxes[ i ] = NULL;
@@ -206,7 +346,7 @@ Ui *ui_init( int w, int h ) {
       for ( i=0; i < ui->__len; i++ ) {
         pix = ui->__pixs[ i ];
         pix->c = ' ';
-        strcpy( pix->frm, ui->__frm );
+        _frm_cpy( pix->frm,  ui->__frm );
       }
 
     } else {
@@ -244,7 +384,8 @@ void ui_bg( Ui *ui, Color c ) {
     return;
 
   for ( i=0; i < ui->__len; i++ ) {
-    sprintf( ui->__pixs[ i ]->frm, "\033[%dm", c );
+    _frm_rs( ui->__pixs[ i ]->frm );
+    _frm_add( ui->__pixs[ i ]->frm, c );
   }
 
 }
@@ -271,29 +412,27 @@ void ui_box_bg( Ui *ui, int idx, Color c ) {
   box->bg = c;
 
   for (i=0; i < box->__len; i++ ) {
-    sprintf( box->__pixs[ i ]->frm, "\033[%dm", c );
+    _frm_rs( box->__pixs[ i ]->frm );
+    _frm_add( box->__pixs[ i ]->frm, c );
   }
 
   ui_dump_box( ui, idx );
 
 }
 
-void ui_box_frm( Ui *ui, int idx, const char *frmt, ... ) {
+void ui_box_frm( Ui *ui, int idx, int n, ... ) {
 
   Ui_box *box;
   va_list _args;
-  char _buff[ UI_MAX_FRM_LEN ];
 
   box = ui_get_box_by_idx( ui, idx );
 
-  if ( !box || !frmt )
+  if ( !box )
     return;
 
-  va_start( _args, frmt );
-  vsnprintf( _buff, UI_MAX_FRM_LEN, frmt, _args );
+  va_start( _args, n );
+  _frm( box->frm, n, _args );
   va_end( _args );
-
-  strncpy( box->frm, _buff, UI_MAX_FRM_LEN );
 
 }
 
@@ -404,15 +543,14 @@ void ui_new_box( Ui *ui, int idx, int x, int y, int w, int h ) {
     box->cy = 0;
     box->id = idx;
     box->__len = w*h;
-    box->frm[ 0 ] = 0;
     box->bg = DEFAULT_BOX_BG_COLOR;
     box->pad[0] = 0;
     box->pad[1] = 0;
     box->pad[2] = 0;
     box->pad[3] = 0;
+    _frm_rs( box->frm );
 
     box->__pixs = alloc_pixs( box->__len );
-
 
     if ( box->__pixs ) {
 
@@ -582,7 +720,7 @@ void ui_box_put( Ui *ui, int idx, const char *frmt, ... ) {
   Ui_pix _pix;
   va_list _args;
   char _buff[ UI_MAX_BUFF_LEN ];
-  char __frm[ UI_MAX_FRM_LEN ];
+  char __frm[ UI_MAX_BUFF_LEN ];
 
   int i, j, box_w, box_h, *pad, *cx, *cy;
 
@@ -623,7 +761,7 @@ void ui_box_put( Ui *ui, int idx, const char *frmt, ... ) {
 
     _pix.c = _buff[ i ];
 
-    sprintf( _pix.frm, "%s", ui->__frm ); /* set pix format with the temp ui format */
+    _frm_cpy( _pix.frm, ui->__frm ); /* set pix format with the temp ui format */
 
     if ( _pix.c == '\n' ) {
 
@@ -643,33 +781,24 @@ void ui_box_put( Ui *ui, int idx, const char *frmt, ... ) {
         (*cx)++; j++;
       }
 
-    } else if ( _pix.c == '\033' ) {
-
+    } else if ( _pix.c == '@' && _buff[ i + 1 ] == '{' ) {
 
       j=0;
-      while ( _pix.c != 'm' ) {
+      i+=2;
 
-        if ( j >= UI_MAX_FRM_LEN ) {
-          strcpy( __frm, "\033[0" );
-          j=3;
+      while ( _buff[ i ] != '}' && _buff[ i + 1 ] ) {
+
+        if ( j >= UI_MAX_BUFF_LEN ) {
+          _frm_rs( ui->__frm );
           break;
         }
-
-        __frm[ j ] = _pix.c;
+        __frm[ j ] = _buff[ i ];
         __frm[ j + 1 ] = 0;
+
         j++; i++;
-        _pix.c = _buff[ i ];
-
       }
 
-      __frm[ j ] = 'm';
-      __frm[ j + 1 ] = 0;
-
-      if ( !strcmp( __frm, "\033[0m" ) ) {
-        strncpy( ui->__frm, box->frm, UI_MAX_FRM_LEN );
-      } else {
-        snprintf( ui->__frm, UI_MAX_FRM_LEN, "%s", __frm );
-      }
+      _frm_parse( ui->__frm, box->frm, __frm );
 
     } else {
       ui_set_pix(box->__pixs, *cx, *cy, box_w, box_h, _pix );
@@ -697,8 +826,11 @@ void ui_kill_box( Ui *ui, int idx ) {
 
 void ui_draw( FILE *stream, Ui *ui ) {
 
-  int i, scr_w;
-  Ui_pix *pix;
+  Ui_pix *pix; /* temporary pixel */
+  int i, j, scr_w;
+  int oxor=0, /* old format xor */
+      xor;  /* current format xor */
+  char __frm[ UI_MAX_BUFF_LEN ] = "\033[";
 
   if ( !stream || !ui )
     return;
@@ -714,10 +846,28 @@ void ui_draw( FILE *stream, Ui *ui ) {
       break;
     }
 
-    fprintf( stream, "%s%c\033[0m",pix->frm, pix->c );
+    /* avoid recomputing pixel format */
+    xor = _frm_csum( pix->frm ); /* request format checksum to compare */
+
+    if ( oxor != xor ) {
+
+      /* reset format buffer */
+      strcpy( __frm, "\033[" );
+
+      /* compute pixel format */
+      for ( j=0; j < UI_MAX_FRM; j++ ) {
+        if ( pix->frm[j] == -1 ) continue;
+        sprintf( __frm + strlen( __frm ), ";%d", pix->frm[ j ] );
+      }
+
+      sprintf( __frm + strlen( __frm ), "m" );
+      oxor = xor;
+    }
+
+    fprintf( stream, "%s%c", __frm, pix->c );
 
     if ( (i+1)%scr_w == 0 ) {
-      fprintf( stream, "\n");
+      fprintf( stream, "\033[0m\n");
     }
 
   }

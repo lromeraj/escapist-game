@@ -3,7 +3,7 @@
 *
 * @file ui.h
 * @author Javier Romera
-* @version 0.9.5-stable
+* @version 0.9.8-stable
 * @date 24/03/2019
 * @copyright GNU Public License
 */
@@ -156,10 +156,10 @@ void ui_box_seek( Ui* ui, int idx, int x, int y );
 * @brief Sets the default format for the content of the box
 * @param {Ui*} ui - UI where the box is located
 * @param {int} id - The id of the box
-* @param {char*} str - String format
-* @param {...} - String format arguments
+* @param {int} n - Number of parameters
+* @param {...} - Style parameters
 */
-void ui_box_frm( Ui* ui, int idx, const char *frmt, ... );
+void ui_box_frm( Ui* ui, int idx, int n, ... );
 
 /**
 * @brief Clears the box buffer

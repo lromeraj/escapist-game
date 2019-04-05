@@ -97,7 +97,7 @@ void \hyperlink{ui_8h_aecf21866c3b1200ca0837aab9dc50653}{ui\+\_\+box\+\_\+bg} (\
 \begin{DoxyCompactList}\small\item\em Fills the main box background with a given color This function does N\+OT clear the box buffer. \end{DoxyCompactList}\item 
 void \hyperlink{ui_8h_ab1abb40d629ddab0740bc91321abe91f}{ui\+\_\+box\+\_\+seek} (\hyperlink{struct__Ui}{Ui} $\ast$ui, int idx, int x, int y)
 \begin{DoxyCompactList}\small\item\em Changes the cursor position of a box. \end{DoxyCompactList}\item 
-void \hyperlink{ui_8h_a5462519f6d2134a490d719e49a6503f5}{ui\+\_\+box\+\_\+frm} (\hyperlink{struct__Ui}{Ui} $\ast$ui, int idx, const char $\ast$frmt,...)
+void \hyperlink{ui_8h_a173b4e0d7bf667e1bf3ae9dadeafae5e}{ui\+\_\+box\+\_\+frm} (\hyperlink{struct__Ui}{Ui} $\ast$ui, int idx, int n,...)
 \begin{DoxyCompactList}\small\item\em Sets the default format for the content of the box. \end{DoxyCompactList}\item 
 void \hyperlink{ui_8h_a8064e9aed23d3cd6f94c20d4d70eb8e6}{ui\+\_\+clear\+\_\+box} (\hyperlink{struct__Ui}{Ui} $\ast$ui, int idx)
 \begin{DoxyCompactList}\small\item\em Clears the box buffer. \end{DoxyCompactList}\item 
@@ -114,7 +114,7 @@ User interface based on chars.
 Javier Romera 
 \end{DoxyAuthor}
 \begin{DoxyVersion}{Version}
-0.\+9.\+5-\/stable 
+0.\+9.\+8-\/stable 
 \end{DoxyVersion}
 \begin{DoxyDate}{Date}
 24/03/2019 
@@ -446,11 +446,11 @@ Changes the cursor position of a box.
 {\em \{int\}} & y -\/ Curosr y position ( row matrix ) \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{ui_8h_a5462519f6d2134a490d719e49a6503f5}\label{ui_8h_a5462519f6d2134a490d719e49a6503f5}} 
+\mbox{\Hypertarget{ui_8h_a173b4e0d7bf667e1bf3ae9dadeafae5e}\label{ui_8h_a173b4e0d7bf667e1bf3ae9dadeafae5e}} 
 \index{ui.\+h@{ui.\+h}!ui\+\_\+box\+\_\+frm@{ui\+\_\+box\+\_\+frm}}
 \index{ui\+\_\+box\+\_\+frm@{ui\+\_\+box\+\_\+frm}!ui.\+h@{ui.\+h}}
 \subsubsection{\texorpdfstring{ui\+\_\+box\+\_\+frm()}{ui\_box\_frm()}}
-{\footnotesize\ttfamily void ui\+\_\+box\+\_\+frm (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Ui}{Ui} $\ast$}]{ui,  }\item[{int}]{idx,  }\item[{const char $\ast$}]{frmt,  }\item[{}]{... }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void ui\+\_\+box\+\_\+frm (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Ui}{Ui} $\ast$}]{ui,  }\item[{int}]{idx,  }\item[{int}]{n,  }\item[{}]{... }\end{DoxyParamCaption})}
 
 
 
@@ -462,9 +462,9 @@ Sets the default format for the content of the box.
 \hline
 {\em \{int\}} & id -\/ The id of the box \\
 \hline
-{\em \{char$\ast$\}} & str -\/ String format \\
+{\em \{int\}} & n -\/ Number of parameters \\
 \hline
-{\em \{...\}} & -\/ String format arguments \\
+{\em \{...\}} & -\/ Style parameters \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{ui_8h_a8064e9aed23d3cd6f94c20d4d70eb8e6}\label{ui_8h_a8064e9aed23d3cd6f94c20d4d70eb8e6}} 

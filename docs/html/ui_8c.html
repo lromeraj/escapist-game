@@ -121,14 +121,6 @@ Macros</h2></td></tr>
 <tr class="memitem:a1dc97fa1b67c838b5f997b20e8d4b4f9"><td class="memItemLeft" align="right" valign="top"><a id="a1dc97fa1b67c838b5f997b20e8d4b4f9"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>DEFAULT_BG_COLOR</b>&#160;&#160;&#160;<a class="el" href="ui_8h.html#ab87bacfdad76e61b9412d7124be44c1caecc0ff952194921d53813a10bfe2b4d6">BG_WHITE</a></td></tr>
 <tr class="separator:a1dc97fa1b67c838b5f997b20e8d4b4f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1fb056d53ca550cf384a4dfe0af616af"><td class="memItemLeft" align="right" valign="top"><a id="a1fb056d53ca550cf384a4dfe0af616af"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8c.html#a1fb056d53ca550cf384a4dfe0af616af">UI_MAX_BUFF_LEN</a>&#160;&#160;&#160;500</td></tr>
-<tr class="memdesc:a1fb056d53ca550cf384a4dfe0af616af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum buffer length. <br /></td></tr>
-<tr class="separator:a1fb056d53ca550cf384a4dfe0af616af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aab208380ff579bef5fd8b91fa0c0215a"><td class="memItemLeft" align="right" valign="top"><a id="aab208380ff579bef5fd8b91fa0c0215a"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8c.html#aab208380ff579bef5fd8b91fa0c0215a">UI_MAX_FRM_LEN</a>&#160;&#160;&#160;100</td></tr>
-<tr class="memdesc:aab208380ff579bef5fd8b91fa0c0215a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum format length. <br /></td></tr>
-<tr class="separator:aab208380ff579bef5fd8b91fa0c0215a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0a87959b3464403d59d798b987218e4e"><td class="memItemLeft" align="right" valign="top"><a id="a0a87959b3464403d59d798b987218e4e"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8c.html#a0a87959b3464403d59d798b987218e4e">UI_TAB_SIZE</a>&#160;&#160;&#160;3</td></tr>
 <tr class="memdesc:a0a87959b3464403d59d798b987218e4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tab key size. <br /></td></tr>
@@ -137,6 +129,13 @@ Macros</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8c.html#a1be73fb0e5253951bdb7f2a4bd6a1524">UI_MAX_BOXES</a>&#160;&#160;&#160;15</td></tr>
 <tr class="memdesc:a1be73fb0e5253951bdb7f2a4bd6a1524"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum quantity of boxes per UI. <br /></td></tr>
 <tr class="separator:a1be73fb0e5253951bdb7f2a4bd6a1524"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1fb056d53ca550cf384a4dfe0af616af"><td class="memItemLeft" align="right" valign="top"><a id="a1fb056d53ca550cf384a4dfe0af616af"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8c.html#a1fb056d53ca550cf384a4dfe0af616af">UI_MAX_BUFF_LEN</a>&#160;&#160;&#160;500</td></tr>
+<tr class="memdesc:a1fb056d53ca550cf384a4dfe0af616af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum buffer length. <br /></td></tr>
+<tr class="separator:a1fb056d53ca550cf384a4dfe0af616af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0695aa54989d97bfeeb2c65e36a5ad13"><td class="memItemLeft" align="right" valign="top"><a id="a0695aa54989d97bfeeb2c65e36a5ad13"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>UI_MAX_FRM</b>&#160;&#160;&#160;10</td></tr>
+<tr class="separator:a0695aa54989d97bfeeb2c65e36a5ad13"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -164,15 +163,33 @@ Functions</h2></td></tr>
 <tr class="memitem:aa20d570ab281c0262dde9440f9fbc9c3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8c.html#aa20d570ab281c0262dde9440f9fbc9c3">ui_kill_box</a> (<a class="el" href="struct__Ui.html">Ui</a> *ui, int idx)</td></tr>
 <tr class="memdesc:aa20d570ab281c0262dde9440f9fbc9c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys a given box.  <a href="#aa20d570ab281c0262dde9440f9fbc9c3">More...</a><br /></td></tr>
 <tr class="separator:aa20d570ab281c0262dde9440f9fbc9c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef97744c8290fc4837d2238279d0f4f1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8c.html#aef97744c8290fc4837d2238279d0f4f1">_frm_rs</a> (int *frm)</td></tr>
+<tr class="memdesc:aef97744c8290fc4837d2238279d0f4f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the format.  <a href="#aef97744c8290fc4837d2238279d0f4f1">More...</a><br /></td></tr>
+<tr class="separator:aef97744c8290fc4837d2238279d0f4f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9fc8b100e2d6b12926b604c85360c61"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8c.html#ad9fc8b100e2d6b12926b604c85360c61">_frm_cpy</a> (int *dest, int *src)</td></tr>
+<tr class="memdesc:ad9fc8b100e2d6b12926b604c85360c61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies source format into destinationformat.  <a href="#ad9fc8b100e2d6b12926b604c85360c61">More...</a><br /></td></tr>
+<tr class="separator:ad9fc8b100e2d6b12926b604c85360c61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b9451032a7b28000f768915c526935b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8c.html#a5b9451032a7b28000f768915c526935b">_frm_add</a> (int *frm, int v)</td></tr>
+<tr class="memdesc:a5b9451032a7b28000f768915c526935b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a value to a given format.  <a href="#a5b9451032a7b28000f768915c526935b">More...</a><br /></td></tr>
+<tr class="separator:a5b9451032a7b28000f768915c526935b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9985d73a4693dae12a4d9e6c26821011"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8c.html#a9985d73a4693dae12a4d9e6c26821011">_frm_csum</a> (int *frm)</td></tr>
+<tr class="memdesc:a9985d73a4693dae12a4d9e6c26821011"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a checksum of a given format array.  <a href="#a9985d73a4693dae12a4d9e6c26821011">More...</a><br /></td></tr>
+<tr class="separator:a9985d73a4693dae12a4d9e6c26821011"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1968a1e1276abd333bbdfc77338abe9e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8c.html#a1968a1e1276abd333bbdfc77338abe9e">_frm</a> (int *frm, int n, va_list list)</td></tr>
+<tr class="memdesc:a1968a1e1276abd333bbdfc77338abe9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a list of values into a format array.  <a href="#a1968a1e1276abd333bbdfc77338abe9e">More...</a><br /></td></tr>
+<tr class="separator:a1968a1e1276abd333bbdfc77338abe9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91d6818962011df968e8e6fca315a66a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8c.html#a91d6818962011df968e8e6fca315a66a">_frm_parse</a> (int *frm, int *defrm, const char *sfrm)</td></tr>
+<tr class="memdesc:a91d6818962011df968e8e6fca315a66a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses a given format string into a number format array.  <a href="#a91d6818962011df968e8e6fca315a66a">More...</a><br /></td></tr>
+<tr class="separator:a91d6818962011df968e8e6fca315a66a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abb4052814e513471d273eaf1dce5d6fb"><td class="memItemLeft" align="right" valign="top"><a id="abb4052814e513471d273eaf1dce5d6fb"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>vsnprintf</b> (char *buf, size_t size, const char *fmt, va_list list)</td></tr>
 <tr class="separator:abb4052814e513471d273eaf1dce5d6fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aed3a44ce00b8d92f93e8a34e7b9dbf54"><td class="memItemLeft" align="right" valign="top"><a id="aed3a44ce00b8d92f93e8a34e7b9dbf54"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>snprintf</b> (char *buf, size_t size, const char *fmt,...)</td></tr>
 <tr class="separator:aed3a44ce00b8d92f93e8a34e7b9dbf54"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe39a41934b6658bb06c4ffc8cba413f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8c.html#afe39a41934b6658bb06c4ffc8cba413f">ui_frm</a> (<a class="el" href="struct__Ui.html">Ui</a> *ui, int num,...)</td></tr>
-<tr class="memdesc:afe39a41934b6658bb06c4ffc8cba413f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a temporary format of the UI This means that all the text, shapes and other items will use the format that was setted in the last <a class="el" href="ui_8h.html#a70ca5594ea91504bec5a8a16826f3c23" title="Sets a temporary format of the UI This means that all the text, shapes and other items will use the f...">ui_frm()</a> call.  <a href="#afe39a41934b6658bb06c4ffc8cba413f">More...</a><br /></td></tr>
-<tr class="separator:afe39a41934b6658bb06c4ffc8cba413f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70ca5594ea91504bec5a8a16826f3c23"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8c.html#a70ca5594ea91504bec5a8a16826f3c23">ui_frm</a> (<a class="el" href="struct__Ui.html">Ui</a> *ui, int n,...)</td></tr>
+<tr class="memdesc:a70ca5594ea91504bec5a8a16826f3c23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a temporary format of the UI This means that all the text, shapes and other items will use the format that was setted in the last <a class="el" href="ui_8h.html#a70ca5594ea91504bec5a8a16826f3c23" title="Sets a temporary format of the UI This means that all the text, shapes and other items will use the f...">ui_frm()</a> call.  <a href="#a70ca5594ea91504bec5a8a16826f3c23">More...</a><br /></td></tr>
+<tr class="separator:a70ca5594ea91504bec5a8a16826f3c23"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adc8d261a6cf4862dc48958d7fdb5b9c6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct__Ui.html">Ui</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8c.html#adc8d261a6cf4862dc48958d7fdb5b9c6">ui_init</a> (int w, int h)</td></tr>
 <tr class="memdesc:adc8d261a6cf4862dc48958d7fdb5b9c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes UI struct.  <a href="#adc8d261a6cf4862dc48958d7fdb5b9c6">More...</a><br /></td></tr>
 <tr class="separator:adc8d261a6cf4862dc48958d7fdb5b9c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -188,9 +205,9 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>snprintf</b> (char *bu
 <tr class="memitem:aecf21866c3b1200ca0837aab9dc50653"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8c.html#aecf21866c3b1200ca0837aab9dc50653">ui_box_bg</a> (<a class="el" href="struct__Ui.html">Ui</a> *ui, int idx, <a class="el" href="ui_8h.html#ab87bacfdad76e61b9412d7124be44c1c">Color</a> c)</td></tr>
 <tr class="memdesc:aecf21866c3b1200ca0837aab9dc50653"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fills the main box background with a given color This function does NOT clear the box buffer.  <a href="#aecf21866c3b1200ca0837aab9dc50653">More...</a><br /></td></tr>
 <tr class="separator:aecf21866c3b1200ca0837aab9dc50653"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5462519f6d2134a490d719e49a6503f5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8c.html#a5462519f6d2134a490d719e49a6503f5">ui_box_frm</a> (<a class="el" href="struct__Ui.html">Ui</a> *ui, int idx, const char *frmt,...)</td></tr>
-<tr class="memdesc:a5462519f6d2134a490d719e49a6503f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the default format for the content of the box.  <a href="#a5462519f6d2134a490d719e49a6503f5">More...</a><br /></td></tr>
-<tr class="separator:a5462519f6d2134a490d719e49a6503f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a173b4e0d7bf667e1bf3ae9dadeafae5e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8c.html#a173b4e0d7bf667e1bf3ae9dadeafae5e">ui_box_frm</a> (<a class="el" href="struct__Ui.html">Ui</a> *ui, int idx, int n,...)</td></tr>
+<tr class="memdesc:a173b4e0d7bf667e1bf3ae9dadeafae5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the default format for the content of the box.  <a href="#a173b4e0d7bf667e1bf3ae9dadeafae5e">More...</a><br /></td></tr>
+<tr class="separator:a173b4e0d7bf667e1bf3ae9dadeafae5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8064e9aed23d3cd6f94c20d4d70eb8e6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8c.html#a8064e9aed23d3cd6f94c20d4d70eb8e6">ui_clear_box</a> (<a class="el" href="struct__Ui.html">Ui</a> *ui, int idx)</td></tr>
 <tr class="memdesc:a8064e9aed23d3cd6f94c20d4d70eb8e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears the box buffer.  <a href="#a8064e9aed23d3cd6f94c20d4d70eb8e6">More...</a><br /></td></tr>
 <tr class="separator:a8064e9aed23d3cd6f94c20d4d70eb8e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -600,8 +617,229 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>snprintf</b> (char *bu
 
 </div>
 </div>
-<a id="afe39a41934b6658bb06c4ffc8cba413f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afe39a41934b6658bb06c4ffc8cba413f">&#9670;&nbsp;</a></span>ui_frm()</h2>
+<a id="aef97744c8290fc4837d2238279d0f4f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef97744c8290fc4837d2238279d0f4f1">&#9670;&nbsp;</a></span>_frm_rs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void _frm_rs </td>
+          <td>(</td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>frm</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Resets the format. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">{int*}</td><td>frm - Format array to be reseted</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>formatting functions </p>
+
+</div>
+</div>
+<a id="ad9fc8b100e2d6b12926b604c85360c61"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9fc8b100e2d6b12926b604c85360c61">&#9670;&nbsp;</a></span>_frm_cpy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void _frm_cpy </td>
+          <td>(</td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>dest</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>src</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Copies source format into destinationformat. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">{int*}</td><td>dest - Format array destination </td></tr>
+    <tr><td class="paramname">{int*}</td><td>src - Format array source </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a5b9451032a7b28000f768915c526935b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b9451032a7b28000f768915c526935b">&#9670;&nbsp;</a></span>_frm_add()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void _frm_add </td>
+          <td>(</td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>frm</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>v</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Adds a value to a given format. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">{int*}</td><td>frm - Format array to be modified </td></tr>
+    <tr><td class="paramname">{int}</td><td>v - Value to be added </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a9985d73a4693dae12a4d9e6c26821011"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9985d73a4693dae12a4d9e6c26821011">&#9670;&nbsp;</a></span>_frm_csum()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int _frm_csum </td>
+          <td>(</td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>frm</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns a checksum of a given format array. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">{int*}</td><td>frm - Format array </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">{int}</td><td>- Returns the checksum </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a1968a1e1276abd333bbdfc77338abe9e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1968a1e1276abd333bbdfc77338abe9e">&#9670;&nbsp;</a></span>_frm()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void _frm </td>
+          <td>(</td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>frm</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">va_list&#160;</td>
+          <td class="paramname"><em>list</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Adds a list of values into a format array. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">{int*}</td><td>frm - format array destination </td></tr>
+    <tr><td class="paramname">{int}</td><td>n - Number of parameters to be added </td></tr>
+    <tr><td class="paramname">{va_list}</td><td>list - List of parameters to be inserted </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a91d6818962011df968e8e6fca315a66a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91d6818962011df968e8e6fca315a66a">&#9670;&nbsp;</a></span>_frm_parse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void _frm_parse </td>
+          <td>(</td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>frm</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>defrm</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>sfrm</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Parses a given format string into a number format array. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">{int*}</td><td>frm - Format destination </td></tr>
+    <tr><td class="paramname">{int*}</td><td>defrm - Default format in case of reset </td></tr>
+    <tr><td class="paramname">{char*}</td><td>sfrm - Format string </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a70ca5594ea91504bec5a8a16826f3c23"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70ca5594ea91504bec5a8a16826f3c23">&#9670;&nbsp;</a></span>ui_frm()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -820,8 +1058,8 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>snprintf</b> (char *bu
 
 </div>
 </div>
-<a id="a5462519f6d2134a490d719e49a6503f5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5462519f6d2134a490d719e49a6503f5">&#9670;&nbsp;</a></span>ui_box_frm()</h2>
+<a id="a173b4e0d7bf667e1bf3ae9dadeafae5e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a173b4e0d7bf667e1bf3ae9dadeafae5e">&#9670;&nbsp;</a></span>ui_box_frm()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -841,8 +1079,8 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>snprintf</b> (char *bu
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>frmt</em>, </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -863,8 +1101,8 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>snprintf</b> (char *bu
   <table class="params">
     <tr><td class="paramname">{Ui*}</td><td>ui - UI where the box is located </td></tr>
     <tr><td class="paramname">{int}</td><td>id - The id of the box </td></tr>
-    <tr><td class="paramname">{char*}</td><td>str - String format </td></tr>
-    <tr><td class="paramname">{...}</td><td>- String format arguments </td></tr>
+    <tr><td class="paramname">{int}</td><td>n - Number of parameters </td></tr>
+    <tr><td class="paramname">{...}</td><td>- Style parameters </td></tr>
   </table>
   </dd>
 </dl>

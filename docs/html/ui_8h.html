@@ -185,9 +185,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ab1abb40d629ddab0740bc91321abe91f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8h.html#ab1abb40d629ddab0740bc91321abe91f">ui_box_seek</a> (<a class="el" href="struct__Ui.html">Ui</a> *ui, int idx, int x, int y)</td></tr>
 <tr class="memdesc:ab1abb40d629ddab0740bc91321abe91f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Changes the cursor position of a box.  <a href="#ab1abb40d629ddab0740bc91321abe91f">More...</a><br /></td></tr>
 <tr class="separator:ab1abb40d629ddab0740bc91321abe91f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5462519f6d2134a490d719e49a6503f5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8h.html#a5462519f6d2134a490d719e49a6503f5">ui_box_frm</a> (<a class="el" href="struct__Ui.html">Ui</a> *ui, int idx, const char *frmt,...)</td></tr>
-<tr class="memdesc:a5462519f6d2134a490d719e49a6503f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the default format for the content of the box.  <a href="#a5462519f6d2134a490d719e49a6503f5">More...</a><br /></td></tr>
-<tr class="separator:a5462519f6d2134a490d719e49a6503f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a173b4e0d7bf667e1bf3ae9dadeafae5e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8h.html#a173b4e0d7bf667e1bf3ae9dadeafae5e">ui_box_frm</a> (<a class="el" href="struct__Ui.html">Ui</a> *ui, int idx, int n,...)</td></tr>
+<tr class="memdesc:a173b4e0d7bf667e1bf3ae9dadeafae5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the default format for the content of the box.  <a href="#a173b4e0d7bf667e1bf3ae9dadeafae5e">More...</a><br /></td></tr>
+<tr class="separator:a173b4e0d7bf667e1bf3ae9dadeafae5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8064e9aed23d3cd6f94c20d4d70eb8e6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8h.html#a8064e9aed23d3cd6f94c20d4d70eb8e6">ui_clear_box</a> (<a class="el" href="struct__Ui.html">Ui</a> *ui, int idx)</td></tr>
 <tr class="memdesc:a8064e9aed23d3cd6f94c20d4d70eb8e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears the box buffer.  <a href="#a8064e9aed23d3cd6f94c20d4d70eb8e6">More...</a><br /></td></tr>
 <tr class="separator:a8064e9aed23d3cd6f94c20d4d70eb8e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -201,7 +201,7 @@ Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>User interface based on chars. </p>
 <dl class="section author"><dt>Author</dt><dd>Javier Romera </dd></dl>
-<dl class="section version"><dt>Version</dt><dd>0.9.5-stable </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>0.9.8-stable </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>24/03/2019 </dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>GNU Public License </dd></dl>
 </div><h2 class="groupheader">Enumeration Type Documentation</h2>
@@ -724,8 +724,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a5462519f6d2134a490d719e49a6503f5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5462519f6d2134a490d719e49a6503f5">&#9670;&nbsp;</a></span>ui_box_frm()</h2>
+<a id="a173b4e0d7bf667e1bf3ae9dadeafae5e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a173b4e0d7bf667e1bf3ae9dadeafae5e">&#9670;&nbsp;</a></span>ui_box_frm()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -745,8 +745,8 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>frmt</em>, </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -767,8 +767,8 @@ Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">{Ui*}</td><td>ui - UI where the box is located </td></tr>
     <tr><td class="paramname">{int}</td><td>id - The id of the box </td></tr>
-    <tr><td class="paramname">{char*}</td><td>str - String format </td></tr>
-    <tr><td class="paramname">{...}</td><td>- String format arguments </td></tr>
+    <tr><td class="paramname">{int}</td><td>n - Number of parameters </td></tr>
+    <tr><td class="paramname">{...}</td><td>- Style parameters </td></tr>
   </table>
   </dd>
 </dl>
