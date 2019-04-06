@@ -15,6 +15,7 @@
 - Overview box now shows frame average.
 
 `[FIXES]`
+- Fixed a bug in function `set_has_id()`, it was returning `OK` when the given id was `-1`.
 - Fixed `target` script bug that was not compiling after file modifications.
 - Fixed a syntax error inside `.clang_complete` which was causing problems with the `linter`.
 - Fixed a bug inside function `game_callback_take()`, it was ignoring the max size of the bag.

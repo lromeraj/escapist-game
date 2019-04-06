@@ -43,7 +43,7 @@ STATUS set_add_id( Set *set, Id id ){
   if ( !set )
     return ERROR;
 
-  if ( set_is_full( set ) || set_has_id( set, id ) )
+  if ( id == NO_ID || set_is_full( set ) || set_has_id( set, id ) )
     return ERROR;
 
   for ( i=0; i < MAX_SET; i++ ) {

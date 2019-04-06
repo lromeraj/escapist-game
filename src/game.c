@@ -663,6 +663,12 @@ void game_callback_take( Game *game ) {
     } else if ( player_has_object( player, o_id ) ) {
       cmd_set_ans( cmd, 2, "taken: %s#%ld", o_name, o_id );
     } else {
+
+      printf("passing NO_ID ... ");
+      if ( player_add_object( player, NO_ID ) == ERROR ) {
+        printf("thats an invalid ID!\n");
+      }
+
       if ( player_add_object( player, o_id ) == OK ) {
         space_del_object( sp, o_id );
         cmd_set_ans( cmd, 0, "taking: %s#%ld", o_name, o_id );
