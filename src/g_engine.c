@@ -84,8 +84,8 @@ G_engine *g_engine_create() {
       ui_box_bg( _ui, GAME_FEED, BG_BLACK );
       ui_frm( _ui, 3, FG_BLACK, BG_YELLOW );
       ui_box_frm( _ui, GAME_FEED, 2, BG_BLACK, FG_WHITE );
-      ui_box_put( _ui, GAME_FEED, "@{1;%d;%d} FEED\n@{0}", FG_BLACK, BG_YELLOW );
-      ui_box_put( _ui, GAME_FEED, "NOTE: use@{1;%d;%d} help @{0}", BG_BLACK, FG_YELLOW );
+      ui_box_put( _ui, GAME_FEED, "@{1;%d;%d} FEED\n", FG_BLACK, BG_YELLOW );
+      ui_box_put( _ui, GAME_FEED, "@{0}NOTE: use@{1;%d;%d} help @{0}", BG_BLACK, FG_YELLOW );
       ui_box_put( _ui, GAME_FEED, "to see information about the game\n" );
 
       /* game info */
