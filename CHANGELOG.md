@@ -12,7 +12,6 @@
 - Improved `Ui` speed.
 - Improved `Ui` format parsing.
 - `Ui` now uses less memory.
-- Overview box now shows frame average.
 
 `[FIXES]`
 - Fixed a bug in function `set_add_id()`, it was returning `OK` when the given id was `-1`.
