@@ -861,6 +861,7 @@ void ui_draw( FILE *stream, Ui *ui ) {
       }
 
       sprintf( __frm + strlen( __frm ), "m" );
+
       oxor = xor;
     }
 
