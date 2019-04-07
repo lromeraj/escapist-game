@@ -305,7 +305,7 @@ void g_engine_paint_help( G_engine *ge, Game *game ) {
 
     ui_box_put( ui, HELP_BODY, "\nTo see more information about " );
     ui_box_put( ui, HELP_BODY, "a particular command use: " );
-    ui_box_put( ui, HELP_BODY, "@{1;%d;%d!help@{0} <command>\n", BG_BLACK, FG_YELLOW );
+    ui_box_put( ui, HELP_BODY, "@{1;%d;%d}help@{0} <command>\n", BG_BLACK, FG_YELLOW );
 
   }
 
