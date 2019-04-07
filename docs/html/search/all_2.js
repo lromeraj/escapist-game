@@ -2,6 +2,7 @@ var searchData=
 [
   ['b_5fname',['b_name',['../struct__Cmd.html#adb97870a775bf9f9075d44420cb82439',1,'_Cmd']]],
   ['back',['BACK',['../cmd_8h.html#a00a332e55439547f3ed90d0839bd1995ac921ff2cfc571c1d19b0485d7f6926ee',1,'cmd.h']]],
+  ['bag',['bag',['../struct__Inventory.html#a55f10f4d880ffc99d424d89ede41516f',1,'_Inventory']]],
   ['bg',['bg',['../struct__Ui__box.html#a2562527c18b6318ba537faae8dd2d06c',1,'_Ui_box']]],
   ['bg_5fblack',['BG_BLACK',['../ui_8h.html#ab87bacfdad76e61b9412d7124be44c1ca7d787cd03030ff1648a6bbabf0762f57',1,'ui.h']]],
   ['bg_5fblue',['BG_BLUE',['../ui_8h.html#ab87bacfdad76e61b9412d7124be44c1ca9ef352990ea099ae830a329fe0e3f8a8',1,'ui.h']]],

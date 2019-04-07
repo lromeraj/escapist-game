@@ -1,4 +1,5 @@
 <map id="inc/inventory.h" name="inc/inventory.h">
 <area shape="rect" id="node2" href="$g__engine_8c.html" title="Graphic engine source code. " alt="" coords="5,80,112,107"/>
-<area shape="rect" id="node3" href="$player_8c.html" title="Main player manager. " alt="" coords="136,80,227,107"/>
+<area shape="rect" id="node3" href="$inventory_8c.html" title="Code implementation of the inventory manager. " alt="" coords="137,80,245,107"/>
+<area shape="rect" id="node4" href="$player_8c.html" title="Main player manager. " alt="" coords="269,80,360,107"/>
 </map>

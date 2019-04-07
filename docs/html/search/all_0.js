@@ -3,7 +3,6 @@ var searchData=
   ['_5f_5flen',['__len',['../struct__Ui__box.html#ade30a16b2e23d494a77767ce516f00d9',1,'_Ui_box::__len()'],['../struct__Ui.html#a368b423615ed2b6852c1ca99fd6351ce',1,'_Ui::__len()']]],
   ['_5f_5fpixs',['__pixs',['../struct__Ui__box.html#a03e07792d6c14766638d58e9e2edb844',1,'_Ui_box::__pixs()'],['../struct__Ui.html#a11af896bffe4bdbeca5ca871f7a9b7f0',1,'_Ui::__pixs()']]],
   ['_5fboxes',['_Boxes',['../g__engine_8c.html#a55884d4185031754f710955b5e32ebd9',1,'g_engine.c']]],
-  ['_5fclk',['_Clk',['../struct__Clk.html',1,'']]],
   ['_5fcmd',['_Cmd',['../struct__Cmd.html',1,'']]],
   ['_5fdie',['_Die',['../struct__Die.html',1,'']]],
   ['_5ffrm',['_frm',['../ui_8c.html#a1968a1e1276abd333bbdfc77338abe9e',1,'ui.c']]],
