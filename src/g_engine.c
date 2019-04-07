@@ -112,7 +112,6 @@ G_engine *g_engine_create() {
       ui_new_box( _ui, HELP_TITLE, 0, 0, 80, 1 );
       ui_new_box( _ui, HELP_BODY, 0, 1, 80, 22);
 
-
       ui_box_frm( _ui, HELP_TITLE, 2, BG_YELLOW, FG_BLACK );
       ui_box_frm( _ui, HELP_BODY, 2, BG_BLACK, FG_WHITE );
 

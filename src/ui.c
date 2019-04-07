@@ -292,7 +292,7 @@ void _frm_parse( int *frm, int *defrm, const char *sfrm ) {
       _i = 0;
     }
 
-    if ( addChar ) {
+    if ( addChar && _i < 5 ) {
       sn[ _i ] = c;
       sn[ _i + 1 ] = 0;
       _i++;
@@ -854,6 +854,7 @@ void ui_draw( FILE *stream, Ui *ui ) {
       /* reset format buffer */
       strcpy( __frm, "\033[" );
 
+
       /* compute pixel format */
       for ( j=0; j < UI_MAX_FRM; j++ ) {
         if ( pix->frm[j] == -1 ) continue;
@@ -861,7 +862,6 @@ void ui_draw( FILE *stream, Ui *ui ) {
       }
 
       sprintf( __frm + strlen( __frm ), "m" );
-
       oxor = xor;
     }
 
