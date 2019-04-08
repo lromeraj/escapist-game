@@ -148,7 +148,7 @@ void g_engine_paint_help( G_engine *ge, Game *game ) {
   ui_clear_box( ui, HELP_TITLE );
   ui_clear_box( ui, HELP_BODY );
 
-  ui_frm( ui, 3, BG_YELLOW, FG_BLACK, S_BOLD );
+  ui_frm( ui, 3, BG_YELLOW, FG_WHITE, S_BOLD );
   ui_box_put( ui, HELP_TITLE, "HELP DESK" );
 
   ui_box_bg( ui, HELP_BODY, BG_BLACK );
@@ -253,8 +253,7 @@ void g_engine_paint_help( G_engine *ge, Game *game ) {
       } else if ( !strcmp( b_name, "right" ) ) {
 
         ui_box_put( ui, HELP_BODY, "...\n" );
-        ui_frm( ui, 2, BG_BLACK, FG_WHITE );
-        ui_box_put( ui, HELP_BODY, "This command allows you to move to the east direction.\n" );
+        ui_box_put( ui, HELP_BODY, "@{0}This command allows you to move to the east direction.\n" );
 
       } else if ( !strcmp( b_name, "left" ) ) {
 
@@ -277,7 +276,7 @@ void g_engine_paint_help( G_engine *ge, Game *game ) {
       }
 
     } else { /* other cases */
-      ui_frm( ui, 3, S_BOLD, BG_RED, FG_BLACK );
+      ui_frm( ui, 3, S_BOLD, BG_RED, FG_WHITE );
       ui_box_put( ui, HELP_BODY, "There are no estries for '%s'\n", arg );
       ui_frm( ui, 2, BG_BLACK, FG_WHITE );
       ui_box_put( ui, HELP_BODY, "Sorry, that didn't work :(\n" );
@@ -310,8 +309,7 @@ void g_engine_paint_help( G_engine *ge, Game *game ) {
 
   }
 
-  ui_box_put( ui, HELP_BODY, "\nPress ENTER key to exit help\n" );
-
+  ui_box_put( ui, HELP_BODY, "\nPress @{1;%d} ENTER @{0} key to exit help\n", BG_RED );
 
   ui_dump_box( ui, HELP_TITLE );
   ui_dump_box( ui, HELP_BODY );
