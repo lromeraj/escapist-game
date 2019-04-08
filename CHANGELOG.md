@@ -14,6 +14,7 @@
 - `Ui` now uses less memory.
 - Improved `inspect` command. Use `inspect -s` to inspect current space, and `inspect -o <name>` to inspect an object by it's name.
 - Updated game help.
+- Game interface now has a new fresh look.
 
 `[FIXES]`
 - Fixed a bug in function `set_add_id()`, it was returning `OK` when the given id was `-1`.

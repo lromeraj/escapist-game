@@ -83,9 +83,9 @@ G_engine *g_engine_create() {
       /* game feed */
       ui_box_bg( _ui, GAME_FEED, BG_BLACK );
       ui_box_frm( _ui, GAME_FEED, 2, BG_BLACK, FG_WHITE );
-      ui_frm( _ui, 2, FG_BLACK, BG_YELLOW );
-      ui_box_put( _ui, GAME_FEED, "@{1;%d;%d} FEED\n", FG_BLACK, BG_YELLOW );
-      ui_box_put( _ui, GAME_FEED, "@{0}NOTE: use@{1;%d;%d} help @{0}", BG_BLACK, FG_YELLOW );
+      ui_frm( _ui, 2, FG_WHITE, BG_CYAN );
+      ui_box_put( _ui, GAME_FEED, "@{1} FEED\n" );
+      ui_box_put( _ui, GAME_FEED, "@{0;3}NOTE@{0}: use@{1;%d;%d} help @{0}", BG_BLACK, FG_YELLOW );
       ui_box_put( _ui, GAME_FEED, "to see information about the game\n" );
 
       /* game info */
@@ -509,10 +509,10 @@ void g_engine_paint_game( G_engine *ge, Game *game ) {
 
   /* title box */
   ui_clear_box( ui, GAME_TITLE );
-  ui_box_bg( ui, GAME_TITLE, BG_YELLOW );
-  ui_frm( ui, 4, BG_YELLOW, FG_BLACK, S_REVERSE, S_BOLD );
+  ui_box_bg( ui, GAME_TITLE, BG_PURPLE );
+  ui_frm( ui, 4, BG_PURPLE, FG_BLACK, S_REVERSE, S_BOLD );
   ui_box_put( ui, GAME_TITLE, " Goose game ");
-  ui_frm( ui, 2, BG_YELLOW, FG_BLACK );
+  ui_frm( ui, 2, BG_PURPLE, FG_BLACK );
   ui_box_put( ui, GAME_TITLE, " by lromeraj, Mikel04, alvarorp00 and Gosma00");
   ui_rs( ui );
   ui_dump_box( ui, GAME_TITLE );
@@ -558,7 +558,7 @@ void g_engine_paint_game( G_engine *ge, Game *game ) {
   /* overview box */
   ui_clear_box( ui, GAME_OVERVIEW );
   ui_box_bg( ui, GAME_OVERVIEW, BG_WHITE );
-  ui_frm( ui, 3, BG_RED, FG_WHITE, S_BOLD );
+  ui_frm( ui, 3, BG_BLUE, FG_WHITE, S_BOLD );
   ui_box_put( ui, GAME_OVERVIEW, "           OVERVIEW\n");
   ui_rs( ui );
 
@@ -619,7 +619,7 @@ void g_engine_paint_game( G_engine *ge, Game *game ) {
     ui_box_put( ui, GAME_FEED, "$ " );
     ui_rs( ui );
 
-    ui_frm( ui, 3, FG_YELLOW, S_BOLD, BG_BLACK  );
+    ui_frm( ui, 3, FG_CYAN, S_BOLD, BG_BLACK  );
 
     if ( cmd_get_cid( cmd ) == UNKNOWN ) {
       ui_box_put( ui, GAME_FEED, "%s", cmd_get_argv( cmd, 0 ) );
@@ -642,6 +642,7 @@ void g_engine_paint_game( G_engine *ge, Game *game ) {
   }
   ui_dump_box( ui, GAME_FEED );
 
+  /* inspect box */
   ui_clear_box( ui, GAME_INFO );
 
   if ( cmd_get_cid( cmd ) == INSPECT && !cmd_get_errc( cmd ) ) {
@@ -656,11 +657,11 @@ void g_engine_paint_game( G_engine *ge, Game *game ) {
 
     if ( !strcmp( tstr, "-s" ) ) {
 
-      ui_frm( ui, 3, BG_BLACK, FG_GREEN, S_BOLD );
+      ui_frm( ui, 3, BG_BLACK, FG_CYAN, S_BOLD );
       ui_box_put( ui, GAME_INFO, "%s", space_get_name( cu_sp ) );
       ui_frm( ui, 2, BG_BLACK, FG_WHITE );
       ui_box_put( ui, GAME_INFO, "{id: %ld}\n", space_get_id( cu_sp ) );
-      ui_box_put( ui, GAME_INFO, "@{2}Description@{0}: %s", space_get_descrp( cu_sp ) );
+      ui_box_put( ui, GAME_INFO, "@{2;3}Description@{0}: %s", space_get_descrp( cu_sp ) );
 
     } else if ( !strcmp( tstr, "-o" ) ) {
 
@@ -670,11 +671,11 @@ void g_engine_paint_game( G_engine *ge, Game *game ) {
       if ( !obj ) {
         ui_box_put( ui, GAME_INFO, "could not get information about\nthe requested object");
       } else {
-        ui_frm( ui, 3, BG_BLACK, FG_GREEN, S_BOLD );
+        ui_frm( ui, 3, BG_BLACK, FG_CYAN, S_BOLD );
         ui_box_put( ui, GAME_INFO, "%s", obj_get_name( obj ) );
         ui_frm( ui, 2, BG_BLACK, FG_WHITE );
         ui_box_put( ui, GAME_INFO, "{id: %ld, loc: %s}\n", obj_get_id( obj ), space_has_object( cu_sp, tid ) ? "inspace" : "inbag" );
-        ui_box_put( ui, GAME_INFO, "@{2}Description@{0}: %s", obj_get_descrp( obj ) );
+        ui_box_put( ui, GAME_INFO, "@{2;3}Description@{0}: %s", obj_get_descrp( obj ) );
       }
 
     } else {
