@@ -4,7 +4,6 @@
 
 `[OVERALL]`
 - Updated `Ui` to `v0.9.8-stable`.
-- `docs/` folder renamed to `doc/`.
 
 `[IMPROVEMENTS]`
 - Removed help box, use `help` command to see information about the commands.
