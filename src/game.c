@@ -515,35 +515,31 @@ void game_callback_inspect( Game *game ) {
   player = game_get_player( game );
   cu_sp = game_get_space( game, player_get_location( player ) );
 
+
   if ( cmd_get_argc( cmd ) > 1 ) {
 
-    tid = NO_ID;
     arg = (char*)cmd_get_argv( cmd, 1 );
-    sscanf( cmd_get_argv( cmd, 1 ), "O%ld", &tid );
 
-    if ( !strncmp( arg, "s", 1 ) ) {
-      cmd_set_ans( cmd, 0, "inspecting space ...", arg );
-    } else {
+    if ( !strcmp( arg, "-o" ) && cmd_get_argc( cmd ) == 3 ) {
 
-      if ( tid != NO_ID ) {
+      arg = (char*) cmd_get_argv( cmd, 2 );
+      tid = obj_get_id( game_get_object_by_name( game, arg ) );
 
-        if ( !player_has_object( player, tid ) && !space_has_object( cu_sp, tid ) ) {
-          cmd_set_ans( cmd, 1, "object not reachable", arg );
-        } else {
-          cmd_set_ans( cmd, 0, "inspecting object ...", arg );
-        }
-
+      if ( !player_has_object( player, tid ) && !space_has_object( cu_sp, tid ) ) {
+        cmd_set_ans( cmd, 1, "object not reachable" );
       } else {
-        cmd_set_ans( cmd, 1, "invalid input key");
+        cmd_set_ans( cmd, 0, "inspecting object ..." );
       }
 
+    } else if ( !strcmp( arg, "-s" ) && cmd_get_argc( cmd ) == 2 ) {
+      cmd_set_ans( cmd, 0, "inspecting space ...", arg );
+    } else {
+      cmd_set_ans( cmd, 1, "invalid args");
     }
 
   } else {
-    cmd_set_ans( cmd, 1, "invalid args" );
+    cmd_set_ans( cmd, 1, "too few args" );
   }
-
-
 
 
 }
@@ -663,11 +659,6 @@ void game_callback_take( Game *game ) {
     } else if ( player_has_object( player, o_id ) ) {
       cmd_set_ans( cmd, 2, "taken: %s#%ld", o_name, o_id );
     } else {
-
-      printf("passing NO_ID ... ");
-      if ( player_add_object( player, NO_ID ) == ERROR ) {
-        printf("thats an invalid ID!\n");
-      }
 
       if ( player_add_object( player, o_id ) == OK ) {
         space_del_object( sp, o_id );

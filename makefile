@@ -9,6 +9,12 @@ die_tb:
 set_tb:
 	./target -e set_tb -c
 
+link_tb:
+	./target -e link_tb -c
+
+inventory_tb:
+	./target -e inventory_tb -c
+
 dist:
 	./target -e goose -d
 
@@ -16,4 +22,9 @@ doc:
 	doxygen Doxyfile
 
 clean:
-	./target -e goose --clean -e die_tb --clean -e set_tb --clean
+	./target \
+	-e goose --clean \
+	-e die_tb --clean \
+	-e set_tb --clean \
+	-e link_tb --clean \
+	-e inventory_tb --clean

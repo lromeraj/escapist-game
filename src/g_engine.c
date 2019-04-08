@@ -89,7 +89,7 @@ G_engine *g_engine_create() {
       ui_box_put( _ui, GAME_FEED, "to see information about the game\n" );
 
       /* game info */
-      ui_box_frm( _ui, GAME_OVERVIEW, 2, BG_BLACK, FG_WHITE );
+      ui_box_frm( _ui, GAME_INFO, 2, BG_BLACK, FG_WHITE );
 
       /* game map */
       ui_box_frm( _ui, GAME_MAP, 2, BG_WHITE, FG_BLACK );
@@ -264,15 +264,16 @@ void g_engine_paint_help( G_engine *ge, Game *game ) {
 
       } else if ( !strcmp( b_name, "inspect" ) ) {
 
-        ui_box_put( ui, HELP_BODY, "<search_key>\n" );
+        ui_box_put( ui, HELP_BODY, "<type> [search_key]\n" );
 
         ui_frm( ui, 2, BG_BLACK, FG_WHITE );
 
         ui_box_put( ui, HELP_BODY, "This command allows you to inspect objects and spaces.\n" );
-        ui_box_put( ui, HELP_BODY, " (*) <search_key> \n");
-        ui_box_put( ui, HELP_BODY, "\t\t@ Use letter 's' to inspect current space\n");
-        ui_box_put( ui, HELP_BODY, "\t\t@ Use letter 'O<id>' where <id> is the id of the object to be inspect\n");
-
+        ui_box_put( ui, HELP_BODY, " (*) <type> \n");
+        ui_box_put( ui, HELP_BODY, "\t\t@ Use -s to inspect current space\n" );
+        ui_box_put( ui, HELP_BODY, "\t\t\t[search_key] is not necessary\n");
+        ui_box_put( ui, HELP_BODY, "\t\t@ Use -o to inspect an object by it's name\n");
+        ui_box_put( ui, HELP_BODY, "\t\t\t[search_key] is necessary\n");
       }
 
     } else { /* other cases */
@@ -654,26 +655,28 @@ void g_engine_paint_game( G_engine *ge, Game *game ) {
 
     tid = NO_ID;
     tstr = (char*)cmd_get_argv( cmd, 1 );
-    sscanf( tstr, "O%ld", &tid );
 
-    if ( !strncmp( tstr, "s", 1 ) ) {
-      ui_frm( ui, 3, BG_BLACK, FG_WHITE, S_BOLD );
+    if ( !strcmp( tstr, "-s" ) ) {
+
+      ui_frm( ui, 3, BG_BLACK, FG_GREEN, S_BOLD );
       ui_box_put( ui, GAME_INFO, "%s", space_get_name( cu_sp ) );
       ui_frm( ui, 2, BG_BLACK, FG_WHITE );
       ui_box_put( ui, GAME_INFO, "{id: %ld}\n", space_get_id( cu_sp ) );
-      ui_box_put( ui, GAME_INFO, "Description: %s", space_get_descrp( cu_sp ) );
-    } else if ( tid != NO_ID ) {
+      ui_box_put( ui, GAME_INFO, "@{2}Description@{0}: %s", space_get_descrp( cu_sp ) );
 
-      obj = game_get_object_by_id( game, tid );
+    } else if ( !strcmp( tstr, "-o" ) ) {
+
+      tstr = (char*) cmd_get_argv( cmd, 2 );
+      obj = game_get_object_by_name( game, tstr );
 
       if ( !obj ) {
         ui_box_put( ui, GAME_INFO, "could not get information about\nthe requested object");
       } else {
-        ui_frm( ui, 3, BG_BLACK, FG_WHITE, S_BOLD );
+        ui_frm( ui, 3, BG_BLACK, FG_GREEN, S_BOLD );
         ui_box_put( ui, GAME_INFO, "%s", obj_get_name( obj ) );
         ui_frm( ui, 2, BG_BLACK, FG_WHITE );
         ui_box_put( ui, GAME_INFO, "{id: %ld, loc: %s}\n", obj_get_id( obj ), space_has_object( cu_sp, tid ) ? "inspace" : "inbag" );
-        ui_box_put( ui, GAME_INFO, "%s", obj_get_descrp( obj ) );
+        ui_box_put( ui, GAME_INFO, "@{2}Description@{0}: %s", obj_get_descrp( obj ) );
       }
 
     } else {

@@ -1,6 +1,6 @@
 # I3
 
-## v0.3.9.2
+## v0.3.9.5
 
 `[OVERALL]`
 - Updated `Ui` to `v0.9.8-stable`.
@@ -12,6 +12,8 @@
 - Improved `Ui` speed.
 - Improved `Ui` format parsing.
 - `Ui` now uses less memory.
+- Improved `inspect` command. Use `inspect -s` to inspect current space, and `inspect -o <name>` to inspect an object by it's name.
+- Updated game help.
 
 `[FIXES]`
 - Fixed a bug in function `set_add_id()`, it was returning `OK` when the given id was `-1`.
