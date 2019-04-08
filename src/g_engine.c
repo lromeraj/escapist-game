@@ -268,8 +268,6 @@ void g_engine_paint_help( G_engine *ge, Game *game ) {
 
     }
 
-
-
   } else {
     ui_box_put( ui, HELP_TITLE, " - Overall\n" );
 
@@ -609,10 +607,9 @@ void g_engine_paint_game( G_engine *ge, Game *game ) {
       ui_box_put( ui, GAME_FEED, "%s", cmd_get_argv( cmd, 0 ) );
     } else {
       ui_box_put( ui, GAME_FEED, "%s", cmd_get_bname( cmd ) );
-      ui_frm( ui, 2, FG_WHITE, BG_BLACK  );
     }
 
-    ui_frm( ui, 2, FG_WHITE, BG_BLACK  );
+    ui_frm( ui, 2, BG_BLACK, FG_WHITE );
 
     /* draw command answer */
     answer = (char*)cmd_get_ans( cmd );

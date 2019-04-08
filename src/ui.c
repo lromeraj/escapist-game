@@ -25,14 +25,19 @@
 #define UI_TAB_SIZE 3 /*!< @brief Tab key size */
 #define UI_MAX_BOXES 15 /*!< @brief Maximum quantity of boxes per UI */
 #define UI_MAX_BUFF_LEN 500 /*!< @brief Maximum buffer length */
-#define UI_MAX_FRM 10
+#define UI_MAX_FRM 20 /*!< @brief Maximum number of parameters for formatting */
+
+#define UI_MAX_FRM_LEN ( UI_MAX_FRM + 2 )  /*!< @brief Maximum length of the format array */
+
+#define __frmidx( __frm ) ( __frm[ UI_MAX_FRM_LEN - 2 ] ) /* get the destination index of the format */
+#define __frmxor( __frm ) ( __frm[ UI_MAX_FRM_LEN - 1 ] ) /* get the checksum of the format */
 
 /*!
 * @brief Basic pixel structure
 */
 struct _Ui_pix {
   char c; /*!< @brief Pixel char */
-  int frm[ UI_MAX_FRM ];
+  int frm[ UI_MAX_FRM_LEN ];
 };
 
 /*!
@@ -50,7 +55,7 @@ struct _Ui_box {
   int __len;  /*!< @brief Length of the pixels array */
   int pad[ 4 ];  /*!< @brief Box padding */
   Color bg;  /*!< @brief Background color */
-  int frm[ UI_MAX_FRM ]; /*!< @brief Default format for the content of the box */
+  int frm[ UI_MAX_FRM_LEN ]; /*!< @brief Default format for the content of the box */
 };
 
 /*!
@@ -69,7 +74,7 @@ struct _Ui {
   Ui_box *boxes[ UI_MAX_BOXES ]; /*!< @brief Boxes */
   Ui_pix **__pixs; /*!< @brief Pixels buffer */
   int __len; /*!< @brief Number of pixels */
-  int __frm[ UI_MAX_FRM ];
+  int __frm[ UI_MAX_FRM_LEN ];
 };
 
 /****** PRIVATE FUNCTIONS ******/
@@ -175,14 +180,6 @@ void _frm_add( int *frm, int v );
 
 
 /**
-* @brief Returns a checksum of a given format array
-* @param {int*} frm - Format array
-* @retval {int} - Returns the checksum
-*/
-int _frm_csum( int *frm );
-
-
-/**
 * @brief Adds a list of values into a format array
 * @param {int*} frm - format array destination
 * @param {int} n - Number of parameters to be added
@@ -207,14 +204,18 @@ int snprintf( char *buf, size_t size, const char *fmt, ... );
 
 /** formatting functions *****************/
 void _frm_rs( int *frm ) {
+
   int i;
 
   if ( !frm )
     return;
 
   for ( i=0; i < UI_MAX_FRM; i++ ) {
-    frm[i] = -1;
+    frm[ i ] = -1;
   }
+
+  __frmxor( frm ) = 0;
+  __frmidx( frm ) = 0;
 
 }
 
@@ -225,52 +226,43 @@ void _frm_cpy( int *dest, int *src ) {
   if ( !dest || !src )
     return;
 
-  for ( i=0; i<UI_MAX_FRM; i++ ) {
-    dest[i] = src[i];
+  for ( i=0; i < UI_MAX_FRM_LEN; i++ ) {
+    dest[ i ] = src[ i ];
   }
+
 }
 
 void _frm_add( int *frm, int v ) {
 
-  int i;
+  int _i;
 
   if ( !frm )
     return;
 
-  for ( i=0; i<UI_MAX_FRM; i++ ) {
-    if ( frm[i] == -1 ) {
-      frm[i] = v;
-      break;
-    }
-  }
-}
+  _i = __frmidx( frm );
 
-int _frm_csum( int *frm ) {
-
-  int i;
-  int xor=0;
-
-  if ( !frm )
-    return 0;
-
-  for ( i=0; i<UI_MAX_FRM; i++ ) {
-    xor = xor^frm[i];
+  if ( _i < UI_MAX_FRM ) {
+    frm[ _i ] = v;
+    __frmxor( frm ) += v;
+    __frmxor( frm ) = __frmxor( frm ) << 3 | __frmxor( frm ) >> (32 - 3);
+    __frmidx( frm )++;
   }
 
-  return xor;
 }
 
 void _frm_parse( int *frm, int *defrm, const char *sfrm ) {
 
   int i, _i, len;
+  short r, g, b;
   char c;
   bool addChar, addSn;
-  char sn[ 5 ] = "";
+  char strp[ UI_MAX_BUFF_LEN ] = ""; /* string parameter */
 
   addSn = false;
 
   len = strlen( sfrm );
   for ( i=0, _i=0; i <= len; i++ ) {
+
     c = sfrm[i];
     addChar = true;
 
@@ -280,21 +272,40 @@ void _frm_parse( int *frm, int *defrm, const char *sfrm ) {
     }
 
     if ( addSn ) {
-      _i = atoi( sn );
 
-      if ( !_i && defrm != NULL ) {
-        _frm_cpy( frm, defrm );
+      if ( !strncmp( strp, "frgb", 4 ) ) {
+        sscanf( strp, "frgb(%hd,%hd,%hd)", &r, &g, &b );
+        _frm_add( frm, 38 );
+        _frm_add( frm, 2 );
+        _frm_add( frm, r );
+        _frm_add( frm, g );
+        _frm_add( frm, b );
+      } else if ( !strncmp( strp, "brgb", 4 ) ) {
+        sscanf( strp, "brgb(%hd,%hd,%hd)", &r, &g, &b );
+        _frm_add( frm, 48 );
+        _frm_add( frm, 2 );
+        _frm_add( frm, r );
+        _frm_add( frm, g );
+        _frm_add( frm, b );
       } else {
-        _frm_add( frm, _i ); /* else add new format */
+
+        _i = atoi( strp );
+
+        if ( !_i && defrm != NULL ) {
+          _frm_cpy( frm, defrm );
+        } else {
+          _frm_add( frm, _i ); /* else add new format */
+        }
+
       }
 
       addSn = false;
       _i = 0;
     }
 
-    if ( addChar && _i < 5 ) {
-      sn[ _i ] = c;
-      sn[ _i + 1 ] = 0;
+    if ( addChar && _i < UI_MAX_BUFF_LEN ) {
+      strp[ _i ] = c;
+      strp[ _i + 1 ] = 0;
       _i++;
     }
   }
@@ -792,10 +803,14 @@ void ui_box_put( Ui *ui, int idx, const char *frmt, ... ) {
           _frm_rs( ui->__frm );
           break;
         }
-        __frm[ j ] = _buff[ i ];
-        __frm[ j + 1 ] = 0;
 
-        j++; i++;
+        if ( _buff[ i ] != ' ' ) {
+          __frm[ j ] = _buff[ i ];
+          __frm[ j + 1 ] = 0;
+          j++;
+        }
+
+        i++;
       }
 
       _frm_parse( ui->__frm, box->frm, __frm );
@@ -828,8 +843,8 @@ void ui_draw( FILE *stream, Ui *ui ) {
 
   Ui_pix *pix; /* temporary pixel */
   int i, j, scr_w;
-  int oxor=0, /* old format xor */
-      xor;  /* current format xor */
+  int o_xor=0, /* old format check sum */
+      xor;  /* current format check sum */
   char __frm[ UI_MAX_BUFF_LEN ] = "\033[";
 
   if ( !stream || !ui )
@@ -846,23 +861,21 @@ void ui_draw( FILE *stream, Ui *ui ) {
       break;
     }
 
-    /* avoid recomputing pixel format */
-    xor = _frm_csum( pix->frm ); /* request format checksum to compare */
+    /* avoid pixel format recomputing */
+    xor = __frmxor( pix->frm ); /* request format checksum to compare */
 
-    if ( oxor != xor ) {
+    if ( o_xor != xor ) {
 
       /* reset format buffer */
       strcpy( __frm, "\033[" );
-
 
       /* compute pixel format */
       for ( j=0; j < UI_MAX_FRM; j++ ) {
         if ( pix->frm[j] == -1 ) continue;
         sprintf( __frm + strlen( __frm ), ";%d", pix->frm[ j ] );
       }
-
       sprintf( __frm + strlen( __frm ), "m" );
-      oxor = xor;
+      o_xor = xor;
     }
 
     fprintf( stream, "%s%c", __frm, pix->c );
