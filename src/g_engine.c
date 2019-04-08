@@ -510,9 +510,9 @@ void g_engine_paint_game( G_engine *ge, Game *game ) {
   /* title box */
   ui_clear_box( ui, GAME_TITLE );
   ui_box_bg( ui, GAME_TITLE, BG_PURPLE );
-  ui_frm( ui, 4, BG_PURPLE, FG_BLACK, S_REVERSE, S_BOLD );
+  ui_frm( ui, 4, BG_PURPLE, FG_WHITE, S_REVERSE, S_BOLD );
   ui_box_put( ui, GAME_TITLE, " Goose game ");
-  ui_frm( ui, 2, BG_PURPLE, FG_BLACK );
+  ui_frm( ui, 3, BG_PURPLE, FG_WHITE, S_BOLD );
   ui_box_put( ui, GAME_TITLE, " by lromeraj, Mikel04, alvarorp00 and Gosma00");
   ui_rs( ui );
   ui_dump_box( ui, GAME_TITLE );
