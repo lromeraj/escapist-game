@@ -1,0 +1,120 @@
+\hypertarget{g__engine_8h}{}\section{inc/g\+\_\+engine.h File Reference}
+\label{g__engine_8h}\index{inc/g\+\_\+engine.\+h@{inc/g\+\_\+engine.\+h}}
+
+
+Main graphic engine.  
+
+
+{\ttfamily \#include \char`\"{}game.\+h\char`\"{}}\newline
+Include dependency graph for g\+\_\+engine.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{g__engine_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=268pt]{g__engine_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{g__engine_8h_a89d836c348f7c2eb5b9b42d64a093eaa}\label{g__engine_8h_a89d836c348f7c2eb5b9b42d64a093eaa}} 
+typedef struct \hyperlink{struct__G__engine}{\+\_\+\+G\+\_\+engine} {\bfseries G\+\_\+engine}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{struct__G__engine}{G\+\_\+engine} $\ast$ \hyperlink{g__engine_8h_aa2f5a0548ea6fedb671c594d4f0cf039}{g\+\_\+engine\+\_\+create} ()
+\begin{DoxyCompactList}\small\item\em Creates a new graphic engine. \end{DoxyCompactList}\item 
+void \hyperlink{g__engine_8h_ae61d1ed693a2bfc2967b4550fc128536}{g\+\_\+engine\+\_\+destroy} (\hyperlink{struct__G__engine}{G\+\_\+engine} $\ast$ge)
+\begin{DoxyCompactList}\small\item\em Destroys a graphic engine. \end{DoxyCompactList}\item 
+void \hyperlink{g__engine_8h_a22856c5bd4a0185424313f9fcb5ed4d7}{g\+\_\+engine\+\_\+paint\+\_\+help} (\hyperlink{struct__G__engine}{G\+\_\+engine} $\ast$ge, \hyperlink{struct__Game}{Game} $\ast$game)
+\begin{DoxyCompactList}\small\item\em Draws the help interface. \end{DoxyCompactList}\item 
+void \hyperlink{g__engine_8h_ab215509a5b24333ada8465e80df43387}{g\+\_\+engine\+\_\+paint\+\_\+game} (\hyperlink{struct__G__engine}{G\+\_\+engine} $\ast$ge, \hyperlink{struct__Game}{Game} $\ast$game)
+\begin{DoxyCompactList}\small\item\em Draws the game interface. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Main graphic engine. 
+
+\begin{DoxyVersion}{Version}
+0.\+7.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+10/03/2019 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+G\+NU Public License 
+\end{DoxyCopyright}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{g__engine_8h_aa2f5a0548ea6fedb671c594d4f0cf039}\label{g__engine_8h_aa2f5a0548ea6fedb671c594d4f0cf039}} 
+\index{g\+\_\+engine.\+h@{g\+\_\+engine.\+h}!g\+\_\+engine\+\_\+create@{g\+\_\+engine\+\_\+create}}
+\index{g\+\_\+engine\+\_\+create@{g\+\_\+engine\+\_\+create}!g\+\_\+engine.\+h@{g\+\_\+engine.\+h}}
+\subsubsection{\texorpdfstring{g\+\_\+engine\+\_\+create()}{g\_engine\_create()}}
+{\footnotesize\ttfamily \hyperlink{struct__G__engine}{G\+\_\+engine}$\ast$ g\+\_\+engine\+\_\+create (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Creates a new graphic engine. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em \{\+G\+\_\+engine$\ast$\}} & -\/ Returns a graphic engine pointer \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{g__engine_8h_ae61d1ed693a2bfc2967b4550fc128536}\label{g__engine_8h_ae61d1ed693a2bfc2967b4550fc128536}} 
+\index{g\+\_\+engine.\+h@{g\+\_\+engine.\+h}!g\+\_\+engine\+\_\+destroy@{g\+\_\+engine\+\_\+destroy}}
+\index{g\+\_\+engine\+\_\+destroy@{g\+\_\+engine\+\_\+destroy}!g\+\_\+engine.\+h@{g\+\_\+engine.\+h}}
+\subsubsection{\texorpdfstring{g\+\_\+engine\+\_\+destroy()}{g\_engine\_destroy()}}
+{\footnotesize\ttfamily void g\+\_\+engine\+\_\+destroy (\begin{DoxyParamCaption}\item[{\hyperlink{struct__G__engine}{G\+\_\+engine} $\ast$}]{ge }\end{DoxyParamCaption})}
+
+
+
+Destroys a graphic engine. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+G\+\_\+engine$\ast$\}} & ge -\/ Graphic engine pointer \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{g__engine_8h_a22856c5bd4a0185424313f9fcb5ed4d7}\label{g__engine_8h_a22856c5bd4a0185424313f9fcb5ed4d7}} 
+\index{g\+\_\+engine.\+h@{g\+\_\+engine.\+h}!g\+\_\+engine\+\_\+paint\+\_\+help@{g\+\_\+engine\+\_\+paint\+\_\+help}}
+\index{g\+\_\+engine\+\_\+paint\+\_\+help@{g\+\_\+engine\+\_\+paint\+\_\+help}!g\+\_\+engine.\+h@{g\+\_\+engine.\+h}}
+\subsubsection{\texorpdfstring{g\+\_\+engine\+\_\+paint\+\_\+help()}{g\_engine\_paint\_help()}}
+{\footnotesize\ttfamily void g\+\_\+engine\+\_\+paint\+\_\+help (\begin{DoxyParamCaption}\item[{\hyperlink{struct__G__engine}{G\+\_\+engine} $\ast$}]{ge,  }\item[{\hyperlink{struct__Game}{Game} $\ast$}]{game }\end{DoxyParamCaption})}
+
+
+
+Draws the help interface. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+G\+\_\+engine$\ast$\}} & ge -\/ Graphic engine pointer \\
+\hline
+{\em \{\+Game$\ast$\}} & game -\/ Game pointer \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{g__engine_8h_ab215509a5b24333ada8465e80df43387}\label{g__engine_8h_ab215509a5b24333ada8465e80df43387}} 
+\index{g\+\_\+engine.\+h@{g\+\_\+engine.\+h}!g\+\_\+engine\+\_\+paint\+\_\+game@{g\+\_\+engine\+\_\+paint\+\_\+game}}
+\index{g\+\_\+engine\+\_\+paint\+\_\+game@{g\+\_\+engine\+\_\+paint\+\_\+game}!g\+\_\+engine.\+h@{g\+\_\+engine.\+h}}
+\subsubsection{\texorpdfstring{g\+\_\+engine\+\_\+paint\+\_\+game()}{g\_engine\_paint\_game()}}
+{\footnotesize\ttfamily void g\+\_\+engine\+\_\+paint\+\_\+game (\begin{DoxyParamCaption}\item[{\hyperlink{struct__G__engine}{G\+\_\+engine} $\ast$}]{ge,  }\item[{\hyperlink{struct__Game}{Game} $\ast$}]{game }\end{DoxyParamCaption})}
+
+
+
+Draws the game interface. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+G\+\_\+engine$\ast$\}} & ge -\/ Graphic engine pointer \\
+\hline
+{\em \{\+Game$\ast$\}} & game -\/ Game pointer \\
+\hline
+\end{DoxyParams}

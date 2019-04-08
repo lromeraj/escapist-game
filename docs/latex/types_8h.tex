@@ -1,0 +1,116 @@
+\hypertarget{types_8h}{}\section{inc/types.h File Reference}
+\label{types_8h}\index{inc/types.\+h@{inc/types.\+h}}
+
+
+It defines types of data.  
+
+
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+Include dependency graph for types.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=204pt]{types_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{types_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{types_8h_a92ed8507d1cd2331ad09275c5c4c1c89}\label{types_8h_a92ed8507d1cd2331ad09275c5c4c1c89}} 
+\#define \hyperlink{types_8h_a92ed8507d1cd2331ad09275c5c4c1c89}{W\+O\+R\+D\+\_\+\+S\+I\+ZE}~1000
+\begin{DoxyCompactList}\small\item\em Default strings buffer length. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{types_8h_a642e16f35aa1e585c25e405ede76e115}\label{types_8h_a642e16f35aa1e585c25e405ede76e115}} 
+\#define \hyperlink{types_8h_a642e16f35aa1e585c25e405ede76e115}{N\+O\+\_\+\+ID}~-\/1
+\begin{DoxyCompactList}\small\item\em Value of N\+O\+\_\+\+ID. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{types_8h_a845e604fb28f7e3d97549da3448149d3}\label{types_8h_a845e604fb28f7e3d97549da3448149d3}} 
+typedef long \hyperlink{types_8h_a845e604fb28f7e3d97549da3448149d3}{Id}
+\begin{DoxyCompactList}\small\item\em Defines an id as long. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{types_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+US} \{ \hyperlink{types_8h_a32c27cc471df37f4fc818d65de0a56c4a2fd6f336d08340583bd620a7f5694c90}{E\+R\+R\+OR}, 
+\hyperlink{types_8h_a32c27cc471df37f4fc818d65de0a56c4a2bc49ec37d6a5715dd23e85f1ff5bb59}{OK}
+ \}\begin{DoxyCompactList}\small\item\em Status variants. \end{DoxyCompactList}
+\item 
+enum \hyperlink{types_8h_a7a09f2d4d51c4b4ba7957bbe676a3855}{Cardinal\+Point} \{ \hyperlink{types_8h_a7a09f2d4d51c4b4ba7957bbe676a3855a2c63acbe79d9f41ba6bb7766e9c37702}{N}, 
+\hyperlink{types_8h_a7a09f2d4d51c4b4ba7957bbe676a3855af1ce01387d2348f8b858721a7db81670}{S}, 
+\hyperlink{types_8h_a7a09f2d4d51c4b4ba7957bbe676a3855ab199e021998d49b1f09338d8b9b18ecb}{E}, 
+\hyperlink{types_8h_a7a09f2d4d51c4b4ba7957bbe676a3855ab722ceeb601c72cd78fbd35f3581fdf7}{W}
+ \}\begin{DoxyCompactList}\small\item\em Direction\textquotesingle{}s structure. \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+It defines types of data. 
+
+\begin{DoxyAuthor}{Author}
+Miguel Rodríguez 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+8.\+4 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+18/03/2019 
+\end{DoxyDate}
+
+
+\subsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{types_8h_a32c27cc471df37f4fc818d65de0a56c4}\label{types_8h_a32c27cc471df37f4fc818d65de0a56c4}} 
+\index{types.\+h@{types.\+h}!S\+T\+A\+T\+US@{S\+T\+A\+T\+US}}
+\index{S\+T\+A\+T\+US@{S\+T\+A\+T\+US}!types.\+h@{types.\+h}}
+\subsubsection{\texorpdfstring{S\+T\+A\+T\+US}{STATUS}}
+{\footnotesize\ttfamily enum \hyperlink{types_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+US}}
+
+
+
+Status variants. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E\+R\+R\+OR@{E\+R\+R\+OR}!types.\+h@{types.\+h}}\index{types.\+h@{types.\+h}!E\+R\+R\+OR@{E\+R\+R\+OR}}}\mbox{\Hypertarget{types_8h_a32c27cc471df37f4fc818d65de0a56c4a2fd6f336d08340583bd620a7f5694c90}\label{types_8h_a32c27cc471df37f4fc818d65de0a56c4a2fd6f336d08340583bd620a7f5694c90}} 
+E\+R\+R\+OR&Error means a failure. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OK@{OK}!types.\+h@{types.\+h}}\index{types.\+h@{types.\+h}!OK@{OK}}}\mbox{\Hypertarget{types_8h_a32c27cc471df37f4fc818d65de0a56c4a2bc49ec37d6a5715dd23e85f1ff5bb59}\label{types_8h_a32c27cc471df37f4fc818d65de0a56c4a2bc49ec37d6a5715dd23e85f1ff5bb59}} 
+OK&Ok means success. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{types_8h_a7a09f2d4d51c4b4ba7957bbe676a3855}\label{types_8h_a7a09f2d4d51c4b4ba7957bbe676a3855}} 
+\index{types.\+h@{types.\+h}!Cardinal\+Point@{Cardinal\+Point}}
+\index{Cardinal\+Point@{Cardinal\+Point}!types.\+h@{types.\+h}}
+\subsubsection{\texorpdfstring{Cardinal\+Point}{CardinalPoint}}
+{\footnotesize\ttfamily enum \hyperlink{types_8h_a7a09f2d4d51c4b4ba7957bbe676a3855}{Cardinal\+Point}}
+
+
+
+Direction\textquotesingle{}s structure. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{N@{N}!types.\+h@{types.\+h}}\index{types.\+h@{types.\+h}!N@{N}}}\mbox{\Hypertarget{types_8h_a7a09f2d4d51c4b4ba7957bbe676a3855a2c63acbe79d9f41ba6bb7766e9c37702}\label{types_8h_a7a09f2d4d51c4b4ba7957bbe676a3855a2c63acbe79d9f41ba6bb7766e9c37702}} 
+N&North. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S@{S}!types.\+h@{types.\+h}}\index{types.\+h@{types.\+h}!S@{S}}}\mbox{\Hypertarget{types_8h_a7a09f2d4d51c4b4ba7957bbe676a3855af1ce01387d2348f8b858721a7db81670}\label{types_8h_a7a09f2d4d51c4b4ba7957bbe676a3855af1ce01387d2348f8b858721a7db81670}} 
+S&South. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E@{E}!types.\+h@{types.\+h}}\index{types.\+h@{types.\+h}!E@{E}}}\mbox{\Hypertarget{types_8h_a7a09f2d4d51c4b4ba7957bbe676a3855ab199e021998d49b1f09338d8b9b18ecb}\label{types_8h_a7a09f2d4d51c4b4ba7957bbe676a3855ab199e021998d49b1f09338d8b9b18ecb}} 
+E&East. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{W@{W}!types.\+h@{types.\+h}}\index{types.\+h@{types.\+h}!W@{W}}}\mbox{\Hypertarget{types_8h_a7a09f2d4d51c4b4ba7957bbe676a3855ab722ceeb601c72cd78fbd35f3581fdf7}\label{types_8h_a7a09f2d4d51c4b4ba7957bbe676a3855ab722ceeb601c72cd78fbd35f3581fdf7}} 
+W&West. \\
+\hline
+
+\end{DoxyEnumFields}

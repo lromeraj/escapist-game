@@ -1,0 +1,135 @@
+\hypertarget{reader_8h}{}\section{inc/reader.h File Reference}
+\label{reader_8h}\index{inc/reader.\+h@{inc/reader.\+h}}
+
+
+Defines a game reader.  
+
+
+{\ttfamily \#include \char`\"{}game.\+h\char`\"{}}\newline
+Include dependency graph for reader.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{reader_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=148pt]{reader_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{types_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+US} \hyperlink{reader_8h_a06b7c64080352bc7659460735c0e93be}{reader\+\_\+load\+\_\+links} (\hyperlink{struct__Game}{Game} $\ast$game, char $\ast$f\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Loads links from a file. \end{DoxyCompactList}\item 
+\hyperlink{types_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+US} \hyperlink{reader_8h_a329b3f09b9f244887808b807a33457c8}{reader\+\_\+load\+\_\+spaces} (\hyperlink{struct__Game}{Game} $\ast$game, char $\ast$f\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Loads spaces from a file. \end{DoxyCompactList}\item 
+\hyperlink{types_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+US} \hyperlink{reader_8h_ab8bed1641bb108e505b372bfb23a6604}{reader\+\_\+load\+\_\+objects} (\hyperlink{struct__Game}{Game} $\ast$game, char $\ast$f\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Loads objects from a file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Defines a game reader. 
+
+Contains the implementation of the functions that are associated to the reading of the file To obtain its values
+
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+07/02/2019 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Álvaro Rodríguez 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+G\+NU Public License 
+\end{DoxyCopyright}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{reader_8h_a06b7c64080352bc7659460735c0e93be}\label{reader_8h_a06b7c64080352bc7659460735c0e93be}} 
+\index{reader.\+h@{reader.\+h}!reader\+\_\+load\+\_\+links@{reader\+\_\+load\+\_\+links}}
+\index{reader\+\_\+load\+\_\+links@{reader\+\_\+load\+\_\+links}!reader.\+h@{reader.\+h}}
+\subsubsection{\texorpdfstring{reader\+\_\+load\+\_\+links()}{reader\_load\_links()}}
+{\footnotesize\ttfamily \hyperlink{types_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+US} reader\+\_\+load\+\_\+links (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Game}{Game} $\ast$}]{game,  }\item[{char $\ast$}]{f\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+Loads links from a file. 
+
+\begin{DoxyDate}{Date}
+07/02/2019 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Javier Romera
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+Game$\ast$\}} & game -\/ Pointer to game data \\
+\hline
+{\em \{char$\ast$\}} & f\+\_\+name -\/ name of the source file \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \{\+S\+T\+A\+T\+U\+S\}} & -\/ Returns an status \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{reader_8h_a329b3f09b9f244887808b807a33457c8}\label{reader_8h_a329b3f09b9f244887808b807a33457c8}} 
+\index{reader.\+h@{reader.\+h}!reader\+\_\+load\+\_\+spaces@{reader\+\_\+load\+\_\+spaces}}
+\index{reader\+\_\+load\+\_\+spaces@{reader\+\_\+load\+\_\+spaces}!reader.\+h@{reader.\+h}}
+\subsubsection{\texorpdfstring{reader\+\_\+load\+\_\+spaces()}{reader\_load\_spaces()}}
+{\footnotesize\ttfamily \hyperlink{types_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+US} reader\+\_\+load\+\_\+spaces (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Game}{Game} $\ast$}]{game,  }\item[{char $\ast$}]{f\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+Loads spaces from a file. 
+
+\begin{DoxyDate}{Date}
+07/02/2019 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Álvaro Rodríguez
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+Game$\ast$\}} & game -\/ Pointer to game data \\
+\hline
+{\em \{char$\ast$\}} & f\+\_\+name -\/ name of the source file \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \{\+S\+T\+A\+T\+U\+S\}} & -\/ Returns an status \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{reader_8h_ab8bed1641bb108e505b372bfb23a6604}\label{reader_8h_ab8bed1641bb108e505b372bfb23a6604}} 
+\index{reader.\+h@{reader.\+h}!reader\+\_\+load\+\_\+objects@{reader\+\_\+load\+\_\+objects}}
+\index{reader\+\_\+load\+\_\+objects@{reader\+\_\+load\+\_\+objects}!reader.\+h@{reader.\+h}}
+\subsubsection{\texorpdfstring{reader\+\_\+load\+\_\+objects()}{reader\_load\_objects()}}
+{\footnotesize\ttfamily \hyperlink{types_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+US} reader\+\_\+load\+\_\+objects (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Game}{Game} $\ast$}]{game,  }\item[{char $\ast$}]{f\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+Loads objects from a file. 
+
+\begin{DoxyDate}{Date}
+07/02/2019 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Álvaro Rodríguez
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+Game$\ast$\}} & game -\/ Pointer to game data  \{char$\ast$\} filename -\/ name of the source file \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \{\+S\+T\+A\+T\+U\+S\}} & -\/ Returns an status \\
+\hline
+\end{DoxyRetVals}
