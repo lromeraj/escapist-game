@@ -18,7 +18,7 @@ inventory_tb:
 dist:
 	./target -e goose -d
 
-doc:
+docs:
 	doxygen Doxyfile
 
 clean:

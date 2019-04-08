@@ -16,6 +16,9 @@
 - Updated game help.
 - Game interface now has a new fresh look.
 
+`[NEW]`
+- Created `rec_I2.goo` and `rec_I3.goo`.
+
 `[FIXES]`
 - Fixed a bug in function `set_add_id()`, it was returning `OK` when the given id was `-1`.
 - Fixed `target` script bug that was not compiling after file modifications.

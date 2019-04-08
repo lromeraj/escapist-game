@@ -171,9 +171,7 @@ void g_engine_paint_help( G_engine *ge, Game *game ) {
 
         ui_box_put( ui, HELP_BODY, "<direction> \n" );
 
-        ui_frm( ui, 2, BG_BLACK, FG_WHITE );
-
-        ui_box_put( ui, HELP_BODY, "This command allows you to move over the map.\n" );
+        ui_box_put( ui, HELP_BODY, "@{0}This command allows you to move over the map.\n" );
         ui_box_put( ui, HELP_BODY, " (*) <direction> [north n] [east e] [south s] [west w]\n");
         ui_box_put( ui, HELP_BODY, "\t\t@ [north n] goes to the north if possible\n");
         ui_box_put( ui, HELP_BODY, "\t\t@ [east e] goes to the east if possible\n");
@@ -185,9 +183,7 @@ void g_engine_paint_help( G_engine *ge, Game *game ) {
 
         ui_box_put( ui, HELP_BODY, "<search_type> <key> \n" );
 
-        ui_frm( ui, 2, BG_BLACK, FG_WHITE );
-
-        ui_box_put( ui, HELP_BODY, "This command allows you to take objects located inside spaces.\n" );
+        ui_box_put( ui, HELP_BODY, "@{0}This command allows you to take objects located inside spaces.\n" );
         ui_box_put( ui, HELP_BODY, " (*) <search_type> [-i] [-n]\n");
         ui_box_put( ui, HELP_BODY, "\t\t@ [-i] search by id\n");
         ui_box_put( ui, HELP_BODY, "\t\t@ [-n] search by name\n");
@@ -200,9 +196,7 @@ void g_engine_paint_help( G_engine *ge, Game *game ) {
 
         ui_box_put( ui, HELP_BODY, "<search_type> <key> \n" );
 
-        ui_frm( ui, 2, BG_BLACK, FG_WHITE );
-
-        ui_box_put( ui, HELP_BODY, "This command allows you to drop objects inside spaces.\n" );
+        ui_box_put( ui, HELP_BODY, "@{0}This command allows you to drop objects inside spaces.\n" );
         ui_box_put( ui, HELP_BODY, " (*) <search_type> [-i] [-n]\n");
         ui_box_put( ui, HELP_BODY, "\t\t@ [-i] search by id\n");
         ui_box_put( ui, HELP_BODY, "\t\t@ [-n] search by name\n");
@@ -213,9 +207,7 @@ void g_engine_paint_help( G_engine *ge, Game *game ) {
 
         ui_box_put( ui, HELP_BODY, "<command>\n" );
 
-        ui_frm( ui, 2, BG_BLACK, FG_WHITE );
-
-        ui_box_put( ui, HELP_BODY, "This command allows you to see more information about a command.\n" );
+        ui_box_put( ui, HELP_BODY, "@{0}This command allows you to see more information about a command.\n" );
         ui_box_put( ui, HELP_BODY, " (*) <command> command to check\n");
         ui_box_put( ui, HELP_BODY, "\nIf no argument is passed, it will show an overall about all available commands.\n");
 
@@ -223,18 +215,14 @@ void g_engine_paint_help( G_engine *ge, Game *game ) {
 
         ui_box_put( ui, HELP_BODY, "...\n" );
 
-        ui_frm( ui, 2, BG_BLACK, FG_WHITE );
-
-        ui_box_put( ui, HELP_BODY, "This command allows you to exit from the game.\n" );
+        ui_box_put( ui, HELP_BODY, "@{0}This command allows you to exit from the game.\n" );
         ui_box_put( ui, HELP_BODY, "The game will be closed securely and all reserved memory will be freed.\n" );
 
       } else if ( !strcmp( b_name, "next" ) ) {
 
         ui_box_put( ui, HELP_BODY, "<n>\n" );
 
-        ui_frm( ui, 2, BG_BLACK, FG_WHITE );
-
-        ui_box_put( ui, HELP_BODY, "This command allows you to move to the south direction.\n" );
+        ui_box_put( ui, HELP_BODY, "@{0}This command allows you to move to the south direction.\n" );
         ui_box_put( ui, HELP_BODY, " (*) <n> number of south jumps\n");
         ui_box_put( ui, HELP_BODY, "\nIf there is no argument, the default number of jumps is 1.\n");
         ui_box_put( ui, HELP_BODY, "NOTE: this command ignores the space links.\n");
@@ -243,9 +231,7 @@ void g_engine_paint_help( G_engine *ge, Game *game ) {
 
         ui_box_put( ui, HELP_BODY, "<n>\n" );
 
-        ui_frm( ui, 2, BG_BLACK, FG_WHITE );
-
-        ui_box_put( ui, HELP_BODY, "This command allows you to move to the north direction.\n" );
+        ui_box_put( ui, HELP_BODY, "@{0}This command allows you to move to the north direction.\n" );
         ui_box_put( ui, HELP_BODY, " (*) <n> number of north jumps\n");
         ui_box_put( ui, HELP_BODY, "\nIf there is no argument, the default number of jumps is 1.\n");
         ui_box_put( ui, HELP_BODY, "NOTE: this command ignores the space links.\n");
@@ -258,16 +244,14 @@ void g_engine_paint_help( G_engine *ge, Game *game ) {
       } else if ( !strcmp( b_name, "left" ) ) {
 
         ui_box_put( ui, HELP_BODY, "...\n" );
-        ui_frm( ui, 2, BG_BLACK, FG_WHITE );
-        ui_box_put( ui, HELP_BODY, "This command allows you to move to the west direction.\n" );
+
+        ui_box_put( ui, HELP_BODY, "@{0}This command allows you to move to the west direction.\n" );
 
       } else if ( !strcmp( b_name, "inspect" ) ) {
 
         ui_box_put( ui, HELP_BODY, "<type> [search_key]\n" );
 
-        ui_frm( ui, 2, BG_BLACK, FG_WHITE );
-
-        ui_box_put( ui, HELP_BODY, "This command allows you to inspect objects and spaces.\n" );
+        ui_box_put( ui, HELP_BODY, "@{0}This command allows you to inspect objects and spaces.\n" );
         ui_box_put( ui, HELP_BODY, " (*) <type> \n");
         ui_box_put( ui, HELP_BODY, "\t\t@ Use -s to inspect current space\n" );
         ui_box_put( ui, HELP_BODY, "\t\t\t[search_key] is not necessary\n");
