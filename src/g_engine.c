@@ -648,7 +648,7 @@ void g_engine_paint_game( G_engine *ge, Game *game ) {
   if ( cmd_get_cid( cmd ) == INSPECT && !cmd_get_errc( cmd ) ) {
 
     ui_box_bg( ui, GAME_INFO, BG_BLACK );
-    ui_frm( ui, 3, S_BOLD, BG_YELLOW, FG_BLACK );
+    ui_frm( ui, 3, S_BOLD, BG_YELLOW, FG_WHITE );
     ui_box_put( ui, GAME_INFO, " INSPECT\n" );
     ui_frm( ui, 2, BG_BLACK, FG_WHITE );
 
