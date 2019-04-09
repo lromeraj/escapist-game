@@ -217,6 +217,8 @@ void _frm_rs( int *frm ) {
   __frmxor( frm ) = 0;
   __frmidx( frm ) = 0;
 
+  _frm_add( frm, 0 );
+
 }
 
 void _frm_cpy( int *dest, int *src ) {
@@ -252,7 +254,7 @@ void _frm_add( int *frm, int v ) {
 
 void _frm_parse( int *frm, int *defrm, const char *sfrm ) {
 
-  int i, _i, len;
+  int i, j, _i, len;
   short r, g, b;
   char c;
   bool addChar, addSn;
@@ -263,7 +265,7 @@ void _frm_parse( int *frm, int *defrm, const char *sfrm ) {
   len = strlen( sfrm );
   for ( i=0, _i=0; i <= len; i++ ) {
 
-    c = sfrm[i];
+    c = sfrm[ i ];
     addChar = true;
 
     if ( c == ';' || c == '\0' ) {
@@ -287,6 +289,14 @@ void _frm_parse( int *frm, int *defrm, const char *sfrm ) {
         _frm_add( frm, r );
         _frm_add( frm, g );
         _frm_add( frm, b );
+      } else if ( !strncmp( strp, "$", 1 ) ) {
+
+        for (j=0; j<UI_MAX_FRM_LEN; j++) {
+          printf("%d ", frm[ j ] );
+        }
+
+        printf("\n");
+
       } else {
 
         _i = atoi( strp );

@@ -656,7 +656,7 @@ void g_engine_paint_game( G_engine *ge, Game *game ) {
         ui_box_put( ui, GAME_INFO, "%s", obj_get_name( obj ) );
         ui_frm( ui, 2, BG_BLACK, FG_WHITE );
         ui_box_put( ui, GAME_INFO, "{id: %ld, loc: %s}\n", obj_get_id( obj ), space_has_object( cu_sp, tid ) ? "inspace" : "inbag" );
-        ui_box_put( ui, GAME_INFO, "@{2;3}Description@{0}: %s", obj_get_descrp( obj ) );
+        ui_box_put( ui, GAME_INFO, "@{2;3}Description@{0;$}: %s", obj_get_descrp( obj ) );
       }
 
     } else {
