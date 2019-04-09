@@ -314,14 +314,14 @@ void parse_space( Game *game, G_engine *ge, Space *sp, int id, int x, int y ) {
 
   int i, len;
   Ui *ui;
-  char *pp;
-  int _x, _y;
+  char *pp; /* picture pointer */
+  int _x, _y; /* temporary cursors */
   Id tid; /* temporary id */
   Link *ln;
   Object *obj;
   Object **objs;
   Player *player;
-  int off[4]={0,0,0,5};
+  int off[4]={0,0,0,5}; /* space offset */
 
   if ( !game || !ge )
     return;
@@ -524,12 +524,12 @@ void g_engine_paint_game( G_engine *ge, Game *game ) {
   }
   /* !!! IMPROVE END */
 
-  x=42;
+  x=43;
   y=1;
   ui_box_seek( ui, GAME_MAP, x, y++ );
   ui_box_put( ui, GAME_MAP, "+---+");
   ui_box_seek( ui, GAME_MAP, x, y++ );
-  ui_box_put( ui, GAME_MAP, "| %1d |", die_get_lastn( game_get_die( game ) ) );
+  ui_box_put( ui, GAME_MAP, "| @{1}%d@{0} |", die_get_lastn( game_get_die( game ) ) );
   ui_box_seek( ui, GAME_MAP, x, y++ );
   ui_box_put( ui, GAME_MAP, "+---+");
 
@@ -560,7 +560,7 @@ void g_engine_paint_game( G_engine *ge, Game *game ) {
       ui_box_put( ui, GAME_OVERVIEW, " %s", obj_get_name( obj ) );
       ui_rs( ui );
 
-      ui_box_put( ui, GAME_OVERVIEW, "{id: %d, ",  obj_get_id( obj ) );
+      ui_box_put( ui, GAME_OVERVIEW, " {id: %d, ",  obj_get_id( obj ) );
       ui_box_put( ui, GAME_OVERVIEW, "loc: ");
 
       if ( sp_id == -1 ) {
@@ -577,19 +577,34 @@ void g_engine_paint_game( G_engine *ge, Game *game ) {
   }
 
   /* player overview */
-  ui_box_put( ui, GAME_OVERVIEW, "\n" );
-
   ui_frm( ui, 3, BG_WHITE, FG_BLACK, S_BOLD );
   ui_box_put( ui, GAME_OVERVIEW, " %s", player_get_name( player ) );
   ui_rs( ui );
 
-  ui_box_put( ui, GAME_OVERVIEW, "{id: %ld, loc: %ld}\n", player_get_id( player ), player_get_location( player ) );
+  ui_box_put( ui, GAME_OVERVIEW, " {\n" );
+  ui_box_put( ui, GAME_OVERVIEW, "\tid: %ld,\n", player_get_id( player ) );
+  ui_box_put( ui, GAME_OVERVIEW, "\tloc: %ld,\n", player_get_location( player ) );
+  ui_box_put( ui, GAME_OVERVIEW, "\tbag: ");
 
+  /* player bag */
+  objs = game_get_objects( game );
+
+  for (i=0; i<MAX_OBJECTS; i++) {
+
+    obj = objs[ i ];
+    if ( obj == NULL ) continue;
+
+    if ( player_has_object( player, obj_get_id( obj ) ) ) {
+      ui_box_put( ui, GAME_OVERVIEW, "%ld ", obj_get_id( obj ) );
+    }
+
+  }
+
+  ui_box_put( ui, GAME_OVERVIEW, "\n }\n" );
 
   /* die overview */
-  ui_box_put( ui, GAME_OVERVIEW, "\n" );
   ui_frm( ui, 3, BG_WHITE, FG_BLACK, S_BOLD );
-  ui_box_put( ui, GAME_OVERVIEW, " Die: @{0}%d\n", die_get_lastn( game_get_die( game ) ) );
+  ui_box_put( ui, GAME_OVERVIEW, " die: @{0}%d\n", die_get_lastn( game_get_die( game ) ) );
   ui_rs( ui );
 
   ui_dump_box( ui, GAME_OVERVIEW );

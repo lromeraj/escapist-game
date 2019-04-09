@@ -57,6 +57,7 @@ void cmd_set( Cid id, const char* b_name, const char *s_name, cmd_fn fn ) {
     return;
 
   _cmd->id = id;
+
   strcpy( _cmd->b_name, b_name );
   strcpy( _cmd->s_name, s_name );
 
