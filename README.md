@@ -6,6 +6,8 @@ El juego ha sido diseñado para ser compilado en un entorno de Linux. Para facil
 
 * El archivo `target.conf` es un archivo de configuración utilizado por el script `target`, es recomendable no editarlo. En caso de ser eliminado el script dará un error indicando que no se ha encontrado un archivo de configuración.
 
+* El directorio `meetings/` contiene las actas de reunión y el reparto de trabajo.
+
 * El archivo `CHANGELOG.md`, contiene un historial de cambios.
 * El archivo `target` contine el script encargado de simplificar el proceso de compilación/enlazado.
 
@@ -76,7 +78,7 @@ Ui_pix **alloc_pixs( int __len );
 ```
 
 ### Estructuras
-- En las estrucutas se debe comentar cada campo e incluir además una breve descripción.
+- En las estructuras se debe comentar cada campo e incluir además una breve descripción.
 
 ``` c
 /*!
@@ -196,6 +198,10 @@ Para compilar, por ejemplo, el entorno `[goose]`:
  Si se desea compilar varios entornos de una vez:
 
 `$ ./target -e goose -c -e set_tb -c ...`
+
+Si se desea distrubuir el entorno goose:
+
+`$ ./target -e goose -d`
 
  ## `target.conf`
 
