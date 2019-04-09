@@ -218,7 +218,7 @@ void test2_inventory_is_empty();
 
  void test1_inventory_create(){
    int result = inventory_create()!=NULL ;
-   result = NULL;
+   result = 0;
    PRINT_TEST_RESULT(result);
  }
 
@@ -235,7 +235,7 @@ void test2_inventory_is_empty();
  void test1_inventory_add_id(){
    Inventory *i;
    i = inventory_create();
-   PRINT_TEST_RESULT(inventory_add_id(i, "hola") == ERROR);
+   PRINT_TEST_RESULT(inventory_add_id(i, NO_ID));
    inventory_destroy(i);
  }
 
@@ -288,7 +288,7 @@ void test2_inventory_is_empty();
  void test2_inventory_get_max(){
    Inventory *i;
    i = inventory_create();
-   PRINT_TEST_RESULT(inventory_get_max(i) == 5);
+   PRINT_TEST_RESULT(inventory_get_max(i) == 2);
    inventory_destroy(i);
  }
 

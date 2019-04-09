@@ -1,4 +1,4 @@
-all: clean goose die_tb set_tb obj_tb player_tb link_tb
+all: clean goose die_tb set_tb obj_tb player_tb link_tb inventory_tb
 
 
 # main game
