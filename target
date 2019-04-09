@@ -580,7 +580,8 @@ while [ $# -gt 0 ]; do
 
       else
         warn "cmem: not compiled yet\\n"
-      fi
+      	shift
+			fi
 
     ;;
 
