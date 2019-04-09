@@ -18,6 +18,7 @@
 `[NEW]`
 - Added new proceedings to the `meetings/` folder.
 - Added new comments.
+- Added test bench of `player`, `object`, `inventory` and `link`.
 
 ## v0.3.9.5
 
