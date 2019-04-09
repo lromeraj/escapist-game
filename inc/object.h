@@ -44,7 +44,7 @@ void obj_destroy( Object *obj );
 * @param {Object*} obj - object pointer
 * @param {char*} name - object's name
 */
-void obj_set_name( Object *obj, const char *name );
+STATUS obj_set_name( Object *obj, const char *name );
 
 
 /**
@@ -62,7 +62,7 @@ const char *obj_get_name( Object *obj );
 * @param {Object*} obj - object's pointer
 * @param {char*} name - object's description
 */
-void obj_set_descrp( Object *obj, const char *descrp );
+STATUS obj_set_descrp( Object *obj, const char *descrp );
 
 
 /**
@@ -80,7 +80,7 @@ const char *obj_get_descrp( Object *obj );
 * @param {Object*} obj - object's pointer
 * @param {Id} id - Variable of Id type
 */
-void obj_set_id( Object *obj, const Id id );
+STATUS obj_set_id( Object *obj, const Id id );
 
 
 /**

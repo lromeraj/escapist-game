@@ -12,6 +12,8 @@
 
 #include "types.h"
 
+#define MAX_PLAYER_NAME 100 /*!< @brief Maximum length of the player's name */
+
 typedef struct _Player Player;
 
 

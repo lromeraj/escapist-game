@@ -134,7 +134,7 @@ Game* game_create() {
   /* load player */
   player = player_create( 1 );
 
-  player_set_name( player, "player1" );
+  player_set_name( player, "player" );
   player_set_location( player, 1 );
 
   game_set_player( game, player );

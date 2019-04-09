@@ -3,10 +3,8 @@
 *
 * @file ui.c
 * @author Javier Romera
-* @date 17/03/2019
 * @copyright GNU Public License
 */
-
 
 #include "ui.h"
 #include <stdio.h>
@@ -37,7 +35,7 @@
 */
 struct _Ui_pix {
   char c; /*!< @brief Pixel char */
-  int frm[ UI_MAX_FRM_LEN ];
+  int frm[ UI_MAX_FRM_LEN ]; /*!< @brief Pixel format */
 };
 
 /*!
@@ -74,7 +72,7 @@ struct _Ui {
   Ui_box *boxes[ UI_MAX_BOXES ]; /*!< @brief Boxes */
   Ui_pix **__pixs; /*!< @brief Pixels buffer */
   int __len; /*!< @brief Number of pixels */
-  int __frm[ UI_MAX_FRM_LEN ];
+  int __frm[ UI_MAX_FRM_LEN ]; /*!< @brief Temporary format */
 };
 
 /****** PRIVATE FUNCTIONS ******/

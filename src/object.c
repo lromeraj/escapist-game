@@ -26,27 +26,42 @@ struct _Object {
 
 Object *obj_create( Id id ) {
 
-  Object *obj = (Object*) malloc( sizeof( Object ) );
+  Object *obj;
 
-  if ( obj ) {
-    obj->id = id;
-    obj->name[0] = '\0';
-  }
+  if ( id == NO_ID )
+    return NULL;
+
+  obj = (Object*) malloc( sizeof( Object ) );
+
+  if ( !obj )
+    return NULL;
+
+  obj->id = id;
+  obj->name[0] = '\0';
+  obj->descrp[0] = '\0';
 
   return obj;
-
 }
 
 void obj_destroy( Object *obj ) {
-  if ( !obj ) return;
+
+  if ( !obj )
+    return;
+
   free( obj );
+
 }
 
 
-void obj_set_name( Object *obj, const char *name ) {
-  if ( !obj )
-    return;
-  strcpy( obj->name, name );
+STATUS obj_set_name( Object *obj, const char *name ) {
+
+  if ( !obj || !name )
+    return ERROR;
+
+  strncpy( obj->name, name, MAX_OBJ_NAME );
+  obj->name[ MAX_OBJ_NAME - 1 ] = 0;
+
+  return OK;
 }
 
 const char *obj_get_name( Object *obj ) {
@@ -55,10 +70,15 @@ const char *obj_get_name( Object *obj ) {
   return obj->name;
 }
 
-void obj_set_descrp( Object *obj, const char *descrp ) {
-  if ( !obj )
-    return;
-  strcpy( obj->descrp, descrp );
+STATUS obj_set_descrp( Object *obj, const char *descrp ) {
+
+  if ( !obj || !descrp )
+    return ERROR;
+
+  strncpy( obj->descrp, descrp, MAX_OBJ_DESCRP );
+  obj->descrp[ MAX_OBJ_DESCRP - 1 ] = 0;
+
+  return OK;
 }
 
 const char *obj_get_descrp( Object *obj ) {
@@ -67,11 +87,16 @@ const char *obj_get_descrp( Object *obj ) {
   return obj->descrp;
 }
 
-void obj_set_id( Object *obj, const Id id ) {
-  if ( !obj ) return;
-  obj->id = id;
-}
+STATUS obj_set_id( Object *obj, const Id id ) {
 
+  if ( !obj || id == NO_ID )
+    return ERROR;
+
+  obj->id = id;
+
+  return OK;
+
+}
 
 const Id obj_get_id( Object *obj ) {
   if ( !obj )

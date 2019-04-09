@@ -1,5 +1,24 @@
 # I3
 
+## v0.3.9.9
+
+`[OVERALL]`
+- Final release of the third iteration.
+- Updated `Ui` to `v1.0.0-stable`.
+
+`[FIXES]`
+- Minor bugs fixed.
+- Minor text fixes.
+
+`[IMPROVEMENTS]`
+- Improved `Ui` speed.
+- Improved `Ui` format parser.
+- Improved game stability and reliability.
+
+`[NEW]`
+- Added new proceedings to the `meetings/` folder.
+- Added new comments.
+
 ## v0.3.9.5
 
 `[OVERALL]`

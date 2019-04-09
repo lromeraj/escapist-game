@@ -239,10 +239,9 @@ void test2_Link_get_state();
  }
 
  void test1_Link_create(){
-   int *result = link_create(ID)!=NULL ;
-   result = NULL;
+   int result = link_create(ID)!=NULL ;
+   result = 0;
    PRINT_TEST_RESULT(result);
-   link_destroy((Link*)result);
  }
 
  void test2_Link_create(){
@@ -346,8 +345,8 @@ void test2_Link_get_state();
  void test1_Link_get_id(){
    Link *l;
    l = link_create(ID);
-   link_set_id(l, 1);
-   PRINT_TEST_RESULT(link_get_id(l)!=1);
+   link_set_id(l, 2);
+   PRINT_TEST_RESULT(link_get_id(l)==1);
    link_destroy(l);
  }
 
@@ -362,8 +361,8 @@ void test2_Link_get_state();
  void  test1_Link_get_to(){
    Link *l;
    l = link_create(ID);
-   link_set_to(l, 1);
-   PRINT_TEST_RESULT(link_get_to(l)!=1);
+   link_set_to(l, 2);
+   PRINT_TEST_RESULT(link_get_to(l)==1);
    link_destroy(l);
  }
 
@@ -378,8 +377,8 @@ void test2_Link_get_state();
  void test1_Link_get_from(){
    Link *l;
    l = link_create(ID);
-   link_set_from(l, 1);
-   PRINT_TEST_RESULT(link_get_from(l)!=1);
+   link_set_from(l, 2);
+   PRINT_TEST_RESULT(link_get_from(l)==1);
    link_destroy(l);
  }
 
@@ -394,8 +393,8 @@ void test2_Link_get_state();
  void test1_Link_get_state(){
    Link *l;
    l = link_create(ID);
-   link_set_state(l, 1);
-   PRINT_TEST_RESULT(link_get_state(l)!=1);
+   link_set_state(l, 2);
+   PRINT_TEST_RESULT(link_get_state(l)==1);
    link_destroy(l);
  }
 

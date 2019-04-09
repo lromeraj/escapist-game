@@ -16,10 +16,10 @@
 
 struct _Link {
   Id id; /*!< Id of the link */
-  char name[ MAX_LINK_NAME ]; /*!< Name of the link */
-  Id from; /*!< Id sucessor of the link */
   Id to; /*!< Id destination of the link */
+  Id from; /*!< Id sucessor of the link */
   LinkState state; /*!< State of the link OPEN or CLOSE */
+  char name[ MAX_LINK_NAME ]; /*!< Name of the link */
 };
 
 Link* link_create( Id id ) {
@@ -102,7 +102,7 @@ STATUS link_set_state( Link *link, LinkState state ) {
 
 STATUS link_set_id( Link *link, Id id ) {
 
-  if( !link )
+  if( !link || id == NO_ID )
     return ERROR;
 
   link->id = id;
@@ -110,9 +110,9 @@ STATUS link_set_id( Link *link, Id id ) {
   return OK;
 }
 
-STATUS link_set_from(Link *link, Id id ){
+STATUS link_set_from( Link *link, Id id ){
 
-  if( !link )
+  if( !link || id == NO_ID )
     return ERROR;
 
   link->from = id;
@@ -122,7 +122,7 @@ STATUS link_set_from(Link *link, Id id ){
 
 STATUS link_set_to( Link *link, Id id ) {
 
-  if ( !link )
+  if ( !link || id == NO_ID )
     return ERROR;
 
   link->to = id;
@@ -130,12 +130,13 @@ STATUS link_set_to( Link *link, Id id ) {
   return OK;
 }
 
-STATUS link_set_name(Link *link, const char* name){
+STATUS link_set_name( Link *link, const char* name ) {
 
-  if( !link )
+  if( !link || !name )
     return ERROR;
 
   strncpy( link->name, name, MAX_LINK_NAME );
+  link->name[ MAX_LINK_NAME - 1 ] = 0;
 
   return OK;
 }

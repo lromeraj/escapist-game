@@ -23,13 +23,16 @@ struct _Player {
   Id id; /*!< @brief PLayer's Identifier */
   Id loc; /*!< @brief Player's location */
   Inventory *inv; /*!< @brief Player's inventory */
-  char name[WORD_SIZE + 1]; /*!< @brief Player's name */
+  char name[ MAX_PLAYER_NAME ]; /*!< @brief Player's name */
 };
 
 
 Player *player_create( Id id ) {
 
   Player *newplayer = NULL;
+
+  if ( id == NO_ID )
+    return NULL;
 
   newplayer = (Player *)malloc(sizeof(Player));
 
@@ -59,13 +62,11 @@ STATUS player_destroy( Player *player ) {
 
 STATUS player_set_name( Player *player, char *name ) {
 
-  if ( !player || !name ) {
+  if ( !player || !name )
     return ERROR;
-  }
 
-  if (!strcpy(player->name, name)) {
-    return ERROR;
-  }
+  strncpy( player->name, name, MAX_PLAYER_NAME );
+  player->name[ MAX_PLAYER_NAME - 1 ] = 0;
 
   return OK;
 }
@@ -96,7 +97,7 @@ STATUS player_del_object( Player* player, Id id ) {
   return inventory_del_id( player->inv, id );
 }
 
-const char *player_get_name(Player *player) {
+const char *player_get_name( Player *player ) {
   if ( !player )
     return NULL;
 
@@ -104,14 +105,16 @@ const char *player_get_name(Player *player) {
 }
 
 void player_set_id( Player* player, Id id ) {
-  if ( !player )
+
+  if ( !player || id == NO_ID )
     return;
 
   player->id = id;
 }
 
-Id player_get_id(Player *player) {
-  if (!player)
+Id player_get_id( Player *player ) {
+
+  if ( !player )
     return NO_ID;
 
   return player->id;

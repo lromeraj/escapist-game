@@ -25,29 +25,29 @@ struct _Space {
   char name[ MAX_SPACE_NAME ]; /*!< @brief Space name */
   char descrp[ MAX_SPACE_DESCRP ]; /*!< @brief Space description */
   Set *objects; /*!< @brief Set of objects in the space */
-  char picture[ PICTURE_LEN ]; /*!< @brief Space structure */
+  char picture[ MAX_SPACE_PICTURE ]; /*!< @brief Space picture */
 };
 
-Space *space_create(Id id) {
+Space* space_create( Id id ) {
 
   Space *newSpace = NULL;
 
-  if (id == NO_ID) return NULL;
-
-  newSpace = (Space *)malloc(sizeof(Space));
-
-  if (newSpace == NULL) {
+  if ( id == NO_ID )
     return NULL;
-  }
-  newSpace->id = id;
 
+  newSpace = (Space*) malloc(sizeof(Space));
+
+  if ( !newSpace )
+    return NULL;
+
+  newSpace->id = id;
   newSpace->name[0] = '\0';
   newSpace->picture[0] = '\0';
+  newSpace->descrp[0] = '\0';
   newSpace->north = NO_ID;
   newSpace->south = NO_ID;
   newSpace->east = NO_ID;
   newSpace->west = NO_ID;
-
   newSpace->objects = set_create();
 
   return newSpace;
@@ -73,14 +73,20 @@ STATUS space_set_name( Space *space, char *name ) {
   }
 
   strncpy( space->name, name, MAX_SPACE_NAME );
+  space->name[ MAX_SPACE_NAME - 1 ] = 0;
 
   return OK;
 }
 
-void space_set_descrp( Space *space, const char *descrp ) {
-  if ( !space )
-    return;
-  strcpy( space->descrp, descrp );
+STATUS space_set_descrp( Space *space, const char *descrp ) {
+
+  if ( !space || !descrp )
+    return ERROR;
+
+  strncpy( space->descrp, descrp, MAX_SPACE_DESCRP );
+  space->descrp[ MAX_SPACE_DESCRP - 1 ] = 0;
+
+  return OK;
 }
 
 const char *space_get_descrp( Space *space ) {
@@ -208,11 +214,11 @@ Id space_get_object( Space *space, Id id ) {
 
 STATUS space_set_picture( Space *space, char *pict ){
 
-  if ( !space || !pict ) {
+  if ( !space || !pict )
     return ERROR;
-  }
 
-  strcpy( space->picture, pict );
+  strncpy( space->picture, pict, MAX_SPACE_PICTURE );
+  space->picture[ MAX_SPACE_PICTURE - 1 ] = 0;
 
   return OK;
 }

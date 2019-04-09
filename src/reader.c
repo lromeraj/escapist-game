@@ -84,8 +84,9 @@ STATUS reader_load_links( Game *game, char *f_name ) {
 STATUS reader_load_spaces( Game *game, char *f_name ) {
 
   FILE *file = NULL;
-  char line[WORD_SIZE] = "";
+  char line[ WORD_SIZE ] = "";
   char name[ MAX_SPACE_NAME ] = "";
+  char pict[ MAX_SPACE_PICTURE ] = "";
   char descrp[ MAX_SPACE_DESCRP ] = "";
   char del[] = "|";
   char pref_sp[] = "@s:";
@@ -93,7 +94,6 @@ STATUS reader_load_spaces( Game *game, char *f_name ) {
   Space *space = NULL;
   char *toks = NULL;
   STATUS status = OK;
-  char pict[PICTURE_LEN] = "";
 
   if ( !f_name ) return ERROR;
 
@@ -112,13 +112,13 @@ STATUS reader_load_spaces( Game *game, char *f_name ) {
       toks = strtok(NULL, del); east = atol(toks);
       toks = strtok(NULL, del); south = atol(toks);
       toks = strtok(NULL, del); west = atol(toks);
-      toks = strtok(NULL, del);
+      toks = strtok(NULL, del); /* optional space picture */
 
       /* clear the picture */
-      pict[0] = 0;
+      pict[ 0 ] = 0;
 
       if ( toks ) {
-        strcpy( pict, toks );
+        strncpy( pict, toks, MAX_SPACE_PICTURE );
       }
 
       /* init space */
