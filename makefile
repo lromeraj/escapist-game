@@ -1,4 +1,4 @@
-all: clean goose die_tb set_tb obj_tb player_tb link_tb inventory_tb
+all: clean goose die_tb set_tb obj_tb player_tb link_tb inventory_tb reader_tb
 
 
 # main game
@@ -26,6 +26,8 @@ link_tb:
 inventory_tb:
 	./target -e inventory_tb -c
 
+reader_tb:
+	./target -e reader_tb -c
 
 # others
 
@@ -43,4 +45,5 @@ clean:
 	-e obj_tb --clean \
 	-e player_tb --clean \
 	-e link_tb --clean \
-	-e inventory_tb --clean
+	-e inventory_tb --clean \
+	-e reader_tb --clean
