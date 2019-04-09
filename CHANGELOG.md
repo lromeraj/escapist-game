@@ -16,8 +16,9 @@
 - Improved game stability and reliability.
 
 `[NEW]`
-- Added new proceedings to the `meetings/` folder.
 - Added new comments.
+- Overview box now shows player's bag.
+- Added new proceedings to the `meetings/` folder.
 - Added test bench of `player`, `object`, `inventory` and `link`.
 
 ## v0.3.9.5
