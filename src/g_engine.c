@@ -350,7 +350,7 @@ void parse_space( Game *game, G_engine *ge, Space *sp, int id, int x, int y ) {
   if ( tid != NO_ID ) {
 
     ui_box_seek( ui, id, x+off[3]+25, y );
-    ui_box_put( ui, id, "@{%d;%d}%-2d", BG_WHITE, FG_BLACK, link_get_id( ln ) );
+    ui_box_put( ui, id, "@{0}%-2d", BG_WHITE, FG_BLACK, link_get_id( ln ) );
     ui_box_seek( ui, id, x+off[3]+24, y+1 );
     ui_box_put( ui, id, "->" );
     if ( space_get_id( sp ) == player_get_location( player) ) {

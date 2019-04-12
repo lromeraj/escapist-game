@@ -22,6 +22,7 @@ struct _Space {
   Id south; /*!< @brief Space south id */
   Id east; /*!< @brief Space east id */
   Id west; /*!< @brief Space west id */
+  bool light; /*!< @brief Light state of the space */
   char name[ MAX_SPACE_NAME ]; /*!< @brief Space name */
   char descrp[ MAX_SPACE_DESCRP ]; /*!< @brief Space description */
   Set *objects; /*!< @brief Set of objects in the space */
@@ -40,7 +41,7 @@ Space* space_create( Id id ) {
   if ( !newSpace )
     return NULL;
 
-  newSpace->id = id;
+  newSpace->id = id; /* set up space identification */
   newSpace->name[0] = '\0';
   newSpace->picture[0] = '\0';
   newSpace->descrp[0] = '\0';
@@ -48,7 +49,8 @@ Space* space_create( Id id ) {
   newSpace->south = NO_ID;
   newSpace->east = NO_ID;
   newSpace->west = NO_ID;
-  newSpace->objects = set_create();
+  newSpace->objects = set_create(); /* build objects set */
+  newSpace->light = false; /* by default the space is dark */
 
   return newSpace;
 }
@@ -230,4 +232,48 @@ char* space_get_picture( Space *space ) {
   }
 
   return space->picture;
+}
+
+STATUS space_set_light( Space *space, bool l ){
+
+  if ( !space )
+    return ERROR;
+
+  space->light = l;
+
+  return OK;
+}
+
+STATUS space_toggle_light( Space *space ) {
+
+  if ( !space )
+    return ERROR;
+
+  space->light = !space->light;
+
+  return OK;
+}
+
+bool space_get_light( Space *space ) {
+
+  if ( !space )
+    return false;
+
+  return space->light;
+}
+
+int space_print( Space* space ) {
+
+  int bytes = 0;
+  if ( !space )
+    return 0;
+
+  bytes+=fprintf(stdout, "--> Space {id: %ld; name: %s}\n", space->id, space->name);
+  bytes+=fprintf(stdout, "---> North link: %ld.\n", space->north );
+  bytes+=fprintf(stdout, "---> South link: %ld.\n", space->south );
+  bytes+=fprintf(stdout, "---> East link: %ld.\n", space->east );
+  bytes+=fprintf(stdout, "---> West link: %ld.\n", space->west );
+  bytes+=fprintf(stdout, "---> Light is %s\n", space->light ? "on" : "off" );
+
+  return OK;
 }

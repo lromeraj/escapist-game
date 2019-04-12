@@ -84,7 +84,7 @@
 @l:53|Link 53|24|25|0
 @l:54|Link 54|25|24|0
 
-# @o: <id> | <name> | <location>
+# @o: <id> | <name> | <location> | <description>
 
 @o:01|ball|1|The ball bounds a lot, use it with caution.
 @o:02|book|1|The book is a source of information.

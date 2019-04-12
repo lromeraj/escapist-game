@@ -1,3 +1,15 @@
+#I4
+
+## v0.4.0.1
+
+`[NEW]`
+- Updated space module.
+- Implemented `space_set_light()`, `space_get_light()` and `space_toggle_light()`.
+
+`[IMPROVEMENTS]`
+- Improved game reader module, now is more robust.
+- Game reader no alerts about parsing errors.
+
 # I3
 
 ## v0.3.9.9

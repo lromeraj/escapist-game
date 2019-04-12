@@ -148,7 +148,7 @@ Id space_get_object( Space* space, Id id );
 * @param {Game*} - game
 */
 
-STATUS space_print(Space* space);
+int space_print( Space* space );
 
 /**
 * @brief checks if the space has an object with the specified id
@@ -157,8 +157,8 @@ STATUS space_print(Space* space);
 * @param {Id} - id
 * @retval {bool} - Returns TRUE or FALSE
 */
-
 bool space_has_object( Space *space, Id id );
+
 
 /**
 * @brief it paints the figure associated to the space
@@ -167,8 +167,8 @@ bool space_has_object( Space *space, Id id );
 * @param {char*} - pict
 * @retval {STATUS} - Returns an state
 */
-
 STATUS space_set_picture( Space *space, char *pict );
+
 
 /**
 * @brief it gets the figure associated to the specified space
@@ -176,8 +176,31 @@ STATUS space_set_picture( Space *space, char *pict );
 * @param {Space*} - space
 * @retval {char*} - Returns a pointer to char
 */
-
 char* space_get_picture( Space *space );
+
+
+
+/**
+* @brief Sets a light in a given space
+* @param {Sapce*} space - Space pointer
+* @param {bool} l - light of the space
+* @retval {STATUS} - Returns an status
+*/
+STATUS space_set_light( Space *space, bool l );
+
+/**
+* @brief Toggles the light of a given space
+* @param {Sapce*} space - Space pointer
+* @retval {STATUS} - Returns a status code
+*/
+STATUS space_toggle_light( Space *space );
+
+/**
+* @brief Gets the light status of a given space
+* @param {Sapce*} space - Space pointer
+* @retval {STATUS} - Returns a boolean value
+*/
+bool space_get_light( Space *space );
 
 
 #endif
