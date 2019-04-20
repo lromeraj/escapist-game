@@ -17,6 +17,9 @@ has it's own properties (attributes) and each property has it's own values, base
 - Updated object and player test-benches.
 - Updated `space` module.
 
+`[UPCOMING]`
+- `C-target` written in `C` language.
+
 ## v0.4.0.1
 
 `[NEW]`

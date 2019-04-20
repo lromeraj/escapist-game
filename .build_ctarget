@@ -1,0 +1,3 @@
+#!/usr/bin/bash
+
+gcc -I c-target/inc/ -c c-target/src/target -o c-target
