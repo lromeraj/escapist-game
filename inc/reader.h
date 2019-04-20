@@ -16,40 +16,12 @@
 
 #include "game.h"
 
-/**
- * @brief Loads links from a file
- *
- * @date 07/02/2019
- * @author Javier Romera
- *
- * @param {Game*} game - Pointer to game data
- * @param {char*} f_name - name of the source file
- * @retval {STATUS} - Returns an status
- */
-STATUS reader_load_links( Game *game, char *f_name );
+enum {
+  _RD_OBJS,
+  _RD_SPACES,
+  _RD_LINKS
+};
 
-/**
- * @brief Loads spaces from a file
- *
- * @date 07/02/2019
- * @author Álvaro Rodríguez
- *
- * @param {Game*} game - Pointer to game data
- * @param {char*} f_name - name of the source file
- * @retval {STATUS} - Returns an status
- */
-STATUS reader_load_spaces( Game *game , char *f_name );
-
-/**
- * @brief Loads objects from a file
- *
- * @date 07/02/2019
- * @author Álvaro Rodríguez
- *
- * @param {Game*} game - Pointer to game data
- * @poram {char*} filename - name of the source file
- * @retval {STATUS} - Returns an status
- */
-STATUS reader_load_objects( Game *game , char *f_name );
+int reader_load( Game *game, const char *f_name, int its );
 
 #endif

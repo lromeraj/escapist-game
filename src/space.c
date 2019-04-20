@@ -22,6 +22,8 @@ struct _Space {
   Id south; /*!< @brief Space south id */
   Id east; /*!< @brief Space east id */
   Id west; /*!< @brief Space west id */
+  Id up; /*!< @brief Space up id */
+  Id down; /*!< @brief Space down id */
   bool light; /*!< @brief Light state of the space */
   char name[ MAX_SPACE_NAME ]; /*!< @brief Space name */
   char descrp[ MAX_SPACE_DESCRP ]; /*!< @brief Space description */
@@ -49,6 +51,8 @@ Space* space_create( Id id ) {
   newSpace->south = NO_ID;
   newSpace->east = NO_ID;
   newSpace->west = NO_ID;
+  newSpace->up = NO_ID;
+  newSpace->down = NO_ID;
   newSpace->objects = set_create(); /* build objects set */
   newSpace->light = false; /* by default the space is dark */
 
@@ -123,6 +127,14 @@ Id space_get_link( Space *sp, CardinalPoint cp ) {
       ln_id = sp->west;
       break;
 
+    case U:
+      ln_id = sp->up;
+      break;
+
+    case D:
+      ln_id = sp->down;
+      break;
+
     default:
       return NO_ID;
 
@@ -154,6 +166,14 @@ STATUS space_set_link( Space *sp, CardinalPoint cp, Id id ) {
 
     case W:
       sp->west = id;
+      break;
+
+    case U:
+      sp->up = id;
+      break;
+
+    case D:
+      sp->down = id;
       break;
 
     default:
@@ -273,6 +293,8 @@ int space_print( Space* space ) {
   bytes+=fprintf(stdout, "---> South link: %ld.\n", space->south );
   bytes+=fprintf(stdout, "---> East link: %ld.\n", space->east );
   bytes+=fprintf(stdout, "---> West link: %ld.\n", space->west );
+  bytes+=fprintf(stdout, "---> Up link: %ld.\n", space->up );
+  bytes+=fprintf(stdout, "---> Down link: %ld.\n", space->down );
   bytes+=fprintf(stdout, "---> Light is %s\n", space->light ? "on" : "off" );
 
   return OK;

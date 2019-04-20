@@ -19,7 +19,6 @@
 #define DEFAULT_BOX_BG_COLOR BG_WHITE
 #define DEFAULT_BG_COLOR BG_WHITE
 
-
 #define UI_TAB_SIZE 3 /*!< @brief Tab key size */
 #define UI_MAX_BOXES 15 /*!< @brief Maximum quantity of boxes per UI */
 #define UI_MAX_BUFF_LEN 500 /*!< @brief Maximum buffer length */
@@ -521,6 +520,8 @@ Ui_pix **alloc_pixs( int __len ) {
 
       if ( pix ) {
         __pixs[ i ] = pix;
+        _frm_rs( pix->frm );
+        pix->c = '\0';
       } else {
         kill_pixs( __pixs, i-1 );
         break;
@@ -780,7 +781,11 @@ void ui_box_put( Ui *ui, int idx, const char *frmt, ... ) {
 
     _pix.c = _buff[ i ];
 
-    _frm_cpy( _pix.frm, ui->__frm ); /* set pix format with the temp ui format */
+    if ( __frmxor( ui->__frm ) == 0 ) { /* if ui format is null use default box format */
+      _frm_cpy( _pix.frm, box->frm );
+    } else {
+      _frm_cpy( _pix.frm, ui->__frm ); /* else use ui format */
+    }
 
     if ( _pix.c == '\n' ) {
 

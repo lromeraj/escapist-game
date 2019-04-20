@@ -245,11 +245,24 @@ STATUS main_err( Object **objects ){
 
     fprintf(stdout, "\t\033[35mReturn value of object[%d]'s id:\033[0m: NO_ID\n\n", i + 1 );
 
-    fprintf(stdout, "\033[032mPassing uninitialized object or invalid name to obj_set_name\nand then getting it.\n\033[0m\n" );
+    fprintf(stdout, "\033[032mPassing uninitialized object or invalid name to obj_set_name.\n\033[0m" );
 
-    obj_set_name( objects[i], names[name_id] );
+    if ( obj_set_name( objects[i], names[name_id] ) == OK || obj_set_name( o[i], NULL ) == OK ) {
+      fprintf(stdout, "\t\033[31mReturn value from obj_set_descrp was not as expected to be.\033[0m\n" );
+    }
 
-    obj_set_name( o[i], NULL );
+    fprintf(stdout, "\t\033[35mReturn value of obj_set_name:\033[0m: ERROR\n\n" );
+
+    fprintf(stdout, "\033[032mPassing larger name than maximum allowed to obj_set_name\033[0m\n" );
+
+    fprintf(stdout, "\t\033[33mExpected return value of player_set_name:\033[0m: ERROR\n" );
+
+    if ( obj_set_name( objects[i], "Honorificabilitudinitatibus Antidisestablishmentarianism" ) == OK ) {
+      fprintf(stdout, "\t\033[31mReturn value from obj_set_name was not as expected to be.\033[0m\n" );
+      return ERROR;
+    }
+
+    fprintf(stdout, "\t\033[35mReturn value of obj_set_name:\033[0m: ERROR\n\n" );
 
     fprintf(stdout, "\033[032mPassing uninitialized object or object with no name to obj_get_name\033[0m\n" );
 
@@ -262,11 +275,13 @@ STATUS main_err( Object **objects ){
 
     fprintf(stdout, "\t\033[35mReturn value of object[%d]'s name:\033[0m: NULL\n\n", i + 1 );
 
-    fprintf(stdout, "\033[032mPassing uninitialized object or invalid description to obj_set_descrp\nand then getting it.\n\033[0m\n" );
+    fprintf(stdout, "\033[032mPassing uninitialized object or invalid description to obj_set_descrp.\n\033[0m\n" );
 
-    obj_set_descrp( objects[i], descriptions[name_id] );
+    if ( obj_set_descrp( objects[i], descriptions[name_id] ) == OK || obj_set_descrp( o[i], NULL ) == OK ) {
+      fprintf(stdout, "\t\033[31mReturn value from obj_set_descrp was not as expected to be.\033[0m\n" );
+    }
 
-    obj_set_descrp( o[i], NULL );
+    fprintf(stdout, "\t\033[35mReturn value of obj_set_descrp:\033[0m: ERROR\n\n" );
 
     fprintf(stdout, "\033[032mPassing uninitialized object or object with no name to obj_get_descrp\033[0m\n" );
 

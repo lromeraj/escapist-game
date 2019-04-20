@@ -33,11 +33,16 @@ typedef enum {
 * @brief Direction's structure
 *
 */
+/*!
+* @brief Direction's structure
+*
+*/
 typedef enum {
   N, /*!< @brief North */
   S, /*!< @brief South */
   E, /*!< @brief East */
-  W /*!< @brief West */
+  W, /*!< @brief West */
+  U, /*!< @brief Up */
+  D /*!< @brief Down */
 } CardinalPoint;
-
 #endif

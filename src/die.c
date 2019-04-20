@@ -9,18 +9,18 @@
  * @copyright GNU Public License
  */
 
- #include "die.h"
- #include <stdio.h>
- #include <stdlib.h>
+#include "die.h"
+#include <stdio.h>
+#include <stdlib.h>
 
  /*!
  * @brief Die structure which contains information about Die
  */
 
- struct _Die {
-   Id id; /*!< @brief Die's id */
-   int last_n; /*!< @brief Die's last number rolled */
- };
+struct _Die {
+	Id id; /*!< @brief Die's id */
+	int last_n; /*!< @brief Die's last number rolled */
+};
 
  Die *die_init( Id id ) {
 

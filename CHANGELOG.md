@@ -1,14 +1,30 @@
 #I4
 
+## v0.4.1
+
+`[FIXES]`
+- Minor text fixes.
+- `Ui` now initializes correctly all pixels.
+
+`[IMPROVEMENTS]`
+- `reader` module has been renewed.
+- `reader` module now uses an other syntax to read configuration file.
+- Renamed `reader_load_<item>()` by `reader_load()`, this function now needs an extra argument to know which items should be loaded from configuration file, that are: `_RD_SPACES`, `_RD_OBJS` and `_RD_LINKS` (by the moment).
+- `data.dat` file now has a new visual syntax to simplify game configuration.
+- `reader` module now warns (in detail) about parsing errors.
+- `reader` module introduces new concept of blocks and attributes, that means, each block
+has it's own properties (attributes) and each property has it's own values, based on `JSON` format, but NOT recursively, that is, one property can not have another block.
+- Updated object and player test-benches.
+- Updated `space` module.
+
 ## v0.4.0.1
 
 `[NEW]`
-- Updated space module.
+- Updated `space` module.
 - Implemented `space_set_light()`, `space_get_light()` and `space_toggle_light()`.
 
 `[IMPROVEMENTS]`
-- Improved game reader module, now is more robust.
-- Game reader no alerts about parsing errors.
+- Improved game `reader` module, now is more robust.
 
 # I3
 

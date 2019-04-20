@@ -331,7 +331,18 @@ STATUS main_err( Player **players ){
 
     fprintf(stdout, "\t\033[33mExpected return value of player_set_name:\033[0m: ERROR\n" );
 
-    if ( player_set_name( players[i], names[name] ) == OK || player_set_name( p[i], NULL ) ) {
+    if ( player_set_name( players[i], names[name] ) == OK || player_set_name( p[i], NULL ) == OK ) {
+      fprintf(stdout, "\t\033[31mReturn value from player_set_name was not as expected to be.\033[0m\n" );
+      return ERROR;
+    }
+
+    fprintf(stdout, "\t\033[35mReturn value of player_set_name:\033[0m: ERROR\n\n" );
+
+    fprintf(stdout, "\033[032mPassing larger name than maximum allowed to player_set_name\033[0m\n" );
+
+    fprintf(stdout, "\t\033[33mExpected return value of player_set_name:\033[0m: ERROR\n" );
+
+    if ( player_set_name( players[i], "Honorificabilitudinitatibus Antidisestablishmentarianism" ) == OK ) {
       fprintf(stdout, "\t\033[31mReturn value from player_set_name was not as expected to be.\033[0m\n" );
       return ERROR;
     }

@@ -14,7 +14,7 @@
 #include "types.h"
 
 #define MAX_CMD_LEN 50 /*!< @brief Maximum command length */
-#define MAX_CMDS 15 /*!< @brief Maximum quantity of commands*/
+#define MAX_CMDS 20 /*!< @brief Maximum quantity of commands*/
 #define MAX_CMD_ARGC 5 /*!< @brief Maximum command arguments */
 #define MAX_CMD_ANS 200 /*!< @brief Maximum command answer length */
 #define MAX_CMD_IN 100  /*!< @brief Maximum command input length */

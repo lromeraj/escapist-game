@@ -8,6 +8,7 @@
  * @copyright GNU Public License
  */
 
+
 #ifndef LINK_H
 #define LINK_H
 

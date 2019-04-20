@@ -1,92 +1,31 @@
-# @s: <id> | <name> | <description> |  <n_link> | <e_link> | <s_link> | w_link
+@o { id: 1, descrp: "The ball bounces a lot, take care!", location: 1, name: "ball" } 
+@o { id: 2, descrp: "This object can destroy walls", location: 1, name: "tnt" }
 
-@s:01|Space 01|none|-1|-1|01|-1
-@s:02|Space 02|none|02|-1|03|-1
-@s:03|Space 03|none|04|-1|05|-1
-@s:04|Space 04|none|06|-1|07|-1
-@s:05|Space 05|Goose space|08|09|10|-1|       \n<O)__/ \n \_-/
-@s:06|Space 06|none|11|-1|12|-1
-@s:07|Space 07|none|13|-1|14|-1
-@s:08|Space 08|Brridge area|15|16|17|-1|  ___ \n / _ \\n/ / \ \
-@s:09|Space 09|Goose space|18|19|20|-1|       \n<O)__/ \n \_-/
-@s:10|Space 10|none|21|-1|22|-1
-@s:11|Space 11|none|-1|-1|23|-1
-@s:12|Space 12|none|24|-1|25|-1
-@s:13|Space 13|Goose space|26|27|28|-1|       \n<O)__/ \n \_-/
-@s:14|Space 14|none|29|-1|30|-1
-@s:15|Space 15|none|31|-1|32|-1
-@s:16|Space 16|none|-1|-1|33|34
-@s:17|Space 17|Goose space|35|36|37|-1|       \n<O)__/ \n \_-/
-@s:18|Space 18|none|38|-1|39|-1
-@s:19|Space 19|Bridge space|40|-1|41|-1|  ___ \n / _ \\n/ / \ \
-@s:20|Space 20|none|42|-1|43|-1
-@s:21|Space 21|This is a beatiful area, you are lucky|-1|44|45|-1|       \n<O)__/ \n \_-/
-@s:22|Space 22|This space is the worst space you could get in|46|47|48|49|  ___  \n (o o) \n  \m/
-@s:23|Space 23|none|50|-1|51|-1
-@s:24|Space 24|none|52|-1|53|-1
-@s:25|Space 25|Final space|54|-1|-1|-1|       \n<O)__/ \n \_-/
+@s {
+	id: 1,
+	name: "Space 1",
+	descrp: "this is a madafakin space xd",
+	links: [	-1, -1, 1, -1 ],
+	picture: "|\---/|\n| o_o |\n \_^_/ "
+}
 
+@s {
+	id: 2,
+  name: "Space 2",
+  descrp: "An other awesome description",
+  links: [ 2, -1, 3, -1 ],
+  picture: " /\_/\ \n( o.o )\n > ^ < "
+}
 
-# @l: <id> | <name> | <from> | <to> | <state>
+@s {
+  id: 3,
+  name: "Space 3",
+  descrp: "This is an other example of description",
+  links: [ 4, -1, -1, -1 ],
+  picture: "< o o >\n \   / \n  ^_^  "
+}
 
-@l:01|Link 01|01|02|0
-@l:02|Link 02|02|01|0
-@l:03|Link 03|02|03|0
-@l:04|Link 04|03|02|0
-@l:05|Link 05|03|04|0
-@l:06|Link 06|04|03|0
-@l:07|Link 07|04|05|0
-@l:08|Link 08|05|04|0
-@l:09|Link 09|05|09|0
-@l:10|Link 10|05|06|0
-@l:11|Link 11|06|05|0
-@l:12|Link 12|06|07|0
-@l:13|Link 13|07|06|0
-@l:14|Link 14|07|08|0
-@l:15|Link 15|08|07|0
-@l:16|Link 16|08|16|0
-@l:17|Link 17|08|09|0
-@l:18|Link 18|09|08|0
-@l:19|Link 19|09|13|0
-@l:20|Link 20|09|10|0
-@l:21|Link 21|10|09|0
-@l:22|Link 22|10|11|0
-@l:23|Link 23|11|12|0
-@l:24|Link 24|12|11|0
-@l:25|Link 25|12|13|0
-@l:26|Link 26|13|12|0
-@l:27|Link 27|13|17|0
-@l:28|Link 28|13|14|0
-@l:29|Link 29|14|13|0
-@l:30|Link 30|14|15|0
-@l:31|Link 31|15|14|0
-@l:32|Link 32|15|16|0
-@l:33|Link 33|16|17|0
-@l:34|Link 34|16|08|0
-@l:35|Link 35|17|16|0
-@l:36|Link 36|17|21|0
-@l:37|Link 37|17|18|0
-@l:38|Link 38|18|17|0
-@l:39|Link 39|18|19|0
-@l:40|Link 40|19|18|0
-@l:41|Link 41|19|20|0
-@l:42|Link 42|20|19|0
-@l:43|Link 43|20|21|0
-@l:44|Link 44|21|25|0
-@l:45|Link 45|21|22|0
-@l:46|Link 46|22|21|0
-@l:47|Link 47|22|01|0
-@l:48|Link 48|22|23|0
-@l:49|Link 49|22|01|0
-@l:50|Link 50|23|22|0
-@l:51|Link 51|23|24|0
-@l:52|Link 52|24|23|0
-@l:53|Link 53|24|25|0
-@l:54|Link 54|25|24|0
-
-# @o: <id> | <name> | <location> | <description>
-
-@o:01|ball|1|The ball bounds a lot, use it with caution.
-@o:02|book|1|The book is a source of information.
-@o:03|gun|1|The gun can destroy walls.
-@o:04|pen|1|With the pen you can build anything just drawing it.
+@l { id: 1, name: "Link 1", from: 1, to: 2, sts: 0 }
+@l { id: 2, name: "Link 2", from: 2, to: 1, sts: 0 }
+@l { id: 3, name: "Link 3", from: 2, to: 3, sts: 0 }
+@l { id: 4, name: "Link 4", from: 3, to: 2, sts: 0 }

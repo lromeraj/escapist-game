@@ -162,16 +162,13 @@ Game* game_create() {
 
 STATUS game_create_from_file( Game *game, char *filename ) {
 
-  if ( reader_load_spaces( game, filename ) == ERROR )
-    return ERROR;
+  int errc = 0;
 
-  if ( reader_load_links( game, filename ) == ERROR )
-    return ERROR;
+  errc+= reader_load( game, filename, _RD_SPACES );
+  errc+= reader_load( game, filename, _RD_OBJS );
+  errc+= reader_load( game, filename, _RD_LINKS );
 
-  if ( reader_load_objects( game, filename ) == ERROR )
-    return ERROR;
-
-  return OK;
+  return errc ? ERROR : OK;
 }
 
 STATUS game_destroy(Game *game) {
@@ -201,7 +198,6 @@ STATUS game_destroy(Game *game) {
 
   /* destroy player */
   player_destroy( game->player );
-
 
   /* destroy commands */
   cmd_free();
