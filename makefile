@@ -46,8 +46,5 @@ clean: ctarget
 	-e reader_tb --clean
 
 ctarget:
-	gcc -I c-target/inc -c c-target/src/str.c -o c-target/obj/str.o
-	gcc -I c-target/inc -c c-target/src/stack.c -o c-target/obj/stack.o
-	gcc -I c-target/inc -c c-target/src/target.c -o c-target/obj/target.o
-	gcc -I c-target/inc -c c-target/src/ui.c -o c-target/obj/ui.o
-	gcc c-target/obj/ui.o c-target/obj/str.o c-target/obj/stack.o c-target/obj/target.o -o ctarget
+	git clone https://github.com/lromeraj/c-target
+	cd c-target && make ctarget && cp ctarget ../

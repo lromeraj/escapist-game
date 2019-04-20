@@ -458,10 +458,8 @@ void rd_free_attr( int attr ) {
 		if ( ATTR_DATA[ attr ] ) {
 
 			for (i=0; ((char**)ATTR_DATA[attr])[i]; i++) {
-
 				free( ((char**)ATTR_DATA[attr])[i] );
 				((char**)ATTR_DATA[attr])[i] = NULL;
-
 			}
 
 			free( ATTR_DATA[ attr ] );
