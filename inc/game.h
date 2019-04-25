@@ -18,6 +18,9 @@
 #include "link.h"
 #include <stdio.h>
 
+#define MIN_WIN_COLS 80
+#define MIN_WIN_ROWS 24
+
 /*
 * @brief Definition of Game structure
 */

@@ -80,6 +80,15 @@ void ui_draw( FILE* stream, Ui* ui );
 
 
 /**
+* @brief Resizes ui screen
+* @param {Ui*} ui - A pointer to the UI struct
+* @param {int} w - New width (cols)
+* @param {int} h - New height (rows)
+*/
+void ui_resize( Ui *ui, int w, int h );
+
+
+/**
 * @brief Clears all the UI data, including inherit objects like boxes, shapes, ...
 * @param {Ui*} ui - The UI that should be clered
 */
@@ -115,13 +124,33 @@ void ui_rs( Ui* ui );
 /**
 * @brief Creates a new box
 * @param {Ui*} ui - UI where the box should be created
-* @param {int} id - The ID with which the box will be referenced
+* @param {int} idx - The ID with which the box will be referenced
 * @param {int} x - The x position of the box ( col of the matrix )
 * @param {int} y - The y position of the box ( row of the matrix )
 * @param {int} w - The width of the box ( number of cols )
 * @param {int} h - The height of the box ( number of rows )
 */
 void ui_new_box( Ui* ui, int idx, int x, int y, int w, int h );
+
+
+/**
+* @brief Changes the position of a box
+* @param {Ui*} ui - UI where the box is stored
+* @param {int} idx - The ID with which the box will be referenced
+* @param {int} x - The new x position of the box ( col of the matrix )
+* @param {int} y - The new y position of the box ( row of the matrix )
+*/
+void ui_box_pos( Ui *ui, int idx, int x, int y );
+
+
+/**
+* @brief Changes the size of a box
+* @param {Ui*} ui - UI where the box is stored
+* @param {int} idx - The ID with which the box will be referenced
+* @param {int} w - The new width of the box ( number of cols )
+* @param {int} h - The new height of the box ( number of rows )
+*/
+void ui_box_size( Ui *ui, int idx, int w, int h );
 
 
 /**

@@ -7,6 +7,7 @@
 - `Ui` now initializes correctly all pixels.
 
 `[IMPROVEMENTS]`
+- If the terminal size is not enough, an alert will appear saying that more terminal size is needed.
 - `reader` module has been renewed.
 - `reader` module now uses an other syntax to read configuration file.
 - Renamed `reader_load_<item>()` by `reader_load()`, this function now needs an extra argument to know which items should be loaded from configuration file, that are: `_RD_SPACES`, `_RD_OBJS` and `_RD_LINKS` (by the moment).

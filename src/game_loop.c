@@ -8,9 +8,11 @@
  * @copyright GNU Public License
  */
 
+
 #include "g_engine.h"
 #include "types.h"
 #include "log.h"
+#include "ui.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -18,6 +20,8 @@
 #include <signal.h>
 #include <locale.h>
 #include <unistd.h>
+#include <math.h>
+#include <sys/ioctl.h>
 
 /******* PRIVATE_FUNCTIONS ******/
 
@@ -35,9 +39,13 @@ void _kill( int errc );
 
 /********************************/
 
+enum { BOX1, BOX2, BOX3 };
+int WIN_ROWS, WIN_COLS, old_r, old_c;
+Ui *mui; /* main user interface */
+Game *game; /* main game */
+G_engine *gengine; /* main graphic engine */
+struct winsize win; /* terminal window */
 
-Game *game;
-G_engine *gengine;
 
 void _kill( int errc ) {
 
@@ -45,6 +53,7 @@ void _kill( int errc ) {
   log_w( "main loop ended\n" );
   log_w( "freeing memory ...\n" );
 
+  ui_destroy( mui );
   game_destroy( game );
   g_engine_destroy( gengine );
 
@@ -56,14 +65,20 @@ void _kill( int errc ) {
 
 }
 
-
 void ctrl_c() {
   _kill( 1 );
 }
 
+void upd_win() {
+  struct winsize win;
+  ioctl( STDOUT_FILENO, TIOCGWINSZ, &win );
+  WIN_COLS = win.ws_col;
+  WIN_ROWS = win.ws_row;
+}
+
 int main( int argc, char *argv[] ) {
 
-  int i, errc;
+  int i, errc, diff;
   Cmd *_cmd;
   long loop = 0;
 
@@ -103,11 +118,19 @@ int main( int argc, char *argv[] ) {
 
   log_w( "loading graphic engine ... ");
   gengine = g_engine_create();
+
   if ( gengine == NULL ) {
     log_w( "ERR\n" );
     fprintf(stderr, "error while initializing graphic engine.\n");
     _kill( 1 );
   }
+
+
+  upd_win();
+
+  mui = ui_init( WIN_COLS, WIN_ROWS-1 );
+  ui_new_box( mui, BOX1, 0, 0, WIN_COLS, WIN_ROWS-1 );
+  ui_box_frm( mui, BOX1, 2, FG_BLACK, BG_WHITE );
 
   log_w( "OK\n" );
 
@@ -118,6 +141,47 @@ int main( int argc, char *argv[] ) {
     log_w( "drawing frame ...\n" );
 
     _cmd = game_get_cmd( game );
+
+    upd_win();
+
+    /* check if there is enough space */
+    while ( WIN_COLS < MIN_WIN_COLS || WIN_ROWS < MIN_WIN_ROWS ) {
+
+      printf("\033c"); /* clear temrinal screen */
+
+      if ( old_c != WIN_COLS || old_r != WIN_ROWS ) {
+        ui_resize( mui, WIN_COLS, WIN_ROWS-1 );
+        ui_box_size( mui, BOX1, WIN_COLS, WIN_ROWS-1 );
+
+        old_c = WIN_COLS;
+        old_r = WIN_ROWS;
+      }
+
+      ui_clear_box( mui, BOX1 );
+      ui_frm( mui, 3, S_BOLD, BG_RED, FG_WHITE );
+      ui_box_put( mui, BOX1, " TERMINAL SIZE IS VERY SMALL\n", WIN_COLS, WIN_ROWS );
+      ui_frm( mui, 2, BG_WHITE, FG_BLACK );
+      ui_box_put( mui, BOX1, " Minimum size: @{1}%dx%d@{0}\n", 80, 25 );
+      ui_box_put( mui, BOX1, " Current: @{1}%dx%d@{0}\n", WIN_COLS, WIN_ROWS );
+
+      diff = MIN_WIN_COLS - WIN_COLS;
+      if ( WIN_COLS < MIN_WIN_COLS ) {
+        ui_box_put( mui, BOX1, " At least @{1}%d@{0} columns more (width)\n", diff );
+      }
+
+      diff = MIN_WIN_ROWS - WIN_ROWS;
+      if ( diff > 0 ) {
+        ui_box_put( mui, BOX1, " At least @{1}%d@{0} rows more (height)\n", diff );
+      }
+
+      ui_box_put( mui, BOX1, "\nTo fix this, just resize the terminal to make it bigger\n", WIN_COLS, WIN_ROWS );
+
+      ui_dump_box( mui, BOX1 );
+      ui_draw( stdout, mui );
+
+      upd_win();
+      usleep( 100*1000 );
+    }
 
     /* print different screens depending on the command */
     if ( cmd_get_cid( _cmd ) == HELP ) {

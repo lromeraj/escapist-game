@@ -19,6 +19,7 @@
 #define DEFAULT_BOX_BG_COLOR BG_WHITE
 #define DEFAULT_BG_COLOR BG_WHITE
 
+
 #define UI_TAB_SIZE 3 /*!< @brief Tab key size */
 #define UI_MAX_BOXES 15 /*!< @brief Maximum quantity of boxes per UI */
 #define UI_MAX_BUFF_LEN 500 /*!< @brief Maximum buffer length */
@@ -377,6 +378,26 @@ Ui *ui_init( int w, int h ) {
 
 }
 
+void ui_resize( Ui *ui, int w, int h ) {
+
+  if ( !ui )
+    return;
+
+  kill_pixs( ui->__pixs, ui->__len );
+  ui->__len = 0;
+  ui->scr.w = 0;
+  ui->scr.h = 0;
+
+  ui->__pixs = alloc_pixs( w*h );
+
+  if ( ui->__pixs ) {
+    ui->scr.w = w;
+    ui->scr.h = h;
+    ui->__len = w*h;
+  }
+
+}
+
 void ui_destroy( Ui *ui ) {
 
   int i;
@@ -434,8 +455,6 @@ void ui_box_bg( Ui *ui, int idx, Color c ) {
     _frm_add( box->__pixs[ i ]->frm, c );
   }
 
-  ui_dump_box( ui, idx );
-
 }
 
 void ui_box_frm( Ui *ui, int idx, int n, ... ) {
@@ -451,6 +470,47 @@ void ui_box_frm( Ui *ui, int idx, int n, ... ) {
   va_start( _args, n );
   _frm( box->frm, n, _args );
   va_end( _args );
+
+}
+
+void ui_box_pos( Ui *ui, int idx, int x, int y ) {
+
+  Ui_box *box;
+
+  box = ui_get_box_by_idx( ui, idx );
+
+  if ( !box )
+    return;
+
+  box->x = x;
+  box->y = y;
+
+}
+
+void ui_box_size( Ui *ui, int idx, int w, int h ) {
+
+  Ui_box *box;
+
+  box = ui_get_box_by_idx( ui, idx );
+
+  if ( !box )
+    return;
+
+  kill_pixs( box->__pixs, box->__len );
+  box->__len = 0;
+  box->cx = 0;
+  box->cy = 0;
+  box->w = 0;
+  box->h = 0;
+
+  box->__pixs = alloc_pixs( w*h );
+
+  if ( box->__pixs ) {
+    box->w = w;
+    box->h = h;
+    box->__len = w*h;
+  }
+
 
 }
 
@@ -487,6 +547,11 @@ void ui_clear( Ui *ui ) {
     ui_clear_box( ui, box->id );
   }
 
+  for ( i=0; i < ui->__len; i++ ) {
+    _frm_rs( ui->__pixs[ i ]->frm );
+    ui->__pixs[ i ]->c = ' ';
+  }
+
 }
 
 void kill_pixs( Ui_pix **__pixs, int __len ) {
@@ -521,7 +586,7 @@ Ui_pix **alloc_pixs( int __len ) {
       if ( pix ) {
         __pixs[ i ] = pix;
         _frm_rs( pix->frm );
-        pix->c = '\0';
+        pix->c = ' ';
       } else {
         kill_pixs( __pixs, i-1 );
         break;
@@ -858,7 +923,7 @@ void ui_draw( FILE *stream, Ui *ui ) {
   int i, j, scr_w;
   int o_xor=0, /* old format check sum */
       xor;  /* current format check sum */
-  char __frm[ UI_MAX_BUFF_LEN ] = "\033[";
+  char __frm[ UI_MAX_BUFF_LEN ] = "";
 
   if ( !stream || !ui )
     return;
@@ -878,7 +943,6 @@ void ui_draw( FILE *stream, Ui *ui ) {
     xor = __frmxor( pix->frm ); /* request format checksum to compare */
 
     if ( o_xor != xor ) {
-
       /* reset format buffer */
       strcpy( __frm, "\033[" );
 

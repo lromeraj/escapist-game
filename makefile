@@ -46,5 +46,7 @@ clean: ctarget
 	-e reader_tb --clean
 
 ctarget:
-	git clone https://github.com/lromeraj/c-target
+	if [ ! -e "c-target" ]; then git clone https://github.com/lromeraj/c-target; fi
 	cd c-target && make ctarget && cp ctarget ../
+
+
