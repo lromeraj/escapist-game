@@ -1,10 +1,55 @@
-@o { id: 1, descrp: "The ball bounces a lot, take care!", location: 1, name: "ball" } 
-@o { id: 2, descrp: "This object can destroy walls", location: 1, name: "tnt" }
+# @o {
+#		id: 1, # object id (required)
+#		name: "object name", # the name of the object (optional)
+#		descrp: "description", # object description (optional)
+#		ldescrp: "long description", # long description of the object (optional)
+#		location: 1, # initial position of the object (required)
+#		movable: false, # the object can be moved or not (optional)
+#		moved: false, # object has been moved (optional)
+#		hidden: true, # object is hidden by default (optional)
+#		links: [ 5, 4, 3, ... ], # id of the links that can be opened (optional)
+#		illuminate: false, # the object is capable of illuminating spaces (optional)
+#		on: true # the object is turned on/off (optional)
+# }
+
+#	@s {
+#		id: 1, # space id
+#		name: "space name", # the name of the space
+#		links: [ 3, 2, 5, 1, 3, 5 ], # space links [ N, E, S, W, U, D ]
+#		descrp: "short description", # short description of the space
+#		ldescrp: "long description", # long description of ths space
+#		picture: " /\_/\ \n( o.o )\n > ^ < " # space picture decoration
+#	}
+
+# @l {
+#		id: 1, # link id (required)
+#		name: "link name", # name of the link (optional)
+#		from: 5, # starting id (required)
+#		to: 6, # destination id, (required)
+#		sts: closed # status of the link (required)
+#	}
+
+@o { 
+	id: 1,
+	descrp: "The ball bounces a lot, take care!", 
+	location: 1,
+	links: [ 5, 10, 15 ],
+	name: "ball"
+}
+
+@o { 
+	id: 2, 
+	descrp: "This object can destroy walls",
+	ldescrp: "",
+	location: 1,
+	name: "tnt"
+}
 
 @s {
 	id: 1,
 	name: "Space 1",
 	descrp: "this is a madafakin space xd",
+	ldescrp: "long and long long long long space description ...",
 	links: [	-1, -1, 1, -1 ],
 	picture: "|\---/|\n| o_o |\n \_^_/ "
 }
@@ -25,7 +70,7 @@
   picture: "< o o >\n \   / \n  ^_^  "
 }
 
-@l { id: 1, name: "Link 1", from: 1, to: 2, sts: 0 }
-@l { id: 2, name: "Link 2", from: 2, to: 1, sts: 0 }
-@l { id: 3, name: "Link 3", from: 2, to: 3, sts: 0 }
-@l { id: 4, name: "Link 4", from: 3, to: 2, sts: 0 }
+@l { id: 1, name: "Link 1", from: 1, to: 2, state: opened }
+@l { id: 2, name: "Link 2", from: 2, to: 1, state: opened }
+@l { id: 3, name: "Link 3", from: 2, to: 3, state: opened }
+@l { id: 4, name: "Link 4", from: 3, to: 2, state: opened }

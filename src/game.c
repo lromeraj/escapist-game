@@ -511,7 +511,6 @@ void game_callback_inspect( Game *game ) {
   player = game_get_player( game );
   cu_sp = game_get_space( game, player_get_location( player ) );
 
-
   if ( cmd_get_argc( cmd ) > 1 ) {
 
     arg = (char*)cmd_get_argv( cmd, 1 );
@@ -528,7 +527,13 @@ void game_callback_inspect( Game *game ) {
       }
 
     } else if ( !strcmp( arg, "-s" ) && cmd_get_argc( cmd ) == 2 ) {
-      cmd_set_ans( cmd, 0, "inspecting space ...", arg );
+
+      if ( space_get_light( cu_sp ) ) {
+        cmd_set_ans( cmd, 0, "inspecting space ...", arg );
+      } else {
+        cmd_set_ans( cmd, 1, "Space is not illuminated. You can't see the detailed description." );
+      }
+
     } else {
       cmd_set_ans( cmd, 1, "invalid args");
     }
@@ -767,14 +772,16 @@ void game_callback_move( Game *game ) {
       return;
     }
 
-    if ( ln_id != NO_ID ) {
+    ln = game_get_link_by_id( game, ln_id );
 
-      ln = game_get_link_by_id( game, ln_id );
+    if ( ln && link_get_state( ln ) == LINK_OPENED ) {
       go_to = link_get_to( ln );
       player_set_location( game->player, go_to );
       cmd_set_ans( cmd, 0, "going to: S%ld", go_to );
+    } else if ( ln && link_get_state( ln ) == LINK_CLOSED ) {
+      cmd_set_ans( cmd, 1, "link is closed" );
     } else {
-      cmd_set_ans( cmd, 0, "invalid move" );
+      cmd_set_ans( cmd, 1, "invalid move" );
     }
 
   } else {

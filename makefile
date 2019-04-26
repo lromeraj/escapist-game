@@ -1,4 +1,4 @@
-all: ctarget clean goose die_tb set_tb obj_tb player_tb link_tb inventory_tb reader_tb
+all: ctarget clean goose
 
 # main game
 goose: ctarget

@@ -10,6 +10,7 @@
  * @copyright GNU Public License
  */
 
+#include "str.h"
 #include "reader.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -70,7 +71,14 @@ enum _Obj_attrs {
   _OBJ_ID,
   _OBJ_NAME,
   _OBJ_DESCRP,
-  _OBJ_LOC
+	_OBJ_LDESCRP,
+  _OBJ_LOC,
+	_OBJ_MOVABLE,
+	_OBJ_MOVED,
+	_OBJ_HIDDEN,
+	_OBJ_ILLUMINATE,
+	_OBJ_ON,
+	_OBJ_LINKS
 };
 
 enum _Sp_attrs {
@@ -78,7 +86,8 @@ enum _Sp_attrs {
   _SPACE_NAME,
   _SPACE_PICTURE,
   _SPACE_LINKS,
-  _SPACE_DESCRP
+  _SPACE_DESCRP,
+  _SPACE_LDESCRP
 };
 
 enum _Ln_attrs {
@@ -108,12 +117,12 @@ int _parse( Game *game, const char *f_name, const char *pref, parse_cb cb );
 
 void _prt( PrintType type, const char *frmt, ... );
 
-int _parse_link( Game *game, char **__data, int size ) {
+int _parse_link( Game *game ) {
 
   Id id, from, to;
   int errc;
   Link *ln;
-  int sts;
+  LinkState sts;
 
   char *_id, *_name, *_from, *_to, *_sts;
 
@@ -125,7 +134,6 @@ int _parse_link( Game *game, char **__data, int size ) {
   _to = rd_get_attr( _LINK_TO, 1 );
   _sts = rd_get_attr( _LINK_STS, 1 );
 
-
 	errc+=rd_check_attr( _LINK_ID, _LINK_SYM, _NULL_CHECK, _ID_CHECK, _END_CHECK );
 	errc+=rd_check_attr( _LINK_FROM, _LINK_SYM, _NULL_CHECK, _ID_CHECK, _END_CHECK );
 	errc+=rd_check_attr( _LINK_TO, _LINK_SYM, _NULL_CHECK, _ID_CHECK, _END_CHECK );
@@ -136,14 +144,20 @@ int _parse_link( Game *game, char **__data, int size ) {
 		id = atol( _id );
 		from = atol( _from );
 		to = atol( _to );
-		sts = atoi( _sts );
+		sts = LINK_CLOSED;
+
+		if ( !strcmptok( _sts, "1,true,opened", "," ) ) {
+			sts = LINK_OPENED;
+		} else if ( !strcmptok( _sts, "0,false,closed", "," ) ) {
+			sts = LINK_CLOSED;
+		}
 
 		ln = link_create( id );
 
 		link_set_name( ln, _name );
 		link_set_from( ln, from );
 		link_set_to( ln, to );
-		link_set_state( ln, !sts ? LINK_CLOSED : LINK_OPENED );
+		link_set_state( ln, sts );
 
 		if ( game_add_link( game, ln ) == ERROR ) {
 			_prt( _PERROR, "could not add link #%d, block %d (possible id conflict)\n", link_get_id( ln ), LBL );
@@ -164,13 +178,14 @@ int _parse_space( Game *game ) {
   int i, errc;
   Space *sp;
 
-  char *_id, *_name, *_descrp, *_pict, **_links;
+  char *_id, *_name, *_descrp, *_ldescrp, *_pict, **_links;
 
   errc = 0;
 
   _id = rd_get_attr( _SPACE_ID, 1 );
   _name = rd_get_attr( _SPACE_NAME, 1 );
   _descrp = rd_get_attr( _SPACE_DESCRP, 1 );
+  _ldescrp = rd_get_attr( _SPACE_LDESCRP, 1 );
   _pict = rd_get_attr( _SPACE_PICTURE, 1 );
   _links = ((char**)ATTR_DATA[ _SPACE_LINKS ]);
 
@@ -185,6 +200,7 @@ int _parse_space( Game *game ) {
 
 		space_set_name( sp, _name );
 		space_set_descrp( sp, _descrp );
+		space_set_ldescrp( sp, _ldescrp );
 		space_set_picture( sp, _pict );
 
 		if ( _links ) { /* !!! improve this */
@@ -228,23 +244,32 @@ int _parse_space( Game *game ) {
 
 int _parse_object( Game *game ) {
 
-  int errc;
+  int i, errc;
   Id id, loc;
   Object *obj;
+	char *attrs[ MAX_OBJ_ATTRS ] = {NULL}; /* object attrs */
 
-  char *_id, *_name, *_descrp, *_loc;
+  char *_id, *_name, *_descrp, *_ldescrp, *_loc, **_links;
 
   errc = 0;
 
-  _id = rd_get_attr( _OBJ_ID, 1 );
-  _name = rd_get_attr( _OBJ_NAME, 1 );
-  _descrp = rd_get_attr( _OBJ_DESCRP, 1 );
-  _loc = rd_get_attr( _OBJ_LOC, 1 );
-
-  id = _id ? atol( _id ) : NO_ID;
-  loc = _loc ? atol( _loc ) : NO_ID;
-
 	errc+= rd_check_attr( _OBJ_ID, _OBJECT_SYM, _NULL_CHECK, _ID_CHECK, _END_CHECK );
+
+	_id = rd_get_attr( _OBJ_ID, 1 );
+	_name = rd_get_attr( _OBJ_NAME, 1 );
+	_descrp = rd_get_attr( _OBJ_DESCRP, 1 );
+	_ldescrp = rd_get_attr( _OBJ_LDESCRP, 1 );
+	_loc = rd_get_attr( _OBJ_LOC, 1 );
+	_links = ((char**)ATTR_DATA[ _OBJ_LINKS ]);
+
+	attrs[ OBJ_CAN_ILLUMINATE ] = rd_get_attr( _OBJ_ILLUMINATE, 1 );
+	attrs[ OBJ_IS_HIDDEN ] = rd_get_attr( _OBJ_HIDDEN, 1 );
+	attrs[ OBJ_IS_MOVABLE ] = rd_get_attr( _OBJ_MOVABLE, 1 );
+	attrs[ OBJ_IS_MOVED ] = rd_get_attr( _OBJ_MOVED, 1 );
+	attrs[ OBJ_IS_ON ] = rd_get_attr( _OBJ_ON, 1 );
+
+	id = _id ? atol( _id ) : NO_ID;
+	loc = _loc ? atol( _loc ) : NO_ID;
 
 	if ( !errc ) {
 
@@ -253,6 +278,32 @@ int _parse_object( Game *game ) {
 		obj_set_name( obj, _name );
 		space_add_object( game_get_space( game, loc ), id );
 		obj_set_descrp( obj, _descrp );
+		obj_set_ldescrp( obj, _ldescrp );
+
+		if ( _links ) {
+
+			for ( i=0; _links[ i ]; i++ ) {
+				id = atol( _links[ i ] );
+				if ( obj_add_link( obj, id ) == ERROR ) {
+					_prt( _PERROR, "could not add link %d to object '%s', line: %d\n", id, obj_get_name( obj ), ATTR_LINE[ _OBJ_LINKS ] );
+				}
+			}
+
+		}
+
+		for ( i=0; i<MAX_OBJ_ATTRS; i++ ) {
+
+			if ( !attrs[ i ] ) continue;
+
+			if ( !strcmptok( attrs[ i ], "yes,y,true", "," ) ) {
+				obj_set_attr( obj, i, OBJ_YES );
+			} else if ( !strcmptok( attrs[ i ], "no,n,false", "," ) ) {
+				obj_set_attr( obj, i, OBJ_NO );
+			} else {
+				obj_set_attr( obj, i, atol( attrs[ i ] ) );
+			}
+
+		}
 
 		if ( game_add_object( game, obj ) == ERROR ) {
 			_prt( _PERROR, "could not add object #%d (possible id conflict)\n", obj_get_id( obj ) );
@@ -283,11 +334,27 @@ int reader_load( Game *game, const char *f_name, int it ) {
     ATTR_TYPE[ _OBJ_DESCRP ] = _STR_ARR;
     ATTR_TYPE[ _OBJ_ID ] = _STR_ARR;
     ATTR_TYPE[ _OBJ_LOC ] = _STR_ARR;
+    ATTR_TYPE[ _OBJ_LDESCRP ] = _STR_ARR;
+		ATTR_TYPE[ _OBJ_LINKS ] = _STR_ARR;
+    ATTR_TYPE[ _OBJ_MOVABLE ] = _STR_ARR;
+    ATTR_TYPE[ _OBJ_MOVED ] = _STR_ARR;
+    ATTR_TYPE[ _OBJ_HIDDEN ] = _STR_ARR;
+    ATTR_TYPE[ _OBJ_ILLUMINATE ] = _STR_ARR;
+    ATTR_TYPE[ _OBJ_ON ] = _STR_ARR;
 
     strcpy( ATTR_NAME[ _OBJ_NAME ], "name" );
     strcpy( ATTR_NAME[ _OBJ_ID ], "id" );
     strcpy( ATTR_NAME[ _OBJ_DESCRP ], "descrp" );
+		strcpy( ATTR_NAME[ _OBJ_LDESCRP ], "ldescrp" );
     strcpy( ATTR_NAME[ _OBJ_LOC ], "location" );
+    strcpy( ATTR_NAME[ _OBJ_LINKS ], "links" );
+
+		/* enclosed object attrs */
+    strcpy( ATTR_NAME[ _OBJ_MOVABLE ], "movable" );
+    strcpy( ATTR_NAME[ _OBJ_MOVED ], "moved" );
+    strcpy( ATTR_NAME[ _OBJ_HIDDEN ], "hidden" );
+    strcpy( ATTR_NAME[ _OBJ_ILLUMINATE ], "illuminate" );
+    strcpy( ATTR_NAME[ _OBJ_ON ], "on" );
 
     errc = _parse( game, f_name,  "@o", (parse_cb)_parse_object );
 
@@ -298,12 +365,15 @@ int reader_load( Game *game, const char *f_name, int it ) {
     ATTR_TYPE[ _SPACE_ID ] = _STR_ARR;
     ATTR_TYPE[ _SPACE_NAME ] = _STR_ARR;
     ATTR_TYPE[ _SPACE_DESCRP ] = _STR_ARR;
+    ATTR_TYPE[ _SPACE_LDESCRP ] = _STR_ARR;
     ATTR_TYPE[ _SPACE_LINKS ] = _STR_ARR;
     ATTR_TYPE[ _SPACE_PICTURE ] = _STR_ARR;
 
     strcpy( ATTR_NAME[ _SPACE_ID ], "id" );
     strcpy( ATTR_NAME[ _SPACE_NAME ], "name" );
     strcpy( ATTR_NAME[ _SPACE_DESCRP ], "descrp" );
+    strcpy( ATTR_NAME[ _SPACE_DESCRP ], "descrp" );
+    strcpy( ATTR_NAME[ _SPACE_LDESCRP ], "ldescrp" );
     strcpy( ATTR_NAME[ _SPACE_LINKS ], "links" );
     strcpy( ATTR_NAME[ _SPACE_PICTURE ], "picture" );
 
@@ -322,7 +392,7 @@ int reader_load( Game *game, const char *f_name, int it ) {
     strcpy( ATTR_NAME[ _LINK_NAME ], "name" );
     strcpy( ATTR_NAME[ _LINK_FROM ], "from" );
     strcpy( ATTR_NAME[ _LINK_TO ], "to" );
-    strcpy( ATTR_NAME[ _LINK_STS ], "sts" );
+    strcpy( ATTR_NAME[ _LINK_STS ], "state" );
 
     errc = _parse( game, f_name, "@l", (parse_cb)_parse_link );
   }
@@ -523,7 +593,7 @@ int _parse(
       pref_len; /* prefix length */
   char c;
 	char _line[ 1024 ] = "";
-	char _vbuff[ 100 ][ 256 ] = {{0}};
+	char _vbuff[ 10 ][ 1024 ] = {{0}};
 	bool  addChar, /* indicates is a char shold be added to the buffer */
 				isArr, /* indicates if the current value is an array */
 				isStr, /* indicates if the current value is a string */

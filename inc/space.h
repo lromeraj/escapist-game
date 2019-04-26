@@ -68,20 +68,39 @@ STATUS space_set_name(Space* space, char* name);
 /**
 * @brief This fuction gets the description of an space
 * @author Javier Romera
-* @param {Object*} obj - space's pointer
+* @param {Space*} obj - space's pointer
 * @retval {char*} - Returns the space name
 */
 const char *space_get_descrp( Space *space );
 
 
 /**
+* @brief This fuction gets the long description of an space
+* @author Javier Romera
+* @param {Space*} obj - space's pointer
+* @retval {char*} - Returns a long description of the space
+*/
+const char *space_get_ldescrp( Space *space );
+
+
+/**
 * @brief This fuction sets the description of an space
 * @author Javier Romera
-* @param {Object*} obj - space's pointer
-* @param {char*} name - space's description
+* @param {Space*} obj - space's pointer
+* @param {char*} descrp - short description of the space
 * @retval {STATUS} - Returns status code
 */
 STATUS space_set_descrp( Space *space, const char *descrp );
+
+
+/**
+* @brief This fuction sets the long description of an space
+* @author Javier Romera
+* @param {Space*} obj - space's pointer
+* @param {char*} ldescrp - long description of the space
+* @retval {STATUS} - Returns status code
+*/
+STATUS space_set_ldescrp( Space *space, const char *ldescrp );
 
 
 /**

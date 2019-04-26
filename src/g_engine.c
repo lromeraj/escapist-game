@@ -657,7 +657,7 @@ void g_engine_paint_game( G_engine *ge, Game *game ) {
       ui_box_put( ui, GAME_INFO, "%s", space_get_name( cu_sp ) );
       ui_frm( ui, 2, BG_BLACK, FG_WHITE );
       ui_box_put( ui, GAME_INFO, "{id: %ld}\n", space_get_id( cu_sp ) );
-      ui_box_put( ui, GAME_INFO, "@{2;3}Description@{0}: %s", space_get_descrp( cu_sp ) );
+      ui_box_put( ui, GAME_INFO, "@{2;3}Description@{0}: %s", space_get_ldescrp( cu_sp ) );
 
     } else if ( !strcmp( tstr, "-o" ) ) {
 
@@ -671,7 +671,7 @@ void g_engine_paint_game( G_engine *ge, Game *game ) {
         ui_box_put( ui, GAME_INFO, "%s", obj_get_name( obj ) );
         ui_frm( ui, 2, BG_BLACK, FG_WHITE );
         ui_box_put( ui, GAME_INFO, "{id: %ld, loc: %s}\n", obj_get_id( obj ), space_has_object( cu_sp, tid ) ? "inspace" : "inbag" );
-        ui_box_put( ui, GAME_INFO, "@{2;3}Description@{0;$}: %s", obj_get_descrp( obj ) );
+        ui_box_put( ui, GAME_INFO, "@{2;3}Description@{0}: %s\n", obj_get_ldescrp( obj ) );
       }
 
     } else {

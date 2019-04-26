@@ -7,6 +7,7 @@
  * @copyright GNU Public License
  */
 
+#include "str.h"
 #include "space.h"
 #include "types.h"
 #include "object.h"
@@ -27,47 +28,50 @@ struct _Space {
   bool light; /*!< @brief Light state of the space */
   char name[ MAX_SPACE_NAME ]; /*!< @brief Space name */
   char descrp[ MAX_SPACE_DESCRP ]; /*!< @brief Space description */
+  char *ldescrp; /*!< @brief Space long description */
   Set *objects; /*!< @brief Set of objects in the space */
   char picture[ MAX_SPACE_PICTURE ]; /*!< @brief Space picture */
 };
 
 Space* space_create( Id id ) {
 
-  Space *newSpace = NULL;
+  Space *sp = NULL;
 
   if ( id == NO_ID )
     return NULL;
 
-  newSpace = (Space*) malloc(sizeof(Space));
+  sp = (Space*) malloc( sizeof( Space ) );
 
-  if ( !newSpace )
+  if ( !sp )
     return NULL;
 
-  newSpace->id = id; /* set up space identification */
-  newSpace->name[0] = '\0';
-  newSpace->picture[0] = '\0';
-  newSpace->descrp[0] = '\0';
-  newSpace->north = NO_ID;
-  newSpace->south = NO_ID;
-  newSpace->east = NO_ID;
-  newSpace->west = NO_ID;
-  newSpace->up = NO_ID;
-  newSpace->down = NO_ID;
-  newSpace->objects = set_create(); /* build objects set */
-  newSpace->light = false; /* by default the space is dark */
+  sp->id = id; /* set up space identification */
+  sp->name[0] = '\0';
+  sp->picture[0] = '\0';
+  sp->descrp[0] = '\0';
+  sp->ldescrp = NULL;
+  sp->north = NO_ID;
+  sp->south = NO_ID;
+  sp->east = NO_ID;
+  sp->west = NO_ID;
+  sp->up = NO_ID;
+  sp->down = NO_ID;
+  sp->objects = set_create(); /* build objects set */
+  sp->light = false; /* by default the space is dark */
 
-  return newSpace;
+  return sp;
 }
 
-STATUS space_destroy( Space *space ) {
+STATUS space_destroy( Space *sp ) {
 
-  if ( !space ) {
+  if ( !sp ) {
     return ERROR;
   }
 
-  set_destroy( space->objects );
+  str_destroy( sp->ldescrp );
+  set_destroy( sp->objects );
 
-  free( space );
+  free( sp );
 
   return OK;
 }
@@ -95,10 +99,28 @@ STATUS space_set_descrp( Space *space, const char *descrp ) {
   return OK;
 }
 
+
+STATUS space_set_ldescrp( Space *sp, const char *ldescrp ) {
+
+  if ( !sp || !ldescrp )
+    return ERROR;
+
+  str_destroy( sp->ldescrp );
+  sp->ldescrp = str_clone( ldescrp );
+
+  return OK;
+}
+
 const char *space_get_descrp( Space *space ) {
   if ( !space )
     return NULL;
   return space->descrp;
+}
+
+const char *space_get_ldescrp( Space *space ) {
+  if ( !space )
+    return NULL;
+  return space->ldescrp;
 }
 
 Id space_get_link( Space *sp, CardinalPoint cp ) {

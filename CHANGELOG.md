@@ -1,5 +1,15 @@
 #I4
 
+## v0.4.2
+`[IMPROVEMENTS]`
+- If the terminal size is not enough, an alert will appear saying that more terminal size is required.
+
+`[NEW]`
+- Implemented new primitives for the object module,` obj_add_link()`, `obj_opens_link()`, `obj_set_attr()`, `obj_get_attr()` and `obj_get_links()`.
+- Updated reader module for parsing new object fields like: `_OBJ_LDESCRP`, `_OBJ_LINKS`, `_OBJ_MOVABLE`, `_OBJ_MOVED`, ... the full guide can be found inside `data.dat` file.
+- Updated reader module for parsing new space fields: `_SPACE_LDESCRP`.
+- Implemented new module `str`.
+
 ## v0.4.1
 
 `[FIXES]`
@@ -7,7 +17,6 @@
 - `Ui` now initializes correctly all pixels.
 
 `[IMPROVEMENTS]`
-- If the terminal size is not enough, an alert will appear saying that more terminal size is needed.
 - `reader` module has been renewed.
 - `reader` module now uses an other syntax to read configuration file.
 - Renamed `reader_load_<item>()` by `reader_load()`, this function now needs an extra argument to know which items should be loaded from configuration file, that are: `_RD_SPACES`, `_RD_OBJS` and `_RD_LINKS` (by the moment).

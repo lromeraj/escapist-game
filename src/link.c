@@ -35,7 +35,7 @@ Link* link_create( Id id ) {
   link->name[0] = '\0';
   link->from = NO_ID;
   link->to = NO_ID;
-  link->state = LINK_OPENED;
+  link->state = LINK_CLOSED;
 
   return link;
 }
