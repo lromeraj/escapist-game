@@ -205,12 +205,10 @@ int _parse_space( Game *game ) {
 		space_set_picture( sp, _pict );
 
 
-		if ( _links ) { /* !!! improve this */
-
-			for ( i=1; _links[i]; i++ ) {
+		if ( _links ) {
+			for ( i=1; _links[i]; i++ ) { /* !!! improve this */
 				space_set_link( sp, cps[i-1], atol( _links[ i ] ) );
 			}
-
 		}
 
 		if ( game_add_space( game, sp ) == ERROR ) {
