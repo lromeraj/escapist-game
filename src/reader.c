@@ -177,6 +177,7 @@ int _parse_space( Game *game ) {
   Id id;
   int i, errc;
   Space *sp;
+	CardinalPoint cps[6] = {N,E,S,W,U,D}; /* cardinal points */
 
   char *_id, *_name, *_descrp, *_ldescrp, *_pict, **_links;
 
@@ -203,27 +204,11 @@ int _parse_space( Game *game ) {
 		space_set_ldescrp( sp, _ldescrp );
 		space_set_picture( sp, _pict );
 
+
 		if ( _links ) { /* !!! improve this */
 
 			for ( i=1; _links[i]; i++ ) {
-
-				switch ( i ) {
-
-					case 1:
-					space_set_link( sp, N, atol( _links[ i ] ) );
-					break;
-					case 2:
-					space_set_link( sp, E, atol( _links[ i ] ) );
-					break;
-					case 3:
-					space_set_link( sp, S, atol( _links[ i ] ) );
-					break;
-					case 4:
-					space_set_link( sp, W, atol(_links[ i ] ) );
-					break;
-
-				}
-
+				space_set_link( sp, cps[i-1], atol( _links[ i ] ) );
 			}
 
 		}

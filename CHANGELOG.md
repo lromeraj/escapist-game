@@ -6,6 +6,7 @@
 
 `[NEW]`
 - Implemented new primitives for the object module,` obj_add_link()`, `obj_opens_link()`, `obj_set_attr()`, `obj_get_attr()` and `obj_get_links()`.
+- Now you can set **up** and **down** links of the spaces inside configuration file `data.dat`.
 - Updated reader module for parsing new object fields like: `_OBJ_LDESCRP`, `_OBJ_LINKS`, `_OBJ_MOVABLE`, `_OBJ_MOVED`, ... the full guide can be found inside `data.dat` file.
 - Updated reader module for parsing new space fields: `_SPACE_LDESCRP`.
 - Implemented new module `str`.

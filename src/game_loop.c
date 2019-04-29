@@ -39,8 +39,9 @@ void _kill( int errc );
 
 /********************************/
 
+
 enum { BOX1, BOX2, BOX3 };
-int WIN_ROWS, WIN_COLS, old_r, old_c;
+int WIN_ROWS, WIN_COLS, old_r, old_c; /* termial/window size */
 Ui *mui; /* main user interface */
 Game *game; /* main game */
 G_engine *gengine; /* main graphic engine */
@@ -147,40 +148,40 @@ int main( int argc, char *argv[] ) {
     /* check if there is enough space */
     while ( WIN_COLS < MIN_WIN_COLS || WIN_ROWS < MIN_WIN_ROWS ) {
 
-      printf("\033c"); /* clear temrinal screen */
-
       if ( old_c != WIN_COLS || old_r != WIN_ROWS ) {
+
+        printf("\033c"); /* clear temrinal screen */
         ui_resize( mui, WIN_COLS, WIN_ROWS-1 );
         ui_box_size( mui, BOX1, WIN_COLS, WIN_ROWS-1 );
+
+        ui_clear_box( mui, BOX1 );
+        ui_frm( mui, 3, S_BOLD, BG_RED, FG_WHITE );
+        ui_box_put( mui, BOX1, " TERMINAL SIZE IS VERY SMALL\n", WIN_COLS, WIN_ROWS );
+        ui_frm( mui, 2, BG_WHITE, FG_BLACK );
+        ui_box_put( mui, BOX1, " Minimum size: @{1}%dx%d@{0}\n", 80, 25 );
+        ui_box_put( mui, BOX1, " Current: @{1}%dx%d@{0}\n", WIN_COLS, WIN_ROWS );
+
+        diff = MIN_WIN_COLS - WIN_COLS;
+        if ( WIN_COLS < MIN_WIN_COLS ) {
+          ui_box_put( mui, BOX1, " At least @{1}%d@{0} columns more (width)\n", diff );
+        }
+
+        diff = MIN_WIN_ROWS - WIN_ROWS;
+        if ( diff > 0 ) {
+          ui_box_put( mui, BOX1, " At least @{1}%d@{0} rows more (height)\n", diff );
+        }
+
+        ui_box_put( mui, BOX1, "\nTo fix this, just resize the terminal to make it bigger\n", WIN_COLS, WIN_ROWS );
+
+        ui_dump_box( mui, BOX1 );
+        ui_draw( stdout, mui );
 
         old_c = WIN_COLS;
         old_r = WIN_ROWS;
       }
 
-      ui_clear_box( mui, BOX1 );
-      ui_frm( mui, 3, S_BOLD, BG_RED, FG_WHITE );
-      ui_box_put( mui, BOX1, " TERMINAL SIZE IS VERY SMALL\n", WIN_COLS, WIN_ROWS );
-      ui_frm( mui, 2, BG_WHITE, FG_BLACK );
-      ui_box_put( mui, BOX1, " Minimum size: @{1}%dx%d@{0}\n", 80, 25 );
-      ui_box_put( mui, BOX1, " Current: @{1}%dx%d@{0}\n", WIN_COLS, WIN_ROWS );
-
-      diff = MIN_WIN_COLS - WIN_COLS;
-      if ( WIN_COLS < MIN_WIN_COLS ) {
-        ui_box_put( mui, BOX1, " At least @{1}%d@{0} columns more (width)\n", diff );
-      }
-
-      diff = MIN_WIN_ROWS - WIN_ROWS;
-      if ( diff > 0 ) {
-        ui_box_put( mui, BOX1, " At least @{1}%d@{0} rows more (height)\n", diff );
-      }
-
-      ui_box_put( mui, BOX1, "\nTo fix this, just resize the terminal to make it bigger\n", WIN_COLS, WIN_ROWS );
-
-      ui_dump_box( mui, BOX1 );
-      ui_draw( stdout, mui );
-
       upd_win();
-      usleep( 100*1000 );
+
     }
 
     /* print different screens depending on the command */
