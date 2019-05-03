@@ -3,7 +3,7 @@
 *
 * @file ui.h
 * @author Javier Romera
-* @version 1.0.8-stable
+* @version 1.1.2-stable
 * @date 09/04/2019
 * @copyright GNU Public License
 */

@@ -36,6 +36,7 @@
 - Introduced **torch** object.
 - Now you can illuminate spaces.
 - Implemented `game_callback_turn()`.
+- Implemented `game_callback_open()`.
 - Implemented new module `str`.
 - Implemented `ui_box_set_cx_off()`.
 - Implemented `ui_frms()`.
@@ -63,6 +64,7 @@
 - Improve `game_rules` module.
 - Improve game dynamic.
 - Game documentation.
+- Update default `data.dat`
 
 ## v0.4.1
 
