@@ -64,7 +64,7 @@
 - Improve `game_rules` module.
 - Improve game dynamic.
 - Game documentation.
-- Update default `data.dat`
+- Update default `data.dat`.
 
 ## v0.4.1
 
