@@ -32,7 +32,7 @@ Para definir elementos en el archivo de configuración se deben usar ciertas nom
 ### Espacios
 
 |  Atributo  | Tipo  | Description | Ejemplo
-| :------------ |:---------------| :-----| |
+| ------------ |---------------| -----| |
 | **id**      | Number     |   Identificación del espacio | 1 |
 | **name** | String       | Nombre del espacio  |  "East jungle" |
 | **links** | Array        |  [ N, E, S, W, U, D ] |  [ 3, 2, 5, 1, 3, 5 ]  |
