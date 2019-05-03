@@ -62,6 +62,7 @@
 - Improve `manager_save()`.
 - Improve `game_rules` module.
 - Improve game dynamic.
+- Game documentation.
 
 ## v0.4.1
 
