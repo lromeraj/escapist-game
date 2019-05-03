@@ -97,6 +97,16 @@ STATUS player_del_object( Player* player, Id id ) {
   return inventory_del_id( player->inv, id );
 }
 
+
+Set* player_get_bag( Player *player ) {
+
+  if ( !player )
+    return NULL;
+
+  return inventory_get_bag( player->inv );
+
+}
+
 const char *player_get_name( Player *player ) {
   if ( !player )
     return NULL;

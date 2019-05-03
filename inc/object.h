@@ -12,14 +12,20 @@
 #include "set.h"
 #include "types.h"
 
-enum { OBJ_YES, OBJ_NO };
+enum {
+  OBJ_NONE=-999,
+  OBJ_YES=-1,
+  OBJ_NO=-2
+};
 
 typedef enum _Obj_attr {
   OBJ_IS_MOVABLE,
   OBJ_IS_MOVED,
   OBJ_IS_HIDDEN,
   OBJ_CAN_ILLUMINATE,
-  OBJ_IS_ON
+  OBJ_IS_ON,
+  OBJ_USED,
+  OBJ_MAX_USES
 } Obj_attr;
 
 #define MAX_OBJ_DESCRP 100 /*!< @brief Maximum number of characters that can have a description of an object */

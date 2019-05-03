@@ -17,6 +17,106 @@ El juego ha sido diseñado para ser compilado en un entorno de Linux. Para facil
 * Los archivos con extensión `.goo`, son archivos que contienen grabaciones de partidas.
   Para reproducir estas partidas usar `./target -e goose -c -r data.dat < rec1.goo`.
 
+
+## Archivo de configuración
+El archivo de configuración usa un formato muy simililar al format `JSON`, lo cual hace que sea mucho más sencillo de configurar.
+Para definir elementos en el archivo de configuración se deben usar ciertas nomenclaturas reservadas para cada tipo de definición ...
+
+| Tipo | Valores |
+| -----  | ---------- |
+| String | " " |
+| Number | [ **-x.** , **+x.** ]
+| Array | Set of any other type |
+| Boolean | **1**, **true** / **0**, **false** |
+
+### Espacios
+
+|  Atributo  | Tipo  | Description | Ejemplo
+| :------------ |:---------------| :-----| |
+| **id**      | Number     |   Identificación del espacio | 1 |
+| **name** | String       | Nombre del espacio  |  "East jungle" |
+| **links** | Array        |  [ N, E, S, W, U, D ] |  [ 3, 2, 5, 1, 3, 5 ]  |
+| **light** |  Boolean        |  Establece si el espacio está iluminado por defecto |  on  |
+| **descrp** | String | Una breve descripción del espacio | "Description ..." |
+| **ldescrp ** | String | Una descripción más detallada del espacio | "Detailed description ..." |
+| **picture** | String | Dibujo de decoración del espacio. Usar `\n` literal  para saltos de línea | " /\_/\ \n( o.o )\n > ^ < "
+
+```
+@s { # space example
+	id: 2,
+	name: "Jungle 1",
+	descrp: "look around, something useful might be here",
+	inks: [ 2, -1, 3, -1, -1, -1 ],
+	picture: " (  )\n(    )\n  ||"
+}
+
+```
+
+### Objetos
+
+|  Atributo  | Tipo  | Description | Ejemplo
+| :------------ |:---------------| :-----| |
+| **id**      | Number     |   Identificación del objeto | 1 |
+| **name** | String       | Nombre del objeto  |  "torch" |
+| **opens** | Array        |  Esta tabla debe contener las identificaciones de los enlaces que puede abrir el objeto en cuestión |  [ 1, 2, 3 ]  |
+| **location** |  Number       |  Identificación del espacio en el cual se deberá encontrar el objeto inicialmente | 2  |
+| **descrp** | String | Una breve descripción del espacio | "Description ..." |
+| **ldescrp ** | String | Una descripción más detallada del espacio | "Detailed description ..." |
+| **movable** | Boolean | Establece si el objeto de puede mover o no | true |
+| **moved** | Boolean | Establece si el objeto se ha movido inicialmente o no | false |
+| **hidden** | Boolean | Establece si el objeto está oculto | true |
+| **illuminate** | Boolean | Establece si el objeto es capaz de iluminar o no | yes |
+| **on** | Boolean | Establece si el objeto está activado o desactivado | false |
+| **max_uses** | Number | Establece el máximo número de usos de dicho objeto | 5 |
+| **used** | Number | Establece el número de usos inicial | 0 |
+
+```
+@o { # object example
+	id: 2,
+	descrp: "this object can destroy walls",
+	location: 2,
+	name: "tnt",
+	opens: [ 5, 6, 7, 8 ],
+	hidden: true
+}
+```
+
+### Enlaces
+|  Atributo  | Tipo  | Description | Ejemplo
+| :------------ |:---------------| :-----| |
+| **id**      | Number     |   Identificación del enlace | 1 |
+| **name** | String       | Nombre del enlace |  "door" |
+| **from** | Number | Establece el espacio de partida | 3 |
+| **to** | Number | Establece el espacio de destino | 4 |
+| **state** | Boolean | Establece si el enlace está abierto o cerrado | opened |
+```
+@l { # link example
+	id: 2,
+	name: "Spawn point",
+	from: 2,
+	to: 1,
+	state: 1
+}
+```
+
+### Jugador
+|  Atributo  | Tipo  | Description | Ejemplo
+| :------------ |:---------------| :-----| |
+| **id**      | Number     |   Identificación del jugador | 1 |
+| **name** | String       | Nombre del jugador |  "Pepito" |
+| **location** | Number | Establece el espacio en el que se encontrará inicialmente el jugador | 3 |
+| **bag** | Array | Establece el inventario inicial del jugador| [ "torch", "tnt" ] |
+
+```
+@p { # player example
+	id: 1,
+	name: "Minguito",
+	location: 1,
+	bag: [ "torch" ]
+}
+```
+
+
 ## Doxygen
 Para que **Doxygen** funcione correctamente se deben seguir ciertas instrucciones
 a la hora de comentar.

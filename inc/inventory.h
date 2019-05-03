@@ -10,6 +10,7 @@
 #ifndef INVENTORY_H
 #define INVENTORY_H
 
+#include "set.h"
 #include <stdio.h>
 #include "types.h"
 
@@ -84,6 +85,9 @@ int inventory_get_max( Inventory *inv );
 * @retval {int} - Returns an integer
 */
 int inventory_get_total( Inventory *inv );
+
+
+Set* inventory_get_bag( Inventory *inv );
 
 
 /**

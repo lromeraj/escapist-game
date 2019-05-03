@@ -3,7 +3,7 @@
 *
 * @file ui.h
 * @author Javier Romera
-* @version 1.0.0-stable
+* @version 1.0.8-stable
 * @date 09/04/2019
 * @copyright GNU Public License
 */
@@ -51,6 +51,7 @@ typedef enum {
 
 typedef struct _Ui_screen Ui_screen;
 typedef struct _Ui_pix Ui_pix;
+typedef struct _Ui_cpix Ui_cpix;
 typedef struct _Ui_box Ui_box;
 typedef struct _Ui Ui;
 
@@ -96,11 +97,12 @@ void ui_clear( Ui* ui );
 
 
 /**
-* @brief Fills the main UI background with a given color
-* @param {Ui*} ui - UI to be filled
-* @param {Color} c - The color with which the background will be filled
+* @brief Fills the main ui background with a given string color
+* @param {Ui*} ui - ui to fill the background
+* @param {char*} frms - background format string
+* @param {...} - format string arguments
 */
-void ui_bg( Ui* ui, Color c );
+void ui_bg( Ui* ui, const char *frms, ... );
 
 
 /**
@@ -112,6 +114,16 @@ void ui_bg( Ui* ui, Color c );
 * @param {int} ... - The N parameters to be set, like BG_RED, S_BOLD, ...
 */
 void ui_frm( Ui* ui, int n, ... );
+
+
+/**
+* @brief Sets a temporary format from a given string
+* This means that all the text, shapes and other items will use the format
+* that was setted in the last ui_frms() call
+* @param {Ui*} ui - ui to set the temporary parameters
+* @param {char*} frms - format string
+*/
+void ui_frms( Ui* ui, const char *frms, ... );
 
 
 /**
@@ -140,7 +152,7 @@ void ui_new_box( Ui* ui, int idx, int x, int y, int w, int h );
 * @param {int} x - The new x position of the box ( col of the matrix )
 * @param {int} y - The new y position of the box ( row of the matrix )
 */
-void ui_box_pos( Ui *ui, int idx, int x, int y );
+void ui_box_repos( Ui *ui, int idx, int x, int y );
 
 
 /**
@@ -150,7 +162,7 @@ void ui_box_pos( Ui *ui, int idx, int x, int y );
 * @param {int} w - The new width of the box ( number of cols )
 * @param {int} h - The new height of the box ( number of rows )
 */
-void ui_box_size( Ui *ui, int idx, int w, int h );
+void ui_box_resize( Ui *ui, int idx, int w, int h );
 
 
 /**
@@ -162,13 +174,70 @@ void ui_dump_box( Ui *ui, int idx );
 
 
 /**
-* @brief Fills the main box background with a given color
+* @brief Fills the main box background with a given string color
 * This function does NOT clear the box buffer
 * @param {Ui*} ui - UI where the box is located
 * @param {int} id - The id of the box
-* @param {Color} c - The color with which the background will be filled
+* @param {char*} frms - background format string
+* @param {...} - fromat string arguments
 */
-void ui_box_bg( Ui* ui, int idx, Color c );
+void ui_box_bg( Ui* ui, int idx, const char *frms, ... );
+
+
+/**
+* @brief Get the width of a box (columns)
+* @param {Ui*} ui - UI where the box is located
+* @param {int} idx - box index
+* @retval returns the width of a box (number of columns)
+*/
+int ui_box_get_w( Ui* ui, int idx );
+
+
+/**
+* @brief Get the height of a box (rows)
+* @param {Ui*} ui - UI where the box is located
+* @param {int} idx - box index
+* @retval returns the height of a box (number of rows)
+*/
+int ui_box_get_h( Ui* ui, int idx );
+
+
+/**
+* @brief Get the position of the cursor inside a box (column)
+* @param {Ui*} ui - UI where the box is located
+* @param {int} idx - box index
+* @retval returns the position of the 'x' cursor (column)
+*/
+int ui_box_get_cx( Ui* ui, int idx );
+
+
+/**
+* @brief Get the position of the cursor inside a box (row)
+* @param {Ui*} ui - UI where the box is located
+* @param {int} idx - box index
+* @retval returns the position of the 'y' cursor (row)
+*/
+int ui_box_get_cy( Ui* ui, int idx );
+
+/**
+* @brief Sets an offset for the 'x' cursor (column)
+* When the the box is overflowed by it's width the cursor will be
+* resetted to the 'x' position + 'x' offset
+* @param {Ui*} ui - UI where the box is located
+* @param {int} idx - box index
+* @param {int} cx_off - 'x' cursor offset
+*/
+void ui_box_set_cx_off( Ui* ui, int idx, int cx_off );
+
+
+/**
+* @brief Get the position of the cursor inside a box (column & row)
+* @param {Ui*} ui - UI where the box is located
+* @param {int} idx - box index
+* @param {int*} cx - where the 'x' cursor should be copied
+* @param {int*} cy - where the 'y' cursor should be copied
+*/
+void ui_box_get_cursor( Ui* ui, int idx, int* cx, int* cy );
 
 
 /**
@@ -190,12 +259,25 @@ void ui_box_seek( Ui* ui, int idx, int x, int y );
 */
 void ui_box_frm( Ui* ui, int idx, int n, ... );
 
+
+/**
+* @brief Sets the default format for the content of the box by a given string
+* @param {Ui*} ui - ui where the box is located
+* @param {int} id - the id of the box
+* @param {char*} frms - format string
+* @param {...} - format string arguments
+*/
+void ui_box_frms( Ui* ui, int idx, const char *frms, ... );
+
+
 /**
 * @brief Clears the box buffer
 * @param {Ui*} ui - UI where the box is located
 * @param {int} id - The id of the box
 */
 void ui_clear_box( Ui* ui, int idx );
+
+
 
 
 /**

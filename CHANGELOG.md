@@ -1,16 +1,67 @@
 #I4
 
-## v0.4.2
+## v0.4.5
+`[OVERALL]`
+- Updated `ui` to version `1.1.3-stable`.
+
 `[IMPROVEMENTS]`
 - If the terminal size is not enough, an alert will appear saying that more terminal size is required.
+- Renamed `ui_box_size()` to `ui_box_resize()`, and `ui_box_pos()` to `ui_box_repos()`.
+- Improved function `game_callback_move()`.
+- Improved `ui` format check sum.
+- Improved `ui` format reset.
+- Improved `ui` format copy speed.
+- Improved `ui_box_bg()`.
+- Improved `ui_bg()`.
+- Imporoved `ui_box_draw()`.
+- `ui` module now uses a cache to avoid format recomputing.
+- `reader` module was renamed to `manager`.
+- `reader_load()` was renamed to `manager_load()`.
+- Improved `game_get_objects()`.
+- Improved game adders.
+- Renamed `game_create_from_file()` to `game_load_from_file()`.
 
 `[NEW]`
-- Implemented new primitives for the object module,` obj_add_link()`, `obj_opens_link()`, `obj_set_attr()`, `obj_get_attr()` and `obj_get_links()`.
-- Now you can set **up** and **down** links of the spaces inside configuration file `data.dat`.
-- Updated reader module for parsing new object fields like: `_OBJ_LDESCRP`, `_OBJ_LINKS`, `_OBJ_MOVABLE`, `_OBJ_MOVED`, ... the full guide can be found inside `data.dat` file.
-- Updated reader module for parsing new space fields: `_SPACE_LDESCRP`.
+- Implemented `game_rules` module.
+- All game interface was redesigned using the new features of the last `ui` version.
+- Now you can set the **max uses** and the initial uses of an object in the configuration file.
+- Now you can **save** and **load** the progress of a game.
+- To save a game use `save <file_name>`.
+- To load a game use `load <file_name>`.
+- Implemented private function `game_get()`.
+- Introduced `save` command.
+- Introduced `turn` command.
+- Introduced `open` command.
+- Implemented `manager_save()`.
+- Introduced **torch** object.
+- Now you can illuminate spaces.
+- Implemented `game_callback_turn()`.
 - Implemented new module `str`.
-- Improved function `game_callback_move()`.
+- Implemented `ui_box_set_cx_off()`.
+- Implemented `ui_frms()`.
+- Implemented `ui_box_get_cx()`, `ui_box_get_cy()`, `ui_box_get_w()`, `ui_box_get_h()`, `ui_box_get_cursor()`.
+- Implemented new primitives for the object module,` obj_add_link()`, `obj_opens_link()`, `obj_set_attr()`, `obj_get_attr()` and `obj_get_links()`.
+- Now you can set **up** and **down** links of the spaces inside configuration file.
+- Updated reader module for parsing new object fields like: `_OBJ_LDESCRP`, `_OBJ_LINKS`, `_OBJ_MOVABLE`, `_OBJ_MOVED`, ... the full guide can be found inside `data.dat` file.
+- Updated reader module for parsing new space fields: `_SPACE_LDESCRP` and `_SPACE_LIGHT`.
+- Updated reader module for parsing game player data.
+- Added new function named `game_clean()` that cleans current game data but does not destroy the game itself.
+- Implemented `player_get_inventory()`.
+- Implemented `set_get_ids()`.
+- Implemented `obj_get_links()`.
+- Implemented `game_get_links()`.
+- Implemented `game_get_spaces()`.
+
+`[FIXES]`
+- Fixed an error that was causing problems when the initial object location was not defined inside configuration file (because it was by default in the player bag).
+
+`[OTHER]`
+- Overview box was removed (by the moment). Player bag will be showed in the next release.
+
+`[PENDING]`
+- Improve `manager_save()`.
+- Improve `game_rules` module.
+- Improve game dynamic.
 
 ## v0.4.1
 
@@ -24,8 +75,7 @@
 - Renamed `reader_load_<item>()` by `reader_load()`, this function now needs an extra argument to know which items should be loaded from configuration file, that are: `_RD_SPACES`, `_RD_OBJS` and `_RD_LINKS` (by the moment).
 - `data.dat` file now has a new visual syntax to simplify game configuration.
 - `reader` module now warns (in detail) about parsing errors.
-- `reader` module introduces new concept of blocks and attributes, that means, each block
-has it's own properties (attributes) and each property has it's own values, based on `JSON` format, but NOT recursively, that is, one property can not have another block.
+- `reader` module introduces new concept of blocks and attributes, that means, each block has it's own properties (attributes) and each property has it's own values, based on `JSON` format, but NOT recursively, that is, one property can not have another block.
 - Updated object and player test-benches.
 - Updated `space` module.
 

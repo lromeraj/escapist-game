@@ -29,6 +29,7 @@ struct _Object {
 
 Object *obj_create( Id id ) {
 
+  int i;
   Object *obj;
 
   if ( id == NO_ID )
@@ -43,11 +44,19 @@ Object *obj_create( Id id ) {
   obj->name[0] = '\0';
   obj->descrp[0] = '\0';
   obj->ldescrp = NULL;
+
+  for ( i=0; i < MAX_OBJ_ATTRS; i++ ) {
+    obj->attr[ i ] = OBJ_NONE;
+  }
+
   obj->attr[ OBJ_CAN_ILLUMINATE ] = OBJ_NO;
   obj->attr[ OBJ_IS_HIDDEN ] = OBJ_YES;
   obj->attr[ OBJ_IS_MOVABLE ] = OBJ_NO;
   obj->attr[ OBJ_IS_MOVED ] = OBJ_NO;
   obj->attr[ OBJ_IS_ON ] = OBJ_NO;
+  obj->attr[ OBJ_USED ] = 0;
+  obj->attr[ OBJ_MAX_USES ] = 0;
+
   obj->links = set_create();
 
   return obj;

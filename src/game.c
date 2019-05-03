@@ -1,11 +1,16 @@
+#include "str.h"
 #include "types.h"
 #include "game.h"
-#include "reader.h"
+#include "manager.h"
+#include "game_rules.h"
 #include "player.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <stdarg.h>
+#include <time.h>
+
+typedef Id (*get_id_proto)( void* );
 
 /*!
 * @brief Game structure
@@ -15,7 +20,7 @@ struct _Game {
   Player* player; /*!< @brief players in game */
   Die *die; /*!< @brief game's die */
   Object* objects[ MAX_OBJECTS ]; /*!< @brief Objects in game */
-  Space* spaces[ MAX_SPACES + 1 ]; /*!< @brief Spaces in game */
+  Space* spaces[ MAX_SPACES ]; /*!< @brief Spaces in game */
   Cmd *cmd; /*!< @brief Game commands */
   Link *links[ MAX_LINKS ]; /*!< @brief Links in game */
 };
@@ -103,15 +108,41 @@ void game_callback_help( Game *game );
 */
 void game_callback_inspect( Game *game );
 
+
+/**
+* @brief Turns on or off an object
+* @param {Game*} - game
+*/
+void game_callback_turn( Game *game );
+
+
+/**
+* @brief Opens a link
+* @param {Game*} - game
+*/
+void game_callback_open( Game *game );
+
+
+/**
+* @brief Saves into a file the current game status
+* @param {Game*} - game
+*/
+void game_callback_save( Game *game );
+
+
+/**
+* @brief Load game data from command line
+* @param {Game*} - game
+*/
+void game_callback_load( Game *game );
+
 /*******************************/
 
 
 Game* game_create() {
 
   int i;
-  Die *die;
   Game *game;
-  Player *player;
 
   game = (Game*) malloc( sizeof( Game ) );
 
@@ -131,18 +162,6 @@ Game* game_create() {
   game->player = NULL;
   game->die = NULL;
 
-  /* load player */
-  player = player_create( 1 );
-
-  player_set_name( player, "player" );
-  player_set_location( player, 1 );
-
-  game_set_player( game, player );
-
-  /* load dice */
-  die = die_init( 1 );
-  game_set_die( game, die );
-
   /* set up command interface */
   cmd_set( UNKNOWN, "unknown", "unknown", (cmd_fn)game_callback_unknown );
   cmd_set( TAKE, "take", "t", (cmd_fn)game_callback_take );
@@ -156,22 +175,27 @@ Game* game_create() {
   cmd_set( RIGHT, "right", "r", (cmd_fn)game_callback_right );
   cmd_set( INSPECT, "inspect", "i", (cmd_fn)game_callback_inspect );
   cmd_set( HELP, "help", "h", (cmd_fn)game_callback_help );
+  cmd_set( TURN, "turn", "trn", (cmd_fn)game_callback_turn );
+  cmd_set( OPEN, "open", "o", (cmd_fn)game_callback_open );
+  cmd_set( SAVE, "save", "s", (cmd_fn)game_callback_save );
+  cmd_set( LOAD, "load", "ld", (cmd_fn)game_callback_load );
 
   return game;
 }
 
-STATUS game_create_from_file( Game *game, char *filename ) {
+STATUS game_load_from_file( Game *game, char *f_name ) {
 
   int errc = 0;
 
-  errc+= reader_load( game, filename, _RD_SPACES );
-  errc+= reader_load( game, filename, _RD_OBJS );
-  errc+= reader_load( game, filename, _RD_LINKS );
+  errc+=manager_load( game, f_name, _RD_SPACES );
+  errc+=manager_load( game, f_name, _RD_OBJS );
+  errc+=manager_load( game, f_name, _RD_LINKS );
+  errc+=manager_load( game, f_name, _RD_PLAYERS );
 
   return errc ? ERROR : OK;
 }
 
-STATUS game_destroy(Game *game) {
+STATUS game_clean( Game *game ) {
 
   int i;
 
@@ -179,25 +203,37 @@ STATUS game_destroy(Game *game) {
     return ERROR;
 
   /* clean spaces */
-  for (i=0; i < MAX_SPACES; i++) {
+  for ( i=0; i < MAX_SPACES; i++ ) {
     space_destroy( game->spaces[ i ] );
+    game->spaces[ i ] = NULL;
   }
 
   /* clean objects */
-  for (i=0; i < MAX_OBJECTS; i++ ) {
+  for ( i=0; i < MAX_OBJECTS; i++ ) {
     obj_destroy( game->objects[ i ] );
+    game->objects[ i ] = NULL;
   }
 
   /* clean links */
   for (i=0; i < MAX_LINKS; i++ ) {
     link_destroy( game->links[ i ] );
+    game->links[ i ] = NULL;
   }
-
-  /* destroy die */
-  die_destroy( game->die );
 
   /* destroy player */
   player_destroy( game->player );
+  game->player = NULL;
+
+  return OK;
+
+}
+
+STATUS game_destroy( Game *game ) {
+
+  if ( !game )
+    return ERROR;
+
+  game_clean( game );
 
   /* destroy commands */
   cmd_free();
@@ -210,68 +246,53 @@ STATUS game_destroy(Game *game) {
 
 /******************************** ADDERS ********************************/
 
-STATUS game_add_space( Game *game, Space *space ) {
+STATUS game_add( Game *game, int max, void *__arr, void *vp, get_id_proto gid ) {
 
-  int i;
-  static int idx = 0;
+  int i, to = -1;
 
-  if ( !game || !space )
+  if ( !game || !__arr || !vp )
     return ERROR;
 
-  for ( i = 0; i < MAX_SPACES; i++ ) {
-    if ( space_get_id( game->spaces[ i ] ) == space_get_id( space ) ) {
+  for ( i=0; i < max; i++ ) {
+
+    if ( gid( ((void**)__arr)[ i ] ) == gid( vp ) )
       return ERROR;
-    }
+
+    if ( to == -1 && ((void**)__arr)[ i ] == NULL ) to = i;
   }
 
-  game->spaces[ idx ] = space;
-  idx++;
+  if ( to > -1 ) {
+    ((void**)__arr)[ to ] = vp;
+  }
 
   return OK;
+
+}
+
+STATUS game_add_space( Game *game, Space *sp ) {
+
+  if ( !game || !sp )
+    return ERROR;
+
+  return game_add( game, MAX_SPACES, game->spaces, sp, (get_id_proto)space_get_id );
 }
 
 STATUS game_add_object( Game *game, Object *obj ) {
 
-  int i;
-  static int idx = 0;
-
-  if ( !obj || !game )
+  if ( !game || !obj )
     return ERROR;
 
-  if ( idx >= MAX_OBJECTS )
-    return ERROR;
+  return game_add( game, MAX_OBJECTS, game->objects, obj, (get_id_proto)obj_get_id );
 
-  for ( i=0; i < MAX_OBJECTS; i++ ) {
-    if ( obj_get_id( game->objects[ i ] ) == obj_get_id( obj ) )
-      return ERROR;
-  }
-
-  game->objects[ idx ] = obj;
-  idx++;
-
-  return OK;
 }
 
 STATUS game_add_link( Game *game, Link *ln ) {
 
-  int i;
-  static int idx = 0;
-
-  if ( !ln || !game )
+  if ( !game || !ln )
     return ERROR;
 
-  if ( idx >= MAX_LINKS )
-    return ERROR;
+  return game_add( game, MAX_LINKS, game->links, ln, (get_id_proto)link_get_id );
 
-  for ( i=0; i < MAX_LINKS; i++ ) {
-    if ( link_get_id( game->links[ i ] ) == link_get_id( ln ) )
-      return ERROR;
-  }
-
-  game->links[ idx ] = ln;
-  idx++;
-
-  return OK;
 }
 
 /*************************************************************************/
@@ -295,6 +316,55 @@ Space* game_get_space( Game *game, Id id ) {
   }
 
   return NULL;
+}
+
+void game_get( Game *game, int items, int max, void *__arr, int *total ) {
+
+  int i, j, top=0;
+  void **its, *it;
+
+  if ( !game || !__arr || !total )
+    return;
+
+  switch ( items ) {
+    case GAME_SPACES:
+      top = MAX_SPACES;
+      its = (void**)game->spaces;
+      break;
+    case GAME_LINKS:
+      top = MAX_LINKS;
+      its = (void**)game->links;
+      break;
+    case GAME_OBJECTS:
+      top = MAX_OBJECTS;
+      its = (void**)game->objects;
+      break;
+  }
+
+  for ( i=0, j=0; i < top; i++ ) {
+
+    it = its[ i ];
+    if ( !it ) continue;
+    if ( j >= max ) break;
+    ((void**)__arr)[ j ] = it;
+    j++;
+
+  }
+
+  *total = j;
+
+}
+
+void game_get_spaces( Game *game, int max, Space **spaces, int *total ) {
+  game_get( game, GAME_SPACES, max, spaces, total );
+}
+
+void game_get_objects( Game *game, int max, Object **objs, int *total ) {
+  game_get( game, GAME_OBJECTS, max, objs, total );
+}
+
+void game_get_links( Game *game, int max, Link **links, int *total ) {
+  game_get( game, GAME_LINKS, max, links, total );
 }
 
 Space* game_get_object_space( Game *game, Id id ) {
@@ -358,14 +428,6 @@ Cmd* game_get_cmd( Game *game ){
   return game->cmd;
 }
 
-Object** game_get_objects( Game *game ) {
-
-  if ( !game )
-    return NULL;
-
-  return game->objects;
-}
-
 Object* game_get_object_by_name( Game *game, const char *name ) {
 
   int i;
@@ -414,15 +476,6 @@ Object* game_get_object_by_id( Game *game, Id id ) {
   }
 
   return NULL;
-}
-
-
-Link** game_get_links( Game *game ) {
-
-  if ( !game )
-    return NULL;
-
-  return game->links;
 }
 
 
@@ -531,7 +584,7 @@ void game_callback_inspect( Game *game ) {
       if ( space_get_light( cu_sp ) ) {
         cmd_set_ans( cmd, 0, "inspecting space ...", arg );
       } else {
-        cmd_set_ans( cmd, 1, "Space is not illuminated. You can't see the detailed description." );
+        cmd_set_ans( cmd, 1, "space is not illuminated, you can't see the detailed description" );
       }
 
     } else {
@@ -608,65 +661,31 @@ void game_callback_back( Game *game ) {
 
 void game_callback_take( Game *game ) {
 
-  Space *sp;
-  Player *player;
-  Object *obj;
-  Id p_loc, o_id;
-  char  *o_name,
-        *_arg,
-        *skey; /* search key */
   Cmd *cmd;
+  Object *obj;
+  char *_arg;
 
   if ( !game )
     return;
 
   cmd = game->cmd;
-  player = game_get_player( game );
-  p_loc = player_get_location( player );
-  sp = game_get_space( game, p_loc );
-
-  if ( !sp )
-    return;
 
   obj = NULL;
   _arg = NULL;
-  o_name = NULL;
 
   if ( cmd_get_argc( cmd ) == 2 ) {
 
     _arg = (char*)cmd_get_argv( cmd, 1 );
     obj = game_get_object_by_name( game, _arg );
 
-  } else if ( cmd_get_argc( cmd ) == 3 ) {
-
-    skey = (char*)cmd_get_argv( cmd, 1 );
-    _arg = (char*)cmd_get_argv( cmd, 2 );
-
-    if ( !strcmp( skey, "-i" ) ) {
+    if ( !obj ) {
       obj = game_get_object_by_id( game, atol( _arg ) );
-    } else if ( !strcmp( skey, "-n" ) ) {
-      obj = game_get_object_by_name( game, _arg );
     }
 
-  }
-
-  if ( cmd_get_argc( cmd ) > 1 && _arg ) {
-
-    o_id = obj_get_id( obj );
-    o_name = (char*)obj_get_name( obj );
-
-    if ( !space_has_object( sp, o_id ) ) {
-      cmd_set_ans( cmd, 2, "object with %s '%s' was not found", !strcmp( skey, "-i") ? "id" : "name" , _arg );
-    } else if ( player_has_object( player, o_id ) ) {
-      cmd_set_ans( cmd, 2, "taken: %s#%ld", o_name, o_id );
+    if ( obj ) {
+      game_player_take_object( game, obj );
     } else {
-
-      if ( player_add_object( player, o_id ) == OK ) {
-        space_del_object( sp, o_id );
-        cmd_set_ans( cmd, 0, "taking: %s#%ld", o_name, o_id );
-      } else {
-        cmd_set_ans( cmd, 1, "bag is full" );
-      }
+      cmd_set_ans( cmd, 1, "object '%s' does not exists", _arg );
     }
 
   } else {
@@ -678,54 +697,31 @@ void game_callback_take( Game *game ) {
 
 void game_callback_drop( Game *game ) {
 
-  Player *player;
   Object *obj;
-  Id p_loc, o_id;
-  char *o_name, *_arg;
+  char *_arg;
   Cmd *cmd;
 
   if ( !game )
     return;
 
   cmd = game->cmd;
-  player = game_get_player( game );
-  p_loc = player_get_location( player );
 
   obj = NULL;
   _arg = NULL;
-  o_name = NULL;
 
   if ( cmd_get_argc( cmd ) == 2 ) {
 
     _arg = (char*)cmd_get_argv( cmd, 1 );
     obj = game_get_object_by_name( game, _arg );
 
-  } else if ( cmd_get_argc( cmd ) == 3 ) {
-
-    _arg = (char*)cmd_get_argv( cmd, 2 );
-
-    if ( !strcmp( cmd_get_argv( cmd, 1 ), "-i" ) ) {
+    if ( !obj ) {
       obj = game_get_object_by_id( game, atol( _arg ) );
-    } else if ( !strcmp( cmd_get_argv( cmd, 1 ), "-n" ) ) {
-      obj = game_get_object_by_name( game, _arg );
     }
 
-  }
-
-  if ( cmd_get_argc( cmd ) > 1 && _arg ) {
-
-    o_id = obj_get_id( obj );
-    o_name = (char*)obj_get_name( obj );
-
-    if ( !player_has_object( player, o_id ) ) {
-      cmd_set_ans( cmd, 1, "'%s': not taken", _arg );
+    if ( obj ) {
+      game_player_drop_object( game, obj );
     } else {
-      if ( space_add_object( game_get_space( game, p_loc ), o_id ) == OK ) {
-        player_del_object( player, o_id );
-        cmd_set_ans( cmd, 0, "dropping: %s#%ld in S%ld", o_name, o_id, p_loc );
-      } else {
-        cmd_set_ans( cmd, 1, "could not drop" );
-      }
+      cmd_set_ans( cmd, 1, "object '%s' does not exits", _arg );
     }
 
   } else {
@@ -746,8 +742,10 @@ void game_callback_move( Game *game ) {
 
   Cmd *cmd;
   Link *ln;
-  Space *sp;
-  Id go_to = NO_ID, ln_id = NO_ID;
+  Object *obj;
+  Player *player;
+  Space *cu_sp, *to_sp;
+  Id tid, go_to = NO_ID, ln_id = NO_ID;
   char *cp = NULL; /* cardinal point */
 
   if ( !game )
@@ -755,18 +753,23 @@ void game_callback_move( Game *game ) {
 
   cmd = game->cmd;
   cp = (char*)cmd_get_argv( cmd, 1 );
-  sp = game_get_space( game, player_get_location( game->player ) );
+  cu_sp = game_get_space( game, player_get_location( game->player ) );
+  player = game_get_player( game );
 
   if ( cp ) {
 
-    if ( !strcmp( cp, "north" ) || !strcmp( cp, "n" ) ) {
-      ln_id = space_get_link( sp, N );
-    } else if ( !strcmp( cp, "east") || !strcmp( cp, "e") ) {
-      ln_id = space_get_link( sp, E );
-    } else if ( !strcmp( cp, "south") || !strcmp( cp, "s" ) ) {
-      ln_id = space_get_link( sp, S );
-    } else if ( !strcmp( cp, "west") || !strcmp( cp, "w" ) ) {
-      ln_id = space_get_link( sp, W );
+    if ( !strcmptok( cp, "north,n,N", "," ) ) {
+      ln_id = space_get_link( cu_sp, N );
+    } else if ( !strcmptok( cp, "east,e,E", "," ) ) {
+      ln_id = space_get_link( cu_sp, E );
+    } else if ( !strcmptok( cp, "south,s,S", "," ) ) {
+      ln_id = space_get_link( cu_sp, S );
+    } else if ( !strcmptok( cp, "west,w,W", "," ) ) {
+      ln_id = space_get_link( cu_sp, W );
+    } else if ( !strcmptok( cp, "down,d,D", "," ) ) {
+      ln_id = space_get_link( cu_sp, D );
+    } else if ( !strcmptok( cp, "up,u,U", "," ) ) {
+      ln_id = space_get_link( cu_sp, U );
     } else {
       cmd_set_ans( cmd, 1, "'%s': invalid cardinal point", cp );
       return;
@@ -775,9 +778,22 @@ void game_callback_move( Game *game ) {
     ln = game_get_link_by_id( game, ln_id );
 
     if ( ln && link_get_state( ln ) == LINK_OPENED ) {
+
       go_to = link_get_to( ln );
+      to_sp = game_get_space( game, go_to );
+
       player_set_location( game->player, go_to );
+      space_set_light( cu_sp, false );
+
+      obj = game_get_object_by_name( game, "torch" );
+      tid = obj_get_id( obj );
+
+      if ( player_has_object( player, tid ) && obj_get_attr( obj, OBJ_IS_ON ) == OBJ_YES ) {
+        space_set_light( to_sp, true );
+      }
+
       cmd_set_ans( cmd, 0, "going to: S%ld", go_to );
+
     } else if ( ln && link_get_state( ln ) == LINK_CLOSED ) {
       cmd_set_ans( cmd, 1, "link is closed" );
     } else {
@@ -849,5 +865,175 @@ void game_callback_right( Game *game ) {
   }
 
   cmd_set_ans( cmd, err, buff );
+
+}
+
+void game_callback_turn( Game *game ){
+
+  Cmd *cmd;
+  Player *player;
+  Object *obj;
+  Id tid;
+  char *onff; /* on or off arg */
+  char *name; /* object name */
+
+  if( !game )
+    return;
+
+  cmd = game->cmd;
+
+  player = game_get_player( game );
+
+  if ( cmd_get_argc( cmd ) > 2 ) {
+
+    onff = (char*)cmd_get_argv( cmd, 1 );
+    name = (char*)cmd_get_argv( cmd, 2 );
+
+    obj = game_get_object_by_name( game, name );
+    tid = obj_get_id( obj );
+
+    if ( player_has_object( player, tid ) ) {
+
+      if ( !strcmptok( onff, "on,ON", "," ) ) {
+        if ( game_obj_set_on( game, obj, OBJ_YES ) == OK ) {
+          cmd_set_ans( cmd, 0, "turning on: '%s'", obj_get_name( obj ) );
+        }
+      } else if ( !strcmptok( onff, "off,OFF", "," ) ) {
+        if ( game_obj_set_on( game, obj, OBJ_NO ) == OK ) {
+          cmd_set_ans( cmd, 0, "turning off: '%s'", obj_get_name( obj ) );
+        }
+      } else {
+        cmd_set_ans( cmd, 1, "invalid status flag" );
+      }
+
+    } else {
+      cmd_set_ans( cmd, 1, "object '%s' not in bag", name );
+    }
+
+  } else {
+    cmd_set_ans( cmd, 1, "too few args" );
+  }
+
+}
+
+void game_callback_open( Game *game ){
+
+  Cmd *cmd;
+  Object *obj;
+  Id ln_id;
+  char *obj_name; /* object name */
+  char *arg;
+  Link *ln; /* link */
+
+  if( !game )
+    return;
+
+  cmd = game->cmd;
+
+  if ( cmd_get_argc( cmd ) > 3 ) {
+
+    arg = (char*)cmd_get_argv( cmd, 2 );
+
+    if ( !strcmp( arg, "with" ) ) {
+
+      ln_id = atol( (char*)cmd_get_argv( cmd, 1 ) );
+      obj_name = (char*)cmd_get_argv( cmd, 3 );
+
+      obj = game_get_object_by_name( game, obj_name );
+      ln = game_get_link_by_id( game, ln_id );
+
+      if ( !ln ) {
+        cmd_set_ans( cmd, 1, "link %d does not exists", ln_id );
+      } else if ( !obj ) {
+        cmd_set_ans( cmd, 1, "object '%s' does not exists", obj_name );
+      } else {
+        game_open_link_with_obj( game, ln, obj );
+      }
+
+    } else {
+      cmd_set_ans( cmd, 1, "unknown option '%s'", arg );
+    }
+
+  } else {
+    cmd_set_ans( cmd, 1, "too few args" );
+  }
+
+}
+
+void game_callback_save( Game *game ) {
+
+  FILE *f;
+  Cmd *cmd;
+  time_t rawtime;
+  struct tm *tinfo;
+  char _buff[ 256 ];
+
+  if ( !game )
+    return;
+
+  cmd = game_get_cmd( game );
+
+  if ( cmd_get_argc( cmd ) == 1 ) {
+
+    time( &rawtime );
+    tinfo = localtime( &rawtime );
+
+    sprintf( _buff, "save_%d%02d%02d_%02d%02d.dat", tinfo->tm_year + 1900, tinfo->tm_mday, tinfo->tm_mon, tinfo->tm_hour, tinfo->tm_min );
+    manager_save( game, _buff );
+
+    cmd_set_ans( cmd, 0, "file saved: '%s'", _buff );
+
+  } else if ( cmd_get_argc( cmd ) == 2 ) {
+
+    sprintf( _buff, "%s", cmd_get_argv( cmd, 1 ) );
+    f = fopen( _buff, "r" );
+
+    if ( f ) {
+      cmd_set_ans( cmd, 1, "file '%s' already exists", _buff );
+      fclose( f );
+    } else {
+      manager_save( game, _buff );
+      cmd_set_ans( cmd, 0, "file saved: '%s'", _buff );
+    }
+
+  } else {
+    cmd_set_ans( cmd, 1, "invalid args" );
+  }
+
+}
+
+void game_callback_load( Game *game ) {
+
+  FILE *f;
+  Cmd *cmd;
+  char *f_name;
+
+  if ( !game )
+    return;
+
+  cmd = game_get_cmd( game );
+
+  if ( cmd_get_argc( cmd ) == 2 ) {
+
+    f_name = (char*)cmd_get_argv( cmd, 1 );
+    f = fopen( f_name, "r" );
+
+    if ( f ) {
+      fclose( f );
+
+      game_clean( game );
+
+      if ( game_load_from_file( game, f_name ) == OK ) {
+        cmd_set_ans( cmd, 0, "data was loaded correctly" );
+      } else {
+        cmd_set_ans( cmd, 1, "error while loading data" );
+      }
+    } else {
+      cmd_set_ans( cmd, 1, "file '%s' does not exists", f_name );
+    }
+
+  } else {
+    cmd_set_ans( cmd, 1, "invalid args" );
+  }
 
 }

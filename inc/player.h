@@ -10,6 +10,7 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 
+#include "set.h"
 #include "types.h"
 
 #define MAX_PLAYER_NAME 100 /*!< @brief Maximum length of the player's name */
@@ -81,7 +82,11 @@ STATUS player_set_location(Player* player, Id id);
 * @param {Player*} player - player's pointer
 * @retval {Id} - player's location
 */
-Id player_get_location(Player* player);
+Id player_get_location( Player* player );
+
+
+
+Set* player_get_bag( Player *player );
 
 /**
 * @brief This fuction adds an object to playes's inventory
@@ -116,13 +121,7 @@ STATUS player_del_object(Player* player, Id id);
 * @param {Player*} player - player's pointer
 * @retval {STATUS} - Returns a status code
 */
-STATUS player_print(Player* player);
+STATUS player_print( Player* player );
 
-/**
-* @brief Gets the current player object
-*
-* @param {Player*} player - Player to be checked
-* @retval {Id} - Returns the id of the player's object
-*/
 
 #endif

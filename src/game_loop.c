@@ -8,7 +8,6 @@
  * @copyright GNU Public License
  */
 
-
 #include "g_engine.h"
 #include "types.h"
 #include "log.h"
@@ -109,7 +108,7 @@ int main( int argc, char *argv[] ) {
     _kill( 1 );
   }
 
-  if ( game_create_from_file( game, argv[1] ) == ERROR ) {
+  if ( game_load_from_file( game, argv[1] ) == ERROR ) {
     log_w( "ERR\n" );
     fprintf(stderr, "error while initializing game\n");
     _kill( 1 );
@@ -152,7 +151,7 @@ int main( int argc, char *argv[] ) {
 
         printf("\033c"); /* clear temrinal screen */
         ui_resize( mui, WIN_COLS, WIN_ROWS-1 );
-        ui_box_size( mui, BOX1, WIN_COLS, WIN_ROWS-1 );
+        ui_box_resize( mui, BOX1, WIN_COLS, WIN_ROWS-1 );
 
         ui_clear_box( mui, BOX1 );
         ui_frm( mui, 3, S_BOLD, BG_RED, FG_WHITE );

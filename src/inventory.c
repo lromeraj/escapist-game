@@ -5,10 +5,9 @@
  * @date 07/04/2019
  */
 
+#include "inventory.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include "set.h"
-#include "inventory.h"
 
 /*!
 * Main inventory structure
@@ -87,6 +86,14 @@ int inventory_get_max( Inventory *inv ) {
     return -1;
   }
   return inv->max;
+}
+
+Set* inventory_get_bag( Inventory *inv ) {
+
+	if ( !inv )
+		return NULL;
+
+	return inv->bag;
 }
 
 bool inventory_is_full( Inventory *inv ) {

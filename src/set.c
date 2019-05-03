@@ -75,6 +75,24 @@ Id set_get_first( Set *set ) {
 
 }
 
+void set_get_ids( Set *set, int max, Id *dest, int *total ) {
+
+  int i, j;
+
+  if ( !set || !dest || !total )
+    return;
+
+  *total = set_get_total( set );
+    
+  for ( i=0, j=0; i < MAX_SET; i++ ) {
+    if ( set->ids[ i ] == NO_ID ) continue;
+    if ( j >= max ) break;
+    dest[ j ] = set->ids[ i ];
+    j++;
+  }
+
+}
+
 bool set_has_id( Set *set, Id id ) {
   int i;
 

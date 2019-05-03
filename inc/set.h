@@ -13,7 +13,7 @@
 #include <stdio.h>
 #include "types.h"
 
-#define MAX_SET 5 /*!< @brief Maximum number of sets */
+#define MAX_SET 100 /*!< @brief Maximum number of sets */
 
 /*!
 * @brief Definition of Set structure
@@ -51,8 +51,17 @@ STATUS set_add_id( Set *set, Id id);
 * @param {Set*} - Receives a set which is going to be freed
 * @retval {STATUS} - Returns ok or error
 */
-
 STATUS set_del_id( Set *set, Id id);
+
+
+
+/**
+* @brief Returns the ids of the set
+* @author Javier Romera
+* @param {Set*} - Receives a set which is going to be freed
+* @retval {Id*} - Memory address of the first id
+*/
+void set_get_ids( Set *set, int max, Id *dest, int *total );
 
 /**
 * @brief Tells if an id is in a set or not

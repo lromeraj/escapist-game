@@ -18,8 +18,14 @@
 #include "link.h"
 #include <stdio.h>
 
-#define MIN_WIN_COLS 80
-#define MIN_WIN_ROWS 24
+#define MIN_WIN_COLS 80 /*!< @brief Minimum width of the screen */
+#define MIN_WIN_ROWS 24 /*!< @brief Minimum height of the screen */
+
+enum {
+  GAME_SPACES,
+  GAME_LINKS,
+  GAME_OBJECTS
+};
 
 /*
 * @brief Definition of Game structure
@@ -60,7 +66,7 @@ Game* game_create();
 * @param {char*} - filename
 * @retval {STATUS} - Returns an status code
 */
-STATUS game_create_from_file(Game* game, char* filename);
+STATUS game_load_from_file(Game* game, char* filename);
 
 
 /**
@@ -156,16 +162,6 @@ Object* game_get_object_by_name( Game *game, const char *name );
 
 
 /**
-* @brief Returns a pointer to game objects
-* @author Javier Romera
-* @param {Game*} - game
-* @retval {Object**} - Returns an array of object pointers
-*/
-Object **game_get_objects( Game *game );
-
-
-
-/**
 * @brief Gets a link by it's id
 * @author Javier Romera
 * @param {Game*} - game
@@ -174,14 +170,6 @@ Object **game_get_objects( Game *game );
 */
 Link* game_get_link_by_id( Game *game, Id id );
 
-
-/**
-* @brief Returns a pointer to game links
-* @author Javier Romera
-* @param {Game*} - game
-* @retval {Link**} - Returns an array of link pointers
-*/
-Link** game_get_links( Game *game );
 
 /**
 * @brief sets a new player
@@ -219,6 +207,10 @@ void game_set_die( Game *game, Die *d );
 */
 Space *game_get_last_space( Game *game );
 
+void game_get_spaces( Game *game, int max, Space **spaces, int *total );
+void game_get_links( Game *game, int max, Link **links, int *total );
+void game_get_objects( Game *game, int max, Object **objs, int *total );
+
 
 /**
 * @brief gets a pointer towards first space
@@ -245,5 +237,7 @@ Die *game_get_die( Game *game );
 * @retval {Player} - Returns a cmd pointer
 */
 Cmd *game_get_cmd( Game *game );
+
+STATUS game_clean( Game *game );
 
 #endif
