@@ -32,13 +32,13 @@ Para definir elementos en el archivo de configuración se deben usar ciertas nom
 ### Espacios
 
 |  Atributo  | Tipo  | Description | Ejemplo
-| :------------ |:---------------| :-----| |
+| ------------ |---------------| -----|------- |
 | **id**      | Number     |   Identificación del espacio | 1 |
 | **name** | String       | Nombre del espacio  |  "East jungle" |
 | **links** | Array        |  [ N, E, S, W, U, D ] |  [ 3, 2, 5, 1, 3, 5 ]  |
 | **light** |  Boolean        |  Establece si el espacio está iluminado por defecto |  on  |
 | **descrp** | String | Una breve descripción del espacio | "Description ..." |
-| **ldescrp ** | String | Una descripción más detallada del espacio | "Detailed description ..." |
+| **ldescrp** | String | Una descripción más detallada del espacio | "Detailed description ..." |
 | **picture** | String | Dibujo de decoración del espacio. Usar `\n` literal  para saltos de línea | " /\_/\ \n( o.o )\n > ^ < "
 
 ```
@@ -55,13 +55,13 @@ Para definir elementos en el archivo de configuración se deben usar ciertas nom
 ### Objetos
 
 |  Atributo  | Tipo  | Description | Ejemplo
-| :------------ |:---------------| :-----| |
+| :------------ |:---------------| :-----| ------- |
 | **id**      | Number     |   Identificación del objeto | 1 |
 | **name** | String       | Nombre del objeto  |  "torch" |
 | **opens** | Array        |  Esta tabla debe contener las identificaciones de los enlaces que puede abrir el objeto en cuestión |  [ 1, 2, 3 ]  |
 | **location** |  Number       |  Identificación del espacio en el cual se deberá encontrar el objeto inicialmente | 2  |
 | **descrp** | String | Una breve descripción del espacio | "Description ..." |
-| **ldescrp ** | String | Una descripción más detallada del espacio | "Detailed description ..." |
+| **ldescrp** | String | Una descripción más detallada del espacio | "Detailed description ..." |
 | **movable** | Boolean | Establece si el objeto de puede mover o no | true |
 | **moved** | Boolean | Establece si el objeto se ha movido inicialmente o no | false |
 | **hidden** | Boolean | Establece si el objeto está oculto | true |
@@ -83,7 +83,7 @@ Para definir elementos en el archivo de configuración se deben usar ciertas nom
 
 ### Enlaces
 |  Atributo  | Tipo  | Description | Ejemplo
-| :------------ |:---------------| :-----| |
+| :------------ |:---------------| :-----| ------- |
 | **id**      | Number     |   Identificación del enlace | 1 |
 | **name** | String       | Nombre del enlace |  "door" |
 | **from** | Number | Establece el espacio de partida | 3 |
@@ -101,7 +101,7 @@ Para definir elementos en el archivo de configuración se deben usar ciertas nom
 
 ### Jugador
 |  Atributo  | Tipo  | Description | Ejemplo
-| :------------ |:---------------| :-----| |
+| :------------ |:---------------| :-----| --------- |
 | **id**      | Number     |   Identificación del jugador | 1 |
 | **name** | String       | Nombre del jugador |  "Pepito" |
 | **location** | Number | Establece el espacio en el que se encontrará inicialmente el jugador | 3 |
