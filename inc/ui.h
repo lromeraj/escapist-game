@@ -3,7 +3,7 @@
 *
 * @file ui.h
 * @author Javier Romera
-* @version 1.1.2-stable
+* @version 1.1.3-stable
 * @date 09/04/2019
 * @copyright GNU Public License
 */
@@ -102,7 +102,7 @@ void ui_clear( Ui* ui );
 * @param {char*} frms - background format string
 * @param {...} - format string arguments
 */
-void ui_bg( Ui* ui, const char *frms, ... );
+void ui_bg( Ui* ui, const char *frms, ... ) __attribute__ ( ( format(printf, 2, 3 ) ) );
 
 
 /**
@@ -123,7 +123,7 @@ void ui_frm( Ui* ui, int n, ... );
 * @param {Ui*} ui - ui to set the temporary parameters
 * @param {char*} frms - format string
 */
-void ui_frms( Ui* ui, const char *frms, ... );
+void ui_frms( Ui* ui, const char *frms, ... ) __attribute__ ( ( format(printf, 2, 3 ) ) );
 
 
 /**
@@ -181,7 +181,7 @@ void ui_dump_box( Ui *ui, int idx );
 * @param {char*} frms - background format string
 * @param {...} - fromat string arguments
 */
-void ui_box_bg( Ui* ui, int idx, const char *frms, ... );
+void ui_box_bg( Ui* ui, int idx, const char *frms, ... ) __attribute__ ( ( format(printf, 3, 4 ) ) );
 
 
 /**
@@ -267,7 +267,7 @@ void ui_box_frm( Ui* ui, int idx, int n, ... );
 * @param {char*} frms - format string
 * @param {...} - format string arguments
 */
-void ui_box_frms( Ui* ui, int idx, const char *frms, ... );
+void ui_box_frms( Ui* ui, int idx, const char *frms, ... ) __attribute__ ( ( format(printf, 3, 4 ) ) );
 
 
 /**
@@ -276,8 +276,6 @@ void ui_box_frms( Ui* ui, int idx, const char *frms, ... );
 * @param {int} id - The id of the box
 */
 void ui_clear_box( Ui* ui, int idx );
-
-
 
 
 /**
@@ -296,6 +294,6 @@ void ui_box_pad( Ui* ui, int idx, const char* pad );
 * @param {char*} str - String format
 * @param {...} - String format arguments
 */
-void ui_box_put( Ui* ui, int idx, const char* str, ... );
+void ui_box_put( Ui* ui, int idx, const char* str, ... ) __attribute__ ( ( format(printf, 3, 4 ) ) );
 
 #endif

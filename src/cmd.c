@@ -42,7 +42,7 @@ void cmd_argv_free( Cmd *cmd );
 
 /*******************************/
 
-void cmd_set( Cid id, const char* b_name, const char *s_name, cmd_fn fn ) {
+void cmd_build( Cid id, const char* b_name, const char *s_name, cmd_fn fn ) {
 
   int i;
   Cmd *_cmd;
@@ -113,11 +113,7 @@ const char *cmd_get_argv( Cmd *cmd, int idx ) {
   if ( !cmd )
     return NULL;
 
-
-  if ( idx < 0 || idx >= MAX_CMD_ARGC )
-    return NULL;
-
-  if ( !cmd->argv[ idx ] )
+  if ( idx < 0 || idx >= MAX_CMD_ARGC || idx >= cmd_get_argc( cmd ) )
     return NULL;
 
   return cmd->argv[ idx ];
@@ -231,7 +227,7 @@ Cmd *cmd_req() {
   Cmd *_cmd = NULL;
   int i, _i, j, len, argc;
   char c, in[ MAX_CMD_IN ], _buff[ MAX_CMD_IN ];
-  bool addChar, addBuff;
+  bool addChar, addBuff, isStr;
 
   printf("\033[0;1m\033mcmd:>\033[0m ");
 
@@ -244,10 +240,11 @@ Cmd *cmd_req() {
   printf("%s", in );
   putchar('\n');
 
-  len = strlen( in );
   _i = 0;
   argc = 0;
   _buff[ 0 ] = 0;
+  isStr = false;
+  len = strlen( in );
 
   for ( i=0; i <= len; i++ ) {
 
@@ -256,9 +253,19 @@ Cmd *cmd_req() {
     addBuff = false;
 
     if ( c == ' ' || c == '\0' || c == '\n' ||  c == '\033' ) {
-      if ( _i ) {
-        addBuff = true;
+
+      if ( !isStr ) {
+
+        if ( _i ) {
+          addBuff = true;
+        }
+        addChar = false;
       }
+
+    }
+
+    if ( c == '"' || c == '\'' ) {
+      isStr = !isStr;
       addChar = false;
     }
 

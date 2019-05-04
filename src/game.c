@@ -163,22 +163,22 @@ Game* game_create() {
   game->die = NULL;
 
   /* set up command interface */
-  cmd_set( UNKNOWN, "unknown", "unknown", (cmd_fn)game_callback_unknown );
-  cmd_set( TAKE, "take", "t", (cmd_fn)game_callback_take );
-  cmd_set( DROP, "drop", "d", (cmd_fn)game_callback_drop );
-  cmd_set( NEXT, "next", "n", (cmd_fn)game_callback_next );
-  cmd_set( BACK, "back", "b", (cmd_fn)game_callback_back );
-  cmd_set( EXIT, "exit", "e", (cmd_fn)game_callback_exit );
-  cmd_set( LEFT, "left", "l", (cmd_fn)game_callback_left );
-  cmd_set( ROLL, "roll", "rl", (cmd_fn)game_callback_roll );
-  cmd_set( MOVE, "move", "m", (cmd_fn)game_callback_move );
-  cmd_set( RIGHT, "right", "r", (cmd_fn)game_callback_right );
-  cmd_set( INSPECT, "inspect", "i", (cmd_fn)game_callback_inspect );
-  cmd_set( HELP, "help", "h", (cmd_fn)game_callback_help );
-  cmd_set( TURN, "turn", "trn", (cmd_fn)game_callback_turn );
-  cmd_set( OPEN, "open", "o", (cmd_fn)game_callback_open );
-  cmd_set( SAVE, "save", "s", (cmd_fn)game_callback_save );
-  cmd_set( LOAD, "load", "ld", (cmd_fn)game_callback_load );
+  cmd_build( UNKNOWN, "unknown", "unknown", (cmd_fn)game_callback_unknown );
+  cmd_build( TAKE, "take", "t", (cmd_fn)game_callback_take );
+  cmd_build( DROP, "drop", "d", (cmd_fn)game_callback_drop );
+  cmd_build( NEXT, "next", "n", (cmd_fn)game_callback_next );
+  cmd_build( BACK, "back", "b", (cmd_fn)game_callback_back );
+  cmd_build( EXIT, "exit", "e", (cmd_fn)game_callback_exit );
+  cmd_build( LEFT, "left", "l", (cmd_fn)game_callback_left );
+  cmd_build( ROLL, "roll", "rl", (cmd_fn)game_callback_roll );
+  cmd_build( MOVE, "move", "m", (cmd_fn)game_callback_move );
+  cmd_build( RIGHT, "right", "r", (cmd_fn)game_callback_right );
+  cmd_build( INSPECT, "inspect", "i", (cmd_fn)game_callback_inspect );
+  cmd_build( HELP, "help", "h", (cmd_fn)game_callback_help );
+  cmd_build( TURN, "turn", "trn", (cmd_fn)game_callback_turn );
+  cmd_build( OPEN, "open", "o", (cmd_fn)game_callback_open );
+  cmd_build( SAVE, "save", "s", (cmd_fn)game_callback_save );
+  cmd_build( LOAD, "load", "ld", (cmd_fn)game_callback_load );
 
   return game;
 }
@@ -223,6 +223,7 @@ STATUS game_clean( Game *game ) {
   /* destroy player */
   player_destroy( game->player );
   game->player = NULL;
+  game->die = NULL;
 
   return OK;
 
@@ -249,23 +250,30 @@ STATUS game_destroy( Game *game ) {
 STATUS game_add( Game *game, int max, void *__arr, void *vp, get_id_proto gid ) {
 
   int i, to = -1;
+  STATUS sts;
+
+  sts = OK;
 
   if ( !game || !__arr || !vp )
     return ERROR;
 
   for ( i=0; i < max; i++ ) {
 
-    if ( gid( ((void**)__arr)[ i ] ) == gid( vp ) )
-      return ERROR;
+    if ( gid( ((void**)__arr)[ i ] ) == gid( vp ) ) {
+      sts = ERROR;
+      break;
+    }
 
     if ( to == -1 && ((void**)__arr)[ i ] == NULL ) to = i;
   }
 
-  if ( to > -1 ) {
+  if ( to > -1 && sts == OK ) {
     ((void**)__arr)[ to ] = vp;
+  } else {
+    sts = ERROR;
   }
 
-  return OK;
+  return sts;
 
 }
 
@@ -551,46 +559,15 @@ void game_callback_exit( Game *game ) {
 
 void game_callback_inspect( Game *game ) {
 
-  Id tid;
-  char *arg;
   Cmd *cmd;
-  Player *player;
-  Space *cu_sp;
 
   if ( !game )
     return;
 
   cmd = game_get_cmd( game );
-  player = game_get_player( game );
-  cu_sp = game_get_space( game, player_get_location( player ) );
 
   if ( cmd_get_argc( cmd ) > 1 ) {
-
-    arg = (char*)cmd_get_argv( cmd, 1 );
-
-    if ( !strcmp( arg, "-o" ) && cmd_get_argc( cmd ) == 3 ) {
-
-      arg = (char*) cmd_get_argv( cmd, 2 );
-      tid = obj_get_id( game_get_object_by_name( game, arg ) );
-
-      if ( !player_has_object( player, tid ) && !space_has_object( cu_sp, tid ) ) {
-        cmd_set_ans( cmd, 1, "object not reachable" );
-      } else {
-        cmd_set_ans( cmd, 0, "inspecting object ..." );
-      }
-
-    } else if ( !strcmp( arg, "-s" ) && cmd_get_argc( cmd ) == 2 ) {
-
-      if ( space_get_light( cu_sp ) ) {
-        cmd_set_ans( cmd, 0, "inspecting space ...", arg );
-      } else {
-        cmd_set_ans( cmd, 1, "space is not illuminated, you can't see the detailed description" );
-      }
-
-    } else {
-      cmd_set_ans( cmd, 1, "invalid args");
-    }
-
+    cmd_set_ans( cmd, 0, "inspecting ..." );
   } else {
     cmd_set_ans( cmd, 1, "too few args" );
   }
@@ -625,7 +602,7 @@ void game_callback_next( Game *game ) {
     player_set_location( player, go_to );
     cmd_set_ans( cmd, 0, "going to: S%ld", go_to );
   } else {
-    cmd_set_ans( cmd, 1, "could not move down", go_to );
+    cmd_set_ans( cmd, 1, "could not move down" );
   }
 
 }
@@ -655,7 +632,7 @@ void game_callback_back( Game *game ) {
     player_set_location( player, go_to );
     cmd_set_ans( cmd, 0, "going to: S%ld", go_to );
   } else {
-    cmd_set_ans( cmd, 1, "could not move up", go_to );
+    cmd_set_ans( cmd, 1, "could not move up" );
   }
 }
 
@@ -664,6 +641,7 @@ void game_callback_take( Game *game ) {
   Cmd *cmd;
   Object *obj;
   char *_arg;
+  RuleAns ans;
 
   if ( !game )
     return;
@@ -683,7 +661,21 @@ void game_callback_take( Game *game ) {
     }
 
     if ( obj ) {
-      game_player_take_object( game, obj );
+
+      ans = game_player_take_object( game, obj );
+
+      if ( ans == _OBJ_TAKEN ) {
+        cmd_set_ans( cmd, 2, "already taken: '%s'", obj_get_name( obj ) );
+      } else if ( ans == _OBJ_NOT_IN_SPACE ) {
+        cmd_set_ans( cmd, _OBJ_NOT_IN_SPACE, "object '%s' was not found on this space", obj_get_name( obj ) );
+      } else if ( ans == _BAG_IS_FULL ) {
+        cmd_set_ans( cmd, _BAG_IS_FULL, "bag is full" );
+      } else if ( ans == _OBJ_IMMOVABLE ) {
+        cmd_set_ans( cmd, 1, "object '%s' can't be moved!", obj_get_name( obj ) );
+      } else if ( ans == _TAKE_SUCCESS ) {
+        cmd_set_ans( cmd, _TAKE_SUCCESS, "taking: '%s'", obj_get_name( obj ) );
+      }
+
     } else {
       cmd_set_ans( cmd, 1, "object '%s' does not exists", _arg );
     }
@@ -700,6 +692,7 @@ void game_callback_drop( Game *game ) {
   Object *obj;
   char *_arg;
   Cmd *cmd;
+  RuleAns ans;
 
   if ( !game )
     return;
@@ -719,7 +712,17 @@ void game_callback_drop( Game *game ) {
     }
 
     if ( obj ) {
-      game_player_drop_object( game, obj );
+
+      ans = game_player_drop_object( game, obj );
+
+      if ( ans == _OBJ_NOT_IN_BAG ) {
+        cmd_set_ans( cmd, _OBJ_NOT_IN_BAG, "'%s': not in bag", obj_get_name( obj ) );
+      } else if ( ans == _DROP_SUCCESS ) {
+        cmd_set_ans( cmd, _DROP_SUCCESS, "dropping: '%s'", obj_get_name( obj) );
+      } else if ( ans == _RULE_ERROR ) {
+        cmd_set_ans( cmd, _RULE_ERROR, "could not drop" );
+      }
+
     } else {
       cmd_set_ans( cmd, 1, "object '%s' does not exits", _arg );
     }
@@ -834,7 +837,7 @@ void game_callback_left( Game *game ){
     player_set_location( game->player, go_to );
   }
 
-  cmd_set_ans( cmd, err, buff );
+  cmd_set_ans( cmd, err, "%s", buff );
 
 }
 
@@ -864,50 +867,58 @@ void game_callback_right( Game *game ) {
     player_set_location( game->player, go_to );
   }
 
-  cmd_set_ans( cmd, err, buff );
+  cmd_set_ans( cmd, err, "%s", buff );
 
 }
 
 void game_callback_turn( Game *game ){
 
   Cmd *cmd;
-  Player *player;
   Object *obj;
-  Id tid;
-  char *onff; /* on or off arg */
+  char *sts; /* on or off arg */
   char *name; /* object name */
+  RuleAns ans;
+  bool onff;
 
   if( !game )
     return;
 
   cmd = game->cmd;
-
-  player = game_get_player( game );
+  ans = _RULE_ERROR;
 
   if ( cmd_get_argc( cmd ) > 2 ) {
 
-    onff = (char*)cmd_get_argv( cmd, 1 );
+    sts = (char*)cmd_get_argv( cmd, 1 );
     name = (char*)cmd_get_argv( cmd, 2 );
 
     obj = game_get_object_by_name( game, name );
-    tid = obj_get_id( obj );
 
-    if ( player_has_object( player, tid ) ) {
+    if ( obj ) {
 
-      if ( !strcmptok( onff, "on,ON", "," ) ) {
-        if ( game_obj_set_on( game, obj, OBJ_YES ) == OK ) {
-          cmd_set_ans( cmd, 0, "turning on: '%s'", obj_get_name( obj ) );
-        }
-      } else if ( !strcmptok( onff, "off,OFF", "," ) ) {
-        if ( game_obj_set_on( game, obj, OBJ_NO ) == OK ) {
-          cmd_set_ans( cmd, 0, "turning off: '%s'", obj_get_name( obj ) );
-        }
+      if ( !strcmptok( sts, "on,ON", "," ) ) {
+        ans = game_obj_set_on( game, obj, OBJ_YES );
+        onff = true;
+      } else if ( !strcmptok( sts, "off,OFF", "," ) ) {
+        ans = game_obj_set_on( game, obj, OBJ_NO );
+        onff = false;
       } else {
         cmd_set_ans( cmd, 1, "invalid status flag" );
       }
 
+      if ( ans == _OBJ_NOT_IN_BAG ) {
+        cmd_set_ans( cmd, _OBJ_NOT_IN_BAG, "object '%s' not in bag", name );
+      } else if ( ans == _OBJ_CAN_NOT_ILLUMINATE ) {
+        cmd_set_ans( cmd, _OBJ_CAN_NOT_ILLUMINATE, "object '%s' can not illuminate", name );
+      } else if ( ans == _TURN_SUCCESS ) {
+        if ( onff ) {
+          cmd_set_ans( cmd, _TURN_SUCCESS, "turning ON '%s'", name );
+        } else {
+          cmd_set_ans( cmd, _TURN_SUCCESS, "turning OFF '%s'", name );
+        }
+      }
+
     } else {
-      cmd_set_ans( cmd, 1, "object '%s' not in bag", name );
+      cmd_set_ans( cmd, 1, "object '%s' does not exists", name );
     }
 
   } else {
@@ -919,11 +930,12 @@ void game_callback_turn( Game *game ){
 void game_callback_open( Game *game ){
 
   Cmd *cmd;
-  Object *obj;
-  Id ln_id;
-  char *obj_name; /* object name */
-  char *arg;
+  Object *obj; /* object */
   Link *ln; /* link */
+  Id ln_id; /* link id */
+  char *obj_name; /* object name */
+  char *arg; /* temporary argument */
+  RuleAns ans; /* rule answer */
 
   if( !game )
     return;
@@ -943,11 +955,22 @@ void game_callback_open( Game *game ){
       ln = game_get_link_by_id( game, ln_id );
 
       if ( !ln ) {
-        cmd_set_ans( cmd, 1, "link %d does not exists", ln_id );
+        cmd_set_ans( cmd, 1, "link '%s' does not exists", cmd_get_argv( cmd, 1 ) );
       } else if ( !obj ) {
         cmd_set_ans( cmd, 1, "object '%s' does not exists", obj_name );
       } else {
-        game_open_link_with_obj( game, ln, obj );
+        ans = game_open_link_with_obj( game, ln, obj );
+
+        if ( ans == _OBJ_NOT_IN_BAG ) {
+          cmd_set_ans( cmd, 1, "object '%s' not in bag", obj_get_name( obj ) );
+        } else if ( ans == _OBJ_CAN_NOT_OPEN_LINK ) {
+          cmd_set_ans( cmd, 1, "object '%s' can't open '%s' ", obj_get_name( obj ), link_get_name( ln ) );
+        } else if ( ans == _OBJ_IS_OUTWORN ) {
+          cmd_set_ans( cmd, 1, "you can't use '%s' any more", obj_get_name( obj ) );
+        } else if ( ans == _OPEN_SUCCESS ) {
+          cmd_set_ans( cmd, 0, "link '%s' was opened", link_get_name( ln ) );
+        }
+
       }
 
     } else {

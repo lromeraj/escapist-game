@@ -74,7 +74,8 @@ enum _Boxes {
 * @param {int} x - Begin x position (relative to the box)
 * @param {int} y - Begin y position (relative to the box)
 */
-void parse_space( Game *game, G_engine *ge, Space *sp, int id, int x, int y );
+void parse_map( G_engine *ge, Game *game, int box );
+void parse_info( G_engine *ge, Game *game, int box );
 
 /*******************************/
 
@@ -176,7 +177,7 @@ void g_engine_paint_help( G_engine *ge, Game *game ) {
   ui_clear_box( ui, HELP_BODY );
 
   ui_frms( ui, "0;1;%s;%s", HELP_TITLE_BG, HELP_TITLE_FG );
-  ui_box_put( ui, HELP_TITLE, "HELP DESK" );
+  ui_box_put( ui, HELP_TITLE, " HELP DESK" );
 
   ui_box_bg( ui, HELP_BODY, "%s", HELP_BODY_BG );
 
@@ -191,8 +192,8 @@ void g_engine_paint_help( G_engine *ge, Game *game ) {
 
       b_name = (char*)cmd_get_bname( _cmd );
 
-      ui_frm( ui, 3, S_BOLD, BG_BLUE, FG_WHITE );
-      ui_box_put( ui, HELP_BODY, "%s, %s - ", b_name, cmd_get_sname( _cmd ) );
+      ui_frms( ui, "0;1;%s;brgb(22,128,221)", MAIN_FG );
+      ui_box_put( ui, HELP_BODY, " %s, %s - ", b_name, cmd_get_sname( _cmd ) );
 
       if ( !strcmp( b_name, "move" ) ) {
 
@@ -208,10 +209,10 @@ void g_engine_paint_help( G_engine *ge, Game *game ) {
 
       } else if ( !strcmp( b_name, "take" ) ) {
 
-        ui_box_put( ui, HELP_BODY, "<key> \n" );
+        ui_box_put( ui, HELP_BODY, "<name> \n" );
 
         ui_box_put( ui, HELP_BODY, "@{0}This command allows you to take objects located inside spaces.\n" );
-        ui_box_put( ui, HELP_BODY, " (*) <key> searh key\n");
+        ui_box_put( ui, HELP_BODY, " (*) <name> Object name \n");
         ui_box_put( ui, HELP_BODY, "You can take as much @{1;%d;%d} %d @{0} object/s\n",
                                     FG_BLACK, BG_YELLOW, MAX_INVENTORY );
         ui_box_put( ui, HELP_BODY, "\nIf there is only one argument, the default search type used is the name.\n");
@@ -335,19 +336,21 @@ void g_engine_destroy( G_engine *ge ) {
 
 void parse_map( G_engine *ge, Game *game, int box ) {
 
-  int total, w, x, y, i, j, len;
+  int w, x, y, i, j, len;
   Ui *ui;
   char *pp; /* picture pointer */
   char *tstr; /* temporary string pointer */
   int _x, _y; /* temporary cursors */
   Link *ln;
   Object *obj;
-  Object *objs[ MAX_OBJECTS ];
+  Object *objs[ MAX_OBJECTS ]; /* objects array */
+  int t_objs; /* total amount of objects */
   Player *player;
   Space *cu_sp;
   int cell_h = 11; /* number of rows of the space */
   int cell_w = 35; /* number of cols of the space */
   bool light;
+  Set *bag;
   CardinalPoint cps[6] = { N, E, S, W, U, D }; /* cardinal points */
   char cpstr[6][2] = { "N", "E", "S", "W", "U", "D" }; /* cardinal points strings */
 
@@ -359,6 +362,8 @@ void parse_map( G_engine *ge, Game *game, int box ) {
   player = game_get_player( game );
   cu_sp = game_get_space( game, player_get_location( player ) );
   light = space_get_light( cu_sp );
+
+  game_get_objects( game, MAX_OBJECTS, objs, &t_objs );
 
   x=1;
   y=2;
@@ -430,7 +435,6 @@ void parse_map( G_engine *ge, Game *game, int box ) {
   _y = y;
 
   /* draw links */
-
   for ( i=0; i < 6; i++ ) {
 
     ln = game_get_link_by_id( game, space_get_link( cu_sp, cps[ i ] ) );
@@ -448,7 +452,7 @@ void parse_map( G_engine *ge, Game *game, int box ) {
 
   }
 
-  /* draw space description overview */
+  /* draw overview */
   _x=x+cell_w+1;
 
   tstr = (char*)space_get_descrp( cu_sp );
@@ -463,37 +467,43 @@ void parse_map( G_engine *ge, Game *game, int box ) {
   ui_box_seek( ui, box, _x, _y );
   ui_box_set_cx_off( ui, box, _x );
 
+  /* draw player bag */
+  ui_box_put( ui, box, "@{0;frgb(150,150,150)}Bag@{0}: " );
+
+  bag = player_get_bag( player );
+  for ( i=0; i < t_objs; i++ ) {
+    obj = objs[ i ];
+    if ( player_has_object( player, obj_get_id( obj ) ) ) {
+      ui_box_put( ui, box, "@{!0;1;frgb(250, 255, 0);%s}%s@{0}", GAME_INFO_BG, obj_get_name( obj ) );
+      if ( i < set_get_total( bag ) ) {
+        ui_box_put( ui, box, ", " );
+      }
+    }
+  }
+  ui_box_put( ui, box, "\n" );
+
   ui_box_put( ui, box, "@{0;frgb(150,150,150)}%s@{0}: ", space_get_name( cu_sp ) );
 
   if ( tstr ) {
-    ui_box_put( ui, box, tstr );
+    ui_box_put( ui, box, "%s\n", tstr );
   }
 
   ui_box_set_cx_off( ui, box, 0 );
 
-
   /* draw space objects */
-
   _x = x+2;
   _y = y+4;
 
   ui_box_seek( ui, box, _x, _y++ );
 
-  game_get_objects( game, MAX_OBJECTS, objs, &total );
-
-  for ( i=0; i < total; i++ ) {
+  for ( i=0; i < t_objs; i++ ) {
 
     obj = objs[ i ];
 
-    if ( space_has_object( cu_sp, obj_get_id( obj ) ) ) {
+    if ( space_get_light( cu_sp ) && space_has_object( cu_sp, obj_get_id( obj ) ) ) {
 
-      if ( light ) {
-        ui_box_put( ui, box, "@{!0;brgb(0,0,0);frgb(255,255,255)} %s ", obj_get_name( obj ) );
-        ui_box_put( ui, box, "@{!0;brgb(255,255,255)} " );
-      } else {
-        ui_box_put( ui, box, "@{!0;frgb(0,0,0);brgb(255,255,255)} %s ", obj_get_name( obj ) );
-        ui_box_put( ui, box, "@{!0;brgb(0,0,0)} " );
-      }
+      ui_box_put( ui, box, "@{!0;brgb(0,0,0);frgb(255,255,255)} %s ", obj_get_name( obj ) );
+      ui_box_put( ui, box, "@{!0;brgb(255,255,255)} " );
 
       if ( ui_box_get_cx( ui, box ) > x+cell_w/2 ) {
         ui_box_seek( ui, box, _x, _y++ );
@@ -507,20 +517,96 @@ void parse_map( G_engine *ge, Game *game, int box ) {
 
 }
 
+
+void parse_info( G_engine *ge, Game *game, int box ) {
+
+  Ui *ui;
+  Cmd *cmd;
+  char *tstr;
+  Space *cu_sp;
+  Player *player;
+  Object *obj, *book, *map;
+  long max_uses;
+
+  if ( !ge || !game )
+    return;
+
+  ui = ge->game_ui;
+  cmd = game_get_cmd( game );
+
+  player = game_get_player( game );
+  cu_sp = game_get_space( game, player_get_location( player ) );
+
+  ui_box_bg( ui, GAME_INFO, "%s", GAME_INFO_BG );
+  ui_frms( ui, "0;1;brgb(124, 182, 0);frgb(0,0,0)" );
+  ui_box_put( ui, GAME_INFO, " INSPECT\n@{0}" );
+
+  tstr = (char*)cmd_get_argv( cmd, 1 );
+
+
+  if ( !strcmp( tstr, "-s" ) ) {
+
+    map = game_get_object_by_name( game, "map" );
+
+    ui_box_put( ui, GAME_INFO, "@{!0;%s;frgb(150,150,150)}Name@{0}: %s\n", GAME_INFO_BG, space_get_name( cu_sp ) );
+    ui_box_put( ui, GAME_INFO, "@{!0;%s;frgb(150,150,150)}Description@{0}: ", GAME_INFO_BG );
+
+    if ( player_has_object( player, obj_get_id( map ) ) ) {
+      ui_box_put( ui, GAME_INFO, "%s", space_get_ldescrp( cu_sp ) );
+    } else {
+      ui_box_put( ui, GAME_INFO, "you need a map to see detailed description" );
+    }
+
+  } else if ( !strcmp( tstr, "-o" ) ) {
+
+    book = game_get_object_by_name( game, "book" );
+
+    tstr = (char*) cmd_get_argv( cmd, 2 );
+    obj = game_get_object_by_name( game, tstr );
+
+    if ( !obj ) {
+      ui_box_put( ui, GAME_INFO, "object '%s' does not exists", tstr );
+    } else {
+
+      ui_box_put( ui, GAME_INFO, "@{!0;%s;frgb(150,150,150)}Name@{0}: %s\n", GAME_INFO_BG, obj_get_name( obj ) );
+
+      max_uses = obj_get_attr( obj, OBJ_MAX_USES );
+
+      if ( max_uses > 0 ) {
+        ui_box_put( ui, GAME_INFO, "@{!0;%s;frgb(150,150,150)}Used@{0}: %ld of %ld\n", GAME_INFO_BG, obj_get_attr( obj, OBJ_USED ), max_uses );
+      }
+
+      ui_box_put( ui, GAME_INFO, "@{!0;%s;frgb(150,150,150)}Description@{0}: ", GAME_INFO_BG );
+      if ( player_has_object( player, obj_get_id( book ) ) ) {
+
+        if ( obj_get_attr( obj, OBJ_IS_MOVED ) == OBJ_YES ) {
+          ui_box_put( ui, GAME_INFO, "%s", obj_get_ldescrp( obj ) );
+        } else {
+          ui_box_put( ui, GAME_INFO, "%s", obj_get_descrp( obj ) );
+        }
+
+      } else {
+        ui_box_put( ui, GAME_INFO, "you need a book to see detailed description" );
+      }
+
+    }
+
+  }
+
+}
+
 void g_engine_paint_game( G_engine *ge, Game *game ) {
 
-  Ui *ui = ge->game_ui;
   int i, w;
-  Space *cu_sp = NULL;
-  Object *obj;
-  char *answer, *tstr; /* temporary string */
+  Ui *ui;
   Cmd *cmd; /* last command */
-  long t; /* temporary long variable */
+  char *answer;
 
   if ( !ge || !game )
     return;
 
   cmd = game_get_cmd( game );
+  ui = ge->game_ui;
 
   /* map box */
   ui_clear_box( ui, GAME_MAP );
@@ -564,60 +650,14 @@ void g_engine_paint_game( G_engine *ge, Game *game ) {
     ui_box_put( ui, GAME_FEED, "\n" );
 
   }
+
   ui_dump_box( ui, GAME_FEED );
 
   /* inspect box */
   ui_clear_box( ui, GAME_INFO );
 
   if ( cmd_get_cid( cmd ) == INSPECT && !cmd_get_errc( cmd ) ) {
-
-    ui_box_bg( ui, GAME_INFO, "%s", GAME_INFO_BG );
-    ui_frms( ui, "0;1;brgb(124, 182, 0);frgb(0,0,0)" );
-    ui_box_put( ui, GAME_INFO, " INSPECT\n@{0}" );
-
-    tstr = (char*)cmd_get_argv( cmd, 1 );
-
-    if ( !strcmp( tstr, "-s" ) ) {
-
-      ui_box_put( ui, GAME_INFO, "@{!0;%s;frgb(150,150,150)}Name@{0}: %s\n", GAME_INFO_BG, space_get_name( cu_sp ) );
-      ui_box_put( ui, GAME_INFO, "@{!0;%s;frgb(150,150,150)}Description@{0}: %s\n", GAME_INFO_BG, space_get_ldescrp( cu_sp ) );
-
-    } else if ( !strcmp( tstr, "-o" ) ) {
-
-      tstr = (char*) cmd_get_argv( cmd, 2 );
-      obj = game_get_object_by_name( game, tstr );
-
-      if ( !obj ) {
-        ui_box_put( ui, GAME_INFO, "could not get information about\nthe requested object");
-      } else {
-        ui_box_put( ui, GAME_INFO, "@{!0;%s;frgb(150,150,150)}Name@{0}: %s\n", GAME_INFO_BG, obj_get_name( obj ) );
-
-        t = obj_get_attr( obj, OBJ_MAX_USES );
-
-        if ( t > 0 ) {
-          ui_box_put( ui, GAME_INFO, "@{!0;%s;frgb(150,150,150)}Used@{0}: %ld of %ld\n", GAME_INFO_BG, obj_get_attr( obj, OBJ_USED ), t );
-        }
-
-        ui_frm( ui, 2, BG_BLACK, FG_WHITE );
-
-        if ( space_get_light( cu_sp ) == true && obj_get_attr( obj, OBJ_IS_HIDDEN ) == OBJ_NO ) {
-
-          if ( obj_get_attr( obj, OBJ_IS_MOVED ) == OBJ_YES ) {
-            ui_box_put( ui, GAME_INFO, "@{!0;%s;frgb(150,150,150)}Description@{0}: %s\n", GAME_INFO_BG, obj_get_ldescrp( obj ) );
-          } else {
-            ui_box_put( ui, GAME_INFO, "@{!0;%s;frgb(150,150,150)}Description@{0}: %s\n", GAME_INFO_BG, obj_get_descrp( obj ) );
-          }
-
-        } else {
-          ui_box_put( ui, GAME_INFO, "@{!0;%s;frgb(150,150,150)}Description@{0}: you can't see the description\n", GAME_INFO_BG );
-        }
-
-      }
-
-    } else {
-
-    }
-
+    parse_info( ge, game, GAME_INFO );
     ui_dump_box( ui, GAME_INFO );
   }
 

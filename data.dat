@@ -73,6 +73,28 @@
 	movable: true
 }
 
+@o {
+	id: 4,
+	descrp: "the book contains information about other objects",
+	location: 1,
+	name: "book",
+	illuminate: false,
+	max_uses: 3,
+	used: 0,
+	movable: true
+}
+
+@o {
+	id: 5,
+	descrp: "the map contains information about the spaces",
+	location: 1,
+	name: "map",
+	illuminate: false,
+	max_uses: 2,
+	used: 0,
+	movable: true
+}
+
 @s {
 	id: 1,
 	name: "Spawn point",

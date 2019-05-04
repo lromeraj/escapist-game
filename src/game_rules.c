@@ -3,26 +3,26 @@
 #include <stdlib.h>
 #include <string.h>
 
-STATUS game_player_take_object( Game *game, Object *obj ) {
+RuleAns game_player_take_object( Game *game, Object *obj ) {
 
-  Cmd *cmd;
   Player *player;
   Space *cu_sp;
   Id oid; /* object id */
+  RuleAns ans;
+
+  ans = _RULE_ERROR;
 
   if ( !game || !obj )
-    return ERROR;
-
-  cmd = game_get_cmd( game );
+    return _RULE_ERROR;
 
   oid = obj_get_id( obj );
   player = game_get_player( game );
   cu_sp = game_get_space( game, player_get_location( player ) );
 
   if ( !space_has_object( cu_sp, oid ) ) {
-    cmd_set_ans( cmd, 2, "object '%s' was not found on this space", obj_get_name( obj ) );
+    ans = _OBJ_NOT_IN_SPACE;
   } else if ( player_has_object( player, oid ) ) {
-    cmd_set_ans( cmd, 2, "taken: '%s'", obj_get_name( obj ), oid );
+    ans = _OBJ_TAKEN;
   } else {
 
     if ( obj_get_attr( obj, OBJ_IS_MOVABLE ) == OBJ_YES ) {
@@ -30,53 +30,64 @@ STATUS game_player_take_object( Game *game, Object *obj ) {
       if ( player_add_object( player, oid ) == OK ) {
         space_del_object( cu_sp, oid );
         obj_set_attr( obj, OBJ_IS_MOVED, OBJ_YES );
-        cmd_set_ans( cmd, 0, "taking: '%s'", obj_get_name( obj ), oid );
+        ans = _TAKE_SUCCESS;
       } else {
-        cmd_set_ans( cmd, 1, "bag is full" );
+        ans= _BAG_IS_FULL;
       }
 
     } else {
-      cmd_set_ans( cmd, 1, "object '%s' can't be taken!", obj_get_name( obj ) );
+      ans = _OBJ_IMMOVABLE;
     }
 
   }
 
-  return ERROR;
+  return ans;
 }
 
-STATUS game_obj_set_on( Game *game, Object *obj, long sts ) {
+RuleAns game_obj_set_on( Game *game, Object *obj, long sts ) {
 
   Player *player;
   Space *cu_sp;
-  Id  p_loc; /* player location */
+  Id  p_loc, oid; /* player location */
+  RuleAns ans;
 
   if ( !game || !obj )
-    return ERROR;
+    return _RULE_ERROR;
 
   player = game_get_player( game );
   p_loc = player_get_location( player );
   cu_sp = game_get_space( game, p_loc );
+  oid = obj_get_id( obj );
 
-  if ( obj_get_attr( obj, OBJ_CAN_ILLUMINATE ) == OBJ_YES ) {
-    space_set_light( cu_sp, sts == OBJ_YES ? true : false );
-    obj_set_attr( obj, OBJ_IS_ON, sts );
+  if ( player_has_object( player, oid ) ) {
+
+    if ( obj_get_attr( obj, OBJ_CAN_ILLUMINATE ) == OBJ_YES ) {
+      space_set_light( cu_sp, sts == OBJ_YES ? true : false );
+      obj_set_attr( obj, OBJ_IS_ON, sts );
+      ans = _TURN_SUCCESS;
+    } else {
+      ans = _OBJ_CAN_NOT_ILLUMINATE;
+    }
+
+  } else {
+    ans = _OBJ_NOT_IN_BAG;
   }
 
-  return OK;
+  return ans;
 }
 
-STATUS game_player_drop_object( Game *game, Object *obj ) {
+RuleAns game_player_drop_object( Game *game, Object *obj ) {
 
-  Cmd *cmd;
   Player *player;
   Space *cu_sp;
   Id  p_loc, /* player location */
       oid; /* object id */
+  RuleAns ans;
+
+  ans = _RULE_ERROR;
 
   if ( !game || !obj )
-    return ERROR;
-
-  cmd = game_get_cmd( game );
+    return _RULE_ERROR;
 
   oid = obj_get_id( obj );
   player = game_get_player( game );
@@ -84,34 +95,35 @@ STATUS game_player_drop_object( Game *game, Object *obj ) {
   cu_sp = game_get_space( game, p_loc );
 
   if ( !player_has_object( player, oid ) ) {
-    cmd_set_ans( cmd, 1, "'%s': not in bag", obj_get_name( obj ) );
+    ans = _OBJ_NOT_IN_BAG;
   } else {
 
     if ( space_add_object( cu_sp, oid ) == OK ) {
-
       game_obj_set_on( game, obj, OBJ_NO );
-
       player_del_object( player, oid );
-      cmd_set_ans( cmd, 0, "dropping: '%s'", obj_get_name( obj) );
+      ans = _DROP_SUCCESS;
     } else {
-      cmd_set_ans( cmd, 1, "could not drop" );
+      ans = _RULE_ERROR;
     }
+
   }
 
-  return ERROR;
+  return ans;
 }
 
-STATUS game_open_link_with_obj( Game *game, Link *ln, Object *obj ) {
+RuleAns game_open_link_with_obj( Game *game, Link *ln, Object *obj ) {
 
-  Cmd *cmd;
   Player *player;
   Id oid, lid;
   long used, max_uses;
+  RuleAns ans;
+
+  ans = _RULE_ERROR;
 
   if ( !game || !ln || !obj )
-    return ERROR;
+    return _RULE_ERROR;
 
-  cmd = game_get_cmd( game );
+
   player = game_get_player( game );
   oid = obj_get_id( obj );
   lid = link_get_id( ln );
@@ -119,25 +131,26 @@ STATUS game_open_link_with_obj( Game *game, Link *ln, Object *obj ) {
   if ( player_has_object( player, oid ) ) {
 
     if ( obj_opens_link( obj, lid ) ) {
+
       used = obj_get_attr( obj, OBJ_USED );
       max_uses = obj_get_attr( obj, OBJ_MAX_USES );
 
       if ( used < max_uses ) {
         link_set_state( ln, LINK_OPENED );
         obj_set_attr( obj, OBJ_USED, used + 1 );
-        cmd_set_ans( cmd, 0, "link '%s' was opened", link_get_name( ln ) );
+        ans = _OPEN_SUCCESS;
       } else {
-        cmd_set_ans( cmd, 1, "you can't use '%s' any more", obj_get_name( obj ) );
+        ans = _OBJ_IS_OUTWORN;
       }
 
     } else {
-      cmd_set_ans( cmd, 1, "object '%s' can't open '%s' ", obj_get_name( obj ), link_get_name( ln ) );
+      ans = _OBJ_CAN_NOT_OPEN_LINK;
     }
 
   } else {
-    cmd_set_ans( cmd, 1, "object '%s' not in bag", obj_get_name( obj ) );
+    ans = _OBJ_NOT_IN_BAG;
   }
 
-  return OK;
+  return ans;
 
 }

@@ -155,7 +155,7 @@ int main( int argc, char *argv[] ) {
 
         ui_clear_box( mui, BOX1 );
         ui_frm( mui, 3, S_BOLD, BG_RED, FG_WHITE );
-        ui_box_put( mui, BOX1, " TERMINAL SIZE IS VERY SMALL\n", WIN_COLS, WIN_ROWS );
+        ui_box_put( mui, BOX1, " TERMINAL SIZE IS VERY SMALL\n" );
         ui_frm( mui, 2, BG_WHITE, FG_BLACK );
         ui_box_put( mui, BOX1, " Minimum size: @{1}%dx%d@{0}\n", 80, 25 );
         ui_box_put( mui, BOX1, " Current: @{1}%dx%d@{0}\n", WIN_COLS, WIN_ROWS );
@@ -170,7 +170,7 @@ int main( int argc, char *argv[] ) {
           ui_box_put( mui, BOX1, " At least @{1}%d@{0} rows more (height)\n", diff );
         }
 
-        ui_box_put( mui, BOX1, "\nTo fix this, just resize the terminal to make it bigger\n", WIN_COLS, WIN_ROWS );
+        ui_box_put( mui, BOX1, "\nTo fix this, just resize the terminal to make it bigger\n" );
 
         ui_dump_box( mui, BOX1 );
         ui_draw( stdout, mui );

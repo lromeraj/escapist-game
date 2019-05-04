@@ -55,7 +55,7 @@ typedef struct _Cmd Cmd;
 * @param {char*} s_name - The short name of the command
 * @param {cmd_fn} fn - Command callback function
 */
-void cmd_set( Cid id, const char* b_name, const char *s_name, cmd_fn fn );
+void cmd_build( Cid id, const char* b_name, const char *s_name, cmd_fn fn );
 
 /**
 * @brief Gets a command by its id
@@ -96,7 +96,7 @@ void cmd_cb( Cmd *cmd, void *vp );
 * @param {char*} str - String format
 * @param {...} - String format arguments
 */
-void cmd_set_ans( Cmd *cmd, int errc, const char *str, ... );
+void cmd_set_ans( Cmd *cmd, int errc, const char *frm, ... ) __attribute__ ( ( format(printf, 3, 4 ) ) );
 
 /**
 * @brief Gets a previus answer of the given command

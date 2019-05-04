@@ -30,7 +30,7 @@ typedef enum _Obj_attr {
 
 #define MAX_OBJ_DESCRP 100 /*!< @brief Maximum number of characters that can have a description of an object */
 #define MAX_OBJ_NAME 50 /*!< @brief Maximum number of characters that can have a name of an object */
-#define MAX_OBJECTS 4 /*!< @brief Maximum number of objects */
+#define MAX_OBJECTS 20 /*!< @brief Maximum number of objects */
 #define MAX_OBJ_ATTRS 10 /*!< @brief Maximum quantity of object attributes */
 #define MAX_OBJ_LINKS /*!< @brief Maximum number of links that an object can open */
 
