@@ -1,13 +1,14 @@
 #I4
 
 ## v0.4.7
-`[OVERALL]`
-
 `[IMPROVEMENTS]`
 - `game_rules` module has been improved.
 - Improved `ui` function prototype definitions to allow compiler to check format strings.
 - `cmd_req()` now handles literal strings that are enclosed between `'` or `"`.
 - Improved private function `game_add()`.
+
+`[NEW]`
+- Player bag now is showed over space description.
 
 `[FIXES]`
 - Minor fixes.

@@ -15,7 +15,7 @@
 #include "set.h"
 
 #define MAX_SPACE_NAME 50 /*!< @brief Maximum length of the space name */
-#define MAX_SPACE_DESCRP 100 /*!< @brief Maximum number of characters that can have a name of an space */
+#define MAX_SPACE_DESCRP 150 /*!< @brief Maximum number of characters that can have a name of an space */
 #define MAX_SPACES 200 /*!< @brief Maximum number of spaces */
 #define MAX_SPACE_PICTURE 100 /*!< @brief Maximum lenght of the space's picture */
 
@@ -54,6 +54,8 @@ STATUS space_destroy(Space* space);
 Id space_get_id(Space* space);
 
 
+
+
 /**
 * @brief defines the name of a space
 * @author Javier Romera
@@ -82,6 +84,14 @@ const char *space_get_descrp( Space *space );
 */
 const char *space_get_ldescrp( Space *space );
 
+
+/**
+* @brief This fuction returns the set of objects of the space
+* @author Javier Romera
+* @param {Space*} obj - space's pointer
+* @retval {Space*} - Set of objects
+*/
+Set* space_get_objects( Space *space );
 
 /**
 * @brief This fuction sets the description of an space

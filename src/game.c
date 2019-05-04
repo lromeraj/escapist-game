@@ -560,14 +560,49 @@ void game_callback_exit( Game *game ) {
 void game_callback_inspect( Game *game ) {
 
   Cmd *cmd;
+  Id p_loc;
+  Player *player;
+  Space *cu_sp;
+  char *opt;
+  RuleAns ans;
+  Object *obj;
 
   if ( !game )
     return;
 
   cmd = game_get_cmd( game );
+  player = game_get_player( game );
+  p_loc = player_get_location( player );
+  cu_sp = game_get_space( game, p_loc );
 
   if ( cmd_get_argc( cmd ) > 1 ) {
-    cmd_set_ans( cmd, 0, "inspecting ..." );
+
+    opt = (char*)cmd_get_argv( cmd, 1 );
+
+    if ( !strcmp( "-o", opt ) ) {
+
+      if ( cmd_get_argc( cmd ) == 3 ) {
+
+        obj = game_get_object_by_name( game, cmd_get_argv( cmd, 2 ) );
+
+        if ( obj ) {
+          ans = game_inspect_object( game, obj );
+          cmd_set_ans( cmd, 0, "inspecting object '%s' ...", cmd_get_argv( cmd, 2 ) );
+        } else {
+          cmd_set_ans( cmd, 1, "object '%s' not exists", cmd_get_argv( cmd, 2 ) );
+        }
+
+      } else {
+        cmd_set_ans( cmd, 1, "expected object name" );
+      }
+
+    } else if ( !strcmp( "-s", opt ) ) {
+      ans = game_inspect_space( game, cu_sp );
+      cmd_set_ans( cmd, 0, "inspecting current space ..." );
+    } else {
+      cmd_set_ans( cmd, 1, "invalid argument key" );
+    }
+
   } else {
     cmd_set_ans( cmd, 1, "too few args" );
   }

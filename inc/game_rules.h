@@ -22,6 +22,8 @@ typedef enum _RuleAns {
   _RULE_ERROR
 } RuleAns;
 
+RuleAns game_inspect_space( Game *game, Space *sp );
+RuleAns game_inspect_object( Game *game, Object *obj );
 RuleAns game_player_take_object( Game *game, Object *obj );
 RuleAns game_player_drop_object( Game *game, Object *obj );
 RuleAns game_obj_set_on( Game *game, Object *obj, long sts );

@@ -7,6 +7,7 @@
 * @copyright GNU Public License
 */
 
+#include "str.h"
 #include "game.h"
 #include "player.h"
 #include "inventory.h"
@@ -471,13 +472,15 @@ void parse_map( G_engine *ge, Game *game, int box ) {
   ui_box_put( ui, box, "@{0;frgb(150,150,150)}Bag@{0}: " );
 
   bag = player_get_bag( player );
-  for ( i=0; i < t_objs; i++ ) {
+
+  for ( i=0, j=0; i < t_objs; i++ ) {
     obj = objs[ i ];
     if ( player_has_object( player, obj_get_id( obj ) ) ) {
       ui_box_put( ui, box, "@{!0;1;frgb(250, 255, 0);%s}%s@{0}", GAME_INFO_BG, obj_get_name( obj ) );
-      if ( i < set_get_total( bag ) ) {
+      if ( j < set_get_total( bag ) - 1 ) {
         ui_box_put( ui, box, ", " );
       }
+      j++;
     }
   }
   ui_box_put( ui, box, "\n" );
@@ -500,15 +503,26 @@ void parse_map( G_engine *ge, Game *game, int box ) {
 
     obj = objs[ i ];
 
-    if ( space_get_light( cu_sp ) && space_has_object( cu_sp, obj_get_id( obj ) ) ) {
+    if ( !space_has_object( cu_sp, obj_get_id( obj ) ) ) continue;
 
-      ui_box_put( ui, box, "@{!0;brgb(0,0,0);frgb(255,255,255)} %s ", obj_get_name( obj ) );
-      ui_box_put( ui, box, "@{!0;brgb(255,255,255)} " );
+    if ( space_get_light( cu_sp ) ) {
 
-      if ( ui_box_get_cx( ui, box ) > x+cell_w/2 ) {
-        ui_box_seek( ui, box, _x, _y++ );
+      if ( obj_get_attr( obj, OBJ_IS_HIDDEN ) == OBJ_NO ) {
+        ui_box_put( ui, box, "@{!0;brgb(0,0,0);frgb(255,255,255)} %s ", obj_get_name( obj ) );
+        ui_box_put( ui, box, "@{!0;brgb(255,255,255)} " );
       }
 
+    } else {
+
+      if ( !strcmptok( obj_get_name( obj ), "torch", "," ) ) {
+        ui_box_put( ui, box, "@{!0;brgb(255,255,255);frgb(0,0,0)} %s ", obj_get_name( obj ) );
+        ui_box_put( ui, box, "@{!0;brgb(0,0,0)} " );
+      }
+
+    }
+
+    if ( ui_box_get_cx( ui, box ) > x+cell_w/2 ) {
+      ui_box_seek( ui, box, _x, _y++ );
     }
 
   }
@@ -525,8 +539,9 @@ void parse_info( G_engine *ge, Game *game, int box ) {
   char *tstr;
   Space *cu_sp;
   Player *player;
-  Object *obj, *book, *map;
+
   long max_uses;
+  Object *obj, *book, *map;
 
   if ( !ge || !game )
     return;
@@ -542,7 +557,6 @@ void parse_info( G_engine *ge, Game *game, int box ) {
   ui_box_put( ui, GAME_INFO, " INSPECT\n@{0}" );
 
   tstr = (char*)cmd_get_argv( cmd, 1 );
-
 
   if ( !strcmp( tstr, "-s" ) ) {
 

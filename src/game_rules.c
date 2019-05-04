@@ -27,12 +27,18 @@ RuleAns game_player_take_object( Game *game, Object *obj ) {
 
     if ( obj_get_attr( obj, OBJ_IS_MOVABLE ) == OBJ_YES ) {
 
-      if ( player_add_object( player, oid ) == OK ) {
-        space_del_object( cu_sp, oid );
-        obj_set_attr( obj, OBJ_IS_MOVED, OBJ_YES );
-        ans = _TAKE_SUCCESS;
+      if ( obj_get_attr( obj, OBJ_IS_HIDDEN ) == OBJ_YES ) {
+        ans = _OBJ_NOT_IN_SPACE;
       } else {
-        ans= _BAG_IS_FULL;
+
+        if ( player_add_object( player, oid ) == OK ) {
+          space_del_object( cu_sp, oid );
+          obj_set_attr( obj, OBJ_IS_MOVED, OBJ_YES );
+          ans = _TAKE_SUCCESS;
+        } else {
+          ans= _BAG_IS_FULL;
+        }
+
       }
 
     } else {
@@ -111,6 +117,66 @@ RuleAns game_player_drop_object( Game *game, Object *obj ) {
   return ans;
 }
 
+RuleAns game_inspect_space( Game *game, Space *sp ) {
+
+  RuleAns ans;
+  Player *player;
+  Object *obj, *map;
+  int i, total;
+  Set *set;
+  Id ids[ MAX_SET ];
+
+  if ( !game || !sp )
+    return _RULE_ERROR;
+
+  player = game_get_player( game );
+  map = game_get_object_by_name( game, "map" );
+
+  if ( player_has_object( player, obj_get_id( map ) ) ) {
+
+    set = space_get_objects( sp );
+    set_get_ids( set, MAX_SET, ids, &total );
+
+    for ( i=0; i < total; i++ ) { /* unhide all space objects */
+      obj = game_get_object_by_id( game, ids[ i ] );
+      obj_set_attr( obj, OBJ_IS_HIDDEN, OBJ_NO );
+    }
+
+    ans = _INSPECT_SUCCESS;
+
+  } else {
+    ans = _OBJ_NOT_IN_BAG;
+  }
+
+  return ans;
+
+}
+
+
+RuleAns game_inspect_object( Game *game, Object *obj ) {
+
+  RuleAns ans;
+  Player *player;
+  Object *book;
+
+  if ( !game || !obj )
+    return _RULE_ERROR;
+
+  player = game_get_player( game );
+  book = game_get_object_by_name( game, "book" );
+
+  if ( player_has_object( player, obj_get_id( book ) ) ) {
+    /* do stuff */
+    ans = _INSPECT_SUCCESS;
+  } else {
+    ans = _OBJ_NOT_IN_BAG;
+  }
+
+  return ans;
+
+}
+
+
 RuleAns game_open_link_with_obj( Game *game, Link *ln, Object *obj ) {
 
   Player *player;
@@ -135,7 +201,7 @@ RuleAns game_open_link_with_obj( Game *game, Link *ln, Object *obj ) {
       used = obj_get_attr( obj, OBJ_USED );
       max_uses = obj_get_attr( obj, OBJ_MAX_USES );
 
-      if ( used < max_uses ) {
+      if ( used < max_uses || !max_uses ) {
         link_set_state( ln, LINK_OPENED );
         obj_set_attr( obj, OBJ_USED, used + 1 );
         ans = _OPEN_SUCCESS;

@@ -123,6 +123,13 @@ const char *space_get_ldescrp( Space *space ) {
   return space->ldescrp;
 }
 
+Set *space_get_objects( Space *space ) {
+  if ( !space )
+    return NULL;
+
+  return space->objects;
+}
+
 Id space_get_link( Space *sp, CardinalPoint cp ) {
 
 

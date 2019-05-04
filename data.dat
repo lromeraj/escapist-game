@@ -40,15 +40,14 @@
 @p {
 	id: 1,
 	name: "Minguito",
-	location: 1,
-	bag: [ torch ]
+	location: 1
 }
 
 @o {
 	id: 1,
 	descrp: "the ball bounces a lot, take care!",
 	location: 2,
-	hidden: true,
+	hidden: false,
 	name: "ball"
 }
 
@@ -66,7 +65,7 @@
 @o {
 	id: 3,
 	descrp: "this object can illuminate spaces",
-	location: 1,
+	location: 6,
 	name: "torch",
 	illuminate: true,
 	hidden: false,
@@ -87,20 +86,31 @@
 @o {
 	id: 5,
 	descrp: "the map contains information about the spaces",
-	location: 1,
+	location: 4,
 	name: "map",
-	illuminate: false,
 	max_uses: 2,
 	used: 0,
+	hidden: false,
 	movable: true
+}
+
+@o {
+	id: 6,
+	descrp: "this magic key can open any type of door",
+	opens: [ 5 ],
+	name: "key",
+	location: 3,
+	movable: yes,
+	hidden: false
 }
 
 @s {
 	id: 1,
 	name: "Spawn point",
-	descrp: "a new adventure has begun, manage yourself to escape from the island",
+	descrp: "a new adventure has begun, manage yourself to escape from the island.
+	Looks pretty dark, look for something useful ...",
 	ldescrp: "detailed description ...",
-	links: [ -1, -1, 1, -1, -1, -1 ],
+	links: [ -1, -1, 1, -1, 9, -1 ],
 	picture: "|\---/|\n| o_o |\n \_^_/ "
 }
 
@@ -140,11 +150,23 @@
   picture: " (  )\n(    )\n  ||  "
 }
 
-@l { id: 1, name: "Jungle 1", from: 1, to: 2, state: 1 }
+@s {
+  id: 6,
+  name: "Jungle 4",
+  ldescrp: "detailed description ...",
+  descrp: "take a torch, a sharp object and something to eat ",
+  links: [ -1, -1, -1, -1, -1, 10 ],
+  picture: " (  )\n(    )\n  ||  "
+}
+
+@l { id: 1, name: "Jungle 1", from: 1, to: 2, state: 0 }
 @l { id: 2, name: "Spawn point", from: 2, to: 1, state: 1 }
-@l { id: 3, name: "Link 3", from: 2, to: 3, state: 1 }
+@l { id: 3, name: "Link 3", from: 2, to: 3, state: 0 }
 @l { id: 4, name: "Link 4", from: 3, to: 2, state: 1 }
-@l { id: 5, name: "Bridge", from: 3, to: 4, state: 0 }
+@l { id: 5, name: "Door", from: 3, to: 4, state: 0 }
 @l { id: 6, name: "Link 6", from: 4, to: 3, state: 1 }
 @l { id: 7, name: "Wall", from: 4, to: 5, state: 0 }
 @l { id: 8, name: "Link 8", from: 5, to: 4, state: 1 }
+@l { id: 9, name: "Hole", from: 1, to: 6, state: 1 }
+@l { id: 10, name: "Hole", from: 6, to: 1, state: 1 }
+
