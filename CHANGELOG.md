@@ -13,6 +13,7 @@
 - Player bag now is showed over space description.
 - Implemented `book` object, you have to wear it for inspecting other objects.
 - Implemented `map` object, you have to wear it for inspecting spaces.
+- Now you have a use limit for the `book` object.
 
 `[FIXES]`
 - Minor fixes.
