@@ -6,9 +6,13 @@
 - Improved `ui` function prototype definitions to allow compiler to check format strings.
 - `cmd_req()` now handles literal strings that are enclosed between `'` or `"`.
 - Improved private function `game_add()`.
+- Added help for `save`, `load`, `open` and `turn` commands.
+- Light refresh for help interface.
 
 `[NEW]`
 - Player bag now is showed over space description.
+- Implemented `book` object, you have to wear it for inspecting other objects.
+- Implemented `map` object, you have to wear it for inspecting spaces.
 
 `[FIXES]`
 - Minor fixes.

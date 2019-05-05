@@ -158,6 +158,7 @@ RuleAns game_inspect_object( Game *game, Object *obj ) {
   RuleAns ans;
   Player *player;
   Object *book;
+  long used, max_uses;
 
   if ( !game || !obj )
     return _RULE_ERROR;
@@ -166,8 +167,18 @@ RuleAns game_inspect_object( Game *game, Object *obj ) {
   book = game_get_object_by_name( game, "book" );
 
   if ( player_has_object( player, obj_get_id( book ) ) ) {
+
     /* do stuff */
-    ans = _INSPECT_SUCCESS;
+    used = obj_get_attr( obj, OBJ_USED );
+    max_uses = obj_get_attr( obj, OBJ_MAX_USES );
+
+    if ( used < max_uses || !max_uses ) {
+      obj_set_attr( obj, OBJ_USED, used + 1 );
+      ans = _INSPECT_SUCCESS;
+    } else {
+      ans = _OBJ_IS_OUTWORN;
+    }
+
   } else {
     ans = _OBJ_NOT_IN_BAG;
   }

@@ -193,7 +193,7 @@ void g_engine_paint_help( G_engine *ge, Game *game ) {
 
       b_name = (char*)cmd_get_bname( _cmd );
 
-      ui_frms( ui, "0;1;%s;brgb(22,128,221)", MAIN_FG );
+      ui_frms( ui, "0;1;%s;brgb(76, 87, 127)", MAIN_FG );
       ui_box_put( ui, HELP_BODY, " %s, %s - ", b_name, cmd_get_sname( _cmd ) );
 
       if ( !strcmp( b_name, "move" ) ) {
@@ -244,29 +244,6 @@ void g_engine_paint_help( G_engine *ge, Game *game ) {
         ui_box_put( ui, HELP_BODY, "@{0}This command allows you to exit from the game.\n" );
         ui_box_put( ui, HELP_BODY, "The game will be closed securely and all reserved memory will be freed.\n" );
 
-      } else if ( !strcmp( b_name, "next" ) ) {
-
-        ui_box_put( ui, HELP_BODY, "<n>\n" );
-
-        ui_box_put( ui, HELP_BODY, "@{0}This command allows you to move to the south direction.\n" );
-        ui_box_put( ui, HELP_BODY, " (*) <n> number of south jumps\n");
-        ui_box_put( ui, HELP_BODY, "\nIf there is no argument, the default number of jumps is 1.\n");
-        ui_box_put( ui, HELP_BODY, "NOTE: this command ignores the space links.\n");
-
-      } else if ( !strcmp( b_name, "back" ) ) {
-
-        ui_box_put( ui, HELP_BODY, "<n>\n" );
-
-        ui_box_put( ui, HELP_BODY, "@{0}This command allows you to move to the north direction.\n" );
-        ui_box_put( ui, HELP_BODY, " (*) <n> number of north jumps\n");
-        ui_box_put( ui, HELP_BODY, "\nIf there is no argument, the default number of jumps is 1.\n");
-        ui_box_put( ui, HELP_BODY, "NOTE: this command ignores the space links.\n");
-
-      } else if ( !strcmp( b_name, "right" ) ) {
-
-        ui_box_put( ui, HELP_BODY, "...\n" );
-        ui_box_put( ui, HELP_BODY, "@{0}This command allows you to move to the east direction.\n" );
-
       } else if ( !strcmp( b_name, "left" ) ) {
 
         ui_box_put( ui, HELP_BODY, "...\n" );
@@ -283,6 +260,38 @@ void g_engine_paint_help( G_engine *ge, Game *game ) {
         ui_box_put( ui, HELP_BODY, "\t\t\t[search_key] is not necessary\n");
         ui_box_put( ui, HELP_BODY, "\t\t@ Use -o to inspect an object by it's name\n");
         ui_box_put( ui, HELP_BODY, "\t\t\t[search_key] is necessary\n");
+      } else if ( !strcmp( b_name, "turn" ) ) {
+
+        ui_box_put( ui, HELP_BODY, "<flag> <obj_name>\n" );
+
+        ui_box_put( ui, HELP_BODY, "@{0}This command allows you to turn on/off objects.\n" );
+        ui_box_put( ui, HELP_BODY, " (*) <flag> \n");
+        ui_box_put( ui, HELP_BODY, "\t\t@ Use @{1}on@{0} to turn on the object\n" );
+        ui_box_put( ui, HELP_BODY, "\t\t@ Use @{1}off@{0} to turn off the object\n");
+        ui_box_put( ui, HELP_BODY, " (*) <obj_name> name of the object\n");
+
+      } else if ( !strcmp( b_name, "open" ) ) {
+        ui_box_put( ui, HELP_BODY, "<link_id> with <obj_name>\n" );
+
+        ui_box_put( ui, HELP_BODY, "@{0}This command allows you to open links.\n" );
+        ui_box_put( ui, HELP_BODY, " (*) <link_id> id of the link\n");
+        ui_box_put( ui, HELP_BODY, " (*) <obj_name> name of the object\n");
+
+      } else if ( !strcmp( b_name, "save" ) ) {
+
+        ui_box_put( ui, HELP_BODY, "<file_name>\n" );
+
+        ui_box_put( ui, HELP_BODY, "@{0}This command allows you to save the progress of a game.\n" );
+        ui_box_put( ui, HELP_BODY, "  <file_name> name of the file\n\n");
+        ui_box_put( ui, HELP_BODY, "NOTE: if no file name is given a name based on current date will be generated\n");
+
+      } else if ( !strcmp( b_name, "load" ) ) {
+
+        ui_box_put( ui, HELP_BODY, "<file_name>\n" );
+
+        ui_box_put( ui, HELP_BODY, "@{0}This command allows you to load the progress of a game.\n" );
+        ui_box_put( ui, HELP_BODY, "  <file_name> name of the file\n\n");
+
       }
 
     } else { /* other cases */
@@ -299,25 +308,27 @@ void g_engine_paint_help( G_engine *ge, Game *game ) {
 
     ui_frms( ui, "0;%s;%s", HELP_BODY_BG, HELP_BODY_FG );
 
-    ui_box_put( ui, HELP_BODY, "\n");
-    ui_box_put( ui, HELP_BODY, "help, h -> show this help desk\n" );
-    ui_box_put( ui, HELP_BODY, "next, n -> go to the south\n" );
-    ui_box_put( ui, HELP_BODY, "back, b -> go to the north\n" );
-    ui_box_put( ui, HELP_BODY, "rigth, r -> go to the east\n" );
-    ui_box_put( ui, HELP_BODY, "left, l -> go to the west\n" );
-    ui_box_put( ui, HELP_BODY, "move, m -> go to a given direction\n" );
-    ui_box_put( ui, HELP_BODY, "take, t -> take an object\n" );
-    ui_box_put( ui, HELP_BODY, "drop, d -> drop an object\n" );
-    ui_box_put( ui, HELP_BODY, "inspect, i -> inspect an element of the game\n" );
-    ui_box_put( ui, HELP_BODY, "exit, e -> game exit\n" );
+    ui_box_put( ui, HELP_BODY, "@{1;brgb(76, 87, 127)} Command      Description\n@{0}" );
+    ui_box_put( ui, HELP_BODY, " @{33}help@{0}, h      show this help desk\n" );
+    ui_box_put( ui, HELP_BODY, " @{33}rigth@{0}, r     go to the east\n" );
+    ui_box_put( ui, HELP_BODY, " @{33}left@{0}, l      go to the west\n" );
+    ui_box_put( ui, HELP_BODY, " @{33}move@{0}, m      go to a given direction\n" );
+    ui_box_put( ui, HELP_BODY, " @{33}turn@{0}, trn    turns on/off a given object\n" );
+    ui_box_put( ui, HELP_BODY, " @{33}open@{0}, o      opens a link with a given object\n" );
+    ui_box_put( ui, HELP_BODY, " @{33}take@{0}, t      take an object\n" );
+    ui_box_put( ui, HELP_BODY, " @{33}drop@{0}, d      drop an object\n" );
+    ui_box_put( ui, HELP_BODY, " @{33}inspect@{0}, i   inspect an element of the game\n" );
+    ui_box_put( ui, HELP_BODY, " @{33}save@{0}, s      saves current game\n" );
+    ui_box_put( ui, HELP_BODY, " @{33}load@{0}, ld     loads a game from a given file\n" );
+    ui_box_put( ui, HELP_BODY, " @{33}exit@{0}, e      game exit\n" );
 
-    ui_box_put( ui, HELP_BODY, "\nTo see more information about " );
+    ui_box_put( ui, HELP_BODY, "\n To see more information about " );
     ui_box_put( ui, HELP_BODY, "a particular command use: " );
-    ui_box_put( ui, HELP_BODY, "@{1;frgb(255,172,0);%s}help@{0} <command>\n", HELP_BODY_BG );
+    ui_box_put( ui, HELP_BODY, "@{1;frgb(255,172,0);%s}help@{0} @{3}<command>@{0}\n", HELP_BODY_BG );
 
   }
 
-  ui_box_put( ui, HELP_BODY, "\nPress @{1;%d} ENTER @{0} key to exit help\n", BG_RED );
+  ui_box_put( ui, HELP_BODY, "\n Press @{!0;1;6;brgb(240, 65, 65)} ENTER @{0} key to exit help\n" );
 
   ui_dump_box( ui, HELP_TITLE );
   ui_dump_box( ui, HELP_BODY );
@@ -591,12 +602,19 @@ void parse_info( G_engine *ge, Game *game, int box ) {
       }
 
       ui_box_put( ui, GAME_INFO, "@{!0;%s;frgb(150,150,150)}Description@{0}: ", GAME_INFO_BG );
+
       if ( player_has_object( player, obj_get_id( book ) ) ) {
 
-        if ( obj_get_attr( obj, OBJ_IS_MOVED ) == OBJ_YES ) {
-          ui_box_put( ui, GAME_INFO, "%s", obj_get_ldescrp( obj ) );
+        if ( obj_get_attr( book,  OBJ_USED ) < obj_get_attr( book, OBJ_MAX_USES ) ) {
+
+          if ( obj_get_attr( obj, OBJ_IS_MOVED ) == OBJ_YES ) {
+            ui_box_put( ui, GAME_INFO, "%s", obj_get_ldescrp( obj ) );
+          } else {
+            ui_box_put( ui, GAME_INFO, "%s", obj_get_descrp( obj ) );
+          }
+
         } else {
-          ui_box_put( ui, GAME_INFO, "%s", obj_get_descrp( obj ) );
+          ui_box_put( ui, GAME_INFO, "you can't inspect objects anymore!" );
         }
 
       } else {

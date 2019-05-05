@@ -41,7 +41,7 @@
 	id: 1,
 	name: "Minguito",
 	location: 1,
-	bag: [ torch ]
+	bag: [ book ]
 }
 
 @o {
@@ -76,7 +76,7 @@
 
 @o {
 	id: 4,
-	descrp: "Unknown creatures can interrupt your 'adventure', this knife will defend you.",
+	descrp: "Unknown creatures can interrupt your 'adventure', this knife will defend you",
 	location: 5,
 	name: "knife",
 	movable: true,
@@ -266,23 +266,7 @@
 	max_uses: 15,
 	used: 0,
 	movable: true
-}#	@s {
-#		id: 1, # space id (required)
-#		name: "space name", # the name of the space (optional)
-#		links: [ 3, 2, 5, 1, 3, 5 ], # space links [ N, E, S, W, U, D ]
-#		light: true, # set the default light state of the space
-#		descrp: "short description", # short description of the space
-#		ldescrp: "long description", # long description of ths space
-#		picture: " /\_/\ \n( o.o )\n > ^ < " # space picture decoration
-#	}
-
-# @l {
-#		id: 1, # link id (required)
-#		name: "link name", # name of the link (optional)
-#		from: 5, # starting id (required)
-#		to: 6, # destination id, (required)
-#		state: closed # status of the link (required)
-#	}
+}
 
 @s {
 	id: 0,
@@ -290,15 +274,15 @@
 	links: [ -1, -1, -1, -1, -1, -1  ],
 	light: true,
 	descrp: "We're sorry, but you have been defeated.",
-	ldescrp: "Was it difficult? May you need to effort more to reach the end.",
-	picture: ""
+	ldescrp: "Was it difficult? May you need to effort more to reach the end",
+	picture: "|-------|\n|-------|"
 }
 
 @s {
 	id: 1,
 	name: "Spawn Point",
 	links: [ 1, -1, -1, -1, -1, -1 ],
-	light: true,
+	light: false,
 	descrp: "Welcome!",
 	ldescrp: "A new adventure has begun, manage yourself to escape from the island.",
 	picture: ""

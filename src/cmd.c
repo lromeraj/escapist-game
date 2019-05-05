@@ -65,7 +65,6 @@ void cmd_build( Cid id, const char* b_name, const char *s_name, cmd_fn fn ) {
   _cmd->errc = 0;
   _cmd->input[ 0 ] = 0;
   _cmd->answer[ 0 ] = 0;
-
   _cmd->fn = fn;
 
   for ( i=0; i < MAX_CMD_ARGC; i++ ) {
