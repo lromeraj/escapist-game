@@ -1,0 +1,6 @@
+<map id="_G_engine" name="_G_engine">
+<area shape="rect" id="node2" href="$struct__Ui.html" title="Main UI structure. " alt="" coords="99,184,141,211"/>
+<area shape="rect" id="node3" href="$struct__Ui__box.html" title="Main box structure. " alt="" coords="85,95,155,121"/>
+<area shape="rect" id="node4" href="$struct__Ui__pix.html" title="Basic pixel structure. " alt="" coords="5,5,72,32"/>
+<area shape="rect" id="node5" href="$struct__Ui__screen.html" title="Main UI screen structure. " alt="" coords="180,95,268,121"/>
+</map>

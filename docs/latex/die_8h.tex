@@ -1,0 +1,146 @@
+\hypertarget{die_8h}{}\section{inc/die.h File Reference}
+\label{die_8h}\index{inc/die.\+h@{inc/die.\+h}}
+
+
+Die\textquotesingle{}s module header.  
+
+
+{\ttfamily \#include \char`\"{}types.\+h\char`\"{}}\newline
+Include dependency graph for die.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=204pt]{die_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{die_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{die_8h_a892f0b0bf81d69a1f7a14ea238e36dd3}\label{die_8h_a892f0b0bf81d69a1f7a14ea238e36dd3}} 
+typedef struct \hyperlink{struct__Die}{\+\_\+\+Die} {\bfseries Die}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{struct__Die}{Die} $\ast$ \hyperlink{die_8h_a47b145c5793416cbb7adbe4e09cff3f7}{die\+\_\+init} (\hyperlink{types_8h_a845e604fb28f7e3d97549da3448149d3}{Id} id)
+\begin{DoxyCompactList}\small\item\em Initializates a die. \end{DoxyCompactList}\item 
+void \hyperlink{die_8h_a0155d7ec003966bace47f3e032a368e8}{die\+\_\+destroy} (\hyperlink{struct__Die}{Die} $\ast$die)
+\begin{DoxyCompactList}\small\item\em destroys a die \end{DoxyCompactList}\item 
+int \hyperlink{die_8h_a06289514edbedf660c4b043f78e859fc}{die\+\_\+roll} (\hyperlink{struct__Die}{Die} $\ast$die)
+\begin{DoxyCompactList}\small\item\em rolls a die getting a random number \end{DoxyCompactList}\item 
+const int \hyperlink{die_8h_a0ae47c02f343ffdbdf0750bb4864558b}{die\+\_\+get\+\_\+lastn} (\hyperlink{struct__Die}{Die} $\ast$die)
+\begin{DoxyCompactList}\small\item\em gets the last random number of the die \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Die\textquotesingle{}s module header. 
+
+\begin{DoxyVersion}{Version}
+0.\+0.\+3 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+10/03/2019 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Javier Romera 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+G\+NU Public License 
+\end{DoxyCopyright}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{die_8h_a47b145c5793416cbb7adbe4e09cff3f7}\label{die_8h_a47b145c5793416cbb7adbe4e09cff3f7}} 
+\index{die.\+h@{die.\+h}!die\+\_\+init@{die\+\_\+init}}
+\index{die\+\_\+init@{die\+\_\+init}!die.\+h@{die.\+h}}
+\subsubsection{\texorpdfstring{die\+\_\+init()}{die\_init()}}
+{\footnotesize\ttfamily \hyperlink{struct__Die}{Die}$\ast$ die\+\_\+init (\begin{DoxyParamCaption}\item[{\hyperlink{types_8h_a845e604fb28f7e3d97549da3448149d3}{Id}}]{id }\end{DoxyParamCaption})}
+
+
+
+Initializates a die. 
+
+\begin{DoxyAuthor}{Author}
+Javier Romera 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+Id\}} & id -\/ Die identification \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Returns} & a pointer towards die \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{die_8h_a0155d7ec003966bace47f3e032a368e8}\label{die_8h_a0155d7ec003966bace47f3e032a368e8}} 
+\index{die.\+h@{die.\+h}!die\+\_\+destroy@{die\+\_\+destroy}}
+\index{die\+\_\+destroy@{die\+\_\+destroy}!die.\+h@{die.\+h}}
+\subsubsection{\texorpdfstring{die\+\_\+destroy()}{die\_destroy()}}
+{\footnotesize\ttfamily void die\+\_\+destroy (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Die}{Die} $\ast$}]{die }\end{DoxyParamCaption})}
+
+
+
+destroys a die 
+
+\begin{DoxyAuthor}{Author}
+Javier Romera 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+Die$\ast$\}} & die -\/ Die pointer \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{die_8h_a06289514edbedf660c4b043f78e859fc}\label{die_8h_a06289514edbedf660c4b043f78e859fc}} 
+\index{die.\+h@{die.\+h}!die\+\_\+roll@{die\+\_\+roll}}
+\index{die\+\_\+roll@{die\+\_\+roll}!die.\+h@{die.\+h}}
+\subsubsection{\texorpdfstring{die\+\_\+roll()}{die\_roll()}}
+{\footnotesize\ttfamily int die\+\_\+roll (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Die}{Die} $\ast$}]{die }\end{DoxyParamCaption})}
+
+
+
+rolls a die getting a random number 
+
+\begin{DoxyAuthor}{Author}
+Javier Romera 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+Die$\ast$\}} & die -\/ Die pointer \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \{int\}} & -\/ Returns the random number; \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{die_8h_a0ae47c02f343ffdbdf0750bb4864558b}\label{die_8h_a0ae47c02f343ffdbdf0750bb4864558b}} 
+\index{die.\+h@{die.\+h}!die\+\_\+get\+\_\+lastn@{die\+\_\+get\+\_\+lastn}}
+\index{die\+\_\+get\+\_\+lastn@{die\+\_\+get\+\_\+lastn}!die.\+h@{die.\+h}}
+\subsubsection{\texorpdfstring{die\+\_\+get\+\_\+lastn()}{die\_get\_lastn()}}
+{\footnotesize\ttfamily const int die\+\_\+get\+\_\+lastn (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Die}{Die} $\ast$}]{die }\end{DoxyParamCaption})}
+
+
+
+gets the last random number of the die 
+
+\begin{DoxyAuthor}{Author}
+Javier Romera 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+Die$\ast$\}} & die -\/ Die pointer \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \{int\}} & -\/ Returns the last random number; \\
+\hline
+\end{DoxyRetVals}
