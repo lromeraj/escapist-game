@@ -74,14 +74,16 @@ $(function() {
 
 <p>Inventory manager.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="set_8h_source.html">set.h</a>&quot;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="types_8h_source.html">types.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for inventory.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="inventory_8h__incl.png" border="0" usemap="#inc_2inventory_8h" alt=""/></div>
 <map name="inc_2inventory_8h" id="inc_2inventory_8h">
-<area shape="rect" id="node3" href="types_8h.html" title="It defines types of data. " alt="" coords="91,80,157,107"/>
+<area shape="rect" id="node2" href="set_8h.html" title="It defines the set interface. " alt="" coords="55,80,105,107"/>
+<area shape="rect" id="node4" href="types_8h.html" title="It defines types of data. " alt="" coords="101,155,166,181"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -101,7 +103,7 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:a44ebc1f23fbda13f8df116041c33c5f0"><td class="memItemLeft" align="right" valign="top"><a id="a44ebc1f23fbda13f8df116041c33c5f0"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="inventory_8h.html#a44ebc1f23fbda13f8df116041c33c5f0">MAX_INVENTORY</a>&#160;&#160;&#160;2</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="inventory_8h.html#a44ebc1f23fbda13f8df116041c33c5f0">MAX_INVENTORY</a>&#160;&#160;&#160;5</td></tr>
 <tr class="memdesc:a44ebc1f23fbda13f8df116041c33c5f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum capacity of inventory. <br /></td></tr>
 <tr class="separator:a44ebc1f23fbda13f8df116041c33c5f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -135,6 +137,9 @@ Functions</h2></td></tr>
 <tr class="memitem:aa1391bde411c1726b2d8fc23de1d18b9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="inventory_8h.html#aa1391bde411c1726b2d8fc23de1d18b9">inventory_get_total</a> (<a class="el" href="inventory_8h.html#a2253bf64ac4ce6a9c1d6f39c0b0d32a3">Inventory</a> *inv)</td></tr>
 <tr class="memdesc:aa1391bde411c1726b2d8fc23de1d18b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tells the number of id's in an inventory.  <a href="#aa1391bde411c1726b2d8fc23de1d18b9">More...</a><br /></td></tr>
 <tr class="separator:aa1391bde411c1726b2d8fc23de1d18b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae690e6a4a93283f7fcf8646ba836a542"><td class="memItemLeft" align="right" valign="top"><a class="el" href="set_8h.html#a6d3b7f7c92cbb4577ef3ef7ddbf93161">Set</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="inventory_8h.html#ae690e6a4a93283f7fcf8646ba836a542">inventory_get_bag</a> (<a class="el" href="inventory_8h.html#a2253bf64ac4ce6a9c1d6f39c0b0d32a3">Inventory</a> *inv)</td></tr>
+<tr class="memdesc:ae690e6a4a93283f7fcf8646ba836a542"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the bag of the player.  <a href="#ae690e6a4a93283f7fcf8646ba836a542">More...</a><br /></td></tr>
+<tr class="separator:ae690e6a4a93283f7fcf8646ba836a542"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a913ebf717a79dced571ff9aad64352b5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="inventory_8h.html#a913ebf717a79dced571ff9aad64352b5">inventory_is_full</a> (<a class="el" href="inventory_8h.html#a2253bf64ac4ce6a9c1d6f39c0b0d32a3">Inventory</a> *inv)</td></tr>
 <tr class="memdesc:a913ebf717a79dced571ff9aad64352b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tells if an inventory is full or not.  <a href="#a913ebf717a79dced571ff9aad64352b5">More...</a><br /></td></tr>
 <tr class="separator:a913ebf717a79dced571ff9aad64352b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -392,6 +397,39 @@ Functions</h2></td></tr>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
     <tr><td class="paramname">{int}</td><td>- Returns an integer </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae690e6a4a93283f7fcf8646ba836a542"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae690e6a4a93283f7fcf8646ba836a542">&#9670;&nbsp;</a></span>inventory_get_bag()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="set_8h.html#a6d3b7f7c92cbb4577ef3ef7ddbf93161">Set</a>* inventory_get_bag </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="inventory_8h.html#a2253bf64ac4ce6a9c1d6f39c0b0d32a3">Inventory</a> *&#160;</td>
+          <td class="paramname"><em>inv</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the bag of the player. </p>
+<dl class="section author"><dt>Author</dt><dd>Javier Romera </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">{Inventory*}</td><td>- inventory pointer </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">{Set*}</td><td>- returns player's bag as a set of ids </td></tr>
   </table>
   </dd>
 </dl>

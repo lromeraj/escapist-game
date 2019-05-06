@@ -90,13 +90,14 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="space_8h__dep__incl.png" border="0" usemap="#inc_2space_8hdep" alt=""/></div>
 <map name="inc_2space_8hdep" id="inc_2space_8hdep">
-<area shape="rect" id="node2" href="reader_8c.html" title="Main game reader. " alt="" coords="5,229,96,256"/>
-<area shape="rect" id="node3" href="space_8c.html" title="src/space.c" alt="" coords="37,80,128,107"/>
-<area shape="rect" id="node4" href="game_8h.html" title="It defines the game interface. " alt="" coords="153,80,239,107"/>
-<area shape="rect" id="node5" href="g__engine_8c.html" title="Graphic engine source code. " alt="" coords="163,229,269,256"/>
-<area shape="rect" id="node6" href="g__engine_8h.html" title="Main graphic engine. " alt="" coords="253,155,360,181"/>
-<area shape="rect" id="node8" href="reader_8h.html" title="Defines a game reader. " alt="" coords="88,155,179,181"/>
-<area shape="rect" id="node7" href="game__loop_8c.html" title="Main game loop. " alt="" coords="294,229,413,256"/>
+<area shape="rect" id="node2" href="space_8c.html" title="src/space.c" alt="" coords="60,80,151,107"/>
+<area shape="rect" id="node3" href="game_8h.html" title="It defines the game interface. " alt="" coords="175,80,262,107"/>
+<area shape="rect" id="node4" href="g__engine_8c.html" title="Graphic engine source code. " alt="" coords="5,229,112,256"/>
+<area shape="rect" id="node5" href="g__engine_8h.html" title="Main graphic engine. " alt="" coords="96,155,203,181"/>
+<area shape="rect" id="node7" href="game__rules_8h_source.html" title="inc/game_rules.h" alt="" coords="227,155,349,181"/>
+<area shape="rect" id="node8" href="manager_8h.html" title="Defines a game reader. " alt="" coords="373,155,477,181"/>
+<area shape="rect" id="node6" href="game__loop_8c.html" title="Main game loop. " alt="" coords="137,229,255,256"/>
+<area shape="rect" id="node9" href="manager_8c.html" title="Main game reader. " alt="" coords="373,229,478,256"/>
 </map>
 </div>
 </div>
@@ -109,7 +110,7 @@ Macros</h2></td></tr>
 <tr class="memdesc:a95d9e86d5e1a02663f74b6896e5975c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum length of the space name. <br /></td></tr>
 <tr class="separator:a95d9e86d5e1a02663f74b6896e5975c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aed836b26b3a8e93a4d652bbe81bf66d5"><td class="memItemLeft" align="right" valign="top"><a id="aed836b26b3a8e93a4d652bbe81bf66d5"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="space_8h.html#aed836b26b3a8e93a4d652bbe81bf66d5">MAX_SPACE_DESCRP</a>&#160;&#160;&#160;100</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="space_8h.html#aed836b26b3a8e93a4d652bbe81bf66d5">MAX_SPACE_DESCRP</a>&#160;&#160;&#160;150</td></tr>
 <tr class="memdesc:aed836b26b3a8e93a4d652bbe81bf66d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum number of characters that can have a name of an space. <br /></td></tr>
 <tr class="separator:aed836b26b3a8e93a4d652bbe81bf66d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5f54fd55f983a2e33ce076cd9f587e82"><td class="memItemLeft" align="right" valign="top"><a id="a5f54fd55f983a2e33ce076cd9f587e82"></a>
@@ -117,7 +118,7 @@ Macros</h2></td></tr>
 <tr class="memdesc:a5f54fd55f983a2e33ce076cd9f587e82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum number of spaces. <br /></td></tr>
 <tr class="separator:a5f54fd55f983a2e33ce076cd9f587e82"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a81ff4df6e3833e5b8f8bd6255f4e3df6"><td class="memItemLeft" align="right" valign="top"><a id="a81ff4df6e3833e5b8f8bd6255f4e3df6"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="space_8h.html#a81ff4df6e3833e5b8f8bd6255f4e3df6">MAX_SPACE_PICTURE</a>&#160;&#160;&#160;100</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="space_8h.html#a81ff4df6e3833e5b8f8bd6255f4e3df6">MAX_SPACE_PICTURE</a>&#160;&#160;&#160;200</td></tr>
 <tr class="memdesc:a81ff4df6e3833e5b8f8bd6255f4e3df6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum lenght of the space's picture. <br /></td></tr>
 <tr class="separator:a81ff4df6e3833e5b8f8bd6255f4e3df6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -145,9 +146,18 @@ Functions</h2></td></tr>
 <tr class="memitem:a7f830fbc083a277fbe916db402b5bddb"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="space_8h.html#a7f830fbc083a277fbe916db402b5bddb">space_get_descrp</a> (<a class="el" href="space_8h.html#a67533ffc2b70463baecc38fb0629bbfc">Space</a> *space)</td></tr>
 <tr class="memdesc:a7f830fbc083a277fbe916db402b5bddb"><td class="mdescLeft">&#160;</td><td class="mdescRight">This fuction gets the description of an space.  <a href="#a7f830fbc083a277fbe916db402b5bddb">More...</a><br /></td></tr>
 <tr class="separator:a7f830fbc083a277fbe916db402b5bddb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aece4b55189d09d85795c112284cd3f91"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="space_8h.html#aece4b55189d09d85795c112284cd3f91">space_get_ldescrp</a> (<a class="el" href="space_8h.html#a67533ffc2b70463baecc38fb0629bbfc">Space</a> *space)</td></tr>
+<tr class="memdesc:aece4b55189d09d85795c112284cd3f91"><td class="mdescLeft">&#160;</td><td class="mdescRight">This fuction gets the long description of an space.  <a href="#aece4b55189d09d85795c112284cd3f91">More...</a><br /></td></tr>
+<tr class="separator:aece4b55189d09d85795c112284cd3f91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc0e3f36d3bdf0105c5d25c256c9cfbd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="set_8h.html#a6d3b7f7c92cbb4577ef3ef7ddbf93161">Set</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="space_8h.html#afc0e3f36d3bdf0105c5d25c256c9cfbd">space_get_objects</a> (<a class="el" href="space_8h.html#a67533ffc2b70463baecc38fb0629bbfc">Space</a> *space)</td></tr>
+<tr class="memdesc:afc0e3f36d3bdf0105c5d25c256c9cfbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">This fuction returns the set of objects of the space.  <a href="#afc0e3f36d3bdf0105c5d25c256c9cfbd">More...</a><br /></td></tr>
+<tr class="separator:afc0e3f36d3bdf0105c5d25c256c9cfbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a95f0e95de76db8fa07e8d582c70e1205"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a32c27cc471df37f4fc818d65de0a56c4">STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="space_8h.html#a95f0e95de76db8fa07e8d582c70e1205">space_set_descrp</a> (<a class="el" href="space_8h.html#a67533ffc2b70463baecc38fb0629bbfc">Space</a> *space, const char *descrp)</td></tr>
 <tr class="memdesc:a95f0e95de76db8fa07e8d582c70e1205"><td class="mdescLeft">&#160;</td><td class="mdescRight">This fuction sets the description of an space.  <a href="#a95f0e95de76db8fa07e8d582c70e1205">More...</a><br /></td></tr>
 <tr class="separator:a95f0e95de76db8fa07e8d582c70e1205"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af49cfd384978a9918b6ae852caf06cf2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a32c27cc471df37f4fc818d65de0a56c4">STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="space_8h.html#af49cfd384978a9918b6ae852caf06cf2">space_set_ldescrp</a> (<a class="el" href="space_8h.html#a67533ffc2b70463baecc38fb0629bbfc">Space</a> *space, const char *ldescrp)</td></tr>
+<tr class="memdesc:af49cfd384978a9918b6ae852caf06cf2"><td class="mdescLeft">&#160;</td><td class="mdescRight">This fuction sets the long description of an space.  <a href="#af49cfd384978a9918b6ae852caf06cf2">More...</a><br /></td></tr>
+<tr class="separator:af49cfd384978a9918b6ae852caf06cf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a310c540cd6e11073f7328add1f927001"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="space_8h.html#a310c540cd6e11073f7328add1f927001">space_get_name</a> (<a class="el" href="space_8h.html#a67533ffc2b70463baecc38fb0629bbfc">Space</a> *space)</td></tr>
 <tr class="memdesc:a310c540cd6e11073f7328add1f927001"><td class="mdescLeft">&#160;</td><td class="mdescRight">takes the name of a space  <a href="#a310c540cd6e11073f7328add1f927001">More...</a><br /></td></tr>
 <tr class="separator:a310c540cd6e11073f7328add1f927001"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -166,9 +176,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ab7442e9184cd345333916b04165ab843"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a845e604fb28f7e3d97549da3448149d3">Id</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="space_8h.html#ab7442e9184cd345333916b04165ab843">space_get_object</a> (<a class="el" href="space_8h.html#a67533ffc2b70463baecc38fb0629bbfc">Space</a> *space, <a class="el" href="types_8h.html#a845e604fb28f7e3d97549da3448149d3">Id</a> id)</td></tr>
 <tr class="memdesc:ab7442e9184cd345333916b04165ab843"><td class="mdescLeft">&#160;</td><td class="mdescRight">gets a pointer towads an object  <a href="#ab7442e9184cd345333916b04165ab843">More...</a><br /></td></tr>
 <tr class="separator:ab7442e9184cd345333916b04165ab843"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a18eca058da6cdf20ae5eda9d122d992e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a32c27cc471df37f4fc818d65de0a56c4">STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="space_8h.html#a18eca058da6cdf20ae5eda9d122d992e">space_print</a> (<a class="el" href="space_8h.html#a67533ffc2b70463baecc38fb0629bbfc">Space</a> *space)</td></tr>
-<tr class="memdesc:a18eca058da6cdf20ae5eda9d122d992e"><td class="mdescLeft">&#160;</td><td class="mdescRight">prints a space  <a href="#a18eca058da6cdf20ae5eda9d122d992e">More...</a><br /></td></tr>
-<tr class="separator:a18eca058da6cdf20ae5eda9d122d992e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a845ef83c595c94bd1224f6563efebf34"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="space_8h.html#a845ef83c595c94bd1224f6563efebf34">space_print</a> (<a class="el" href="space_8h.html#a67533ffc2b70463baecc38fb0629bbfc">Space</a> *space)</td></tr>
+<tr class="memdesc:a845ef83c595c94bd1224f6563efebf34"><td class="mdescLeft">&#160;</td><td class="mdescRight">prints a space  <a href="#a845ef83c595c94bd1224f6563efebf34">More...</a><br /></td></tr>
+<tr class="separator:a845ef83c595c94bd1224f6563efebf34"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3d17d1e189651d3d997891d4649e96c1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="space_8h.html#a3d17d1e189651d3d997891d4649e96c1">space_has_object</a> (<a class="el" href="space_8h.html#a67533ffc2b70463baecc38fb0629bbfc">Space</a> *space, <a class="el" href="types_8h.html#a845e604fb28f7e3d97549da3448149d3">Id</a> id)</td></tr>
 <tr class="memdesc:a3d17d1e189651d3d997891d4649e96c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">checks if the space has an object with the specified id  <a href="#a3d17d1e189651d3d997891d4649e96c1">More...</a><br /></td></tr>
 <tr class="separator:a3d17d1e189651d3d997891d4649e96c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -178,6 +188,15 @@ Functions</h2></td></tr>
 <tr class="memitem:ae1afecfe9f7bb189edfc2f5bbd39b47f"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="space_8h.html#ae1afecfe9f7bb189edfc2f5bbd39b47f">space_get_picture</a> (<a class="el" href="space_8h.html#a67533ffc2b70463baecc38fb0629bbfc">Space</a> *space)</td></tr>
 <tr class="memdesc:ae1afecfe9f7bb189edfc2f5bbd39b47f"><td class="mdescLeft">&#160;</td><td class="mdescRight">it gets the figure associated to the specified space  <a href="#ae1afecfe9f7bb189edfc2f5bbd39b47f">More...</a><br /></td></tr>
 <tr class="separator:ae1afecfe9f7bb189edfc2f5bbd39b47f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a592c8caf308e1dd0940bda10e96d7307"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a32c27cc471df37f4fc818d65de0a56c4">STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="space_8h.html#a592c8caf308e1dd0940bda10e96d7307">space_set_light</a> (<a class="el" href="space_8h.html#a67533ffc2b70463baecc38fb0629bbfc">Space</a> *space, bool l)</td></tr>
+<tr class="memdesc:a592c8caf308e1dd0940bda10e96d7307"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a light in a given space.  <a href="#a592c8caf308e1dd0940bda10e96d7307">More...</a><br /></td></tr>
+<tr class="separator:a592c8caf308e1dd0940bda10e96d7307"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a354a9e08bd0097e2c027a2d44bb4bdf4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a32c27cc471df37f4fc818d65de0a56c4">STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="space_8h.html#a354a9e08bd0097e2c027a2d44bb4bdf4">space_toggle_light</a> (<a class="el" href="space_8h.html#a67533ffc2b70463baecc38fb0629bbfc">Space</a> *space)</td></tr>
+<tr class="memdesc:a354a9e08bd0097e2c027a2d44bb4bdf4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Toggles the light of a given space.  <a href="#a354a9e08bd0097e2c027a2d44bb4bdf4">More...</a><br /></td></tr>
+<tr class="separator:a354a9e08bd0097e2c027a2d44bb4bdf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4000018f7cb697532dd7cffc2c36f72f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="space_8h.html#a4000018f7cb697532dd7cffc2c36f72f">space_get_light</a> (<a class="el" href="space_8h.html#a67533ffc2b70463baecc38fb0629bbfc">Space</a> *space)</td></tr>
+<tr class="memdesc:a4000018f7cb697532dd7cffc2c36f72f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the light status of a given space.  <a href="#a4000018f7cb697532dd7cffc2c36f72f">More...</a><br /></td></tr>
+<tr class="separator:a4000018f7cb697532dd7cffc2c36f72f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Space module. </p>
@@ -351,13 +370,79 @@ Functions</h2></td></tr>
 <dl class="section author"><dt>Author</dt><dd>Javier Romera </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">{Object*}</td><td>obj - space's pointer </td></tr>
+    <tr><td class="paramname">{Space*}</td><td>obj - space's pointer </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
     <tr><td class="paramname">{char*}</td><td>- Returns the space name </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aece4b55189d09d85795c112284cd3f91"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aece4b55189d09d85795c112284cd3f91">&#9670;&nbsp;</a></span>space_get_ldescrp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* space_get_ldescrp </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="space_8h.html#a67533ffc2b70463baecc38fb0629bbfc">Space</a> *&#160;</td>
+          <td class="paramname"><em>space</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This fuction gets the long description of an space. </p>
+<dl class="section author"><dt>Author</dt><dd>Javier Romera </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">{Space*}</td><td>obj - space's pointer </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">{char*}</td><td>- Returns a long description of the space </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="afc0e3f36d3bdf0105c5d25c256c9cfbd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc0e3f36d3bdf0105c5d25c256c9cfbd">&#9670;&nbsp;</a></span>space_get_objects()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="set_8h.html#a6d3b7f7c92cbb4577ef3ef7ddbf93161">Set</a>* space_get_objects </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="space_8h.html#a67533ffc2b70463baecc38fb0629bbfc">Space</a> *&#160;</td>
+          <td class="paramname"><em>space</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This fuction returns the set of objects of the space. </p>
+<dl class="section author"><dt>Author</dt><dd>Javier Romera </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">{Space*}</td><td>obj - space's pointer </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">{Space*}</td><td>- Set of objects </td></tr>
   </table>
   </dd>
 </dl>
@@ -394,8 +479,52 @@ Functions</h2></td></tr>
 <dl class="section author"><dt>Author</dt><dd>Javier Romera </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">{Object*}</td><td>obj - space's pointer </td></tr>
-    <tr><td class="paramname">{char*}</td><td>name - space's description </td></tr>
+    <tr><td class="paramname">{Space*}</td><td>obj - space's pointer </td></tr>
+    <tr><td class="paramname">{char*}</td><td>descrp - short description of the space </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">{STATUS}</td><td>- Returns status code </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af49cfd384978a9918b6ae852caf06cf2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af49cfd384978a9918b6ae852caf06cf2">&#9670;&nbsp;</a></span>space_set_ldescrp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="types_8h.html#a32c27cc471df37f4fc818d65de0a56c4">STATUS</a> space_set_ldescrp </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="space_8h.html#a67533ffc2b70463baecc38fb0629bbfc">Space</a> *&#160;</td>
+          <td class="paramname"><em>space</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>ldescrp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This fuction sets the long description of an space. </p>
+<dl class="section author"><dt>Author</dt><dd>Javier Romera </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">{Space*}</td><td>obj - space's pointer </td></tr>
+    <tr><td class="paramname">{char*}</td><td>ldescrp - long description of the space </td></tr>
   </table>
   </dd>
 </dl>
@@ -655,14 +784,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a18eca058da6cdf20ae5eda9d122d992e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a18eca058da6cdf20ae5eda9d122d992e">&#9670;&nbsp;</a></span>space_print()</h2>
+<a id="a845ef83c595c94bd1224f6563efebf34"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a845ef83c595c94bd1224f6563efebf34">&#9670;&nbsp;</a></span>space_print()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="types_8h.html#a32c27cc471df37f4fc818d65de0a56c4">STATUS</a> space_print </td>
+          <td class="memname">int space_print </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="space_8h.html#a67533ffc2b70463baecc38fb0629bbfc">Space</a> *&#160;</td>
           <td class="paramname"><em>space</em></td><td>)</td>
@@ -797,6 +926,113 @@ Functions</h2></td></tr>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
     <tr><td class="paramname">{char*}</td><td>- Returns a pointer to char </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a592c8caf308e1dd0940bda10e96d7307"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a592c8caf308e1dd0940bda10e96d7307">&#9670;&nbsp;</a></span>space_set_light()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="types_8h.html#a32c27cc471df37f4fc818d65de0a56c4">STATUS</a> space_set_light </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="space_8h.html#a67533ffc2b70463baecc38fb0629bbfc">Space</a> *&#160;</td>
+          <td class="paramname"><em>space</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>l</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets a light in a given space. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">{Sapce*}</td><td>space - Space pointer </td></tr>
+    <tr><td class="paramname">{bool}</td><td>l - light of the space </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">{STATUS}</td><td>- Returns an status </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a354a9e08bd0097e2c027a2d44bb4bdf4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a354a9e08bd0097e2c027a2d44bb4bdf4">&#9670;&nbsp;</a></span>space_toggle_light()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="types_8h.html#a32c27cc471df37f4fc818d65de0a56c4">STATUS</a> space_toggle_light </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="space_8h.html#a67533ffc2b70463baecc38fb0629bbfc">Space</a> *&#160;</td>
+          <td class="paramname"><em>space</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Toggles the light of a given space. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">{Sapce*}</td><td>space - Space pointer </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">{STATUS}</td><td>- Returns a status code </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a4000018f7cb697532dd7cffc2c36f72f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4000018f7cb697532dd7cffc2c36f72f">&#9670;&nbsp;</a></span>space_get_light()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool space_get_light </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="space_8h.html#a67533ffc2b70463baecc38fb0629bbfc">Space</a> *&#160;</td>
+          <td class="paramname"><em>space</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the light status of a given space. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">{Sapce*}</td><td>space - Space pointer </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">{STATUS}</td><td>- Returns a boolean value </td></tr>
   </table>
   </dd>
 </dl>

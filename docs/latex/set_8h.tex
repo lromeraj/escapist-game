@@ -25,7 +25,7 @@ This graph shows which files directly or indirectly include this file\+:\nopageb
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{set_8h_abc21882f4958e6b56aaf2f3c18f80d43}\label{set_8h_abc21882f4958e6b56aaf2f3c18f80d43}} 
-\#define \hyperlink{set_8h_abc21882f4958e6b56aaf2f3c18f80d43}{M\+A\+X\+\_\+\+S\+ET}~5
+\#define \hyperlink{set_8h_abc21882f4958e6b56aaf2f3c18f80d43}{M\+A\+X\+\_\+\+S\+ET}~100
 \begin{DoxyCompactList}\small\item\em Maximum number of sets. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Typedefs}
 \begin{DoxyCompactItemize}
@@ -44,6 +44,8 @@ void \hyperlink{set_8h_a9d762a027f1c3bcdd22f70ee9093a7dd}{set\+\_\+destroy} (\hy
 \begin{DoxyCompactList}\small\item\em Adds a new id to a set. \end{DoxyCompactList}\item 
 \hyperlink{types_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+US} \hyperlink{set_8h_abcd3b47d23dc810bdf9c95cee08657f8}{set\+\_\+del\+\_\+id} (\hyperlink{set_8h_a6d3b7f7c92cbb4577ef3ef7ddbf93161}{Set} $\ast$set, \hyperlink{types_8h_a845e604fb28f7e3d97549da3448149d3}{Id} id)
 \begin{DoxyCompactList}\small\item\em Deletes an id from a set. \end{DoxyCompactList}\item 
+void \hyperlink{set_8h_abaa2dba818db7fc0c8f93f7e754ec69b}{set\+\_\+get\+\_\+ids} (\hyperlink{set_8h_a6d3b7f7c92cbb4577ef3ef7ddbf93161}{Set} $\ast$set, int max, \hyperlink{types_8h_a845e604fb28f7e3d97549da3448149d3}{Id} $\ast$dest, int $\ast$total)
+\begin{DoxyCompactList}\small\item\em Returns the ids of the set. \end{DoxyCompactList}\item 
 bool \hyperlink{set_8h_a6f711461ca39891dd255f69fda0dac63}{set\+\_\+has\+\_\+id} (\hyperlink{set_8h_a6d3b7f7c92cbb4577ef3ef7ddbf93161}{Set} $\ast$set, \hyperlink{types_8h_a845e604fb28f7e3d97549da3448149d3}{Id} id)
 \begin{DoxyCompactList}\small\item\em Tells if an id is in a set or not. \end{DoxyCompactList}\item 
 int \hyperlink{set_8h_af7ef2f473f47ce1ea8cfc2c3d38f06ef}{set\+\_\+get\+\_\+total} (\hyperlink{set_8h_a6d3b7f7c92cbb4577ef3ef7ddbf93161}{Set} $\ast$set)
@@ -153,6 +155,29 @@ Deletes an id from a set.
 
 \begin{DoxyRetVals}{Return values}
 {\em \{\+S\+T\+A\+T\+U\+S\}} & -\/ Returns ok or error \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{set_8h_abaa2dba818db7fc0c8f93f7e754ec69b}\label{set_8h_abaa2dba818db7fc0c8f93f7e754ec69b}} 
+\index{set.\+h@{set.\+h}!set\+\_\+get\+\_\+ids@{set\+\_\+get\+\_\+ids}}
+\index{set\+\_\+get\+\_\+ids@{set\+\_\+get\+\_\+ids}!set.\+h@{set.\+h}}
+\subsubsection{\texorpdfstring{set\+\_\+get\+\_\+ids()}{set\_get\_ids()}}
+{\footnotesize\ttfamily void set\+\_\+get\+\_\+ids (\begin{DoxyParamCaption}\item[{\hyperlink{set_8h_a6d3b7f7c92cbb4577ef3ef7ddbf93161}{Set} $\ast$}]{set,  }\item[{int}]{max,  }\item[{\hyperlink{types_8h_a845e604fb28f7e3d97549da3448149d3}{Id} $\ast$}]{dest,  }\item[{int $\ast$}]{total }\end{DoxyParamCaption})}
+
+
+
+Returns the ids of the set. 
+
+\begin{DoxyAuthor}{Author}
+Javier Romera 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+Set$\ast$\}} & -\/ Receives a set which is going to be freed \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \{\+Id$\ast$\}} & -\/ Memory address of the first id \\
 \hline
 \end{DoxyRetVals}
 \mbox{\Hypertarget{set_8h_a6f711461ca39891dd255f69fda0dac63}\label{set_8h_a6f711461ca39891dd255f69fda0dac63}} 

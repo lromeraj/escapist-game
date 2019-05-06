@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['parse_5fspace',['parse_space',['../g__engine_8c.html#a947f9e2e4c31ea006fd0c69072c9abf3',1,'g_engine.c']]],
+  ['parse_5fmap',['parse_map',['../g__engine_8c.html#ae501656eaf5823394771a1a4792f0baf',1,'g_engine.c']]],
   ['player_5fadd_5fobject',['player_add_object',['../player_8c.html#a2fc269feb0641f59daab5e6b77cb1a75',1,'player_add_object(Player *player, Id id):&#160;player.c'],['../player_8h.html#a2fc269feb0641f59daab5e6b77cb1a75',1,'player_add_object(Player *player, Id id):&#160;player.c']]],
   ['player_5fcreate',['player_create',['../player_8c.html#a97ea1d0deda3c51ef6ce63a13dab7a38',1,'player_create(Id id):&#160;player.c'],['../player_8h.html#a97ea1d0deda3c51ef6ce63a13dab7a38',1,'player_create(Id id):&#160;player.c']]],
   ['player_5fdel_5fobject',['player_del_object',['../player_8c.html#a68871bc282449eb64b977acbdbd7565a',1,'player_del_object(Player *player, Id id):&#160;player.c'],['../player_8h.html#a68871bc282449eb64b977acbdbd7565a',1,'player_del_object(Player *player, Id id):&#160;player.c']]],

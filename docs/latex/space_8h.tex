@@ -28,13 +28,13 @@ This graph shows which files directly or indirectly include this file\+:\nopageb
 \#define \hyperlink{space_8h_a95d9e86d5e1a02663f74b6896e5975c6}{M\+A\+X\+\_\+\+S\+P\+A\+C\+E\+\_\+\+N\+A\+ME}~50
 \begin{DoxyCompactList}\small\item\em Maximum length of the space name. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{space_8h_aed836b26b3a8e93a4d652bbe81bf66d5}\label{space_8h_aed836b26b3a8e93a4d652bbe81bf66d5}} 
-\#define \hyperlink{space_8h_aed836b26b3a8e93a4d652bbe81bf66d5}{M\+A\+X\+\_\+\+S\+P\+A\+C\+E\+\_\+\+D\+E\+S\+C\+RP}~100
+\#define \hyperlink{space_8h_aed836b26b3a8e93a4d652bbe81bf66d5}{M\+A\+X\+\_\+\+S\+P\+A\+C\+E\+\_\+\+D\+E\+S\+C\+RP}~150
 \begin{DoxyCompactList}\small\item\em Maximum number of characters that can have a name of an space. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{space_8h_a5f54fd55f983a2e33ce076cd9f587e82}\label{space_8h_a5f54fd55f983a2e33ce076cd9f587e82}} 
 \#define \hyperlink{space_8h_a5f54fd55f983a2e33ce076cd9f587e82}{M\+A\+X\+\_\+\+S\+P\+A\+C\+ES}~200
 \begin{DoxyCompactList}\small\item\em Maximum number of spaces. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{space_8h_a81ff4df6e3833e5b8f8bd6255f4e3df6}\label{space_8h_a81ff4df6e3833e5b8f8bd6255f4e3df6}} 
-\#define \hyperlink{space_8h_a81ff4df6e3833e5b8f8bd6255f4e3df6}{M\+A\+X\+\_\+\+S\+P\+A\+C\+E\+\_\+\+P\+I\+C\+T\+U\+RE}~100
+\#define \hyperlink{space_8h_a81ff4df6e3833e5b8f8bd6255f4e3df6}{M\+A\+X\+\_\+\+S\+P\+A\+C\+E\+\_\+\+P\+I\+C\+T\+U\+RE}~200
 \begin{DoxyCompactList}\small\item\em Maximum lenght of the space\textquotesingle{}s picture. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Typedefs}
 \begin{DoxyCompactItemize}
@@ -55,8 +55,14 @@ typedef struct \hyperlink{struct__Space}{\+\_\+\+Space} \hyperlink{space_8h_a675
 \begin{DoxyCompactList}\small\item\em defines the name of a space \end{DoxyCompactList}\item 
 const char $\ast$ \hyperlink{space_8h_a7f830fbc083a277fbe916db402b5bddb}{space\+\_\+get\+\_\+descrp} (\hyperlink{space_8h_a67533ffc2b70463baecc38fb0629bbfc}{Space} $\ast$space)
 \begin{DoxyCompactList}\small\item\em This fuction gets the description of an space. \end{DoxyCompactList}\item 
+const char $\ast$ \hyperlink{space_8h_aece4b55189d09d85795c112284cd3f91}{space\+\_\+get\+\_\+ldescrp} (\hyperlink{space_8h_a67533ffc2b70463baecc38fb0629bbfc}{Space} $\ast$space)
+\begin{DoxyCompactList}\small\item\em This fuction gets the long description of an space. \end{DoxyCompactList}\item 
+\hyperlink{set_8h_a6d3b7f7c92cbb4577ef3ef7ddbf93161}{Set} $\ast$ \hyperlink{space_8h_afc0e3f36d3bdf0105c5d25c256c9cfbd}{space\+\_\+get\+\_\+objects} (\hyperlink{space_8h_a67533ffc2b70463baecc38fb0629bbfc}{Space} $\ast$space)
+\begin{DoxyCompactList}\small\item\em This fuction returns the set of objects of the space. \end{DoxyCompactList}\item 
 \hyperlink{types_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+US} \hyperlink{space_8h_a95f0e95de76db8fa07e8d582c70e1205}{space\+\_\+set\+\_\+descrp} (\hyperlink{space_8h_a67533ffc2b70463baecc38fb0629bbfc}{Space} $\ast$space, const char $\ast$descrp)
 \begin{DoxyCompactList}\small\item\em This fuction sets the description of an space. \end{DoxyCompactList}\item 
+\hyperlink{types_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+US} \hyperlink{space_8h_af49cfd384978a9918b6ae852caf06cf2}{space\+\_\+set\+\_\+ldescrp} (\hyperlink{space_8h_a67533ffc2b70463baecc38fb0629bbfc}{Space} $\ast$space, const char $\ast$ldescrp)
+\begin{DoxyCompactList}\small\item\em This fuction sets the long description of an space. \end{DoxyCompactList}\item 
 const char $\ast$ \hyperlink{space_8h_a310c540cd6e11073f7328add1f927001}{space\+\_\+get\+\_\+name} (\hyperlink{space_8h_a67533ffc2b70463baecc38fb0629bbfc}{Space} $\ast$space)
 \begin{DoxyCompactList}\small\item\em takes the name of a space \end{DoxyCompactList}\item 
 \hyperlink{types_8h_a845e604fb28f7e3d97549da3448149d3}{Id} \hyperlink{space_8h_a753b848210f2098c6328006ae5d90fea}{space\+\_\+get\+\_\+link} (\hyperlink{space_8h_a67533ffc2b70463baecc38fb0629bbfc}{Space} $\ast$sp, \hyperlink{types_8h_a7a09f2d4d51c4b4ba7957bbe676a3855}{Cardinal\+Point} cp)
@@ -69,14 +75,20 @@ const char $\ast$ \hyperlink{space_8h_a310c540cd6e11073f7328add1f927001}{space\+
 \begin{DoxyCompactList}\small\item\em it adds the object with the specified id to the space \end{DoxyCompactList}\item 
 \hyperlink{types_8h_a845e604fb28f7e3d97549da3448149d3}{Id} \hyperlink{space_8h_ab7442e9184cd345333916b04165ab843}{space\+\_\+get\+\_\+object} (\hyperlink{space_8h_a67533ffc2b70463baecc38fb0629bbfc}{Space} $\ast$space, \hyperlink{types_8h_a845e604fb28f7e3d97549da3448149d3}{Id} id)
 \begin{DoxyCompactList}\small\item\em gets a pointer towads an object \end{DoxyCompactList}\item 
-\hyperlink{types_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+US} \hyperlink{space_8h_a18eca058da6cdf20ae5eda9d122d992e}{space\+\_\+print} (\hyperlink{space_8h_a67533ffc2b70463baecc38fb0629bbfc}{Space} $\ast$space)
+int \hyperlink{space_8h_a845ef83c595c94bd1224f6563efebf34}{space\+\_\+print} (\hyperlink{space_8h_a67533ffc2b70463baecc38fb0629bbfc}{Space} $\ast$space)
 \begin{DoxyCompactList}\small\item\em prints a space \end{DoxyCompactList}\item 
 bool \hyperlink{space_8h_a3d17d1e189651d3d997891d4649e96c1}{space\+\_\+has\+\_\+object} (\hyperlink{space_8h_a67533ffc2b70463baecc38fb0629bbfc}{Space} $\ast$space, \hyperlink{types_8h_a845e604fb28f7e3d97549da3448149d3}{Id} id)
 \begin{DoxyCompactList}\small\item\em checks if the space has an object with the specified id \end{DoxyCompactList}\item 
 \hyperlink{types_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+US} \hyperlink{space_8h_a49badcee7e68b79f40dad37c83193f74}{space\+\_\+set\+\_\+picture} (\hyperlink{space_8h_a67533ffc2b70463baecc38fb0629bbfc}{Space} $\ast$space, char $\ast$pict)
 \begin{DoxyCompactList}\small\item\em it paints the figure associated to the space \end{DoxyCompactList}\item 
 char $\ast$ \hyperlink{space_8h_ae1afecfe9f7bb189edfc2f5bbd39b47f}{space\+\_\+get\+\_\+picture} (\hyperlink{space_8h_a67533ffc2b70463baecc38fb0629bbfc}{Space} $\ast$space)
-\begin{DoxyCompactList}\small\item\em it gets the figure associated to the specified space \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em it gets the figure associated to the specified space \end{DoxyCompactList}\item 
+\hyperlink{types_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+US} \hyperlink{space_8h_a592c8caf308e1dd0940bda10e96d7307}{space\+\_\+set\+\_\+light} (\hyperlink{space_8h_a67533ffc2b70463baecc38fb0629bbfc}{Space} $\ast$space, bool l)
+\begin{DoxyCompactList}\small\item\em Sets a light in a given space. \end{DoxyCompactList}\item 
+\hyperlink{types_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+US} \hyperlink{space_8h_a354a9e08bd0097e2c027a2d44bb4bdf4}{space\+\_\+toggle\+\_\+light} (\hyperlink{space_8h_a67533ffc2b70463baecc38fb0629bbfc}{Space} $\ast$space)
+\begin{DoxyCompactList}\small\item\em Toggles the light of a given space. \end{DoxyCompactList}\item 
+bool \hyperlink{space_8h_a4000018f7cb697532dd7cffc2c36f72f}{space\+\_\+get\+\_\+light} (\hyperlink{space_8h_a67533ffc2b70463baecc38fb0629bbfc}{Space} $\ast$space)
+\begin{DoxyCompactList}\small\item\em Gets the light status of a given space. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -212,12 +224,58 @@ Javier Romera
 \end{DoxyAuthor}
 
 \begin{DoxyParams}{Parameters}
-{\em \{\+Object$\ast$\}} & obj -\/ space\textquotesingle{}s pointer \\
+{\em \{\+Space$\ast$\}} & obj -\/ space\textquotesingle{}s pointer \\
 \hline
 \end{DoxyParams}
 
 \begin{DoxyRetVals}{Return values}
 {\em \{char$\ast$\}} & -\/ Returns the space name \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{space_8h_aece4b55189d09d85795c112284cd3f91}\label{space_8h_aece4b55189d09d85795c112284cd3f91}} 
+\index{space.\+h@{space.\+h}!space\+\_\+get\+\_\+ldescrp@{space\+\_\+get\+\_\+ldescrp}}
+\index{space\+\_\+get\+\_\+ldescrp@{space\+\_\+get\+\_\+ldescrp}!space.\+h@{space.\+h}}
+\subsubsection{\texorpdfstring{space\+\_\+get\+\_\+ldescrp()}{space\_get\_ldescrp()}}
+{\footnotesize\ttfamily const char$\ast$ space\+\_\+get\+\_\+ldescrp (\begin{DoxyParamCaption}\item[{\hyperlink{space_8h_a67533ffc2b70463baecc38fb0629bbfc}{Space} $\ast$}]{space }\end{DoxyParamCaption})}
+
+
+
+This fuction gets the long description of an space. 
+
+\begin{DoxyAuthor}{Author}
+Javier Romera 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+Space$\ast$\}} & obj -\/ space\textquotesingle{}s pointer \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \{char$\ast$\}} & -\/ Returns a long description of the space \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{space_8h_afc0e3f36d3bdf0105c5d25c256c9cfbd}\label{space_8h_afc0e3f36d3bdf0105c5d25c256c9cfbd}} 
+\index{space.\+h@{space.\+h}!space\+\_\+get\+\_\+objects@{space\+\_\+get\+\_\+objects}}
+\index{space\+\_\+get\+\_\+objects@{space\+\_\+get\+\_\+objects}!space.\+h@{space.\+h}}
+\subsubsection{\texorpdfstring{space\+\_\+get\+\_\+objects()}{space\_get\_objects()}}
+{\footnotesize\ttfamily \hyperlink{set_8h_a6d3b7f7c92cbb4577ef3ef7ddbf93161}{Set}$\ast$ space\+\_\+get\+\_\+objects (\begin{DoxyParamCaption}\item[{\hyperlink{space_8h_a67533ffc2b70463baecc38fb0629bbfc}{Space} $\ast$}]{space }\end{DoxyParamCaption})}
+
+
+
+This fuction returns the set of objects of the space. 
+
+\begin{DoxyAuthor}{Author}
+Javier Romera 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+Space$\ast$\}} & obj -\/ space\textquotesingle{}s pointer \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \{\+Space$\ast$\}} & -\/ Set of objects \\
 \hline
 \end{DoxyRetVals}
 \mbox{\Hypertarget{space_8h_a95f0e95de76db8fa07e8d582c70e1205}\label{space_8h_a95f0e95de76db8fa07e8d582c70e1205}} 
@@ -235,9 +293,34 @@ Javier Romera
 \end{DoxyAuthor}
 
 \begin{DoxyParams}{Parameters}
-{\em \{\+Object$\ast$\}} & obj -\/ space\textquotesingle{}s pointer \\
+{\em \{\+Space$\ast$\}} & obj -\/ space\textquotesingle{}s pointer \\
 \hline
-{\em \{char$\ast$\}} & name -\/ space\textquotesingle{}s description \\
+{\em \{char$\ast$\}} & descrp -\/ short description of the space \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \{\+S\+T\+A\+T\+U\+S\}} & -\/ Returns status code \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{space_8h_af49cfd384978a9918b6ae852caf06cf2}\label{space_8h_af49cfd384978a9918b6ae852caf06cf2}} 
+\index{space.\+h@{space.\+h}!space\+\_\+set\+\_\+ldescrp@{space\+\_\+set\+\_\+ldescrp}}
+\index{space\+\_\+set\+\_\+ldescrp@{space\+\_\+set\+\_\+ldescrp}!space.\+h@{space.\+h}}
+\subsubsection{\texorpdfstring{space\+\_\+set\+\_\+ldescrp()}{space\_set\_ldescrp()}}
+{\footnotesize\ttfamily \hyperlink{types_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+US} space\+\_\+set\+\_\+ldescrp (\begin{DoxyParamCaption}\item[{\hyperlink{space_8h_a67533ffc2b70463baecc38fb0629bbfc}{Space} $\ast$}]{space,  }\item[{const char $\ast$}]{ldescrp }\end{DoxyParamCaption})}
+
+
+
+This fuction sets the long description of an space. 
+
+\begin{DoxyAuthor}{Author}
+Javier Romera 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+Space$\ast$\}} & obj -\/ space\textquotesingle{}s pointer \\
+\hline
+{\em \{char$\ast$\}} & ldescrp -\/ long description of the space \\
 \hline
 \end{DoxyParams}
 
@@ -383,11 +466,11 @@ Javier Romera
 {\em \{\+Game$\ast$\}} & -\/ game \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{space_8h_a18eca058da6cdf20ae5eda9d122d992e}\label{space_8h_a18eca058da6cdf20ae5eda9d122d992e}} 
+\mbox{\Hypertarget{space_8h_a845ef83c595c94bd1224f6563efebf34}\label{space_8h_a845ef83c595c94bd1224f6563efebf34}} 
 \index{space.\+h@{space.\+h}!space\+\_\+print@{space\+\_\+print}}
 \index{space\+\_\+print@{space\+\_\+print}!space.\+h@{space.\+h}}
 \subsubsection{\texorpdfstring{space\+\_\+print()}{space\_print()}}
-{\footnotesize\ttfamily \hyperlink{types_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+US} space\+\_\+print (\begin{DoxyParamCaption}\item[{\hyperlink{space_8h_a67533ffc2b70463baecc38fb0629bbfc}{Space} $\ast$}]{space }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily int space\+\_\+print (\begin{DoxyParamCaption}\item[{\hyperlink{space_8h_a67533ffc2b70463baecc38fb0629bbfc}{Space} $\ast$}]{space }\end{DoxyParamCaption})}
 
 
 
@@ -472,5 +555,67 @@ Javier Romera
 
 \begin{DoxyRetVals}{Return values}
 {\em \{char$\ast$\}} & -\/ Returns a pointer to char \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{space_8h_a592c8caf308e1dd0940bda10e96d7307}\label{space_8h_a592c8caf308e1dd0940bda10e96d7307}} 
+\index{space.\+h@{space.\+h}!space\+\_\+set\+\_\+light@{space\+\_\+set\+\_\+light}}
+\index{space\+\_\+set\+\_\+light@{space\+\_\+set\+\_\+light}!space.\+h@{space.\+h}}
+\subsubsection{\texorpdfstring{space\+\_\+set\+\_\+light()}{space\_set\_light()}}
+{\footnotesize\ttfamily \hyperlink{types_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+US} space\+\_\+set\+\_\+light (\begin{DoxyParamCaption}\item[{\hyperlink{space_8h_a67533ffc2b70463baecc38fb0629bbfc}{Space} $\ast$}]{space,  }\item[{bool}]{l }\end{DoxyParamCaption})}
+
+
+
+Sets a light in a given space. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+Sapce$\ast$\}} & space -\/ Space pointer \\
+\hline
+{\em \{bool\}} & l -\/ light of the space \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \{\+S\+T\+A\+T\+U\+S\}} & -\/ Returns an status \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{space_8h_a354a9e08bd0097e2c027a2d44bb4bdf4}\label{space_8h_a354a9e08bd0097e2c027a2d44bb4bdf4}} 
+\index{space.\+h@{space.\+h}!space\+\_\+toggle\+\_\+light@{space\+\_\+toggle\+\_\+light}}
+\index{space\+\_\+toggle\+\_\+light@{space\+\_\+toggle\+\_\+light}!space.\+h@{space.\+h}}
+\subsubsection{\texorpdfstring{space\+\_\+toggle\+\_\+light()}{space\_toggle\_light()}}
+{\footnotesize\ttfamily \hyperlink{types_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+US} space\+\_\+toggle\+\_\+light (\begin{DoxyParamCaption}\item[{\hyperlink{space_8h_a67533ffc2b70463baecc38fb0629bbfc}{Space} $\ast$}]{space }\end{DoxyParamCaption})}
+
+
+
+Toggles the light of a given space. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+Sapce$\ast$\}} & space -\/ Space pointer \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \{\+S\+T\+A\+T\+U\+S\}} & -\/ Returns a status code \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{space_8h_a4000018f7cb697532dd7cffc2c36f72f}\label{space_8h_a4000018f7cb697532dd7cffc2c36f72f}} 
+\index{space.\+h@{space.\+h}!space\+\_\+get\+\_\+light@{space\+\_\+get\+\_\+light}}
+\index{space\+\_\+get\+\_\+light@{space\+\_\+get\+\_\+light}!space.\+h@{space.\+h}}
+\subsubsection{\texorpdfstring{space\+\_\+get\+\_\+light()}{space\_get\_light()}}
+{\footnotesize\ttfamily bool space\+\_\+get\+\_\+light (\begin{DoxyParamCaption}\item[{\hyperlink{space_8h_a67533ffc2b70463baecc38fb0629bbfc}{Space} $\ast$}]{space }\end{DoxyParamCaption})}
+
+
+
+Gets the light status of a given space. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+Sapce$\ast$\}} & space -\/ Space pointer \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \{\+S\+T\+A\+T\+U\+S\}} & -\/ Returns a boolean value \\
 \hline
 \end{DoxyRetVals}

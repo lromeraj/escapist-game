@@ -1,7 +1,9 @@
 var searchData=
 [
   ['last_5fn',['last_n',['../struct__Die.html#abf73744a544920c64d79d84d964be62d',1,'_Die']]],
+  ['ldescrp',['ldescrp',['../struct__Object.html#ab2d033c018fbe2639c88561e55306832',1,'_Object::ldescrp()'],['../struct__Space.html#adec57201467259116cb2a27a3ee8d214',1,'_Space::ldescrp()']]],
   ['left',['LEFT',['../cmd_8h.html#a00a332e55439547f3ed90d0839bd1995adb45120aafd37a973140edee24708065',1,'cmd.h']]],
+  ['light',['light',['../struct__Space.html#a10f078fd5b36a459500e772d7023beaa',1,'_Space']]],
   ['link_2ec',['link.c',['../link_8c.html',1,'']]],
   ['link_2eh',['link.h',['../link_8h.html',1,'']]],
   ['link_5fcreate',['link_create',['../link_8c.html#a8090d7f529cfd6a2fc5df3dd379fe514',1,'link_create(Id id):&#160;link.c'],['../link_8h.html#a8090d7f529cfd6a2fc5df3dd379fe514',1,'link_create(Id id):&#160;link.c']]],
@@ -18,8 +20,9 @@ var searchData=
   ['link_5fset_5fstate',['link_set_state',['../link_8c.html#a7e39694824973f396f87d8c01e9b824a',1,'link_set_state(Link *link, LinkState state):&#160;link.c'],['../link_8h.html#a7e39694824973f396f87d8c01e9b824a',1,'link_set_state(Link *link, LinkState state):&#160;link.c']]],
   ['link_5fset_5fto',['link_set_to',['../link_8c.html#a48f0e8c3924c608346cef5119a0125a0',1,'link_set_to(Link *link, Id id):&#160;link.c'],['../link_8h.html#ae07c2cb2a14cb510dd496433fa648431',1,'link_set_to(Link *link, Id idTo):&#160;link.c']]],
   ['link_5ftb_2ec',['link_tb.c',['../link__tb_8c.html',1,'']]],
-  ['links',['links',['../struct__Game.html#a2b766f0814f66dcf437600a9c526142e',1,'_Game']]],
+  ['links',['links',['../struct__Game.html#a2b766f0814f66dcf437600a9c526142e',1,'_Game::links()'],['../struct__Object.html#afd29bc78dd0fc104db1aab87c6fc7d5c',1,'_Object::links()']]],
   ['linkstate',['LinkState',['../link_8h.html#ab0033b911037fd995258d117e65461e0',1,'link.h']]],
+  ['load',['LOAD',['../cmd_8h.html#a00a332e55439547f3ed90d0839bd1995a972dbcdf74cff71e20bdcfb53be9c391',1,'cmd.h']]],
   ['loc',['loc',['../struct__Player.html#a40f39335ccf0d2de882b7588f1917e58',1,'_Player']]],
   ['log_2ec',['log.c',['../log_8c.html',1,'']]],
   ['log_2eh',['log.h',['../log_8h.html',1,'']]],

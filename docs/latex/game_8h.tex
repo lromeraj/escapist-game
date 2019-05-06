@@ -26,11 +26,29 @@ This graph shows which files directly or indirectly include this file\+:\nopageb
 \includegraphics[width=350pt]{game_8h__dep__incl}
 \end{center}
 \end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{game_8h_aa294c02e40f3ec02855171029ceb7d13}\label{game_8h_aa294c02e40f3ec02855171029ceb7d13}} 
+\#define \hyperlink{game_8h_aa294c02e40f3ec02855171029ceb7d13}{M\+I\+N\+\_\+\+W\+I\+N\+\_\+\+C\+O\+LS}~80
+\begin{DoxyCompactList}\small\item\em Minimum width of the screen. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{game_8h_abf182269072323ec4e8ef1efa10e4c7f}\label{game_8h_abf182269072323ec4e8ef1efa10e4c7f}} 
+\#define \hyperlink{game_8h_abf182269072323ec4e8ef1efa10e4c7f}{M\+I\+N\+\_\+\+W\+I\+N\+\_\+\+R\+O\+WS}~24
+\begin{DoxyCompactList}\small\item\em Minimum height of the screen. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{game_8h_a57156d39c530aec3fba3a9dad8c2dc6a}\label{game_8h_a57156d39c530aec3fba3a9dad8c2dc6a}} 
 typedef struct \hyperlink{struct__Game}{\+\_\+\+Game} {\bfseries Game}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{game_8h_abc6126af1d45847bc59afa0aa3216b04}\label{game_8h_abc6126af1d45847bc59afa0aa3216b04}} 
+enum \{ {\bfseries G\+A\+M\+E\+\_\+\+S\+P\+A\+C\+ES}, 
+{\bfseries G\+A\+M\+E\+\_\+\+L\+I\+N\+KS}, 
+{\bfseries G\+A\+M\+E\+\_\+\+O\+B\+J\+E\+C\+TS}
+ \}
 \end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
@@ -41,7 +59,7 @@ typedef struct \hyperlink{struct__Game}{\+\_\+\+Game} {\bfseries Game}
 \begin{DoxyCompactList}\small\item\em Adds a given link into the game. \end{DoxyCompactList}\item 
 \hyperlink{struct__Game}{Game} $\ast$ \hyperlink{game_8h_a1cdbe3f06b9bf49eb5e334a22ad3b2b9}{game\+\_\+create} ()
 \begin{DoxyCompactList}\small\item\em presets game initial state onto N\+U\+LL \end{DoxyCompactList}\item 
-\hyperlink{types_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+US} \hyperlink{game_8h_afc77f90739be0fd45b7f5616e543bfae}{game\+\_\+create\+\_\+from\+\_\+file} (\hyperlink{struct__Game}{Game} $\ast$game, char $\ast$filename)
+\hyperlink{types_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+US} \hyperlink{game_8h_aa507cc4e4968737c1b2ea85e9da0362a}{game\+\_\+load\+\_\+from\+\_\+file} (\hyperlink{struct__Game}{Game} $\ast$game, char $\ast$filename)
 \begin{DoxyCompactList}\small\item\em presets game state with the data value included in the save file \end{DoxyCompactList}\item 
 \hyperlink{types_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+US} \hyperlink{game_8h_a4a8f3de1cdc4bcb9a508a191677ee33f}{game\+\_\+update} (\hyperlink{struct__Game}{Game} $\ast$game, \hyperlink{struct__Cmd}{Cmd} $\ast$cmd)
 \begin{DoxyCompactList}\small\item\em sets the last command value onto last key introduced \end{DoxyCompactList}\item 
@@ -63,12 +81,8 @@ bool \hyperlink{game_8h_a27711fe1fc6f5a353b9ab63b92602359}{game\+\_\+is\+\_\+ove
 \begin{DoxyCompactList}\small\item\em gets a object by idx \end{DoxyCompactList}\item 
 \hyperlink{object_8h_a7f8bbcda919b65ce67f92fba08e0212f}{Object} $\ast$ \hyperlink{game_8h_a1ee080f6cdfb95f72007e688927da393}{game\+\_\+get\+\_\+object\+\_\+by\+\_\+name} (\hyperlink{struct__Game}{Game} $\ast$game, const char $\ast$name)
 \begin{DoxyCompactList}\small\item\em gets a object by name \end{DoxyCompactList}\item 
-\hyperlink{object_8h_a7f8bbcda919b65ce67f92fba08e0212f}{Object} $\ast$$\ast$ \hyperlink{game_8h_aacbf28320fd70aa492a722ad1789f479}{game\+\_\+get\+\_\+objects} (\hyperlink{struct__Game}{Game} $\ast$game)
-\begin{DoxyCompactList}\small\item\em Returns a pointer to game objects. \end{DoxyCompactList}\item 
 \hyperlink{struct__Link}{Link} $\ast$ \hyperlink{game_8h_aa06d97f52a3b567c59d511661c4c7ad0}{game\+\_\+get\+\_\+link\+\_\+by\+\_\+id} (\hyperlink{struct__Game}{Game} $\ast$game, \hyperlink{types_8h_a845e604fb28f7e3d97549da3448149d3}{Id} id)
 \begin{DoxyCompactList}\small\item\em Gets a link by it\textquotesingle{}s id. \end{DoxyCompactList}\item 
-\hyperlink{struct__Link}{Link} $\ast$$\ast$ \hyperlink{game_8h_a0070b4bc8f4d773efcf62a97e74d6195}{game\+\_\+get\+\_\+links} (\hyperlink{struct__Game}{Game} $\ast$game)
-\begin{DoxyCompactList}\small\item\em Returns a pointer to game links. \end{DoxyCompactList}\item 
 \hyperlink{types_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+US} \hyperlink{game_8h_ade0d25f267771b1f9b27fcc0383e93b8}{game\+\_\+set\+\_\+player} (\hyperlink{struct__Game}{Game} $\ast$game, \hyperlink{struct__Player}{Player} $\ast$player)
 \begin{DoxyCompactList}\small\item\em sets a new player \end{DoxyCompactList}\item 
 \hyperlink{types_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+US} \hyperlink{game_8h_a9597a8e456aa74db536e87d56f56c3b4}{game\+\_\+add\+\_\+object} (\hyperlink{struct__Game}{Game} $\ast$game, \hyperlink{object_8h_a7f8bbcda919b65ce67f92fba08e0212f}{Object} $\ast$object)
@@ -77,12 +91,24 @@ void \hyperlink{game_8h_a9d64221dbc653f866adc43c4ef849bb1}{game\+\_\+set\+\_\+di
 \begin{DoxyCompactList}\small\item\em sets a new die \end{DoxyCompactList}\item 
 \hyperlink{space_8h_a67533ffc2b70463baecc38fb0629bbfc}{Space} $\ast$ \hyperlink{game_8h_ab2506331340cbef8592780e0564cc8b7}{game\+\_\+get\+\_\+last\+\_\+space} (\hyperlink{struct__Game}{Game} $\ast$game)
 \begin{DoxyCompactList}\small\item\em gets a pointer towards last space \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{game_8h_ac43df8654f7e438bca33449c0de67aa7}\label{game_8h_ac43df8654f7e438bca33449c0de67aa7}} 
+void {\bfseries game\+\_\+get\+\_\+spaces} (\hyperlink{struct__Game}{Game} $\ast$game, int max, \hyperlink{space_8h_a67533ffc2b70463baecc38fb0629bbfc}{Space} $\ast$$\ast$spaces, int $\ast$total)
+\item 
+\mbox{\Hypertarget{game_8h_a00ec1903ad0212873b64668de5984f0d}\label{game_8h_a00ec1903ad0212873b64668de5984f0d}} 
+void {\bfseries game\+\_\+get\+\_\+links} (\hyperlink{struct__Game}{Game} $\ast$game, int max, \hyperlink{struct__Link}{Link} $\ast$$\ast$links, int $\ast$total)
+\item 
+\mbox{\Hypertarget{game_8h_a59eac3fe8bb037c712ca0957b798cf72}\label{game_8h_a59eac3fe8bb037c712ca0957b798cf72}} 
+void {\bfseries game\+\_\+get\+\_\+objects} (\hyperlink{struct__Game}{Game} $\ast$game, int max, \hyperlink{object_8h_a7f8bbcda919b65ce67f92fba08e0212f}{Object} $\ast$$\ast$objs, int $\ast$total)
+\item 
 \hyperlink{space_8h_a67533ffc2b70463baecc38fb0629bbfc}{Space} $\ast$ \hyperlink{game_8h_a584f1f96a3b7b428d7a6d76aa26dff2c}{game\+\_\+get\+\_\+first\+\_\+space} (\hyperlink{struct__Game}{Game} $\ast$game)
 \begin{DoxyCompactList}\small\item\em gets a pointer towards first space \end{DoxyCompactList}\item 
 \hyperlink{struct__Die}{Die} $\ast$ \hyperlink{game_8h_a5753a09313b092a52c0cea742c40f3cf}{game\+\_\+get\+\_\+die} (\hyperlink{struct__Game}{Game} $\ast$game)
 \begin{DoxyCompactList}\small\item\em gets a pointer towards die \end{DoxyCompactList}\item 
 \hyperlink{struct__Cmd}{Cmd} $\ast$ \hyperlink{game_8h_ad4f3192f7515879d7ff47522a7f489d7}{game\+\_\+get\+\_\+cmd} (\hyperlink{struct__Game}{Game} $\ast$game)
-\begin{DoxyCompactList}\small\item\em gets a pointer towards cmd \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em gets a pointer towards cmd \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{game_8h_a63b8fadde2c72953a6264d972bbf9871}\label{game_8h_a63b8fadde2c72953a6264d972bbf9871}} 
+\hyperlink{types_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+US} {\bfseries game\+\_\+clean} (\hyperlink{struct__Game}{Game} $\ast$game)
+\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -167,11 +193,11 @@ Javier Romera
 {\em \{\+Game$\ast$\}} & -\/ Returns a game pointer \\
 \hline
 \end{DoxyRetVals}
-\mbox{\Hypertarget{game_8h_afc77f90739be0fd45b7f5616e543bfae}\label{game_8h_afc77f90739be0fd45b7f5616e543bfae}} 
-\index{game.\+h@{game.\+h}!game\+\_\+create\+\_\+from\+\_\+file@{game\+\_\+create\+\_\+from\+\_\+file}}
-\index{game\+\_\+create\+\_\+from\+\_\+file@{game\+\_\+create\+\_\+from\+\_\+file}!game.\+h@{game.\+h}}
-\subsubsection{\texorpdfstring{game\+\_\+create\+\_\+from\+\_\+file()}{game\_create\_from\_file()}}
-{\footnotesize\ttfamily \hyperlink{types_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+US} game\+\_\+create\+\_\+from\+\_\+file (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Game}{Game} $\ast$}]{game,  }\item[{char $\ast$}]{filename }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{game_8h_aa507cc4e4968737c1b2ea85e9da0362a}\label{game_8h_aa507cc4e4968737c1b2ea85e9da0362a}} 
+\index{game.\+h@{game.\+h}!game\+\_\+load\+\_\+from\+\_\+file@{game\+\_\+load\+\_\+from\+\_\+file}}
+\index{game\+\_\+load\+\_\+from\+\_\+file@{game\+\_\+load\+\_\+from\+\_\+file}!game.\+h@{game.\+h}}
+\subsubsection{\texorpdfstring{game\+\_\+load\+\_\+from\+\_\+file()}{game\_load\_from\_file()}}
+{\footnotesize\ttfamily \hyperlink{types_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+US} game\+\_\+load\+\_\+from\+\_\+file (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Game}{Game} $\ast$}]{game,  }\item[{char $\ast$}]{filename }\end{DoxyParamCaption})}
 
 
 
@@ -426,29 +452,6 @@ Javier Romera
 {\em \{\+Object$\ast$\}} & -\/ Returns a player pointer \\
 \hline
 \end{DoxyRetVals}
-\mbox{\Hypertarget{game_8h_aacbf28320fd70aa492a722ad1789f479}\label{game_8h_aacbf28320fd70aa492a722ad1789f479}} 
-\index{game.\+h@{game.\+h}!game\+\_\+get\+\_\+objects@{game\+\_\+get\+\_\+objects}}
-\index{game\+\_\+get\+\_\+objects@{game\+\_\+get\+\_\+objects}!game.\+h@{game.\+h}}
-\subsubsection{\texorpdfstring{game\+\_\+get\+\_\+objects()}{game\_get\_objects()}}
-{\footnotesize\ttfamily \hyperlink{object_8h_a7f8bbcda919b65ce67f92fba08e0212f}{Object}$\ast$$\ast$ game\+\_\+get\+\_\+objects (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Game}{Game} $\ast$}]{game }\end{DoxyParamCaption})}
-
-
-
-Returns a pointer to game objects. 
-
-\begin{DoxyAuthor}{Author}
-Javier Romera 
-\end{DoxyAuthor}
-
-\begin{DoxyParams}{Parameters}
-{\em \{\+Game$\ast$\}} & -\/ game \\
-\hline
-\end{DoxyParams}
-
-\begin{DoxyRetVals}{Return values}
-{\em \{\+Object$\ast$$\ast$\}} & -\/ Returns an array of object pointers \\
-\hline
-\end{DoxyRetVals}
 \mbox{\Hypertarget{game_8h_aa06d97f52a3b567c59d511661c4c7ad0}\label{game_8h_aa06d97f52a3b567c59d511661c4c7ad0}} 
 \index{game.\+h@{game.\+h}!game\+\_\+get\+\_\+link\+\_\+by\+\_\+id@{game\+\_\+get\+\_\+link\+\_\+by\+\_\+id}}
 \index{game\+\_\+get\+\_\+link\+\_\+by\+\_\+id@{game\+\_\+get\+\_\+link\+\_\+by\+\_\+id}!game.\+h@{game.\+h}}
@@ -470,29 +473,6 @@ Javier Romera
 
 \begin{DoxyRetVals}{Return values}
 {\em \{\+Link$\ast$\}} & -\/ Returns a link pointe or null \\
-\hline
-\end{DoxyRetVals}
-\mbox{\Hypertarget{game_8h_a0070b4bc8f4d773efcf62a97e74d6195}\label{game_8h_a0070b4bc8f4d773efcf62a97e74d6195}} 
-\index{game.\+h@{game.\+h}!game\+\_\+get\+\_\+links@{game\+\_\+get\+\_\+links}}
-\index{game\+\_\+get\+\_\+links@{game\+\_\+get\+\_\+links}!game.\+h@{game.\+h}}
-\subsubsection{\texorpdfstring{game\+\_\+get\+\_\+links()}{game\_get\_links()}}
-{\footnotesize\ttfamily \hyperlink{struct__Link}{Link}$\ast$$\ast$ game\+\_\+get\+\_\+links (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Game}{Game} $\ast$}]{game }\end{DoxyParamCaption})}
-
-
-
-Returns a pointer to game links. 
-
-\begin{DoxyAuthor}{Author}
-Javier Romera 
-\end{DoxyAuthor}
-
-\begin{DoxyParams}{Parameters}
-{\em \{\+Game$\ast$\}} & -\/ game \\
-\hline
-\end{DoxyParams}
-
-\begin{DoxyRetVals}{Return values}
-{\em \{\+Link$\ast$$\ast$\}} & -\/ Returns an array of link pointers \\
 \hline
 \end{DoxyRetVals}
 \mbox{\Hypertarget{game_8h_ade0d25f267771b1f9b27fcc0383e93b8}\label{game_8h_ade0d25f267771b1f9b27fcc0383e93b8}} 

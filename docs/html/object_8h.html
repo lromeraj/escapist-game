@@ -66,6 +66,7 @@ $(function() {
   <div class="summary">
 <a href="#define-members">Macros</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">object.h File Reference</div>  </div>
@@ -74,13 +75,15 @@ $(function() {
 
 <p>Object manager.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="types_8h_source.html">types.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="set_8h_source.html">set.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="types_8h_source.html">types.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for object.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="object_8h__incl.png" border="0" usemap="#inc_2object_8h" alt=""/></div>
 <map name="inc_2object_8h" id="inc_2object_8h">
-<area shape="rect" id="node2" href="types_8h.html" title="It defines types of data. " alt="" coords="57,80,122,107"/>
+<area shape="rect" id="node2" href="set_8h.html" title="It defines the set interface. " alt="" coords="36,80,87,107"/>
+<area shape="rect" id="node4" href="types_8h.html" title="It defines types of data. " alt="" coords="91,155,157,181"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -92,11 +95,12 @@ This graph shows which files directly or indirectly include this file:</div>
 <area shape="rect" id="node3" href="object__tb_8c.html" title="Object testbench evaluates each object function for each case. " alt="" coords="121,80,229,107"/>
 <area shape="rect" id="node4" href="space_8c.html" title="src/space.c" alt="" coords="253,80,344,107"/>
 <area shape="rect" id="node5" href="game_8h.html" title="It defines the game interface. " alt="" coords="369,80,455,107"/>
-<area shape="rect" id="node6" href="g__engine_8c.html" title="Graphic engine source code. " alt="" coords="220,229,327,256"/>
-<area shape="rect" id="node7" href="reader_8c.html" title="Main game reader. " alt="" coords="495,229,585,256"/>
-<area shape="rect" id="node8" href="g__engine_8h.html" title="Main graphic engine. " alt="" coords="313,155,420,181"/>
-<area shape="rect" id="node10" href="reader_8h.html" title="Defines a game reader. " alt="" coords="495,155,585,181"/>
-<area shape="rect" id="node9" href="game__loop_8c.html" title="Main game loop. " alt="" coords="351,229,470,256"/>
+<area shape="rect" id="node6" href="g__engine_8c.html" title="Graphic engine source code. " alt="" coords="199,229,305,256"/>
+<area shape="rect" id="node7" href="g__engine_8h.html" title="Main graphic engine. " alt="" coords="289,155,396,181"/>
+<area shape="rect" id="node9" href="game__rules_8h_source.html" title="inc/game_rules.h" alt="" coords="421,155,542,181"/>
+<area shape="rect" id="node10" href="manager_8h.html" title="Defines a game reader. " alt="" coords="567,155,671,181"/>
+<area shape="rect" id="node8" href="game__loop_8c.html" title="Main game loop. " alt="" coords="330,229,449,256"/>
+<area shape="rect" id="node11" href="manager_8c.html" title="Main game reader. " alt="" coords="566,229,671,256"/>
 </map>
 </div>
 </div>
@@ -113,16 +117,47 @@ Macros</h2></td></tr>
 <tr class="memdesc:a6a2f391825e94d06a3137b75abfa1bba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum number of characters that can have a name of an object. <br /></td></tr>
 <tr class="separator:a6a2f391825e94d06a3137b75abfa1bba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acdc7844fbd4d45737d4aa56834d37829"><td class="memItemLeft" align="right" valign="top"><a id="acdc7844fbd4d45737d4aa56834d37829"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="object_8h.html#acdc7844fbd4d45737d4aa56834d37829">MAX_OBJECTS</a>&#160;&#160;&#160;4</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="object_8h.html#acdc7844fbd4d45737d4aa56834d37829">MAX_OBJECTS</a>&#160;&#160;&#160;20</td></tr>
 <tr class="memdesc:acdc7844fbd4d45737d4aa56834d37829"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum number of objects. <br /></td></tr>
 <tr class="separator:acdc7844fbd4d45737d4aa56834d37829"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b252b064231d7dc71c194dfea24b32b"><td class="memItemLeft" align="right" valign="top"><a id="a6b252b064231d7dc71c194dfea24b32b"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="object_8h.html#a6b252b064231d7dc71c194dfea24b32b">MAX_OBJ_ATTRS</a>&#160;&#160;&#160;10</td></tr>
+<tr class="memdesc:a6b252b064231d7dc71c194dfea24b32b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum quantity of object attributes. <br /></td></tr>
+<tr class="separator:a6b252b064231d7dc71c194dfea24b32b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49610789a3d905ee9562e118449651b7"><td class="memItemLeft" align="right" valign="top"><a id="a49610789a3d905ee9562e118449651b7"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="object_8h.html#a49610789a3d905ee9562e118449651b7">MAX_OBJ_LINKS</a></td></tr>
+<tr class="memdesc:a49610789a3d905ee9562e118449651b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum number of links that an object can open. <br /></td></tr>
+<tr class="separator:a49610789a3d905ee9562e118449651b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
+<tr class="memitem:af9578a46d63de6bd383b0395eb856588"><td class="memItemLeft" align="right" valign="top"><a id="af9578a46d63de6bd383b0395eb856588"></a>
+typedef enum _Obj_attr&#160;</td><td class="memItemRight" valign="bottom"><b>Obj_attr</b></td></tr>
+<tr class="separator:af9578a46d63de6bd383b0395eb856588"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7f8bbcda919b65ce67f92fba08e0212f"><td class="memItemLeft" align="right" valign="top"><a id="a7f8bbcda919b65ce67f92fba08e0212f"></a>
 typedef struct <a class="el" href="struct__Object.html">_Object</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="object_8h.html#a7f8bbcda919b65ce67f92fba08e0212f">Object</a></td></tr>
 <tr class="memdesc:a7f8bbcda919b65ce67f92fba08e0212f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines the type of object structure. <br /></td></tr>
 <tr class="separator:a7f8bbcda919b65ce67f92fba08e0212f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:adc29c2ff13d900c2f185ee95427fb06c"><td class="memItemLeft" align="right" valign="top"><a id="adc29c2ff13d900c2f185ee95427fb06c"></a>enum &#160;</td><td class="memItemRight" valign="bottom">{ <b>OBJ_NONE</b> =-999, 
+<b>OBJ_YES</b> =-1, 
+<b>OBJ_NO</b> =-2
+ }</td></tr>
+<tr class="separator:adc29c2ff13d900c2f185ee95427fb06c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ee4731bd32742346115154b4dd724a8"><td class="memItemLeft" align="right" valign="top"><a id="a0ee4731bd32742346115154b4dd724a8"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>_Obj_attr</b> { <br />
+&#160;&#160;<b>OBJ_IS_MOVABLE</b>, 
+<b>OBJ_IS_MOVED</b>, 
+<b>OBJ_IS_HIDDEN</b>, 
+<b>OBJ_CAN_ILLUMINATE</b>, 
+<br />
+&#160;&#160;<b>OBJ_IS_ON</b>, 
+<b>OBJ_USED</b>, 
+<b>OBJ_MAX_USES</b>
+<br />
+ }</td></tr>
+<tr class="separator:a0ee4731bd32742346115154b4dd724a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -141,15 +176,36 @@ Functions</h2></td></tr>
 <tr class="memitem:ace63935d0c25ea9b4b856530b958d126"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a32c27cc471df37f4fc818d65de0a56c4">STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="object_8h.html#ace63935d0c25ea9b4b856530b958d126">obj_set_descrp</a> (<a class="el" href="object_8h.html#a7f8bbcda919b65ce67f92fba08e0212f">Object</a> *obj, const char *descrp)</td></tr>
 <tr class="memdesc:ace63935d0c25ea9b4b856530b958d126"><td class="mdescLeft">&#160;</td><td class="mdescRight">This fuction sets the description of an object.  <a href="#ace63935d0c25ea9b4b856530b958d126">More...</a><br /></td></tr>
 <tr class="separator:ace63935d0c25ea9b4b856530b958d126"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9eda81f84046a038f6d2de2ece9d0b2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a32c27cc471df37f4fc818d65de0a56c4">STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="object_8h.html#af9eda81f84046a038f6d2de2ece9d0b2">obj_set_ldescrp</a> (<a class="el" href="object_8h.html#a7f8bbcda919b65ce67f92fba08e0212f">Object</a> *obj, const char *ldescrp)</td></tr>
+<tr class="memdesc:af9eda81f84046a038f6d2de2ece9d0b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">This fuction sets the long description of an object.  <a href="#af9eda81f84046a038f6d2de2ece9d0b2">More...</a><br /></td></tr>
+<tr class="separator:af9eda81f84046a038f6d2de2ece9d0b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4f5633be628368d20545ecce98f1a94a"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="object_8h.html#a4f5633be628368d20545ecce98f1a94a">obj_get_descrp</a> (<a class="el" href="object_8h.html#a7f8bbcda919b65ce67f92fba08e0212f">Object</a> *obj)</td></tr>
 <tr class="memdesc:a4f5633be628368d20545ecce98f1a94a"><td class="mdescLeft">&#160;</td><td class="mdescRight">This fuction gets the description of an object.  <a href="#a4f5633be628368d20545ecce98f1a94a">More...</a><br /></td></tr>
 <tr class="separator:a4f5633be628368d20545ecce98f1a94a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0de6e8a977a4a9aef8f67233b11e9d4"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="object_8h.html#ab0de6e8a977a4a9aef8f67233b11e9d4">obj_get_ldescrp</a> (<a class="el" href="object_8h.html#a7f8bbcda919b65ce67f92fba08e0212f">Object</a> *obj)</td></tr>
+<tr class="memdesc:ab0de6e8a977a4a9aef8f67233b11e9d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">This fuction gets the long description of an object.  <a href="#ab0de6e8a977a4a9aef8f67233b11e9d4">More...</a><br /></td></tr>
+<tr class="separator:ab0de6e8a977a4a9aef8f67233b11e9d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aae31252e170615356965581cde5c2e9c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a32c27cc471df37f4fc818d65de0a56c4">STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="object_8h.html#aae31252e170615356965581cde5c2e9c">obj_set_id</a> (<a class="el" href="object_8h.html#a7f8bbcda919b65ce67f92fba08e0212f">Object</a> *obj, const <a class="el" href="types_8h.html#a845e604fb28f7e3d97549da3448149d3">Id</a> id)</td></tr>
 <tr class="memdesc:aae31252e170615356965581cde5c2e9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">This fuction sets the object id.  <a href="#aae31252e170615356965581cde5c2e9c">More...</a><br /></td></tr>
 <tr class="separator:aae31252e170615356965581cde5c2e9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7241dbfc246b252ee486f31519794922"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="types_8h.html#a845e604fb28f7e3d97549da3448149d3">Id</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="object_8h.html#a7241dbfc246b252ee486f31519794922">obj_get_id</a> (<a class="el" href="object_8h.html#a7f8bbcda919b65ce67f92fba08e0212f">Object</a> *obj)</td></tr>
 <tr class="memdesc:a7241dbfc246b252ee486f31519794922"><td class="mdescLeft">&#160;</td><td class="mdescRight">This fuction gets the object id.  <a href="#a7241dbfc246b252ee486f31519794922">More...</a><br /></td></tr>
 <tr class="separator:a7241dbfc246b252ee486f31519794922"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab52a54fafb3d772b6bd43620475d41dd"><td class="memItemLeft" align="right" valign="top"><a id="ab52a54fafb3d772b6bd43620475d41dd"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>obj_opens_link</b> (<a class="el" href="object_8h.html#a7f8bbcda919b65ce67f92fba08e0212f">Object</a> *obj, <a class="el" href="types_8h.html#a845e604fb28f7e3d97549da3448149d3">Id</a> id)</td></tr>
+<tr class="separator:ab52a54fafb3d772b6bd43620475d41dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acdb1cb2d2aaacc619e0bc22c89039dba"><td class="memItemLeft" align="right" valign="top"><a id="acdb1cb2d2aaacc619e0bc22c89039dba"></a>
+<a class="el" href="set_8h.html#a6d3b7f7c92cbb4577ef3ef7ddbf93161">Set</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>obj_get_links</b> (<a class="el" href="object_8h.html#a7f8bbcda919b65ce67f92fba08e0212f">Object</a> *obj)</td></tr>
+<tr class="separator:acdb1cb2d2aaacc619e0bc22c89039dba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3bc4aaacc9d7bb13f62f3ee7f3c4023"><td class="memItemLeft" align="right" valign="top"><a id="af3bc4aaacc9d7bb13f62f3ee7f3c4023"></a>
+<a class="el" href="types_8h.html#a32c27cc471df37f4fc818d65de0a56c4">STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><b>obj_add_link</b> (<a class="el" href="object_8h.html#a7f8bbcda919b65ce67f92fba08e0212f">Object</a> *obj, <a class="el" href="types_8h.html#a845e604fb28f7e3d97549da3448149d3">Id</a> id)</td></tr>
+<tr class="separator:af3bc4aaacc9d7bb13f62f3ee7f3c4023"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad15d8e28f0255b0cd6a614ef931be7be"><td class="memItemLeft" align="right" valign="top"><a id="ad15d8e28f0255b0cd6a614ef931be7be"></a>
+<a class="el" href="types_8h.html#a32c27cc471df37f4fc818d65de0a56c4">STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><b>obj_set_attr</b> (<a class="el" href="object_8h.html#a7f8bbcda919b65ce67f92fba08e0212f">Object</a> *obj, Obj_attr attr, long v)</td></tr>
+<tr class="separator:ad15d8e28f0255b0cd6a614ef931be7be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d264bd6ad7ae006a7dc282dedbed3b3"><td class="memItemLeft" align="right" valign="top"><a id="a0d264bd6ad7ae006a7dc282dedbed3b3"></a>
+long&#160;</td><td class="memItemRight" valign="bottom"><b>obj_get_attr</b> (<a class="el" href="object_8h.html#a7f8bbcda919b65ce67f92fba08e0212f">Object</a> *obj, Obj_attr attr)</td></tr>
+<tr class="separator:a0d264bd6ad7ae006a7dc282dedbed3b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Object manager. </p>
@@ -318,7 +374,45 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">{Object*}</td><td>obj - object's pointer </td></tr>
-    <tr><td class="paramname">{char*}</td><td>name - object's description </td></tr>
+    <tr><td class="paramname">{char*}</td><td>descrp - object's description </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af9eda81f84046a038f6d2de2ece9d0b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9eda81f84046a038f6d2de2ece9d0b2">&#9670;&nbsp;</a></span>obj_set_ldescrp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="types_8h.html#a32c27cc471df37f4fc818d65de0a56c4">STATUS</a> obj_set_ldescrp </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="object_8h.html#a7f8bbcda919b65ce67f92fba08e0212f">Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>ldescrp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This fuction sets the long description of an object. </p>
+<dl class="section author"><dt>Author</dt><dd>Miguel Rodríguez </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">{Object*}</td><td>obj - object's pointer </td></tr>
+    <tr><td class="paramname">{char*}</td><td>ldescrp - long description of the object </td></tr>
   </table>
   </dd>
 </dl>
@@ -352,6 +446,39 @@ Functions</h2></td></tr>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
     <tr><td class="paramname">{char*}</td><td>- Returns a pointer to the object's name </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab0de6e8a977a4a9aef8f67233b11e9d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0de6e8a977a4a9aef8f67233b11e9d4">&#9670;&nbsp;</a></span>obj_get_ldescrp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* obj_get_ldescrp </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="object_8h.html#a7f8bbcda919b65ce67f92fba08e0212f">Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This fuction gets the long description of an object. </p>
+<dl class="section author"><dt>Author</dt><dd>Miguel Rodríguez </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">{Object*}</td><td>obj - object's pointer </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">{char*}</td><td>- Returns the long description of the object </td></tr>
   </table>
   </dd>
 </dl>

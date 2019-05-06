@@ -5,10 +5,9 @@
 Code implementation of the inventory manager.  
 
 
+{\ttfamily \#include \char`\"{}inventory.\+h\char`\"{}}\newline
 {\ttfamily \#include $<$stdio.\+h$>$}\newline
 {\ttfamily \#include $<$stdlib.\+h$>$}\newline
-{\ttfamily \#include \char`\"{}set.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}inventory.\+h\char`\"{}}\newline
 Include dependency graph for inventory.\+c\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -38,6 +37,8 @@ int \hyperlink{inventory_8c_aa1391bde411c1726b2d8fc23de1d18b9}{inventory\+\_\+ge
 \begin{DoxyCompactList}\small\item\em Tells the number of id\textquotesingle{}s in an inventory. \end{DoxyCompactList}\item 
 int \hyperlink{inventory_8c_a9ea9977c26995708d271af60ad96650b}{inventory\+\_\+get\+\_\+max} (\hyperlink{inventory_8h_a2253bf64ac4ce6a9c1d6f39c0b0d32a3}{Inventory} $\ast$inv)
 \begin{DoxyCompactList}\small\item\em Tells the maximun capacity of the Inventory. \end{DoxyCompactList}\item 
+\hyperlink{set_8h_a6d3b7f7c92cbb4577ef3ef7ddbf93161}{Set} $\ast$ \hyperlink{inventory_8c_ae690e6a4a93283f7fcf8646ba836a542}{inventory\+\_\+get\+\_\+bag} (\hyperlink{inventory_8h_a2253bf64ac4ce6a9c1d6f39c0b0d32a3}{Inventory} $\ast$inv)
+\begin{DoxyCompactList}\small\item\em Gets the bag of the player. \end{DoxyCompactList}\item 
 bool \hyperlink{inventory_8c_a913ebf717a79dced571ff9aad64352b5}{inventory\+\_\+is\+\_\+full} (\hyperlink{inventory_8h_a2253bf64ac4ce6a9c1d6f39c0b0d32a3}{Inventory} $\ast$inv)
 \begin{DoxyCompactList}\small\item\em Tells if an inventory is full or not. \end{DoxyCompactList}\item 
 bool \hyperlink{inventory_8c_aaa1a7e022c311412859a6a588b7c78fe}{inventory\+\_\+is\+\_\+empty} (\hyperlink{inventory_8h_a2253bf64ac4ce6a9c1d6f39c0b0d32a3}{Inventory} $\ast$inv)
@@ -206,6 +207,29 @@ Miguel Rodríguez
 
 \begin{DoxyRetVals}{Return values}
 {\em \{int\}} & -\/ Returns an integer \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{inventory_8c_ae690e6a4a93283f7fcf8646ba836a542}\label{inventory_8c_ae690e6a4a93283f7fcf8646ba836a542}} 
+\index{inventory.\+c@{inventory.\+c}!inventory\+\_\+get\+\_\+bag@{inventory\+\_\+get\+\_\+bag}}
+\index{inventory\+\_\+get\+\_\+bag@{inventory\+\_\+get\+\_\+bag}!inventory.\+c@{inventory.\+c}}
+\subsubsection{\texorpdfstring{inventory\+\_\+get\+\_\+bag()}{inventory\_get\_bag()}}
+{\footnotesize\ttfamily \hyperlink{set_8h_a6d3b7f7c92cbb4577ef3ef7ddbf93161}{Set}$\ast$ inventory\+\_\+get\+\_\+bag (\begin{DoxyParamCaption}\item[{\hyperlink{inventory_8h_a2253bf64ac4ce6a9c1d6f39c0b0d32a3}{Inventory} $\ast$}]{inv }\end{DoxyParamCaption})}
+
+
+
+Gets the bag of the player. 
+
+\begin{DoxyAuthor}{Author}
+Javier Romera 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em \{\+Inventory$\ast$\}} & -\/ inventory pointer \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \{\+Set$\ast$\}} & -\/ returns player\textquotesingle{}s bag as a set of ids \\
 \hline
 \end{DoxyRetVals}
 \mbox{\Hypertarget{inventory_8c_a913ebf717a79dced571ff9aad64352b5}\label{inventory_8c_a913ebf717a79dced571ff9aad64352b5}} 

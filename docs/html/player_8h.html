@@ -74,13 +74,15 @@ $(function() {
 
 <p>Player header.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="types_8h_source.html">types.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="set_8h_source.html">set.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="types_8h_source.html">types.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for player.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="player_8h__incl.png" border="0" usemap="#inc_2player_8h" alt=""/></div>
 <map name="inc_2player_8h" id="inc_2player_8h">
-<area shape="rect" id="node2" href="types_8h.html" title="It defines types of data. " alt="" coords="57,80,122,107"/>
+<area shape="rect" id="node2" href="set_8h.html" title="It defines the set interface. " alt="" coords="36,80,87,107"/>
+<area shape="rect" id="node4" href="types_8h.html" title="It defines types of data. " alt="" coords="91,155,157,181"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -89,12 +91,13 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="center"><img src="player_8h__dep__incl.png" border="0" usemap="#inc_2player_8hdep" alt=""/></div>
 <map name="inc_2player_8hdep" id="inc_2player_8hdep">
 <area shape="rect" id="node2" href="g__engine_8c.html" title="Graphic engine source code. " alt="" coords="5,229,112,256"/>
-<area shape="rect" id="node3" href="player_8c.html" title="Main player manager. " alt="" coords="73,80,164,107"/>
-<area shape="rect" id="node4" href="game_8h.html" title="It defines the game interface. " alt="" coords="189,80,275,107"/>
-<area shape="rect" id="node5" href="reader_8c.html" title="Main game reader. " alt="" coords="317,229,408,256"/>
-<area shape="rect" id="node6" href="g__engine_8h.html" title="Main graphic engine. " alt="" coords="124,155,231,181"/>
-<area shape="rect" id="node8" href="reader_8h.html" title="Defines a game reader. " alt="" coords="255,155,345,181"/>
-<area shape="rect" id="node7" href="game__loop_8c.html" title="Main game loop. " alt="" coords="137,229,255,256"/>
+<area shape="rect" id="node3" href="player_8c.html" title="Main player manager. " alt="" coords="69,80,160,107"/>
+<area shape="rect" id="node4" href="game_8h.html" title="It defines the game interface. " alt="" coords="185,80,271,107"/>
+<area shape="rect" id="node5" href="g__engine_8h.html" title="Main graphic engine. " alt="" coords="120,155,227,181"/>
+<area shape="rect" id="node7" href="game__rules_8h_source.html" title="inc/game_rules.h" alt="" coords="251,155,373,181"/>
+<area shape="rect" id="node8" href="manager_8h.html" title="Defines a game reader. " alt="" coords="397,155,501,181"/>
+<area shape="rect" id="node6" href="game__loop_8c.html" title="Main game loop. " alt="" coords="137,229,255,256"/>
+<area shape="rect" id="node9" href="manager_8c.html" title="Main game reader. " alt="" coords="397,229,502,256"/>
 </map>
 </div>
 </div>
@@ -139,6 +142,9 @@ Functions</h2></td></tr>
 <tr class="memitem:aa50ce77ab79af7166d749619fd60acfe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a845e604fb28f7e3d97549da3448149d3">Id</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="player_8h.html#aa50ce77ab79af7166d749619fd60acfe">player_get_location</a> (<a class="el" href="struct__Player.html">Player</a> *player)</td></tr>
 <tr class="memdesc:aa50ce77ab79af7166d749619fd60acfe"><td class="mdescLeft">&#160;</td><td class="mdescRight">This fuction gets the palyer's location.  <a href="#aa50ce77ab79af7166d749619fd60acfe">More...</a><br /></td></tr>
 <tr class="separator:aa50ce77ab79af7166d749619fd60acfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d99a99f5e09878342fff3b1855b2767"><td class="memItemLeft" align="right" valign="top"><a id="a4d99a99f5e09878342fff3b1855b2767"></a>
+<a class="el" href="set_8h.html#a6d3b7f7c92cbb4577ef3ef7ddbf93161">Set</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>player_get_bag</b> (<a class="el" href="struct__Player.html">Player</a> *player)</td></tr>
+<tr class="separator:a4d99a99f5e09878342fff3b1855b2767"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2fc269feb0641f59daab5e6b77cb1a75"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a32c27cc471df37f4fc818d65de0a56c4">STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="player_8h.html#a2fc269feb0641f59daab5e6b77cb1a75">player_add_object</a> (<a class="el" href="struct__Player.html">Player</a> *player, <a class="el" href="types_8h.html#a845e604fb28f7e3d97549da3448149d3">Id</a> id)</td></tr>
 <tr class="memdesc:a2fc269feb0641f59daab5e6b77cb1a75"><td class="mdescLeft">&#160;</td><td class="mdescRight">This fuction adds an object to playes's inventory.  <a href="#a2fc269feb0641f59daab5e6b77cb1a75">More...</a><br /></td></tr>
 <tr class="separator:a2fc269feb0641f59daab5e6b77cb1a75"><td class="memSeparator" colspan="2">&#160;</td></tr>

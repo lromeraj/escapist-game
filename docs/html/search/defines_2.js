@@ -1,5 +1,7 @@
 var searchData=
 [
+  ['main_5fbg',['MAIN_BG',['../g__engine_8c.html#a7fe2c94e7756b2fc8b660a71c8e0d3d8',1,'g_engine.c']]],
+  ['main_5ffg',['MAIN_FG',['../g__engine_8c.html#aa6405fb3815f498f8bbfda6cd2802247',1,'g_engine.c']]],
   ['max_5fcmd_5fans',['MAX_CMD_ANS',['../cmd_8h.html#ab972c58772002197942552cc47b6b5cd',1,'cmd.h']]],
   ['max_5fcmd_5fargc',['MAX_CMD_ARGC',['../cmd_8h.html#a64bf1979142baf43271722ff7b14c17d',1,'cmd.h']]],
   ['max_5fcmd_5fin',['MAX_CMD_IN',['../cmd_8h.html#a536329c6bdf286710c20c6dd9a0750cc',1,'cmd.h']]],
@@ -8,7 +10,9 @@ var searchData=
   ['max_5finventory',['MAX_INVENTORY',['../inventory_8h.html#a44ebc1f23fbda13f8df116041c33c5f0',1,'inventory.h']]],
   ['max_5flink_5fname',['MAX_LINK_NAME',['../link_8h.html#ab4477e941817afbf1649fdf3dfb62d70',1,'link.h']]],
   ['max_5fobj',['MAX_OBJ',['../object__tb_8c.html#a8e497c59a3362df6102c893a8498acd0',1,'object_tb.c']]],
+  ['max_5fobj_5fattrs',['MAX_OBJ_ATTRS',['../object_8h.html#a6b252b064231d7dc71c194dfea24b32b',1,'object.h']]],
   ['max_5fobj_5fdescrp',['MAX_OBJ_DESCRP',['../object_8h.html#a9c396da2f3b9f0191120ff1666af6381',1,'object.h']]],
+  ['max_5fobj_5flinks',['MAX_OBJ_LINKS',['../object_8h.html#a49610789a3d905ee9562e118449651b7',1,'object.h']]],
   ['max_5fobj_5fname',['MAX_OBJ_NAME',['../object_8h.html#a6a2f391825e94d06a3137b75abfa1bba',1,'object.h']]],
   ['max_5fobjects',['MAX_OBJECTS',['../object_8h.html#acdc7844fbd4d45737d4aa56834d37829',1,'object.h']]],
   ['max_5fplayer_5fname',['MAX_PLAYER_NAME',['../player_8h.html#a17e4584e6f22ba5f1b29f6c6db21fdfb',1,'player.h']]],
@@ -16,5 +20,7 @@ var searchData=
   ['max_5fspace_5fdescrp',['MAX_SPACE_DESCRP',['../space_8h.html#aed836b26b3a8e93a4d652bbe81bf66d5',1,'space.h']]],
   ['max_5fspace_5fname',['MAX_SPACE_NAME',['../space_8h.html#a95d9e86d5e1a02663f74b6896e5975c6',1,'space.h']]],
   ['max_5fspace_5fpicture',['MAX_SPACE_PICTURE',['../space_8h.html#a81ff4df6e3833e5b8f8bd6255f4e3df6',1,'space.h']]],
-  ['max_5fspaces',['MAX_SPACES',['../space_8h.html#a5f54fd55f983a2e33ce076cd9f587e82',1,'space.h']]]
+  ['max_5fspaces',['MAX_SPACES',['../space_8h.html#a5f54fd55f983a2e33ce076cd9f587e82',1,'space.h']]],
+  ['min_5fwin_5fcols',['MIN_WIN_COLS',['../game_8h.html#aa294c02e40f3ec02855171029ceb7d13',1,'game.h']]],
+  ['min_5fwin_5frows',['MIN_WIN_ROWS',['../game_8h.html#abf182269072323ec4e8ef1efa10e4c7f',1,'game.h']]]
 ];

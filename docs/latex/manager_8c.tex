@@ -1,0 +1,261 @@
+\hypertarget{manager_8c}{}\section{src/manager.c File Reference}
+\label{manager_8c}\index{src/manager.\+c@{src/manager.\+c}}
+
+
+Main game reader.  
+
+
+{\ttfamily \#include \char`\"{}str.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}manager.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdarg.\+h$>$}\newline
+Include dependency graph for manager.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{manager_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{manager_8c_a4b70916bdf28ed7afd94e4fb98230a90}\label{manager_8c_a4b70916bdf28ed7afd94e4fb98230a90}} 
+\#define {\bfseries M\+A\+X\+\_\+\+B\+U\+FF}~128
+\item 
+\mbox{\Hypertarget{manager_8c_ab7f7c22efcce6db84c243b04b1378264}\label{manager_8c_ab7f7c22efcce6db84c243b04b1378264}} 
+\#define {\bfseries M\+A\+X\+\_\+\+C\+H\+E\+C\+KS}~5
+\item 
+\mbox{\Hypertarget{manager_8c_a554882a1c2c5a540955f5b595c367921}\label{manager_8c_a554882a1c2c5a540955f5b595c367921}} 
+\#define {\bfseries R\+E\+A\+D\+E\+R\+\_\+\+M\+A\+X\+\_\+\+A\+T\+T\+RS}~20
+\item 
+\mbox{\Hypertarget{manager_8c_a0b986d09ba120ee9f45e74b377794570}\label{manager_8c_a0b986d09ba120ee9f45e74b377794570}} 
+\#define {\bfseries \+\_\+\+O\+B\+J\+E\+C\+T\+\_\+\+S\+YM}~\char`\"{}@o\char`\"{}
+\item 
+\mbox{\Hypertarget{manager_8c_a9a5ef907a230df2e1c2a3fbf7f7f671e}\label{manager_8c_a9a5ef907a230df2e1c2a3fbf7f7f671e}} 
+\#define {\bfseries \+\_\+\+S\+P\+A\+C\+E\+\_\+\+S\+YM}~\char`\"{}@s\char`\"{}
+\item 
+\mbox{\Hypertarget{manager_8c_adf5d63f8489653f85b4b414683d284f9}\label{manager_8c_adf5d63f8489653f85b4b414683d284f9}} 
+\#define {\bfseries \+\_\+\+L\+I\+N\+K\+\_\+\+S\+YM}~\char`\"{}@l\char`\"{}
+\item 
+\mbox{\Hypertarget{manager_8c_a266097999a4becf4f2a504534cfec6ce}\label{manager_8c_a266097999a4becf4f2a504534cfec6ce}} 
+\#define {\bfseries \+\_\+\+P\+L\+A\+Y\+E\+R\+\_\+\+S\+YM}~\char`\"{}@p\char`\"{}
+\item 
+\mbox{\Hypertarget{manager_8c_af77a445894f2f750d43cf2182cd29e55}\label{manager_8c_af77a445894f2f750d43cf2182cd29e55}} 
+\#define {\bfseries A\+N\+S\+I\+\_\+\+R\+E\+S\+ET}~\char`\"{}\textbackslash{}033\mbox{[}0m\char`\"{}
+\item 
+\mbox{\Hypertarget{manager_8c_a4b82ce02685b3d7ebc5e8da4eaefae53}\label{manager_8c_a4b82ce02685b3d7ebc5e8da4eaefae53}} 
+\#define {\bfseries A\+N\+S\+I\+\_\+\+F\+G\+\_\+\+R\+ED}~\char`\"{}\textbackslash{}033\mbox{[}31m\char`\"{}
+\item 
+\mbox{\Hypertarget{manager_8c_a62b092cf73384c02d95d12f1cd7b45a6}\label{manager_8c_a62b092cf73384c02d95d12f1cd7b45a6}} 
+\#define {\bfseries A\+N\+S\+I\+\_\+\+F\+G\+\_\+\+G\+R\+E\+EN}~\char`\"{}\textbackslash{}033\mbox{[}32m\char`\"{}
+\item 
+\mbox{\Hypertarget{manager_8c_a75da85659aef79f72a6fe7c67d698744}\label{manager_8c_a75da85659aef79f72a6fe7c67d698744}} 
+\#define {\bfseries A\+N\+S\+I\+\_\+\+F\+G\+\_\+\+Y\+E\+L\+L\+OW}~\char`\"{}\textbackslash{}033\mbox{[}33m\char`\"{}
+\item 
+\mbox{\Hypertarget{manager_8c_a1343f7d739bb3a83b3c05be867763de2}\label{manager_8c_a1343f7d739bb3a83b3c05be867763de2}} 
+\#define {\bfseries A\+N\+S\+I\+\_\+\+F\+G\+\_\+\+B\+L\+UE}~\char`\"{}\textbackslash{}033\mbox{[}34m\char`\"{}
+\item 
+\mbox{\Hypertarget{manager_8c_a66c698cd9611b78156c28de5da29a6ed}\label{manager_8c_a66c698cd9611b78156c28de5da29a6ed}} 
+\#define {\bfseries A\+N\+S\+I\+\_\+\+F\+G\+\_\+\+P\+U\+R\+P\+LE}~\char`\"{}\textbackslash{}033\mbox{[}35m\char`\"{}
+\item 
+\mbox{\Hypertarget{manager_8c_a3a04a9b55dcb02d2bb3b0ff17974e583}\label{manager_8c_a3a04a9b55dcb02d2bb3b0ff17974e583}} 
+\#define {\bfseries A\+N\+S\+I\+\_\+\+F\+G\+\_\+\+W\+H\+I\+TE}~\char`\"{}\textbackslash{}033\mbox{[}97m\char`\"{}
+\item 
+\mbox{\Hypertarget{manager_8c_aa77c9ef7d47c598534b86e04d53bbca4}\label{manager_8c_aa77c9ef7d47c598534b86e04d53bbca4}} 
+\#define {\bfseries A\+N\+S\+I\+\_\+\+F\+G\+\_\+\+C\+Y\+AN}~\char`\"{}\textbackslash{}033\mbox{[}36m\char`\"{}
+\item 
+\mbox{\Hypertarget{manager_8c_a64e06c8e9382580b2eb850ab0bd7d4d4}\label{manager_8c_a64e06c8e9382580b2eb850ab0bd7d4d4}} 
+\#define {\bfseries A\+N\+S\+I\+\_\+\+F\+G\+\_\+\+B\+R\+ED}~\char`\"{}\textbackslash{}033\mbox{[}1;31m\char`\"{}
+\item 
+\mbox{\Hypertarget{manager_8c_ad323dc40f6839c4d7aa909daac26270a}\label{manager_8c_ad323dc40f6839c4d7aa909daac26270a}} 
+\#define {\bfseries A\+N\+S\+I\+\_\+\+F\+G\+\_\+\+B\+W\+H\+I\+TE}~\char`\"{}\textbackslash{}033\mbox{[}1;97m\char`\"{}
+\item 
+\mbox{\Hypertarget{manager_8c_a2310f6a8ff4ca5aaad19d494cb329aa5}\label{manager_8c_a2310f6a8ff4ca5aaad19d494cb329aa5}} 
+\#define {\bfseries A\+N\+S\+I\+\_\+\+F\+G\+\_\+\+B\+G\+R\+E\+EN}~\char`\"{}\textbackslash{}033\mbox{[}1;32m\char`\"{}
+\item 
+\mbox{\Hypertarget{manager_8c_a3c2dca04013f2ae65b7a06d4c81369f9}\label{manager_8c_a3c2dca04013f2ae65b7a06d4c81369f9}} 
+\#define {\bfseries A\+N\+S\+I\+\_\+\+F\+G\+\_\+\+B\+Y\+E\+L\+L\+OW}~\char`\"{}\textbackslash{}033\mbox{[}1;33m\char`\"{}
+\item 
+\mbox{\Hypertarget{manager_8c_a652a4786121768c311dade6e70ab3990}\label{manager_8c_a652a4786121768c311dade6e70ab3990}} 
+\#define {\bfseries A\+N\+S\+I\+\_\+\+F\+G\+\_\+\+B\+B\+L\+UE}~\char`\"{}\textbackslash{}033\mbox{[}1;34m\char`\"{}
+\item 
+\mbox{\Hypertarget{manager_8c_a839555fc22a6b70dfb9cde7bb3c5a1f2}\label{manager_8c_a839555fc22a6b70dfb9cde7bb3c5a1f2}} 
+\#define {\bfseries A\+N\+S\+I\+\_\+\+F\+G\+\_\+\+B\+P\+U\+R\+P\+LE}~\char`\"{}\textbackslash{}033\mbox{[}1;35m\char`\"{}
+\item 
+\mbox{\Hypertarget{manager_8c_ab98c56ae90965faa12791d29da796880}\label{manager_8c_ab98c56ae90965faa12791d29da796880}} 
+\#define {\bfseries A\+N\+S\+I\+\_\+\+F\+G\+\_\+\+B\+C\+Y\+AN}~\char`\"{}\textbackslash{}033\mbox{[}1;36m\char`\"{}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{manager_8c_a571062dc83d17079d2d1f254dd58b0c0}\label{manager_8c_a571062dc83d17079d2d1f254dd58b0c0}} 
+typedef int($\ast$ {\bfseries parse\+\_\+cb}) (\hyperlink{struct__Game}{Game} $\ast$game)
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{manager_8c_a8c203a5227e8ee8ef5b42881a6e10daf}\label{manager_8c_a8c203a5227e8ee8ef5b42881a6e10daf}} 
+enum {\bfseries Print\+Type} \{ {\bfseries \+\_\+\+P\+E\+R\+R\+OR}, 
+{\bfseries \+\_\+\+P\+W\+A\+RN}, 
+{\bfseries \+\_\+\+P\+S\+U\+C\+C\+E\+SS}, 
+{\bfseries \+\_\+\+P\+I\+N\+FO}
+ \}
+\item 
+\mbox{\Hypertarget{manager_8c_a500073494877b0eea944711f821dc5e7}\label{manager_8c_a500073494877b0eea944711f821dc5e7}} 
+enum {\bfseries Attr\+\_\+type} \{ {\bfseries \+\_\+\+I\+NT}, 
+{\bfseries \+\_\+\+L\+O\+NG}, 
+{\bfseries \+\_\+\+S\+TR}, 
+{\bfseries \+\_\+\+S\+T\+R\+\_\+\+A\+RR}
+ \}
+\item 
+\mbox{\Hypertarget{manager_8c_a2e2f8cf542f19db90a2b0b2c082e9231}\label{manager_8c_a2e2f8cf542f19db90a2b0b2c082e9231}} 
+enum {\bfseries Attr\+\_\+check} \{ {\bfseries \+\_\+\+N\+U\+L\+L\+\_\+\+C\+H\+E\+CK} =1, 
+{\bfseries \+\_\+\+I\+D\+\_\+\+C\+H\+E\+CK}, 
+{\bfseries \+\_\+\+L\+E\+N\+\_\+\+C\+H\+E\+CK}, 
+{\bfseries \+\_\+\+E\+N\+D\+\_\+\+C\+H\+E\+CK}
+ \}
+\item 
+\mbox{\Hypertarget{manager_8c_adf764cbdea00d65edcd07bb9953ad2b7}\label{manager_8c_adf764cbdea00d65edcd07bb9953ad2b7}} 
+enum \{ {\bfseries \+\_\+\+N\+O\+NE} =-\/1
+ \}
+\item 
+\mbox{\Hypertarget{manager_8c_a832f3171db605dea01d842e78554ff80}\label{manager_8c_a832f3171db605dea01d842e78554ff80}} 
+enum {\bfseries \+\_\+\+Obj\+\_\+attrs} \{ \newline
+{\bfseries \+\_\+\+O\+B\+J\+\_\+\+ID}, 
+{\bfseries \+\_\+\+O\+B\+J\+\_\+\+N\+A\+ME}, 
+{\bfseries \+\_\+\+O\+B\+J\+\_\+\+D\+E\+S\+C\+RP}, 
+{\bfseries \+\_\+\+O\+B\+J\+\_\+\+L\+D\+E\+S\+C\+RP}, 
+\newline
+{\bfseries \+\_\+\+O\+B\+J\+\_\+\+L\+OC}, 
+{\bfseries \+\_\+\+O\+B\+J\+\_\+\+M\+O\+V\+A\+B\+LE}, 
+{\bfseries \+\_\+\+O\+B\+J\+\_\+\+M\+O\+V\+ED}, 
+{\bfseries \+\_\+\+O\+B\+J\+\_\+\+H\+I\+D\+D\+EN}, 
+\newline
+{\bfseries \+\_\+\+O\+B\+J\+\_\+\+I\+L\+L\+U\+M\+I\+N\+A\+TE}, 
+{\bfseries \+\_\+\+O\+B\+J\+\_\+\+ON}, 
+{\bfseries \+\_\+\+O\+B\+J\+\_\+\+O\+P\+E\+NS}, 
+{\bfseries \+\_\+\+O\+B\+J\+\_\+\+U\+S\+ED}, 
+\newline
+{\bfseries \+\_\+\+O\+B\+J\+\_\+\+M\+A\+X\+\_\+\+U\+S\+ES}
+ \}
+\item 
+\mbox{\Hypertarget{manager_8c_a39e411563d1666e73596f95a399c10d3}\label{manager_8c_a39e411563d1666e73596f95a399c10d3}} 
+enum {\bfseries \+\_\+\+Sp\+\_\+attrs} \{ \newline
+{\bfseries \+\_\+\+S\+P\+A\+C\+E\+\_\+\+ID}, 
+{\bfseries \+\_\+\+S\+P\+A\+C\+E\+\_\+\+N\+A\+ME}, 
+{\bfseries \+\_\+\+S\+P\+A\+C\+E\+\_\+\+P\+I\+C\+T\+U\+RE}, 
+{\bfseries \+\_\+\+S\+P\+A\+C\+E\+\_\+\+L\+I\+N\+KS}, 
+\newline
+{\bfseries \+\_\+\+S\+P\+A\+C\+E\+\_\+\+D\+E\+S\+C\+RP}, 
+{\bfseries \+\_\+\+S\+P\+A\+C\+E\+\_\+\+L\+D\+E\+S\+C\+RP}, 
+{\bfseries \+\_\+\+S\+P\+A\+C\+E\+\_\+\+L\+I\+G\+HT}
+ \}
+\item 
+\mbox{\Hypertarget{manager_8c_a7524393556cd22718bf987d83b33ea02}\label{manager_8c_a7524393556cd22718bf987d83b33ea02}} 
+enum {\bfseries \+\_\+\+Ln\+\_\+attrs} \{ \newline
+{\bfseries \+\_\+\+L\+I\+N\+K\+\_\+\+ID}, 
+{\bfseries \+\_\+\+L\+I\+N\+K\+\_\+\+N\+A\+ME}, 
+{\bfseries \+\_\+\+L\+I\+N\+K\+\_\+\+F\+R\+OM}, 
+{\bfseries \+\_\+\+L\+I\+N\+K\+\_\+\+TO}, 
+\newline
+{\bfseries \+\_\+\+L\+I\+N\+K\+\_\+\+S\+TS}
+ \}
+\item 
+\mbox{\Hypertarget{manager_8c_a89d3126b211998ae6bb9e98091354bb5}\label{manager_8c_a89d3126b211998ae6bb9e98091354bb5}} 
+enum {\bfseries \+\_\+\+Player\+\_\+attrs} \{ {\bfseries \+\_\+\+P\+L\+A\+Y\+E\+R\+\_\+\+ID}, 
+{\bfseries \+\_\+\+P\+L\+A\+Y\+E\+R\+\_\+\+N\+A\+ME}, 
+{\bfseries \+\_\+\+P\+L\+A\+Y\+E\+R\+\_\+\+B\+AG}, 
+{\bfseries \+\_\+\+P\+L\+A\+Y\+E\+R\+\_\+\+I\+NV}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{manager_8c_a9da8930ac8398efb19220f643073a0dd}\label{manager_8c_a9da8930ac8398efb19220f643073a0dd}} 
+void {\bfseries \+\_\+prt} (Print\+Type type, const char $\ast$frmt,...)
+\item 
+\mbox{\Hypertarget{manager_8c_acbcacd437c87df414d052806e6ec728c}\label{manager_8c_acbcacd437c87df414d052806e6ec728c}} 
+int {\bfseries rd\+\_\+get\+\_\+attr\+\_\+by\+\_\+name} (const char $\ast$\+\_\+name)
+\item 
+\mbox{\Hypertarget{manager_8c_a7933ac1e4ee86d40582d86a00ff3ed6d}\label{manager_8c_a7933ac1e4ee86d40582d86a00ff3ed6d}} 
+void {\bfseries rd\+\_\+free\+\_\+attr\+\_\+data} ()
+\item 
+\mbox{\Hypertarget{manager_8c_a087b77b73a8876b2ec1a1d6535d3300b}\label{manager_8c_a087b77b73a8876b2ec1a1d6535d3300b}} 
+void {\bfseries rd\+\_\+free\+\_\+attr} (int attr)
+\item 
+\mbox{\Hypertarget{manager_8c_ac039925621e82efdf79779524973b2c4}\label{manager_8c_ac039925621e82efdf79779524973b2c4}} 
+void {\bfseries rd\+\_\+set\+\_\+attr} (int attr,...)
+\item 
+\mbox{\Hypertarget{manager_8c_a31bcb62f48261e09dc77bad47adb7716}\label{manager_8c_a31bcb62f48261e09dc77bad47adb7716}} 
+void $\ast$ {\bfseries rd\+\_\+get\+\_\+attr} (int attr,...)
+\item 
+\mbox{\Hypertarget{manager_8c_a6c18d1c57ea8fb099a2b514ce3b9bcf8}\label{manager_8c_a6c18d1c57ea8fb099a2b514ce3b9bcf8}} 
+void {\bfseries rd\+\_\+alloc\+\_\+attr} (int attr,...)
+\item 
+\mbox{\Hypertarget{manager_8c_af8822106240627d4f56f59a26c1aef79}\label{manager_8c_af8822106240627d4f56f59a26c1aef79}} 
+int {\bfseries rd\+\_\+check\+\_\+attr} (int attr, const char $\ast$pref,...)
+\item 
+\mbox{\Hypertarget{manager_8c_a794ce637592f940764b16fcfacbb1105}\label{manager_8c_a794ce637592f940764b16fcfacbb1105}} 
+int {\bfseries \+\_\+parse} (\hyperlink{struct__Game}{Game} $\ast$game, const char $\ast$f\+\_\+name, const char $\ast$pref, parse\+\_\+cb cb)
+\item 
+\mbox{\Hypertarget{manager_8c_aa960fd4809f64f69a388c0e80fee8ba2}\label{manager_8c_aa960fd4809f64f69a388c0e80fee8ba2}} 
+void {\bfseries rd\+\_\+prepare} (Rd\+\_\+item item)
+\item 
+\mbox{\Hypertarget{manager_8c_a422e758cd037dc6ddac6f1b8594b8b1a}\label{manager_8c_a422e758cd037dc6ddac6f1b8594b8b1a}} 
+int {\bfseries \+\_\+parse\+\_\+player} (\hyperlink{struct__Game}{Game} $\ast$game)
+\item 
+\mbox{\Hypertarget{manager_8c_a28bc9fdb71b5faa72b35b84280b0429f}\label{manager_8c_a28bc9fdb71b5faa72b35b84280b0429f}} 
+int {\bfseries \+\_\+parse\+\_\+link} (\hyperlink{struct__Game}{Game} $\ast$game)
+\item 
+\mbox{\Hypertarget{manager_8c_a93bf599f123688647f60b9e6d92b9b47}\label{manager_8c_a93bf599f123688647f60b9e6d92b9b47}} 
+int {\bfseries \+\_\+parse\+\_\+space} (\hyperlink{struct__Game}{Game} $\ast$game)
+\item 
+\mbox{\Hypertarget{manager_8c_ab9b73a3f4d7040b02aff0a2fcd556a7d}\label{manager_8c_ab9b73a3f4d7040b02aff0a2fcd556a7d}} 
+int {\bfseries \+\_\+parse\+\_\+object} (\hyperlink{struct__Game}{Game} $\ast$game)
+\item 
+\mbox{\Hypertarget{manager_8c_ac81f07d097e113a24d0f96b426534c63}\label{manager_8c_ac81f07d097e113a24d0f96b426534c63}} 
+int {\bfseries manager\+\_\+save} (\hyperlink{struct__Game}{Game} $\ast$game, const char $\ast$f\+\_\+name)
+\item 
+\mbox{\Hypertarget{manager_8c_ae1e0e8d4b9882b295c85d3123c083ea0}\label{manager_8c_ae1e0e8d4b9882b295c85d3123c083ea0}} 
+int {\bfseries manager\+\_\+load} (\hyperlink{struct__Game}{Game} $\ast$game, const char $\ast$f\+\_\+name, Rd\+\_\+item item)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{manager_8c_a47dc7d433c87c78538d0de871d63b013}\label{manager_8c_a47dc7d433c87c78538d0de871d63b013}} 
+Attr\+\_\+type {\bfseries A\+T\+T\+R\+\_\+\+T\+Y\+PE} \mbox{[}R\+E\+A\+D\+E\+R\+\_\+\+M\+A\+X\+\_\+\+A\+T\+T\+RS\mbox{]}
+\item 
+\mbox{\Hypertarget{manager_8c_aa7260e0913be5fa2c947417c324d9758}\label{manager_8c_aa7260e0913be5fa2c947417c324d9758}} 
+void $\ast$ {\bfseries A\+T\+T\+R\+\_\+\+D\+A\+TA} \mbox{[}R\+E\+A\+D\+E\+R\+\_\+\+M\+A\+X\+\_\+\+A\+T\+T\+RS\mbox{]}
+\item 
+\mbox{\Hypertarget{manager_8c_a92a360b30a6255dd20d187748a7aa1e8}\label{manager_8c_a92a360b30a6255dd20d187748a7aa1e8}} 
+int {\bfseries A\+T\+T\+R\+\_\+\+L\+I\+NE} \mbox{[}R\+E\+A\+D\+E\+R\+\_\+\+M\+A\+X\+\_\+\+A\+T\+T\+RS\mbox{]} = \{0\}
+\item 
+\mbox{\Hypertarget{manager_8c_a9d7109f84a5ec69b3fba45e350dce40e}\label{manager_8c_a9d7109f84a5ec69b3fba45e350dce40e}} 
+char {\bfseries A\+T\+T\+R\+\_\+\+N\+A\+ME} \mbox{[}R\+E\+A\+D\+E\+R\+\_\+\+M\+A\+X\+\_\+\+A\+T\+T\+RS\mbox{]}\mbox{[}M\+A\+X\+\_\+\+B\+U\+FF\mbox{]} = \{\{0\}\}
+\item 
+\mbox{\Hypertarget{manager_8c_a02af156c7e4ae488c65ab7189b2f9125}\label{manager_8c_a02af156c7e4ae488c65ab7189b2f9125}} 
+int {\bfseries L\+BL} = 1
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Main game reader. 
+
+This module is under hard changes, use it with caution
+
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+07/02/2019 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Javier Romera 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+G\+NU Public License 
+\end{DoxyCopyright}

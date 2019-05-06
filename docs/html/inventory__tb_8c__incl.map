@@ -1,4 +1,5 @@
 <map id="src/inventory_tb.c" name="src/inventory_tb.c">
-<area shape="rect" id="node6" href="$inventory_8h.html" title="Inventory manager. " alt="" coords="46,80,133,107"/>
-<area shape="rect" id="node7" href="$types_8h.html" title="It defines types of data. " alt="" coords="106,155,171,181"/>
+<area shape="rect" id="node6" href="$inventory_8h.html" title="Inventory manager. " alt="" coords="278,80,365,107"/>
+<area shape="rect" id="node8" href="$types_8h.html" title="It defines types of data. " alt="" coords="349,229,414,256"/>
+<area shape="rect" id="node7" href="$set_8h.html" title="It defines the set interface. " alt="" coords="312,155,363,181"/>
 </map>

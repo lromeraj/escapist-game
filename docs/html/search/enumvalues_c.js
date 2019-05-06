@@ -7,5 +7,6 @@ var searchData=
   ['s_5fdim',['S_DIM',['../ui_8h.html#ab4e88c89b3b7ea1735996cc4def22d58a853c3cc3fbd75aa00e16505d1242e575',1,'ui.h']]],
   ['s_5fhidden',['S_HIDDEN',['../ui_8h.html#ab4e88c89b3b7ea1735996cc4def22d58a2c4c9d9d754df0bfd7d1e82ba21acb40',1,'ui.h']]],
   ['s_5freverse',['S_REVERSE',['../ui_8h.html#ab4e88c89b3b7ea1735996cc4def22d58a12119c5fb581b9b351983dce8e0bf23d',1,'ui.h']]],
-  ['s_5funderlined',['S_UNDERLINED',['../ui_8h.html#ab4e88c89b3b7ea1735996cc4def22d58aae501dc5817876361aa06f3da39d1cfb',1,'ui.h']]]
+  ['s_5funderlined',['S_UNDERLINED',['../ui_8h.html#ab4e88c89b3b7ea1735996cc4def22d58aae501dc5817876361aa06f3da39d1cfb',1,'ui.h']]],
+  ['save',['SAVE',['../cmd_8h.html#a00a332e55439547f3ed90d0839bd1995a793562cbf5bffacba71303cee907ef7d',1,'cmd.h']]]
 ];

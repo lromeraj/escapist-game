@@ -73,18 +73,17 @@ $(function() {
 
 <p>Code implementation of the inventory manager.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="inventory_8h_source.html">inventory.h</a>&quot;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;stdlib.h&gt;</code><br />
-<code>#include &quot;<a class="el" href="set_8h_source.html">set.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="inventory_8h_source.html">inventory.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for inventory.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="inventory_8c__incl.png" border="0" usemap="#src_2inventory_8c" alt=""/></div>
 <map name="src_2inventory_8c" id="src_2inventory_8c">
-<area shape="rect" id="node4" href="set_8h.html" title="It defines the set interface. " alt="" coords="21,80,72,107"/>
-<area shape="rect" id="node8" href="inventory_8h.html" title="Inventory manager. " alt="" coords="97,80,183,107"/>
-<area shape="rect" id="node5" href="types_8h.html" title="It defines types of data. " alt="" coords="105,155,170,181"/>
+<area shape="rect" id="node2" href="inventory_8h.html" title="Inventory manager. " alt="" coords="106,80,193,107"/>
+<area shape="rect" id="node3" href="set_8h.html" title="It defines the set interface. " alt="" coords="108,155,159,181"/>
+<area shape="rect" id="node5" href="types_8h.html" title="It defines types of data. " alt="" coords="57,229,122,256"/>
 </map>
 </div>
 </div><table class="memberdecls">
@@ -116,6 +115,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a9ea9977c26995708d271af60ad96650b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="inventory_8c.html#a9ea9977c26995708d271af60ad96650b">inventory_get_max</a> (<a class="el" href="inventory_8h.html#a2253bf64ac4ce6a9c1d6f39c0b0d32a3">Inventory</a> *inv)</td></tr>
 <tr class="memdesc:a9ea9977c26995708d271af60ad96650b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tells the maximun capacity of the Inventory.  <a href="#a9ea9977c26995708d271af60ad96650b">More...</a><br /></td></tr>
 <tr class="separator:a9ea9977c26995708d271af60ad96650b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae690e6a4a93283f7fcf8646ba836a542"><td class="memItemLeft" align="right" valign="top"><a class="el" href="set_8h.html#a6d3b7f7c92cbb4577ef3ef7ddbf93161">Set</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="inventory_8c.html#ae690e6a4a93283f7fcf8646ba836a542">inventory_get_bag</a> (<a class="el" href="inventory_8h.html#a2253bf64ac4ce6a9c1d6f39c0b0d32a3">Inventory</a> *inv)</td></tr>
+<tr class="memdesc:ae690e6a4a93283f7fcf8646ba836a542"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the bag of the player.  <a href="#ae690e6a4a93283f7fcf8646ba836a542">More...</a><br /></td></tr>
+<tr class="separator:ae690e6a4a93283f7fcf8646ba836a542"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a913ebf717a79dced571ff9aad64352b5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="inventory_8c.html#a913ebf717a79dced571ff9aad64352b5">inventory_is_full</a> (<a class="el" href="inventory_8h.html#a2253bf64ac4ce6a9c1d6f39c0b0d32a3">Inventory</a> *inv)</td></tr>
 <tr class="memdesc:a913ebf717a79dced571ff9aad64352b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tells if an inventory is full or not.  <a href="#a913ebf717a79dced571ff9aad64352b5">More...</a><br /></td></tr>
 <tr class="separator:a913ebf717a79dced571ff9aad64352b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -371,6 +373,39 @@ Functions</h2></td></tr>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
     <tr><td class="paramname">{int}</td><td>- Returns an integer </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae690e6a4a93283f7fcf8646ba836a542"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae690e6a4a93283f7fcf8646ba836a542">&#9670;&nbsp;</a></span>inventory_get_bag()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="set_8h.html#a6d3b7f7c92cbb4577ef3ef7ddbf93161">Set</a>* inventory_get_bag </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="inventory_8h.html#a2253bf64ac4ce6a9c1d6f39c0b0d32a3">Inventory</a> *&#160;</td>
+          <td class="paramname"><em>inv</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the bag of the player. </p>
+<dl class="section author"><dt>Author</dt><dd>Javier Romera </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">{Inventory*}</td><td>- inventory pointer </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">{Set*}</td><td>- returns player's bag as a set of ids </td></tr>
   </table>
   </dd>
 </dl>

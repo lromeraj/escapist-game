@@ -12,6 +12,7 @@ var searchData=
   ['_5fspace',['_Space',['../struct__Space.html',1,'']]],
   ['_5fui',['_Ui',['../struct__Ui.html',1,'']]],
   ['_5fui_5fbox',['_Ui_box',['../struct__Ui__box.html',1,'']]],
+  ['_5fui_5fcpix',['_Ui_cpix',['../struct__Ui__cpix.html',1,'']]],
   ['_5fui_5fpix',['_Ui_pix',['../struct__Ui__pix.html',1,'']]],
   ['_5fui_5fscreen',['_Ui_screen',['../struct__Ui__screen.html',1,'']]]
 ];

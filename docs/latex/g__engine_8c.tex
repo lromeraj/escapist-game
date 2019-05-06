@@ -5,6 +5,7 @@
 Graphic engine source code.  
 
 
+{\ttfamily \#include \char`\"{}str.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}game.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}player.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}inventory.\+h\char`\"{}}\newline
@@ -27,6 +28,57 @@ Include dependency graph for g\+\_\+engine.\+c\+:\nopagebreak
 \item 
 struct \hyperlink{struct__G__engine}{\+\_\+\+G\+\_\+engine}
 \begin{DoxyCompactList}\small\item\em Main graphic engine structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{g__engine_8c_a7fe2c94e7756b2fc8b660a71c8e0d3d8}\label{g__engine_8c_a7fe2c94e7756b2fc8b660a71c8e0d3d8}} 
+\#define \hyperlink{g__engine_8c_a7fe2c94e7756b2fc8b660a71c8e0d3d8}{M\+A\+I\+N\+\_\+\+BG}~\char`\"{}brgb(29,38,47)\char`\"{}
+\begin{DoxyCompactList}\small\item\em Main background color. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{g__engine_8c_aa6405fb3815f498f8bbfda6cd2802247}\label{g__engine_8c_aa6405fb3815f498f8bbfda6cd2802247}} 
+\#define \hyperlink{g__engine_8c_aa6405fb3815f498f8bbfda6cd2802247}{M\+A\+I\+N\+\_\+\+FG}~\char`\"{}frgb(255,255,255)\char`\"{}
+\begin{DoxyCompactList}\small\item\em Main foreground color. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{g__engine_8c_aa613a0d2f5813699c76343cf2be66d84}\label{g__engine_8c_aa613a0d2f5813699c76343cf2be66d84}} 
+\#define {\bfseries G\+A\+M\+E\+\_\+\+M\+A\+P\+\_\+\+BG}~\hyperlink{g__engine_8c_a7fe2c94e7756b2fc8b660a71c8e0d3d8}{M\+A\+I\+N\+\_\+\+BG}
+\item 
+\mbox{\Hypertarget{g__engine_8c_a4e80a546da7568022e9454208c697f43}\label{g__engine_8c_a4e80a546da7568022e9454208c697f43}} 
+\#define {\bfseries G\+A\+M\+E\+\_\+\+M\+A\+P\+\_\+\+FG}~\hyperlink{g__engine_8c_aa6405fb3815f498f8bbfda6cd2802247}{M\+A\+I\+N\+\_\+\+FG}
+\item 
+\mbox{\Hypertarget{g__engine_8c_a4bd5ee9607de0fca737ec5abb69e1b09}\label{g__engine_8c_a4bd5ee9607de0fca737ec5abb69e1b09}} 
+\#define {\bfseries G\+A\+M\+E\+\_\+\+I\+N\+F\+O\+\_\+\+BG}~\hyperlink{g__engine_8c_a7fe2c94e7756b2fc8b660a71c8e0d3d8}{M\+A\+I\+N\+\_\+\+BG}
+\item 
+\mbox{\Hypertarget{g__engine_8c_a856b641f0d001edfba7968f4b99b70b8}\label{g__engine_8c_a856b641f0d001edfba7968f4b99b70b8}} 
+\#define {\bfseries G\+A\+M\+E\+\_\+\+I\+N\+F\+O\+\_\+\+FG}~\hyperlink{g__engine_8c_aa6405fb3815f498f8bbfda6cd2802247}{M\+A\+I\+N\+\_\+\+FG}
+\item 
+\mbox{\Hypertarget{g__engine_8c_a53e7a006c8416f29a34ce12ed6275a24}\label{g__engine_8c_a53e7a006c8416f29a34ce12ed6275a24}} 
+\#define {\bfseries G\+A\+M\+E\+\_\+\+F\+E\+E\+D\+\_\+\+BG}~\hyperlink{g__engine_8c_a7fe2c94e7756b2fc8b660a71c8e0d3d8}{M\+A\+I\+N\+\_\+\+BG}
+\item 
+\mbox{\Hypertarget{g__engine_8c_a727e5d513e9a09837b96b976a2a30ec2}\label{g__engine_8c_a727e5d513e9a09837b96b976a2a30ec2}} 
+\#define {\bfseries G\+A\+M\+E\+\_\+\+F\+E\+E\+D\+\_\+\+FG}~\hyperlink{g__engine_8c_aa6405fb3815f498f8bbfda6cd2802247}{M\+A\+I\+N\+\_\+\+FG}
+\item 
+\mbox{\Hypertarget{g__engine_8c_a634e422a97dfe67596be35ef320eb7f9}\label{g__engine_8c_a634e422a97dfe67596be35ef320eb7f9}} 
+\#define {\bfseries G\+A\+M\+E\+\_\+\+T\+I\+T\+L\+E\+\_\+\+BG}~\char`\"{}brgb(255,172,0)\char`\"{}
+\item 
+\mbox{\Hypertarget{g__engine_8c_aa6d188a2b88e43c590a2de94fd665e34}\label{g__engine_8c_aa6d188a2b88e43c590a2de94fd665e34}} 
+\#define {\bfseries G\+A\+M\+E\+\_\+\+T\+I\+T\+L\+E\+\_\+\+FG}~\char`\"{}frgb(29,38,47)\char`\"{}
+\item 
+\mbox{\Hypertarget{g__engine_8c_a55225582f2f94c551f15d84e1bfc053a}\label{g__engine_8c_a55225582f2f94c551f15d84e1bfc053a}} 
+\#define {\bfseries L\+I\+N\+K\+\_\+\+C\+L\+O\+S\+E\+D\+\_\+\+FG}~\char`\"{}frgb(255,64,64)\char`\"{}
+\item 
+\mbox{\Hypertarget{g__engine_8c_a30563eb3914e5635119dcfd1686f40b9}\label{g__engine_8c_a30563eb3914e5635119dcfd1686f40b9}} 
+\#define {\bfseries L\+I\+N\+K\+\_\+\+O\+P\+E\+N\+E\+D\+\_\+\+FG}~\char`\"{}frgb(55,255,62)\char`\"{}
+\item 
+\mbox{\Hypertarget{g__engine_8c_a7f4936b1921a2e8983c209d6dfc7cbf5}\label{g__engine_8c_a7f4936b1921a2e8983c209d6dfc7cbf5}} 
+\#define {\bfseries H\+E\+L\+P\+\_\+\+T\+I\+T\+L\+E\+\_\+\+BG}~\char`\"{}brgb(255,172,0)\char`\"{}
+\item 
+\mbox{\Hypertarget{g__engine_8c_ad4393fd2409e3639a8ffde736e65e5af}\label{g__engine_8c_ad4393fd2409e3639a8ffde736e65e5af}} 
+\#define {\bfseries H\+E\+L\+P\+\_\+\+T\+I\+T\+L\+E\+\_\+\+FG}~\char`\"{}frgb(29,38,47)\char`\"{}
+\item 
+\mbox{\Hypertarget{g__engine_8c_a3a60ded8ea01315b70f0f95a0f7835ab}\label{g__engine_8c_a3a60ded8ea01315b70f0f95a0f7835ab}} 
+\#define {\bfseries H\+E\+L\+P\+\_\+\+B\+O\+D\+Y\+\_\+\+BG}~\hyperlink{g__engine_8c_a7fe2c94e7756b2fc8b660a71c8e0d3d8}{M\+A\+I\+N\+\_\+\+BG}
+\item 
+\mbox{\Hypertarget{g__engine_8c_ad4687894961e185ddc612dd474608eb2}\label{g__engine_8c_ad4687894961e185ddc612dd474608eb2}} 
+\#define {\bfseries H\+E\+L\+P\+\_\+\+B\+O\+D\+Y\+\_\+\+FG}~\hyperlink{g__engine_8c_aa6405fb3815f498f8bbfda6cd2802247}{M\+A\+I\+N\+\_\+\+FG}
+\end{DoxyCompactItemize}
 \subsection*{Enumerations}
 \begin{DoxyCompactItemize}
 \item 
@@ -44,8 +96,11 @@ enum \hyperlink{g__engine_8c_a55884d4185031754f710955b5e32ebd9}{\+\_\+\+Boxes} \
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{g__engine_8c_a947f9e2e4c31ea006fd0c69072c9abf3}{parse\+\_\+space} (\hyperlink{struct__Game}{Game} $\ast$game, \hyperlink{struct__G__engine}{G\+\_\+engine} $\ast$ge, \hyperlink{space_8h_a67533ffc2b70463baecc38fb0629bbfc}{Space} $\ast$sp, int id, int x, int y)
+void \hyperlink{g__engine_8c_ae501656eaf5823394771a1a4792f0baf}{parse\+\_\+map} (\hyperlink{struct__G__engine}{G\+\_\+engine} $\ast$ge, \hyperlink{struct__Game}{Game} $\ast$game, int box)
 \begin{DoxyCompactList}\small\item\em Parses a given space. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{g__engine_8c_ae1539d840e7db04297cdc7ce140e3412}\label{g__engine_8c_ae1539d840e7db04297cdc7ce140e3412}} 
+void {\bfseries parse\+\_\+info} (\hyperlink{struct__G__engine}{G\+\_\+engine} $\ast$ge, \hyperlink{struct__Game}{Game} $\ast$game, int box)
+\item 
 \hyperlink{struct__G__engine}{G\+\_\+engine} $\ast$ \hyperlink{g__engine_8c_aa2f5a0548ea6fedb671c594d4f0cf039}{g\+\_\+engine\+\_\+create} ()
 \begin{DoxyCompactList}\small\item\em Creates a new graphic engine. \end{DoxyCompactList}\item 
 void \hyperlink{g__engine_8c_a22856c5bd4a0185424313f9fcb5ed4d7}{g\+\_\+engine\+\_\+paint\+\_\+help} (\hyperlink{struct__G__engine}{G\+\_\+engine} $\ast$ge, \hyperlink{struct__Game}{Game} $\ast$game)
@@ -110,11 +165,11 @@ H\+E\+L\+P\+\_\+\+B\+O\+DY&Help body \\
 
 
 \subsection{Function Documentation}
-\mbox{\Hypertarget{g__engine_8c_a947f9e2e4c31ea006fd0c69072c9abf3}\label{g__engine_8c_a947f9e2e4c31ea006fd0c69072c9abf3}} 
-\index{g\+\_\+engine.\+c@{g\+\_\+engine.\+c}!parse\+\_\+space@{parse\+\_\+space}}
-\index{parse\+\_\+space@{parse\+\_\+space}!g\+\_\+engine.\+c@{g\+\_\+engine.\+c}}
-\subsubsection{\texorpdfstring{parse\+\_\+space()}{parse\_space()}}
-{\footnotesize\ttfamily void parse\+\_\+space (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Game}{Game} $\ast$}]{game,  }\item[{\hyperlink{struct__G__engine}{G\+\_\+engine} $\ast$}]{ge,  }\item[{\hyperlink{space_8h_a67533ffc2b70463baecc38fb0629bbfc}{Space} $\ast$}]{sp,  }\item[{int}]{id,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{g__engine_8c_ae501656eaf5823394771a1a4792f0baf}\label{g__engine_8c_ae501656eaf5823394771a1a4792f0baf}} 
+\index{g\+\_\+engine.\+c@{g\+\_\+engine.\+c}!parse\+\_\+map@{parse\+\_\+map}}
+\index{parse\+\_\+map@{parse\+\_\+map}!g\+\_\+engine.\+c@{g\+\_\+engine.\+c}}
+\subsubsection{\texorpdfstring{parse\+\_\+map()}{parse\_map()}}
+{\footnotesize\ttfamily void parse\+\_\+map (\begin{DoxyParamCaption}\item[{\hyperlink{struct__G__engine}{G\+\_\+engine} $\ast$}]{ge,  }\item[{\hyperlink{struct__Game}{Game} $\ast$}]{game,  }\item[{int}]{box }\end{DoxyParamCaption})}
 
 
 
