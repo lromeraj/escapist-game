@@ -283,7 +283,7 @@
 	name: "Spawn Point",
 	links: [ 1, -1, -1, -1, -1, -1 ],
 	light: false,
-	descrp: "Welcofffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffme!",
+	descrp: "Welcome!",
 	ldescrp: "A new adventure has begun, manage yourself to escape from the island.",
 	picture: "@{0;frgb(0,255,0)}
  /\_/\
