@@ -4,22 +4,22 @@
 #include "game.h"
 
 typedef enum _RuleAns {
-  _BAG_IS_FULL,
-  _OBJ_NOT_EXISTS,
-  _OBJ_NOT_IN_BAG,
-  _OBJ_NOT_IN_SPACE,
-  _OBJ_IMMOVABLE,
-  _OBJ_TAKEN,
-  _OBJ_IS_OUTWORN,
-  _OBJ_CAN_NOT_OPEN_LINK,
-  _OBJ_CAN_NOT_ILLUMINATE,
-  _OBJ_NOT_REACHABLE,
-  _TAKE_SUCCESS,
-  _DROP_SUCCESS,
-  _TURN_SUCCESS,
-  _OPEN_SUCCESS,
-  _INSPECT_SUCCESS,
-  _RULE_ERROR
+  _BAG_IS_FULL, /*!< Rule to check if the bag is full */
+  _OBJ_NOT_EXISTS, /*!< Rule to check if an object does not exists */
+  _OBJ_NOT_IN_BAG, /*!< Rule to check if an object is not in the player bag */
+  _OBJ_NOT_IN_SPACE, /*!< Rule to check if the object is not in the space */
+  _OBJ_IMMOVABLE, /*!< Rule to check if the object can be moved */
+  _OBJ_TAKEN, /*!< Rule to check if the object is already taken */
+  _OBJ_IS_OUTWORN, /*!< Rule to check if the object can be used any more */
+  _OBJ_CAN_NOT_OPEN_LINK, /*!< Rule to check if the object can open a link */
+  _OBJ_CAN_NOT_ILLUMINATE, /*!< Rule to check if an object can illuminate */
+  _OBJ_NOT_REACHABLE, /*!< Rule to check if the object is not reachble */
+  _TAKE_SUCCESS, /*!< Rule to check if take action was success */
+  _DROP_SUCCESS, /*!< Rule to check if drop action was success */
+  _TURN_SUCCESS, /*!< Rule to check if turn action was success */
+  _OPEN_SUCCESS, /*!< Rule to check if open action was success */
+  _INSPECT_SUCCESS, /*!< Rule to check if inspect action was success */
+  _RULE_ERROR /*!< This indicates an error in the rule process */
 } RuleAns;
 
 RuleAns game_inspect_space( Game *game, Space *sp );

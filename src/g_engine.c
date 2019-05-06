@@ -295,10 +295,9 @@ void g_engine_paint_help( G_engine *ge, Game *game ) {
       }
 
     } else { /* other cases */
-      ui_frm( ui, 3, S_BOLD, BG_RED, FG_WHITE );
+      ui_frms( ui, "0;1;%s;brgb(76, 87, 127)", MAIN_FG );
       ui_box_put( ui, HELP_BODY, "There are no estries for '%s'\n", arg );
-      ui_frm( ui, 2, BG_BLACK, FG_WHITE );
-      ui_box_put( ui, HELP_BODY, "Sorry, that didn't work :(\n" );
+      ui_box_put( ui, HELP_BODY, "@{0}Sorry, that didn't work :(\n" );
       ui_box_put( ui, HELP_BODY, "Try using other key words\n" );
 
     }
@@ -409,7 +408,7 @@ void parse_map( G_engine *ge, Game *game, int box ) {
 
   /* draw space picture */
   _x=x+cell_w-11;
-  _y=y+cell_h-5;
+  _y=y+cell_h-7;
   pp = space_get_picture( cu_sp );
 
   if ( pp ) {
@@ -418,28 +417,28 @@ void parse_map( G_engine *ge, Game *game, int box ) {
 
     if ( len > 0 ) {
 
+      /* change default box formats */
       if ( light ) {
-        ui_frms( ui, "0;1;frgb(0,0,0);brgb(255,255,255)" );
+        ui_box_frms( ui, box, "1;frgb(0,0,0);brgb(255,255,255)" );
       } else {
-        ui_frms( ui, "0;frgb(255,255,255);brgb(0,0,0)" );
+        ui_box_frms( ui, box, "frgb(255,255,255);brgb(0,0,0)" );
       }
-
-      ui_box_seek( ui, box, _x, _y );
 
       len = strlen( pp );
 
-      for (i=0; i < len; i++ ) {
+      ui_box_put( ui, box, "@{0}" );
+      ui_box_set_cx_off( ui, box, _x );
+      ui_box_set_cx_top( ui, box, x + cell_w-1 );
 
-        if ( pp[ i ] == '\\' && pp[ i + 1 ] == 'n' ) {
-          i++; _y++;
-          ui_box_seek( ui, box, _x, _y );
-        } else if ( pp[ i ] != '\n' ) {
-          ui_box_put( ui, box, "%c", pp[ i ] );
-        }
-
-      }
+      ui_box_seek( ui, box, _x, _y );
+      ui_box_put( ui, box, "%s", pp );
 
     }
+
+    /* restore default box format */
+    ui_box_frms( ui, box, "%s;%s", GAME_MAP_BG, GAME_MAP_FG );
+    ui_box_set_cx_off( ui, box, 0 );
+    ui_box_set_cx_top( ui, box, ui_box_get_w( ui, box ) );
 
   }
 
@@ -484,14 +483,18 @@ void parse_map( G_engine *ge, Game *game, int box ) {
 
   bag = player_get_bag( player );
 
-  for ( i=0, j=0; i < t_objs; i++ ) {
-    obj = objs[ i ];
-    if ( player_has_object( player, obj_get_id( obj ) ) ) {
-      ui_box_put( ui, box, "@{!0;1;frgb(250, 255, 0);%s}%s@{0}", GAME_INFO_BG, obj_get_name( obj ) );
-      if ( j < set_get_total( bag ) - 1 ) {
-        ui_box_put( ui, box, ", " );
+  if ( set_get_total( bag ) == 0 ) {
+    ui_box_put( ui, box, "@{!0;1;frgb(250,255,0);%s}----@{0}", GAME_INFO_BG );
+  } else {
+    for ( i=0, j=0; i < t_objs; i++ ) {
+      obj = objs[ i ];
+      if ( player_has_object( player, obj_get_id( obj ) ) ) {
+        ui_box_put( ui, box, "@{!0;1;frgb(250,255,0);%s}%s@{0}", GAME_INFO_BG, obj_get_name( obj ) );
+        if ( j < set_get_total( bag ) - 1 ) {
+          ui_box_put( ui, box, ", " );
+        }
+        j++;
       }
-      j++;
     }
   }
   ui_box_put( ui, box, "\n" );
@@ -508,13 +511,18 @@ void parse_map( G_engine *ge, Game *game, int box ) {
   _x = x+2;
   _y = y+4;
 
-  ui_box_seek( ui, box, _x, _y++ );
-
   for ( i=0; i < t_objs; i++ ) {
 
     obj = objs[ i ];
 
+
     if ( !space_has_object( cu_sp, obj_get_id( obj ) ) ) continue;
+
+    len = strlen( obj_get_name( obj ) );
+
+    if ( ui_box_get_cx( ui, box )+len >= x+cell_w-13 ) {
+      ui_box_seek( ui, box, _x, _y++ );
+    }
 
     if ( space_get_light( cu_sp ) ) {
 
@@ -532,9 +540,6 @@ void parse_map( G_engine *ge, Game *game, int box ) {
 
     }
 
-    if ( ui_box_get_cx( ui, box ) > x+cell_w/2 ) {
-      ui_box_seek( ui, box, _x, _y++ );
-    }
 
   }
 
@@ -573,8 +578,9 @@ void parse_info( G_engine *ge, Game *game, int box ) {
 
     map = game_get_object_by_name( game, "map" );
 
-    ui_box_put( ui, GAME_INFO, "@{!0;%s;frgb(150,150,150)}Name@{0}: %s\n", GAME_INFO_BG, space_get_name( cu_sp ) );
-    ui_box_put( ui, GAME_INFO, "@{!0;%s;frgb(150,150,150)}Description@{0}: ", GAME_INFO_BG );
+    ui_box_put( ui, GAME_INFO, "@{!0;%s;frgb(150,150,150)}name@{0}: %s, ", GAME_INFO_BG, space_get_name( cu_sp ) );
+    ui_box_put( ui, GAME_INFO, "@{!0;%s;frgb(150,150,150)}light@{0}: %s\n", GAME_INFO_BG, space_get_light( cu_sp ) ? "on" : "off" );
+    ui_box_put( ui, GAME_INFO, "@{!0;%s;frgb(150,150,150)}description@{0}: ", GAME_INFO_BG );
 
     if ( player_has_object( player, obj_get_id( map ) ) ) {
       ui_box_put( ui, GAME_INFO, "%s", space_get_ldescrp( cu_sp ) );
@@ -593,15 +599,18 @@ void parse_info( G_engine *ge, Game *game, int box ) {
       ui_box_put( ui, GAME_INFO, "object '%s' does not exists", tstr );
     } else {
 
-      ui_box_put( ui, GAME_INFO, "@{!0;%s;frgb(150,150,150)}Name@{0}: %s\n", GAME_INFO_BG, obj_get_name( obj ) );
+      ui_box_put( ui, GAME_INFO, "@{!0;%s;frgb(150,150,150)}name@{0}: %s, ", GAME_INFO_BG, obj_get_name( obj ) );
 
       max_uses = obj_get_attr( obj, OBJ_MAX_USES );
 
       if ( max_uses > 0 ) {
-        ui_box_put( ui, GAME_INFO, "@{!0;%s;frgb(150,150,150)}Used@{0}: %ld of %ld\n", GAME_INFO_BG, obj_get_attr( obj, OBJ_USED ), max_uses );
+        ui_box_put( ui, GAME_INFO, "@{!0;%s;frgb(150,150,150)}used@{0}: %ld of @{1}%ld@{0}, ", GAME_INFO_BG, obj_get_attr( obj, OBJ_USED ), max_uses );
       }
 
-      ui_box_put( ui, GAME_INFO, "@{!0;%s;frgb(150,150,150)}Description@{0}: ", GAME_INFO_BG );
+      ui_box_put( ui, GAME_INFO, "@{!0;%s;frgb(150,150,150)}movable@{0}: %s\n", GAME_INFO_BG, obj_get_attr( obj, OBJ_IS_MOVABLE ) == OBJ_YES ? "yes" : "no" );
+
+
+      ui_box_put( ui, GAME_INFO, "@{!0;%s;frgb(150,150,150)}description@{0}: ", GAME_INFO_BG );
 
       if ( player_has_object( player, obj_get_id( book ) ) ) {
 

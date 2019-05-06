@@ -8,6 +8,8 @@
 - Improved private function `game_add()`.
 - Added help for `save`, `load`, `open` and `turn` commands.
 - Light refresh for help interface.
+- Improved space picture parser.
+- Now you can format text style from `data.dat`.
 
 `[NEW]`
 - Player bag now is showed over space description.

@@ -17,7 +17,7 @@
 #define MAX_SPACE_NAME 50 /*!< @brief Maximum length of the space name */
 #define MAX_SPACE_DESCRP 150 /*!< @brief Maximum number of characters that can have a name of an space */
 #define MAX_SPACES 200 /*!< @brief Maximum number of spaces */
-#define MAX_SPACE_PICTURE 100 /*!< @brief Maximum lenght of the space's picture */
+#define MAX_SPACE_PICTURE 200 /*!< @brief Maximum lenght of the space's picture */
 
 
 /*!

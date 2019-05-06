@@ -903,14 +903,14 @@ int _parse(
 
     _al++;
 
-		_line[ strlen( _line ) - 1 ] = 0; /* cleans \n */
+		/* _line[ strlen( _line ) - 1 ] = 0; cleans \n */
 
     /* env search */
 		if ( blockSearch ) {
 
 			if ( !strncmp( _line, pref, pref_len ) ) {
-        _bl=_al;
-				LBL=_bl;
+        _bl = _al;
+				LBL = _bl; /* update last block line */
         blockSearch = false;
 			} else {
         continue;
@@ -959,6 +959,10 @@ int _parse(
 			if ( c == ']' ) {
 				isArr=false;
 				addChar=false;
+			}
+
+			if ( c == '\n' && !isStr ) {
+				addChar = false;
 			}
 
       if ( c == ',' ) {

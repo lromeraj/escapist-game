@@ -87,6 +87,12 @@ int inventory_get_max( Inventory *inv );
 int inventory_get_total( Inventory *inv );
 
 
+/**
+* @brief Gets the bag of the player
+* @author Javier Romera
+* @param {Inventory*} - inventory pointer
+* @retval {Set*} - returns player's bag as a set of ids
+*/
 Set* inventory_get_bag( Inventory *inv );
 
 

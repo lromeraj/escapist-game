@@ -231,6 +231,15 @@ void ui_box_set_cx_off( Ui* ui, int idx, int cx_off );
 
 
 /**
+* @brief Sets limit for the 'x' cursor (column)
+* @param {Ui*} ui - UI where the box is located
+* @param {int} idx - box index
+* @param {int} cx_top - 'x' cursor limit
+*/
+void ui_box_set_cx_top( Ui* ui, int idx, int cx_top );
+
+
+/**
 * @brief Get the position of the cursor inside a box (column & row)
 * @param {Ui*} ui - UI where the box is located
 * @param {int} idx - box index

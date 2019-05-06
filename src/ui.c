@@ -60,6 +60,7 @@ struct _Ui_box {
   int cx; /*!< @brief Position of the 'x' cursor */
   int cy;  /*!< @brief Position of the 'y' cursor */
   int cx_off; /*!< @brief Offset for the 'x' cursor */
+  int cx_top; /*!< @brief Limit for the 'x' cursor */
   int __len;  /*!< @brief Length of the pixels array */
   int pad[ 4 ];  /*!< @brief Box padding */
   Color bg;  /*!< @brief Background color */
@@ -541,6 +542,8 @@ void ui_box_frms( Ui* ui, int idx, const char *frms, ... ){
   if ( !box || !frms )
     return;
 
+  _frm_rs( box->frm );
+
   va_start( _args, frms );
   vsnprintf( _buff, UI_MAX_BUFF_LEN, frms, _args );
   va_end( _args );
@@ -632,6 +635,22 @@ void ui_box_set_cx_off( Ui* ui, int idx, int cx_off ) {
 
 }
 
+void ui_box_set_cx_top( Ui* ui, int idx, int cx_top ) {
+
+  Ui_box *box;
+
+  box = ui_get_box_by_idx( ui, idx );
+
+  if ( !box )
+    return;
+
+  if ( cx_top < 0 || cx_top > box->w )
+    return;
+
+  box->cx_top = cx_top;
+
+}
+
 void ui_box_get_cursor( Ui* ui, int idx, int* cx, int* cy ) {
 
   Ui_box *box;
@@ -661,12 +680,15 @@ void ui_box_resize( Ui *ui, int idx, int w, int h ) {
   box->cy = 0;
   box->w = 0;
   box->h = 0;
+  box->cx_off = 0;
+  box->cx_top = 0;
 
   box->__pixs = alloc_pixs( w*h );
 
   if ( box->__pixs ) {
     box->w = w;
     box->h = h;
+    box->cx_top = w;
     box->__len = w*h;
   }
 
@@ -830,6 +852,7 @@ void ui_new_box( Ui *ui, int idx, int x, int y, int w, int h ) {
     box->cx = 0;
     box->cy = 0;
     box->cx_off = 0;
+    box->cx_top = w;
     box->id = idx;
     box->__len = w*h;
     box->bg = DEFAULT_BOX_BG_COLOR;
@@ -1012,7 +1035,7 @@ void ui_box_put( Ui *ui, int idx, const char *frmt, ... ) {
   char _buff[ UI_MAX_BUFF_LEN ];
   char __frm[ UI_MAX_BUFF_LEN ];
 
-  int i, j, box_w, box_h, *pad, cx_off, *cx, *cy;
+  int i, j, box_w, box_h, *pad, cx_off, cx_top, *cx, *cy;
 
   box = ui_get_box_by_idx( ui, idx );
 
@@ -1027,20 +1050,24 @@ void ui_box_put( Ui *ui, int idx, const char *frmt, ... ) {
   box_w = box->w;
   box_h = box->h;
   cx_off = box->cx_off;
+  cx_top = box->cx_top;
   cx = &box->cx; /* cursor x */
   cy = &box->cy; /* cursor y */
   pad = box->pad; /* box padding */
 
-  /* concat */
+  cx_top = cx_top == box_w ? box_w-pad[1] : cx_top;
+  cx_off = !cx_off ? pad[ 3 ] : cx_off;
+
+  /* process string */
   for ( i=0; _buff[ i ]; i++ ) {
 
-    if ( *cx == box_w - 1 ) {
+    if ( *cx == cx_top - 1 ) {
 
       if ( i && _buff[ i - 1 ] == ' ' ) {
         _pix.c = ' ';
         ui_set_pix( box->__pixs, *cx, *cy, box_w, box_h, _pix );
         (*cx)++;
-      } else if ( _buff[ i ] != ' ' ) {
+      } else if ( _buff[ i ] != ' ' && _buff[ i + 2 ] ) {
         _pix.c = '-';
         ui_set_pix( box->__pixs, *cx, *cy, box_w, box_h, _pix );
         (*cx)++;
@@ -1048,9 +1075,9 @@ void ui_box_put( Ui *ui, int idx, const char *frmt, ... ) {
 
     }
 
-    if ( *cx >= box_w - pad[1] ) {
+    if ( *cx >= cx_top ) {
       (*cy)++; /* go to the next line */
-      *cx = pad[3]+cx_off; /* fall back to the begining of the new line */
+      *cx = cx_off; /* fall back to the begining of the new line */
     }
 
     if ( *cy >= box_h - pad[2] ) { /* scroll */
@@ -1061,7 +1088,7 @@ void ui_box_put( Ui *ui, int idx, const char *frmt, ... ) {
       }
 
       (*cy)--;
-      *cx = pad[3]+cx_off;
+      *cx = cx_off;
     }
 
     _pix.c = _buff[ i ];
@@ -1074,7 +1101,7 @@ void ui_box_put( Ui *ui, int idx, const char *frmt, ... ) {
 
     if ( _pix.c == '\n' ) {
 
-      while ( *cx < box_w - pad[1] ) {
+      while ( *cx < cx_top ) {
         _pix.c = ' ';
         ui_set_pix(box->__pixs, *cx, *cy, box_w, box_h, _pix );
         (*cx)++;
@@ -1085,7 +1112,7 @@ void ui_box_put( Ui *ui, int idx, const char *frmt, ... ) {
       _pix.c = ' ';
 
       j=0;
-      while ( *cx < box_w - pad[1] && j < UI_TAB_SIZE ) {
+      while ( *cx < cx_top && j < UI_TAB_SIZE ) {
         ui_set_pix( box->__pixs, *cx, *cy, box_w, box_h, _pix );
         (*cx)++; j++;
       }
@@ -1145,17 +1172,18 @@ void ui_draw( FILE *stream, Ui *ui ) {
   int o_xor=0, /* old format check sum */
       xor;  /* current format check sum */
   char __frm[ UI_MAX_SFRM_LEN ] = "";
+  bool pfrm;
 
   if ( !stream || !ui )
     return;
 
   scr_w = ui->scr.w;
+  pfrm = true;
 
   for ( i=0; i < ui->__len; i++ ) {
 
     pix = ui->__pixs[ i ];
     cpix = ui->__cache[ i ];
-
     if ( !pix ) {
       fprintf( stream, "\033[1;31;47m UI FATAL ERROR \033[0m\n");
       break;
@@ -1185,11 +1213,14 @@ void ui_draw( FILE *stream, Ui *ui ) {
 
     }
 
+
     if ( xor != cpix->csum ) {
-      fprintf( stream, "%s%c", __frm, pix->c );
+      fprintf( stream, "%s", __frm );
     } else {
-      fprintf( stream, "%s%c", cpix->sfrm, pix->c );
+      fprintf( stream, "%s", cpix->sfrm );
     }
+
+    putc( pix->c, stream );
 
     if ( (i+1)%scr_w == 0 ) {
       fprintf( stream, "\033[0m\n");

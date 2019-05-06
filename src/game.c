@@ -564,7 +564,6 @@ void game_callback_inspect( Game *game ) {
   Player *player;
   Space *cu_sp;
   char *opt;
-  RuleAns ans;
   Object *obj;
 
   if ( !game )
@@ -586,7 +585,7 @@ void game_callback_inspect( Game *game ) {
         obj = game_get_object_by_name( game, cmd_get_argv( cmd, 2 ) );
 
         if ( obj ) {
-          ans = game_inspect_object( game, obj );
+          game_inspect_object( game, obj );
           cmd_set_ans( cmd, 0, "inspecting object '%s' ...", cmd_get_argv( cmd, 2 ) );
         } else {
           cmd_set_ans( cmd, 1, "object '%s' not exists", cmd_get_argv( cmd, 2 ) );
@@ -597,7 +596,7 @@ void game_callback_inspect( Game *game ) {
       }
 
     } else if ( !strcmp( "-s", opt ) ) {
-      ans = game_inspect_space( game, cu_sp );
+      game_inspect_space( game, cu_sp );
       cmd_set_ans( cmd, 0, "inspecting current space ..." );
     } else {
       cmd_set_ans( cmd, 1, "invalid argument key" );
