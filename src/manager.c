@@ -81,7 +81,8 @@ enum _Obj_attrs {
 	_OBJ_ON,
 	_OBJ_OPENS,
 	_OBJ_USED,
-	_OBJ_MAX_USES
+	_OBJ_MAX_USES,
+	_OBJ_PICTURE_FILE
 };
 
 enum _Sp_attrs {
@@ -91,7 +92,8 @@ enum _Sp_attrs {
   _SPACE_LINKS,
   _SPACE_DESCRP,
   _SPACE_LDESCRP,
-	_SPACE_LIGHT
+	_SPACE_LIGHT,
+	_SPACE_PICTURE_FILE
 };
 
 enum _Ln_attrs {
@@ -146,6 +148,7 @@ void rd_prepare( Rd_item item ) {
     ATTR_TYPE[ _OBJ_ON ] = _STR_ARR;
     ATTR_TYPE[ _OBJ_USED ] = _STR_ARR;
     ATTR_TYPE[ _OBJ_MAX_USES ] = _STR_ARR;
+    ATTR_TYPE[ _OBJ_PICTURE_FILE ] = _STR_ARR;
 
     strcpy( ATTR_NAME[ _OBJ_NAME ], "name" );
     strcpy( ATTR_NAME[ _OBJ_ID ], "id" );
@@ -153,6 +156,7 @@ void rd_prepare( Rd_item item ) {
 		strcpy( ATTR_NAME[ _OBJ_LDESCRP ], "ldescrp" );
     strcpy( ATTR_NAME[ _OBJ_LOC ], "location" );
     strcpy( ATTR_NAME[ _OBJ_OPENS ], "opens" );
+    strcpy( ATTR_NAME[ _OBJ_PICTURE_FILE ], "picture_file" );
 
 		/* enclosed object attrs */
     strcpy( ATTR_NAME[ _OBJ_MOVABLE ], "movable" );
@@ -187,6 +191,7 @@ void rd_prepare( Rd_item item ) {
     ATTR_TYPE[ _SPACE_LINKS ] = _STR_ARR;
     ATTR_TYPE[ _SPACE_PICTURE ] = _STR_ARR;
     ATTR_TYPE[ _SPACE_LIGHT ] = _STR_ARR;
+    ATTR_TYPE[ _SPACE_PICTURE_FILE ] = _STR_ARR;
 
     strcpy( ATTR_NAME[ _SPACE_ID ], "id" );
     strcpy( ATTR_NAME[ _SPACE_NAME ], "name" );
@@ -196,6 +201,7 @@ void rd_prepare( Rd_item item ) {
     strcpy( ATTR_NAME[ _SPACE_LINKS ], "links" );
     strcpy( ATTR_NAME[ _SPACE_PICTURE ], "picture" );
     strcpy( ATTR_NAME[ _SPACE_LIGHT ], "light" );
+    strcpy( ATTR_NAME[ _SPACE_PICTURE_FILE ], "picture_file" );
   }
 
   if ( item == _RD_LINKS ) {
@@ -344,7 +350,7 @@ int _parse_space( Game *game ) {
   Space *sp;
 	CardinalPoint cps[6] = {N,E,S,W,U,D}; /* cardinal points */
 
-  char *_id, *_name, *_descrp, *_ldescrp, *_pict, **_links, *_light;
+  char *_id, *_name, *_descrp, *_ldescrp, *_pict, *_pictf, **_links, *_light;
 
   errc = 0;
 	errc+=rd_check_attr( _SPACE_LINKS, _SPACE_SYM, _NULL_CHECK, _LEN_CHECK, 6, _END_CHECK );
@@ -355,6 +361,7 @@ int _parse_space( Game *game ) {
 	_descrp = rd_get_attr( _SPACE_DESCRP, 1 );
 	_ldescrp = rd_get_attr( _SPACE_LDESCRP, 1 );
 	_pict = rd_get_attr( _SPACE_PICTURE, 1 );
+	_pictf = rd_get_attr( _SPACE_PICTURE_FILE, 1 );
 	_links = (char**)ATTR_DATA[ _SPACE_LINKS ];
 	_light = rd_get_attr( _SPACE_LIGHT, 1 );
 
@@ -362,13 +369,14 @@ int _parse_space( Game *game ) {
 
 		id = _id ? atol( _id ) : NO_ID;
 
-
 		sp = space_create( id );
 
 		space_set_name( sp, _name );
 		space_set_descrp( sp, _descrp );
 		space_set_ldescrp( sp, _ldescrp );
 		space_set_picture( sp, _pict );
+		space_set_picture_file( sp, _pictf );
+
 
 		if ( !strcmptok( _light, "on,1,true", "," ) ) {
 			space_set_light( sp, true );
@@ -404,7 +412,7 @@ int _parse_object( Game *game ) {
   Object *obj;
 	char *attrs[ MAX_OBJ_ATTRS ] = {NULL}; /* object attrs */
 
-  char *_id, *_name, *_descrp, *_ldescrp, *_loc, **_links;
+  char *_id, *_name, *_descrp, *_ldescrp, *_pictf, *_loc, **_links;
 
   errc = 0;
 
@@ -415,6 +423,7 @@ int _parse_object( Game *game ) {
 	_descrp = rd_get_attr( _OBJ_DESCRP, 1 );
 	_ldescrp = rd_get_attr( _OBJ_LDESCRP, 1 );
 	_loc = rd_get_attr( _OBJ_LOC, 1 );
+	_pictf = rd_get_attr( _OBJ_PICTURE_FILE, 1 );
 	_links = (char**)ATTR_DATA[ _OBJ_OPENS ];
 
 	attrs[ OBJ_CAN_ILLUMINATE ] = rd_get_attr( _OBJ_ILLUMINATE, 1 );
@@ -436,6 +445,7 @@ int _parse_object( Game *game ) {
 		space_add_object( game_get_space( game, loc ), id );
 		obj_set_descrp( obj, _descrp );
 		obj_set_ldescrp( obj, _ldescrp );
+		obj_set_picture_file( obj, _pictf );
 
 		if ( _links ) {
 
@@ -488,6 +498,7 @@ int manager_save( Game *game, const char *f_name ) {
 	Space *spaces[ MAX_SPACES ];
 	Link *links[ MAX_LINKS ];
 	Object *objs[ MAX_OBJECTS ];
+	char *tstr;
 
 	enum _Obj_attrs attrs[ MAX_OBJ_ATTRS ] = { -1 }; /* object attrs */
 
@@ -524,6 +535,8 @@ int manager_save( Game *game, const char *f_name ) {
 
 		fprintf( f, "\t%s: \"%s\",\n", ATTR_NAME[ _OBJ_DESCRP ], obj_get_descrp( it ) );
 		fprintf( f, "\t%s: \"%s\",\n", ATTR_NAME[ _OBJ_LDESCRP ], obj_get_ldescrp( it ) );
+		tid = space_get_id( game_get_object_space( game, obj_get_id( it ) ) );
+		fprintf( f, "\t%s: %ld\n", ATTR_NAME[ _OBJ_LOC ], tid );
 
 		set = obj_get_links( it );
 
@@ -560,8 +573,8 @@ int manager_save( Game *game, const char *f_name ) {
 
 		}
 
-		tid = space_get_id( game_get_object_space( game, obj_get_id( it ) ) );
-		fprintf( f, "\t%s: %ld\n", ATTR_NAME[ _OBJ_LOC ], tid );
+		tstr = (char*)obj_get_picture_file( it );
+		fprintf( f, "\t%s: \"%s\"\n", ATTR_NAME[ _OBJ_PICTURE_FILE ], tstr );
 
 		fprintf( f, "}\n");
 
@@ -611,7 +624,7 @@ int manager_save( Game *game, const char *f_name ) {
 		fprintf( f, "\t%s: \"%s\",\n", ATTR_NAME[ _SPACE_PICTURE ], space_get_picture( it ) );
 		fprintf( f, "\t%s: \"%s\",\n", ATTR_NAME[ _SPACE_LDESCRP ], space_get_ldescrp( it ) );
 		fprintf( f, "\t%s: %s,\n", ATTR_NAME[ _SPACE_LIGHT ], space_get_light( it ) ? "on" : "off" );
-		fprintf( f, "\t%s: [ %ld, %ld, %ld, %ld, %ld, %ld ]\n", ATTR_NAME[ _SPACE_LINKS ],
+		fprintf( f, "\t%s: [ %ld, %ld, %ld, %ld, %ld, %ld ],\n", ATTR_NAME[ _SPACE_LINKS ],
 						space_get_link( it, N ),
 						space_get_link( it, E ),
 						space_get_link( it, S ),
@@ -620,6 +633,8 @@ int manager_save( Game *game, const char *f_name ) {
 						space_get_link( it, D )
 					);
 
+		tstr = (char*)space_get_picture_file( it );
+		fprintf( f, "\t%s: \"%s\"\n", ATTR_NAME[ _SPACE_PICTURE_FILE ], tstr );
 
 		fprintf( f, "}\n");
 

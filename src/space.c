@@ -17,6 +17,7 @@
 
 /*!< @brief Space structure*/
 
+
 struct _Space {
   Id id; /*!< @brief Space id */
   Id north; /*!< @brief Space north id */
@@ -31,6 +32,7 @@ struct _Space {
   char *ldescrp; /*!< @brief Space long description */
   Set *objects; /*!< @brief Set of objects in the space */
   char picture[ MAX_SPACE_PICTURE ]; /*!< @brief Space picture */
+  char picture_file[ MAX_SPACE_FILE_NAME ];  /*!< @brief Name of the file containing picture */
 };
 
 Space* space_create( Id id ) {
@@ -49,6 +51,7 @@ Space* space_create( Id id ) {
   sp->name[0] = '\0';
   sp->picture[0] = '\0';
   sp->descrp[0] = '\0';
+  sp->picture_file[ 0 ] = '\0';
   sp->ldescrp = NULL;
   sp->north = NO_ID;
   sp->south = NO_ID;
@@ -88,6 +91,19 @@ STATUS space_set_name( Space *space, char *name ) {
   return OK;
 }
 
+
+STATUS space_set_picture_file( Space *space, char *f_name ) {
+
+  if ( !space || !f_name ) {
+    return ERROR;
+  }
+
+  strncpy( space->picture_file, f_name, MAX_SPACE_FILE_NAME );
+  space->picture_file[ MAX_SPACE_FILE_NAME - 1 ] = 0;
+
+  return OK;
+}
+
 STATUS space_set_descrp( Space *space, const char *descrp ) {
 
   if ( !space || !descrp )
@@ -121,6 +137,12 @@ const char *space_get_ldescrp( Space *space ) {
   if ( !space )
     return NULL;
   return space->ldescrp;
+}
+
+const char *space_get_picture_file( Space *space ) {
+  if ( !space )
+    return NULL;
+  return space->picture_file;
 }
 
 Set *space_get_objects( Space *space ) {

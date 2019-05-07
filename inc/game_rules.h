@@ -21,6 +21,7 @@ typedef enum _RuleAns {
   _PLAYER_IS_ALIVE,
   _PLAYER_IS_DEATH,
   _FINISHED_HELL,
+  _OBJ_SELF,
   _INSPECT_SUCCESS, /*!< Rule to check if inspect action was success */
   _RULE_ERROR, /*!< This indicates an error in the rule process */
   _RULE_YES, /*!< This indicates a boolean answer of the rule TRUE */
@@ -34,7 +35,7 @@ RuleAns game_player_take_object( Game *game, Object *obj );
 RuleAns game_player_drop_object( Game *game, Object *obj );
 RuleAns game_obj_set_on( Game *game, Object *obj, long sts );
 RuleAns game_open_link_with_obj( Game *game, Link *ln, Object *obj );
-RuleAns can_show_object_descrp( Game *game );
+RuleAns can_show_object_descrp( Game *game, Object *obj );
 RuleAns can_show_space_descrp( Game *game );
 RuleAns game_finished( Game *game );
 

@@ -24,6 +24,7 @@ struct _Object {
   char name[ MAX_OBJ_NAME ]; /*!< Object's name */
   char descrp[ MAX_OBJ_DESCRP ]; /*!< Object's description */
   long attr[ MAX_OBJ_ATTRS ]; /*!< Object attributes */
+  char picture_file[ MAX_OBJ_FILE_NAME ]; /*!< Object's picture file name */
   Set *links; /*!< Links that the object can open */
 };
 
@@ -43,6 +44,7 @@ Object *obj_create( Id id ) {
   obj->id = id;
   obj->name[0] = '\0';
   obj->descrp[0] = '\0';
+  obj->picture_file[ 0 ] = '\0';
   obj->ldescrp = NULL;
 
   for ( i=0; i < MAX_OBJ_ATTRS; i++ ) {
@@ -117,10 +119,27 @@ STATUS obj_set_name( Object *obj, const char *name ) {
   return OK;
 }
 
+STATUS obj_set_picture_file( Object *obj, const char *f_name ) {
+
+  if ( !obj || !f_name )
+    return ERROR;
+
+  strncpy( obj->picture_file, f_name, MAX_OBJ_FILE_NAME );
+  obj->picture_file[ MAX_OBJ_FILE_NAME - 1 ] = 0;
+
+  return OK;
+}
+
 const char *obj_get_name( Object *obj ) {
   if ( !obj )
     return NULL;
   return obj->name;
+}
+
+const char *obj_get_picture_file( Object *obj ) {
+  if ( !obj )
+    return NULL;
+  return obj->picture_file;
 }
 
 STATUS obj_set_descrp( Object *obj, const char *descrp ) {

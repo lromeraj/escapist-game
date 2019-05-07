@@ -9,6 +9,7 @@ inspect -s
 t tnt_cartridges
 m e
 t tnt
+i -o tnt
 m n
 m e
 inspect -s

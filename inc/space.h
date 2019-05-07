@@ -18,8 +18,7 @@
 #define MAX_SPACE_DESCRP 150 /*!< @brief Maximum number of characters that can have a name of an space */
 #define MAX_SPACES 200 /*!< @brief Maximum number of spaces */
 #define MAX_SPACE_PICTURE 200 /*!< @brief Maximum lenght of the space's picture */
-
-
+#define MAX_SPACE_FILE_NAME 50 /*!< @brief Maximum lenght of picture file name */
 /*!
 * @brief Definition of the Space structure
 */
@@ -231,5 +230,8 @@ STATUS space_toggle_light( Space *space );
 */
 bool space_get_light( Space *space );
 
+
+STATUS space_set_picture_file( Space *space, char *name );
+const char *space_get_picture_file( Space *space );
 
 #endif

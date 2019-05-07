@@ -153,27 +153,18 @@ RuleAns game_inspect_object( Game *game, Object *obj ) {
 
   RuleAns ans;
   Object *book;
-  char *o_name, *b_name;
 
   if ( !game || !obj )
     return _RULE_ERROR;
 
   book = game_get_object_by_name( game, "book" );
+  ans = can_show_object_descrp( game, obj );
 
-  ans = can_show_object_descrp( game );
 
-  if ( ans == _RULE_YES ) {
-
-    o_name = (char*)obj_get_name( obj );
-    b_name = (char*)obj_get_name( book );
-
-    if ( o_name && b_name ) {
-
-      if ( strcmp( o_name, b_name ) ) {
-        obj_set_attr( book, OBJ_USED, obj_get_attr( book, OBJ_USED ) + 1 );
-      }
-    }
-
+  if ( ans == _OBJ_SELF ) {
+    ans = _INSPECT_SUCCESS;
+  } else if ( ans == _RULE_YES ) {
+    obj_set_attr( book, OBJ_USED, obj_get_attr( book, OBJ_USED ) + 1 );
     ans = _INSPECT_SUCCESS;
   }
 
@@ -224,32 +215,51 @@ RuleAns game_open_link_with_obj( Game *game, Link *ln, Object *obj ) {
 
 }
 
-
-RuleAns can_show_object_descrp( Game *game ) {
+RuleAns can_show_object_descrp( Game *game, Object *obj ) {
 
   Player *player;
   Object *book;
   RuleAns ans;
+  int cmp;
+  char *o_name, *b_name;
 
-  if ( !game )
+  if ( !game || !obj )
     return _RULE_ERROR;
 
-  book = game_get_object_by_name( game, "book" );
-
   ans = _RULE_ERROR;
+
+  book = game_get_object_by_name( game, "book" );
   player = game_get_player( game );
 
-  if ( player_has_object( player, obj_get_id( book ) ) ) {
+  o_name = (char*)obj_get_name( obj );
+  b_name = (char*)obj_get_name( book );
 
-    if ( obj_get_attr( book,  OBJ_USED ) < obj_get_attr( book, OBJ_MAX_USES ) ) {
-      ans = _RULE_YES;
+  if ( o_name && b_name ) {
+
+    cmp = strcmp( o_name, b_name );
+
+    if ( !cmp ) {
+      ans = _OBJ_SELF;
     } else {
-      ans = _OBJ_IS_OUTWORN;
+
+      if ( player_has_object( player, obj_get_id( book ) ) ) {
+
+        if ( obj_get_attr( book,  OBJ_USED ) < obj_get_attr( book, OBJ_MAX_USES ) ) {
+          ans = _RULE_YES;
+        } else {
+          ans = _OBJ_IS_OUTWORN;
+        }
+
+      } else {
+        ans = _OBJ_NOT_IN_BAG;
+      }
+
     }
 
   } else {
-    ans = _OBJ_NOT_IN_BAG;
+    ans = _RULE_NO;
   }
+
 
   return ans;
 

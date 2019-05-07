@@ -1,10 +1,10 @@
 <map id="inc/die.h" name="inc/die.h">
-<area shape="rect" id="node2" href="$die_8c.html" title="Die&#39;s module dynamic. " alt="" coords="79,80,151,107"/>
-<area shape="rect" id="node3" href="$game_8h.html" title="It defines the game interface. " alt="" coords="175,80,262,107"/>
-<area shape="rect" id="node4" href="$g__engine_8c.html" title="Graphic engine source code. " alt="" coords="5,229,112,256"/>
-<area shape="rect" id="node5" href="$g__engine_8h.html" title="Main graphic engine. " alt="" coords="96,155,203,181"/>
-<area shape="rect" id="node7" href="$game__rules_8h_source.html" title="inc/game_rules.h" alt="" coords="227,155,349,181"/>
-<area shape="rect" id="node8" href="$manager_8h.html" title="Defines a game reader. " alt="" coords="373,155,477,181"/>
-<area shape="rect" id="node6" href="$game__loop_8c.html" title="Main game loop. " alt="" coords="137,229,255,256"/>
-<area shape="rect" id="node9" href="$manager_8c.html" title="Main game reader. " alt="" coords="373,229,478,256"/>
+<area shape="rect" id="node2" href="$die_8c.html" title="Die&#39;s module dynamic. " alt="" coords="13,80,85,107"/>
+<area shape="rect" id="node3" href="$game_8h.html" title="It defines the game interface. " alt="" coords="110,80,196,107"/>
+<area shape="rect" id="node4" href="$g__engine_8c.html" title="Graphic engine source code. " alt="" coords="30,229,137,256"/>
+<area shape="rect" id="node5" href="$g__engine_8h.html" title="Main graphic engine. " alt="" coords="169,155,276,181"/>
+<area shape="rect" id="node7" href="$game__rules_8h_source.html" title="inc/game_rules.h" alt="" coords="23,155,144,181"/>
+<area shape="rect" id="node8" href="$manager_8h.html" title="Defines a game reader. " alt="" coords="302,155,406,181"/>
+<area shape="rect" id="node6" href="$game__loop_8c.html" title="Main game loop. " alt="" coords="162,229,280,256"/>
+<area shape="rect" id="node9" href="$manager_8c.html" title="Main game reader. " alt="" coords="304,229,410,256"/>
 </map>

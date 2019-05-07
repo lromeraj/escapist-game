@@ -95,12 +95,12 @@ This graph shows which files directly or indirectly include this file:</div>
 <area shape="rect" id="node3" href="object__tb_8c.html" title="Object testbench evaluates each object function for each case. " alt="" coords="121,80,229,107"/>
 <area shape="rect" id="node4" href="space_8c.html" title="src/space.c" alt="" coords="253,80,344,107"/>
 <area shape="rect" id="node5" href="game_8h.html" title="It defines the game interface. " alt="" coords="369,80,455,107"/>
-<area shape="rect" id="node6" href="g__engine_8c.html" title="Graphic engine source code. " alt="" coords="199,229,305,256"/>
-<area shape="rect" id="node7" href="g__engine_8h.html" title="Main graphic engine. " alt="" coords="289,155,396,181"/>
-<area shape="rect" id="node9" href="game__rules_8h_source.html" title="inc/game_rules.h" alt="" coords="421,155,542,181"/>
-<area shape="rect" id="node10" href="manager_8h.html" title="Defines a game reader. " alt="" coords="567,155,671,181"/>
-<area shape="rect" id="node8" href="game__loop_8c.html" title="Main game loop. " alt="" coords="330,229,449,256"/>
-<area shape="rect" id="node11" href="manager_8c.html" title="Main game reader. " alt="" coords="566,229,671,256"/>
+<area shape="rect" id="node6" href="g__engine_8c.html" title="Graphic engine source code. " alt="" coords="289,229,396,256"/>
+<area shape="rect" id="node7" href="g__engine_8h.html" title="Main graphic engine. " alt="" coords="428,155,535,181"/>
+<area shape="rect" id="node9" href="game__rules_8h_source.html" title="inc/game_rules.h" alt="" coords="282,155,403,181"/>
+<area shape="rect" id="node10" href="manager_8h.html" title="Defines a game reader. " alt="" coords="561,155,665,181"/>
+<area shape="rect" id="node8" href="game__loop_8c.html" title="Main game loop. " alt="" coords="421,229,539,256"/>
+<area shape="rect" id="node11" href="manager_8c.html" title="Main game reader. " alt="" coords="563,229,669,256"/>
 </map>
 </div>
 </div>
@@ -128,6 +128,10 @@ Macros</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="object_8h.html#a49610789a3d905ee9562e118449651b7">MAX_OBJ_LINKS</a></td></tr>
 <tr class="memdesc:a49610789a3d905ee9562e118449651b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum number of links that an object can open. <br /></td></tr>
 <tr class="separator:a49610789a3d905ee9562e118449651b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9e64066438f277a4c1e56c3037c4f2d"><td class="memItemLeft" align="right" valign="top"><a id="aa9e64066438f277a4c1e56c3037c4f2d"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="object_8h.html#aa9e64066438f277a4c1e56c3037c4f2d">MAX_OBJ_FILE_NAME</a>&#160;&#160;&#160;50</td></tr>
+<tr class="memdesc:aa9e64066438f277a4c1e56c3037c4f2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum length for object file names. <br /></td></tr>
+<tr class="separator:aa9e64066438f277a4c1e56c3037c4f2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -191,6 +195,12 @@ Functions</h2></td></tr>
 <tr class="memitem:a7241dbfc246b252ee486f31519794922"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="types_8h.html#a845e604fb28f7e3d97549da3448149d3">Id</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="object_8h.html#a7241dbfc246b252ee486f31519794922">obj_get_id</a> (<a class="el" href="object_8h.html#a7f8bbcda919b65ce67f92fba08e0212f">Object</a> *obj)</td></tr>
 <tr class="memdesc:a7241dbfc246b252ee486f31519794922"><td class="mdescLeft">&#160;</td><td class="mdescRight">This fuction gets the object id.  <a href="#a7241dbfc246b252ee486f31519794922">More...</a><br /></td></tr>
 <tr class="separator:a7241dbfc246b252ee486f31519794922"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac243325bbd40722dcb518459277d3642"><td class="memItemLeft" align="right" valign="top"><a id="ac243325bbd40722dcb518459277d3642"></a>
+<a class="el" href="types_8h.html#a32c27cc471df37f4fc818d65de0a56c4">STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><b>obj_set_picture_file</b> (<a class="el" href="object_8h.html#a7f8bbcda919b65ce67f92fba08e0212f">Object</a> *obj, const char *f_name)</td></tr>
+<tr class="separator:ac243325bbd40722dcb518459277d3642"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a5dc3b67dfdda552d1619d3b6941a38"><td class="memItemLeft" align="right" valign="top"><a id="a6a5dc3b67dfdda552d1619d3b6941a38"></a>
+const char *&#160;</td><td class="memItemRight" valign="bottom"><b>obj_get_picture_file</b> (<a class="el" href="object_8h.html#a7f8bbcda919b65ce67f92fba08e0212f">Object</a> *obj)</td></tr>
+<tr class="separator:a6a5dc3b67dfdda552d1619d3b6941a38"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab52a54fafb3d772b6bd43620475d41dd"><td class="memItemLeft" align="right" valign="top"><a id="ab52a54fafb3d772b6bd43620475d41dd"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>obj_opens_link</b> (<a class="el" href="object_8h.html#a7f8bbcda919b65ce67f92fba08e0212f">Object</a> *obj, <a class="el" href="types_8h.html#a845e604fb28f7e3d97549da3448149d3">Id</a> id)</td></tr>
 <tr class="separator:ab52a54fafb3d772b6bd43620475d41dd"><td class="memSeparator" colspan="2">&#160;</td></tr>

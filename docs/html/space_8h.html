@@ -93,12 +93,12 @@ This graph shows which files directly or indirectly include this file:</div>
 <area shape="rect" id="node2" href="space_8c.html" title="src/space.c" alt="" coords="5,80,96,107"/>
 <area shape="rect" id="node3" href="space__tb_8c.html" title="Main for test the space. " alt="" coords="121,80,229,107"/>
 <area shape="rect" id="node4" href="game_8h.html" title="It defines the game interface. " alt="" coords="253,80,339,107"/>
-<area shape="rect" id="node5" href="g__engine_8c.html" title="Graphic engine source code. " alt="" coords="83,229,189,256"/>
-<area shape="rect" id="node6" href="g__engine_8h.html" title="Main graphic engine. " alt="" coords="173,155,280,181"/>
-<area shape="rect" id="node8" href="game__rules_8h_source.html" title="inc/game_rules.h" alt="" coords="305,155,426,181"/>
-<area shape="rect" id="node9" href="manager_8h.html" title="Defines a game reader. " alt="" coords="451,155,555,181"/>
-<area shape="rect" id="node7" href="game__loop_8c.html" title="Main game loop. " alt="" coords="214,229,333,256"/>
-<area shape="rect" id="node10" href="manager_8c.html" title="Main game reader. " alt="" coords="450,229,555,256"/>
+<area shape="rect" id="node5" href="g__engine_8c.html" title="Graphic engine source code. " alt="" coords="173,229,280,256"/>
+<area shape="rect" id="node6" href="g__engine_8h.html" title="Main graphic engine. " alt="" coords="312,155,419,181"/>
+<area shape="rect" id="node8" href="game__rules_8h_source.html" title="inc/game_rules.h" alt="" coords="166,155,287,181"/>
+<area shape="rect" id="node9" href="manager_8h.html" title="Defines a game reader. " alt="" coords="445,155,549,181"/>
+<area shape="rect" id="node7" href="game__loop_8c.html" title="Main game loop. " alt="" coords="305,229,423,256"/>
+<area shape="rect" id="node10" href="manager_8c.html" title="Main game reader. " alt="" coords="447,229,553,256"/>
 </map>
 </div>
 </div>
@@ -122,6 +122,10 @@ Macros</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="space_8h.html#a81ff4df6e3833e5b8f8bd6255f4e3df6">MAX_SPACE_PICTURE</a>&#160;&#160;&#160;200</td></tr>
 <tr class="memdesc:a81ff4df6e3833e5b8f8bd6255f4e3df6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum lenght of the space's picture. <br /></td></tr>
 <tr class="separator:a81ff4df6e3833e5b8f8bd6255f4e3df6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff1f45ee7107c3418467cc9c36973490"><td class="memItemLeft" align="right" valign="top"><a id="aff1f45ee7107c3418467cc9c36973490"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="space_8h.html#aff1f45ee7107c3418467cc9c36973490">MAX_SPACE_FILE_NAME</a>&#160;&#160;&#160;50</td></tr>
+<tr class="memdesc:aff1f45ee7107c3418467cc9c36973490"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum lenght of picture file name. <br /></td></tr>
+<tr class="separator:aff1f45ee7107c3418467cc9c36973490"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -198,6 +202,12 @@ Functions</h2></td></tr>
 <tr class="memitem:a4000018f7cb697532dd7cffc2c36f72f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="space_8h.html#a4000018f7cb697532dd7cffc2c36f72f">space_get_light</a> (<a class="el" href="space_8h.html#a67533ffc2b70463baecc38fb0629bbfc">Space</a> *space)</td></tr>
 <tr class="memdesc:a4000018f7cb697532dd7cffc2c36f72f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the light status of a given space.  <a href="#a4000018f7cb697532dd7cffc2c36f72f">More...</a><br /></td></tr>
 <tr class="separator:a4000018f7cb697532dd7cffc2c36f72f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae27a73b71404f3260538107a7b61dc84"><td class="memItemLeft" align="right" valign="top"><a id="ae27a73b71404f3260538107a7b61dc84"></a>
+<a class="el" href="types_8h.html#a32c27cc471df37f4fc818d65de0a56c4">STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><b>space_set_picture_file</b> (<a class="el" href="space_8h.html#a67533ffc2b70463baecc38fb0629bbfc">Space</a> *space, char *name)</td></tr>
+<tr class="separator:ae27a73b71404f3260538107a7b61dc84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3e618e925fe8ce3b9ff2f04785aed30"><td class="memItemLeft" align="right" valign="top"><a id="ab3e618e925fe8ce3b9ff2f04785aed30"></a>
+const char *&#160;</td><td class="memItemRight" valign="bottom"><b>space_get_picture_file</b> (<a class="el" href="space_8h.html#a67533ffc2b70463baecc38fb0629bbfc">Space</a> *space)</td></tr>
+<tr class="separator:ab3e618e925fe8ce3b9ff2f04785aed30"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Space module. </p>

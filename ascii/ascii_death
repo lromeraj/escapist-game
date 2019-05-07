@@ -17,4 +17,4 @@
                         ` | | | '
                           ` | '
 
-@{!0;1;brgb(0,0,0);frgb(255,0,0)}You have failed, try again!
+@{!0;1;brgb(0,0,0);frgb(255,0,0)} You have failed, try again!

@@ -33,6 +33,7 @@ typedef enum _Obj_attr {
 #define MAX_OBJECTS 20 /*!< @brief Maximum number of objects */
 #define MAX_OBJ_ATTRS 10 /*!< @brief Maximum quantity of object attributes */
 #define MAX_OBJ_LINKS /*!< @brief Maximum number of links that an object can open */
+#define MAX_OBJ_FILE_NAME 50 /*!< @brief Maximum length for object file names */
 
 /*!
  * @brief Defines the type of object structure
@@ -126,6 +127,9 @@ STATUS obj_set_id( Object *obj, const Id id );
 * @retval {Id} - Returns an id
 */
 const Id obj_get_id( Object *obj );
+
+STATUS obj_set_picture_file( Object *obj, const char *f_name );
+const char *obj_get_picture_file( Object *obj );
 
 bool obj_opens_link( Object *obj, Id id );
 Set* obj_get_links( Object *obj );

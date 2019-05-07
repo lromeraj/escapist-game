@@ -70,6 +70,7 @@
 	name: "torch",
 	movable: true,
 	hidden: false,
+	picture_file: "ascii/ascii_torch",
 	illuminate: true,
 	max_uses: 0
 }
@@ -80,6 +81,7 @@
 	ldescrp: "Unknown creatures can interrupt your 'adventure', this knife will defend you",
 	location: 5,
 	name: "knife",
+	picture_file: "ascii/ascii_knife",
 	movable: true,
 	opens: [ 37 ],
 	hidden: true,
@@ -118,6 +120,7 @@
 	name: "rope",
 	movable: true,
 	illuminate: false,
+	picture_file: "ascii/ascii_rope",
 	max_uses: 2,
 	used: 0,
 	hidden: true,
@@ -141,6 +144,7 @@
 	location: 2,
 	name: "tnt",
 	movable: true,
+	picture_file: "ascii/ascii_tnt",
 	illuminate: false,
 	max_uses: 1,
 	used: 0,
@@ -276,6 +280,7 @@
 	ldescrp: "the book contains information about other objects",
 	location: 1,
 	name: "book",
+	picture_file: "ascii/ascii_book",
 	illuminate: false,
 	max_uses: 15,
 	used: 0,
@@ -305,6 +310,7 @@ D I E D!
 	links: [ 1, -1, -1, -1, -1, -1 ],
 	descrp: "Welcome! It seems very dark, try to turn on the torch",
 	ldescrp: "A new adventure has begun, manage yourself to escape from the island.",
+	picture_file: "ascii/ascii_spawn_point",
 	picture: "@{frgb(255, 122, 0)}
 
   /\_/\
@@ -320,6 +326,7 @@ D I E D!
 	links: [ 5, 3, 2, 4, -1, -1  ],
 	light: false,
 	descrp: "Jungle",
+	picture_file: "ascii/ascii_jungle",
 	ldescrp: "Be careful, you can get lost easily. We don't want that!",
 	picture:
 "@{frgb(13, 255, 0)}
@@ -335,6 +342,7 @@ D I E D!
 	name: "Jungle 2",
 	links: [ 63, 63, 63, 63, -1, -1 ],
 	light: false,
+	picture_file: "ascii/ascii_jungle",
 	descrp: "Jungle",
 	ldescrp: "Look around, something useful might be here.",
 	picture:
@@ -352,6 +360,7 @@ D I E D!
 	links: [ 6, 7, 6, 6, -1, -1 ],
 	light: false,
 	descrp: "Jungle",
+	picture_file: "ascii/ascii_jungle",
 	ldescrp: "This is the way. Don't get lost now!",
 	picture:
 "@{frgb(85,107,47)}
@@ -367,6 +376,7 @@ D I E D!
 	name: "Jungle 4",
 	links: [ 10, 8, 8, 9, -1, -1 ],
 	light: false,
+	picture_file: "ascii/ascii_jungle",
 	descrp: "Jungle",
 	ldescrp: "You're going right!",
 	picture:
@@ -381,6 +391,7 @@ D I E D!
 @s {
 	id: 6,
 	name: "Jungle 5",
+	picture_file: "ascii/ascii_jungle",
 	links: [ 13, 11, 12, 11, -1, -1 ],
 	light: false,
 	descrp: "Jungle",
@@ -538,10 +549,10 @@ D I E D!
 	name: "Mountain 1",
 	links: [ -1, -1, 30, 31, -1, -1 ],
 	light: false,
+	picture_file: "ascii/ascii_mountain",
 	descrp: "Mountain, level 0.",
 	ldescrp: "Freezing air here, hurry up!",
-	picture:
-"@{frgb(153,102,0)}
+	picture: "@{frgb(153,102,0)}
 \####\
  \####\
   \####\
@@ -554,10 +565,10 @@ D I E D!
 	name: "Mountain 2",
 	links: [ -1, 32, -1, -1, 33, -1 ],
 	light: false,
+	picture_file: "ascii/ascii_mountain",
 	descrp: "Mountain, level 0.",
 	ldescrp: "Axe may be needed. Take it!",
-	picture:
-"@{frgb(153,102,0)}
+	picture: "@{frgb(153,102,0)}
 |####|
 |####|
 |####|
@@ -570,6 +581,7 @@ D I E D!
 	name: "Mountain 3",
 	links: [ -1, -1, 35, -1, -1, 34  ],
 	light: false,
+	picture_file: "ascii/ascii_mountain",
 	descrp: "Mountain, level 1.",
 	ldescrp: "Someone may be looking at you.",
 	picture:
@@ -586,6 +598,7 @@ D I E D!
 	name: "Mountain 4",
 	links: [ 36, 37, -1, -1, -1, -1  ],
 	light: false,
+	picture_file: "ascii/ascii_mountain",
 	descrp: "Mountain, level 1.",
 	ldescrp: "Prepare for the fight, drunk people aren't trustworthy. Have you picked up weapons in the path?",
 	picture:
@@ -603,6 +616,7 @@ D I E D!
 	name: "Mountain 5",
 	links: [ -1, -1, -1, 38, 39, -1  ],
 	light: false,
+	picture_file: "ascii/ascii_mountain",
 	descrp: "Mountain, level 1.",
 	ldescrp: "Nothing to do here. Keep walking.",
 	picture:
@@ -621,6 +635,7 @@ D I E D!
 	name: "Mountain 6",
 	links: [ -1, -1, -1, -1, 41, 40  ],
 	light: false,
+	picture_file: "ascii/ascii_mountain",
 	descrp: "Mountain, level 2.",
 	ldescrp: "Nothing to do here. Climb up with the rope.",
 	picture:
@@ -638,6 +653,7 @@ D I E D!
 	name: "Mountain 7",
 	links: [ 74, 71, 72, 73, -1, -1  ],
 	light: true,
+	picture_file: "ascii/ascii_mountain",
 	descrp: "Mountain, level 3.",
 	ldescrp: "Use the parachute to get out of here.",
 	picture:
@@ -697,6 +713,7 @@ D I E D!
 	id: 26,
 	name: "Beach 1",
 	links: [ 50, 75, -1, 49, -1, -1 ],
+	picture_file: "ascii/ascii_beach",
 	light: false,
 	descrp: "Now on the beach, a momentary lapse of reason.",
 	ldescrp: "People used to lose ferry tickets here, and you have no money.",
@@ -713,6 +730,7 @@ D I E D!
 	id: 27,
 	name: "Beach 2",
 	links: [ 76, 77, 51, 52, -1, -1  ],
+	picture_file: "ascii/ascii_beach",
 	light: false,
 	descrp: "Now on the beach, a momentary lapse of reason.",
 	ldescrp: "People used to lose ferry tickets here, and you have no money.",
@@ -728,12 +746,12 @@ D I E D!
 @s {
 	id: 28,
 	name: "Beach 3",
+	picture_file: "ascii/ascii_beach",
 	links: [ 78, 53, 54, 55, -1, -1 ],
 	light: false,
 	descrp: "Now on the beach, a momentary lapse of reason.",
 	ldescrp: "People used to lose ferry tickets here, and you have no money.",
-	picture:
-"@{frgb(240,230,140)}
+	picture: "@{frgb(240,230,140)}
 ~ ~ ~ ~
  ~ ~ ~ ~
 ~ ~ ~ ~
@@ -744,6 +762,7 @@ D I E D!
 @s {
 	id: 29,
 	name: "Beach 4",
+	picture_file: "ascii/ascii_beach",
 	links: [ 58, 56, 57, 79, -1, -1  ],
 	light: false,
 	descrp: "Now on the beach, a momentary lapse of reason.",
@@ -760,6 +779,7 @@ D I E D!
 @s {
 	id: 30,
 	name: "Beach 5",
+	picture_file: "ascii/ascii_beach",
 	links: [ 59, 60, 80, 81, -1, -1  ],
 	light: false,
 	descrp: "Now on the beach, a momentary lapse of reason.",

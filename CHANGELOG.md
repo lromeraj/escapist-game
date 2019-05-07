@@ -1,6 +1,6 @@
 # I4
 
-## v0.4.8
+## v0.4.9.1
 `[IMPROVEMENTS]`
 - `game_rules` module has been improved.
 - Improved `ui` function prototype definitions to allow compiler to check format strings.
@@ -14,6 +14,7 @@
 - Updated `data.dat`.
 - Improved `manager_save()`.
 - Updated help.
+- Inspect box has been redesigned.
 
 `[NEW]`
 - When the game is over a full screen picture will appear.

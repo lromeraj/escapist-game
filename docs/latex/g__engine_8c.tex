@@ -10,13 +10,15 @@ Graphic engine source code.
 {\ttfamily \#include \char`\"{}player.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}inventory.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}g\+\_\+engine.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}game\+\_\+rules.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}ui.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}link.\+h\char`\"{}}\newline
 {\ttfamily \#include $<$stdio.\+h$>$}\newline
 {\ttfamily \#include $<$stdlib.\+h$>$}\newline
 {\ttfamily \#include $<$string.\+h$>$}\newline
 {\ttfamily \#include $<$sys/time.\+h$>$}\newline
-Include dependency graph for g\+\_\+engine.\+c\+:\nopagebreak
+Include dependency graph for g\+\_\+engine.\+c\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -49,11 +51,26 @@ struct \hyperlink{struct__G__engine}{\+\_\+\+G\+\_\+engine}
 \mbox{\Hypertarget{g__engine_8c_a856b641f0d001edfba7968f4b99b70b8}\label{g__engine_8c_a856b641f0d001edfba7968f4b99b70b8}} 
 \#define {\bfseries G\+A\+M\+E\+\_\+\+I\+N\+F\+O\+\_\+\+FG}~\hyperlink{g__engine_8c_aa6405fb3815f498f8bbfda6cd2802247}{M\+A\+I\+N\+\_\+\+FG}
 \item 
+\mbox{\Hypertarget{g__engine_8c_a82f76dcdd3a32eaac171cbc5981999ec}\label{g__engine_8c_a82f76dcdd3a32eaac171cbc5981999ec}} 
+\#define {\bfseries G\+A\+M\+E\+\_\+\+P\+I\+C\+T\+U\+R\+E\+\_\+\+FG}~\hyperlink{g__engine_8c_aa6405fb3815f498f8bbfda6cd2802247}{M\+A\+I\+N\+\_\+\+FG}
+\item 
+\mbox{\Hypertarget{g__engine_8c_a4972a5d3ee504311caa76d0e643b8bf1}\label{g__engine_8c_a4972a5d3ee504311caa76d0e643b8bf1}} 
+\#define {\bfseries G\+A\+M\+E\+\_\+\+P\+I\+C\+T\+U\+R\+E\+\_\+\+BG}~\hyperlink{g__engine_8c_a7fe2c94e7756b2fc8b660a71c8e0d3d8}{M\+A\+I\+N\+\_\+\+BG}
+\item 
 \mbox{\Hypertarget{g__engine_8c_a53e7a006c8416f29a34ce12ed6275a24}\label{g__engine_8c_a53e7a006c8416f29a34ce12ed6275a24}} 
 \#define {\bfseries G\+A\+M\+E\+\_\+\+F\+E\+E\+D\+\_\+\+BG}~\hyperlink{g__engine_8c_a7fe2c94e7756b2fc8b660a71c8e0d3d8}{M\+A\+I\+N\+\_\+\+BG}
 \item 
 \mbox{\Hypertarget{g__engine_8c_a727e5d513e9a09837b96b976a2a30ec2}\label{g__engine_8c_a727e5d513e9a09837b96b976a2a30ec2}} 
 \#define {\bfseries G\+A\+M\+E\+\_\+\+F\+E\+E\+D\+\_\+\+FG}~\hyperlink{g__engine_8c_aa6405fb3815f498f8bbfda6cd2802247}{M\+A\+I\+N\+\_\+\+FG}
+\item 
+\mbox{\Hypertarget{g__engine_8c_a0356e676a61d7857918d0e66abbe05db}\label{g__engine_8c_a0356e676a61d7857918d0e66abbe05db}} 
+\#define {\bfseries G\+A\+M\+E\+\_\+\+F\+U\+L\+L\+S\+C\+R\+E\+E\+N\+\_\+\+BG}~\char`\"{}brgb(0,0,0)\char`\"{}
+\item 
+\mbox{\Hypertarget{g__engine_8c_a2abd270a84f963d4f821c1facdb0d51a}\label{g__engine_8c_a2abd270a84f963d4f821c1facdb0d51a}} 
+\#define {\bfseries G\+A\+M\+E\+\_\+\+F\+U\+L\+L\+S\+C\+R\+E\+E\+N\+\_\+\+FG}~\char`\"{}frgb(255,255,255)\char`\"{}
+\item 
+\mbox{\Hypertarget{g__engine_8c_a8028c90dab08c9c850287f5a914e5c93}\label{g__engine_8c_a8028c90dab08c9c850287f5a914e5c93}} 
+\#define {\bfseries P\+L\+A\+Y\+E\+R\+\_\+\+B\+A\+G\+\_\+\+O\+B\+J\+\_\+\+FG}~\char`\"{}frgb(250,255,0)\char`\"{}
 \item 
 \mbox{\Hypertarget{g__engine_8c_a634e422a97dfe67596be35ef320eb7f9}\label{g__engine_8c_a634e422a97dfe67596be35ef320eb7f9}} 
 \#define {\bfseries G\+A\+M\+E\+\_\+\+T\+I\+T\+L\+E\+\_\+\+BG}~\char`\"{}brgb(255,172,0)\char`\"{}
@@ -89,7 +106,10 @@ enum \hyperlink{g__engine_8c_a55884d4185031754f710955b5e32ebd9}{\+\_\+\+Boxes} \
 \hyperlink{g__engine_8c_a55884d4185031754f710955b5e32ebd9af3d3abc00730bab6971ebfa9608f1770}{G\+A\+M\+E\+\_\+\+F\+E\+ED}, 
 \newline
 \hyperlink{g__engine_8c_a55884d4185031754f710955b5e32ebd9a4c9c8637f3b906daa4173fe12bd95e7d}{G\+A\+M\+E\+\_\+\+I\+N\+FO}, 
+\hyperlink{g__engine_8c_a55884d4185031754f710955b5e32ebd9a51117e6acdd01897324bd7fe1359004d}{G\+A\+M\+E\+\_\+\+P\+I\+C\+T\+U\+RE}, 
+\hyperlink{g__engine_8c_a55884d4185031754f710955b5e32ebd9a0c76887d77b44d29d35058e66c55c01e}{G\+A\+M\+E\+\_\+\+F\+U\+L\+L\+S\+C\+R\+E\+EN}, 
 \hyperlink{g__engine_8c_a55884d4185031754f710955b5e32ebd9a02d9fd1e8fff421c9c3bf1c0cd108171}{H\+E\+L\+P\+\_\+\+T\+I\+T\+LE}, 
+\newline
 \hyperlink{g__engine_8c_a55884d4185031754f710955b5e32ebd9ad585f458456d9720cec9aa4d845ecd93}{H\+E\+L\+P\+\_\+\+B\+O\+DY}
  \}
 \end{DoxyCompactItemize}
@@ -100,6 +120,9 @@ void \hyperlink{g__engine_8c_ae501656eaf5823394771a1a4792f0baf}{parse\+\_\+map} 
 \begin{DoxyCompactList}\small\item\em Parses a given space. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{g__engine_8c_ae1539d840e7db04297cdc7ce140e3412}\label{g__engine_8c_ae1539d840e7db04297cdc7ce140e3412}} 
 void {\bfseries parse\+\_\+info} (\hyperlink{struct__G__engine}{G\+\_\+engine} $\ast$ge, \hyperlink{struct__Game}{Game} $\ast$game, int box)
+\item 
+\mbox{\Hypertarget{g__engine_8c_a78489907761644302dddb67fddd563d3}\label{g__engine_8c_a78489907761644302dddb67fddd563d3}} 
+void {\bfseries dump\+\_\+file\+\_\+to\+\_\+box} (\hyperlink{struct__Ui}{Ui} $\ast$ui, int box, char $\ast$f\+\_\+name)
 \item 
 \hyperlink{struct__G__engine}{G\+\_\+engine} $\ast$ \hyperlink{g__engine_8c_aa2f5a0548ea6fedb671c594d4f0cf039}{g\+\_\+engine\+\_\+create} ()
 \begin{DoxyCompactList}\small\item\em Creates a new graphic engine. \end{DoxyCompactList}\item 
@@ -153,6 +176,14 @@ G\+A\+M\+E\+\_\+\+F\+E\+ED&Feedback box \\
 G\+A\+M\+E\+\_\+\+I\+N\+FO&Info box \\
 \hline
 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{G\+A\+M\+E\+\_\+\+P\+I\+C\+T\+U\+RE@{G\+A\+M\+E\+\_\+\+P\+I\+C\+T\+U\+RE}!g\+\_\+engine.\+c@{g\+\_\+engine.\+c}}\index{g\+\_\+engine.\+c@{g\+\_\+engine.\+c}!G\+A\+M\+E\+\_\+\+P\+I\+C\+T\+U\+RE@{G\+A\+M\+E\+\_\+\+P\+I\+C\+T\+U\+RE}}}\mbox{\Hypertarget{g__engine_8c_a55884d4185031754f710955b5e32ebd9a51117e6acdd01897324bd7fe1359004d}\label{g__engine_8c_a55884d4185031754f710955b5e32ebd9a51117e6acdd01897324bd7fe1359004d}} 
+G\+A\+M\+E\+\_\+\+P\+I\+C\+T\+U\+RE&Game picture \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{G\+A\+M\+E\+\_\+\+F\+U\+L\+L\+S\+C\+R\+E\+EN@{G\+A\+M\+E\+\_\+\+F\+U\+L\+L\+S\+C\+R\+E\+EN}!g\+\_\+engine.\+c@{g\+\_\+engine.\+c}}\index{g\+\_\+engine.\+c@{g\+\_\+engine.\+c}!G\+A\+M\+E\+\_\+\+F\+U\+L\+L\+S\+C\+R\+E\+EN@{G\+A\+M\+E\+\_\+\+F\+U\+L\+L\+S\+C\+R\+E\+EN}}}\mbox{\Hypertarget{g__engine_8c_a55884d4185031754f710955b5e32ebd9a0c76887d77b44d29d35058e66c55c01e}\label{g__engine_8c_a55884d4185031754f710955b5e32ebd9a0c76887d77b44d29d35058e66c55c01e}} 
+G\+A\+M\+E\+\_\+\+F\+U\+L\+L\+S\+C\+R\+E\+EN&Box to show full screen results \\
+\hline
+
 \raisebox{\heightof{T}}[0pt][0pt]{\index{H\+E\+L\+P\+\_\+\+T\+I\+T\+LE@{H\+E\+L\+P\+\_\+\+T\+I\+T\+LE}!g\+\_\+engine.\+c@{g\+\_\+engine.\+c}}\index{g\+\_\+engine.\+c@{g\+\_\+engine.\+c}!H\+E\+L\+P\+\_\+\+T\+I\+T\+LE@{H\+E\+L\+P\+\_\+\+T\+I\+T\+LE}}}\mbox{\Hypertarget{g__engine_8c_a55884d4185031754f710955b5e32ebd9a02d9fd1e8fff421c9c3bf1c0cd108171}\label{g__engine_8c_a55884d4185031754f710955b5e32ebd9a02d9fd1e8fff421c9c3bf1c0cd108171}} 
 H\+E\+L\+P\+\_\+\+T\+I\+T\+LE&Help title \\
 \hline
@@ -177,17 +208,13 @@ Parses a given space.
 
 
 \begin{DoxyParams}{Parameters}
-{\em \{\+Game$\ast$\}} & game -\/ Game pointer \\
+{\em game} & -\/ Game pointer \\
 \hline
-{\em \{\+G\+\_\+engine$\ast$\}} & ge -\/ Graphic engine pointer \\
+{\em ge} & -\/ Graphic engine pointer \\
 \hline
-{\em \{\+Space$\ast$\}} & sp -\/ Space to be drawn \\
+{\em sp} & -\/ Space to be drawn \\
 \hline
-{\em \{int\}} & id -\/ Box id \\
-\hline
-{\em \{int\}} & x -\/ Begin x position (relative to the box) \\
-\hline
-{\em \{int\}} & y -\/ Begin y position (relative to the box) \\
+{\em id} & -\/ Box id \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{g__engine_8c_aa2f5a0548ea6fedb671c594d4f0cf039}\label{g__engine_8c_aa2f5a0548ea6fedb671c594d4f0cf039}} 
