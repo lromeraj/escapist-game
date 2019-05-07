@@ -61,7 +61,7 @@ enum \{ {\bfseries G\+A\+M\+E\+\_\+\+S\+P\+A\+C\+ES},
 \begin{DoxyCompactList}\small\item\em presets game initial state onto N\+U\+LL \end{DoxyCompactList}\item 
 \hyperlink{types_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+US} \hyperlink{game_8h_aa507cc4e4968737c1b2ea85e9da0362a}{game\+\_\+load\+\_\+from\+\_\+file} (\hyperlink{struct__Game}{Game} $\ast$game, char $\ast$filename)
 \begin{DoxyCompactList}\small\item\em presets game state with the data value included in the save file \end{DoxyCompactList}\item 
-\hyperlink{types_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+US} \hyperlink{game_8h_a4a8f3de1cdc4bcb9a508a191677ee33f}{game\+\_\+update} (\hyperlink{struct__Game}{Game} $\ast$game, \hyperlink{struct__Cmd}{Cmd} $\ast$cmd)
+\hyperlink{types_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+US} \hyperlink{game_8h_a4a8f3de1cdc4bcb9a508a191677ee33f}{game\+\_\+update} (\hyperlink{struct__Game}{Game} $\ast$game, \hyperlink{cmd_8h_ab2b68b94b84c77ba11a699a76b8cf9cc}{Cmd} $\ast$cmd)
 \begin{DoxyCompactList}\small\item\em sets the last command value onto last key introduced \end{DoxyCompactList}\item 
 \hyperlink{types_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+US} \hyperlink{game_8h_a0736924a1235c0e6fe9b6d91c2a12af8}{game\+\_\+destroy} (\hyperlink{struct__Game}{Game} $\ast$game)
 \begin{DoxyCompactList}\small\item\em frees dynamic memory reserved in game \end{DoxyCompactList}\item 
@@ -104,7 +104,7 @@ void {\bfseries game\+\_\+get\+\_\+objects} (\hyperlink{struct__Game}{Game} $\as
 \begin{DoxyCompactList}\small\item\em gets a pointer towards first space \end{DoxyCompactList}\item 
 \hyperlink{struct__Die}{Die} $\ast$ \hyperlink{game_8h_a5753a09313b092a52c0cea742c40f3cf}{game\+\_\+get\+\_\+die} (\hyperlink{struct__Game}{Game} $\ast$game)
 \begin{DoxyCompactList}\small\item\em gets a pointer towards die \end{DoxyCompactList}\item 
-\hyperlink{struct__Cmd}{Cmd} $\ast$ \hyperlink{game_8h_ad4f3192f7515879d7ff47522a7f489d7}{game\+\_\+get\+\_\+cmd} (\hyperlink{struct__Game}{Game} $\ast$game)
+\hyperlink{cmd_8h_ab2b68b94b84c77ba11a699a76b8cf9cc}{Cmd} $\ast$ \hyperlink{game_8h_ad4f3192f7515879d7ff47522a7f489d7}{game\+\_\+get\+\_\+cmd} (\hyperlink{struct__Game}{Game} $\ast$game)
 \begin{DoxyCompactList}\small\item\em gets a pointer towards cmd \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{game_8h_a63b8fadde2c72953a6264d972bbf9871}\label{game_8h_a63b8fadde2c72953a6264d972bbf9871}} 
 \hyperlink{types_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+US} {\bfseries game\+\_\+clean} (\hyperlink{struct__Game}{Game} $\ast$game)
@@ -222,7 +222,7 @@ presets game state with the data value included in the save file
 \index{game.\+h@{game.\+h}!game\+\_\+update@{game\+\_\+update}}
 \index{game\+\_\+update@{game\+\_\+update}!game.\+h@{game.\+h}}
 \subsubsection{\texorpdfstring{game\+\_\+update()}{game\_update()}}
-{\footnotesize\ttfamily \hyperlink{types_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+US} game\+\_\+update (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Game}{Game} $\ast$}]{game,  }\item[{\hyperlink{struct__Cmd}{Cmd} $\ast$}]{cmd }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \hyperlink{types_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+US} game\+\_\+update (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Game}{Game} $\ast$}]{game,  }\item[{\hyperlink{cmd_8h_ab2b68b94b84c77ba11a699a76b8cf9cc}{Cmd} $\ast$}]{cmd }\end{DoxyParamCaption})}
 
 
 
@@ -616,7 +616,7 @@ Javier Romera
 \index{game.\+h@{game.\+h}!game\+\_\+get\+\_\+cmd@{game\+\_\+get\+\_\+cmd}}
 \index{game\+\_\+get\+\_\+cmd@{game\+\_\+get\+\_\+cmd}!game.\+h@{game.\+h}}
 \subsubsection{\texorpdfstring{game\+\_\+get\+\_\+cmd()}{game\_get\_cmd()}}
-{\footnotesize\ttfamily \hyperlink{struct__Cmd}{Cmd}$\ast$ game\+\_\+get\+\_\+cmd (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Game}{Game} $\ast$}]{game }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \hyperlink{cmd_8h_ab2b68b94b84c77ba11a699a76b8cf9cc}{Cmd}$\ast$ game\+\_\+get\+\_\+cmd (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Game}{Game} $\ast$}]{game }\end{DoxyParamCaption})}
 
 
 

@@ -14,7 +14,7 @@
 #include <stdio.h>
 #include "types.h"
 
-#define MAX_INVENTORY 5 /*!< @brief Maximum capacity of inventory */
+#define MAX_INVENTORY 6 /*!< @brief Maximum capacity of inventory */
 
 
 /*!

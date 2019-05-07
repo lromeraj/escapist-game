@@ -10,12 +10,16 @@
 - Light refresh for help interface.
 - Improved space picture parser.
 - Now you can format text style from `data.dat`.
+- Increased max inventory storage to `6`.
+- Updated `data.dat`.
 
 `[NEW]`
+- Implemented space test bench.
 - Player bag now is showed over space description.
 - Implemented `book` object, you have to wear it for inspecting other objects.
 - Implemented `map` object, you have to wear it for inspecting spaces.
 - Now you have a use limit for the `book` object.
+- Added new meetings.
 
 `[FIXES]`
 - Minor fixes.

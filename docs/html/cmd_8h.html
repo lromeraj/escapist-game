@@ -136,7 +136,8 @@ typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" 
 <tr class="memdesc:a78d7a8bd781b5514e6dd7e1253bb1907"><td class="mdescLeft">&#160;</td><td class="mdescRight">Command callback. <br /></td></tr>
 <tr class="separator:a78d7a8bd781b5514e6dd7e1253bb1907"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab2b68b94b84c77ba11a699a76b8cf9cc"><td class="memItemLeft" align="right" valign="top"><a id="ab2b68b94b84c77ba11a699a76b8cf9cc"></a>
-typedef struct <a class="el" href="struct__Cmd.html">_Cmd</a>&#160;</td><td class="memItemRight" valign="bottom"><b>Cmd</b></td></tr>
+typedef struct <a class="el" href="struct__Cmd.html">_Cmd</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8h.html#ab2b68b94b84c77ba11a699a76b8cf9cc">Cmd</a></td></tr>
+<tr class="memdesc:ab2b68b94b84c77ba11a699a76b8cf9cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main cmd struct definition. <br /></td></tr>
 <tr class="separator:ab2b68b94b84c77ba11a699a76b8cf9cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
@@ -171,44 +172,44 @@ Functions</h2></td></tr>
 <tr class="memitem:a90bbf69ef685a531b43ac4084c5fa571"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8h.html#a90bbf69ef685a531b43ac4084c5fa571">cmd_build</a> (<a class="el" href="cmd_8h.html#a2933336e1f8003400f3b050402f0f5f3">Cid</a> id, const char *b_name, const char *s_name, <a class="el" href="cmd_8h.html#a78d7a8bd781b5514e6dd7e1253bb1907">cmd_fn</a> fn)</td></tr>
 <tr class="memdesc:a90bbf69ef685a531b43ac4084c5fa571"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets up a new command and stores it inside a private array.  <a href="#a90bbf69ef685a531b43ac4084c5fa571">More...</a><br /></td></tr>
 <tr class="separator:a90bbf69ef685a531b43ac4084c5fa571"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad26761936b79469541883548b5a69e02"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct__Cmd.html">Cmd</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8h.html#ad26761936b79469541883548b5a69e02">cmd_get_by_cid</a> (<a class="el" href="cmd_8h.html#a2933336e1f8003400f3b050402f0f5f3">Cid</a> id)</td></tr>
+<tr class="memitem:ad26761936b79469541883548b5a69e02"><td class="memItemLeft" align="right" valign="top"><a class="el" href="cmd_8h.html#ab2b68b94b84c77ba11a699a76b8cf9cc">Cmd</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8h.html#ad26761936b79469541883548b5a69e02">cmd_get_by_cid</a> (<a class="el" href="cmd_8h.html#a2933336e1f8003400f3b050402f0f5f3">Cid</a> id)</td></tr>
 <tr class="memdesc:ad26761936b79469541883548b5a69e02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a command by its id.  <a href="#ad26761936b79469541883548b5a69e02">More...</a><br /></td></tr>
 <tr class="separator:ad26761936b79469541883548b5a69e02"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afce1f6a7a163afaac5ffe4ca55faee59"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct__Cmd.html">Cmd</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8h.html#afce1f6a7a163afaac5ffe4ca55faee59">cmd_get_by_name</a> (const char *n)</td></tr>
+<tr class="memitem:afce1f6a7a163afaac5ffe4ca55faee59"><td class="memItemLeft" align="right" valign="top"><a class="el" href="cmd_8h.html#ab2b68b94b84c77ba11a699a76b8cf9cc">Cmd</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8h.html#afce1f6a7a163afaac5ffe4ca55faee59">cmd_get_by_name</a> (const char *n)</td></tr>
 <tr class="memdesc:afce1f6a7a163afaac5ffe4ca55faee59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a command by its id.  <a href="#afce1f6a7a163afaac5ffe4ca55faee59">More...</a><br /></td></tr>
 <tr class="separator:afce1f6a7a163afaac5ffe4ca55faee59"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3078f0effe67b212b1b913e3ff0c08dc"><td class="memItemLeft" align="right" valign="top"><a id="a3078f0effe67b212b1b913e3ff0c08dc"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8h.html#a3078f0effe67b212b1b913e3ff0c08dc">cmd_free</a> ()</td></tr>
 <tr class="memdesc:a3078f0effe67b212b1b913e3ff0c08dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy all the setted commands. <br /></td></tr>
 <tr class="separator:a3078f0effe67b212b1b913e3ff0c08dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abb04779da8a594a45843a10b91e9e3a3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct__Cmd.html">Cmd</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8h.html#abb04779da8a594a45843a10b91e9e3a3">cmd_req</a> ()</td></tr>
+<tr class="memitem:abb04779da8a594a45843a10b91e9e3a3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="cmd_8h.html#ab2b68b94b84c77ba11a699a76b8cf9cc">Cmd</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8h.html#abb04779da8a594a45843a10b91e9e3a3">cmd_req</a> ()</td></tr>
 <tr class="memdesc:abb04779da8a594a45843a10b91e9e3a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Requests a new command from stdin.  <a href="#abb04779da8a594a45843a10b91e9e3a3">More...</a><br /></td></tr>
 <tr class="separator:abb04779da8a594a45843a10b91e9e3a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5090e929f5e97aa5492b47dfd7a6ec91"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8h.html#a5090e929f5e97aa5492b47dfd7a6ec91">cmd_cb</a> (<a class="el" href="struct__Cmd.html">Cmd</a> *cmd, void *vp)</td></tr>
+<tr class="memitem:a5090e929f5e97aa5492b47dfd7a6ec91"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8h.html#a5090e929f5e97aa5492b47dfd7a6ec91">cmd_cb</a> (<a class="el" href="cmd_8h.html#ab2b68b94b84c77ba11a699a76b8cf9cc">Cmd</a> *cmd, void *vp)</td></tr>
 <tr class="memdesc:a5090e929f5e97aa5492b47dfd7a6ec91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls to the callback function stored in the given command.  <a href="#a5090e929f5e97aa5492b47dfd7a6ec91">More...</a><br /></td></tr>
 <tr class="separator:a5090e929f5e97aa5492b47dfd7a6ec91"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae909b99e56ebcf38e499c901dbb36598"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8h.html#ae909b99e56ebcf38e499c901dbb36598">cmd_set_ans</a> (<a class="el" href="struct__Cmd.html">Cmd</a> *cmd, int errc, const char *frm,...) __attribute__((format(printf</td></tr>
+<tr class="memitem:ae909b99e56ebcf38e499c901dbb36598"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8h.html#ae909b99e56ebcf38e499c901dbb36598">cmd_set_ans</a> (<a class="el" href="cmd_8h.html#ab2b68b94b84c77ba11a699a76b8cf9cc">Cmd</a> *cmd, int errc, const char *frm,...) __attribute__((format(printf</td></tr>
 <tr class="memdesc:ae909b99e56ebcf38e499c901dbb36598"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets an answer to the given command.  <a href="#ae909b99e56ebcf38e499c901dbb36598">More...</a><br /></td></tr>
 <tr class="separator:ae909b99e56ebcf38e499c901dbb36598"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4b5e726e6e8394c9352cd863fadd271f"><td class="memItemLeft" align="right" valign="top">void const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8h.html#a4b5e726e6e8394c9352cd863fadd271f">cmd_get_ans</a> (<a class="el" href="struct__Cmd.html">Cmd</a> *cmd)</td></tr>
+<tr class="memitem:a4b5e726e6e8394c9352cd863fadd271f"><td class="memItemLeft" align="right" valign="top">void const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8h.html#a4b5e726e6e8394c9352cd863fadd271f">cmd_get_ans</a> (<a class="el" href="cmd_8h.html#ab2b68b94b84c77ba11a699a76b8cf9cc">Cmd</a> *cmd)</td></tr>
 <tr class="memdesc:a4b5e726e6e8394c9352cd863fadd271f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a previus answer of the given command.  <a href="#a4b5e726e6e8394c9352cd863fadd271f">More...</a><br /></td></tr>
 <tr class="separator:a4b5e726e6e8394c9352cd863fadd271f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa1e02137469ddc06fa9bcb3dac2c3a56"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8h.html#aa1e02137469ddc06fa9bcb3dac2c3a56">cmd_get_argv</a> (<a class="el" href="struct__Cmd.html">Cmd</a> *cmd, int idx)</td></tr>
+<tr class="memitem:aa1e02137469ddc06fa9bcb3dac2c3a56"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8h.html#aa1e02137469ddc06fa9bcb3dac2c3a56">cmd_get_argv</a> (<a class="el" href="cmd_8h.html#ab2b68b94b84c77ba11a699a76b8cf9cc">Cmd</a> *cmd, int idx)</td></tr>
 <tr class="memdesc:aa1e02137469ddc06fa9bcb3dac2c3a56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the desired indexed argument.  <a href="#aa1e02137469ddc06fa9bcb3dac2c3a56">More...</a><br /></td></tr>
 <tr class="separator:aa1e02137469ddc06fa9bcb3dac2c3a56"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a45b6622fba552dd2b1c620afb4af451c"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8h.html#a45b6622fba552dd2b1c620afb4af451c">cmd_get_argc</a> (<a class="el" href="struct__Cmd.html">Cmd</a> *cmd)</td></tr>
+<tr class="memitem:a45b6622fba552dd2b1c620afb4af451c"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8h.html#a45b6622fba552dd2b1c620afb4af451c">cmd_get_argc</a> (<a class="el" href="cmd_8h.html#ab2b68b94b84c77ba11a699a76b8cf9cc">Cmd</a> *cmd)</td></tr>
 <tr class="memdesc:a45b6622fba552dd2b1c620afb4af451c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of arguemnts of a given command.  <a href="#a45b6622fba552dd2b1c620afb4af451c">More...</a><br /></td></tr>
 <tr class="separator:a45b6622fba552dd2b1c620afb4af451c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a57baf1963c86de1643043f9c4cee9567"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8h.html#a57baf1963c86de1643043f9c4cee9567">cmd_get_errc</a> (<a class="el" href="struct__Cmd.html">Cmd</a> *cmd)</td></tr>
+<tr class="memitem:a57baf1963c86de1643043f9c4cee9567"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8h.html#a57baf1963c86de1643043f9c4cee9567">cmd_get_errc</a> (<a class="el" href="cmd_8h.html#ab2b68b94b84c77ba11a699a76b8cf9cc">Cmd</a> *cmd)</td></tr>
 <tr class="memdesc:a57baf1963c86de1643043f9c4cee9567"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the error code of a given command.  <a href="#a57baf1963c86de1643043f9c4cee9567">More...</a><br /></td></tr>
 <tr class="separator:a57baf1963c86de1643043f9c4cee9567"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a399883b5394d12f2c19816e72a756245"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="cmd_8h.html#a2933336e1f8003400f3b050402f0f5f3">Cid</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8h.html#a399883b5394d12f2c19816e72a756245">cmd_get_cid</a> (<a class="el" href="struct__Cmd.html">Cmd</a> *cmd)</td></tr>
+<tr class="memitem:a399883b5394d12f2c19816e72a756245"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="cmd_8h.html#a2933336e1f8003400f3b050402f0f5f3">Cid</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8h.html#a399883b5394d12f2c19816e72a756245">cmd_get_cid</a> (<a class="el" href="cmd_8h.html#ab2b68b94b84c77ba11a699a76b8cf9cc">Cmd</a> *cmd)</td></tr>
 <tr class="memdesc:a399883b5394d12f2c19816e72a756245"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the command id.  <a href="#a399883b5394d12f2c19816e72a756245">More...</a><br /></td></tr>
 <tr class="separator:a399883b5394d12f2c19816e72a756245"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afc6f99e63609bd15653ea164fbe59ede"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8h.html#afc6f99e63609bd15653ea164fbe59ede">cmd_get_bname</a> (<a class="el" href="struct__Cmd.html">Cmd</a> *cmd)</td></tr>
+<tr class="memitem:afc6f99e63609bd15653ea164fbe59ede"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8h.html#afc6f99e63609bd15653ea164fbe59ede">cmd_get_bname</a> (<a class="el" href="cmd_8h.html#ab2b68b94b84c77ba11a699a76b8cf9cc">Cmd</a> *cmd)</td></tr>
 <tr class="memdesc:afc6f99e63609bd15653ea164fbe59ede"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the base name of a given command.  <a href="#afc6f99e63609bd15653ea164fbe59ede">More...</a><br /></td></tr>
 <tr class="separator:afc6f99e63609bd15653ea164fbe59ede"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa3bd4090b15be64bd3d4839233f85ee9"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8h.html#aa3bd4090b15be64bd3d4839233f85ee9">cmd_get_sname</a> (<a class="el" href="struct__Cmd.html">Cmd</a> *cmd)</td></tr>
+<tr class="memitem:aa3bd4090b15be64bd3d4839233f85ee9"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_8h.html#aa3bd4090b15be64bd3d4839233f85ee9">cmd_get_sname</a> (<a class="el" href="cmd_8h.html#ab2b68b94b84c77ba11a699a76b8cf9cc">Cmd</a> *cmd)</td></tr>
 <tr class="memdesc:aa3bd4090b15be64bd3d4839233f85ee9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the short name of a given command.  <a href="#aa3bd4090b15be64bd3d4839233f85ee9">More...</a><br /></td></tr>
 <tr class="separator:aa3bd4090b15be64bd3d4839233f85ee9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -311,10 +312,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_
 <p>Sets up a new command and stores it inside a private array. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">{Cid}</td><td>id - Command identification </td></tr>
-    <tr><td class="paramname">{char*}</td><td>b_name - The base name of the command </td></tr>
-    <tr><td class="paramname">{char*}</td><td>s_name - The short name of the command </td></tr>
-    <tr><td class="paramname">{cmd_fn}</td><td>fn - Command callback function </td></tr>
+    <tr><td class="paramname">id</td><td>- Command identification </td></tr>
+    <tr><td class="paramname">b_name</td><td>- The base name of the command </td></tr>
+    <tr><td class="paramname">s_name</td><td>- The short name of the command </td></tr>
+    <tr><td class="paramname">fn</td><td>- Command callback function </td></tr>
   </table>
   </dd>
 </dl>
@@ -328,7 +329,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="struct__Cmd.html">Cmd</a>* cmd_get_by_cid </td>
+          <td class="memname"><a class="el" href="cmd_8h.html#ab2b68b94b84c77ba11a699a76b8cf9cc">Cmd</a>* cmd_get_by_cid </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="cmd_8h.html#a2933336e1f8003400f3b050402f0f5f3">Cid</a>&#160;</td>
           <td class="paramname"><em>id</em></td><td>)</td>
@@ -340,7 +341,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_
 <p>Gets a command by its id. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">{Cid}</td><td>id - Command identification </td></tr>
+    <tr><td class="paramname">id</td><td>- Command identification </td></tr>
   </table>
   </dd>
 </dl>
@@ -360,7 +361,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="struct__Cmd.html">Cmd</a>* cmd_get_by_name </td>
+          <td class="memname"><a class="el" href="cmd_8h.html#ab2b68b94b84c77ba11a699a76b8cf9cc">Cmd</a>* cmd_get_by_name </td>
           <td>(</td>
           <td class="paramtype">const char *&#160;</td>
           <td class="paramname"><em>n</em></td><td>)</td>
@@ -372,7 +373,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_
 <p>Gets a command by its id. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">{char*}</td><td>n - Short name or base name </td></tr>
+    <tr><td class="paramname">n</td><td>- Short name or base name </td></tr>
   </table>
   </dd>
 </dl>
@@ -392,7 +393,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="struct__Cmd.html">Cmd</a>* cmd_req </td>
+          <td class="memname"><a class="el" href="cmd_8h.html#ab2b68b94b84c77ba11a699a76b8cf9cc">Cmd</a>* cmd_req </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -419,7 +420,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_
         <tr>
           <td class="memname">void cmd_cb </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct__Cmd.html">Cmd</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="cmd_8h.html#ab2b68b94b84c77ba11a699a76b8cf9cc">Cmd</a> *&#160;</td>
           <td class="paramname"><em>cmd</em>, </td>
         </tr>
         <tr>
@@ -439,7 +440,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_
 <p>Calls to the callback function stored in the given command. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">{Cmd*}</td><td>cmd - Command pointer </td></tr>
+    <tr><td class="paramname">cmd</td><td>- command pointer </td></tr>
+    <tr><td class="paramname">vp</td><td>- command callback </td></tr>
   </table>
   </dd>
 </dl>
@@ -455,7 +457,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_
         <tr>
           <td class="memname">void cmd_set_ans </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct__Cmd.html">Cmd</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="cmd_8h.html#ab2b68b94b84c77ba11a699a76b8cf9cc">Cmd</a> *&#160;</td>
           <td class="paramname"><em>cmd</em>, </td>
         </tr>
         <tr>
@@ -487,10 +489,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_
 <p>Sets an answer to the given command. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">{Cmd*}</td><td>cmd - Command pointer </td></tr>
-    <tr><td class="paramname">{int}</td><td>errc - Error code </td></tr>
-    <tr><td class="paramname">{char*}</td><td>str - String format </td></tr>
-    <tr><td class="paramname">{...}</td><td>- String format arguments </td></tr>
+    <tr><td class="paramname">cmd</td><td>- Command pointer </td></tr>
+    <tr><td class="paramname">errc</td><td>- Error code </td></tr>
+    <tr><td class="paramname">str</td><td>- String format </td></tr>
+    <tr><td class="paramname">-</td><td>String format arguments </td></tr>
   </table>
   </dd>
 </dl>
@@ -506,7 +508,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_
         <tr>
           <td class="memname">void const char* cmd_get_ans </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct__Cmd.html">Cmd</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="cmd_8h.html#ab2b68b94b84c77ba11a699a76b8cf9cc">Cmd</a> *&#160;</td>
           <td class="paramname"><em>cmd</em></td><td>)</td>
           <td></td>
         </tr>
@@ -516,7 +518,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_
 <p>Gets a previus answer of the given command. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">{Cmd*}</td><td>cmd - Command pointer </td></tr>
+    <tr><td class="paramname">cmd</td><td>- Command pointer </td></tr>
   </table>
   </dd>
 </dl>
@@ -538,7 +540,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_
         <tr>
           <td class="memname">const char* cmd_get_argv </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct__Cmd.html">Cmd</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="cmd_8h.html#ab2b68b94b84c77ba11a699a76b8cf9cc">Cmd</a> *&#160;</td>
           <td class="paramname"><em>cmd</em>, </td>
         </tr>
         <tr>
@@ -558,7 +560,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_
 <p>Gets the desired indexed argument. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">{Cmd*}</td><td>cmd - Command pointer </td></tr>
+    <tr><td class="paramname">cmd</td><td>- Command pointer </td></tr>
   </table>
   </dd>
 </dl>
@@ -581,7 +583,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_
         <tr>
           <td class="memname">const int cmd_get_argc </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct__Cmd.html">Cmd</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="cmd_8h.html#ab2b68b94b84c77ba11a699a76b8cf9cc">Cmd</a> *&#160;</td>
           <td class="paramname"><em>cmd</em></td><td>)</td>
           <td></td>
         </tr>
@@ -591,7 +593,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_
 <p>Gets the number of arguemnts of a given command. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">{Cmd*}</td><td>cmd - Command pointer </td></tr>
+    <tr><td class="paramname">cmd</td><td>- Command pointer </td></tr>
   </table>
   </dd>
 </dl>
@@ -613,7 +615,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_
         <tr>
           <td class="memname">const int cmd_get_errc </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct__Cmd.html">Cmd</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="cmd_8h.html#ab2b68b94b84c77ba11a699a76b8cf9cc">Cmd</a> *&#160;</td>
           <td class="paramname"><em>cmd</em></td><td>)</td>
           <td></td>
         </tr>
@@ -623,7 +625,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_
 <p>Gets the error code of a given command. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">{Cmd*}</td><td>cmd - Command pointer </td></tr>
+    <tr><td class="paramname">cmd</td><td>- Command pointer </td></tr>
   </table>
   </dd>
 </dl>
@@ -645,7 +647,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_
         <tr>
           <td class="memname">const <a class="el" href="cmd_8h.html#a2933336e1f8003400f3b050402f0f5f3">Cid</a> cmd_get_cid </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct__Cmd.html">Cmd</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="cmd_8h.html#ab2b68b94b84c77ba11a699a76b8cf9cc">Cmd</a> *&#160;</td>
           <td class="paramname"><em>cmd</em></td><td>)</td>
           <td></td>
         </tr>
@@ -655,7 +657,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_
 <p>Gets the command id. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">{Cmd*}</td><td>cmd - Command pointer </td></tr>
+    <tr><td class="paramname">cmd</td><td>- Command pointer </td></tr>
   </table>
   </dd>
 </dl>
@@ -677,7 +679,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_
         <tr>
           <td class="memname">const char* cmd_get_bname </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct__Cmd.html">Cmd</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="cmd_8h.html#ab2b68b94b84c77ba11a699a76b8cf9cc">Cmd</a> *&#160;</td>
           <td class="paramname"><em>cmd</em></td><td>)</td>
           <td></td>
         </tr>
@@ -687,7 +689,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_
 <p>Gets the base name of a given command. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">{Cmd*}</td><td>cmd - Command pointer </td></tr>
+    <tr><td class="paramname">cmd</td><td>- Command pointer </td></tr>
   </table>
   </dd>
 </dl>
@@ -709,7 +711,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_
         <tr>
           <td class="memname">const char* cmd_get_sname </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct__Cmd.html">Cmd</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="cmd_8h.html#ab2b68b94b84c77ba11a699a76b8cf9cc">Cmd</a> *&#160;</td>
           <td class="paramname"><em>cmd</em></td><td>)</td>
           <td></td>
         </tr>
@@ -719,7 +721,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd_
 <p>Gets the short name of a given command. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">{Cmd*}</td><td>cmd - Command pointer </td></tr>
+    <tr><td class="paramname">cmd</td><td>- Command pointer </td></tr>
   </table>
   </dd>
 </dl>

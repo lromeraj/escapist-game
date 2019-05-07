@@ -46,20 +46,20 @@ typedef enum enum_Cid {
 */
 typedef void (*cmd_fn)(void*);
 
-typedef struct _Cmd Cmd;
+typedef struct _Cmd Cmd; /*!< @brief Main cmd struct definition */
 
 /**
 * @brief Sets up a new command and stores it inside a private array
-* @param {Cid} id - Command identification
-* @param {char*} b_name - The base name of the command
-* @param {char*} s_name - The short name of the command
-* @param {cmd_fn} fn - Command callback function
+* @param id - Command identification
+* @param b_name - The base name of the command
+* @param s_name - The short name of the command
+* @param fn - Command callback function
 */
 void cmd_build( Cid id, const char* b_name, const char *s_name, cmd_fn fn );
 
 /**
 * @brief Gets a command by its id
-* @param {Cid} id - Command identification
+* @param id - Command identification
 * @retval {Cmd*} - Returns a pointer to the requested command
 */
 Cmd *cmd_get_by_cid( Cid id );
@@ -67,7 +67,7 @@ Cmd *cmd_get_by_cid( Cid id );
 
 /**
 * @brief Gets a command by its id
-* @param {char*} n - Short name or base name
+* @param n - Short name or base name
 * @retval {Cmd*} - Returns a pointer to the requested command
 */
 Cmd *cmd_get_by_name( const char *n );
@@ -85,29 +85,30 @@ Cmd *cmd_req();
 
 /**
 * @brief Calls to the callback function stored in the given command
-* @param {Cmd*} cmd - Command pointer
+* @param cmd - command pointer
+* @param vp - command callback
 */
 void cmd_cb( Cmd *cmd, void *vp );
 
 /**
 * @brief Sets an answer to the given command
-* @param {Cmd*} cmd - Command pointer
-* @param {int} errc - Error code
-* @param {char*} str - String format
-* @param {...} - String format arguments
+* @param cmd - Command pointer
+* @param errc - Error code
+* @param str - String format
+* @param - String format arguments
 */
 void cmd_set_ans( Cmd *cmd, int errc, const char *frm, ... ) __attribute__ ( ( format(printf, 3, 4 ) ) );
 
 /**
 * @brief Gets a previus answer of the given command
-* @param {Cmd*} cmd - Command pointer
+* @param cmd - Command pointer
 * @retval {char*} - Command answer
 */
 const char *cmd_get_ans( Cmd *cmd );
 
 /**
 * @brief Gets the desired indexed argument
-* @param {Cmd*} cmd - Command pointer
+* @param cmd - Command pointer
 * @retval {int} idx - Argument index
 * @retval {char*} - Returns the requested indexed argument
 */
@@ -115,35 +116,35 @@ const char *cmd_get_argv( Cmd *cmd, int idx );
 
 /**
 * @brief Gets the number of arguemnts of a given command
-* @param {Cmd*} cmd - Command pointer
+* @param cmd - Command pointer
 * @retval {int} - Number of arguments
 */
 const int cmd_get_argc( Cmd *cmd );
 
 /**
 * @brief Gets the error code of a given command
-* @param {Cmd*} cmd - Command pointer
+* @param cmd - Command pointer
 * @retval {int} - Error code
 */
 const int cmd_get_errc( Cmd *cmd );
 
 /**
 * @brief Gets the command id
-* @param {Cmd*} cmd - Command pointer
+* @param cmd - Command pointer
 * @retval {Cid} - Command id
 */
 const Cid cmd_get_cid( Cmd *cmd );
 
 /**
 * @brief Gets the base name of a given command
-* @param {Cmd*} cmd - Command pointer
+* @param cmd - Command pointer
 * @retval {char*} - Command base name
 */
 const char *cmd_get_bname( Cmd *cmd );
 
 /**
 * @brief Gets the short name of a given command
-* @param {Cmd*} cmd - Command pointer
+* @param cmd - Command pointer
 * @retval {char*} - Command short name
 */
 const char *cmd_get_sname( Cmd *cmd );

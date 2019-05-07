@@ -407,7 +407,7 @@ void parse_map( G_engine *ge, Game *game, int box ) {
   ui_box_put( ui, box, "%ld@{0}", space_get_id( cu_sp ) );
 
   /* draw space picture */
-  _x=x+cell_w-11;
+  _x=x+cell_w-12;
   _y=y+cell_h-7;
   pp = space_get_picture( cu_sp );
 
@@ -428,7 +428,7 @@ void parse_map( G_engine *ge, Game *game, int box ) {
 
       ui_box_put( ui, box, "@{0}" );
       ui_box_set_cx_off( ui, box, _x );
-      ui_box_set_cx_top( ui, box, x + cell_w-1 );
+      ui_box_set_cx_top( ui, box, x + cell_w );
 
       ui_box_seek( ui, box, _x, _y );
       ui_box_put( ui, box, "%s", pp );
@@ -439,7 +439,7 @@ void parse_map( G_engine *ge, Game *game, int box ) {
     ui_box_frms( ui, box, "%s;%s", GAME_MAP_BG, GAME_MAP_FG );
     ui_box_set_cx_off( ui, box, 0 );
     ui_box_set_cx_top( ui, box, ui_box_get_w( ui, box ) );
-
+    ui_box_put( ui, box, "@{0}" );
   }
 
   _x = x+cell_w+1;

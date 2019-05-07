@@ -111,7 +111,11 @@
 	Looks pretty dark, look for something useful ...",
 	ldescrp: "detailed description ...",
 	links: [ -1, -1, 1, -1, 9, -1 ],
-	picture: "|\---/|\n| o_o |\n \_^_/ "
+	picture: "
+|\---/|
+| o_o | 
+ \_^_/ 
+"
 }
 
 @s {

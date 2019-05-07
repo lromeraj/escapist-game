@@ -35,9 +35,6 @@ struct \hyperlink{struct__Ui}{\+\_\+\+Ui}
 \subsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{ui_8c_ad72dbcf6d0153db1b8d8a58001feed83}\label{ui_8c_ad72dbcf6d0153db1b8d8a58001feed83}} 
-\#define {\bfseries D\+E\+B\+UG}
-\item 
 \mbox{\Hypertarget{ui_8c_ad708dfbbffe55244e42be0875fa9029d}\label{ui_8c_ad708dfbbffe55244e42be0875fa9029d}} 
 \#define {\bfseries D\+E\+F\+A\+U\+L\+T\+\_\+\+T\+X\+T\+\_\+\+B\+G\+\_\+\+C\+O\+L\+OR}~\hyperlink{ui_8h_ab87bacfdad76e61b9412d7124be44c1caecc0ff952194921d53813a10bfe2b4d6}{B\+G\+\_\+\+W\+H\+I\+TE}
 \item 
@@ -72,11 +69,11 @@ struct \hyperlink{struct__Ui}{\+\_\+\+Ui}
 \#define \hyperlink{ui_8c_aab208380ff579bef5fd8b91fa0c0215a}{U\+I\+\_\+\+M\+A\+X\+\_\+\+F\+R\+M\+\_\+\+L\+EN}~( \hyperlink{ui_8c_a0695aa54989d97bfeeb2c65e36a5ad13}{U\+I\+\_\+\+M\+A\+X\+\_\+\+F\+RM} + 2 )
 \begin{DoxyCompactList}\small\item\em Maximum length of the format array. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{ui_8c_aeb64a6a8beea1e0e99a8b2ce3bbe170c}\label{ui_8c_aeb64a6a8beea1e0e99a8b2ce3bbe170c}} 
-\#define {\bfseries \+\_\+\+\_\+frmidx}(\+\_\+\+\_\+frm)~( \+\_\+\+\_\+frm\mbox{[} \hyperlink{ui_8c_aab208380ff579bef5fd8b91fa0c0215a}{U\+I\+\_\+\+M\+A\+X\+\_\+\+F\+R\+M\+\_\+\+L\+EN} -\/ 2 \mbox{]} ) /$\ast$ get the destination index of the format $\ast$/
-\item 
+\#define \hyperlink{ui_8c_aeb64a6a8beea1e0e99a8b2ce3bbe170c}{\+\_\+\+\_\+frmidx}(\+\_\+\+\_\+frm)~( \+\_\+\+\_\+frm\mbox{[} \hyperlink{ui_8c_aab208380ff579bef5fd8b91fa0c0215a}{U\+I\+\_\+\+M\+A\+X\+\_\+\+F\+R\+M\+\_\+\+L\+EN} -\/ 2 \mbox{]} )
+\begin{DoxyCompactList}\small\item\em get the destination index of the format \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{ui_8c_a9442c04c39b98c383602b108a7aec71c}\label{ui_8c_a9442c04c39b98c383602b108a7aec71c}} 
-\#define {\bfseries \+\_\+\+\_\+frmxor}(\+\_\+\+\_\+frm)~( \+\_\+\+\_\+frm\mbox{[} \hyperlink{ui_8c_aab208380ff579bef5fd8b91fa0c0215a}{U\+I\+\_\+\+M\+A\+X\+\_\+\+F\+R\+M\+\_\+\+L\+EN} -\/ 1 \mbox{]} ) /$\ast$ get the checksum of the format $\ast$/
-\end{DoxyCompactItemize}
+\#define \hyperlink{ui_8c_a9442c04c39b98c383602b108a7aec71c}{\+\_\+\+\_\+frmxor}(\+\_\+\+\_\+frm)~( \+\_\+\+\_\+frm\mbox{[} \hyperlink{ui_8c_aab208380ff579bef5fd8b91fa0c0215a}{U\+I\+\_\+\+M\+A\+X\+\_\+\+F\+R\+M\+\_\+\+L\+EN} -\/ 1 \mbox{]} )
+\begin{DoxyCompactList}\small\item\em get the checksum of the format \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -201,12 +198,12 @@ Reserves memory to alloc a certain quantity of pixels.
 
 
 \begin{DoxyParams}{Parameters}
-{\em \{int\}} & \+\_\+\+\_\+len -\/ The quantity of pixels to be allocted \\
+{\em \+\_\+\+\_\+len} & -\/ The quantity of pixels to be allocted \\
 \hline
 \end{DoxyParams}
 
 \begin{DoxyRetVals}{Return values}
-{\em \{\+Ui\+\_\+pix$\ast$$\ast$\}} & -\/ Returns a pointer which points to other pixels pointers \\
+{\em -\/} & Returns a pointer which points to other pixels pointers \\
 \hline
 \end{DoxyRetVals}
 \mbox{\Hypertarget{ui_8c_afde9d47a49687dc0831376c3f2454259}\label{ui_8c_afde9d47a49687dc0831376c3f2454259}} 
@@ -221,9 +218,9 @@ This function destroys an array of pixels to liberate memory.
 
 
 \begin{DoxyParams}{Parameters}
-{\em \{\+Ui\+\_\+pix$\ast$$\ast$\}} & \+\_\+\+\_\+pixs -\/ Pointer which points to the data \\
+{\em \+\_\+\+\_\+pixs} & -\/ Pointer which points to the data \\
 \hline
-{\em \{int\}} & \+\_\+\+\_\+len -\/ The length of the pixs matrix \\
+{\em \+\_\+\+\_\+len} & -\/ The length of the pixs matrix \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{ui_8c_a299dc91882e1d5f51a7c9f0346f0abdd}\label{ui_8c_a299dc91882e1d5f51a7c9f0346f0abdd}} 
@@ -238,12 +235,12 @@ Reserves memory to alloc a certain quantity of cache pixels.
 
 
 \begin{DoxyParams}{Parameters}
-{\em \{int\}} & \+\_\+\+\_\+len -\/ The quantity of pixels to be allocted \\
+{\em \+\_\+\+\_\+len} & -\/ The quantity of pixels to be allocted \\
 \hline
 \end{DoxyParams}
 
 \begin{DoxyRetVals}{Return values}
-{\em \{\+Ui\+\_\+pix$\ast$$\ast$\}} & -\/ Returns a pointer which points to other pixels pointers \\
+{\em -\/} & Returns a pointer which points to other pixels pointers \\
 \hline
 \end{DoxyRetVals}
 \mbox{\Hypertarget{ui_8c_a6338ee0b6902cc5d197370fb900540dc}\label{ui_8c_a6338ee0b6902cc5d197370fb900540dc}} 
@@ -258,9 +255,9 @@ This function destroys an array of cache pixels to liberate memory.
 
 
 \begin{DoxyParams}{Parameters}
-{\em \{\+Ui\+\_\+pix$\ast$$\ast$\}} & \+\_\+\+\_\+pixs -\/ Pointer which points to the data \\
+{\em \+\_\+\+\_\+pixs} & -\/ Pointer which points to the data \\
 \hline
-{\em \{int\}} & \+\_\+\+\_\+len -\/ The length of the pixs matrix \\
+{\em \+\_\+\+\_\+len} & -\/ The length of the pixs matrix \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{ui_8c_a4c6715d14c979c363f6dd1876a2db06a}\label{ui_8c_a4c6715d14c979c363f6dd1876a2db06a}} 
@@ -275,18 +272,18 @@ Checks if a given position ( usually for pixels ) is overflowing the max size.
 
 
 \begin{DoxyParams}{Parameters}
-{\em \{int\}} & x -\/ Represents the x position ( column of the matrix ) \\
+{\em x} & -\/ Represents the x position ( column of the matrix ) \\
 \hline
-{\em \{int\}} & y -\/ Represents the y position ( row of the matrix ) \\
+{\em y} & -\/ Represents the y position ( row of the matrix ) \\
 \hline
-{\em \{int\}} & w -\/ Represents the space width \\
+{\em w} & -\/ Represents the space width \\
 \hline
-{\em \{int\}} & h -\/ Represents the space height \\
+{\em h} & -\/ Represents the space height \\
 \hline
 \end{DoxyParams}
 
 \begin{DoxyRetVals}{Return values}
-{\em \{bool\}} & -\/ Returns a boolean value, false if there is no overflow, else true \\
+{\em -\/} & Returns a boolean value, false if there is no overflow, else true \\
 \hline
 \end{DoxyRetVals}
 \mbox{\Hypertarget{ui_8c_abdf66a7ffe3750fb2371e14178d91561}\label{ui_8c_abdf66a7ffe3750fb2371e14178d91561}} 
@@ -301,20 +298,20 @@ Gets a pixel that is located in a given position.
 
 
 \begin{DoxyParams}{Parameters}
-{\em \{\+Ui\+\_\+pix$\ast$$\ast$\}} & \+\_\+\+\_\+pixs -\/ the array where the pixel should be located \\
+{\em \+\_\+\+\_\+pixs} & -\/ the array where the pixel should be located \\
 \hline
-{\em \{int\}} & x -\/ Represents the x position ( column of the matrix ) \\
+{\em x} & -\/ Represents the x position ( column of the matrix ) \\
 \hline
-{\em \{int\}} & y -\/ Represents the y position ( row of the matrix ) \\
+{\em y} & -\/ Represents the y position ( row of the matrix ) \\
 \hline
-{\em \{int\}} & w -\/ Represents the space width \\
+{\em w} & -\/ Represents the space width \\
 \hline
-{\em \{int\}} & h -\/ Represents the space height \\
+{\em h} & -\/ Represents the space height \\
 \hline
 \end{DoxyParams}
 
 \begin{DoxyRetVals}{Return values}
-{\em \{\+Ui\+\_\+pix$\ast$\}} & -\/ Returns a pointer to the found pixel, else returns N\+U\+LL \\
+{\em -\/} & Returns a pointer to the found pixel, else returns N\+U\+LL \\
 \hline
 \end{DoxyRetVals}
 \mbox{\Hypertarget{ui_8c_af6c65abe47ab9915826c7490f00becfe}\label{ui_8c_af6c65abe47ab9915826c7490f00becfe}} 
@@ -329,17 +326,17 @@ Sets a given pixel in a given position.
 
 
 \begin{DoxyParams}{Parameters}
-{\em \{\+Ui\+\_\+pix$\ast$$\ast$\}} & \+\_\+\+\_\+pixs -\/ the array where the pixel should be located \\
+{\em \+\_\+\+\_\+pixs} & -\/ the array where the pixel should be located \\
 \hline
-{\em \{int\}} & x -\/ Represents the x position ( column of the matrix ) \\
+{\em x} & -\/ Represents the x position ( column of the matrix ) \\
 \hline
-{\em \{int\}} & y -\/ Represents the y position ( row of the matrix ) \\
+{\em y} & -\/ Represents the y position ( row of the matrix ) \\
 \hline
-{\em \{int\}} & w -\/ Represents the space width \\
+{\em w} & -\/ Represents the space width \\
 \hline
-{\em \{int\}} & h -\/ Represents the space height \\
+{\em h} & -\/ Represents the space height \\
 \hline
-{\em \{\+Ui\+\_\+pix\}} & pix -\/ Struct of the pixel to be setted \\
+{\em pix} & -\/ Struct of the pixel to be setted \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{ui_8c_a007fbe4446d1945531b3b21c06678659}\label{ui_8c_a007fbe4446d1945531b3b21c06678659}} 
@@ -354,14 +351,14 @@ Finds a box by it\textquotesingle{}s id (slow)
 
 
 \begin{DoxyParams}{Parameters}
-{\em \{\+Ui$\ast$\}} & ui -\/ UI where the box should be located \\
+{\em ui} & -\/ UI where the box should be located \\
 \hline
-{\em \{int\}} & id -\/ The id of the requested box \\
+{\em id} & -\/ The id of the requested box \\
 \hline
 \end{DoxyParams}
 
 \begin{DoxyRetVals}{Return values}
-{\em \{\+Ui\+\_\+box$\ast$\}} & -\/ If the box was found returns a pointer to the requested box, else returns N\+U\+LL \\
+{\em -\/} & If the box was found returns a pointer to the requested box, else returns N\+U\+LL \\
 \hline
 \end{DoxyRetVals}
 \mbox{\Hypertarget{ui_8c_a83fbc61bd07e50156f4526d0b412017f}\label{ui_8c_a83fbc61bd07e50156f4526d0b412017f}} 
@@ -376,14 +373,14 @@ Gets a box by it\textquotesingle{}s idx (fast)
 
 
 \begin{DoxyParams}{Parameters}
-{\em \{\+Ui$\ast$\}} & ui -\/ UI where the box should be located \\
+{\em ui} & -\/ UI where the box should be located \\
 \hline
-{\em \{int\}} & id -\/ The id of the requested box \\
+{\em id} & -\/ The id of the requested box \\
 \hline
 \end{DoxyParams}
 
 \begin{DoxyRetVals}{Return values}
-{\em \{\+Ui\+\_\+box$\ast$\}} & -\/ The box at the given index (can be N\+U\+LL) \\
+{\em -\/} & The box at the given index (can be N\+U\+LL) \\
 \hline
 \end{DoxyRetVals}
 \mbox{\Hypertarget{ui_8c_aa20d570ab281c0262dde9440f9fbc9c3}\label{ui_8c_aa20d570ab281c0262dde9440f9fbc9c3}} 
@@ -398,9 +395,9 @@ Destroys a given box.
 
 
 \begin{DoxyParams}{Parameters}
-{\em \{\+Ui$\ast$\}} & ui -\/ Ui where the box should be removed \\
+{\em ui} & -\/ Ui where the box should be removed \\
 \hline
-{\em \{int\}} & idx -\/ Box index \\
+{\em idx} & -\/ Box index \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{ui_8c_aef97744c8290fc4837d2238279d0f4f1}\label{ui_8c_aef97744c8290fc4837d2238279d0f4f1}} 
@@ -415,7 +412,7 @@ Resets the format.
 
 
 \begin{DoxyParams}{Parameters}
-{\em \{int$\ast$\}} & frm -\/ Format array to be reseted\\
+{\em frm} & -\/ Format array to be reseted\\
 \hline
 \end{DoxyParams}
 formatting functions \mbox{\Hypertarget{ui_8c_ad9fc8b100e2d6b12926b604c85360c61}\label{ui_8c_ad9fc8b100e2d6b12926b604c85360c61}} 
@@ -430,9 +427,9 @@ Copies source format into destinationformat.
 
 
 \begin{DoxyParams}{Parameters}
-{\em \{int$\ast$\}} & dest -\/ Format array destination \\
+{\em dest} & -\/ Format array destination \\
 \hline
-{\em \{int$\ast$\}} & src -\/ Format array source \\
+{\em src} & -\/ Format array source \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{ui_8c_a5b9451032a7b28000f768915c526935b}\label{ui_8c_a5b9451032a7b28000f768915c526935b}} 
@@ -447,9 +444,9 @@ Adds a value to a given format.
 
 
 \begin{DoxyParams}{Parameters}
-{\em \{int$\ast$\}} & frm -\/ Format array to be modified \\
+{\em frm} & -\/ Format array to be modified \\
 \hline
-{\em \{int\}} & v -\/ Value to be added \\
+{\em v} & -\/ Value to be added \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{ui_8c_a1968a1e1276abd333bbdfc77338abe9e}\label{ui_8c_a1968a1e1276abd333bbdfc77338abe9e}} 
@@ -464,11 +461,11 @@ Adds a list of values into a format array.
 
 
 \begin{DoxyParams}{Parameters}
-{\em \{int$\ast$\}} & frm -\/ format array destination \\
+{\em frm} & -\/ format array destination \\
 \hline
-{\em \{int\}} & n -\/ Number of parameters to be added \\
+{\em n} & -\/ Number of parameters to be added \\
 \hline
-{\em \{va\+\_\+list\}} & list -\/ List of parameters to be inserted \\
+{\em list} & -\/ List of parameters to be inserted \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{ui_8c_a91d6818962011df968e8e6fca315a66a}\label{ui_8c_a91d6818962011df968e8e6fca315a66a}} 
@@ -483,11 +480,11 @@ Parses a given format string into a number format array.
 
 
 \begin{DoxyParams}{Parameters}
-{\em \{int$\ast$\}} & frm -\/ Format destination \\
+{\em frm} & -\/ Format destination \\
 \hline
-{\em \{int$\ast$\}} & defrm -\/ Default format in case of reset \\
+{\em defrm} & -\/ Default format in case of reset \\
 \hline
-{\em \{char$\ast$\}} & sfrm -\/ Format string \\
+{\em sfrm} & -\/ Format string \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{ui_8c_a70ca5594ea91504bec5a8a16826f3c23}\label{ui_8c_a70ca5594ea91504bec5a8a16826f3c23}} 
@@ -502,11 +499,11 @@ Sets a temporary format of the UI This means that all the text, shapes and other
 
 
 \begin{DoxyParams}{Parameters}
-{\em \{\+Ui$\ast$\}} & ui -\/ UI to set the temporary parameters \\
+{\em ui} & -\/ UI to set the temporary parameters \\
 \hline
-{\em \{int\}} & n -\/ The number of parameters that will be set \\
+{\em n} & -\/ The number of parameters that will be set \\
 \hline
-{\em \{int\}} & ... -\/ The N parameters to be set, like B\+G\+\_\+\+R\+ED, S\+\_\+\+B\+O\+LD, ... \\
+{\em ...} & -\/ The N parameters to be set, like B\+G\+\_\+\+R\+ED, S\+\_\+\+B\+O\+LD, ... \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{ui_8c_adc8d261a6cf4862dc48958d7fdb5b9c6}\label{ui_8c_adc8d261a6cf4862dc48958d7fdb5b9c6}} 
@@ -521,9 +518,9 @@ Initializes UI struct.
 
 
 \begin{DoxyParams}{Parameters}
-{\em \{int\}} & w -\/ The width of the user interface based on chars \\
+{\em w} & -\/ The width of the user interface based on chars \\
 \hline
-{\em \{int\}} & h -\/ The height of the user interface based on chars \\
+{\em h} & -\/ The height of the user interface based on chars \\
 \hline
 \end{DoxyParams}
 
@@ -543,11 +540,11 @@ Resizes ui screen.
 
 
 \begin{DoxyParams}{Parameters}
-{\em \{\+Ui$\ast$\}} & ui -\/ A pointer to the UI struct \\
+{\em ui} & -\/ A pointer to the UI struct \\
 \hline
-{\em \{int\}} & w -\/ New width (cols) \\
+{\em w} & -\/ New width (cols) \\
 \hline
-{\em \{int\}} & h -\/ New height (rows) \\
+{\em h} & -\/ New height (rows) \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{ui_8c_a26dcc63df2a1df20c72a9f8c9eb460d1}\label{ui_8c_a26dcc63df2a1df20c72a9f8c9eb460d1}} 
@@ -562,7 +559,7 @@ Destroys UI struct.
 
 
 \begin{DoxyParams}{Parameters}
-{\em \{\+Ui$\ast$\}} & ui -\/ A pointer to the UI struct \\
+{\em ui} & -\/ A pointer to the UI struct \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{ui_8c_ae33678d6064b4939cd98b2ba7b80357e}\label{ui_8c_ae33678d6064b4939cd98b2ba7b80357e}} 
@@ -577,7 +574,7 @@ Resets the temporary format of the UI to default.
 
 
 \begin{DoxyParams}{Parameters}
-{\em \{\+Ui$\ast$\}} & ui -\/ the UI where the temporary parameters should be resetted \\
+{\em ui} & -\/ the UI where the temporary parameters should be resetted \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{ui_8c_a173b4e0d7bf667e1bf3ae9dadeafae5e}\label{ui_8c_a173b4e0d7bf667e1bf3ae9dadeafae5e}} 
@@ -592,13 +589,13 @@ Sets the default format for the content of the box.
 
 
 \begin{DoxyParams}{Parameters}
-{\em \{\+Ui$\ast$\}} & ui -\/ UI where the box is located \\
+{\em ui} & -\/ UI where the box is located \\
 \hline
-{\em \{int\}} & id -\/ The id of the box \\
+{\em idx} & -\/ The id of the box \\
 \hline
-{\em \{int\}} & n -\/ Number of parameters \\
+{\em n} & -\/ Number of parameters \\
 \hline
-{\em \{...\}} & -\/ Style parameters \\
+{\em -\/} & Style parameters \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{ui_8c_a90c0c042767780dd5f4eba555b77c9a9}\label{ui_8c_a90c0c042767780dd5f4eba555b77c9a9}} 
@@ -613,13 +610,13 @@ Changes the position of a box.
 
 
 \begin{DoxyParams}{Parameters}
-{\em \{\+Ui$\ast$\}} & ui -\/ UI where the box is stored \\
+{\em ui} & -\/ UI where the box is stored \\
 \hline
-{\em \{int\}} & idx -\/ The ID with which the box will be referenced \\
+{\em idx} & -\/ The ID with which the box will be referenced \\
 \hline
-{\em \{int\}} & x -\/ The new x position of the box ( col of the matrix ) \\
+{\em x} & -\/ The new x position of the box ( col of the matrix ) \\
 \hline
-{\em \{int\}} & y -\/ The new y position of the box ( row of the matrix ) \\
+{\em y} & -\/ The new y position of the box ( row of the matrix ) \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{ui_8c_a3aac300e75ad5ae02ae6d371426ca029}\label{ui_8c_a3aac300e75ad5ae02ae6d371426ca029}} 
@@ -634,14 +631,14 @@ Get the width of a box (columns)
 
 
 \begin{DoxyParams}{Parameters}
-{\em \{\+Ui$\ast$\}} & ui -\/ UI where the box is located \\
+{\em ui} & -\/ UI where the box is located \\
 \hline
-{\em \{int\}} & idx -\/ box index \\
+{\em idx} & -\/ box index \\
 \hline
 \end{DoxyParams}
 
 \begin{DoxyRetVals}{Return values}
-{\em returns} & the width of a box (number of columns) \\
+{\em \{int\}} & -\/ returns the width of a box (number of columns) \\
 \hline
 \end{DoxyRetVals}
 \mbox{\Hypertarget{ui_8c_a535313fae3d303f0cb57c04f5d6aee18}\label{ui_8c_a535313fae3d303f0cb57c04f5d6aee18}} 
@@ -656,14 +653,14 @@ Get the height of a box (rows)
 
 
 \begin{DoxyParams}{Parameters}
-{\em \{\+Ui$\ast$\}} & ui -\/ UI where the box is located \\
+{\em ui} & -\/ UI where the box is located \\
 \hline
-{\em \{int\}} & idx -\/ box index \\
+{\em idx} & -\/ box index \\
 \hline
 \end{DoxyParams}
 
 \begin{DoxyRetVals}{Return values}
-{\em returns} & the height of a box (number of rows) \\
+{\em \{int\}} & returns the height of a box (number of rows) \\
 \hline
 \end{DoxyRetVals}
 \mbox{\Hypertarget{ui_8c_acfefadef83199ecb6fc87386156a1fbb}\label{ui_8c_acfefadef83199ecb6fc87386156a1fbb}} 
@@ -678,14 +675,14 @@ Get the position of the cursor inside a box (column)
 
 
 \begin{DoxyParams}{Parameters}
-{\em \{\+Ui$\ast$\}} & ui -\/ UI where the box is located \\
+{\em ui} & -\/ UI where the box is located \\
 \hline
-{\em \{int\}} & idx -\/ box index \\
+{\em idx} & -\/ box index \\
 \hline
 \end{DoxyParams}
 
 \begin{DoxyRetVals}{Return values}
-{\em returns} & the position of the \textquotesingle{}x\textquotesingle{} cursor (column) \\
+{\em \{int\}} & -\/ returns the position of the \textquotesingle{}x\textquotesingle{} cursor (column) \\
 \hline
 \end{DoxyRetVals}
 \mbox{\Hypertarget{ui_8c_a9674fc94b52c30b570a8eccf5f5828cb}\label{ui_8c_a9674fc94b52c30b570a8eccf5f5828cb}} 
@@ -700,14 +697,14 @@ Get the position of the cursor inside a box (row)
 
 
 \begin{DoxyParams}{Parameters}
-{\em \{\+Ui$\ast$\}} & ui -\/ UI where the box is located \\
+{\em ui} & -\/ UI where the box is located \\
 \hline
-{\em \{int\}} & idx -\/ box index \\
+{\em idx} & -\/ box index \\
 \hline
 \end{DoxyParams}
 
 \begin{DoxyRetVals}{Return values}
-{\em returns} & the position of the \textquotesingle{}y\textquotesingle{} cursor (row) \\
+{\em \{int\}} & -\/ returns the position of the \textquotesingle{}y\textquotesingle{} cursor (row) \\
 \hline
 \end{DoxyRetVals}
 \mbox{\Hypertarget{ui_8c_ab8db743aedc69fddc99a3e730396b63d}\label{ui_8c_ab8db743aedc69fddc99a3e730396b63d}} 
@@ -722,11 +719,11 @@ Sets an offset for the \textquotesingle{}x\textquotesingle{} cursor (column) Whe
 
 
 \begin{DoxyParams}{Parameters}
-{\em \{\+Ui$\ast$\}} & ui -\/ UI where the box is located \\
+{\em ui} & -\/ UI where the box is located \\
 \hline
-{\em \{int\}} & idx -\/ box index \\
+{\em idx} & -\/ box index \\
 \hline
-{\em \{int\}} & cx\+\_\+off -\/ \textquotesingle{}x\textquotesingle{} cursor offset \\
+{\em cx\+\_\+off} & -\/ \textquotesingle{}x\textquotesingle{} cursor offset \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{ui_8c_a7ee4d3538f3960eec223e1e7d0f0c65a}\label{ui_8c_a7ee4d3538f3960eec223e1e7d0f0c65a}} 
@@ -741,11 +738,11 @@ Sets limit for the \textquotesingle{}x\textquotesingle{} cursor (column)
 
 
 \begin{DoxyParams}{Parameters}
-{\em \{\+Ui$\ast$\}} & ui -\/ UI where the box is located \\
+{\em ui} & -\/ UI where the box is located \\
 \hline
-{\em \{int\}} & idx -\/ box index \\
+{\em idx} & -\/ box index \\
 \hline
-{\em \{int\}} & cx\+\_\+top -\/ \textquotesingle{}x\textquotesingle{} cursor limit \\
+{\em cx\+\_\+top} & -\/ \textquotesingle{}x\textquotesingle{} cursor limit \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{ui_8c_ad4985e811d68055731364dce02e2404d}\label{ui_8c_ad4985e811d68055731364dce02e2404d}} 
@@ -760,13 +757,13 @@ Get the position of the cursor inside a box (column \& row)
 
 
 \begin{DoxyParams}{Parameters}
-{\em \{\+Ui$\ast$\}} & ui -\/ UI where the box is located \\
+{\em ui} & -\/ UI where the box is located \\
 \hline
-{\em \{int\}} & idx -\/ box index \\
+{\em idx} & -\/ box index \\
 \hline
-{\em \{int$\ast$\}} & cx -\/ where the \textquotesingle{}x\textquotesingle{} cursor should be copied \\
+{\em cx} & -\/ where the \textquotesingle{}x\textquotesingle{} cursor should be copied \\
 \hline
-{\em \{int$\ast$\}} & cy -\/ where the \textquotesingle{}y\textquotesingle{} cursor should be copied \\
+{\em cy} & -\/ where the \textquotesingle{}y\textquotesingle{} cursor should be copied \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{ui_8c_a1d53dad9b00de3c8f2a91738d573d2fb}\label{ui_8c_a1d53dad9b00de3c8f2a91738d573d2fb}} 
@@ -781,13 +778,13 @@ Changes the size of a box.
 
 
 \begin{DoxyParams}{Parameters}
-{\em \{\+Ui$\ast$\}} & ui -\/ UI where the box is stored \\
+{\em ui} & -\/ UI where the box is stored \\
 \hline
-{\em \{int\}} & idx -\/ The ID with which the box will be referenced \\
+{\em idx} & -\/ The ID with which the box will be referenced \\
 \hline
-{\em \{int\}} & w -\/ The new width of the box ( number of cols ) \\
+{\em w} & -\/ The new width of the box ( number of cols ) \\
 \hline
-{\em \{int\}} & h -\/ The new height of the box ( number of rows ) \\
+{\em h} & -\/ The new height of the box ( number of rows ) \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{ui_8c_a8064e9aed23d3cd6f94c20d4d70eb8e6}\label{ui_8c_a8064e9aed23d3cd6f94c20d4d70eb8e6}} 
@@ -802,9 +799,9 @@ Clears the box buffer.
 
 
 \begin{DoxyParams}{Parameters}
-{\em \{\+Ui$\ast$\}} & ui -\/ UI where the box is located \\
+{\em ui} & -\/ UI where the box is located \\
 \hline
-{\em \{int\}} & id -\/ The id of the box \\
+{\em idx} & -\/ The id of the box \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{ui_8c_af9b58458649ecd779d095f3d102d85c8}\label{ui_8c_af9b58458649ecd779d095f3d102d85c8}} 
@@ -819,7 +816,7 @@ Clears all the UI data, including inherit objects like boxes, shapes, ...
 
 
 \begin{DoxyParams}{Parameters}
-{\em \{\+Ui$\ast$\}} & ui -\/ The UI that should be clered \\
+{\em ui} & -\/ The UI that should be clered \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{ui_8c_a3f68193559fa8a9df589042a4609c97f}\label{ui_8c_a3f68193559fa8a9df589042a4609c97f}} 
@@ -834,17 +831,17 @@ Creates a new box.
 
 
 \begin{DoxyParams}{Parameters}
-{\em \{\+Ui$\ast$\}} & ui -\/ UI where the box should be created \\
+{\em ui} & -\/ UI where the box should be created \\
 \hline
-{\em \{int\}} & idx -\/ The ID with which the box will be referenced \\
+{\em idx} & -\/ The ID with which the box will be referenced \\
 \hline
-{\em \{int\}} & x -\/ The x position of the box ( col of the matrix ) \\
+{\em x} & -\/ The x position of the box ( col of the matrix ) \\
 \hline
-{\em \{int\}} & y -\/ The y position of the box ( row of the matrix ) \\
+{\em y} & -\/ The y position of the box ( row of the matrix ) \\
 \hline
-{\em \{int\}} & w -\/ The width of the box ( number of cols ) \\
+{\em w} & -\/ The width of the box ( number of cols ) \\
 \hline
-{\em \{int\}} & h -\/ The height of the box ( number of rows ) \\
+{\em h} & -\/ The height of the box ( number of rows ) \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{ui_8c_ab1abb40d629ddab0740bc91321abe91f}\label{ui_8c_ab1abb40d629ddab0740bc91321abe91f}} 
@@ -859,13 +856,13 @@ Changes the cursor position of a box.
 
 
 \begin{DoxyParams}{Parameters}
-{\em \{\+Ui$\ast$\}} & ui -\/ UI where the box is located \\
+{\em ui} & -\/ UI where the box is located \\
 \hline
-{\em \{int\}} & id -\/ The id of the box \\
+{\em idx} & -\/ The id of the box \\
 \hline
-{\em \{int\}} & x -\/ Cursor x position ( col matrix ) \\
+{\em x} & -\/ Cursor x position ( col matrix ) \\
 \hline
-{\em \{int\}} & y -\/ Curosr y position ( row matrix ) \\
+{\em y} & -\/ Curosr y position ( row matrix ) \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{ui_8c_a411b67344c2e5c9b13a4490ee0d930c4}\label{ui_8c_a411b67344c2e5c9b13a4490ee0d930c4}} 
@@ -880,9 +877,9 @@ This functions dumps all the box data inside the Ui.
 
 
 \begin{DoxyParams}{Parameters}
-{\em \{\+Ui$\ast$\}} & ui -\/ The ui where data sohuld be dumped \\
+{\em ui} & -\/ The ui where data sohuld be dumped \\
 \hline
-{\em \{int\}} & id -\/ The id of the box to be dumped \\
+{\em idx} & -\/ The id of the box to be dumped \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{ui_8c_a17a69a2f4c1c6ee1c7766c314d481ad4}\label{ui_8c_a17a69a2f4c1c6ee1c7766c314d481ad4}} 
@@ -897,11 +894,11 @@ Sets the padding of a box.
 
 
 \begin{DoxyParams}{Parameters}
-{\em \{\+Ui$\ast$\}} & ui -\/ UI where the box is located \\
+{\em ui} & -\/ UI where the box is located \\
 \hline
-{\em \{int\}} & id -\/ The id of the box \\
+{\em idx} & -\/ The id of the box \\
 \hline
-{\em \{char$\ast$\}} & pad -\/ The padding of the box \char`\"{}$<$top$>$ $<$right$>$ $<$bottom$>$ $<$left$>$\char`\"{} \\
+{\em pad} & -\/ The padding of the box \char`\"{}$<$top$>$ $<$right$>$ $<$bottom$>$ $<$left$>$\char`\"{} \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{ui_8c_abad117bfcc94b8da0e6074977052c708}\label{ui_8c_abad117bfcc94b8da0e6074977052c708}} 
@@ -916,8 +913,8 @@ Prints all buffered data inside the UI into the stdout.
 
 
 \begin{DoxyParams}{Parameters}
-{\em \{\+F\+I\+L\+E$\ast$\}} & stream -\/ Buffer destination \\
+{\em stream} & -\/ Buffer destination \\
 \hline
-{\em \{\+Ui$\ast$\}} & ui -\/ The UI that sueld be printed \\
+{\em ui} & -\/ The UI that sueld be printed \\
 \hline
 \end{DoxyParams}
