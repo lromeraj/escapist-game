@@ -203,7 +203,7 @@ int {\bfseries rd\+\_\+check\+\_\+attr} (int attr, const char $\ast$pref,...)
 int {\bfseries \+\_\+parse} (\hyperlink{struct__Game}{Game} $\ast$game, const char $\ast$f\+\_\+name, const char $\ast$pref, parse\+\_\+cb cb)
 \item 
 \mbox{\Hypertarget{manager_8c_aa960fd4809f64f69a388c0e80fee8ba2}\label{manager_8c_aa960fd4809f64f69a388c0e80fee8ba2}} 
-void {\bfseries rd\+\_\+prepare} (Rd\+\_\+item item)
+void {\bfseries rd\+\_\+prepare} (\hyperlink{manager_8h_ae1315e7e58eb5ca351f646f88f9e79e3}{Rd\+\_\+item} item)
 \item 
 \mbox{\Hypertarget{manager_8c_a422e758cd037dc6ddac6f1b8594b8b1a}\label{manager_8c_a422e758cd037dc6ddac6f1b8594b8b1a}} 
 int {\bfseries \+\_\+parse\+\_\+player} (\hyperlink{struct__Game}{Game} $\ast$game)
@@ -217,12 +217,10 @@ int {\bfseries \+\_\+parse\+\_\+space} (\hyperlink{struct__Game}{Game} $\ast$gam
 \mbox{\Hypertarget{manager_8c_ab9b73a3f4d7040b02aff0a2fcd556a7d}\label{manager_8c_ab9b73a3f4d7040b02aff0a2fcd556a7d}} 
 int {\bfseries \+\_\+parse\+\_\+object} (\hyperlink{struct__Game}{Game} $\ast$game)
 \item 
-\mbox{\Hypertarget{manager_8c_ac81f07d097e113a24d0f96b426534c63}\label{manager_8c_ac81f07d097e113a24d0f96b426534c63}} 
-int {\bfseries manager\+\_\+save} (\hyperlink{struct__Game}{Game} $\ast$game, const char $\ast$f\+\_\+name)
-\item 
-\mbox{\Hypertarget{manager_8c_ae1e0e8d4b9882b295c85d3123c083ea0}\label{manager_8c_ae1e0e8d4b9882b295c85d3123c083ea0}} 
-int {\bfseries manager\+\_\+load} (\hyperlink{struct__Game}{Game} $\ast$game, const char $\ast$f\+\_\+name, Rd\+\_\+item item)
-\end{DoxyCompactItemize}
+int \hyperlink{manager_8c_ac81f07d097e113a24d0f96b426534c63}{manager\+\_\+save} (\hyperlink{struct__Game}{Game} $\ast$game, const char $\ast$f\+\_\+name)
+\begin{DoxyCompactList}\small\item\em This fuction save the game on a file. \end{DoxyCompactList}\item 
+int \hyperlink{manager_8c_ae1e0e8d4b9882b295c85d3123c083ea0}{manager\+\_\+load} (\hyperlink{struct__Game}{Game} $\ast$game, const char $\ast$f\+\_\+name, \hyperlink{manager_8h_ae1315e7e58eb5ca351f646f88f9e79e3}{Rd\+\_\+item} item)
+\begin{DoxyCompactList}\small\item\em This fuction load a file saved previously. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
@@ -260,3 +258,58 @@ Javier Romera
 \begin{DoxyCopyright}{Copyright}
 G\+NU Public License 
 \end{DoxyCopyright}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{manager_8c_ac81f07d097e113a24d0f96b426534c63}\label{manager_8c_ac81f07d097e113a24d0f96b426534c63}} 
+\index{manager.\+c@{manager.\+c}!manager\+\_\+save@{manager\+\_\+save}}
+\index{manager\+\_\+save@{manager\+\_\+save}!manager.\+c@{manager.\+c}}
+\subsubsection{\texorpdfstring{manager\+\_\+save()}{manager\_save()}}
+{\footnotesize\ttfamily int manager\+\_\+save (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Game}{Game} $\ast$}]{game,  }\item[{const char $\ast$}]{f\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+This fuction save the game on a file. 
+
+\begin{DoxyAuthor}{Author}
+Javier Romera 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & -\/ object\textquotesingle{}s pointer \\
+\hline
+{\em f\+\_\+name} & -\/ char name \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em -\/} & Returns a set pointer \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{manager_8c_ae1e0e8d4b9882b295c85d3123c083ea0}\label{manager_8c_ae1e0e8d4b9882b295c85d3123c083ea0}} 
+\index{manager.\+c@{manager.\+c}!manager\+\_\+load@{manager\+\_\+load}}
+\index{manager\+\_\+load@{manager\+\_\+load}!manager.\+c@{manager.\+c}}
+\subsubsection{\texorpdfstring{manager\+\_\+load()}{manager\_load()}}
+{\footnotesize\ttfamily int manager\+\_\+load (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Game}{Game} $\ast$}]{game,  }\item[{const char $\ast$}]{f\+\_\+name,  }\item[{\hyperlink{manager_8h_ae1315e7e58eb5ca351f646f88f9e79e3}{Rd\+\_\+item}}]{its }\end{DoxyParamCaption})}
+
+
+
+This fuction load a file saved previously. 
+
+\begin{DoxyAuthor}{Author}
+Javier Romera 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em game} & -\/ game\textquotesingle{}s pointer \\
+\hline
+{\em f\+\_\+name} & -\/ char name \\
+\hline
+{\em its} & -\/ item read \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em -\/} & Returns an integer \\
+\hline
+\end{DoxyRetVals}

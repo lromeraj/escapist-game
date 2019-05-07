@@ -1,10 +1,11 @@
 var searchData=
 [
-  ['game_5ffeed',['GAME_FEED',['../g__engine_8c.html#a55884d4185031754f710955b5e32ebd9af3d3abc00730bab6971ebfa9608f1770',1,'g_engine.c']]],
-  ['game_5ffullscreen',['GAME_FULLSCREEN',['../g__engine_8c.html#a55884d4185031754f710955b5e32ebd9a0c76887d77b44d29d35058e66c55c01e',1,'g_engine.c']]],
-  ['game_5finfo',['GAME_INFO',['../g__engine_8c.html#a55884d4185031754f710955b5e32ebd9a4c9c8637f3b906daa4173fe12bd95e7d',1,'g_engine.c']]],
-  ['game_5fmap',['GAME_MAP',['../g__engine_8c.html#a55884d4185031754f710955b5e32ebd9a82705894b9f5f3e3d088c69b4c0a41d5',1,'g_engine.c']]],
-  ['game_5foverview',['GAME_OVERVIEW',['../g__engine_8c.html#a55884d4185031754f710955b5e32ebd9a2f1db279e9c845748e9e4ef979f4471b',1,'g_engine.c']]],
-  ['game_5fpicture',['GAME_PICTURE',['../g__engine_8c.html#a55884d4185031754f710955b5e32ebd9a51117e6acdd01897324bd7fe1359004d',1,'g_engine.c']]],
-  ['game_5ftitle',['GAME_TITLE',['../g__engine_8c.html#a55884d4185031754f710955b5e32ebd9a7c646ef62564b0dcc5e6653e223cfc52',1,'g_engine.c']]]
+  ['fg_5fblack',['FG_BLACK',['../ui_8h.html#ab87bacfdad76e61b9412d7124be44c1ca4d96567df68528c808c8fca495e08098',1,'ui.h']]],
+  ['fg_5fblue',['FG_BLUE',['../ui_8h.html#ab87bacfdad76e61b9412d7124be44c1caaf559ecdf155138ce18d1e2d008b7b9c',1,'ui.h']]],
+  ['fg_5fcyan',['FG_CYAN',['../ui_8h.html#ab87bacfdad76e61b9412d7124be44c1ca4081526d57cbc79e685a2234d0158135',1,'ui.h']]],
+  ['fg_5fgreen',['FG_GREEN',['../ui_8h.html#ab87bacfdad76e61b9412d7124be44c1ca2d9fc9319228a105fbd300d9b73f9f2e',1,'ui.h']]],
+  ['fg_5fpurple',['FG_PURPLE',['../ui_8h.html#ab87bacfdad76e61b9412d7124be44c1ca69fcf0266314d1bbe2e9511a7695a69f',1,'ui.h']]],
+  ['fg_5fred',['FG_RED',['../ui_8h.html#ab87bacfdad76e61b9412d7124be44c1caa2cf8cb5bc8e973e30ac349a20b3e965',1,'ui.h']]],
+  ['fg_5fwhite',['FG_WHITE',['../ui_8h.html#ab87bacfdad76e61b9412d7124be44c1ca17343f487cc9c0acbea73e85cd6c0fd6',1,'ui.h']]],
+  ['fg_5fyellow',['FG_YELLOW',['../ui_8h.html#ab87bacfdad76e61b9412d7124be44c1cadb4ad5c8d9213ad8901d48c166d780bd',1,'ui.h']]]
 ];

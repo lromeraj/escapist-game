@@ -9,6 +9,8 @@ var searchData=
   ['main_5fvalid',['main_valid',['../object__tb_8c.html#abac8001e832809a2732ad62a78b888b2',1,'object_tb.c']]],
   ['manager_2ec',['manager.c',['../manager_8c.html',1,'']]],
   ['manager_2eh',['manager.h',['../manager_8h.html',1,'']]],
+  ['manager_5fload',['manager_load',['../manager_8c.html#ae1e0e8d4b9882b295c85d3123c083ea0',1,'manager_load(Game *game, const char *f_name, Rd_item item):&#160;manager.c'],['../manager_8h.html#acfeea8626d2b9b16ab8aa6fee24d6bb1',1,'manager_load(Game *game, const char *f_name, Rd_item its):&#160;manager.c']]],
+  ['manager_5fsave',['manager_save',['../manager_8c.html#ac81f07d097e113a24d0f96b426534c63',1,'manager_save(Game *game, const char *f_name):&#160;manager.c'],['../manager_8h.html#ac81f07d097e113a24d0f96b426534c63',1,'manager_save(Game *game, const char *f_name):&#160;manager.c']]],
   ['max',['max',['../struct__Inventory.html#ac09bcf212b2c7ff348066b2e5f28bb9c',1,'_Inventory']]],
   ['max_5fcmd_5fans',['MAX_CMD_ANS',['../cmd_8h.html#ab972c58772002197942552cc47b6b5cd',1,'cmd.h']]],
   ['max_5fcmd_5fargc',['MAX_CMD_ARGC',['../cmd_8h.html#a64bf1979142baf43271722ff7b14c17d',1,'cmd.h']]],

@@ -53,116 +53,115 @@ static int __pass = 0;
 #define MAX_TESTS 17
 
 /**
-* @brief creates a inventory on an integer
-* @author Gonzalo Serrano
-* @param {void}
-* @retval {void}
-*/
+ * @test Creates an inventory on an integer
+ * @pre inventory set on an integer
+ * @post A null pointer to the created inventory
+ */
 void test1_inventory_create();
+
 /**
-* @brief creates a inventory on an inventory
-* @author Gonzalo Serrano
-* @param {void}
-* @retval {void}
-*/
+ * @test Creates an inventory on an inventory
+ * @pre The integer set on an inventory
+ * @post A pointer to the created inventory
+ */
 void test2_inventory_create();
+
 /**
-* @brief add an invalid id
-* @author Gonzalo Serrano
-* @param {void}
-* @retval {void}
-*/
+ * @test Add an id to the inventory
+ * @pre The integer NO_ID as parameter
+ * @post An ERROR to the introduced id
+ */
 void test1_inventory_add_id();
+
 /**
-* @brief add a valid id
-* @author Gonzalo Serrano
-* @param {void}
-* @retval {void}
-*/
+* @test Add an id to the inventory
+ * @pre The integer 1 as parameter
+ * @post An OK to the introduced id
+ */
 void test2_inventory_add_id();
+
 /**
-* @brief deletes an invalid id
-* @author Gonzalo Serrano
-* @param {void}
-* @retval {void}
-*/
+* @test Deletes an id to the inventory
+ * @pre The integer 2 as parameter
+ * @post An ERROR to the introduced id
+ */
 void test1_inventory_del_id();
+
 /**
-* @brief deletes a valid id
-* @author Gonzalo Serrano
-* @param {void}
-* @retval {void}
-*/
+* @test Deletes an id to the inventory
+ * @pre The integer 1 as parameter
+ * @post An OK to the introduced id
+ */
 void test2_inventory_del_id();
+
 /**
-* @brief searches an invalid id
-* @author Gonzalo Serrano
-* @param {void}
-* @retval {void}
-*/
+ * @test Find if the inventory has that id
+ * @pre The integer 2 as parameter
+ * @post An ERROR to the introduced id
+ */
 void test1_inventory_has_id();
+
 /**
-* @brief deletes a valid id
-* @author Gonzalo Serrano
-* @param {void}
-* @retval {void}
-*/
+ * @test Creates a space on an integer
+ * @pre The integer 1 as parameter
+ * @post An OK to the introduced id
+ */
 void test2_inventory_has_id();
+
 /**
-* @brief get a invalid number of objects
-* @author Gonzalo Serrano
-* @param {void}
-* @retval {void}
-*/
+ * @test Get the maximun cunatity of objects in the inventory
+ * @pre The inventory is initialised and and integer id 1 is added
+ * @post An OK to the introduced id
+ */
 void test1_inventory_get_max();
+
 /**
-* @brief get the maximun number of objects
-* @author Gonzalo Serrano
-* @param {void}
-* @retval {void}
-*/
+ * @test Get the maximun cunatity of objects in the inventory
+ * @pre The inventory is uninitialised
+ * @post An ERROR
+ */
 void test2_inventory_get_max();
+
 /**
-* @brief get an invalid total
-* @author Gonzalo Serrano
-* @param {void}
-* @retval {void}
-*/
+ * @test Get the total of objects stored on the inventory
+ * @pre The inventory initialised
+ * @post An OK to the introduced inventory
+ */
 void test1_inventory_get_total();
+
 /**
-* @brief get the total number of objects
-* @author Gonzalo Serrano
-* @param {void}
-* @retval {void}
-*/
+ * @test Get a invalid total of objects stored on the inventory
+ * @pre The inventory uninitialised
+ * @post An ERROR to the introduced inventory
+ */
 void test2_inventory_get_total();
+
 /**
-* @brief compares if the inventory is full or not (in this case is not empty)
-* @author Gonzalo Serrano
-* @param {void}
-* @retval {void}
-*/
+ * @test Shows if the inventory is full
+ * @pre The integer 1 as parameter
+ * @post An ERROR to the introduced inventory
+ */
 void test1_inventory_is_full();
+
 /**
-* @brief compares if the inventory is full or not (Empty)
-* @author Gonzalo Serrano
-* @param {void}
-* @retval {void}
-*/
+ * @test Shows if the inventory is full
+ * @pre The integer 1 to 6 as parameter
+ * @post A OK to the introduced inventory
+ */
 void test2_inventory_is_full();
+
 /**
-* @brief compares if the inventory is empty or not (not empty)
-* @author Gonzalo Serrano
-* @param {void}
-* @retval {void}
-*/
+ * @test Shows if the inventory is empty without one obj in it
+ * @pre inventory as parameter
+ * @post An ERROR to the introduced inventory
+ */
 void test1_inventory_is_empty();
+
 /**
-* @brief compares if the inventory is empty or not (empty)
-* @author Gonzalo Serrano
-* @param {void}
-* @retval {void}
-*/
+ * @test Shows if the inventory is empty without any obj in it
+ * @pre inventory as parameter
+ * @post A OK to the introduced inventory
+ */
 void test2_inventory_is_empty();
 
 /**
@@ -225,7 +224,9 @@ void test2_inventory_is_empty();
  void test2_inventory_create(){
    Inventory *i;
    int result = OK;
+
    i = inventory_create();
+
    if (i!=NULL){
    PRINT_TEST_RESULT(result);
    inventory_destroy(i);
@@ -234,114 +235,204 @@ void test2_inventory_is_empty();
 
  void test1_inventory_add_id(){
    Inventory *i;
+   int result=1;
+
    i = inventory_create();
-   PRINT_TEST_RESULT(inventory_add_id(i, NO_ID));
+
+   if(inventory_add_id(i, NO_ID) == ERROR){
+     result=0;
+   }
+
    inventory_destroy(i);
+   PRINT_TEST_RESULT(result);
  }
 
  void test2_inventory_add_id(){
    Inventory *i;
+   int result=1;
+
    i = inventory_create();
-   PRINT_TEST_RESULT(inventory_add_id(i, 1) == OK);
+
+   if(inventory_add_id(i, 1) == ERROR){
+     result=0;
+   }
+
    inventory_destroy(i);
+   PRINT_TEST_RESULT(result);
  }
 
  void test1_inventory_del_id(){
    Inventory *i;
+   int result=1;
+
    i = inventory_create();
    inventory_add_id(i, 1);
-   PRINT_TEST_RESULT(inventory_del_id(i, 2));
+
+   if(inventory_del_id(i, 2) == ERROR){
+     result=0;
+   }
    inventory_destroy(i);
+   PRINT_TEST_RESULT(result);
  }
 
  void test2_inventory_del_id(){
    Inventory *i;
+   int result=1;
+
    i = inventory_create();
    inventory_add_id(i, 1);
-   PRINT_TEST_RESULT(inventory_del_id(i, 1));
+
+   if(inventory_del_id(i, 1) == ERROR){
+     result=0;
+   }
+
    inventory_destroy(i);
+   PRINT_TEST_RESULT(result);
  }
 
  void test1_inventory_has_id(){
    Inventory *i;
+   int result=1;
+
    i = inventory_create();
    inventory_add_id(i, 1);
-   PRINT_TEST_RESULT(inventory_has_id(i, 2));
+
+   if(inventory_has_id(i, 2) == ERROR){
+      result=0;
+   }
+
    inventory_destroy(i);
+   PRINT_TEST_RESULT(result);
  }
 
  void test2_inventory_has_id(){
    Inventory *i;
+   int result=1;
+
    i = inventory_create();
    inventory_add_id(i, 1);
-   PRINT_TEST_RESULT(inventory_has_id(i, 1));
+
+   if(inventory_has_id(i, 1) == ERROR){
+     result=0;
+   }
+
    inventory_destroy(i);
+   PRINT_TEST_RESULT(result);
  }
 
  void test1_inventory_get_max(){
    Inventory *i;
+   int result=1;
+   int max = 6;
+
    i = inventory_create();
-   PRINT_TEST_RESULT(inventory_get_max(i) == -1);
+
+   if(inventory_get_max(i) != max){
+     result=0;
+   }
+
    inventory_destroy(i);
+   PRINT_TEST_RESULT(result);
  }
 
  void test2_inventory_get_max(){
-   Inventory *i;
-   i = inventory_create();
-   PRINT_TEST_RESULT(inventory_get_max(i) == 2);
+   Inventory *i=NULL;
+   int result=1;
+   int max = 6;
+
+   if(inventory_get_max(i) != max){
+     result=0;
+   }
+
    inventory_destroy(i);
+   PRINT_TEST_RESULT(result);
  }
 
  void test1_inventory_get_total(){
    Inventory *i;
+   int result=1, nelements=2;
+
    i = inventory_create();
+
    inventory_add_id(i, 1);
    inventory_add_id(i, 2);
-   PRINT_TEST_RESULT(inventory_get_total(i) == 1);
+
+   if(inventory_get_total(i) != nelements){
+     result=0;
+   }
+
    inventory_destroy(i);
+   PRINT_TEST_RESULT(result);
  }
 
  void test2_inventory_get_total(){
    Inventory *i;
+   int result=1;
+
    i = inventory_create();
-   inventory_add_id(i, 1);
-   PRINT_TEST_RESULT(inventory_get_total(i) == 1);
+
+   if(inventory_get_total(i) == ERROR){
+     result=0;
+   }
+
    inventory_destroy(i);
+   PRINT_TEST_RESULT(result);
  }
 
  void test1_inventory_is_full(){
    Inventory *i;
+   int result=1;
+
    i = inventory_create();
    inventory_add_id(i, 1);
-   PRINT_TEST_RESULT(inventory_is_full(i));
+
+   if(inventory_is_full(i) == ERROR){
+     result=0;
+   }
+
    inventory_destroy(i);
+   PRINT_TEST_RESULT(result);
  }
 
  void test2_inventory_is_full(){
    Inventory *i;
+   int result=1;
    i = inventory_create();
    inventory_add_id(i, 1);
    inventory_add_id(i, 2);
    inventory_add_id(i, 3);
    inventory_add_id(i, 4);
    inventory_add_id(i, 5);
-   PRINT_TEST_RESULT(inventory_is_full(i));
+   inventory_add_id(i, 6);
+
+   if(inventory_is_full(i) == ERROR){
+     result=0;
+   }
+
    inventory_destroy(i);
+   PRINT_TEST_RESULT(result);
  }
 
  void test1_inventory_is_empty(){
    Inventory *i;
+   int result=1;
    i = inventory_create();
    inventory_add_id(i, 1);
-   PRINT_TEST_RESULT(inventory_is_empty(i));
+
+   if(inventory_is_empty(i) == ERROR){
+     result=0;
+   }
+
    inventory_destroy(i);
+   PRINT_TEST_RESULT(result);
  }
 
  void test2_inventory_is_empty(){
    Inventory *i;
-   bool result;
+   int result=1;
    i = inventory_create();
    result = inventory_is_empty(i);
-   PRINT_TEST_RESULT( result );
+
    inventory_destroy(i);
+   PRINT_TEST_RESULT(result);
  }

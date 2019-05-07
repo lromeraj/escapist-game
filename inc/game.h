@@ -207,8 +207,34 @@ void game_set_die( Game *game, Die *d );
 */
 Space *game_get_last_space( Game *game );
 
+/**
+* @brief get spaces
+* @author Javier Romera
+* @param  - game
+* @param  - spaces
+* @param  - total
+*/
 void game_get_spaces( Game *game, int max, Space **spaces, int *total );
+
+
+/**
+* @brief get links
+* @author Javier Romera
+* @param - game
+* @param - links
+* @param - total
+*/
 void game_get_links( Game *game, int max, Link **links, int *total );
+
+
+/**
+* @brief sets a new die
+* @author Javier Romera
+* @param - game
+* @param - max
+* @param - objs
+* @param - total
+*/
 void game_get_objects( Game *game, int max, Object **objs, int *total );
 
 
@@ -238,6 +264,12 @@ Die *game_get_die( Game *game );
 */
 Cmd *game_get_cmd( Game *game );
 
+
+/**
+* @brief clean all the information used by the game
+* @author Javier Romera
+* @param - game
+*/
 STATUS game_clean( Game *game );
 
 #endif

@@ -2,7 +2,7 @@
  * @brief Main for test the link
  *
  * @file link_tb.c
- * @author Gonzalo Serrano
+ * @author Miguel Rodríguez
  * @version 1.0
  * @date 18/03/2019
  */
@@ -26,158 +26,157 @@ struct _Link {
 };
 
 /**
-* @brief creates a Link on an integer
-* @author Gonzalo Serrano
-* @param {void}
-* @retval {void}
-*/
+ * @test creates a Link on an Link
+ * @pre The integer -1 as parameter
+ * @post A null pointer to the created link
+ */
 void test1_Link_create();
+
 /**
-* @brief creates a Link on an Link
-* @author Gonzalo Serrano
-* @param {void}
-* @retval {void}
-*/
+ * @test creates a Link on an Link
+ * @pre The integer 1 as parameter
+ * @post A pointer to the created link
+ */
 void test2_Link_create();
+
 /**
-* @brief add an invalid id
-* @author Gonzalo Serrano
-* @param {void}
-* @retval {void}
-*/
+ * @test set an id to a link
+ * @pre A link pointer and an the integer -1 as parameters
+ * @post An ERROR
+ */
 void test1_Link_set_id();
+
 /**
-* @brief add a valid id
-* @author Gonzalo Serrano
-* @param {void}
-* @retval {void}
-*/
+ * @test set an id to a link
+ * @pre A link pointer and an the integer 1 as parameters
+ * @post An OK
+ */
 void test2_Link_set_id();
+
 /**
-* @brief set a valid name
-* @author Gonzalo Serrano
-* @param {void}
-* @retval {void}
-*/
+ * @test set a name
+ * @pre A null link pointer and a name as parameters
+ * @post An ERROR
+ */
 void test1_Link_set_name();
+
 /**
-* @brief set an invalid name
-* @author Gonzalo Serrano
-* @param {void}
-* @retval {void}
-*/
+ * @test set a name
+ * @pre A link pointer and a name as parameters
+ * @post A OK
+ */
 void test2_Link_set_name();
+
 /**
-* @brief set an invalid to
-* @author Gonzalo Serrano
-* @param {void}
-* @retval {void}
-*/
+ * @test set the link to
+ * @pre A null link pointer and a integer as parameters
+ * @post An ERROR
+ */
 void test1_Link_set_to();
+
 /**
-* @brief set a valid to
-* @author Gonzalo Serrano
-* @param {void}
-* @retval {void}
-*/
+ * @test set the link to
+ * @pre A link pointer and a integer as parameters
+ * @post An OK
+ */
 void test2_Link_set_to();
+
 /**
-* @brief get an ininvalid from
-* @author Gonzalo Serrano
-* @param {void}
-* @retval {void}
-*/
+ * @test set the link from
+ * @pre A null link pointer and a integer as parameters
+ * @post An ERROR
+ */
 void test1_Link_set_from();
+
 /**
-* @brief set a valid from
-* @author Gonzalo Serrano
-* @param {void}
-* @retval {void}
-*/
+ * @test set the link from
+ * @pre A link pointer and a integer as parameters
+ * @post A OK
+ */
 void test2_Link_set_from();
+
 /**
-* @brief get an invalid state
-* @author Gonzalo Serrano
-* @param {void}
-* @retval {void}
-*/
+ * @test set link state
+ * @pre A null link pointer and a integer as parameters
+ * @post An ERROR
+ */
 void test1_Link_set_state();
+
 /**
-* @brief seta a valid state
-* @author Gonzalo Serrano
-* @param {void}
-* @retval {void}
-*/
+ * @test set link state
+ * @pre A link pointer and a integer as parameters
+ * @post An OK
+ */
 void test2_Link_set_state();
+
 /**
-* @brief print an invalid link
-* @author Gonzalo Serrano
-* @param {void}
-* @retval {void}
-*/
+ * @test Print the link fields
+ * @pre A null link pointer as parameter
+ * @post An ERROR
+ */
 void test1_Link_print();
+
 /**
-* @brief print a valid link
-* @author Gonzalo Serrano
-* @param {void}
-* @retval {void}
-*/
+ * @test Print the link fields
+ * @pre A link pointer as parameter
+ * @post An OK
+ */
 void test2_Link_print();
+
 /**
-* @brief print a valid link
-* @author Gonzalo Serrano
-* @param {void}
-* @retval {void}
-*/
+ * @test Gets the link id
+ * @pre A null link pointer as parameter
+ * @post The integer -1
+ */
 void test1_Link_get_id();
+
 /**
-* @brief compares the value setted and the getted
-* @author Gonzalo Serrano
-* @param {void}
-* @retval {void}
-*/
+ * @test Gets the link id
+ * @pre A link pointer as parameter
+ * @post The id of the link
+ */
 void test2_Link_get_id();
+
 /**
-* @brief compares the value setted and the getted
-* @author Gonzalo Serrano
-* @param {void}
-* @retval {void}
-*/
+ * @test Gets the id of the field link to
+ * @pre A null link pointer as parameter
+ * @post The integer -1
+ */
 void test1_Link_get_to();
+
 /**
-* @brief compares the value setted and the getted
-* @author Gonzalo Serrano
-* @param {void}
-* @retval {void}
-*/
+ * @test Gets the id of the field link to
+ * @pre A link pointer as parameter
+ * @post The link_to id
+ */
 void test2_Link_get_to();
+
 /**
-* @brief compares the value setted and the getted
-* @author Gonzalo Serrano
-* @param {void}
-* @retval {void}
-*/
+ * @test Gets the id of the field link_from
+ * @pre A null link pointer as parameter
+ * @post The integer -1
+ */
 void test1_Link_get_from();
+
 /**
-* @brief compares the value setted and the getted
-* @author Gonzalo Serrano
-* @param {void}
-* @retval {void}
-*/
+ * @test Gets the id of the field link_from
+ * @pre A link pointer as parameter
+ * @post The link_from id
+ */
 void test2_Link_get_from();
+
 /**
-* @brief compares the value setted and the getted
-* @author Gonzalo Serrano
-* @param {void}
-* @retval {void}
-*/
+ * @test Gets the state of the link
+ * @pre A null link pointer as parameter
+ * @post Link close
+ */
 void test1_Link_get_state();
+
 /**
-* @brief compares the value setted and the getted
-* @author Gonzalo Serrano
-* @param {void}
-* @retval {void}
-*/
+ * @test Gets the state of the link
+ * @pre A link pointer as parameter
+ * @post Link sate
+ */
 void test2_Link_get_state();
 
 
@@ -239,19 +238,25 @@ void test2_Link_get_state();
  }
 
  void test1_Link_create(){
-   int result = link_create(ID)!=NULL ;
-   result = 0;
+   Link *l;
+   int result = OK;
+   l = link_create(-1);
+   if (!l){
+     result=0;
+   }
    PRINT_TEST_RESULT(result);
+   link_destroy(l);
  }
 
  void test2_Link_create(){
    Link *l;
    int result = OK;
    l = link_create(ID);
-   if (l!=NULL){
+   if (!l){
+     result=0;
+   }
    PRINT_TEST_RESULT(result);
    link_destroy(l);
-   }
  }
 
  void test1_Link_set_id(){
@@ -270,15 +275,15 @@ void test2_Link_get_state();
 
  void test1_Link_set_name(){
    Link *l;
-   l = link_create(ID);
-   PRINT_TEST_RESULT(link_set_name(l,"North"));
+   l = NULL;
+   PRINT_TEST_RESULT(link_set_name(l, "East"));
    link_destroy(l);
  }
 
  void test2_Link_set_name(){
    Link *l;
-   l = NULL;
-   PRINT_TEST_RESULT(link_set_name(l, "East"));
+   l = link_create(ID);
+   PRINT_TEST_RESULT(link_set_name(l,"North"));
    link_destroy(l);
  }
 
@@ -297,8 +302,8 @@ void test2_Link_get_state();
  }
 
  void test1_Link_set_from(){
-   Link *l;
-  l = link_create(ID);
+   Link *l=NULL;
+
    PRINT_TEST_RESULT(link_set_from(l, NO_ID));
    link_destroy(l);
  }
@@ -311,8 +316,8 @@ void test2_Link_get_state();
  }
 
  void test1_Link_set_state(){
-   Link *l;
-   l = link_create(ID);
+   Link *l=NULL;
+
    PRINT_TEST_RESULT(link_set_state(l, 0));
    link_destroy(l);
  }
@@ -327,7 +332,7 @@ void test2_Link_get_state();
  void test1_Link_print(){
    Link *l = NULL;
    PRINT_TEST_RESULT(link_print(stdout, l));
-   link_destroy(l);
+
  }
 
  void test2_Link_print(){

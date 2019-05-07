@@ -280,7 +280,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>rd_check_attr</b> (int
 int&#160;</td><td class="memItemRight" valign="bottom"><b>_parse</b> (<a class="el" href="struct__Game.html">Game</a> *game, const char *f_name, const char *pref, parse_cb cb)</td></tr>
 <tr class="separator:a794ce637592f940764b16fcfacbb1105"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa960fd4809f64f69a388c0e80fee8ba2"><td class="memItemLeft" align="right" valign="top"><a id="aa960fd4809f64f69a388c0e80fee8ba2"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>rd_prepare</b> (Rd_item item)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>rd_prepare</b> (<a class="el" href="manager_8h.html#ae1315e7e58eb5ca351f646f88f9e79e3">Rd_item</a> item)</td></tr>
 <tr class="separator:aa960fd4809f64f69a388c0e80fee8ba2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a422e758cd037dc6ddac6f1b8594b8b1a"><td class="memItemLeft" align="right" valign="top"><a id="a422e758cd037dc6ddac6f1b8594b8b1a"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>_parse_player</b> (<a class="el" href="struct__Game.html">Game</a> *game)</td></tr>
@@ -294,11 +294,11 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>_parse_space</b> (<a c
 <tr class="memitem:ab9b73a3f4d7040b02aff0a2fcd556a7d"><td class="memItemLeft" align="right" valign="top"><a id="ab9b73a3f4d7040b02aff0a2fcd556a7d"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>_parse_object</b> (<a class="el" href="struct__Game.html">Game</a> *game)</td></tr>
 <tr class="separator:ab9b73a3f4d7040b02aff0a2fcd556a7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac81f07d097e113a24d0f96b426534c63"><td class="memItemLeft" align="right" valign="top"><a id="ac81f07d097e113a24d0f96b426534c63"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>manager_save</b> (<a class="el" href="struct__Game.html">Game</a> *game, const char *f_name)</td></tr>
+<tr class="memitem:ac81f07d097e113a24d0f96b426534c63"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="manager_8c.html#ac81f07d097e113a24d0f96b426534c63">manager_save</a> (<a class="el" href="struct__Game.html">Game</a> *game, const char *f_name)</td></tr>
+<tr class="memdesc:ac81f07d097e113a24d0f96b426534c63"><td class="mdescLeft">&#160;</td><td class="mdescRight">This fuction save the game on a file.  <a href="#ac81f07d097e113a24d0f96b426534c63">More...</a><br /></td></tr>
 <tr class="separator:ac81f07d097e113a24d0f96b426534c63"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae1e0e8d4b9882b295c85d3123c083ea0"><td class="memItemLeft" align="right" valign="top"><a id="ae1e0e8d4b9882b295c85d3123c083ea0"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>manager_load</b> (<a class="el" href="struct__Game.html">Game</a> *game, const char *f_name, Rd_item item)</td></tr>
+<tr class="memitem:ae1e0e8d4b9882b295c85d3123c083ea0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="manager_8c.html#ae1e0e8d4b9882b295c85d3123c083ea0">manager_load</a> (<a class="el" href="struct__Game.html">Game</a> *game, const char *f_name, <a class="el" href="manager_8h.html#ae1315e7e58eb5ca351f646f88f9e79e3">Rd_item</a> item)</td></tr>
+<tr class="memdesc:ae1e0e8d4b9882b295c85d3123c083ea0"><td class="mdescLeft">&#160;</td><td class="mdescRight">This fuction load a file saved previously.  <a href="#ae1e0e8d4b9882b295c85d3123c083ea0">More...</a><br /></td></tr>
 <tr class="separator:ae1e0e8d4b9882b295c85d3123c083ea0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
@@ -326,7 +326,103 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>LBL</b> = 1</td></tr>
 <dl class="section date"><dt>Date</dt><dd>07/02/2019 </dd></dl>
 <dl class="section author"><dt>Author</dt><dd>Javier Romera </dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>GNU Public License </dd></dl>
-</div></div><!-- contents -->
+</div><h2 class="groupheader">Function Documentation</h2>
+<a id="ac81f07d097e113a24d0f96b426534c63"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac81f07d097e113a24d0f96b426534c63">&#9670;&nbsp;</a></span>manager_save()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int manager_save </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct__Game.html">Game</a> *&#160;</td>
+          <td class="paramname"><em>game</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>f_name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This fuction save the game on a file. </p>
+<dl class="section author"><dt>Author</dt><dd>Javier Romera </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>- object's pointer </td></tr>
+    <tr><td class="paramname">f_name</td><td>- char name </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">-</td><td>Returns a set pointer </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae1e0e8d4b9882b295c85d3123c083ea0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1e0e8d4b9882b295c85d3123c083ea0">&#9670;&nbsp;</a></span>manager_load()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int manager_load </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct__Game.html">Game</a> *&#160;</td>
+          <td class="paramname"><em>game</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>f_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="manager_8h.html#ae1315e7e58eb5ca351f646f88f9e79e3">Rd_item</a>&#160;</td>
+          <td class="paramname"><em>its</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This fuction load a file saved previously. </p>
+<dl class="section author"><dt>Author</dt><dd>Javier Romera </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">game</td><td>- game's pointer </td></tr>
+    <tr><td class="paramname">f_name</td><td>- char name </td></tr>
+    <tr><td class="paramname">its</td><td>- item read </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">-</td><td>Returns an integer </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

@@ -11,340 +11,301 @@
 #ifndef SPACE_TB_H
 #define SPACE_TB_H
 
-/**
-* @brief creates a space on an integer
-* @author Miguel Rodríguez
-*
-* @retval {void}
-*/
+
+
+
+ /**
+  * @test Creates a space on an integer
+  * @pre The integer -1 as parameter
+  * @post A null pointer to the created space
+  */
 void test1_space_create();
 
 /**
-* @brief creates a space on an integer
-* @author Miguel Rodríguez
-*
-* @retval {void}
-*/
+ * @test Creates a space on an integer
+ * @pre The integer 1 as parameter
+ * @post A pointer to the created space
+ */
 void test2_space_create();
 
 /**
-* @brief destroys a space
-* @author Miguel Rodríguez
-*
-* @retval {void}
-*/
+ * @test destroys a space
+ * @pre A space pointer as parameter
+ * @post An ERROR
+ */
 void test1_space_destroy();
 
 /**
-* @brief destroys a space
-* @author Miguel Rodríguez
-*
-* @retval {void}
-*/
+ * @test destroys a space
+ * @pre A space pointer as parameter
+ * @post An OK
+ */
 void test2_space_destroy();
 
 /**
-* @brief gets the id of the space
-* @author Miguel Rodríguez
-*
-* @retval {void}
-*/
+ * @test gets the id of the space
+ * @pre A null space pointer as parameter
+ * @post The integer -1
+ */
 void test1_space_get_id();
 
 /**
-* @brief gets the id of the space
-* @author Miguel Rodríguez
-*
-* @retval {void}
-*/
+ * @test gets the id of the space
+ * @pre A space pointer as parameter
+ * @post The id of the space
+ */
 void test2_space_get_id();
 
 /**
-* @brief sets the name of the space
-* @author Miguel Rodríguez
-*
-* @retval {void}
-*/
+ * @test sets the name of the space
+ * @pre A null space pointer and a name as parameters
+ * @post An ERROR
+ */
 void test1_space_set_name();
 
 /**
-* @brief sets the name of the space
-* @author Miguel Rodríguez
-*
-* @retval {void}
-*/
+ * @test sets the name of the space
+ * @pre A space pointer and a name as parameters
+ * @post An OK
+ */
 void test2_space_set_name();
 
 /**
-* @brief gets the description of the space
-* @author Miguel Rodríguez
-*
-* @retval {void}
-*/
+ * @test gets the description of the space
+ * @pre A null space pointer as parameter
+ * @post A null pointer to the description
+ */
 void test1_space_get_descrp();
 
 /**
-* @brief gets the description of the space
-* @author Miguel Rodríguez
-*
-* @retval {void}
-*/
+ * @test gets the description of the space
+ * @pre A space pointer as parameter
+ * @post A pointer to the description
+ */
 void test2__space_get_descrp();
 
 /**
-* @brief gets the long description of the space
-* @author Miguel Rodríguez
-*
-* @retval {void}
-*/
+ * @test gets the long description of the space
+ * @pre A null space pointer as parameter
+ * @post A null pointer to the long description
+ */
 void test1_space_get_ldescrp();
 
 /**
-* @brief gets the long description of the space
-* @author Miguel Rodríguez
-*
-* @retval {void}
-*/
+ * @test gets the long description of the space
+ * @pre A space pointer as parameter
+ * @post A pointer to the long description
+ */
 void test2_space_get_ldescrp();
 
 /**
-* @brief gets the objects of the space
-* @author Miguel Rodríguez
-*
-* @retval {void}
-*/
+ * @test gets the objects of the space
+ * @pre A null space pointer as parameter
+ * @post A null pointer to the objects
+ */
 void test1_space_get_objects();
 
 /**
-* @brief gets the objects of the space
-* @author Miguel Rodríguez
-*
-* @retval {void}
-*/
+ * @test gets the objects of the space
+ * @pre A space pointer as parameter
+ * @post A pointer to the objects
+ */
 void test2_space_get_objects();
 
 /**
-* @brief sets the description of the space
-* @author Miguel Rodríguez
-*
-* @retval {void}
-*/
+ * @test sets the description of the space
+ * @pre A null space pointer and a description as parameters
+ * @post An Error
+ */
 void test1_space_set_descrp();
 
 /**
-* @brief sets the description of the space
-* @author Miguel Rodríguez
-*
-* @retval {void}
-*/
+ * @test sets the description of the space
+ * @pre A space pointer and a description as parameters
+ * @post An OK
+ */
 void test2_space_set_descrp();
 
 /**
-* @brief sets the long description of the space
-* @author Miguel Rodríguez
-*
-* @retval {void}
-*/
+ * @test sets the long description of the space
+ * @pre A null space pointer and a long description as parameters
+ * @post An Error
+ */
 void test1_space_set_ldescrp();
 
 /**
-* @brief sets the long description of the space
-* @author Miguel Rodríguez
-*
-* @retval {void}
-*/
+ * @test sets the long description of the space
+ * @pre A space pointer and a long description as parameters
+ * @post An OK
+ */
 void test2_space_set_ldescrp();
 
 /**
-* @brief gets the name of the space
-* @author Miguel Rodríguez
-*
-* @retval {void}
-*/
+ * @test gets the name of the space
+ * @pre A null space pointer as parameter
+ * @post A null pointer to the name
+ */
 void test1_space_get_name();
 
 /**
-* @brief gets the name of the space
-* @author Miguel Rodríguez
-*
-* @retval {void}
-*/
+ * @test gets the name of the space
+ * @pre A space pointer as parameter
+ * @post A pointer to the name
+ */
 void test2_space_get_name();
 
 /**
-* @brief gets the link of the space
-* @author Miguel Rodríguez
-*
-* @retval {void}
-*/
+ * @test gets the link of the space
+ * @pre A null space pointer as parameter
+ * @post The integer -1
+ */
 void test1_space_get_link();
 
 /**
-* @brief gets the link of the space
-* @author Miguel Rodríguez
-*
-* @retval {void}
-*/
+ * @test gets the link of the space
+ * @pre A space pointer as parameter
+ * @post The integer of the link
+ */
 void test2_space_get_link();
 
 /**
-* @brief sets the link of the space
-* @author Miguel Rodríguez
-*
-* @retval {void}
-*/
+ * @test sets the link of the space
+ * @pre A null space pointer and an integer as parameters
+ * @post An ERROR
+ */
 void test1_space_set_link();
 
 /**
-* @brief sets the link of the space
-* @author Miguel Rodríguez
-*
-* @retval {void}
-*/
+ * @test sets the link of the space
+ * @pre A space pointer and an integer as parameters
+ * @post An OK
+ */
 void test2_space_set_link();
 
 /**
-* @brief deletes an object of the space
-* @author Miguel Rodríguez
-*
-* @retval {void}
-*/
+ * @test deletes an object of the space
+ * @pre A null space pointer and an integer as parameters
+ * @post An ERROR
+ */
 void test1_space_del_object();
 
 /**
-* @brief deletes an object of the space
-* @author Miguel Rodríguez
-*
-* @retval {void}
-*/
+ * @test deletes an object of the space
+ * @pre A space pointer and an integer as parameters
+ * @post An OK
+ */
 void test2_space_del_object();
 
 /**
-* @brief adds an object in the space
-* @author Miguel Rodríguez
-*
-* @retval {void}
-*/
+ * @test adds an object in the space
+ * @pre A null space pointer and an integer as parameters
+ * @post An ERROR
+ */
 void test1_space_add_object();
 
 /**
-* @brief adds an object in the space
-* @author Miguel Rodríguez
-*
-* @retval {void}
-*/
+ * @test adds an object in the space
+ * @pre A space pointer and an integer as parameters
+ * @post An OK
+ */
 void test2_space_add_object();
 
 /**
-* @brief gets an object of the space
-* @author Miguel Rodríguez
-*
-* @retval {void}
-*/
+ * @test gets an object of the space
+ * @pre A null space pointer and an integer as parameters
+ * @post The integer -1
+ */
 void test1_space_get_object();
 
 /**
-* @brief gets an object of the space
-* @author Miguel Rodríguez
-*
-* @retval {void}
-*/
+ * @test gets an object of the space
+ * @pre A null space pointer and an integer as parameters
+ * @post The id of the object
+ */
 void test2_space_get_object();
 
 /**
-* @brief sees if an object is in the space
-* @author Miguel Rodríguez
-*
-* @retval {void}
-*/
+ * @test sees if an object is in the space
+ * @pre A null space pointer and an integer as parameters
+ * @post An ERROR
+ */
 void test1_space_has_object();
 
 /**
-* @brief sees if an object is in the space
-* @author Miguel Rodríguez
-*
-* @retval {void}
-*/
+ * @test sees if an object is in the space
+ * @pre A space pointer and an integer as parameters
+ * @post An OK
+ */
 void test2_space_has_object();
 
 /**
-* @brief sets the picture of the space
-* @author Miguel Rodríguez
-*
-* @retval {void}
-*/
+ * @test sets the picture of the space
+ * @pre A null space pointer and a char pinter as parameters
+ * @post An ERROR
+ */
 void test1_space_set_picture();
 
 /**
-* @brief sets the picture of the space
-* @author Miguel Rodríguez
-*
-* @retval {void}
-*/
+ * @test sets the picture of the space
+ * @pre A space pointer and a char pinter as parameters
+ * @post An OK
+ */
 void test2_space_set_picture();
 
 /**
-* @brief gets the picture of the space
-* @author Miguel Rodríguez
-*
-* @retval {void}
-*/
+ * @test gets the picture of the space
+ * @pre A null space pointer as parameter
+ * @post A null pointer
+ */
 void test1_space_get_picture();
 
 /**
-* @brief gets the picture of the space
-* @author Miguel Rodríguez
-*
-* @retval {void}
-*/
+ * @test gets the picture of the space
+ * @pre A space pointer as parameter
+ * @post A pointer
+ */
 void test2_space_get_picture();
 
 /**
-* @brief sets the light of the space
-* @author Miguel Rodríguez
-*
-* @retval {void}
-*/
+ * @test sets the light of the space
+ * @pre A null space pointer and a bollean as parameters
+ * @post An ERROR
+ */
 void test1_space_set_light();
 
 /**
-* @brief sets the light of the space
-* @author Miguel Rodríguez
-*
-* @retval {void}
-*/
+ * @test sets the light of the space
+ * @pre A space pointer and a bollean as parameters
+ * @post An OK
+ */
 void test2_space_set_light();
 
 /**
-* @brief changes the state of the space's light
-* @author Miguel Rodríguez
-*
-* @retval {void}
-*/
+ * @test changes the state of the space's light
+ * @pre A null space pointer as parameter
+ * @post An ERROR
+ */
 void test1_space_toggle_light();
 
 /**
-* @brief changes the state of the space's light
-* @author Miguel Rodríguez
-*
-* @retval {void}
-*/
+ * @test changes the state of the space's light
+ * @pre A space pointer as parameter
+ * @post An OK
+ */
 void test2_space_toggle_light();
 
 /**
-* @brief gets the space's light
-* @author Miguel Rodríguez
-*
-* @retval {void}
-*/
+ * @test gets the space's light
+ * @pre A null space pointer as parameter
+ * @post An ERROR
+ */
 void test1_space_get_light();
 
 /**
-* @brief gets the space's light
-* @author Miguel Rodríguez
-*
-* @retval {void}
-*/
+ * @test gets the space's light
+ * @pre A space pointer as parameter
+ * @post An OK
+ */
 void test2_space_get_light();
 
 

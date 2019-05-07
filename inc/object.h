@@ -128,13 +128,55 @@ STATUS obj_set_id( Object *obj, const Id id );
 */
 const Id obj_get_id( Object *obj );
 
+
+/**
+* @brief This fuction open the link state
+* @author Miguel Rodríguez
+* @param {Object*} obj - object's pointer
+* @param {Id} obj - Link's id
+* @retval {bool} - Returns TRUE or FALSE
+*/
+bool obj_opens_link( Object *obj, Id id );
+
+
+/**
+* @brief This fuction gets the links that can open
+* @author Miguel Rodríguez
+* @param {Object*} obj - object's pointer
+* @retval {Set*} - Returns a set pointer
+*/
+Set* obj_get_links( Object *obj );
+
+/**
+* @brief This fuction add the id of a link that the object can open
+* @author Miguel Rodríguez
+* @param {Object*} obj - object's pointer
+* @param {Id} link - Link's id
+* @retval {Status} - Returns OK or ERROR
+*/
+STATUS obj_add_link( Object *obj, Id id );
+
+/**
+* @brief This fuction set the attribute of an object
+* @author Miguel Rodríguez
+* @param {Object*} obj - object's pointer
+* @param {long} obj - object's attribute
+* @param {long} obj - object's number of attributes
+* @retval {Status} - Returns OK or ERROR
+*/
+STATUS obj_set_attr( Object *obj, Obj_attr attr, long v );
+
+/**
+* @brief This fuction get's the attribute of an object
+* @author Miguel Rodríguez
+* @param {Object*} obj - object's pointer
+* @param {long} obj - object's attribute
+* @retval {long} - Returns the attribute of an object
+*/
+long obj_get_attr( Object *obj, Obj_attr attr );
+
+
 STATUS obj_set_picture_file( Object *obj, const char *f_name );
 const char *obj_get_picture_file( Object *obj );
-
-bool obj_opens_link( Object *obj, Id id );
-Set* obj_get_links( Object *obj );
-STATUS obj_add_link( Object *obj, Id id );
-STATUS obj_set_attr( Object *obj, Obj_attr attr, long v );
-long obj_get_attr( Object *obj, Obj_attr attr );
 
 #endif

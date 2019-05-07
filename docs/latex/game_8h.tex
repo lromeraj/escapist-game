@@ -19,8 +19,7 @@ Include dependency graph for game.\+h\+:\nopagebreak
 \includegraphics[width=350pt]{game_8h__incl}
 \end{center}
 \end{figure}
-This graph shows which files directly or indirectly include this file\+:
-\nopagebreak
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -92,24 +91,20 @@ void \hyperlink{game_8h_a9d64221dbc653f866adc43c4ef849bb1}{game\+\_\+set\+\_\+di
 \begin{DoxyCompactList}\small\item\em sets a new die \end{DoxyCompactList}\item 
 \hyperlink{space_8h_a67533ffc2b70463baecc38fb0629bbfc}{Space} $\ast$ \hyperlink{game_8h_ab2506331340cbef8592780e0564cc8b7}{game\+\_\+get\+\_\+last\+\_\+space} (\hyperlink{struct__Game}{Game} $\ast$game)
 \begin{DoxyCompactList}\small\item\em gets a pointer towards last space \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{game_8h_ac43df8654f7e438bca33449c0de67aa7}\label{game_8h_ac43df8654f7e438bca33449c0de67aa7}} 
-void {\bfseries game\+\_\+get\+\_\+spaces} (\hyperlink{struct__Game}{Game} $\ast$game, int max, \hyperlink{space_8h_a67533ffc2b70463baecc38fb0629bbfc}{Space} $\ast$$\ast$spaces, int $\ast$total)
-\item 
-\mbox{\Hypertarget{game_8h_a00ec1903ad0212873b64668de5984f0d}\label{game_8h_a00ec1903ad0212873b64668de5984f0d}} 
-void {\bfseries game\+\_\+get\+\_\+links} (\hyperlink{struct__Game}{Game} $\ast$game, int max, \hyperlink{struct__Link}{Link} $\ast$$\ast$links, int $\ast$total)
-\item 
-\mbox{\Hypertarget{game_8h_a59eac3fe8bb037c712ca0957b798cf72}\label{game_8h_a59eac3fe8bb037c712ca0957b798cf72}} 
-void {\bfseries game\+\_\+get\+\_\+objects} (\hyperlink{struct__Game}{Game} $\ast$game, int max, \hyperlink{object_8h_a7f8bbcda919b65ce67f92fba08e0212f}{Object} $\ast$$\ast$objs, int $\ast$total)
-\item 
+void \hyperlink{game_8h_ac43df8654f7e438bca33449c0de67aa7}{game\+\_\+get\+\_\+spaces} (\hyperlink{struct__Game}{Game} $\ast$game, int max, \hyperlink{space_8h_a67533ffc2b70463baecc38fb0629bbfc}{Space} $\ast$$\ast$spaces, int $\ast$total)
+\begin{DoxyCompactList}\small\item\em get spaces \end{DoxyCompactList}\item 
+void \hyperlink{game_8h_a00ec1903ad0212873b64668de5984f0d}{game\+\_\+get\+\_\+links} (\hyperlink{struct__Game}{Game} $\ast$game, int max, \hyperlink{struct__Link}{Link} $\ast$$\ast$links, int $\ast$total)
+\begin{DoxyCompactList}\small\item\em get links \end{DoxyCompactList}\item 
+void \hyperlink{game_8h_a59eac3fe8bb037c712ca0957b798cf72}{game\+\_\+get\+\_\+objects} (\hyperlink{struct__Game}{Game} $\ast$game, int max, \hyperlink{object_8h_a7f8bbcda919b65ce67f92fba08e0212f}{Object} $\ast$$\ast$objs, int $\ast$total)
+\begin{DoxyCompactList}\small\item\em sets a new die \end{DoxyCompactList}\item 
 \hyperlink{space_8h_a67533ffc2b70463baecc38fb0629bbfc}{Space} $\ast$ \hyperlink{game_8h_a584f1f96a3b7b428d7a6d76aa26dff2c}{game\+\_\+get\+\_\+first\+\_\+space} (\hyperlink{struct__Game}{Game} $\ast$game)
 \begin{DoxyCompactList}\small\item\em gets a pointer towards first space \end{DoxyCompactList}\item 
 \hyperlink{struct__Die}{Die} $\ast$ \hyperlink{game_8h_a5753a09313b092a52c0cea742c40f3cf}{game\+\_\+get\+\_\+die} (\hyperlink{struct__Game}{Game} $\ast$game)
 \begin{DoxyCompactList}\small\item\em gets a pointer towards die \end{DoxyCompactList}\item 
 \hyperlink{cmd_8h_ab2b68b94b84c77ba11a699a76b8cf9cc}{Cmd} $\ast$ \hyperlink{game_8h_ad4f3192f7515879d7ff47522a7f489d7}{game\+\_\+get\+\_\+cmd} (\hyperlink{struct__Game}{Game} $\ast$game)
 \begin{DoxyCompactList}\small\item\em gets a pointer towards cmd \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{game_8h_a63b8fadde2c72953a6264d972bbf9871}\label{game_8h_a63b8fadde2c72953a6264d972bbf9871}} 
-\hyperlink{types_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+US} {\bfseries game\+\_\+clean} (\hyperlink{struct__Game}{Game} $\ast$game)
-\end{DoxyCompactItemize}
+\hyperlink{types_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+US} \hyperlink{game_8h_a63b8fadde2c72953a6264d972bbf9871}{game\+\_\+clean} (\hyperlink{struct__Game}{Game} $\ast$game)
+\begin{DoxyCompactList}\small\item\em clean all the information used by the game \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -567,6 +562,74 @@ Javier Romera
 {\em \{\+Space\}} & -\/ Returns a space pointer \\
 \hline
 \end{DoxyRetVals}
+\mbox{\Hypertarget{game_8h_ac43df8654f7e438bca33449c0de67aa7}\label{game_8h_ac43df8654f7e438bca33449c0de67aa7}} 
+\index{game.\+h@{game.\+h}!game\+\_\+get\+\_\+spaces@{game\+\_\+get\+\_\+spaces}}
+\index{game\+\_\+get\+\_\+spaces@{game\+\_\+get\+\_\+spaces}!game.\+h@{game.\+h}}
+\subsubsection{\texorpdfstring{game\+\_\+get\+\_\+spaces()}{game\_get\_spaces()}}
+{\footnotesize\ttfamily void game\+\_\+get\+\_\+spaces (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Game}{Game} $\ast$}]{game,  }\item[{int}]{max,  }\item[{\hyperlink{space_8h_a67533ffc2b70463baecc38fb0629bbfc}{Space} $\ast$$\ast$}]{spaces,  }\item[{int $\ast$}]{total }\end{DoxyParamCaption})}
+
+
+
+get spaces 
+
+\begin{DoxyAuthor}{Author}
+Javier Romera 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em -\/} & game \\
+\hline
+{\em -\/} & spaces \\
+\hline
+{\em -\/} & total \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{game_8h_a00ec1903ad0212873b64668de5984f0d}\label{game_8h_a00ec1903ad0212873b64668de5984f0d}} 
+\index{game.\+h@{game.\+h}!game\+\_\+get\+\_\+links@{game\+\_\+get\+\_\+links}}
+\index{game\+\_\+get\+\_\+links@{game\+\_\+get\+\_\+links}!game.\+h@{game.\+h}}
+\subsubsection{\texorpdfstring{game\+\_\+get\+\_\+links()}{game\_get\_links()}}
+{\footnotesize\ttfamily void game\+\_\+get\+\_\+links (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Game}{Game} $\ast$}]{game,  }\item[{int}]{max,  }\item[{\hyperlink{struct__Link}{Link} $\ast$$\ast$}]{links,  }\item[{int $\ast$}]{total }\end{DoxyParamCaption})}
+
+
+
+get links 
+
+\begin{DoxyAuthor}{Author}
+Javier Romera 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em -\/} & game \\
+\hline
+{\em -\/} & links \\
+\hline
+{\em -\/} & total \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{game_8h_a59eac3fe8bb037c712ca0957b798cf72}\label{game_8h_a59eac3fe8bb037c712ca0957b798cf72}} 
+\index{game.\+h@{game.\+h}!game\+\_\+get\+\_\+objects@{game\+\_\+get\+\_\+objects}}
+\index{game\+\_\+get\+\_\+objects@{game\+\_\+get\+\_\+objects}!game.\+h@{game.\+h}}
+\subsubsection{\texorpdfstring{game\+\_\+get\+\_\+objects()}{game\_get\_objects()}}
+{\footnotesize\ttfamily void game\+\_\+get\+\_\+objects (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Game}{Game} $\ast$}]{game,  }\item[{int}]{max,  }\item[{\hyperlink{object_8h_a7f8bbcda919b65ce67f92fba08e0212f}{Object} $\ast$$\ast$}]{objs,  }\item[{int $\ast$}]{total }\end{DoxyParamCaption})}
+
+
+
+sets a new die 
+
+\begin{DoxyAuthor}{Author}
+Javier Romera 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em -\/} & game \\
+\hline
+{\em -\/} & max \\
+\hline
+{\em -\/} & objs \\
+\hline
+{\em -\/} & total \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{game_8h_a584f1f96a3b7b428d7a6d76aa26dff2c}\label{game_8h_a584f1f96a3b7b428d7a6d76aa26dff2c}} 
 \index{game.\+h@{game.\+h}!game\+\_\+get\+\_\+first\+\_\+space@{game\+\_\+get\+\_\+first\+\_\+space}}
 \index{game\+\_\+get\+\_\+first\+\_\+space@{game\+\_\+get\+\_\+first\+\_\+space}!game.\+h@{game.\+h}}
@@ -636,3 +699,21 @@ Javier Romera
 {\em \{\+Player\}} & -\/ Returns a cmd pointer \\
 \hline
 \end{DoxyRetVals}
+\mbox{\Hypertarget{game_8h_a63b8fadde2c72953a6264d972bbf9871}\label{game_8h_a63b8fadde2c72953a6264d972bbf9871}} 
+\index{game.\+h@{game.\+h}!game\+\_\+clean@{game\+\_\+clean}}
+\index{game\+\_\+clean@{game\+\_\+clean}!game.\+h@{game.\+h}}
+\subsubsection{\texorpdfstring{game\+\_\+clean()}{game\_clean()}}
+{\footnotesize\ttfamily \hyperlink{types_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+US} game\+\_\+clean (\begin{DoxyParamCaption}\item[{\hyperlink{struct__Game}{Game} $\ast$}]{game }\end{DoxyParamCaption})}
+
+
+
+clean all the information used by the game 
+
+\begin{DoxyAuthor}{Author}
+Javier Romera 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em -\/} & game \\
+\hline
+\end{DoxyParams}
