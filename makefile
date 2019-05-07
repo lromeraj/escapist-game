@@ -26,6 +26,9 @@ inventory_tb: ctarget
 reader_tb: ctarget
 	./ctarget -e reader_tb -c
 
+space_tb:
+	./ctarget -e space_tb -c
+
 # others
 
 dist: ctarget
@@ -43,8 +46,8 @@ clean: ctarget
 	-e player_tb --clean \
 	-e link_tb --clean \
 	-e inventory_tb --clean \
-	-e reader_tb --clean
-
+	-e reader_tb --clean \
+	-e space_tb --clean
 ctarget:
 	if [ ! -e "c-target" ]; then git clone https://github.com/lromeraj/c-target; fi
 	cd c-target && make ctarget && cp ctarget ../
