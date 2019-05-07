@@ -60,8 +60,6 @@
 	name: "map",
 	movable: true,
 	hidden: false
-	max_uses: 25,
-	used: 0
 }
 
 @o {

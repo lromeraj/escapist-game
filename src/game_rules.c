@@ -120,8 +120,7 @@ RuleAns game_player_drop_object( Game *game, Object *obj ) {
 RuleAns game_inspect_space( Game *game, Space *sp ) {
 
   RuleAns ans;
-  Player *player;
-  Object *obj, *map;
+  Object *obj;
   int i, total;
   Set *set;
   Id ids[ MAX_SET ];
@@ -129,10 +128,9 @@ RuleAns game_inspect_space( Game *game, Space *sp ) {
   if ( !game || !sp )
     return _RULE_ERROR;
 
-  player = game_get_player( game );
-  map = game_get_object_by_name( game, "map" );
+  ans = can_show_space_descrp( game );
 
-  if ( player_has_object( player, obj_get_id( map ) ) ) {
+  if ( ans == _RULE_YES ) {
 
     set = space_get_objects( sp );
     set_get_ids( set, MAX_SET, ids, &total );
@@ -143,9 +141,6 @@ RuleAns game_inspect_space( Game *game, Space *sp ) {
     }
 
     ans = _INSPECT_SUCCESS;
-
-  } else {
-    ans = _OBJ_NOT_IN_BAG;
   }
 
   return ans;
@@ -156,37 +151,34 @@ RuleAns game_inspect_space( Game *game, Space *sp ) {
 RuleAns game_inspect_object( Game *game, Object *obj ) {
 
   RuleAns ans;
-  Player *player;
   Object *book;
-  long used, max_uses;
+  char *o_name, *b_name;
 
   if ( !game || !obj )
     return _RULE_ERROR;
 
-  player = game_get_player( game );
   book = game_get_object_by_name( game, "book" );
 
-  if ( player_has_object( player, obj_get_id( book ) ) ) {
+  ans = can_show_object_descrp( game );
 
-    /* do stuff */
-    used = obj_get_attr( obj, OBJ_USED );
-    max_uses = obj_get_attr( obj, OBJ_MAX_USES );
+  if ( ans == _RULE_YES ) {
 
-    if ( used < max_uses || !max_uses ) {
-      obj_set_attr( obj, OBJ_USED, used + 1 );
-      ans = _INSPECT_SUCCESS;
-    } else {
-      ans = _OBJ_IS_OUTWORN;
+    o_name = (char*)obj_get_name( obj );
+    b_name = (char*)obj_get_name( book );
+
+    if ( o_name && b_name ) {
+
+      if ( strcmp( o_name, b_name ) ) {
+        obj_set_attr( book, OBJ_USED, obj_get_attr( book, OBJ_USED ) + 1 );
+      }
     }
 
-  } else {
-    ans = _OBJ_NOT_IN_BAG;
+    ans = _INSPECT_SUCCESS;
   }
 
   return ans;
 
 }
-
 
 RuleAns game_open_link_with_obj( Game *game, Link *ln, Object *obj ) {
 
@@ -199,7 +191,6 @@ RuleAns game_open_link_with_obj( Game *game, Link *ln, Object *obj ) {
 
   if ( !game || !ln || !obj )
     return _RULE_ERROR;
-
 
   player = game_get_player( game );
   oid = obj_get_id( obj );
@@ -224,6 +215,61 @@ RuleAns game_open_link_with_obj( Game *game, Link *ln, Object *obj ) {
       ans = _OBJ_CAN_NOT_OPEN_LINK;
     }
 
+  } else {
+    ans = _OBJ_NOT_IN_BAG;
+  }
+
+  return ans;
+
+}
+
+
+RuleAns can_show_object_descrp( Game *game ) {
+
+  Player *player;
+  Object *book;
+  RuleAns ans;
+
+  if ( !game )
+    return _RULE_ERROR;
+
+  book = game_get_object_by_name( game, "book" );
+
+  ans = _RULE_ERROR;
+  player = game_get_player( game );
+
+  if ( player_has_object( player, obj_get_id( book ) ) ) {
+
+    if ( obj_get_attr( book,  OBJ_USED ) < obj_get_attr( book, OBJ_MAX_USES ) ) {
+      ans = _RULE_YES;
+    } else {
+      ans = _OBJ_IS_OUTWORN;
+    }
+
+  } else {
+    ans = _OBJ_NOT_IN_BAG;
+  }
+
+  return ans;
+
+}
+
+RuleAns can_show_space_descrp( Game *game ) {
+
+  Player *player;
+  Object *map;
+  RuleAns ans;
+
+  if ( !game )
+    return _RULE_ERROR;
+
+  map = game_get_object_by_name( game, "map" );
+
+  ans = _RULE_ERROR;
+  player = game_get_player( game );
+
+  if ( player_has_object( player, obj_get_id( map ) ) ) {
+    ans = _RULE_YES;
   } else {
     ans = _OBJ_NOT_IN_BAG;
   }

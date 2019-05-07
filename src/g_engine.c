@@ -12,6 +12,7 @@
 #include "player.h"
 #include "inventory.h"
 #include "g_engine.h"
+#include "game_rules.h"
 #include "ui.h"
 #include "link.h"
 #include <stdio.h>
@@ -31,6 +32,8 @@
 
 #define GAME_FEED_BG MAIN_BG
 #define GAME_FEED_FG MAIN_FG
+
+#define PLAYER_BAG_OBJ_FG "frgb(250,255,0)"
 
 #define GAME_TITLE_BG "brgb(255,172,0)"
 #define GAME_TITLE_FG "frgb(29,38,47)"
@@ -485,12 +488,12 @@ void parse_map( G_engine *ge, Game *game, int box ) {
   bag = player_get_bag( player );
 
   if ( set_get_total( bag ) == 0 ) {
-    ui_box_put( ui, box, "@{!0;1;frgb(250,255,0);%s}----@{0}", GAME_INFO_BG );
+    ui_box_put( ui, box, "@{!0;1;%s;%s}----@{0}", PLAYER_BAG_OBJ_FG, GAME_INFO_BG );
   } else {
     for ( i=0, j=0; i < t_objs; i++ ) {
       obj = objs[ i ];
       if ( player_has_object( player, obj_get_id( obj ) ) ) {
-        ui_box_put( ui, box, "@{!0;1;frgb(250,255,0);%s}%s@{0}", GAME_INFO_BG, obj_get_name( obj ) );
+        ui_box_put( ui, box, "@{!0;1;%s;%s}%s@{0}", PLAYER_BAG_OBJ_FG, GAME_INFO_BG, obj_get_name( obj ) );
         if ( j < set_get_total( bag ) - 1 ) {
           ui_box_put( ui, box, ", " );
         }
@@ -556,9 +559,10 @@ void parse_info( G_engine *ge, Game *game, int box ) {
   char *tstr;
   Space *cu_sp;
   Player *player;
+  RuleAns ans;
 
   long max_uses;
-  Object *obj, *book, *map;
+  Object *obj;
 
   if ( !ge || !game )
     return;
@@ -577,21 +581,19 @@ void parse_info( G_engine *ge, Game *game, int box ) {
 
   if ( !strcmp( tstr, "-s" ) ) {
 
-    map = game_get_object_by_name( game, "map" );
-
     ui_box_put( ui, GAME_INFO, "@{!0;%s;frgb(150,150,150)}name@{0}: %s, ", GAME_INFO_BG, space_get_name( cu_sp ) );
     ui_box_put( ui, GAME_INFO, "@{!0;%s;frgb(150,150,150)}light@{0}: %s\n", GAME_INFO_BG, space_get_light( cu_sp ) ? "on" : "off" );
     ui_box_put( ui, GAME_INFO, "@{!0;%s;frgb(150,150,150)}description@{0}: ", GAME_INFO_BG );
 
-    if ( player_has_object( player, obj_get_id( map ) ) ) {
-      ui_box_put( ui, GAME_INFO, "%s", space_get_ldescrp( cu_sp ) );
-    } else {
+    ans = can_show_space_descrp( game );
+
+    if ( ans == _OBJ_NOT_IN_BAG ) {
       ui_box_put( ui, GAME_INFO, "you need a map to see detailed description" );
+    } else if ( ans == _RULE_YES ) {
+      ui_box_put( ui, GAME_INFO, "%s", space_get_ldescrp( cu_sp ) );
     }
 
   } else if ( !strcmp( tstr, "-o" ) ) {
-
-    book = game_get_object_by_name( game, "book" );
 
     tstr = (char*) cmd_get_argv( cmd, 2 );
     obj = game_get_object_by_name( game, tstr );
@@ -613,22 +615,18 @@ void parse_info( G_engine *ge, Game *game, int box ) {
 
       ui_box_put( ui, GAME_INFO, "@{!0;%s;frgb(150,150,150)}description@{0}: ", GAME_INFO_BG );
 
-      if ( player_has_object( player, obj_get_id( book ) ) ) {
+      ans = can_show_object_descrp( game );
 
-        if ( obj_get_attr( book,  OBJ_USED ) < obj_get_attr( book, OBJ_MAX_USES ) ) {
-
-          if ( obj_get_attr( obj, OBJ_IS_MOVED ) == OBJ_YES ) {
-            ui_box_put( ui, GAME_INFO, "%s", obj_get_ldescrp( obj ) );
-          } else {
-            ui_box_put( ui, GAME_INFO, "%s", obj_get_descrp( obj ) );
-          }
-
-        } else {
-          ui_box_put( ui, GAME_INFO, "you can't inspect objects anymore!" );
-        }
-
-      } else {
+      if ( ans == _OBJ_NOT_IN_BAG ) {
         ui_box_put( ui, GAME_INFO, "you need a book to see detailed description" );
+      } else if ( ans == _OBJ_IS_OUTWORN ) {
+        ui_box_put( ui, GAME_INFO, "you can't inspect objects anymore!" );
+      } else if ( ans == _RULE_YES ) {
+        if ( obj_get_attr( obj, OBJ_IS_MOVED ) == OBJ_YES ) {
+          ui_box_put( ui, GAME_INFO, "%s", obj_get_ldescrp( obj ) );
+        } else {
+          ui_box_put( ui, GAME_INFO, "%s", obj_get_descrp( obj ) );
+        }
       }
 
     }

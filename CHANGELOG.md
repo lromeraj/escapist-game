@@ -16,6 +16,7 @@
 - Updated help.
 
 `[NEW]`
+- If you inspect the book with the book, it will not cost object uses.
 - Game was renamed to `Escapist`.
 - Updated `.ascii_title`.
 - Updated `makefile`.
