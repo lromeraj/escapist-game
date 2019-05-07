@@ -4,7 +4,8 @@ El juego ha sido diseñado para ser compilado en un entorno de Linux. Para facil
 
 ## Notas
 
-* El archivo `solution.goo` contiene la solucón del juego. Para usarlo ejecutar: `$ ./ctarget -e escapist -c -r < solution.goo`.
+* El archivo `solution.goo` contiene la solucón del juego.
+Para usarlo ejecutar: `$ ./ctarget -e escapist -c -r < solution.goo`.
 
 * El archivo `target.conf` es un archivo de configuración utilizado por el script `target`, es recomendable no editarlo. En caso de ser eliminado el script dará un error indicando que no se ha encontrado un archivo de configuración.
 
