@@ -1059,19 +1059,28 @@ void ui_box_put( Ui *ui, int idx, const char *frmt, ... ) {
   /* process string */
   for ( i=0; _buff[ i ]; i++ ) {
 
+    if ( __frmxor( ui->__frm ) == 0 ) { /* if ui format is null use default box format */
+      _frm_cpy( _pix.frm, box->frm );
+    } else {
+      _frm_cpy( _pix.frm, ui->__frm ); /* else use ui format */
+    }
+
     if ( *cx == cx_top - 1 ) {
 
       if ( i && _buff[ i - 1 ] == ' ' ) {
         _pix.c = ' ';
         ui_set_pix( box->__pixs, *cx, *cy, box_w, box_h, _pix );
         (*cx)++;
-      } else if ( _buff[ i ] != ' ' && _buff[ i + 2 ] ) {
+      } else if ( _buff[ i + 1 ] ) {
+
         _pix.c = '-';
         ui_set_pix( box->__pixs, *cx, *cy, box_w, box_h, _pix );
         (*cx)++;
+
       }
 
     }
+
 
     if ( *cx >= cx_top ) {
       (*cy)++; /* go to the next line */
@@ -1090,12 +1099,6 @@ void ui_box_put( Ui *ui, int idx, const char *frmt, ... ) {
     }
 
     _pix.c = _buff[ i ];
-
-    if ( __frmxor( ui->__frm ) == 0 ) { /* if ui format is null use default box format */
-      _frm_cpy( _pix.frm, box->frm );
-    } else {
-      _frm_cpy( _pix.frm, ui->__frm ); /* else use ui format */
-    }
 
     if ( _pix.c == '\n' ) {
 

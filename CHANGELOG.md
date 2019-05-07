@@ -23,6 +23,7 @@
 
 `[FIXES]`
 - Minor fixes.
+- Fixed `ui_box_put()` bug that was using uninitialized values. 
 
 ## v0.4.5
 `[OVERALL]`
