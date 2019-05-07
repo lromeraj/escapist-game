@@ -546,7 +546,14 @@ STATUS game_update( Game *game, Cmd *cmd ) {
   return OK;
 }
 
-bool game_is_over(Game *game) { return false; }
+bool game_is_over( Game *game ) {
+
+  if ( game_finished( game ) != _RULE_NO ) {
+    return true;
+  }
+
+  return false;
+}
 
 void game_callback_unknown( Game *game ) {
   cmd_set_ans( game->cmd, 0, "unknown command" );

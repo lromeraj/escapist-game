@@ -134,7 +134,7 @@ int main( int argc, char *argv[] ) {
 
   log_w( "OK\n" );
 
-  while ( !game_is_over( game ) ) {
+  while ( 1 ) {
 
     log_w( "\n********** L%d **********\n", loop );
 
@@ -189,6 +189,9 @@ int main( int argc, char *argv[] ) {
     } else {
       g_engine_paint_game( gengine, game );
     }
+
+    /* game over is checked here, to allow to the last frame to be printed */
+    if ( game_is_over( game ) ) break;
 
     log_w( "requesting cmd ...\n" );
 

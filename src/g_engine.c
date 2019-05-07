@@ -33,6 +33,9 @@
 #define GAME_FEED_BG MAIN_BG
 #define GAME_FEED_FG MAIN_FG
 
+#define GAME_FULLSCREEN_BG "brgb(0,0,0)"
+#define GAME_FULLSCREEN_FG "frgb(255,255,255)"
+
 #define PLAYER_BAG_OBJ_FG "frgb(250,255,0)"
 
 #define GAME_TITLE_BG "brgb(255,172,0)"
@@ -63,6 +66,7 @@ enum _Boxes {
   GAME_TITLE, /*!< Title box */
   GAME_FEED, /*!< Feedback box */
   GAME_INFO, /*!< Info box */
+  GAME_FULLSCREEN, /*!< Box to show full screen results */
   HELP_TITLE, /*!< Help title */
   HELP_BODY /*!< Help body */
 };
@@ -71,12 +75,10 @@ enum _Boxes {
 
 /**
 * @brief Parses a given space
-* @param {Game*} game - Game pointer
-* @param {G_engine*} ge - Graphic engine pointer
-* @param {Space*} sp - Space to be drawn
-* @param {int} id - Box id
-* @param {int} x - Begin x position (relative to the box)
-* @param {int} y - Begin y position (relative to the box)
+* @param game - Game pointer
+* @param ge - Graphic engine pointer
+* @param sp - Space to be drawn
+* @param id - Box id
 */
 void parse_map( G_engine *ge, Game *game, int box );
 void parse_info( G_engine *ge, Game *game, int box );
@@ -107,6 +109,7 @@ G_engine *g_engine_create() {
       ui_new_box( _ui, GAME_MAP, 0, 1, 80, 15 );
       ui_new_box( _ui, GAME_FEED, 0, 16, 80, 7 );
       ui_new_box( _ui, GAME_INFO, 0, 15, 80, 8 );
+      ui_new_box( _ui, GAME_FULLSCREEN, 0, 0, MIN_WIN_COLS, MIN_WIN_ROWS-1 );
 
       /* game feed */
       ui_box_bg( _ui, GAME_FEED, "%s", GAME_FEED_BG ); /* fill game feed background */
@@ -126,6 +129,9 @@ G_engine *g_engine_create() {
 
       /* game title */
       ui_box_frm( _ui, GAME_TITLE, 2, BG_YELLOW, FG_BLACK );
+
+
+      ui_box_frms( _ui, GAME_FULLSCREEN, "%s;%s", GAME_FULLSCREEN_BG, GAME_FULLSCREEN_FG );
 
       /* title box */
       ui_box_bg( _ui, GAME_TITLE, "%s", GAME_TITLE_BG );
@@ -618,7 +624,7 @@ void parse_info( G_engine *ge, Game *game, int box ) {
       ans = can_show_object_descrp( game );
 
       if ( ans == _OBJ_NOT_IN_BAG ) {
-        ui_box_put( ui, GAME_INFO, "you need a book to see detailed description" );
+        ui_box_put( ui, GAME_INFO, "you need a @{1}book@{0} to see detailed description" );
       } else if ( ans == _OBJ_IS_OUTWORN ) {
         ui_box_put( ui, GAME_INFO, "you can't inspect objects anymore!" );
       } else if ( ans == _RULE_YES ) {
@@ -635,18 +641,42 @@ void parse_info( G_engine *ge, Game *game, int box ) {
 
 }
 
+void dump_file_to_box( Ui *ui, int box, char *f_name ) {
+
+  FILE *f;
+  char _buff[ 124 ];
+
+  if ( !ui || !f_name )
+    return;
+
+  f = fopen( f_name, "r" );
+
+  if ( !f )
+    return;
+
+  while ( fgets( _buff, sizeof( _buff ), f ) ) {
+    ui_box_put( ui, box, "%s", _buff );
+  }
+
+  fclose( f );
+
+
+}
+
 void g_engine_paint_game( G_engine *ge, Game *game ) {
 
   int i, w;
   Ui *ui;
   Cmd *cmd; /* last command */
   char *answer;
+  Player *player;
 
   if ( !ge || !game )
     return;
 
   cmd = game_get_cmd( game );
   ui = ge->game_ui;
+  player = game_get_player( game );
 
   /* map box */
   ui_clear_box( ui, GAME_MAP );
@@ -701,8 +731,16 @@ void g_engine_paint_game( G_engine *ge, Game *game ) {
     ui_dump_box( ui, GAME_INFO );
   }
 
-  /* prints all the data into stdout */
 
+  if ( game_finished( game ) == _PLAYER_IS_ALIVE ) {
+    dump_file_to_box( ui, GAME_FULLSCREEN, "ascii/ascii_success" );
+    ui_dump_box( ui, GAME_FULLSCREEN );
+  } else if ( game_finished( game ) == _PLAYER_IS_DEATH ) {
+    dump_file_to_box( ui, GAME_FULLSCREEN, "ascii/ascii_death" );
+    ui_dump_box( ui, GAME_FULLSCREEN );
+  }
+
+  /* prints all the data into stdout */
   ui_draw( stdout, ui );
 
 }

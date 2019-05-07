@@ -1,3 +1,4 @@
+#include "str.h"
 #include "game_rules.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -272,6 +273,36 @@ RuleAns can_show_space_descrp( Game *game ) {
     ans = _RULE_YES;
   } else {
     ans = _OBJ_NOT_IN_BAG;
+  }
+
+  return ans;
+
+}
+
+RuleAns game_finished( Game *game ) {
+
+  RuleAns ans;
+  Space *cu_sp;
+  Player *player;
+  char *s_name;
+
+  if ( !game )
+    return _RULE_ERROR;
+
+  ans = _RULE_NO;
+
+  player = game_get_player( game );
+  cu_sp = game_get_space( game, player_get_location( player ) );
+  s_name = (char*)space_get_name( cu_sp );
+
+  if ( cu_sp && s_name ) {
+
+    if ( !strcmptok( s_name, "The end,end,END", "," ) ) {
+      ans = _PLAYER_IS_ALIVE;
+    } else if ( !strcmptok( s_name, "Death,Hell", "," ) ) {
+      ans = _PLAYER_IS_DEATH;
+    }
+
   }
 
   return ans;

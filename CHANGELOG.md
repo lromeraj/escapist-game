@@ -16,6 +16,8 @@
 - Updated help.
 
 `[NEW]`
+- When the game is over a full screen picture will appear.
+- Updated `game_loop.c` to allow the draw of the last frame before exiting.
 - If you inspect the book with the book, it will not cost object uses.
 - Game was renamed to `Escapist`.
 - Updated `.ascii_title`.

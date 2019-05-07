@@ -18,10 +18,14 @@ typedef enum _RuleAns {
   _DROP_SUCCESS, /*!< Rule to check if drop action was success */
   _TURN_SUCCESS, /*!< Rule to check if turn action was success */
   _OPEN_SUCCESS, /*!< Rule to check if open action was success */
+  _PLAYER_IS_ALIVE,
+  _PLAYER_IS_DEATH,
+  _FINISHED_HELL,
   _INSPECT_SUCCESS, /*!< Rule to check if inspect action was success */
   _RULE_ERROR, /*!< This indicates an error in the rule process */
   _RULE_YES, /*!< This indicates a boolean answer of the rule TRUE */
-  _RULE_NO /*< This indicates a boolean answeer fo the rule FALSE */
+  _RULE_NO, /*< This indicates a boolean answeer fo the rule FALSE */
+  _RULE_NULL
 } RuleAns;
 
 RuleAns game_inspect_space( Game *game, Space *sp );
@@ -32,5 +36,6 @@ RuleAns game_obj_set_on( Game *game, Object *obj, long sts );
 RuleAns game_open_link_with_obj( Game *game, Link *ln, Object *obj );
 RuleAns can_show_object_descrp( Game *game );
 RuleAns can_show_space_descrp( Game *game );
+RuleAns game_finished( Game *game );
 
 #endif

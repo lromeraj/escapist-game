@@ -58,7 +58,6 @@ m e
 m u
 open 41 with rope
 m u
-save
 d rope
 t parachute
 open 74 with parachute
