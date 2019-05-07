@@ -1,0 +1,126 @@
+\hypertarget{game__loop_8c}{}\section{src/game\+\_\+loop.c File Reference}
+\label{game__loop_8c}\index{src/game\+\_\+loop.\+c@{src/game\+\_\+loop.\+c}}
+
+
+Main game loop.  
+
+
+{\ttfamily \#include \char`\"{}g\+\_\+engine.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}types.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}log.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ui.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$signal.\+h$>$}\newline
+{\ttfamily \#include $<$locale.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$sys/ioctl.\+h$>$}\newline
+Include dependency graph for game\+\_\+loop.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{game__loop_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{game__loop_8c_a06fc87d81c62e9abb8790b6e5713c55b}\label{game__loop_8c_a06fc87d81c62e9abb8790b6e5713c55b}} 
+enum \{ {\bfseries B\+O\+X1}, 
+{\bfseries B\+O\+X2}, 
+{\bfseries B\+O\+X3}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{game__loop_8c_ac2aeadb517220b0bdc34fe1963ef4d9f}{ctrl\+\_\+c} ()
+\begin{DoxyCompactList}\small\item\em This function will be executed when a signal is dispatched. \end{DoxyCompactList}\item 
+void \hyperlink{game__loop_8c_acca7de49935d305a8dc26faa07d53706}{\+\_\+kill} (int errc)
+\begin{DoxyCompactList}\small\item\em This function will free all the memory. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{game__loop_8c_ae420838a419320bd35b4d9f8b780ec6d}\label{game__loop_8c_ae420838a419320bd35b4d9f8b780ec6d}} 
+void {\bfseries upd\+\_\+win} ()
+\item 
+\mbox{\Hypertarget{game__loop_8c_a0ddf1224851353fc92bfbff6f499fa97}\label{game__loop_8c_a0ddf1224851353fc92bfbff6f499fa97}} 
+int {\bfseries main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{game__loop_8c_a3a8b0b0e9527f24bcc26697fa6db1f55}\label{game__loop_8c_a3a8b0b0e9527f24bcc26697fa6db1f55}} 
+int {\bfseries W\+I\+N\+\_\+\+R\+O\+WS}
+\item 
+\mbox{\Hypertarget{game__loop_8c_add1f796727161dff3947224841edeeda}\label{game__loop_8c_add1f796727161dff3947224841edeeda}} 
+int {\bfseries W\+I\+N\+\_\+\+C\+O\+LS}
+\item 
+\mbox{\Hypertarget{game__loop_8c_acd192e3158557edbaa14d78efd82f4fb}\label{game__loop_8c_acd192e3158557edbaa14d78efd82f4fb}} 
+int {\bfseries old\+\_\+r}
+\item 
+\mbox{\Hypertarget{game__loop_8c_afefe78f69b9d4da682984b6a9509d047}\label{game__loop_8c_afefe78f69b9d4da682984b6a9509d047}} 
+int {\bfseries old\+\_\+c}
+\item 
+\mbox{\Hypertarget{game__loop_8c_a5254679cc61a5449066f5ee62144520a}\label{game__loop_8c_a5254679cc61a5449066f5ee62144520a}} 
+\hyperlink{struct__Ui}{Ui} $\ast$ {\bfseries mui}
+\item 
+\mbox{\Hypertarget{game__loop_8c_a58bdb5643d0814ac4e697a1564b79b70}\label{game__loop_8c_a58bdb5643d0814ac4e697a1564b79b70}} 
+\hyperlink{struct__Game}{Game} $\ast$ {\bfseries game}
+\item 
+\mbox{\Hypertarget{game__loop_8c_a01956169a8ec25a149bc0130df54e3d8}\label{game__loop_8c_a01956169a8ec25a149bc0130df54e3d8}} 
+\hyperlink{struct__G__engine}{G\+\_\+engine} $\ast$ {\bfseries gengine}
+\item 
+\mbox{\Hypertarget{game__loop_8c_a0e480ece0380c8cf0a9107bbff7651eb}\label{game__loop_8c_a0e480ece0380c8cf0a9107bbff7651eb}} 
+struct winsize {\bfseries win}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Main game loop. 
+
+\begin{DoxyAuthor}{Author}
+Álvaro Rodríguez \& Javier Romera 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+07/02/2019 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+G\+NU Public License 
+\end{DoxyCopyright}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{game__loop_8c_ac2aeadb517220b0bdc34fe1963ef4d9f}\label{game__loop_8c_ac2aeadb517220b0bdc34fe1963ef4d9f}} 
+\index{game\+\_\+loop.\+c@{game\+\_\+loop.\+c}!ctrl\+\_\+c@{ctrl\+\_\+c}}
+\index{ctrl\+\_\+c@{ctrl\+\_\+c}!game\+\_\+loop.\+c@{game\+\_\+loop.\+c}}
+\subsubsection{\texorpdfstring{ctrl\+\_\+c()}{ctrl\_c()}}
+{\footnotesize\ttfamily void ctrl\+\_\+c (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+This function will be executed when a signal is dispatched. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \{int\}} & sign -\/ Signal id \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{game__loop_8c_acca7de49935d305a8dc26faa07d53706}\label{game__loop_8c_acca7de49935d305a8dc26faa07d53706}} 
+\index{game\+\_\+loop.\+c@{game\+\_\+loop.\+c}!\+\_\+kill@{\+\_\+kill}}
+\index{\+\_\+kill@{\+\_\+kill}!game\+\_\+loop.\+c@{game\+\_\+loop.\+c}}
+\subsubsection{\texorpdfstring{\+\_\+kill()}{\_kill()}}
+{\footnotesize\ttfamily void \+\_\+kill (\begin{DoxyParamCaption}\item[{int}]{errc }\end{DoxyParamCaption})}
+
+
+
+This function will free all the memory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \{int\}} & errc -\/ Error code \\
+\hline
+\end{DoxyParams}

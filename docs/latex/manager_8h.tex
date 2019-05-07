@@ -1,0 +1,66 @@
+\hypertarget{manager_8h}{}\section{inc/manager.h File Reference}
+\label{manager_8h}\index{inc/manager.\+h@{inc/manager.\+h}}
+
+
+Defines a game reader.  
+
+
+{\ttfamily \#include \char`\"{}game.\+h\char`\"{}}\newline
+Include dependency graph for manager.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{manager_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=159pt]{manager_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{manager_8h_ae1315e7e58eb5ca351f646f88f9e79e3}\label{manager_8h_ae1315e7e58eb5ca351f646f88f9e79e3}} 
+typedef enum \+\_\+\+Rd\+\_\+item {\bfseries Rd\+\_\+item}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{manager_8h_a2d33101f4af0938c1815dd31eecb6f7d}\label{manager_8h_a2d33101f4af0938c1815dd31eecb6f7d}} 
+enum {\bfseries \+\_\+\+Rd\+\_\+item} \{ {\bfseries \+\_\+\+R\+D\+\_\+\+O\+B\+JS}, 
+{\bfseries \+\_\+\+R\+D\+\_\+\+S\+P\+A\+C\+ES}, 
+{\bfseries \+\_\+\+R\+D\+\_\+\+L\+I\+N\+KS}, 
+{\bfseries \+\_\+\+R\+D\+\_\+\+P\+L\+A\+Y\+E\+RS}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{manager_8h_acfeea8626d2b9b16ab8aa6fee24d6bb1}\label{manager_8h_acfeea8626d2b9b16ab8aa6fee24d6bb1}} 
+int {\bfseries manager\+\_\+load} (\hyperlink{struct__Game}{Game} $\ast$game, const char $\ast$f\+\_\+name, Rd\+\_\+item its)
+\item 
+\mbox{\Hypertarget{manager_8h_ac81f07d097e113a24d0f96b426534c63}\label{manager_8h_ac81f07d097e113a24d0f96b426534c63}} 
+int {\bfseries manager\+\_\+save} (\hyperlink{struct__Game}{Game} $\ast$game, const char $\ast$f\+\_\+name)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Defines a game reader. 
+
+Contains the implementation of the functions that are associated to the reading of the file To obtain its values
+
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+07/02/2019 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Álvaro Rodríguez 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+G\+NU Public License 
+\end{DoxyCopyright}
