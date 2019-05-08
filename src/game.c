@@ -166,13 +166,13 @@ Game* game_create() {
   cmd_build( UNKNOWN, "unknown", "unknown", (cmd_fn)game_callback_unknown );
   cmd_build( TAKE, "take", "t", (cmd_fn)game_callback_take );
   cmd_build( DROP, "drop", "d", (cmd_fn)game_callback_drop );
-  cmd_build( NEXT, "next", "n", (cmd_fn)game_callback_next );
-  cmd_build( BACK, "back", "b", (cmd_fn)game_callback_back );
+  /* cmd_build( NEXT, "next", "n", (cmd_fn)game_callback_next ); Deprecated */
+  /* cmd_build( BACK, "back", "b", (cmd_fn)game_callback_back ); Deprecated */
   cmd_build( EXIT, "exit", "e", (cmd_fn)game_callback_exit );
-  cmd_build( LEFT, "left", "l", (cmd_fn)game_callback_left );
+  /* cmd_build( LEFT, "left", "l", (cmd_fn)game_callback_left ); Deprecated */
+  /* cmd_build( RIGHT, "right", "r", (cmd_fn)game_callback_right ); Deprecated */
   cmd_build( MOVE, "move", "m", (cmd_fn)game_callback_move );
   cmd_build( ROLL, "roll", "rl", (cmd_fn)game_callback_roll );
-  cmd_build( RIGHT, "right", "r", (cmd_fn)game_callback_right );
   cmd_build( INSPECT, "inspect", "i", (cmd_fn)game_callback_inspect );
   cmd_build( HELP, "help", "h", (cmd_fn)game_callback_help );
   cmd_build( TURN, "turn", "trn", (cmd_fn)game_callback_turn );

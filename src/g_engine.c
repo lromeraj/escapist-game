@@ -249,12 +249,6 @@ void g_engine_paint_help( G_engine *ge, Game *game ) {
         ui_box_put( ui, HELP_BODY, "@{0}This command allows you to exit from the game.\n" );
         ui_box_put( ui, HELP_BODY, "The game will be closed securely and all reserved memory will be freed.\n" );
 
-      } else if ( !strcmp( b_name, "left" ) ) {
-
-        ui_box_put( ui, HELP_BODY, "...\n" );
-
-        ui_box_put( ui, HELP_BODY, "@{0}This command allows you to move to the west direction.\n" );
-
       } else if ( !strcmp( b_name, "inspect" ) ) {
 
         ui_box_put( ui, HELP_BODY, "<type> [search_key]\n" );
@@ -315,8 +309,6 @@ void g_engine_paint_help( G_engine *ge, Game *game ) {
 
     ui_box_put( ui, HELP_BODY, "@{1;brgb(76, 87, 127)} Command      Description\n@{0}" );
     ui_box_put( ui, HELP_BODY, " @{33}help@{0}, h      show this help desk\n" );
-    ui_box_put( ui, HELP_BODY, " @{33}rigth@{0}, r     go to the east\n" );
-    ui_box_put( ui, HELP_BODY, " @{33}left@{0}, l      go to the west\n" );
     ui_box_put( ui, HELP_BODY, " @{33}move@{0}, m      go to a given direction\n" );
     ui_box_put( ui, HELP_BODY, " @{33}turn@{0}, trn    turns on/off a given object\n" );
     ui_box_put( ui, HELP_BODY, " @{33}open@{0}, o      opens a link with a given object\n" );

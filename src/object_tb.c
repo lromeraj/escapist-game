@@ -26,6 +26,7 @@ int i = 0, r = 0, t = 0;
 Id id = NO_ID;
 Id name_id = NO_ID;
 Id desc_id = NO_ID;
+Id ldesc_id = NO_ID;
 char name[MAX_OBJ_NAME];
 char desc[MAX_OBJ_DESCRP];
 
@@ -148,6 +149,8 @@ STATUS main_valid( Object **objects ){
 
     name_id = rand() % NAMES;
 
+    ldesc_id = rand() % NAMES;
+
     id = i + 1;
 
     fprintf(stdout,"\n\n\033[1mTesting now with object[%d]\033[0m\n", i + 1 );
@@ -193,8 +196,60 @@ STATUS main_valid( Object **objects ){
 
     fprintf(stdout, "Correct object's[%d] description initialitation.\n", i+1 );
 
+    obj_set_ldescrp( objects[i], descriptions[ldesc_id] );
+
+    if ( obj_get_ldescrp( objects[i] ) == NULL || strcmp( obj_get_ldescrp( objects[i] ), descriptions[ldesc_id] ) ) {
+      fprintf(stdout, "Error while getting object's[%d] long description. \n", i+1 );
+      return ERROR;
+    }
+
+    fprintf(stdout, "Correct object's[%d] long description initialitation.\n", i+1 );
+
+    /* --- */
+
+    fprintf(stdout, "Setting object {%d} attributes.\n", i );
+
+    for( r = 0; r < MAX_OBJ_ATTRS; r++ ){
+      if ( r == OBJ_USED ) {
+        if ( obj_set_attr( objects[i], r, r + 5) == ERROR ) {
+          fprintf(stdout, "Error while setting object %d attribute OBJ_USES", i );
+          return ERROR;
+        }
+      }
+      else if( r == OBJ_MAX_USES ){
+        if ( obj_set_attr( objects[i], r, r + 10) == ERROR ) {
+          fprintf(stdout, "Error while setting object %d attribute MAX_USES", i );
+          return ERROR;
+        }
+      }
+      else if( obj_set_attr( objects[i], r, OBJ_YES ) == ERROR ) {
+        fprintf(stdout, "Error while setting object %d attribute {%d}", i, r );
+        return ERROR;
+      }
+      if ( r == OBJ_USED ) {
+        if ( obj_get_attr( objects[i], r ) != r + 5 ) {
+          fprintf(stdout, "Error while getting object %d attribute OBJ_USES", i );
+          return ERROR;
+        }
+      }
+      else if( r == OBJ_MAX_USES ){
+        if ( obj_get_attr( objects[i], r ) != r + 10 ) {
+          fprintf(stdout, "Error while getting object %d attribute MAX_USES", i );
+          return ERROR;
+        }
+      }
+      else if ( obj_get_attr( objects[i], r ) != OBJ_YES ) {
+        fprintf(stdout, "Error while getting object %d attribute {%d}", i, r );
+        return ERROR;
+      }
+    }
+
+    fprintf(stdout, "Correct object {%d} attributes initialisation.\n", i );
+
     fprintf( stdout, "\n" );
-    fprintf( stdout, "\033[0;33mSupposed values for object[%d]\033[0m:\n\n Name: %s\n ID: %d\n Description: %s\n", i + 1, names[name_id], (int)id, descriptions[name_id] );
+    fprintf( stdout, "\033[0;33mSupposed values for object[%d]\033[0m:\n\n Name: %s\n ID: %d\n Description: %s\n  Long description: %s\n", i + 1, names[name_id], (int)id, descriptions[name_id], descriptions[ldesc_id] );
+
+    /* --- */
   }
 
   for( i = 0; i < MAX_OBJ; i++){
@@ -292,6 +347,39 @@ STATUS main_err( Object **objects ){
       return ERROR;
     }
 
+    fprintf(stdout, "\033[032mPassing uninitialized object or invalid description to obj_set_ldescrp.\n\033[0m\n" );
+
+    if ( obj_set_ldescrp( objects[i], descriptions[name_id] ) == OK || obj_set_descrp( o[i], NULL ) == OK ) {
+      fprintf(stdout, "\t\033[31mReturn value from obj_set_descrp was not as expected to be.\033[0m\n" );
+    }
+
+    fprintf(stdout, "\t\033[35mReturn value of obj_set_ldescrp:\033[0m: ERROR\n\n" );
+
+    fprintf(stdout, "\033[032mPassing uninitialized object or object with no long description to obj_get_ldescrp\033[0m\n" );
+
+    fprintf(stdout, "\t\033[33mExpected object[%d]'s long description:\033[0m: NULL\n", i + 1 );
+
+    if ( obj_get_ldescrp( objects[i] ) != NULL )  {
+      fprintf(stdout, "\t\033[31mReturn value from obj_get_descrp was not as expected to be.\033[0m\n" );
+      return ERROR;
+    }
+
+    fprintf(stdout, "Correct object's[%d] long description initialitation.\n", i+1 );
+
+    fprintf(stdout, "Setting object {%d} attributes. Expected value from returns: ERROR.\n", i );
+
+    for( r = 0; r < MAX_OBJ_ATTRS; r++ ){
+      if ( obj_set_attr( objects[i], r, NO_ID ) != ERROR ) {
+        fprintf(stdout, "Error while setting object %d attribute, expected return not as expected to be.", i );
+      }
+      if ( obj_get_attr( objects[i], r ) != NO_ID ) {
+        fprintf(stdout, "Error while setting object %d attribute, expected return not as expected to be.", i );
+        return ERROR;
+      }
+    }
+
+    fprintf(stdout, "Correct object {%d} attributes initialisation.\n", i );
+
     fprintf(stdout, "\t\033[35mReturn value of object[%d]'s description:\033[0m: NULL\n\n", i + 1 );
 
   }
@@ -347,6 +435,24 @@ STATUS main_print( Object *object ){
   fprintf( stdout, "\033[1;36mObject[%d]'s\033[0m \033[1;32mid:\033[0m %d\n", (int)obj_get_id( object ), (int)obj_get_id( object ) );
 
   fprintf( stdout, "\033[1;36mObject[%d]'s\033[0m \033[1;34mdescription:\033[0m %s\n", (int)obj_get_id( object ), obj_get_descrp( object ) );
+
+  fprintf( stdout, "\033[1;36mObject[%d]'s\033[0m \033[1;34m long description:\033[0m %s\n", (int)obj_get_id( object ), obj_get_ldescrp( object ) );
+
+  /* --- */
+
+  fprintf( stdout, "\033[1;36mObject[%d] \033[0m \033[1m: is movable: \033[0m %s\n", (int)obj_get_id( object ), obj_get_attr( object, 0 ) == OBJ_YES ? "YES" : "NO" );
+
+  fprintf( stdout, "\033[1;36mObject[%d] \033[0m \033[1m: has been moved: \033[0m %s\n", (int)obj_get_id( object ), obj_get_attr( object, 1 ) == OBJ_YES ? "YES" : "NO" );
+
+  fprintf( stdout, "\033[1;36mObject[%d] \033[0m \033[1m: is hidden: \033[0m %s\n", (int)obj_get_id( object ), obj_get_attr( object, 2 ) == OBJ_YES ? "YES" : "NO" );
+
+  fprintf( stdout, "\033[1;36mObject[%d] \033[0m \033[1m: is can illuminate: \033[0m %s\n", (int)obj_get_id( object ), obj_get_attr( object, 3 ) == OBJ_YES ? "YES" : "NO" );
+
+  fprintf( stdout, "\033[1;36mObject[%d] \033[0m \033[1m: is on: \033[0m %s\n", (int)obj_get_id( object ), obj_get_attr( object, 4 ) == OBJ_YES ? "YES" : "NO" );
+
+  fprintf( stdout, "\033[1;36mObject[%d] \033[0m \033[1m: max uses: \033[0m %d\n", (int)obj_get_id( object ), (int)obj_get_attr( object, 5 ) );
+
+  fprintf( stdout, "\033[1;36mObject[%d] \033[0m \033[1m: uses: \033[0m %d\n", (int)obj_get_id( object ), (int)obj_get_attr( object, 6 ) );
 
   fprintf(stdout, "\n");
 
