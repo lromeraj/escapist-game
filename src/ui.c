@@ -6,6 +6,8 @@
 * @copyright GNU Public License
 */
 
+#define _POSIX_C_SOURCE 200809L
+
 #include "ui.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -13,13 +15,15 @@
 #include <stdarg.h>
 #include <stdbool.h>
 #include <time.h>
+#include <math.h>
+#include <unistd.h>
+#include <sys/ioctl.h>
 
 #define DEFAULT_TXT_BG_COLOR BG_WHITE
 #define DEFAULT_TXT_FG_COLOR FG_BLACK
 #define DEFAULT_TXT_FORMAT S_DEFAULT
 #define DEFAULT_BOX_BG_COLOR BG_WHITE
 #define DEFAULT_BG_COLOR BG_WHITE
-
 
 #define UI_TAB_SIZE 3 /*!< @brief Tab key size */
 #define UI_MAX_BOXES 15 /*!< @brief Maximum quantity of boxes per UI */
@@ -31,6 +35,12 @@
 
 #define __frmidx( __frm ) ( __frm[ UI_MAX_FRM_LEN - 2 ] ) /*!< @brief get the destination index of the format */
 #define __frmxor( __frm ) ( __frm[ UI_MAX_FRM_LEN - 1 ] ) /*!< @brief get the checksum of the format */
+
+typedef struct _Ui_screen Ui_screen;
+typedef struct _Ui_data Ui_data;
+typedef struct _Ui_pix Ui_pix;
+typedef struct _Ui_cpix Ui_cpix;
+typedef struct _Ui_box Ui_box;
 
 /*!
 * @brief Basic pixel structure
@@ -74,9 +84,18 @@ struct _Ui_screen {
 };
 
 /*!
+* @brief Main UI data structure
+*/
+struct _Ui_data {
+  long last_frame_ms; /*!< @brief Last frame clock time */
+};
+
+/*!
 * @brief Main UI structure
 */
 struct _Ui {
+  Ui_data data; /*!< @brief Other Ui data storage */
+  Ui_config config; /*!< @brief Ui configuration */
   Ui_screen scr; /*!< @brief Screen */
   Ui_box *boxes[ UI_MAX_BOXES ]; /*!< @brief Boxes */
   Ui_pix **__pixs; /*!< @brief Pixels buffer */
@@ -84,6 +103,8 @@ struct _Ui {
   int __len; /*!< @brief Number of pixels */
   int __frm[ UI_MAX_FRM_LEN ]; /*!< @brief Temporary format */
 };
+
+
 
 /****** PRIVATE FUNCTIONS ******/
 
@@ -388,21 +409,26 @@ void ui_frms( Ui* ui, const char *frms, ... ) {
 Ui *ui_init( int w, int h ) {
 
   int i;
+
   Ui *ui = (Ui*) malloc( sizeof( Ui ) );
 
   if ( ui ) {
 
-    ui->scr.w = w;
-    ui->scr.h = h;
-    ui->__len = w*h;
+    ui->data.last_frame_ms = 0;
+    ui->config.min_frame_ms = 0;
+
     _frm_rs( ui->__frm );
 
     for ( i=0; i < UI_MAX_BOXES; i++) {
       ui->boxes[ i ] = NULL;
     }
 
-    ui->__pixs = alloc_pixs( ui->__len );
-    ui->__cache = alloc_cpixs( ui->__len );
+    ui->__pixs = NULL;
+    ui->__cache = NULL;
+    ui->scr.w = 0;
+    ui->scr.h = 0;
+
+    ui_resize( ui, w, h );
 
     if ( !ui->__pixs || !ui->__cache ) {
       ui_destroy( ui );
@@ -416,7 +442,25 @@ Ui *ui_init( int w, int h ) {
 
 void ui_resize( Ui *ui, int w, int h ) {
 
+  struct winsize wsize;
+
   if ( !ui )
+    return;
+
+  if ( w == UI_WIN_COLS || h == UI_WIN_ROWS ) {
+    ioctl( STDOUT_FILENO, TIOCGWINSZ, &wsize );
+  }
+
+  if ( w == UI_WIN_COLS ) {
+    w = wsize.ws_col;
+  }
+
+  if ( h == UI_WIN_ROWS ) {
+    h = wsize.ws_row;
+  }
+
+  /* no need for resizing */
+  if ( ui->scr.w == w && ui->scr.h == h )
     return;
 
   kill_pixs( ui->__pixs, ui->__len );
@@ -1032,7 +1076,7 @@ void ui_box_put( Ui *ui, int idx, const char *frmt, ... ) {
   va_list _args;
   char _buff[ UI_MAX_BUFF_LEN ];
   char __frm[ UI_MAX_BUFF_LEN ];
-  bool isFrm;
+
   int i, j, box_w, box_h, *pad, cx_off, cx_top, *cx, *cy;
 
   box = ui_get_box_by_idx( ui, idx );
@@ -1052,7 +1096,6 @@ void ui_box_put( Ui *ui, int idx, const char *frmt, ... ) {
   cx = &box->cx; /* cursor x */
   cy = &box->cy; /* cursor y */
   pad = box->pad; /* box padding */
-  isFrm = false;
 
   cx_top = cx_top == box_w ? box_w-pad[1] : cx_top;
   cx_off = !cx_off ? pad[ 3 ] : cx_off;
@@ -1066,24 +1109,17 @@ void ui_box_put( Ui *ui, int idx, const char *frmt, ... ) {
       _frm_cpy( _pix.frm, ui->__frm ); /* else use ui format */
     }
 
-    if ( _buff[ i ] == '@' && _buff[ i + 1 ] == '{' ) {
-      if ( !i ) {
-        isFrm = true;
-      } else if ( _buff[ i - 1 ] != '\\' ) {
-        isFrm = true;
-      }
-    }
-
     if ( *cx == cx_top - 1 ) {
 
-      if ( i && _buff[ i - 1 ] == ' ' ) {
+      if ( i && _buff[ i - 1 ] == ' ' && _buff[ i ] != ' ' ) {
         _pix.c = ' ';
         ui_set_pix( box->__pixs, *cx, *cy, box_w, box_h, _pix );
         (*cx)++;
-      } else if (  _buff[ i + 1 ] && !isFrm ) {
+      } else if ( _buff[ i + 1 ] != ' ' && _buff[ i ] != ' ' ) {
         _pix.c = '-';
         ui_set_pix( box->__pixs, *cx, *cy, box_w, box_h, _pix );
         (*cx)++;
+
       }
 
     }
@@ -1125,7 +1161,7 @@ void ui_box_put( Ui *ui, int idx, const char *frmt, ... ) {
         (*cx)++; j++;
       }
 
-    } else if ( isFrm ) {
+    } else if ( _pix.c == '@' && _buff[ i + 1 ] == '{' ) {
 
       j=0;
       i+=2;
@@ -1145,8 +1181,6 @@ void ui_box_put( Ui *ui, int idx, const char *frmt, ... ) {
 
         i++;
       }
-
-      isFrm = false;
 
       _frm_parse( ui->__frm, box->frm, __frm );
 
@@ -1174,14 +1208,33 @@ void ui_kill_box( Ui *ui, int idx ) {
 
 }
 
+Ui_config *ui_config( Ui *ui ) {
+
+  if ( !ui )
+    return NULL;
+
+  return &(ui->config);
+
+}
+
 void ui_draw( FILE *stream, Ui *ui ) {
 
   Ui_pix *pix; /* temporary pixel */
   Ui_cpix *cpix; /* temporary cache pixel */
-  int i, j, scr_w;
-  int o_xor=0, /* old format check sum */
-      xor;  /* current format check sum */
-  char __frm[ UI_MAX_SFRM_LEN ] = "";
+
+  int   i,
+        j,
+        scr_w;
+  int   o_xor=0, /* old format check sum */
+        xor, /* current pixel format check sum */
+        lxor=0; /* last pixel format checsum */
+
+  char  __buff[ 8096 ],
+        __frm[ UI_MAX_SFRM_LEN ] = "";
+
+  /* prepare buffer */
+  memset( __buff, '\0', sizeof( __buff ) );
+  setvbuf( stream, __buff, _IOFBF, sizeof( __buff ) );
 
   if ( !stream || !ui )
     return;
@@ -1192,6 +1245,7 @@ void ui_draw( FILE *stream, Ui *ui ) {
 
     pix = ui->__pixs[ i ];
     cpix = ui->__cache[ i ];
+
     if ( !pix ) {
       fprintf( stream, "\033[1;31;47m UI FATAL ERROR \033[0m\n");
       break;
@@ -1221,19 +1275,41 @@ void ui_draw( FILE *stream, Ui *ui ) {
 
     }
 
-
     if ( xor != cpix->csum ) {
       fprintf( stream, "%s", __frm );
     } else {
-      fprintf( stream, "%s", cpix->sfrm );
+
+      if ( xor != lxor ) {
+        fprintf( stream, "%s", cpix->sfrm );
+        lxor = xor;
+      }
+
     }
 
     putc( pix->c, stream );
 
     if ( (i+1)%scr_w == 0 ) {
-      fprintf( stream, "\033[0m\n");
+      fprintf( stream, "\033[0m\n%s", cpix->sfrm );
     }
 
   }
 
+  fprintf( stream, "\033[0m" );
+
+  fflush( stream );
+
+}
+
+int ui_get_w( Ui *ui ) {
+  if ( !ui )
+    return -1;
+
+  return ui->scr.w;
+}
+
+int ui_get_h( Ui *ui ) {
+  if ( !ui )
+    return -1;
+
+  return ui->scr.h;
 }

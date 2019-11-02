@@ -23,9 +23,6 @@ link_tb: ctarget
 inventory_tb: ctarget
 	./ctarget -e inventory_tb -c
 
-reader_tb: ctarget
-	./ctarget -e reader_tb -c
-
 space_tb:
 	./ctarget -e space_tb -c
 
@@ -46,7 +43,6 @@ clean: ctarget
 	-e player_tb --clean \
 	-e link_tb --clean \
 	-e inventory_tb --clean \
-	-e reader_tb --clean \
 	-e space_tb --clean
 ctarget:
 	if [ ! -e "c-target" ]; then git clone https://github.com/lromeraj/c-target; fi

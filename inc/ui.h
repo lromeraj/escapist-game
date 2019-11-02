@@ -13,6 +13,7 @@
 
 #include <wchar.h>
 #include <stdio.h>
+#include <stdbool.h>
 
 /*!
 * @brief Text colors
@@ -49,12 +50,23 @@ typedef enum {
   S_HIDDEN=9  /*!< Hidden text */
 } Format;
 
-typedef struct _Ui_screen Ui_screen;
-typedef struct _Ui_pix Ui_pix;
-typedef struct _Ui_cpix Ui_cpix;
-typedef struct _Ui_box Ui_box;
-typedef struct _Ui Ui;
+enum _Ui_vars {
+  UI_WIN_COLS=-1,
+  UI_WIN_ROWS=-2,
+  UI_COLS=-3,
+  UI_ROWS=-4
+};
 
+
+typedef struct _Ui Ui;
+typedef struct _Ui_config Ui_config;
+
+/*!
+* @brief Main UI configuration structure
+*/
+struct _Ui_config {
+  int min_frame_ms; /*!< @brief Minimum milliseconds per frame */
+};
 
 /**
 * @brief Initializes UI struct
@@ -304,5 +316,23 @@ void ui_box_pad( Ui* ui, int idx, const char* pad );
 * @param {...} - String format arguments
 */
 void ui_box_put( Ui* ui, int idx, const char* str, ... ) __attribute__ ( ( format(printf, 3, 4 ) ) );
+
+
+/**
+* @brief This function returns the width of the main screen of the ui
+* @param ui - UI pointer
+* @retval - Returns screen width
+*/
+int ui_get_w( Ui *ui );
+
+
+/**
+* @brief This function returns the height of the main screen of the ui
+* @param ui - UI pointer
+* @retval - Returns screen width
+*/
+int ui_get_h( Ui *ui );
+
+Ui_config *ui_config( Ui *ui );
 
 #endif
